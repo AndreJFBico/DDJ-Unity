@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Includes;
 
 [RequireComponent(typeof(FireElement))]
 [RequireComponent(typeof(FrostElement))]
 [RequireComponent(typeof(EarthElement))]
 [RequireComponent(typeof(PlayerData))]
-public class Shoot : Auxiliars {
+public class Shoot : MonoBehaviour {
 
     private FireElement fireShoot;
     private FrostElement frostShoot;

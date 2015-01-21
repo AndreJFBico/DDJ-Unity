@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using Includes;
 
 [RequireComponent(typeof(PlayerData))]
-public class Interactions : Auxiliars {
+public class Interactions : MonoBehaviour {
 
     private Image elementGUI;
 
