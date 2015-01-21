@@ -5,10 +5,10 @@ public class CharacterMove : MonoBehaviour {
 
     public float moveSpeed = 10f;
 
+    private PlayerAnimController playerAnim;
+
     private float hDir = 0;
     private float vDir = 0;
-
-    private PlayerAnimController playerAnim;
 
 	// Use this for initialization
 	void Start () {
@@ -23,12 +23,8 @@ public class CharacterMove : MonoBehaviour {
 
         transform.position = Vector3.MoveTowards(transform.position, transform.position + transform.forward*vDir + transform.right*hDir, moveSpeed * Time.deltaTime);
 
-        playerAnim.horizontal = hDir;
-        playerAnim.vertical = vDir;
-
         if (hDir == 0 && vDir == 0)
             playerAnim.idle = true;
         else playerAnim.idle = false;
-
     }
 }

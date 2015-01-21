@@ -10,7 +10,7 @@ public class CollisionBehaviour : MonoBehaviour {
 
     void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.tag == "Player")
+        if(other.gameObject.layer == LayerMask.NameToLayer("Unhitable"))
         {
 
         }

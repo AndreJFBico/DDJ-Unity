@@ -46,19 +46,25 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Action.cs" />
-     <Compile Include="Assets\Auxiliars.cs" />
-     <Compile Include="Assets\CollisionBehaviour.cs" />
-     <Compile Include="Assets\DestroyClone.cs" />
-     <Compile Include="Assets\EarthElement.cs" />
-     <Compile Include="Assets\FireElement.cs" />
-     <Compile Include="Assets\FrostElement.cs" />
-     <Compile Include="Assets\Interactions.cs" />
-     <Compile Include="Assets\LookAtMouse.cs" />
-     <Compile Include="Assets\PlayerAnimController.cs" />
-     <Compile Include="Assets\PlayerData.cs" />
+     <Compile Include="Assets\Resources\Scripts\Action.cs" />
+     <Compile Include="Assets\Resources\Scripts\Auxiliars.cs" />
      <Compile Include="Assets\Resources\Scripts\CharacterMove.cs" />
-     <Compile Include="Assets\Shoot.cs" />
+     <Compile Include="Assets\Resources\Scripts\ChaseTarget.cs" />
+     <Compile Include="Assets\Resources\Scripts\CollisionBehaviour.cs" />
+     <Compile Include="Assets\Resources\Scripts\DestroyClone.cs" />
+     <Compile Include="Assets\Resources\Scripts\EarthElement.cs" />
+     <Compile Include="Assets\Resources\Scripts\FireElement.cs" />
+     <Compile Include="Assets\Resources\Scripts\FrostElement.cs" />
+     <Compile Include="Assets\Resources\Scripts\Interactions.cs" />
+     <Compile Include="Assets\Resources\Scripts\KeepStraight.cs" />
+     <Compile Include="Assets\Resources\Scripts\LeftRightShift.cs" />
+     <Compile Include="Assets\Resources\Scripts\LookAtMouse.cs" />
+     <Compile Include="Assets\Resources\Scripts\PlayerAnimController.cs" />
+     <Compile Include="Assets\Resources\Scripts\PlayerData.cs" />
+     <Compile Include="Assets\Resources\Scripts\Shoot.cs" />
+     <Compile Include="Assets\Resources\Scripts\ShootElement.cs" />
+     <Compile Include="Assets\SortLayer.cs" />
+     <Compile Include="Assets\WeaponSortLayer.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Programas/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>

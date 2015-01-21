@@ -20,6 +20,7 @@ public class Shoot : Auxiliars {
         earthShoot = GetComponent<EarthElement>();
         data = GetComponent<PlayerData>();
 	}
+
 	
     public void shoot (float fire1, float fire2, float fire3)
     {
@@ -34,6 +35,7 @@ public class Shoot : Auxiliars {
             {
                 frostShoot.fireMain();
             }
+
         }
         else if(fire2 > 0)
         {

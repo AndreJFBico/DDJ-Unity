@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(Animator))]
 public class PlayerAnimController : MonoBehaviour {
 
     public float horizontal;
@@ -15,7 +16,9 @@ public class PlayerAnimController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+    void Update()
+    {
+        renderer.sortingOrder = Mathf.RoundToInt(-transform.parent.position.z * 10);
         anim.SetFloat("Horizontal", horizontal);
         anim.SetFloat("Vertical", vertical);
         anim.SetBool("Idle", idle);
