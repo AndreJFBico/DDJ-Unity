@@ -21,9 +21,9 @@ public class NeutralEnemyScript : EnemyScript {
         base.Update();
 	}
 
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        base.OnCollisionEnter(collision);
+        base.OnCollisionEnter2D(collision);
     }
 
     // Health bar

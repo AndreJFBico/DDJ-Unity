@@ -50,18 +50,21 @@ public class LookAtMouse : MonoBehaviour {
 
     void detectTargetPosition()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Vector3 aux = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        aux.Normalize();
+
+        float rot_z = Mathf.Atan2(aux.y, aux.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
 
         RaycastHit hit;
-        Vector3 aux = Vector3.right;
+        //Vector3 aux = Vector3.right;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit, Mathf.Infinity))
         {
-            aux = new Vector3(hit.point.x, transform.position.y, hit.point.z);
-            transform.LookAt(aux);
+            aux = new Vector3(hit.point.x, hit.point.y, transform.position.z);
         }
         point = aux;
     }
-
     
     void LateUpdate()
     {
@@ -85,7 +88,7 @@ public class LookAtMouse : MonoBehaviour {
         detectTargetPosition();
 
         Vector3 SpriteAxis = Vector3.right;
-        Vector3 axis = Vector3.forward;
+        Vector3 axis = Vector3.up;
         Vector3 target = Vector3.Normalize(transform.position - point);
 
         spriteDot = Vector3.Dot(SpriteAxis, target);
