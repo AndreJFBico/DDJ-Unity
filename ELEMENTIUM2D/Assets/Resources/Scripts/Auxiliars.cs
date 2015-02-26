@@ -3,49 +3,65 @@ using System.Collections;
 
 namespace Includes
 {
-    public enum Elements { NEUTRAL, FIRE, EARTH, FROST };
-    public enum Door { NORTH, SOUTH, WEST, EAST };
-
-    public class RoomNode
+    public class ProjectileStats
     {
-        public Vector3 position;
-        public GameObject room;
-
-        // If room is not allowed then there is not RoomNode associated, therefore it is equal to null.
-        public RoomNode northRoom;
-        public RoomNode southRoom;
-        public RoomNode westRoom;
-        public RoomNode eastRoom;
-
-        public RoomNode(Vector3 p, GameObject r)
+        // NEUTRAL
+        public class Fireball
         {
-            position = p;
-            room = r;
-            northRoom = null;
-            southRoom = null;
-            westRoom = null;
-            eastRoom = null;
+            public static float damage = 10;
         }
 
-        public bool isRoomAllowed(Door door)
+        // WATER
+        public class Iceshard
         {
-            if (door == Door.NORTH)
-            {
-                return room.GetComponent<RoomScript>().ALLOW_NORTH;
-            }
-            else if (door == Door.SOUTH)
-            {
-                return room.GetComponent<RoomScript>().ALLOW_SOUTH;
-            }
-            else if (door == Door.EAST)
-            {
-                return room.GetComponent<RoomScript>().ALLOW_EAST;
-            }
-            else if (door == Door.WEST)
-            {
-                return room.GetComponent<RoomScript>().ALLOW_WEST;
-            }
-            return false;
+            public static float damage = 10;
         }
     }
+    public class EnemyStats
+    {
+        // NEUTRAL
+        public class Neutral
+        {
+            public static float maxHealth = 100;
+            public static float damage = 10;
+            public static float defence = 2;
+            public static float waterResist = 5;
+            public static float earthResist = 5;
+            public static float fireResist = 5;
+        }
+
+        // WATER
+        public class Water
+        {
+            public static float maxHealth = 100;
+            public static float damage = 10;
+            public static float defence = 2;
+            public static float waterResist = 5;
+            public static float earthResist = 5;
+            public static float fireResist = 5;
+        }
+
+        // FIRE
+        public class Fire
+        {
+            public static float maxHealth = 100;
+            public static float damage = 10;
+            public static float defence = 2;
+            public static float waterResist = 5;
+            public static float earthResist = 5;
+            public static float fireResist = 5;
+        }
+
+        // EARTH
+        public class Earth
+        {
+            public static float maxHealth = 100;
+            public static float damage = 10;
+            public static float defence = 2;
+            public static float waterResist = 5;
+            public static float earthResist = 5;
+            public static float fireResist = 5;
+        }
+    }
+    public enum Elements { NEUTRAL, FIRE, EARTH, FROST };
 }

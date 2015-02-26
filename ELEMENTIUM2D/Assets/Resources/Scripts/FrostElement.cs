@@ -24,7 +24,7 @@ public class FrostElement : ShootElement {
         gunBlast1.SetActive(false);
         gunBlast2.SetActive(false);
 
-        bulletPrefab = (GameObject) Resources.Load("Prefabs/FrostBolt");
+        bulletPrefab = (GameObject) Resources.Load("Prefabs/Projectiles/FrostBolt");
 	}
 	
 	// Update is called once per frame

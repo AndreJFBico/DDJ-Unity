@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{74D97158-3993-72F0-EED3-F0B217E21FA0}") = "ELEMENTIUM2D", "Assembly-CSharp-vs.csproj", "{D276FE72-AD3D-C5CC-34D1-D187F45B2633}"
 EndProject
+Project("{74D97158-3993-72F0-EED3-F0B217E21FA0}") = "ELEMENTIUM2D", "Assembly-CSharp-Editor-vs.csproj", "{B2D9D38E-E17B-9621-092D-5477D6C38642}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,11 +15,15 @@ Global
 		{D276FE72-AD3D-C5CC-34D1-D187F45B2633}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D276FE72-AD3D-C5CC-34D1-D187F45B2633}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D276FE72-AD3D-C5CC-34D1-D187F45B2633}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2D9D38E-E17B-9621-092D-5477D6C38642}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2D9D38E-E17B-9621-092D-5477D6C38642}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2D9D38E-E17B-9621-092D-5477D6C38642}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2D9D38E-E17B-9621-092D-5477D6C38642}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																																										GlobalSection(MonoDevelopProperties) = preSolution
+																																																																																																																																																GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
