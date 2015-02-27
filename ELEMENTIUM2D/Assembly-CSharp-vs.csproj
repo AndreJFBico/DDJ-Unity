@@ -152,6 +152,8 @@
      <Compile Include="Assets\Resources\Scripts\KeepStraight.cs" />
      <Compile Include="Assets\Resources\Scripts\LeftRightShift.cs" />
      <Compile Include="Assets\Resources\Scripts\LookAtMouse.cs" />
+     <Compile Include="Assets\Resources\Scripts\Minimap\CreateMinimap.cs" />
+     <Compile Include="Assets\Resources\Scripts\Minimap\DrawToMinimap.cs" />
      <Compile Include="Assets\Resources\Scripts\Pathfinder\PathAgent.cs" />
      <Compile Include="Assets\Resources\Scripts\Pathfinder\PathManager.cs" />
      <Compile Include="Assets\Resources\Scripts\Pathfinder\PathNode.cs" />
