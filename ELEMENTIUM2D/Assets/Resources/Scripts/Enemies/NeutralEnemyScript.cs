@@ -2,10 +2,12 @@
 using System.Collections;
 using Includes;
 
-public class NeutralEnemyScript : EnemyScript {
+public class NeutralEnemyScript : EnemyScript
+{
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    protected override void Start()
+    {
         base.Start();
         type = Elements.NEUTRAL;
         maxHealth = EnemyStats.Neutral.maxHealth;
@@ -14,20 +16,21 @@ public class NeutralEnemyScript : EnemyScript {
         waterResist = EnemyStats.Neutral.waterResist;
         earthResist = EnemyStats.Neutral.earthResist;
         fireResist = EnemyStats.Neutral.fireResist;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        base.Update();
-	}
+    }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    // Update is called once per frame
+    protected override void Update()
+    {
+        base.Update();
+    }
+
+    protected override void OnCollisionEnter2D(Collision2D collision)
     {
         base.OnCollisionEnter2D(collision);
     }
 
     // Health bar
-    void OnGUI()
+    protected override void OnGUI()
     {
         base.OnGUI();
     }

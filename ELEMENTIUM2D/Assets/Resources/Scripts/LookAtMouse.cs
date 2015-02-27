@@ -3,7 +3,7 @@ using System.Collections;
 
 public class LookAtMouse : MonoBehaviour {
 
-    private SpriteRenderer playerSprite;
+    //private SpriteRenderer playerSprite;
     private SpriteRenderer weapon1Sprite;
     private SpriteRenderer weapon2Sprite;
 
@@ -15,11 +15,11 @@ public class LookAtMouse : MonoBehaviour {
 
     private Vector3 point;
 
-    private float quarterPi = 0;
+   // private float quarterPi = 0;
     public float eighthPi = 0;
 
-    private float hDir = 0;
-    private float vDir = 0;
+    //private float hDir = 0;
+    //private float vDir = 0;
 
     float spriteDot = 0;
     float animDot = 0;
@@ -28,7 +28,7 @@ public class LookAtMouse : MonoBehaviour {
 	// Use this for initialization
     void Start()
     {
-        playerSprite = GameObject.FindGameObjectWithTag("PlayerSprite").GetComponent<SpriteRenderer>();
+        //playerSprite = GameObject.FindGameObjectWithTag("PlayerSprite").GetComponent<SpriteRenderer>();
 
         SpriteRenderer[] renderers = GameObject.FindGameObjectWithTag("WeaponPos1").GetComponentsInChildren<SpriteRenderer>();
         foreach (SpriteRenderer item in renderers)
@@ -43,7 +43,7 @@ public class LookAtMouse : MonoBehaviour {
         weapon1 = GameObject.FindGameObjectWithTag("WeaponPos1");
         weapon2 = GameObject.FindGameObjectWithTag("WeaponPos2");
         activeWeapon = 1;
-        quarterPi = Mathf.Cos(Mathf.PI / 4);
+        //quarterPi = Mathf.Cos(Mathf.PI / 4);
         eighthPi = Mathf.Cos(Mathf.PI / 8);
 
 	}

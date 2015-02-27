@@ -2,7 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class PathManager : MonoBehaviour {
+public class PathManager : MonoBehaviour
+{
 
     public bool initialized;
 
@@ -12,14 +13,15 @@ public class PathManager : MonoBehaviour {
     Transform roomManager;
     AstarPath astarManager;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         initialized = false;
-	}
+    }
 
     void findAllNodes()
     {
-        GameObject[] transforms = GameObject.FindGameObjectsWithTag("navmeshObject");
+        //GameObject[] transforms = GameObject.FindGameObjectsWithTag("navmeshObject");
 
         //Mesh.CombineMeshes(transforms);
         /*foreach (GameObject t in transforms)
@@ -28,11 +30,12 @@ public class PathManager : MonoBehaviour {
             graph.Add(node);
         }*/
     }
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     public void merge()
     {
@@ -78,7 +81,7 @@ public class PathManager : MonoBehaviour {
 
             AutoWeld(filter.mesh, 0.10f, 1.0f);
             astarManager = transform.gameObject.AddComponent<AstarPath>();
-            astarManager.astarData.AddGraph("NavMeshGraph");   
+            astarManager.astarData.AddGraph("NavMeshGraph");
             astarManager.astarData.navmesh.sourceMesh = filter.mesh;
             astarManager.astarData.navmesh.sourceMesh.Optimize();
             astarManager.showNavGraphs = false;

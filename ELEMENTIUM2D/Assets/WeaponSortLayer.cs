@@ -9,7 +9,7 @@ public class WeaponSortLayer : MonoBehaviour {
 
     private SpriteRenderer weaponSprite;
 
-    private float weaponOffset;
+    //private float weaponOffset;
 
 	// Use this for initialization
     void Start()
@@ -17,7 +17,7 @@ public class WeaponSortLayer : MonoBehaviour {
         render = GameObject.FindGameObjectWithTag("PlayerSprite").GetComponent<SpriteRenderer>();
         player = GameObject.FindGameObjectWithTag("Player");
         
-        weaponOffset = transform.parent.position.z;
+        //weaponOffset = transform.parent.position.z;
     }
 	
 	// Update is called once per frame

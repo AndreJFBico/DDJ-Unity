@@ -8,7 +8,7 @@ public class EnemyScript : MonoBehaviour
     public RectTransform healthbar;
     
     private float health = 10;
-    private SpawnScript script;
+    //private SpawnScript script;
 
     protected Elements type;
     protected float maxHealth = 100;
@@ -19,7 +19,7 @@ public class EnemyScript : MonoBehaviour
     protected float fireResist;
 
 	// Use this for initialization
-    protected void Start()
+    protected virtual void Start()
     {
         Vector2 targetPos = Camera.main.WorldToScreenPoint(transform.position);
         healthbar_background.position = targetPos;
@@ -27,24 +27,24 @@ public class EnemyScript : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-    protected void Update()
+    protected virtual void Update()
     {
 
 	}
 
     // Health bar
-    protected void OnGUI()
+    protected virtual void OnGUI()
     {
         Vector2 targetPos;
         targetPos = Camera.main.WorldToScreenPoint(transform.position);
         healthbar_background.position = targetPos;
         float percentage = health / maxHealth;
-        float distance = percentage * healthbar.rect.width;
-        float desiredX = healthbar.position.x + distance;
+        //float distance = percentage * healthbar.rect.width;
+        //float desiredX = healthbar.position.x + distance;
         healthbar.transform.localScale = new Vector3(percentage, 1.0f, 1.0f);
     }
 
-    protected void OnCollisionEnter2D (Collision2D collision)
+    protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag.CompareTo("Projectile") == 0)
         {
@@ -81,6 +81,6 @@ public class EnemyScript : MonoBehaviour
     // Is initiated by the spawner
     public void setSpawner(SpawnScript scrpt)
     {
-        script = scrpt;
+        //script = scrpt;
     }
 }

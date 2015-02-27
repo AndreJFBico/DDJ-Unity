@@ -4,7 +4,7 @@ using Includes;
 
 public class Fireball : ProjectileBehaviour {
 
-    void Start()
+    protected override void Start()
     {
         base.Start();
         damage = ProjectileStats.Fireball.damage;

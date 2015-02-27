@@ -15,9 +15,9 @@ public class Interactions : MonoBehaviour {
 
     private PlayerData data;
 
-    private float cycleTime = 0.2f;
+    //private float cycleTime = 0.2f;
 
-    private bool canCycle = true;
+    //private bool canCycle = true;
 
 	// Use this for initialization
 	void Start () {
