@@ -3,7 +3,7 @@ using System.Collections;
 
 public class LookAtMouse : MonoBehaviour {
 
-    //private SpriteRenderer playerSprite;
+    private SpriteRenderer playerSprite;
     private SpriteRenderer weapon1Sprite;
     private SpriteRenderer weapon2Sprite;
 
@@ -15,7 +15,7 @@ public class LookAtMouse : MonoBehaviour {
 
     private Vector3 point;
 
-   // private float quarterPi = 0;
+   //private float quarterPi = 0;
     public float eighthPi = 0;
 
     //private float hDir = 0;
@@ -28,7 +28,7 @@ public class LookAtMouse : MonoBehaviour {
 	// Use this for initialization
     void Start()
     {
-        //playerSprite = GameObject.FindGameObjectWithTag("PlayerSprite").GetComponent<SpriteRenderer>();
+        playerSprite = GameObject.FindGameObjectWithTag("PlayerSprite").GetComponent<SpriteRenderer>();
 
         SpriteRenderer[] renderers = GameObject.FindGameObjectWithTag("WeaponPos1").GetComponentsInChildren<SpriteRenderer>();
         foreach (SpriteRenderer item in renderers)
@@ -114,13 +114,13 @@ public class LookAtMouse : MonoBehaviour {
 
         if (animDot < -aux)
         {
-            weapon1Sprite.sortingOrder = weapon1Sprite.sortingOrder-1;
-            weapon2Sprite.sortingOrder = weapon1Sprite.sortingOrder-1;
+            weapon1Sprite.sortingOrder = playerSprite.sortingOrder - 1;
+            weapon2Sprite.sortingOrder = playerSprite.sortingOrder - 1;
         }
         if (animDot > -aux)
         {
-            weapon1Sprite.sortingOrder = weapon1Sprite.sortingOrder+1;
-            weapon2Sprite.sortingOrder = weapon1Sprite.sortingOrder+1;
+            weapon1Sprite.sortingOrder = playerSprite.sortingOrder + 1;
+            weapon2Sprite.sortingOrder = playerSprite.sortingOrder + 1;
         }
 
         //Change player Anim
