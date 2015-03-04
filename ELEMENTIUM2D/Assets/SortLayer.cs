@@ -8,7 +8,7 @@ public class SortLayer : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         player = GameObject.FindGameObjectWithTag("Player");
-        renderer.sortingOrder = Mathf.RoundToInt(-transform.position.z*10);
+        GetComponent<Renderer>().sortingOrder = Mathf.RoundToInt(-transform.position.z*10);
 	}
 	
 	// Update is called once per frame

@@ -25,11 +25,11 @@ public class WeaponSortLayer : MonoBehaviour {
 
         if (transform.position.z > player.transform.position.z)
         {
-            renderer.sortingOrder = render.sortingOrder - 1;
+            GetComponent<Renderer>().sortingOrder = render.sortingOrder - 1;
         }
         if (transform.position.z < player.transform.position.z)
         {
-            renderer.sortingOrder = render.sortingOrder + 1;
+            GetComponent<Renderer>().sortingOrder = render.sortingOrder + 1;
         }
 	}
 }

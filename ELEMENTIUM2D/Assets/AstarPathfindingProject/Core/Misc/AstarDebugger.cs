@@ -96,9 +96,11 @@ public class AstarDebugger : MonoBehaviour {
 		useGUILayout = false;
 		
 		fpsDrops = new float[fpsDropCounterSize];
-		
-		if (camera != null) {
-			cam = camera;
+
+        Camera c = GetComponent<Camera>();
+        if (c != null)
+        {
+            cam = c;
 		} else {
 			cam = Camera.main;
 		}

@@ -10,14 +10,14 @@ public class Fireball : ProjectileBehaviour {
         damage = ProjectileStats.Fireball.damage;
     }
 
-    public override void handleCollision(Transform collision)
+    public override void OnCollisionEnter2D(Collision2D collision)
     {
-        //if (collision.gameObject.tag.CompareTo("Enemy") == 0)
-        //{  
+        if (collision.gameObject.tag.CompareTo("Enemy") == 0)
+        {  
             EnemyScript enemy = collision.gameObject.GetComponent<EnemyScript>();
             enemy.takeDamage(damage, Elements.FIRE);
-            Destroy(this.gameObject);
-        //}
+        }
+        base.OnCollisionEnter2D(collision);
         //ignores what is unhitable
     }
 }

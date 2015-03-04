@@ -24,10 +24,10 @@ public class NeutralEnemyScript : EnemyScript
         base.Update();
     }
 
-    protected override void OnCollisionEnter2D(Collision2D collision)
+    /*protected override void OnCollisionEnter2D(Collision2D collision)
     {
         base.OnCollisionEnter2D(collision);
-    }
+    }*/
 
     // Health bar
     protected override void OnGUI()

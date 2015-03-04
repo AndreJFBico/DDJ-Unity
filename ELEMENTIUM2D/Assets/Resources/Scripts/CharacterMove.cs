@@ -21,7 +21,7 @@ public class CharacterMove : MonoBehaviour {
         hDir = Input.GetAxis("Horizontal");
         vDir = Input.GetAxis("Vertical");
 
-        transform.position = Vector3.MoveTowards(transform.position, transform.position + transform.up*vDir + transform.right*hDir, moveSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, transform.position + transform.up * vDir + transform.right * hDir, moveSpeed * Time.deltaTime);
 
         if (hDir == 0 && vDir == 0)
             playerAnim.idle = true;

@@ -44,13 +44,13 @@ public class EnemyScript : MonoBehaviour
         healthbar.transform.localScale = new Vector3(percentage, 1.0f, 1.0f);
     }
 
-    protected virtual void OnCollisionEnter2D(Collision2D collision)
+    /*protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag.CompareTo("Projectile") == 0)
         {
             collision.gameObject.GetComponent<ProjectileBehaviour>().handleCollision(transform);
         }
-    }
+    }*/
 
     public void takeDamage(float amount, Elements type)
     {

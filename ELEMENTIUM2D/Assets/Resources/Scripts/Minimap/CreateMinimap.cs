@@ -31,12 +31,12 @@ public class CreateMinimap : MonoBehaviour {
         Transform[] alltransforms = FindObjectsOfType<Transform>() as Transform[];
         foreach (Transform item in alltransforms)
         {
-            if (item.renderer == null)
+            if (item.GetComponent<Renderer>() == null)
                 continue;
-            float xL = item.renderer.bounds.min.x;
-            float xH = item.renderer.bounds.max.x;
-            float yL = item.renderer.bounds.min.y;
-            float yH = item.renderer.bounds.max.y;
+            float xL = item.GetComponent<Renderer>().bounds.min.x;
+            float xH = item.GetComponent<Renderer>().bounds.max.x;
+            float yL = item.GetComponent<Renderer>().bounds.min.y;
+            float yH = item.GetComponent<Renderer>().bounds.max.y;
 
             if (xL < minX)
                 minX = xL;
