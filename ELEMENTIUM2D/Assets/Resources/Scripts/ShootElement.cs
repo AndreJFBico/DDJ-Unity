@@ -13,7 +13,7 @@ public class ShootElement: MonoBehaviour {
     private bool canMain = true;
 
     //Time between attacks
-    protected float attackSpeed = 0.1f;
+    protected float attackSpeed = 0.5f;
 
 	// Use this for initialization
     void Start()

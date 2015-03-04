@@ -25,6 +25,8 @@ public class FrostElement : ShootElement {
         gunBlast2.SetActive(false);
 
         bulletPrefab = (GameObject) Resources.Load("Prefabs/Projectiles/FrostBolt");
+
+        attackSpeed = 0.25f;
 	}
 	
 	// Update is called once per frame

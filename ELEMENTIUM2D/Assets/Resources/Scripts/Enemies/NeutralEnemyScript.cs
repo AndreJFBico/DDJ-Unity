@@ -8,7 +8,6 @@ public class NeutralEnemyScript : EnemyScript
     // Use this for initialization
     protected override void Start()
     {
-        base.Start();
         type = Elements.NEUTRAL;
         maxHealth = EnemyStats.Neutral.maxHealth;
         damage = EnemyStats.Neutral.damage;
@@ -16,6 +15,7 @@ public class NeutralEnemyScript : EnemyScript
         waterResist = EnemyStats.Neutral.waterResist;
         earthResist = EnemyStats.Neutral.earthResist;
         fireResist = EnemyStats.Neutral.fireResist;
+        base.Start();
     }
 
     // Update is called once per frame

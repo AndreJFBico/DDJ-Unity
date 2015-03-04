@@ -8,7 +8,7 @@ namespace Includes
         // NEUTRAL
         public class Fireball
         {
-            public static float damage = 10;
+            public static float damage = 30;
         }
 
         // WATER
@@ -22,7 +22,7 @@ namespace Includes
         // NEUTRAL
         public class Neutral
         {
-            public static float maxHealth = 100;
+            public static float maxHealth = 50;
             public static float damage = 10;
             public static float defence = 2;
             public static float waterResist = 5;

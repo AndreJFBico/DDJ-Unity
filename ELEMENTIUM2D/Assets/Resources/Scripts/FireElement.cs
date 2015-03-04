@@ -25,6 +25,8 @@ public class FireElement: ShootElement {
         gunBlast2.SetActive(false);
 
         bulletPrefab = (GameObject) Resources.Load("Prefabs/Projectiles/Fireball");
+
+        attackSpeed = 0.5f;
 	}
 	
 	// Update is called once per frame

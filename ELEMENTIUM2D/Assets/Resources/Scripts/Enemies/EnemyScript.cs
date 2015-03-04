@@ -57,26 +57,34 @@ public class EnemyScript : MonoBehaviour
         switch (type)
         {
             case Elements.NEUTRAL:
-                health -= amount * (defence / 100.0f + waterResist / 100.0f + earthResist / 100.0f + fireResist / 100.0f);
+                health -= amount * (1-((defence + waterResist + earthResist + fireResist) / 100.0f));
                 break;
 
             case Elements.FIRE:
-                health -= amount * (defence / 100.0f + fireResist / 100.0f);
+                health -= amount * (1-((defence + fireResist) / 100.0f));
                 break;
 
             case Elements.EARTH:
-                health -= amount * (defence / 100.0f + earthResist / 100.0f);
+                health -= amount * (1-((defence + earthResist) / 100.0f));
                 break;
 
             case Elements.FROST:
-                health -= amount * (defence / 100.0f + waterResist / 100.0f);
+                health -= amount * (1-((defence + waterResist) / 100.0f));
                 break;
 
             default:
                 break;
         }
+        if(health <= 0)
+        {
+            Eliminate();
+        }
     }
 
+    private void Eliminate()
+    {
+        Destroy(gameObject);
+    }
 
     // Is initiated by the spawner
     public void setSpawner(SpawnScript scrpt)
