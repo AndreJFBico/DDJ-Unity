@@ -18,6 +18,8 @@ public class IceShard : ProjectileBehaviour
             EnemyScript enemy = collision.gameObject.GetComponent<EnemyScript>();
             enemy.takeDamage(damage, Elements.FROST);
         }
+        else if (collision.gameObject.layer.CompareTo("Unhitable") != 0)
+            base.OnCollisionEnter2D(collision);
         base.OnCollisionEnter2D(collision);
         //ignores what is unhitable
     }

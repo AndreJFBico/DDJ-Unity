@@ -17,7 +17,8 @@ public class Fireball : ProjectileBehaviour {
             EnemyScript enemy = collision.gameObject.GetComponent<EnemyScript>();
             enemy.takeDamage(damage, Elements.FIRE);
         }
-        base.OnCollisionEnter2D(collision);
+        else if (collision.gameObject.tag.CompareTo("Unhitable") != 0)
+            base.OnCollisionEnter2D(collision);
         //ignores what is unhitable
     }
 }

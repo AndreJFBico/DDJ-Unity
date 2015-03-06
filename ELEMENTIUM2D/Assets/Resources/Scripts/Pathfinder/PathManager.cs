@@ -17,6 +17,7 @@ public class PathManager : MonoBehaviour
     void Start()
     {
         initialized = false;
+        merge();
     }
 
     void findAllNodes()

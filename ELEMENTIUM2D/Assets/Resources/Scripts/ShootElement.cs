@@ -41,7 +41,7 @@ public class ShootElement: MonoBehaviour {
             gunBlast2.SetActive(true);
             Invoke("deactivateBlast", 0.1f);
             GameObject bullet = (GameObject)Instantiate(bulletPrefab, barrelEnd.position, rotator.rotation);
-            Physics2D.IgnoreCollision(bullet.GetComponent<Collider2D>(), transform.GetComponent<Collider2D>());
+            //Physics2D.IgnoreCollision(bullet.GetComponent<Collider2D>(), transform.GetComponent<Collider2D>());
             bullet.transform.Rotate(new Vector3(0, 0,90));
             //bullet.GetComponent<Rigidbody2D>().AddForce(barrelEnd.transform.up * 10f, ForceMode2D.Impulse);
         }
