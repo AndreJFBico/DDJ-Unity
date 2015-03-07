@@ -8,7 +8,7 @@ public class Fireball : ProjectileBehaviour
     protected override void Start()
     {
         base.Start();
-        damage = ProjectileStats.Fireball.damage;
+        damage = AbilityStats.Fire.ability1.damage;
     }
 
     public override void OnCollisionEnter2D(Collision2D collision)
@@ -26,6 +26,6 @@ public class Fireball : ProjectileBehaviour
     public override void applyMovement()
     {
         ConstantForce2D constantForce = gameObject.AddComponent<ConstantForce2D>();
-        constantForce.relativeForce = new Vector2(ProjectileStats.Fireball.movementForce, 0.0f);
+        constantForce.relativeForce = new Vector2(AbilityStats.Fire.ability1.movementForce, 0.0f);
     }
 }

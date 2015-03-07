@@ -8,7 +8,7 @@ public class NeutralBlast : ProjectileBehaviour
     protected override void Start()
     {
         base.Start();
-        damage = ProjectileStats.NeutralBlast.damage;
+        damage = AbilityStats.Neutral.ability1.damage;
     }
 
     public override void OnCollisionEnter2D(Collision2D collision)
@@ -26,6 +26,6 @@ public class NeutralBlast : ProjectileBehaviour
     public override void applyMovement()
     {
         ConstantForce2D constantForce = gameObject.AddComponent<ConstantForce2D>();
-        constantForce.relativeForce = new Vector2(ProjectileStats.NeutralBlast.movementForce, 0.0f);
+        constantForce.relativeForce = new Vector2(AbilityStats.Neutral.ability1.movementForce, 0.0f);
     }
 }

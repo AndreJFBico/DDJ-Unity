@@ -31,22 +31,22 @@ public class Shoot : MonoBehaviour {
         {
             if(data.currentElement == (int) Elements.FIRE)
             {
-                fireShoot.fireMain(Cooldowns.Fire.ability1);
+                fireShoot.fireMain(AbilityStats.Fire.ability1.attackSpeed, AbilityStats.Fire.ability1.projectile_number);
             }
 
             if (data.currentElement == (int)Elements.FROST)
             {
-                frostShoot.fireMain(Cooldowns.Frost.ability1);
+                frostShoot.fireMain(AbilityStats.Frost.ability1.attackSpeed, AbilityStats.Frost.ability1.projectile_number);
             }
 
             if (data.currentElement == (int)Elements.EARTH)
             {
-                earthShoot.fireMain(Cooldowns.Earth.ability1);
+                earthShoot.fireMain(AbilityStats.Earth.ability1.attackSpeed, AbilityStats.Earth.ability1.projectile_number);
             }
 
             if (data.currentElement == (int)Elements.NEUTRAL)
             {
-                neutralShoot.fireMain(Cooldowns.Neutral.ability1);
+                neutralShoot.fireMain(AbilityStats.Neutral.ability1.attackSpeed, AbilityStats.Neutral.ability1.projectile_number);
             }
         }
         else if (ability2 > 0)

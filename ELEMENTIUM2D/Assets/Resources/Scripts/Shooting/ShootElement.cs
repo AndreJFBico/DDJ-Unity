@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ShootElement: MonoBehaviour {
+public class ShootElement : MonoBehaviour
+{
 
     protected Transform barrelEnd;
     protected Transform rotator;
@@ -12,14 +13,11 @@ public class ShootElement: MonoBehaviour {
 
     private bool canMain = true;
 
-    //Time between attacks
-    //protected float attackSpeed = 0.5f;
-
-	// Use this for initialization
+    // Use this for initialization
     void Start()
     {
-	}
-	
+    }
+
     private void resetMain()
     {
         canMain = true;
@@ -32,7 +30,7 @@ public class ShootElement: MonoBehaviour {
     }
 
     // Receives a certain ability attackSpeed
-    public void fireMain(float attackSpeed)
+    public void fireMain(float attackSpeed, int projectileNumber)
     {
         if (canMain)
         {
@@ -41,17 +39,21 @@ public class ShootElement: MonoBehaviour {
             gunBlast1.SetActive(true);
             gunBlast2.SetActive(true);
             Invoke("deactivateBlast", 0.1f);
-            GameObject bullet = (GameObject)Instantiate(bulletPrefab, barrelEnd.position, rotator.rotation);
-            // Invokes ability specific movement behaviour
-            bullet.GetComponent<ProjectileBehaviour>().applyMovement();
-            //Physics2D.IgnoreCollision(bullet.GetComponent<Collider2D>(), transform.GetComponent<Collider2D>());
-            bullet.transform.Rotate(new Vector3(0, 0,90));
+            for(int i = 0; i < projectileNumber; i++)
+            {
+                GameObject bullet = (GameObject)Instantiate(bulletPrefab, barrelEnd.position, rotator.rotation);
+                // Invokes ability specific movement behaviour
+                bullet.GetComponent<ProjectileBehaviour>().applyMovement();
+                //Physics2D.IgnoreCollision(bullet.GetComponent<Collider2D>(), transform.GetComponent<Collider2D>());
+                bullet.transform.Rotate(new Vector3(0, 0, 90));
+            }
             //bullet.GetComponent<Rigidbody2D>().AddForce(barrelEnd.transform.up * 10f, ForceMode2D.Impulse);
         }
     }
 
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 }

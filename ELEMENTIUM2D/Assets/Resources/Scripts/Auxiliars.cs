@@ -3,63 +3,99 @@ using System.Collections;
 
 namespace Includes
 {
-    public class Cooldowns
+    public class AbilityStats
     {
         // NEUTRAL
         public class Neutral
         {
-            public static float ability1 = 0.10f;
-            public static float ability2 = 0.25f;
-            public static float ability3 = 0.25f;
+            public class ability1
+            {
+                public static float attackSpeed = 0.10f;
+                public static int projectile_number = 1;
+                public static float damage = 5;
+                public static float movementForce = 200;
+            }
+
+            public class ability2
+            {
+                public static float attackSpeed = 0.25f;
+                public static int projectile_number = 10;
+            }
+            public class ability3
+            {
+                public static float attackSpeed = 0.25f;
+                public static int projectile_number = 1;
+            }
         }
 
         // FROST
         public class Frost
         {
-            public static float ability1 = 0.25f;
-            public static float ability2 = 0.25f;
-            public static float ability3 = 0.25f;
+            public class ability1
+            {
+                public static float attackSpeed = 0.25f;
+                public static int projectile_number = 1;
+                public static float damage = 10;
+                public static float movementForce = 200;
+            }
+
+            public class ability2
+            {
+                public static float attackSpeed = 0.25f;
+                public static int projectile_number = 1;
+            }
+            public class ability3
+            {
+                public static float attackSpeed = 0.25f;
+                public static int projectile_number = 1;
+            }
         }
 
         // FIRE
         public class Fire
         {
-            public static float ability1 = 0.25f;
-            public static float ability2 = 0.25f;
-            public static float ability3 = 0.25f;
+            public class ability1
+            {
+                public static float attackSpeed = 0.30f;
+                public static int projectile_number = 1;
+                public static float damage = 30;
+                public static float movementForce = 200;
+            }
+
+            public class ability2
+            {
+                public static float attackSpeed = 0.25f;
+                public static int projectile_number = 1;
+            }
+            public class ability3
+            {
+                public static float attackSpeed = 0.25f;
+                public static int projectile_number = 1;
+            }
         }
 
         // EARTH
         public class Earth
         {
-            public static float ability1 = 0.25f;
-            public static float ability2 = 0.25f;
-            public static float ability3 = 0.25f;
+            public class ability1
+            {
+                public static float attackSpeed = 0.10f;
+                public static int projectile_number = 1;
+            }
+
+            public class ability2
+            {
+                public static float attackSpeed = 0.25f;
+                public static int projectile_number = 1;
+            }
+            public class ability3
+            {
+                public static float attackSpeed = 0.25f;
+                public static int projectile_number = 1;
+            }
         }
     }
-    public class ProjectileStats
-    {
-        // NEUTRAL
-        public class NeutralBlast
-        {
-            public static float damage = 5;
-            public static float movementForce = 200;
-        }
 
-        // FIRE
-        public class Fireball
-        {
-            public static float damage = 30;
-            public static float movementForce = 200;
-        }
-
-        // WATER
-        public class Iceshard
-        {
-            public static float damage = 10;
-            public static float movementForce = 200;
-        }
-    }
     public class EnemyStats
     {
         // NEUTRAL

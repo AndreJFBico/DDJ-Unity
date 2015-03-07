@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ProjectileBehaviour : MonoBehaviour {
+public class ProjectileBehaviour : MonoBehaviour
+{
 
     protected float damage;
 
