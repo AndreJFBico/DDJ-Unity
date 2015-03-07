@@ -11,6 +11,7 @@ public class Shoot : MonoBehaviour {
     private FireElement fireShoot;
     private FrostElement frostShoot;
     private EarthElement earthShoot;
+    private NeutralElement neutralShoot;
 
     private PlayerData data;
 
@@ -19,30 +20,40 @@ public class Shoot : MonoBehaviour {
 	    fireShoot = GetComponent<FireElement>();
         frostShoot = GetComponent<FrostElement>();
         earthShoot = GetComponent<EarthElement>();
+        neutralShoot = GetComponent<NeutralElement>();
         data = GetComponent<PlayerData>();
 	}
 
-	
-    public void shoot (float fire1, float fire2, float fire3)
+
+    public void shoot(float ability1, float ability2, float ability3)
     {
-        if(fire1 > 0)
+        if (ability1 > 0)
         {
             if(data.currentElement == (int) Elements.FIRE)
             {
-                fireShoot.fireMain();
+                fireShoot.fireMain(Cooldowns.Fire.ability1);
             }
 
             if (data.currentElement == (int)Elements.FROST)
             {
-                frostShoot.fireMain();
+                frostShoot.fireMain(Cooldowns.Frost.ability1);
             }
 
+            if (data.currentElement == (int)Elements.EARTH)
+            {
+                earthShoot.fireMain(Cooldowns.Earth.ability1);
+            }
+
+            if (data.currentElement == (int)Elements.NEUTRAL)
+            {
+                neutralShoot.fireMain(Cooldowns.Neutral.ability1);
+            }
         }
-        else if(fire2 > 0)
+        else if (ability2 > 0)
         {
 
         }
-        else if (fire3 > 0)
+        else if (ability3 > 0)
         {
 
         }

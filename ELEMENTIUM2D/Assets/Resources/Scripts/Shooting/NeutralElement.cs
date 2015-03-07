@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FireElement: ShootElement {
+public class NeutralElement : ShootElement
+{
 
-	// Use this for initialization
+    // Use this for initialization
     void Start()
     {
         Transform[] aux = GetComponentsInChildren<Transform>();
@@ -19,18 +20,19 @@ public class FireElement: ShootElement {
             }
         }
 
-        gunBlast1 = GameObject.Find("FireBlast1");
-        gunBlast2 = GameObject.Find("FireBlast2");
+        gunBlast1 = GameObject.Find("NeutralBlast1");
+        gunBlast2 = GameObject.Find("NeutralBlast2");
         gunBlast1.SetActive(false);
         gunBlast2.SetActive(false);
 
-        bulletPrefab = (GameObject) Resources.Load("Prefabs/Projectiles/Fireball");
+        bulletPrefab = (GameObject)Resources.Load("Prefabs/Projectiles/NeutralBlast");
 
-        attackSpeed = 0.5f;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+        //attackSpeed = 0.25f;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 }

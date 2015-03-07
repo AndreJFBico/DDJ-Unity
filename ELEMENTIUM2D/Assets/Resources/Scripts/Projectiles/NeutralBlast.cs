@@ -2,13 +2,13 @@
 using System.Collections;
 using Includes;
 
-public class IceShard : ProjectileBehaviour
+public class NeutralBlast : ProjectileBehaviour 
 {
 
     protected override void Start()
     {
         base.Start();
-        damage = ProjectileStats.Iceshard.damage;
+        damage = ProjectileStats.NeutralBlast.damage;
     }
 
     public override void OnCollisionEnter2D(Collision2D collision)
@@ -16,7 +16,7 @@ public class IceShard : ProjectileBehaviour
         if (collision.gameObject.tag.CompareTo("Enemy") == 0)
         {
             EnemyScript enemy = collision.gameObject.GetComponent<EnemyScript>();
-            enemy.takeDamage(damage, Elements.FROST);
+            enemy.takeDamage(damage, Elements.NEUTRAL);
         }
         else if (collision.gameObject.layer != LayerMask.NameToLayer("Unhitable"))
             return;
@@ -26,6 +26,6 @@ public class IceShard : ProjectileBehaviour
     public override void applyMovement()
     {
         ConstantForce2D constantForce = gameObject.AddComponent<ConstantForce2D>();
-        constantForce.relativeForce = new Vector2(ProjectileStats.Iceshard.movementForce, 0.0f);
+        constantForce.relativeForce = new Vector2(ProjectileStats.NeutralBlast.movementForce, 0.0f);
     }
 }

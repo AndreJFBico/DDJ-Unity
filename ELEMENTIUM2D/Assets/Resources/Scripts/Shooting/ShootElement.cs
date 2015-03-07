@@ -13,7 +13,7 @@ public class ShootElement: MonoBehaviour {
     private bool canMain = true;
 
     //Time between attacks
-    protected float attackSpeed = 0.5f;
+    //protected float attackSpeed = 0.5f;
 
 	// Use this for initialization
     void Start()
@@ -31,7 +31,8 @@ public class ShootElement: MonoBehaviour {
         gunBlast2.SetActive(false);
     }
 
-    public void fireMain()
+    // Receives a certain ability attackSpeed
+    public void fireMain(float attackSpeed)
     {
         if (canMain)
         {
@@ -41,6 +42,8 @@ public class ShootElement: MonoBehaviour {
             gunBlast2.SetActive(true);
             Invoke("deactivateBlast", 0.1f);
             GameObject bullet = (GameObject)Instantiate(bulletPrefab, barrelEnd.position, rotator.rotation);
+            // Invokes ability specific movement behaviour
+            bullet.GetComponent<ProjectileBehaviour>().applyMovement();
             //Physics2D.IgnoreCollision(bullet.GetComponent<Collider2D>(), transform.GetComponent<Collider2D>());
             bullet.transform.Rotate(new Vector3(0, 0,90));
             //bullet.GetComponent<Rigidbody2D>().AddForce(barrelEnd.transform.up * 10f, ForceMode2D.Impulse);
