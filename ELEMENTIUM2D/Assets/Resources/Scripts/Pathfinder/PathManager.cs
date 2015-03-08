@@ -80,7 +80,7 @@ public class PathManager : MonoBehaviour
             var filter = go.AddComponent<MeshFilter>();
             filter.mesh.CombineMeshes(combines[m].ToArray(), true, true);
 
-            AutoWeld(filter.mesh, 0.10f, 1.0f);
+            AutoWeld(filter.mesh, 0.15f, 1.0f);
             astarManager = transform.gameObject.AddComponent<AstarPath>();
             astarManager.astarData.AddGraph("NavMeshGraph");
             astarManager.astarData.navmesh.sourceMesh = filter.mesh;

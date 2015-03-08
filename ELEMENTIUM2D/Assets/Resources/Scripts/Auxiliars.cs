@@ -14,17 +14,24 @@ namespace Includes
                 public static int projectile_number = 1;
                 public static float damage = 5;
                 public static float movementForce = 200;
+                public static string sprite = "Prefabs/Projectiles/NeutralBlast";
             }
 
             public class ability2
             {
                 public static float attackSpeed = 0.25f;
                 public static int projectile_number = 10;
+                public static float damage = 5;
+                public static float movementForce = 1.5f;
+                public static string sprite = "Prefabs/Projectiles/NeutralMissile";
             }
             public class ability3
             {
                 public static float attackSpeed = 0.25f;
                 public static int projectile_number = 1;
+                public static float damage = 5;
+                public static float movementForce = 50;
+                public static string sprite = "Prefabs/Projectiles/";
             }
         }
 
@@ -37,17 +44,24 @@ namespace Includes
                 public static int projectile_number = 1;
                 public static float damage = 10;
                 public static float movementForce = 200;
+                public static string sprite = "Prefabs/Projectiles/FrostBolt";
             }
 
             public class ability2
             {
                 public static float attackSpeed = 0.25f;
                 public static int projectile_number = 1;
+                public static float damage = 5;
+                public static float movementForce = 200;
+                public static string sprite = "Prefabs/Projectiles/";
             }
             public class ability3
             {
                 public static float attackSpeed = 0.25f;
                 public static int projectile_number = 1;
+                public static float damage = 5;
+                public static float movementForce = 200;
+                public static string sprite = "Prefabs/Projectiles/";
             }
         }
 
@@ -60,17 +74,24 @@ namespace Includes
                 public static int projectile_number = 1;
                 public static float damage = 30;
                 public static float movementForce = 200;
+                public static string sprite = "Prefabs/Projectiles/Fireball";
             }
 
             public class ability2
             {
                 public static float attackSpeed = 0.25f;
                 public static int projectile_number = 1;
+                public static float damage = 5;
+                public static float movementForce = 200;
+                public static string sprite = "Prefabs/Projectiles/";
             }
             public class ability3
             {
                 public static float attackSpeed = 0.25f;
                 public static int projectile_number = 1;
+                public static float damage = 5;
+                public static float movementForce = 200;
+                public static string sprite = "Prefabs/Projectiles/";
             }
         }
 
@@ -81,17 +102,26 @@ namespace Includes
             {
                 public static float attackSpeed = 0.10f;
                 public static int projectile_number = 1;
+                public static float damage = 5;
+                public static float movementForce = 200;
+                public static string sprite = "Prefabs/Projectiles/";
             }
 
             public class ability2
             {
                 public static float attackSpeed = 0.25f;
                 public static int projectile_number = 1;
+                public static float damage = 5;
+                public static float movementForce = 200;
+                public static string sprite = "Prefabs/Projectiles/";
             }
             public class ability3
             {
                 public static float attackSpeed = 0.25f;
                 public static int projectile_number = 1;
+                public static float damage = 5;
+                public static float movementForce = 200;
+                public static string sprite = "Prefabs/Projectiles/";
             }
         }
     }

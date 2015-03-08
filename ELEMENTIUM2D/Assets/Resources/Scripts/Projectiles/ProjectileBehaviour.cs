@@ -13,6 +13,11 @@ public class ProjectileBehaviour : MonoBehaviour
         Destroy(gameObject);
     }
 
+    /*public virtual void OnTriggerEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
+    }*/
+
     // This function applys initial movement to the projectile
     public virtual void applyMovement()
     {

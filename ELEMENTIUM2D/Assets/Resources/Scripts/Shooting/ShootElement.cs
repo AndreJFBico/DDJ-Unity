@@ -6,7 +6,7 @@ public class ShootElement : MonoBehaviour
 
     protected Transform barrelEnd;
     protected Transform rotator;
-    protected GameObject bulletPrefab;
+   // protected GameObject bulletPrefab;
 
     protected GameObject gunBlast1;
     protected GameObject gunBlast2;
@@ -30,7 +30,7 @@ public class ShootElement : MonoBehaviour
     }
 
     // Receives a certain ability attackSpeed
-    public void fireMain(float attackSpeed, int projectileNumber)
+    public void fireMain(float attackSpeed, int projectileNumber, GameObject bulletPrefab)
     {
         if (canMain)
         {

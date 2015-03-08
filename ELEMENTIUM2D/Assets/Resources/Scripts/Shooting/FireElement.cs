@@ -24,7 +24,7 @@ public class FireElement: ShootElement {
         gunBlast1.SetActive(false);
         gunBlast2.SetActive(false);
 
-        bulletPrefab = (GameObject) Resources.Load("Prefabs/Projectiles/Fireball");
+        //bulletPrefab = (GameObject) Resources.Load("Prefabs/Projectiles/Fireball");
 
         //attackSpeed = 0.5f;
 	}
