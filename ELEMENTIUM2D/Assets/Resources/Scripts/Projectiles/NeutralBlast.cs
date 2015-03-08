@@ -18,7 +18,7 @@ public class NeutralBlast : ProjectileBehaviour
             EnemyScript enemy = collision.gameObject.GetComponent<EnemyScript>();
             enemy.takeDamage(damage, Elements.NEUTRAL);
         }
-        else if (collision.gameObject.layer != LayerMask.NameToLayer("Unhitable"))
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("Unhitable"))
             return;
         base.OnCollisionEnter2D(collision);
     }

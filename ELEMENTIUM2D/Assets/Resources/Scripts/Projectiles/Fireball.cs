@@ -18,7 +18,7 @@ public class Fireball : ProjectileBehaviour
             EnemyScript enemy = collision.gameObject.GetComponent<EnemyScript>();
             enemy.takeDamage(damage, Elements.FIRE);
         }
-        else if (collision.gameObject.layer != LayerMask.NameToLayer("Unhitable"))
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("Unhitable"))
             return;
         base.OnCollisionEnter2D(collision);
     }

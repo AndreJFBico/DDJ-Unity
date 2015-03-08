@@ -13,7 +13,7 @@ namespace Includes
                 public static float attackSpeed = 0.10f;
                 public static int projectile_number = 1;
                 public static float damage = 5;
-                public static float movementForce = 200;
+                public static float movementForce = 10;
                 public static string sprite = "Prefabs/Projectiles/NeutralBlast";
             }
 
@@ -30,8 +30,11 @@ namespace Includes
                 public static float attackSpeed = 0.25f;
                 public static int projectile_number = 1;
                 public static float damage = 5;
-                public static float movementForce = 50;
-                public static string sprite = "Prefabs/Projectiles/";
+                public static float movementForce = 2.5f;
+                public static string sprite = "Prefabs/Projectiles/NeutralBouncer";
+                public static int splitNumber = 6;
+                public static float negativeSplitAngle = -30;
+                public static float positiveSplitAngle = 30;
             }
         }
 
