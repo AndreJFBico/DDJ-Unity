@@ -17,7 +17,7 @@ e 1
 f 1
 ::
 ::dungeon
-Random 150 200
+Random 25 50
 S 1 0
 R c 5 5 f
 	alt

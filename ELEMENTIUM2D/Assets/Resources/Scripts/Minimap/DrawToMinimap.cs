@@ -13,8 +13,8 @@ public class DrawToMinimap : MonoBehaviour {
 
     private CreateMinimap minimap;
 
-    private int width = 3;
-    private int height = 3;
+    private int width = 2;
+    private int height = 2;
 
     private float ratio;
 
@@ -31,13 +31,6 @@ public class DrawToMinimap : MonoBehaviour {
         texHeight = minimap.texHeight;
         ratio = minimap.ratio;
 
-        int aux = width * height;
-
-        colors = new Color[aux];
-        for (int i = 0; i < aux; i++)
-        {
-            colors[i] = Color.white;
-        }
 	}
 
     void OnWillRenderObject()
@@ -48,7 +41,25 @@ public class DrawToMinimap : MonoBehaviour {
         float percX = myPosX / gameWidth;
         float percY = myPosY / gameHeight;
 
-        Debug.Log(" PercX: " + percX + " PercY: " + percY);
+        if ((transform.rotation.eulerAngles.y < 185 && transform.rotation.eulerAngles.y > 175) || (transform.rotation.eulerAngles.y < 5 && transform.rotation.eulerAngles.y > -5))
+        {
+            width = (int)Mathf.Floor(width * transform.localScale.x);
+            height = (int)Mathf.Floor(height * transform.localScale.z);
+        }
+        else
+        {
+            width = (int)Mathf.Floor(width * transform.localScale.z);
+            height = (int)Mathf.Floor(height * transform.localScale.x);
+        }
+
+        int aux = width * height;
+
+        colors = new Color[aux];
+        for (int i = 0; i < aux; i++)
+        {
+            colors[i] = Color.white;
+        }
+        //Debug.Log(" PercX: " + percX + " PercY: " + percY);
 
         minimap.updateTexture((int)Mathf.Floor(percX * texWidth), (int)Mathf.Floor(percY * texHeight), width, height, colors);
 

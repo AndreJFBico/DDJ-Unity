@@ -254,6 +254,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &119774
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 451880}
+  - 114: {fileID: 11486450}
+  m_Layer: 9
+  m_Name: Minimap
+  m_TagString: Minimap
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &140362
 GameObject:
   m_ObjectHideFlags: 1
@@ -420,6 +436,7 @@ Transform:
   - {fileID: 400006}
   - {fileID: 400002}
   - {fileID: 400014}
+  - {fileID: 451880}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &400020
@@ -494,6 +511,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 400010}
   m_RootOrder: 2
+--- !u!4 &451880
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119774}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400018}
+  m_RootOrder: 3
 --- !u!4 &468198
 Transform:
   m_ObjectHideFlags: 1
@@ -548,7 +577,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: .0500000007
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
@@ -564,7 +593,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: .96210587, y: .100000009, z: 1.88695812}
-  m_Center: {x: -.0189472474, y: .0810547695, z: -.124444559}
+  m_Center: {x: -.0189472474, y: 0, z: -.124444559}
 --- !u!81 &8100000
 AudioListener:
   m_ObjectHideFlags: 1
@@ -751,6 +780,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0089c12f9c6e4dd4f836930a7fcc3187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11486450
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9bfc3ab86ac0d24a85c1e27b785d4a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minX: Infinity
+  minY: Infinity
+  maxX: -Infinity
+  maxY: -Infinity
+  width: 0
+  height: 0
+  ratio: 0
+  texWidth: 0
+  texHeight: 0
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1

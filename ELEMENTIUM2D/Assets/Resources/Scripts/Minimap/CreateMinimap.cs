@@ -24,7 +24,7 @@ public class CreateMinimap : MonoBehaviour {
     private float screenHeight;
 
     private bool textureChanged = false;
-    private int textureResolution = 500;
+    private int textureResolution = 700;
 
 	// Use this for initialization
 	void Awake () {
