@@ -17,6 +17,7 @@ public class EnemyScript : MonoBehaviour
     protected float waterResist;
     protected float earthResist;
     protected float fireResist;
+    protected SpawnScript spawnScript;
 
 	// Use this for initialization
     protected virtual void Start()
@@ -83,12 +84,18 @@ public class EnemyScript : MonoBehaviour
 
     private void Eliminate()
     {
-        Destroy(gameObject);
+        if (spawnScript != null)
+        {
+            // I was spawned!!!
+            health = maxHealth;
+            spawnScript.despawn(transform);
+        }
+        else Destroy(gameObject);
     }
 
     // Is initiated by the spawner
     public void setSpawner(SpawnScript scrpt)
     {
-        //script = scrpt;
+        spawnScript = scrpt;
     }
 }
