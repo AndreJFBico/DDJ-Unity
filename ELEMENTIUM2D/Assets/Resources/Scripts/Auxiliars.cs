@@ -1,8 +1,20 @@
-﻿using UnityEngine;
+﻿
+#define DEBUG
+
+using UnityEngine;
 using System.Collections;
+
 
 namespace Includes
 {
+    public enum Elements { NEUTRAL, FIRE, EARTH, FROST };
+    public enum BreakableWalls { NEUTRAL, FIRE, EARTH, FROST};
+    
+    public class Constants
+    {
+        public const string breakable = "Breakable";
+    }
+    
     public class AbilityStats
     {
         // NEUTRAL
@@ -142,5 +154,4 @@ namespace Includes
             public static float fireResist = 5;
         }
     }
-    public enum Elements { NEUTRAL, FIRE, EARTH, FROST };
 }
