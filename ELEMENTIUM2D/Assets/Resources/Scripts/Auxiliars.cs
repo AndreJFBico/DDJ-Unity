@@ -13,6 +13,7 @@ namespace Includes
     public class Constants
     {
         public const string breakable = "Breakable";
+        public const float enemyRoamRadius = 2.0f;
     }
     
     public class AbilityStats

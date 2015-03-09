@@ -3753,10 +3753,6 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 165161693}
-    - target: {fileID: 19597248, guid: b7e813a02438bf249978b95288e12422, type: 2}
-      propertyPath: m_StoppingDistance
-      value: .100000001
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b7e813a02438bf249978b95288e12422, type: 2}
   m_IsPrefabParent: 0

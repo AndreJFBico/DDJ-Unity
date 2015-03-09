@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Includes;
 
 public class PathAgent : MonoBehaviour
 {
@@ -14,12 +15,10 @@ public class PathAgent : MonoBehaviour
 
     public void Start()
     {
-       // on_a_Path = false;
-        //seeker = GetComponent<Seeker>();
+        target = null;
         agent = GetComponent<NavMeshAgent>();
-        FreeRoam();
-        InvokeRepeating("checkRoaming", 1, 1);
-        //manager = GameObject.Find("PathManager").GetComponent<PathManager>();
+        roamRadius = Constants.enemyRoamRadius;
+        InvokeRepeating("checkMovement", 0, 0.5f);
     }
 
     public void OnTriggerEnter(Collider collision)
@@ -30,10 +29,41 @@ public class PathAgent : MonoBehaviour
         }
     }
 
-    void checkRoaming()
+    void checkMovement()
     {
-        if (AtEndOfPath())
-            FreeRoam();
+        if (agent.hasPath)
+        {
+            if(AtEndOfPath())
+            {
+                if(target != null)
+                {
+                    agent.SetDestination(target.position);
+                }
+                else
+                {
+                    FreeRoam();
+                }
+            }
+            else
+            {
+                //  To implement time limit to the follow of the agents make target be null
+                if (target != null)
+                {
+                    agent.SetDestination(target.position);
+                }
+            }
+        }
+        else
+        {
+            if(target != null)
+            {
+                agent.SetDestination(target.position);
+            }
+            else
+            {
+                FreeRoam();
+            }
+        }
     }
 
     bool AtEndOfPath()
@@ -47,20 +77,17 @@ public class PathAgent : MonoBehaviour
 
     void FreeRoam()
     {
-        {
-            Vector3 randomDirection = Random.insideUnitSphere * roamRadius;
-            randomDirection += startPosition;
-            NavMeshHit hit;
-            NavMesh.SamplePosition(randomDirection, out hit, roamRadius, 1);
-            Vector3 finalPosition = hit.position;
-            agent.destination = finalPosition;
-        }
+        Vector3 randomDirection = Random.insideUnitSphere * roamRadius;
+        randomDirection += startPosition;
+        NavMeshHit hit;
+        NavMesh.SamplePosition(randomDirection, out hit, roamRadius, 1);
+        Vector3 finalPosition = hit.position;
+        agent.destination = finalPosition;
     }
 
     public void Update()
     {
-        if(target != null)
-        agent.SetDestination(target.position);
+        //checkMovement();
         /*if (manager.initialized && !on_a_Path)
         {           
             //Start a new path to the targetPosition, return the result to the OnPathComplete function
