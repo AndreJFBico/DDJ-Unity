@@ -23,7 +23,8 @@ public class Fireball : ProjectileBehaviour
 
     public override void applyMovement()
     {
+        float rndm = Random.Range(AbilityStats.Fire.ability1.minForce, AbilityStats.Fire.ability1.maxForce);
         ConstantForce2D constantForce = gameObject.AddComponent<ConstantForce2D>();
-        constantForce.relativeForce = new Vector2(AbilityStats.Fire.ability1.movementForce, 0.0f);
+        constantForce.relativeForce = new Vector2(rndm, 0.0f);
     }
 }

@@ -25,18 +25,28 @@ namespace Includes
                 public static float attackSpeed = 0.10f;
                 public static int projectile_number = 1;
                 public static float damage = 5;
-                public static float movementForce = 200;
+                public static float movementForce = 10;
+                public static string sprite = "Prefabs/Projectiles/NeutralBlast";
             }
 
             public class ability2
             {
                 public static float attackSpeed = 0.25f;
                 public static int projectile_number = 10;
+                public static float damage = 5;
+                public static float movementForce = 1.5f;
+                public static string sprite = "Prefabs/Projectiles/NeutralMissile";
             }
             public class ability3
             {
                 public static float attackSpeed = 0.25f;
                 public static int projectile_number = 1;
+                public static float damage = 5;
+                public static float movementForce = 2.5f;
+                public static string sprite = "Prefabs/Projectiles/NeutralBouncer";
+                public static int splitNumber = 6;
+                public static float negativeSplitAngle = -30;
+                public static float positiveSplitAngle = 30;
             }
         }
 
@@ -49,17 +59,24 @@ namespace Includes
                 public static int projectile_number = 1;
                 public static float damage = 10;
                 public static float movementForce = 200;
+                public static string sprite = "Prefabs/Projectiles/FrostBolt";
             }
 
             public class ability2
             {
                 public static float attackSpeed = 0.25f;
                 public static int projectile_number = 1;
+                public static float damage = 5;
+                public static float movementForce = 200;
+                public static string sprite = "Prefabs/Projectiles/";
             }
             public class ability3
             {
                 public static float attackSpeed = 0.25f;
                 public static int projectile_number = 1;
+                public static float damage = 5;
+                public static float movementForce = 200;
+                public static string sprite = "Prefabs/Projectiles/";
             }
         }
 
@@ -69,20 +86,28 @@ namespace Includes
             public class ability1
             {
                 public static float attackSpeed = 0.30f;
-                public static int projectile_number = 1;
-                public static float damage = 30;
-                public static float movementForce = 200;
+                public static int projectile_number = 4;
+                public static float damage = 6;
+                public static float maxForce = 200;
+                public static float minForce = 100;
+                public static string sprite = "Prefabs/Projectiles/Fireball";
             }
 
             public class ability2
             {
                 public static float attackSpeed = 0.25f;
                 public static int projectile_number = 1;
+                public static float damage = 5;
+                public static float movementForce = 200;
+                public static string sprite = "Prefabs/Projectiles/";
             }
             public class ability3
             {
                 public static float attackSpeed = 0.25f;
                 public static int projectile_number = 1;
+                public static float damage = 5;
+                public static float movementForce = 200;
+                public static string sprite = "Prefabs/Projectiles/";
             }
         }
 
@@ -91,19 +116,28 @@ namespace Includes
         {
             public class ability1
             {
-                public static float attackSpeed = 0.10f;
+                public static float attackSpeed = 0.50f;
                 public static int projectile_number = 1;
+                public static float damage = 20;
+                public static float movementForce = 10;
+                public static string sprite = "Prefabs/Projectiles/EarthDisk";
             }
 
             public class ability2
             {
                 public static float attackSpeed = 0.25f;
                 public static int projectile_number = 1;
+                public static float damage = 5;
+                public static float movementForce = 200;
+                public static string sprite = "Prefabs/Projectiles/";
             }
             public class ability3
             {
                 public static float attackSpeed = 0.25f;
                 public static int projectile_number = 1;
+                public static float damage = 5;
+                public static float movementForce = 200;
+                public static string sprite = "Prefabs/Projectiles/";
             }
         }
     }

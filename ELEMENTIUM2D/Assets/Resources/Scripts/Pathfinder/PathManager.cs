@@ -17,19 +17,7 @@ public class PathManager : MonoBehaviour
     void Start()
     {
         initialized = false;
-        merge();
-    }
-
-    void findAllNodes()
-    {
-        //GameObject[] transforms = GameObject.FindGameObjectsWithTag("navmeshObject");
-
-        //Mesh.CombineMeshes(transforms);
-        /*foreach (GameObject t in transforms)
-        {
-            PathNode node = new PathNode(t.transform.position, false);
-            graph.Add(node);
-        }*/
+        genGraph();
     }
 
     // Update is called once per frame
@@ -38,7 +26,18 @@ public class PathManager : MonoBehaviour
 
     }
 
-    public void merge()
+    public void genGraph()
+    {
+        /*astarManager = transform.gameObject.AddComponent<AstarPath>();
+
+        astarManager.astarData.AddGraph("PointGraph");
+        astarManager.astarData.pointGraph.maxDistance = 1.7f;
+        astarManager.astarData.pointGraph.searchTag = "pointgraph2D";
+        astarManager.Scan();
+        initialized = true;*/
+    }
+
+   /* public void merge()
     {
         // Search for all navmeshes and place them as children of this object
         GameObject[] navmeshObjects = GameObject.FindGameObjectsWithTag("navmeshObject");
@@ -80,8 +79,9 @@ public class PathManager : MonoBehaviour
             var filter = go.AddComponent<MeshFilter>();
             filter.mesh.CombineMeshes(combines[m].ToArray(), true, true);
 
-            AutoWeld(filter.mesh, 0.10f, 1.0f);
+            AutoWeld(filter.mesh, 0.15f, 1.0f);
             astarManager = transform.gameObject.AddComponent<AstarPath>();
+
             astarManager.astarData.AddGraph("NavMeshGraph");
             astarManager.astarData.navmesh.sourceMesh = filter.mesh;
             astarManager.astarData.navmesh.sourceMesh.Optimize();
@@ -105,9 +105,9 @@ public class PathManager : MonoBehaviour
                 Destroy(t.gameObject);
             }
         }
-    }
+    }*/
 
-    private void AutoWeld(Mesh mesh, float threshold, float bucketStep)
+   /* private void AutoWeld(Mesh mesh, float threshold, float bucketStep)
     {
         Vector3[] oldVertices = mesh.vertices;
         Vector3[] newVertices = new Vector3[oldVertices.Length];
@@ -171,7 +171,7 @@ public class PathManager : MonoBehaviour
         mesh.triangles = newTris;
         mesh.RecalculateNormals();
         mesh.Optimize();
-    }
+    }*/
 
     /*private void AutoWeld(Mesh mesh, float threshold)
     {

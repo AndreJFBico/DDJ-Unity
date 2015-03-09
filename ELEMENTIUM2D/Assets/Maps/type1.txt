@@ -11,10 +11,10 @@
 ::groups
 a 1
 b 1
-c 1 3
+c 1
 d 1
-e 1 3
-f 5 7
+e 1
+f 1
 ::
 ::dungeon
 Random 150 200

@@ -25,7 +25,7 @@ public class NeutralElement : ShootElement
         gunBlast1.SetActive(false);
         gunBlast2.SetActive(false);
 
-        bulletPrefab = (GameObject)Resources.Load("Prefabs/Projectiles/NeutralBlast");
+        //bulletPrefab = (GameObject)Resources.Load("Prefabs/Projectiles/NeutralBlast");
 
         //attackSpeed = 0.25f;
     }
