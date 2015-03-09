@@ -47,6 +47,7 @@ namespace Includes
                 public static int splitNumber = 6;
                 public static float negativeSplitAngle = -30;
                 public static float positiveSplitAngle = 30;
+                public static int numSplits = 1;
             }
         }
 
