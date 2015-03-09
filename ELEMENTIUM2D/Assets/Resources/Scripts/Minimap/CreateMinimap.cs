@@ -35,8 +35,8 @@ public class CreateMinimap : MonoBehaviour {
                 continue;
             float xL = item.GetComponent<Renderer>().bounds.min.x;
             float xH = item.GetComponent<Renderer>().bounds.max.x;
-            float yL = item.GetComponent<Renderer>().bounds.min.y;
-            float yH = item.GetComponent<Renderer>().bounds.max.y;
+            float yL = item.GetComponent<Renderer>().bounds.min.z;
+            float yH = item.GetComponent<Renderer>().bounds.max.z;
 
             if (xL < minX)
                 minX = xL;

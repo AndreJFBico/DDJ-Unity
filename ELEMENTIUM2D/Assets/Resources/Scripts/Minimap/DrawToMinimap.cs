@@ -43,7 +43,7 @@ public class DrawToMinimap : MonoBehaviour {
     void OnWillRenderObject()
     {
         float myPosX = transform.position.x - minX;
-        float myPosY = transform.position.y - minY;
+        float myPosY = transform.position.z - minY;
 
         float percX = myPosX / gameWidth;
         float percY = myPosY / gameHeight;

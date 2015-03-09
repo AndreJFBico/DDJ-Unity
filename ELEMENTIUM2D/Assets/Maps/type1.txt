@@ -1,5 +1,5 @@
 ::rooms
-1 Room2
+1 RoomBigger
 2 Room2
 3 Room3
 4 RoomDeadEnd
