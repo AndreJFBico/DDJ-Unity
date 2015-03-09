@@ -41,11 +41,12 @@ public class ShootElement : MonoBehaviour
             Invoke("deactivateBlast", 0.1f);
             for(int i = 0; i < projectileNumber; i++)
             {
-                GameObject bullet = (GameObject)Instantiate(bulletPrefab, barrelEnd.position, rotator.rotation);
+                GameObject bullet = (GameObject)Instantiate(bulletPrefab, barrelEnd.position, rotator.localRotation);
+                bullet.transform.Rotate(new Vector3(-90, 0, 0));
                 // Invokes ability specific movement behaviour
                 bullet.GetComponent<ProjectileBehaviour>().applyMovement();
                 //Physics2D.IgnoreCollision(bullet.GetComponent<Collider2D>(), transform.GetComponent<Collider2D>());
-                bullet.transform.Rotate(new Vector3(0, 0, 90));
+                
             }
             //bullet.GetComponent<Rigidbody2D>().AddForce(barrelEnd.transform.up * 10f, ForceMode2D.Impulse);
         }

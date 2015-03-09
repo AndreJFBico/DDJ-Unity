@@ -10,12 +10,12 @@ public class ProjectileBehaviour : MonoBehaviour
 
     protected virtual void Start() { }
 
-    public virtual void OnCollisionEnter2D(Collision2D collision)
+    public virtual void OnCollisionEnter(Collision collision)
     {
         Destroy(gameObject);
     }
 
-    protected bool collidedWithEnemy(Collision2D collision, float damage)
+    protected bool collidedWithEnemy(Collision collision, float damage)
     {
         if (collision.gameObject.tag.CompareTo("Enemy") == 0)
         {
@@ -26,7 +26,7 @@ public class ProjectileBehaviour : MonoBehaviour
         return false;
     }
 
-    protected bool collidedWithBreakable(Collision2D collision)
+    protected bool collidedWithBreakable(Collision collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer(Constants.breakable))
         {

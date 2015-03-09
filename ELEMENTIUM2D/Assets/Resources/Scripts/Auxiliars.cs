@@ -58,7 +58,7 @@ namespace Includes
                 public static float attackSpeed = 0.25f;
                 public static int projectile_number = 1;
                 public static float damage = 10;
-                public static float movementForce = 200;
+                public static float movementForce = 5;
                 public static string sprite = "Prefabs/Projectiles/FrostBolt";
             }
 
@@ -88,8 +88,8 @@ namespace Includes
                 public static float attackSpeed = 0.30f;
                 public static int projectile_number = 4;
                 public static float damage = 6;
-                public static float maxForce = 200;
-                public static float minForce = 100;
+                public static float maxForce = 20;
+                public static float minForce = 5;
                 public static string sprite = "Prefabs/Projectiles/Fireball";
             }
 

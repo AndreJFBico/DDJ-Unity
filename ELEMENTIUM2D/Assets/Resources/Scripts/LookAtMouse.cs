@@ -53,17 +53,17 @@ public class LookAtMouse : MonoBehaviour {
         Vector3 aux = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         aux.Normalize();
 
-        float rot_z = Mathf.Atan2(aux.y, aux.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
+        float rot_y = Mathf.Atan2(aux.x, aux.z) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(90.0f, rot_y, 0f);
 
         RaycastHit hit;
         //Vector3 aux = Vector3.right;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit, Mathf.Infinity))
         {
-            aux = new Vector3(hit.point.x, hit.point.y, transform.position.z);
+            point = new Vector3(hit.point.x, transform.position.y, hit.point.z);
         }
-        point = aux;
+        //transform.LookAt(aux);
     }
     
     void LateUpdate()
@@ -88,8 +88,8 @@ public class LookAtMouse : MonoBehaviour {
         detectTargetPosition();
 
         Vector3 SpriteAxis = Vector3.right;
-        Vector3 axis = Vector3.up;
-        Vector3 target = Vector3.Normalize(transform.position - point);
+        Vector3 axis = Vector3.forward;
+        Vector3 target = Vector3.Normalize(point - transform.position);
 
         spriteDot = Vector3.Dot(SpriteAxis, target);
         animDot = Vector3.Dot(axis, target);
@@ -97,16 +97,16 @@ public class LookAtMouse : MonoBehaviour {
         //Flip Weapon
         if (spriteDot <= 0)
         {
-            weapon1.SetActive(true);
-            weapon2.SetActive(false);
-            activeWeapon = 1;
+            weapon1.SetActive(false);
+            weapon2.SetActive(true);
+            activeWeapon = 2;
         }
 
         if (spriteDot > 0)
         {
-            weapon1.SetActive(false);
-            weapon2.SetActive(true);
-            activeWeapon = 2;
+            weapon1.SetActive(true);
+            weapon2.SetActive(false);
+            activeWeapon = 1;
         }
 
         //Change Weapon->Player relative Depth
@@ -124,34 +124,35 @@ public class LookAtMouse : MonoBehaviour {
         }
 
         //Change player Anim
-        if (animDot > aux)
+        if (animDot > eighthPi)
         {
-            playerAnim.vertical = -1;
+            playerAnim.vertical = 1;
+            playerAnim.horizontal = 0;
+        }
+        else if (animDot > aux && spriteDot > 0)
+        {
+            playerAnim.vertical = 1;
+            playerAnim.horizontal = 1;
+        }
+        else if (animDot > aux && spriteDot < 0)
+        {
+            playerAnim.vertical = 1;
+            playerAnim.horizontal = -1;
         }
         else if (animDot > -aux && spriteDot > 0)
         {
             playerAnim.vertical = 0;
-            playerAnim.horizontal = -1;
+            playerAnim.horizontal = 1;
         }
         else if (animDot > -aux && spriteDot < 0)
         {
             playerAnim.vertical = 0;
-            playerAnim.horizontal = 1;
-        }
-        else if (animDot > -eighthPi && spriteDot > 0)
-        {
-            playerAnim.vertical = 1;
             playerAnim.horizontal = -1;
         }
-        else if (animDot > -eighthPi && spriteDot < 0)
+        else if (animDot <= -aux)
         {
-            playerAnim.vertical = 1;
-            playerAnim.horizontal = 1;
-        }
-        else if (animDot <= -eighthPi)
-        {
-            playerAnim.vertical = 1;
-            playerAnim.horizontal = 0;
+            playerAnim.vertical = -1;
+            //playerAnim.horizontal = 0;
         }
 
     }

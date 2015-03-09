@@ -12,19 +12,19 @@ public class Fireball : ProjectileBehaviour
         type = Elements.FIRE;
     }
 
-    public override void OnCollisionEnter2D(Collision2D collision)
+    public override void OnCollisionEnter(Collision collision)
     {
         if (collidedWithEnemy(collision, damage)) ;
         else if (collidedWithBreakable(collision)) ;
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Unhitable"))
             return;
-        base.OnCollisionEnter2D(collision);
+        base.OnCollisionEnter(collision);
     }
 
     public override void applyMovement()
     {
         float rndm = Random.Range(AbilityStats.Fire.ability1.minForce, AbilityStats.Fire.ability1.maxForce);
-        ConstantForce2D constantForce = gameObject.AddComponent<ConstantForce2D>();
-        constantForce.relativeForce = new Vector2(rndm, 0.0f);
+        ConstantForce constantForce = gameObject.AddComponent<ConstantForce>();
+        constantForce.relativeForce = new Vector3(0.0f, 0.0f, rndm);
     }
 }

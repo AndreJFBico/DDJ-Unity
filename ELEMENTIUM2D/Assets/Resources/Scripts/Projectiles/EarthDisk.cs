@@ -10,7 +10,7 @@ public class EarthDisk : ProjectileBehaviour {
         damage = AbilityStats.Earth.ability1.damage;
     }
 
-    public override void OnCollisionEnter2D(Collision2D collision)
+    public override void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag.CompareTo("Enemy") == 0)
         {
@@ -19,12 +19,12 @@ public class EarthDisk : ProjectileBehaviour {
         }
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Unhitable"))
             return;
-        base.OnCollisionEnter2D(collision);
+        base.OnCollisionEnter(collision);
     }
 
     public override void applyMovement()
     {
-        ConstantForce2D constantForce = gameObject.AddComponent<ConstantForce2D>();
-        constantForce.relativeForce = new Vector2(AbilityStats.Earth.ability1.movementForce, 0.0f);
+        ConstantForce constantForce = gameObject.AddComponent<ConstantForce>();
+        constantForce.relativeForce = new Vector3(0.0f, 0.0f, AbilityStats.Earth.ability1.movementForce);
     }
 }

@@ -24,11 +24,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 484804}
-  - 61: {fileID: 6103070}
-  - 50: {fileID: 5007918}
   - 96: {fileID: 9601472}
   - 114: {fileID: 11466464}
-  - 58: {fileID: 5825910}
+  - 135: {fileID: 13557066}
+  - 54: {fileID: 5433856}
   m_Layer: 9
   m_Name: NeutralBouncer
   m_TagString: Projectile
@@ -42,7 +41,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 118316}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -61,47 +60,21 @@ Transform:
   - {fileID: 428926}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!50 &5007918
-Rigidbody2D:
+--- !u!54 &5433856
+Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 140728}
+  serializedVersion: 2
   m_Mass: 1
-  m_LinearDrag: 0
+  m_Drag: 0
   m_AngularDrag: .0500000007
-  m_GravityScale: 0
-  m_FixedAngle: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_Constraints: 84
   m_CollisionDetection: 0
---- !u!58 &5825910
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 140728}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 10.8000002
---- !u!61 &6103070
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 140728}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: -.0267195143, y: -.00271592499}
-  serializedVersion: 2
-  m_Size: {x: 1.02844918, y: 1.02698255}
 --- !u!96 &9601472
 TrailRenderer:
   m_ObjectHideFlags: 1
@@ -159,6 +132,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disabledTimer: 1.5
+--- !u!135 &13557066
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 140728}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: .519999981
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &21263312
 SpriteRenderer:
   m_ObjectHideFlags: 1

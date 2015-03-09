@@ -11,14 +11,15 @@ public class NeutralBouncer : ProjectileBehaviour {
         base.Start();
         damage = AbilityStats.Neutral.ability3.damage;
         Invoke("destroyClone", 6f);
+        type = Elements.NEUTRAL;
     }
 
-    void OnCollisionStay2D(Collision2D coll)
+    void OnCollisionStay(Collision coll)
     {
-        base.OnCollisionEnter2D(coll);
+        base.OnCollisionEnter(coll);
     }
 
-    public override void OnCollisionEnter2D(Collision2D collision)
+    public override void OnCollisionEnter(Collision collision)
     {
         if (disabledTimer > 0.05f)
         {
@@ -28,15 +29,17 @@ public class NeutralBouncer : ProjectileBehaviour {
                 enemy.takeDamage(damage, Elements.NEUTRAL);
                 for (int i = 0; i < AbilityStats.Neutral.ability3.splitNumber; i++)
                 {
-                    GameObject forkedObj = (GameObject)Instantiate(this.gameObject, collision.transform.position + transform.right * ((collision.collider.bounds.size.y + collision.collider.bounds.size.x) / 2.0f), transform.rotation);
+                    GameObject forkedObj = (GameObject)Instantiate(this.gameObject, collision.transform.position + transform.forward * ((collision.collider.bounds.size.z + collision.collider.bounds.size.x) / 2.0f), transform.rotation);
                     forkedObj.GetComponent<NeutralBouncer>().disabledTimer = 0.0f;
                     float result = Random.Range(AbilityStats.Neutral.ability3.negativeSplitAngle, AbilityStats.Neutral.ability3.positiveSplitAngle);
-                    forkedObj.transform.Rotate(new Vector3(0, 0, result));
+                    forkedObj.transform.Rotate(new Vector3(0.0f, result, 0.0f));
+                    Debug.Log("wtf");
                 }
             }
+            else if (collidedWithBreakable(collision)) ;
             else if (collision.gameObject.layer == LayerMask.NameToLayer("Unhitable"))
                 return;
-            base.OnCollisionEnter2D(collision);
+            base.OnCollisionEnter(collision);
         }
     }
 
@@ -44,8 +47,8 @@ public class NeutralBouncer : ProjectileBehaviour {
     {
         disabledTimer += Time.deltaTime;
         Transform child = transform.FindChild("Sprite") as Transform;
-        child.transform.Rotate(0, 0, Time.deltaTime * 92.0f);
-        transform.Translate(Vector3.right * Time.deltaTime * AbilityStats.Neutral.ability3.movementForce);
+        child.transform.Rotate(0.0f, 0.0f, Time.deltaTime * 92.0f);
+        transform.Translate(Vector3.forward * Time.deltaTime * AbilityStats.Neutral.ability3.movementForce);
     }
 
     private void destroyClone()

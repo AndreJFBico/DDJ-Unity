@@ -48,7 +48,7 @@ public class MapDoor : MonoBehaviour {
         Transform[] children = transform.GetComponentsInChildren<Transform>(true);
         foreach(Transform t in children)
         {
-            t.gameObject.SetActive(true);
+            t.gameObject.SetActive(false);
         }
         //Destroy(this);
     }

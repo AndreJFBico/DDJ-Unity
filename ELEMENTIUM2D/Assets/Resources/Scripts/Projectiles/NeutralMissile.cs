@@ -12,34 +12,32 @@ public class NeutralMissile : ProjectileBehaviour {
         base.Start();
         damage = AbilityStats.Neutral.ability2.damage;
         Invoke("destroyClone", 6f);
+        type = Elements.NEUTRAL;
     }
 
-    public override void OnCollisionEnter2D(Collision2D collision)
+    public override void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag.CompareTo("Enemy") == 0)
-        {
-            EnemyScript enemy = collision.gameObject.GetComponent<EnemyScript>();
-            enemy.takeDamage(damage, Elements.NEUTRAL);
-        }
+        if (collidedWithEnemy(collision, damage));
+        else if (collidedWithBreakable(collision));
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Unhitable"))
             return;
-        base.OnCollisionEnter2D(collision);
+        base.OnCollisionEnter(collision);
     }
 
     void Update()
     {
-        if (target != null && timer >= 2)
+        if (target != null && timer >= 1)
         {
             Vector3 targetDir = target.position - transform.position;
 
-            float angle = Mathf.Atan2(targetDir.y, targetDir.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            float angle = Mathf.Atan2(targetDir.x, targetDir.z) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.up);
         }
         timer += Time.deltaTime;
-        transform.Translate(Vector3.right * Time.deltaTime * AbilityStats.Neutral.ability2.movementForce);
+        transform.Translate(Vector3.forward * Time.deltaTime * AbilityStats.Neutral.ability2.movementForce);
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag.CompareTo("Enemy") == 0)
         {
@@ -56,6 +54,6 @@ public class NeutralMissile : ProjectileBehaviour {
     {
         // Rotates the missile randomly
         int result = Random.Range(0, 360);
-        transform.Rotate(new Vector3(0, 0, result));
+        transform.Rotate(new Vector3(0.0f, result, 0.0f));
     }
 }

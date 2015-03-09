@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &114510
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 411496}
+  - 212: {fileID: 21212964}
+  m_Layer: 9
+  m_Name: Sprite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &188798
 GameObject:
   m_ObjectHideFlags: 0
@@ -8,12 +24,11 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 407446}
-  - 212: {fileID: 21206766}
-  - 61: {fileID: 6156640}
-  - 50: {fileID: 5088400}
   - 96: {fileID: 9636230}
   - 114: {fileID: 11419154}
-  - 58: {fileID: 5879120}
+  - 54: {fileID: 5403238}
+  - 135: {fileID: 13566160}
+  - 136: {fileID: 13600332}
   m_Layer: 9
   m_Name: NeutralMissile
   m_TagString: Projectile
@@ -30,50 +45,37 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: .100000001, z: 0}
   m_LocalScale: {x: .200000003, y: .200000003, z: .200000003}
-  m_Children: []
+  m_Children:
+  - {fileID: 411496}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!50 &5088400
-Rigidbody2D:
+--- !u!4 &411496
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114510}
+  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 407446}
+  m_RootOrder: 0
+--- !u!54 &5403238
+Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 188798}
+  serializedVersion: 2
   m_Mass: 1
-  m_LinearDrag: 0
+  m_Drag: 0
   m_AngularDrag: .0500000007
-  m_GravityScale: 0
-  m_FixedAngle: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_Constraints: 84
   m_CollisionDetection: 0
---- !u!58 &5879120
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 188798}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 10.8000002
---- !u!61 &6156640
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 188798}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: -.0267195143, y: -.00271592499}
-  serializedVersion: 2
-  m_Size: {x: 1.02844918, y: 1.02698255}
 --- !u!96 &9636230
 TrailRenderer:
   m_ObjectHideFlags: 1
@@ -130,12 +132,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 784a957b81b988740a0ba57be7940ace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!212 &21206766
-SpriteRenderer:
+--- !u!135 &13566160
+SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 188798}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: .300000012
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &13600332
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 188798}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 2.88000011
+  m_Height: .569999993
+  m_Direction: 1
+  m_Center: {x: 0, y: -.0124999955, z: 0}
+--- !u!212 &21212964
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114510}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0

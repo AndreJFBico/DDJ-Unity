@@ -11,7 +11,6 @@ public class PathManager : MonoBehaviour
     List<PathNode> graph;
     Transform player;
     Transform roomManager;
-    AstarPath astarManager;
 
     // Use this for initialization
     void Start()
