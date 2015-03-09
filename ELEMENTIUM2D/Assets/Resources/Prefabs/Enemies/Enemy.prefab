@@ -31,6 +31,7 @@ GameObject:
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400016}
   - 61: {fileID: 6193806}
+  - 114: {fileID: 11474290}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -302,10 +303,10 @@ MonoBehaviour:
   detailedGizmos: 0
   saveGetNearestHints: 1
   startEndModifier:
-    priority: 1
+    priority: 2
     addPoints: 0
     exactStartPoint: 3
-    exactEndPoint: 3
+    exactEndPoint: 1
     useRaycasting: 0
     mask:
       serializedVersion: 2
@@ -315,6 +316,18 @@ MonoBehaviour:
     tagsChange: -1
     tagsSet: -1
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+--- !u!114 &11474290
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f586f285b3847808d79083bd19ef1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priority: 1
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

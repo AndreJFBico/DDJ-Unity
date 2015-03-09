@@ -13,7 +13,7 @@ public class PathAgent : MonoBehaviour
     {
         on_a_Path = false;
         seeker = GetComponent<Seeker>();
-        manager = GameObject.Find("Navmeshmanager").GetComponent<PathManager>();
+        manager = GameObject.Find("PathManager").GetComponent<PathManager>();
     }
 
     public void Update()

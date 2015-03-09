@@ -29,12 +29,12 @@ public class RoomManager : MonoBehaviour
     public bool processing = true;
     public bool merged = false;
 
-    private PathManager navmeshManager;
+    private PathManager pathManager;
 
     // Use this for initialization
     void Start()
     {
-        navmeshManager = GameObject.Find("Navmeshmanager").GetComponent<PathManager>();
+        pathManager = GameObject.Find("PathManager").GetComponent<PathManager>();
         Debug.Log("started");
         pool = new ResourcesPool();
         loadMapType();
@@ -70,7 +70,7 @@ public class RoomManager : MonoBehaviour
             }
         } else if (!merged)
         {
-            navmeshManager.merge();
+            pathManager.genGraph();
             merged = true;
         }
     }

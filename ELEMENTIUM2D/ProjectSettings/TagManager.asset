@@ -10,7 +10,7 @@ TagManager:
   - Enemy
   - Projectile
   - navmeshObject
-  - navmeshPoint2D
+  - pointgraph2D
   - Minimap
   layers:
   - Default

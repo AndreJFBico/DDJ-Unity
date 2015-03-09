@@ -4,7 +4,7 @@ using System.Collections;
 public class EarthElement : ShootElement
 {
     // Use this for initialization
-    /*void Start()
+    void Start()
     {
         Transform[] aux = GetComponentsInChildren<Transform>();
         foreach (Transform item in aux)
@@ -19,19 +19,19 @@ public class EarthElement : ShootElement
             }
         }
 
-        gunBlast1 = GameObject.Find("FrostBlast1");
-        gunBlast2 = GameObject.Find("FrostBlast2");
+        gunBlast1 = GameObject.Find("EarthBlast1");
+        gunBlast2 = GameObject.Find("EarthBlast2");
         gunBlast1.SetActive(false);
         gunBlast2.SetActive(false);
 
-        bulletPrefab = (GameObject)Resources.Load("Prefabs/Projectiles/FrostBolt");
+        //bulletPrefab = (GameObject)Resources.Load("Prefabs/Projectiles/FrostBolt");
 
-        attackSpeed = 0.25f;
-    }*/
+        //attackSpeed = 0.25f;
+    }
 
     // Update is called once per frame
-    /*void Update()
+    void Update()
     {
 
-    }*/
+    }
 }
