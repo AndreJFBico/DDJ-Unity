@@ -19,10 +19,6 @@ public class EnemyScript : MonoBehaviour
     protected float fireResist;
     protected SpawnScript spawnScript;
 
-    private float burningTimer = 10;
-    private float burningDamage = 0;
-    private bool isBurning = false;
-
 
 	// Use this for initialization
     protected virtual void Start()
@@ -58,49 +54,12 @@ public class EnemyScript : MonoBehaviour
         }
     }*/
 
-    void OnTriggerStay(Collider other)
+    public void applyStatusEffect(StatusEffect scrpt)
     {
-        Debug.LogWarning("EnteredTrigger");
-        if (other.gameObject.layer == LayerMask.NameToLayer(Constants.elementalyModifiable))
-        {
-            other.gameObject.GetComponent<ElementalyModifiable>().dealWithEnemy(this);
-        }
+        scrpt.applyStatusEffect(this);
     }
 
-    private IEnumerator burning(float damage)
-    {
-        while(burningTimer > 0)
-        {
-            takeDamage(damage, Elements.FIRE);
-            burningTimer -= Time.deltaTime;
-            yield return new WaitForSeconds(1);
-        }
-        isBurning = false;
-        burningDamage = 0;
-    }
-
-    public void applyBurningStatus(float damage)
-    {
-        Debug.LogWarning("Taking Damage");
-        if(isBurning)
-        {
-            if (damage > burningDamage)
-            {
-                StopCoroutine("burning");
-                StartCoroutine("burning", damage);
-                burningDamage = damage;
-            }
-            burningTimer = 10;
-        }
-        else
-        {
-            isBurning = true;
-            burningTimer = 10;
-            burningDamage = damage;
-            StartCoroutine("burning", damage);
-        }
-    }
-
+    
     public void takeDamage(float amount, Elements type)
     {
         switch (type)

@@ -444,7 +444,6 @@ GameObject:
   - 65: {fileID: 1652940272}
   - 23: {fileID: 1652940271}
   - 114: {fileID: 1652940275}
-  - 54: {fileID: 1652940276}
   m_Layer: 14
   m_Name: Oil Puddle
   m_TagString: Untagged
@@ -520,21 +519,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onFire: {fileID: 2056548728}
---- !u!54 &1652940276
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1652940270}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!1001 &1663538387
 Prefab:
   m_ObjectHideFlags: 0
@@ -604,9 +588,13 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 13690576, guid: b7e813a02438bf249978b95288e12422, type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 13522422, guid: b7e813a02438bf249978b95288e12422, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19597248, guid: b7e813a02438bf249978b95288e12422, type: 2}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -726,7 +714,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1802123541}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.20000005, y: .140000001, z: .810000002}
+  m_LocalPosition: {x: -.713, y: .140000001, z: .386999995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1652940274}

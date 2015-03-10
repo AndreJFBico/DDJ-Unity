@@ -4,14 +4,19 @@ using Includes;
 
 public class OilPuddle : ElementalyModifiable {
 
-    private float damage = 5;
+    
     public GameObject onFire;
     private bool canBurn = false;
 
 	// Use this for initialization
 	void Start () {
-	
+	    damage = 5;
 	}
+
+    protected override void OnTriggerStay(Collider other)
+    {
+        base.OnTriggerStay(other);
+    }
 
     public override void dealWithProjectile(Elements type)
     {
@@ -24,12 +29,12 @@ public class OilPuddle : ElementalyModifiable {
 
     public virtual void dealWithEnemy(EnemyScript scrpt)
     {
-        scrpt.applyBurningStatus(damage);
+        //scrpt.applyBurningStatus(damage);
     }
 
-    public virtual void dealWithPlayer()
+    public virtual void dealWithPlayer(Interactions scrpt)
     {
-        //Apply Burning
+        //scrpt.applyBurningStatus(damage);
     }
 
 	// Update is called once per frame
