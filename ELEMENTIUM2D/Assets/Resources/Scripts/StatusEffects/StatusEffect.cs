@@ -4,16 +4,27 @@ using System.Collections;
 public class StatusEffect : MonoBehaviour {
 
     protected float intensity;
+    protected float duration;
 
 	// Use this for initialization
-	void Start () {
+	protected virtual void Start () {
 	
 	}
 
-    public StatusEffect(float dmg){
+    public void setIntensity(float dmg){
         intensity = dmg;
     }
-    
+
+    public void setDuration(float dur)
+    {
+        duration = dur;
+    }
+
+    public virtual void resetDuration()
+    {
+
+    }
+
     public virtual void applyStatusEffect(EnemyScript script)
     {
 

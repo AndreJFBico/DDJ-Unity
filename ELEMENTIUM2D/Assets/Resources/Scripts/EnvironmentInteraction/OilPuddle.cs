@@ -10,7 +10,8 @@ public class OilPuddle : ElementalyModifiable {
 
 	// Use this for initialization
 	void Start () {
-	    damage = 5;
+        damage = 5;
+        duration = 1;
 	}
 
     protected override void OnTriggerStay(Collider other)

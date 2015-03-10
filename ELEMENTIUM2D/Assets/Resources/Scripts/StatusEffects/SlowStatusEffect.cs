@@ -5,11 +5,11 @@ public class SlowStatusEffect : StatusEffect
 {
 
 	// Use this for initialization
-	void Start () {
+	protected override void Start () {
 	
 	}
 
-    public SlowStatusEffect(float slowAmmount) : base(slowAmmount)
+    public override void resetDuration()
     {
     }
 

@@ -5,6 +5,7 @@ using Includes;
 public class ElementalyModifiable : MonoBehaviour {
 
     protected float damage;
+    protected float duration;
 
 	// Use this for initialization
 	void Start () {
@@ -13,11 +14,19 @@ public class ElementalyModifiable : MonoBehaviour {
 
     protected virtual void OnTriggerStay(Collider other)
     {
-        Debug.LogWarning("EnteredTrigger");
         if (other.gameObject.tag.CompareTo("Enemy") == 0)
         {
-            StatusEffect burn = new BurningStatusEffect(damage);
-            other.gameObject.GetComponent<EnemyScript>().applyStatusEffect(burn);
+            if (other.gameObject.GetComponent<BurningStatusEffect>() == null)
+            {
+                StatusEffect burn = other.gameObject.AddComponent<BurningStatusEffect>();
+                burn.setIntensity(damage);
+                burn.setDuration(duration);
+                other.gameObject.GetComponent<EnemyScript>().applyStatusEffect(burn);
+            }
+            else
+            {
+
+            }
         }
     }
 
