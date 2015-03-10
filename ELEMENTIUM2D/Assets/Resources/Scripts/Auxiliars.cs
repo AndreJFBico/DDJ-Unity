@@ -197,7 +197,7 @@ namespace Includes
     }
 
     // STARTING STATS
-    public class Player
+    public class PlayerStats
     {
         public static float maxHealth = 50;
         public static float damage = 3;

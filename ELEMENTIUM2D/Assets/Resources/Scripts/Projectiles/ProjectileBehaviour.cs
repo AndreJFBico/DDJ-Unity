@@ -7,7 +7,6 @@ public class ProjectileBehaviour : MonoBehaviour
 
     protected float damage;
     protected Elements type;
-
     protected virtual void Start() { }
 
     public virtual void OnCollisionEnter(Collision collision)
@@ -15,11 +14,11 @@ public class ProjectileBehaviour : MonoBehaviour
         Destroy(gameObject);
     }
 
-    protected bool collidedWithEnemy(Collision collision, float damage)
+    protected bool collidedWith(Collision collision, float damage)
     {
-        if (collision.gameObject.tag.CompareTo("Enemy") == 0)
+        if ((collision.gameObject.tag.CompareTo("Enemy") == 0) || (LayerMask.NameToLayer("Player") == collision.gameObject.layer))
         {
-            EnemyScript enemy = collision.gameObject.GetComponent<EnemyScript>();
+            Agent enemy = collision.gameObject.GetComponent<Agent>();
             enemy.takeDamage(damage, type);
             return true;
         }

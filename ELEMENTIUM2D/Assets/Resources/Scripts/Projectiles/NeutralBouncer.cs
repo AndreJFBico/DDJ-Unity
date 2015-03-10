@@ -58,7 +58,7 @@ public class NeutralBouncer : ProjectileBehaviour {
             }
             else if (collidedWithBreakable(collision)) ;
             else if (collision.gameObject.layer == LayerMask.NameToLayer("Unhitable"))
-                return;
+            return;
             //Invoke("destroyClone", 0.1f);
             base.OnCollisionEnter(collision);
         }

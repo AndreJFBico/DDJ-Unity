@@ -11,7 +11,7 @@ GameObject:
   - 223: {fileID: 22360616}
   - 114: {fileID: 11481152}
   - 114: {fileID: 11413880}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: HealthCanvas
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ GameObject:
   - 224: {fileID: 22409388}
   - 222: {fileID: 22286248}
   - 114: {fileID: 11486704}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bar
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - 224: {fileID: 22425252}
   - 222: {fileID: 22278010}
   - 114: {fileID: 11429824}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Background
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ GameObject:
   - 114: {fileID: 11470210}
   - 135: {fileID: 13522422}
   - 195: {fileID: 19553154}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ GameObject:
   - 4: {fileID: 495300}
   - 114: {fileID: 11426822}
   - 136: {fileID: 13663758}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Pathing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 224: {fileID: 22434836}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: HealthBar
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ GameObject:
   - 114: {fileID: 11425774}
   - 114: {fileID: 11436982}
   - 95: {fileID: 9555738}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Sprite
   m_TagString: Enemy
   m_Icon: {fileID: 0}

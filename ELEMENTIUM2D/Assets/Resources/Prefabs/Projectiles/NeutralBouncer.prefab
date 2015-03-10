@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 428926}
   - 212: {fileID: 21263312}
-  m_Layer: 9
+  m_Layer: 16
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ GameObject:
   - 114: {fileID: 11466464}
   - 135: {fileID: 13557066}
   - 54: {fileID: 5433856}
-  m_Layer: 9
+  m_Layer: 16
   m_Name: NeutralBouncer
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -131,7 +131,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 295859c281da93c43905ef4fb87dbb40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disabledTimer: 1.5
 --- !u!135 &13557066
 SphereCollider:
   m_ObjectHideFlags: 1

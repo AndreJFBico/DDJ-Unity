@@ -10,6 +10,7 @@ public class NeutralEnemyScript : EnemyScript
     {
         type = Elements.NEUTRAL;
         maxHealth = EnemyStats.Neutral.maxHealth;
+        health = maxHealth;
         damage = EnemyStats.Neutral.damage;
         defence = EnemyStats.Neutral.defence;
         waterResist = EnemyStats.Neutral.waterResist;

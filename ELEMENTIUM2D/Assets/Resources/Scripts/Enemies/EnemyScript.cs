@@ -2,22 +2,16 @@
 using System.Collections;
 using Includes;
 
-public class EnemyScript : MonoBehaviour
+public class EnemyScript : Agent
 {
     public RectTransform healthbar_background;
     public RectTransform healthbar;
-    
-    private float health = 10;
+   
     //private SpawnScript script;
 
     protected Elements type;
     protected float visionRadiusValue = 5.46f;
-    protected float maxHealth = 100;
-    protected float damage;
-    protected float defence;
-    protected float waterResist;
-    protected float earthResist;
-    protected float fireResist;
+
     protected SpawnScript spawnScript;
 
 
@@ -26,7 +20,6 @@ public class EnemyScript : MonoBehaviour
     {
         Vector2 targetPos = Camera.main.WorldToScreenPoint(transform.position);
         healthbar_background.position = targetPos;
-        health = maxHealth;
 	}
 	
 	// Update is called once per frame
@@ -61,7 +54,7 @@ public class EnemyScript : MonoBehaviour
     }
 
     
-    public void takeDamage(float amount, Elements type)
+    public override void takeDamage(float amount, Elements type)
     {
         switch (type)
         {

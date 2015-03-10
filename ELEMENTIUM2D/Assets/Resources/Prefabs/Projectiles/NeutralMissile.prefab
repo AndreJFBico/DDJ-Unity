@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 411496}
   - 212: {fileID: 21212964}
-  m_Layer: 9
+  m_Layer: 16
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ GameObject:
   - 54: {fileID: 5403238}
   - 135: {fileID: 13566160}
   - 136: {fileID: 13600332}
-  m_Layer: 9
+  m_Layer: 16
   m_Name: NeutralMissile
   m_TagString: Projectile
   m_Icon: {fileID: 0}

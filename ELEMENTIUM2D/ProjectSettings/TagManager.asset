@@ -28,10 +28,10 @@ TagManager:
   - Obstacles
   - Breakable
   - ElementalyModifiable
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - PlayerProjectile
+  - EnemyProjectile
+  - Enemy
   - 
   - 
   - 

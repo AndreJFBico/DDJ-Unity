@@ -17,8 +17,8 @@ public class NeutralMissile : ProjectileBehaviour {
 
     public override void OnCollisionEnter(Collision collision)
     {
-        if (collidedWithEnemy(collision, damage));
-        else if (collidedWithBreakable(collision));
+        if (collidedWith(collision, damage)) ;
+        else if (collidedWithBreakable(collision)) ;
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Unhitable"))
             return;
         base.OnCollisionEnter(collision);

@@ -14,7 +14,7 @@ public class NeutralBlast : ProjectileBehaviour
 
     public override void OnCollisionEnter(Collision collision)
     {
-        if (collidedWithEnemy(collision, damage));
+        if (collidedWith(collision, damage));
         else if (collidedWithBreakable(collision));
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Unhitable"))
             return;

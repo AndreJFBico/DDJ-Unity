@@ -5,7 +5,7 @@ using Includes;
 [RequireComponent(typeof(FireElement))]
 [RequireComponent(typeof(FrostElement))]
 [RequireComponent(typeof(EarthElement))]
-[RequireComponent(typeof(PlayerData))]
+[RequireComponent(typeof(Player))]
 public class Shoot : MonoBehaviour {
 
     private FireElement fireShoot;
@@ -13,7 +13,7 @@ public class Shoot : MonoBehaviour {
     private EarthElement earthShoot;
     private NeutralElement neutralShoot;
 
-    private PlayerData data;
+    private Player data;
 
 	// Use this for initialization
 	void Start () {
@@ -21,7 +21,7 @@ public class Shoot : MonoBehaviour {
         frostShoot = GetComponent<FrostElement>();
         earthShoot = GetComponent<EarthElement>();
         neutralShoot = GetComponent<NeutralElement>();
-        data = GetComponent<PlayerData>();
+        data = GetComponent<Player>();
 	}
 
 

@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using Includes;
 
-[RequireComponent(typeof(PlayerData))]
+[RequireComponent(typeof(Player))]
 public class Interactions : MonoBehaviour {
 
     private Image elementGUI;
@@ -13,7 +13,7 @@ public class Interactions : MonoBehaviour {
     private Sprite earthElement;
     private Sprite frostElement;
 
-    private PlayerData data;
+    private Player data;
 
     //private float cycleTime = 0.2f;
 
@@ -26,7 +26,7 @@ public class Interactions : MonoBehaviour {
         fireElement = Resources.Load<Sprite>("GUIImages/Elements/Fire");
         earthElement = Resources.Load<Sprite>("GUIImages/Elements/Earth");
         frostElement = Resources.Load<Sprite>("GUIImages/Elements/Frost") ;
-        data = GetComponent<PlayerData>();
+        data = GetComponent<Player>();
     }
 
     public void changeCurrentElement(bool forward, bool backward)
