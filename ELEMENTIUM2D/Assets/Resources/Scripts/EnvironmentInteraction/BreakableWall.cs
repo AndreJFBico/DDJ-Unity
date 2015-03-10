@@ -2,17 +2,16 @@
 using System.Collections;
 using Includes;
 
-public class BreakableWall : MonoBehaviour {
+public class BreakableWall : Breakable {
 
-    private float health = 12;
     public BreakableWalls type;
 
 	// Use this for initialization
 	void Start () {
-	
+        health = 12;
 	}
 
-    public void dealWithProjectile(Elements projType)
+    public override void dealWithProjectile(Elements projType, float damage)
     {
         switch (type)
         {

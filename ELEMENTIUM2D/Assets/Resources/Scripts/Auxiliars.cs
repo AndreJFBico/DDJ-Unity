@@ -13,6 +13,7 @@ namespace Includes
     public class Constants
     {
         public const string breakable = "Breakable";
+        public const string elementalyModifiable = "ElementalyModifiable";
     }
     
     public class AbilityStats

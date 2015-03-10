@@ -30,7 +30,17 @@ public class ProjectileBehaviour : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer(Constants.breakable))
         {
-            collision.gameObject.GetComponent<BreakableWall>().dealWithProjectile(type);
+            collision.gameObject.GetComponent<Breakable>().dealWithProjectile(type, damage);
+            return true;
+        }
+        return false;
+    }
+
+    protected bool enteredBreakableTrigger(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer(Constants.elementalyModifiable))
+        {
+            other.gameObject.GetComponent<ElementalyModifiable>().dealWithProjectile(type);
             return true;
         }
         return false;

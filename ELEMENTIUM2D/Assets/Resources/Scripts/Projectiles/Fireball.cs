@@ -21,6 +21,11 @@ public class Fireball : ProjectileBehaviour
         base.OnCollisionEnter(collision);
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        enteredBreakableTrigger(other);
+    }
+
     public override void applyMovement()
     {
         float rndm = Random.Range(AbilityStats.Fire.ability1.minForce, AbilityStats.Fire.ability1.maxForce);
