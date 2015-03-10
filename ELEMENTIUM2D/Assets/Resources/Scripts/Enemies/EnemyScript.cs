@@ -11,6 +11,7 @@ public class EnemyScript : MonoBehaviour
     //private SpawnScript script;
 
     protected Elements type;
+    protected float visionRadiusValue = 5.46f;
     protected float maxHealth = 100;
     protected float damage;
     protected float defence;

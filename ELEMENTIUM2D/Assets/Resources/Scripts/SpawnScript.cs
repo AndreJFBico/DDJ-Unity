@@ -22,7 +22,7 @@ public class SpawnScript : MonoBehaviour {
         for (int i = 0; i < amount_to_spawn; i++)
         {
             GameObject obj = Instantiate(enemy.gameObject, position.transform.position, position.transform.rotation) as GameObject;
-            PathAgent pa = obj.GetComponent<PathAgent>();
+            PathAgent pa = obj.GetComponentInChildren<PathAgent>();
             pa.startPosition = transform.position;
             obj.GetComponent<EnemyScript>().setSpawner(this);
             // deactivates the object

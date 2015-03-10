@@ -156,6 +156,7 @@ namespace Includes
             public static float waterResist = 5;
             public static float earthResist = 5;
             public static float fireResist = 5;
+            public static float visionRadius = 5.46f;
         }
 
         // Frost
@@ -167,6 +168,7 @@ namespace Includes
             public static float waterResist = 5;
             public static float earthResist = 5;
             public static float fireResist = 5;
+            public static float visionRadius = 5.46f;
         }
 
         // FIRE
@@ -178,6 +180,7 @@ namespace Includes
             public static float waterResist = 5;
             public static float earthResist = 5;
             public static float fireResist = 5;
+            public static float visionRadius = 5.46f;
         }
 
         // EARTH
@@ -189,6 +192,18 @@ namespace Includes
             public static float waterResist = 5;
             public static float earthResist = 5;
             public static float fireResist = 5;
+            public static float visionRadius = 5.46f;
         }
+    }
+
+    // STARTING STATS
+    public class Player
+    {
+        public static float maxHealth = 50;
+        public static float damage = 3;
+        public static float defence = 0;
+        public static float waterResist = 0;
+        public static float earthResist = 0;
+        public static float fireResist = 0;
     }
 }

@@ -16,7 +16,7 @@ public class PathAgent : MonoBehaviour
     public void Start()
     {
         target = null;
-        agent = GetComponent<NavMeshAgent>();
+        agent = transform.parent.GetComponent<NavMeshAgent>();
         roamRadius = Constants.enemyRoamRadius;
         InvokeRepeating("checkMovement", 0, 0.5f);
     }
