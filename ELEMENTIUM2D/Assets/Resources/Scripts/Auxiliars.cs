@@ -14,6 +14,7 @@ namespace Includes
     {
         public const string breakable = "Breakable";
         public const string elementalyModifiable = "ElementalyModifiable";
+        public const float enemyRoamRadius = 2.0f;
     }
     
     public class AbilityStats
