@@ -199,6 +199,8 @@ namespace Includes
     // STARTING STATS
     public class PlayerStats
     {
+        public static float moveSpeed = 2.5f;
+        public static float moveInContactWithEnemy = 1.0f;
         public static float maxHealth = 50;
         public static float damage = 3;
         public static float defence = 0;

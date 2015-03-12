@@ -38,7 +38,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 486596}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Doors
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   - 23: {fileID: 2380650}
   - 208: {fileID: 20821234}
   - 114: {fileID: 11467488}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Cube 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - 65: {fileID: 6569672}
   - 23: {fileID: 2366984}
   - 208: {fileID: 20855644}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   - 23: {fileID: 2334710}
   - 208: {fileID: 20850216}
   - 114: {fileID: 11471426}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Cube 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 491740}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,7 +150,7 @@ GameObject:
   - 23: {fileID: 2342928}
   - 208: {fileID: 20859336}
   - 114: {fileID: 11481686}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Cube 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   - 4: {fileID: 462244}
   - 33: {fileID: 3354848}
   - 114: {fileID: 11429126}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   - 23: {fileID: 2374900}
   - 208: {fileID: 20894154}
   - 114: {fileID: 11461008}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Cube 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,7 +259,7 @@ GameObject:
   - 23: {fileID: 2375694}
   - 208: {fileID: 20839778}
   - 114: {fileID: 11436848}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,7 +295,7 @@ GameObject:
   - 23: {fileID: 2315016}
   - 208: {fileID: 20834362}
   - 114: {fileID: 11411808}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Cube 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -312,7 +312,7 @@ GameObject:
   - 4: {fileID: 486120}
   - 33: {fileID: 3391272}
   - 114: {fileID: 11483340}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -350,7 +350,7 @@ GameObject:
   - 23: {fileID: 2315858}
   - 208: {fileID: 20866812}
   - 114: {fileID: 11464644}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Cube 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -367,7 +367,7 @@ GameObject:
   - 4: {fileID: 499578}
   - 33: {fileID: 3321852}
   - 114: {fileID: 11440722}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -384,7 +384,7 @@ GameObject:
   - 4: {fileID: 401224}
   - 33: {fileID: 3369738}
   - 114: {fileID: 11452072}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -422,7 +422,7 @@ GameObject:
   - 23: {fileID: 2396372}
   - 208: {fileID: 20879878}
   - 114: {fileID: 11490018}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Cube 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -441,7 +441,7 @@ GameObject:
   - 65: {fileID: 6535736}
   - 23: {fileID: 2372108}
   - 208: {fileID: 20896960}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -460,7 +460,7 @@ GameObject:
   - 65: {fileID: 6561194}
   - 23: {fileID: 2359874}
   - 208: {fileID: 20865884}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube 9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -479,7 +479,7 @@ GameObject:
   - 65: {fileID: 6561112}
   - 23: {fileID: 2304230}
   - 208: {fileID: 20813532}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
