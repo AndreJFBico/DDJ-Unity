@@ -46,6 +46,7 @@ public class SpawnScript : MonoBehaviour {
 
     public void despawn(Transform obj)
     {
+        obj.GetComponentInChildren<PathAgent>().target = null;
         obj.transform.position = transform.position;
         obj.transform.rotation = transform.rotation;
         spawned.Remove(obj);

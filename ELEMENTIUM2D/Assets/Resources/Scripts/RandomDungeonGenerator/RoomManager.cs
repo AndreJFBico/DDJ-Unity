@@ -70,6 +70,7 @@ public class RoomManager : MonoBehaviour
             }
         } else if (!merged)
         {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMove>().init();
             pathManager.genGraph();
             merged = true;
         }

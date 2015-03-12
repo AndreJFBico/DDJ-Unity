@@ -3,16 +3,14 @@ using System.Collections;
 using Includes;
 
 public class EnemyScript : Agent
-{
-    public RectTransform healthbar_background;
-    public RectTransform healthbar;
-   
+{  
     //private SpawnScript script;
 
     protected Elements type;
     protected float visionRadiusValue = 5.46f;
 
     protected SpawnScript spawnScript;
+    protected PathAgent pathAgent;
 
 
 	// Use this for initialization
@@ -20,24 +18,34 @@ public class EnemyScript : Agent
     {
         Vector2 targetPos = Camera.main.WorldToScreenPoint(transform.position);
         healthbar_background.position = targetPos;
+        pathAgent = GetComponentInChildren<PathAgent>();
 	}
 	
 	// Update is called once per frame
     protected virtual void Update()
     {
-
+        
 	}
 
-    // Health bar
-    protected virtual void OnGUI()
+    protected virtual void LateUpdate()
     {
-        Vector2 targetPos;
-        targetPos = Camera.main.WorldToScreenPoint(transform.position);
-        healthbar_background.position = targetPos;
-        float percentage = health / maxHealth;
-        //float distance = percentage * healthbar.rect.width;
-        //float desiredX = healthbar.position.x + distance;
-        healthbar.transform.localScale = new Vector3(percentage, 1.0f, 1.0f);
+        transform.position.Set(transform.position.x, 0.1f, transform.position.z);
+    }
+
+    public override void OnCollisionStay(Collision collision)
+    {
+        base.OnCollisionStay(collision);
+    }
+
+    public override void OnCollisionExit(Collision collision)
+    {
+        base.OnCollisionExit(collision);
+    }
+
+    public override void OnCollisionEnter(Collision collision)
+    {
+        //
+        base.OnCollisionEnter(collision);
     }
 
     /*protected virtual void OnCollisionEnter2D(Collision2D collision)
@@ -98,5 +106,15 @@ public class EnemyScript : Agent
     public void setSpawner(SpawnScript scrpt)
     {
         spawnScript = scrpt;
+    }
+
+    public float getDamage()
+    {
+        return damage;
+    }
+
+    public Elements getElementType()
+    {
+        return type;
     }
 }
