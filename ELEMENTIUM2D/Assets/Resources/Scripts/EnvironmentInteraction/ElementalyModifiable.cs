@@ -14,6 +14,7 @@ public class ElementalyModifiable : MonoBehaviour {
 
     protected virtual void OnTriggerStay(Collider other)
     {
+        if()
         if (other.gameObject.tag.CompareTo("Enemy") == 0)
         {
             if (other.gameObject.GetComponent<BurningStatusEffect>() == null)

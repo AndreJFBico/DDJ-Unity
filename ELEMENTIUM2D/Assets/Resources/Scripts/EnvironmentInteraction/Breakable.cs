@@ -5,6 +5,7 @@ using Includes;
 public class Breakable : MonoBehaviour {
 
     protected float health;
+    protected float maxHealth;
 	// Use this for initialization
 	void Start () {
 	
