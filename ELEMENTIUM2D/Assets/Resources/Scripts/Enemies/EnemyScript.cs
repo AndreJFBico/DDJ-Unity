@@ -19,6 +19,7 @@ public class EnemyScript : Agent
         Vector2 targetPos = Camera.main.WorldToScreenPoint(transform.position);
         healthbar_background.position = targetPos;
         pathAgent = GetComponentInChildren<PathAgent>();
+        centerHealthBar = true;
 	}
 	
 	// Update is called once per frame

@@ -13,12 +13,17 @@ public class Agent : MonoBehaviour {
     protected float waterResist;
     protected float earthResist;
     protected float fireResist;
+    protected bool centerHealthBar = false;
 
     // Health bar
     protected virtual void OnGUI()
     {
-        Vector2 targetPos;
-        targetPos = Camera.main.WorldToScreenPoint(transform.position);
+        Vector2 targetPos = healthbar_background.position;
+        if(centerHealthBar)
+        {
+            targetPos = Camera.main.WorldToScreenPoint(transform.position);
+        }
+        
         healthbar_background.position = targetPos;
         float percentage = health / maxHealth;
         //float distance = percentage * healthbar.rect.width;
