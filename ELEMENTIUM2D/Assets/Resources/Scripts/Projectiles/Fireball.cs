@@ -5,6 +5,11 @@ using Includes;
 public class Fireball : ProjectileBehaviour 
 {
 
+    protected override void Awake()
+    {
+        explosion = Resources.Load("Prefabs/Explosions/fireExplosion") as GameObject;
+    }
+
     protected override void Start()
     {
         base.Start();

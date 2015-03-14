@@ -7,6 +7,11 @@ public class NeutralMissile : ProjectileBehaviour {
     private Transform target;
     private float timer = 0.0f;
 
+    protected override void Awake()
+    {
+        explosion = Resources.Load("Prefabs/Explosions/neutralExplosion") as GameObject;
+    }
+
     protected override void Start()
     {
         base.Start();

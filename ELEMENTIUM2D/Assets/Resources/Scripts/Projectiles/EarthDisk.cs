@@ -4,6 +4,11 @@ using Includes;
 
 public class EarthDisk : ProjectileBehaviour {
 
+    protected override void Awake()
+    {
+        explosion = Resources.Load("Prefabs/Explosions/earthExplosion") as GameObject;
+    }
+
     protected override void Start()
     {
         base.Start();

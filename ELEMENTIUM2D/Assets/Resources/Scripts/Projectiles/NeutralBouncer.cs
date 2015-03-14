@@ -8,12 +8,17 @@ public class NeutralBouncer : ProjectileBehaviour {
     private int numSplit = 0;
     private Transform previousEnemy;
 
+    protected override void Awake()
+    {
+        explosion = Resources.Load("Prefabs/Explosions/neutralExplosion") as GameObject;
+    }
+
     protected override void Start()
     {
         base.Start();
         damage = AbilityStats.Neutral.ability3.damage;
         Invoke("destroyClone", 6f);
-        type = Elements.NEUTRAL;
+        type = Elements.NEUTRAL;     
     }
 
     void OnCollisionStay(Collision coll)

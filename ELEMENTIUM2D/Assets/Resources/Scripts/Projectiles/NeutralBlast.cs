@@ -5,6 +5,11 @@ using Includes;
 public class NeutralBlast : ProjectileBehaviour 
 {
 
+    protected override void Awake()
+    {
+        explosion = Resources.Load("Prefabs/Explosions/neutralExplosion") as GameObject;
+    }
+
     protected override void Start()
     {
         base.Start();

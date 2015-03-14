@@ -17,16 +17,16 @@ public class NeutralEnemyScript : EnemyScript
         waterResist = EnemyStats.Neutral.waterResist;
         earthResist = EnemyStats.Neutral.earthResist;
         fireResist = EnemyStats.Neutral.fireResist;
-        lr = gameObject.AddComponent<LineRenderer>();
-        lr.SetWidth(0.01f, 0.01f);
-        lr.SetVertexCount(2);
+        //lr = gameObject.AddComponent<LineRenderer>();
+        //lr.SetWidth(0.01f, 0.01f);
+        //lr.SetVertexCount(2);
         base.Start();
     }
 
     void alignLineRenderer()
     {
-        lr.SetPosition(0, transform.position);
-        lr.SetPosition(1, pathAgent.target.transform.position);
+        //lr.SetPosition(0, transform.position);
+        //lr.SetPosition(1, pathAgent.target.transform.position);
     }
 
     // Update is called once per frame

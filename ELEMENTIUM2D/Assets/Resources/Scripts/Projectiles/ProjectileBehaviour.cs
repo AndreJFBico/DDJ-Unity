@@ -7,10 +7,17 @@ public class ProjectileBehaviour : MonoBehaviour
 
     protected float damage;
     protected Elements type;
+    protected GameObject explosion;
     protected virtual void Start() { }
+
+    protected virtual void Awake()
+    {
+
+    }
 
     public virtual void OnCollisionEnter(Collision collision)
     {
+        createExplosion();
         Destroy(gameObject);
     }
 
@@ -43,6 +50,11 @@ public class ProjectileBehaviour : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    public virtual void createExplosion()
+    {
+        Instantiate(explosion, transform.position, explosion.transform.rotation);
     }
 
     // This function applys initial movement to the projectile

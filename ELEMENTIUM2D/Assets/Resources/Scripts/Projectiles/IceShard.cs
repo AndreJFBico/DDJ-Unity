@@ -5,6 +5,11 @@ using Includes;
 public class IceShard : ProjectileBehaviour
 {
 
+    protected override void Awake()
+    {
+        explosion = Resources.Load("Prefabs/Explosions/frostExplosion") as GameObject;
+    }
+
     protected override void Start()
     {
         base.Start();
