@@ -157,6 +157,7 @@ namespace Includes
             public static float earthResist = 5;
             public static float fireResist = 5;
             public static float visionRadius = 5.46f;
+            public static float rangedRadius = 1.5f;
         }
 
         // Frost
