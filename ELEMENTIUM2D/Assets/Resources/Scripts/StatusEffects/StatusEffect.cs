@@ -20,7 +20,7 @@ public class StatusEffect : MonoBehaviour {
         duration = dur;
     }
 
-    public virtual void resetDuration()
+    public virtual void resetDuration(float dur)
     {
 
     }

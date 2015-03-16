@@ -4,19 +4,29 @@ using Includes;
 
 public class OilPuddle : ElementalyModifiable {
 
-    
+    private float damage;
+    private float slow;
     public GameObject onFire;
     private bool canBurn = false;
 
 	// Use this for initialization
 	void Start () {
         damage = 5;
+        slow = 0.5f;
         duration = 1;
 	}
 
-    protected override void OnTriggerStay(Collider other)
+    protected void OnTriggerStay(Collider other)
     {
-        base.OnTriggerStay(other);
+        if (other.gameObject.tag.CompareTo("Enemy") == 0)
+        {
+            if (canBurn)
+                applyStatus(other, StatusEffects.BURNING, damage);
+            else
+            {
+                applyStatus(other, StatusEffects.SLOW, slow);
+            }
+        }
     }
 
     public override void dealWithProjectile(Elements type)

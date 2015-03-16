@@ -33,9 +33,9 @@ public class BurningStatusEffect : StatusEffect
         applyBurningStatus(script);
     }
 
-    public override void resetDuration()
+    public override void resetDuration(float dur)
     {
-        burningTimer = duration;
+        burningTimer = dur;
     }
 
     private IEnumerator burning(EnemyScript script)
