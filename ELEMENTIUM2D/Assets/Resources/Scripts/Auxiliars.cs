@@ -157,6 +157,10 @@ namespace Includes
             public static float earthResist = 5;
             public static float fireResist = 5;
             public static float visionRadius = 5.46f;
+            public static float rangedRadius = 1.5f;
+            public static float rangedAttackSpeed = 0.5f;
+            // This has to be more specific there might by more neutral projectiles, and the damage a projectile does is different from a basic neutral enemy
+            public static string neutralEnemyProjectile = "Prefabs/Projectiles/Musk";
         }
 
         // Frost

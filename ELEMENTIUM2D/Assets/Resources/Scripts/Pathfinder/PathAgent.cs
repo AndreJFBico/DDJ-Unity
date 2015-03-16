@@ -29,13 +29,20 @@ public class PathAgent : MonoBehaviour
         }
     }
 
+    public bool hasTarget()
+    {
+        if (target != null)
+            return true;
+        return false;
+    }
+
     void checkMovement()
     {
         if (agent.hasPath)
         {
             if(AtEndOfPath())
             {
-                if(target != null)
+                if (hasTarget())
                 {
                     agent.SetDestination(target.position);
                 }
@@ -47,7 +54,7 @@ public class PathAgent : MonoBehaviour
             else
             {
                 //  To implement time limit to the follow of the agents make target be null
-                if (target != null)
+                if (hasTarget())
                 {
                     agent.SetDestination(target.position);
                 }
@@ -55,7 +62,7 @@ public class PathAgent : MonoBehaviour
         }
         else
         {
-            if(target != null)
+            if (hasTarget())
             {
                 agent.SetDestination(target.position);
             }
