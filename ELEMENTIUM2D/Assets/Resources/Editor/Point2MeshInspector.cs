@@ -3,7 +3,8 @@ using UnityEditor;
 using System.Collections;
 
 [CustomEditor(typeof(Point2Mesh))]
-public class Point2MeshInspector : Editor {
+public class Point2MeshInspector : Editor 
+{
 
     public override void OnInspectorGUI()
     {

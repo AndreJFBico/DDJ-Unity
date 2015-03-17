@@ -21,6 +21,14 @@ public class PathAgent : MonoBehaviour
         InvokeRepeating("checkMovement", 0, 0.5f);
     }
 
+    public void OnTriggerStay(Collider collision)
+    {
+        if (collision.gameObject.tag.CompareTo("Player") == 0)
+        {
+            target = collision.transform;
+        }
+    }
+
     public void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag.CompareTo("Player") == 0)
@@ -92,8 +100,9 @@ public class PathAgent : MonoBehaviour
         agent.destination = finalPosition;
     }
 
-    public void Update()
+    public void LateUpdate()
     {
+        transform.position = new Vector3(transform.position.x, 0.1f, transform.position.z);
         //checkMovement();
         /*if (manager.initialized && !on_a_Path)
         {           
