@@ -16,6 +16,9 @@ public class BurningStatusEffect : StatusEffect
         sprite = Resources.Load<Texture2D>("GUIImages/Elements/Fire");
 	}
 
+    //#############################################################
+    //############################ GUI ############################
+    //#############################################################
     void OnGUI()
     {
         Color guiColor = Color.white;
@@ -27,10 +30,24 @@ public class BurningStatusEffect : StatusEffect
 
         GUI.color = prevColor;
     }
-    
+
+    //#############################################################
+    //################### VARIABLE MODIFIERS ######################
+    //#############################################################
     public override void applyStatusEffect(EnemyScript script)
     {
         applyBurningStatus(script);
+    }
+
+    public override void setIntensity(float inten)
+    {
+        base.setIntensity(inten);
+    }
+
+    public override void setDuration(float dur)
+    {
+        base.setDuration(dur);
+        burningTimer = duration;
     }
 
     public override void resetDuration(float dur)
@@ -38,6 +55,9 @@ public class BurningStatusEffect : StatusEffect
         burningTimer = dur;
     }
 
+    //#############################################################
+    //################### EFFECT RESPONSIBLE ######################
+    //#############################################################
     private IEnumerator burning(EnemyScript script)
     {
         while (burningTimer > 0)
@@ -72,9 +92,4 @@ public class BurningStatusEffect : StatusEffect
             StartCoroutine("burning", script);
         }
     }
-
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }

@@ -15,6 +15,11 @@ public class SlowStatusEffect : StatusEffect
         sprite = Resources.Load<Texture2D>("GUIImages/Elements/Neutral");
 	}
 
+
+    //#############################################################
+    //############################ GUI ############################
+    //#############################################################
+
     void OnGUI()
     {
         Color guiColor = Color.white;
@@ -27,6 +32,10 @@ public class SlowStatusEffect : StatusEffect
         GUI.color = prevColor;
     }
 
+    //#############################################################
+    //################### VARIABLE MODIFIERS ######################
+    //#############################################################
+
     public override void applyStatusEffect(EnemyScript script)
     {
         applySlowStatus(script);
@@ -37,6 +46,20 @@ public class SlowStatusEffect : StatusEffect
         slowTimer = dur;
     }
 
+    public override void setIntensity(float inten)
+    {
+        base.setIntensity(inten);
+    }
+
+    public override void setDuration(float dur)
+    {
+        base.setDuration(dur);
+        slowTimer = duration;
+    }
+
+    //#############################################################
+    //################### EFFECT RESPONSIBLE ######################
+    //#############################################################
     private IEnumerator slowing(EnemyScript script)
     {
         NavMeshAgent agent = GetComponent<NavMeshAgent>();
@@ -45,6 +68,7 @@ public class SlowStatusEffect : StatusEffect
 
         while (slowTimer > 0)
         {
+            slowTimer -= Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
 
@@ -56,9 +80,4 @@ public class SlowStatusEffect : StatusEffect
     {
         StartCoroutine("slowing", script);
     }
-
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }

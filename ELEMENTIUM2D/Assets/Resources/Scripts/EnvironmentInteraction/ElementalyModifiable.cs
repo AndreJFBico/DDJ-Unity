@@ -6,11 +6,10 @@ public class ElementalyModifiable : MonoBehaviour {
 
     protected float duration;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
 
+    //#############################################################
+    //######################## MAIN FUNCTION ######################
+    //#############################################################
     protected virtual void applyStatus(Collider other, StatusEffects status, float intensity)
     {
         if (status == StatusEffects.BURNING)
@@ -23,6 +22,9 @@ public class ElementalyModifiable : MonoBehaviour {
         }
     }
 
+    //#############################################################
+    //################### AUXILIAR FUNCTIONS ######################
+    //#############################################################
     private void applyBurning(Collider other, float intensity)
     {
         if (other.gameObject.GetComponent<BurningStatusEffect>() == null)
@@ -57,23 +59,10 @@ public class ElementalyModifiable : MonoBehaviour {
         }
     }
 
-    public virtual void dealWithProjectile(Elements type)
-    {
+    public virtual void dealWithProjectile(Elements type){}
 
-    }
+    public virtual void dealWithEnemy(EnemyScript scrpt){}
 
-    public virtual void dealWithEnemy(EnemyScript scrpt)
-    {
-        
-    }
+    public virtual void dealWithPlayer(Interactions scrpt){}
 
-    public virtual void dealWithPlayer(Interactions scrpt)
-    {
-
-    }
-
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }

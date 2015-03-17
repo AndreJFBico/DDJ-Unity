@@ -11,27 +11,17 @@ public class StatusEffect : MonoBehaviour {
 	
 	}
 
-    public void setIntensity(float dmg){
+    public virtual void setIntensity(float dmg){
         intensity = dmg;
     }
 
-    public void setDuration(float dur)
+    public virtual void setDuration(float dur)
     {
         duration = dur;
     }
 
-    public virtual void resetDuration(float dur)
-    {
+    public virtual void resetDuration(float dur){}
 
-    }
-
-    public virtual void applyStatusEffect(EnemyScript script)
-    {
-
-    }
+    public virtual void applyStatusEffect(EnemyScript script){}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }

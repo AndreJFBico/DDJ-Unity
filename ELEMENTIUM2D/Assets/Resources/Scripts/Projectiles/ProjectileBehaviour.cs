@@ -21,6 +21,11 @@ public class ProjectileBehaviour : MonoBehaviour
         Destroy(gameObject);
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        enteredBreakableTrigger(other);
+    }
+
     protected bool collidedWith(Collision collision, float damage)
     {
         if ((collision.gameObject.tag.CompareTo("Enemy") == 0) || (LayerMask.NameToLayer("Player") == collision.gameObject.layer))
