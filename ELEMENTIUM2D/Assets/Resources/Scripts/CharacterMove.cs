@@ -13,22 +13,36 @@ public class CharacterMove : MonoBehaviour {
     private float hDir;
     private float vDir;
 
+    private float inContactNumber = 0;
+
     private bool inContact;
     private bool inContactWithEnemy;
     private Vector3 collisionNormal;
     private Vector3 collisionWithEnemyNormal;
+    private List<Collision> collisions;
+    private float diagonalLength;
+    private float x;
+    private float z;
+    private Vector3 boxPosition;
+    private float epsilon;
     //private List<Collision> collidedWith;
 
 	// Use this for initialization
 	void Start () {
+        collisions = new List<Collision>();
         playerAnim = GetComponentInChildren<PlayerAnimController>();
         //collidedWith = new List<Collision>();
         init();
+        x = GetComponent<BoxCollider>().bounds.extents.x;
+        z = GetComponent<BoxCollider>().bounds.extents.z;
+        diagonalLength = Mathf.Sqrt(Mathf.Pow(x, 2.0f) + Mathf.Pow(z, 2.0f)) * 1.2f;
+        boxPosition = GetComponent<BoxCollider>().bounds.center;
+        epsilon = 1.4f;
 	}
 
     public void CollisionStay(Collision collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
+        /*if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
         {
             if (!inContact)
             {
@@ -39,7 +53,7 @@ public class CharacterMove : MonoBehaviour {
                 }
             }
         }
-        else if (collision.transform.tag.CompareTo("Enemy") == 0)
+        else */if (collision.transform.tag.CompareTo("Enemy") == 0)
         {
             if (!inContactWithEnemy)
             {
@@ -54,7 +68,7 @@ public class CharacterMove : MonoBehaviour {
 
     public void CollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacles") )
+        /*if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacles") )
         {
             if (!inContact)
             {
@@ -69,11 +83,11 @@ public class CharacterMove : MonoBehaviour {
                 if (collision.contacts != null && collision.contacts.Length > 0)
                 {
                     collisionNormal += collision.contacts[0].normal;
-                    collisionNormal.Normalize();
+                   // collisionNormal.Normalize();
                 }
            }
         }
-        else if (collision.transform.tag.CompareTo("Enemy") == 0)
+        else */if (collision.transform.tag.CompareTo("Enemy") == 0)
         {
             if (!inContactWithEnemy)
             {
@@ -90,31 +104,186 @@ public class CharacterMove : MonoBehaviour {
                     collisionWithEnemyNormal += collision.contacts[0].normal;
                     collisionWithEnemyNormal.Normalize();
                 }
-            }           
+            }
         }
     }
 
     public void CollisionExit(Collision collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
+       /* if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
         {
             inContact = false;
         }
-        else if (collision.transform.tag.CompareTo("Enemy") == 0)
+        else */if (collision.transform.tag.CompareTo("Enemy") == 0)
         {
             inContactWithEnemy = false;
         }
     }
+
+    bool rayCast(Vector3 position, Vector3 direction, float distance)
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(new Ray(position, direction), out hit, distance, LayerMask.GetMask("Obstacles")))
+        {
+            Debug.DrawRay(position, direction);
+            return true;
+        }
+        Debug.DrawRay(position, direction);
+        return false;
+    }
+
+    bool rayCastZ(ref Vector3 calculatedMotion, Vector3 direction)
+    {
+        if (rayCast(boxPosition + new Vector3(0.0f, 0.0f, 0.0f), direction, z * epsilon))
+        {
+            if (direction.z > 0.0f)
+            {
+                if (calculatedMotion.z > 0.0f)
+                {
+                    calculatedMotion.z = 0.0f;
+                    return true;
+                }
+            }
+            else if (calculatedMotion.z < 0.0f)
+            {
+                calculatedMotion.z = 0.0f;
+                return true;
+            }
+        }
+        if (rayCast(boxPosition + new Vector3(x, 0.0f, 0.0f), direction, z * epsilon))
+        {
+            if (direction.z> 0.0f)
+            {
+                if (calculatedMotion.z > 0.0f)
+                {
+                    calculatedMotion.z = 0.0f;
+                    return true;
+                }
+            }
+            else if (calculatedMotion.z < 0.0f)
+            {
+                calculatedMotion.z = 0.0f;
+                return true;
+            }
+        }
+        if (rayCast(boxPosition + new Vector3(-x, 0.0f, 0.0f), direction, z * epsilon))
+        {
+            if (direction.z > 0.0f)
+            {
+                if (calculatedMotion.z > 0.0f)
+                {
+                    calculatedMotion.z = 0.0f;
+                    return true;
+                }
+            }
+            else if (calculatedMotion.z < 0.0f)
+            {
+                calculatedMotion.z = 0.0f;
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    bool rayCastX(ref Vector3 calculatedMotion, Vector3 direction)
+    {
+        if (rayCast(boxPosition + new Vector3(0.0f, 0.0f, 0.0f), direction, x * epsilon))
+        {
+            if(direction.x > 0.0f)
+            {
+                if (calculatedMotion.x > 0.0f)
+                {
+                    calculatedMotion.x = 0.0f;
+                    return true;
+                }
+            }
+            else if (calculatedMotion.x < 0.0f)
+            {
+                calculatedMotion.x = 0.0f;
+                return true;
+            }
+        }
+        if (rayCast(boxPosition + new Vector3(0.0f, 0.0f, z), direction, x * epsilon))
+        {
+            if (direction.x > 0.0f)
+            {
+                if (calculatedMotion.x > 0.0f)
+                {
+                    calculatedMotion.x = 0.0f;
+                    return true;
+                }
+            }
+            else if (calculatedMotion.x < 0.0f)
+            {
+                calculatedMotion.x = 0.0f;
+                return true;
+            }
+        }
+        if (rayCast(boxPosition + new Vector3(0.0f, 0.0f, -z), direction, x * epsilon))
+        {
+            if(direction.x > 0.0f)
+            {
+                if (calculatedMotion.x > 0.0f)
+                {
+                    calculatedMotion.x = 0.0f;
+                    return true;
+                }
+            }
+            else if (calculatedMotion.x < 0.0f)
+            {
+                calculatedMotion.x = 0.0f;
+                return true;
+            }
+        }
+        return false;
+    }
+    
 	
 	// Update is called once per frame
     void Update()
     {
+        boxPosition = GetComponent<BoxCollider>().bounds.center;
         hDir = Input.GetAxis("Horizontal");
         vDir = Input.GetAxis("Vertical");
 
         Vector3 calculatedMotion = transform.forward * vDir + transform.right * hDir;
+       
+        rayCastX(ref calculatedMotion, transform.right * hDir);
 
-        if (inContact)
+        rayCastZ(ref calculatedMotion, transform.forward * vDir);
+
+
+        /*if (rayCast(new Vector3(x, 0.0f, z), diagonalLength))
+        {
+            if (calculatedMotion.z > 0.0f)
+                calculatedMotion.z = 0.0f;
+            if (calculatedMotion.x > 0.0f)
+                calculatedMotion.x = 0.0f;
+        }
+        if (rayCast(new Vector3(x, 0.0f, -z), diagonalLength))
+        {
+            if (calculatedMotion.z < 0.0f)
+                calculatedMotion.z = 0.0f;
+            if (calculatedMotion.x > 0.0f)
+                calculatedMotion.x = 0.0f;
+        }
+        if (rayCast(new Vector3(-x, 0.0f, z), diagonalLength))
+        {
+            if (calculatedMotion.z > 0.0f)
+                calculatedMotion.z = 0.0f;
+            if (calculatedMotion.x < 0.0f)
+                calculatedMotion.x = 0.0f;
+        }
+        if (rayCast(new Vector3(-x, 0.0f, -z), diagonalLength))
+        {
+            if (calculatedMotion.z < 0.0f)
+                calculatedMotion.z = 0.0f;
+            if (calculatedMotion.x < 0.0f)
+                calculatedMotion.x = 0.0f;
+        }*/
+
+        /*if (inContact)
         {
             float dotProduct = Vector3.Dot(calculatedMotion, collisionNormal);
             // Facing a wall
@@ -124,7 +293,7 @@ public class CharacterMove : MonoBehaviour {
                 calculatedMotion = calculatedMotion - undesiredMotion;          
             }
         }
-        else if (inContactWithEnemy)
+        else */if (inContactWithEnemy)
         {
             float dotProduct = Vector3.Dot(calculatedMotion, collisionWithEnemyNormal);
             // Facing a wall
