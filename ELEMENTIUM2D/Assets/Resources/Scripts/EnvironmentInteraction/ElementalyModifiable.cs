@@ -2,11 +2,8 @@
 using System.Collections;
 using Includes;
 
-public class ElementalyModifiable : MonoBehaviour {
-
-    protected float duration;
-
-
+public class ElementalyModifiable : Modifiable {
+    
     //#############################################################
     //######################## MAIN FUNCTION ######################
     //#############################################################
@@ -31,14 +28,14 @@ public class ElementalyModifiable : MonoBehaviour {
         {
             StatusEffect burn = other.gameObject.AddComponent<BurningStatusEffect>();
             burn.setIntensity(intensity);
-            burn.setDuration(duration);
+            burn.setDuration(durability);
             other.gameObject.GetComponent<EnemyScript>().applyStatusEffect(burn);
         }
         else
         {
             //Need an extra check to see if damage > this damage
             StatusEffect burn = other.gameObject.GetComponent<BurningStatusEffect>();
-            burn.resetDuration(duration);
+            burn.resetDuration(durability);
         }
     }
 
@@ -48,18 +45,16 @@ public class ElementalyModifiable : MonoBehaviour {
         {
             StatusEffect slow = other.gameObject.AddComponent<SlowStatusEffect>();
             slow.setIntensity(intensity);
-            slow.setDuration(duration);
+            slow.setDuration(durability);
             other.gameObject.GetComponent<EnemyScript>().applyStatusEffect(slow);
         }
         else
         {
             //Need an extra check to see if damage > this damage
             StatusEffect slow = other.gameObject.GetComponent<SlowStatusEffect>();
-            slow.resetDuration(duration);
+            slow.resetDuration(durability);
         }
     }
-
-    public virtual void dealWithProjectile(Elements type){}
 
     public virtual void dealWithEnemy(EnemyScript scrpt){}
 

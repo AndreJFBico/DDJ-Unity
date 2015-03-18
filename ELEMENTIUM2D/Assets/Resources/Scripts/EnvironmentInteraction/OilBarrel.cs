@@ -8,8 +8,8 @@ public class OilBarrel : BreakableProp {
 
 	// Use this for initialization
 	void Start () {
-        maxHealth = 1;
-        health = maxHealth;
+        maxDurability = 1;
+        durability = maxDurability;
         puddle.SetActive(false);
 	}
 

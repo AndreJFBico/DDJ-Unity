@@ -11,9 +11,9 @@ public class BreakableProp : Breakable {
 
     public override void dealWithProjectile(Elements type, float damage)
     {
-        health -= 1;
+        durability -= 1;
 
-        if(health <= 0)
+        if(durability <= 0)
         {
             dealWithDeath();
         }

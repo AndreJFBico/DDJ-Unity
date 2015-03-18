@@ -25,6 +25,11 @@ public class CharacterMove : MonoBehaviour {
     private float z;
     private Vector3 boxPosition;
     private float epsilon;
+
+    private bool blockedRight = false;
+    private bool blockedLeft = false;
+    private bool blockedUp = false;
+    private bool blockedDown = false;
     //private List<Collision> collidedWith;
 
 	// Use this for initialization
@@ -136,51 +141,18 @@ public class CharacterMove : MonoBehaviour {
     {
         if (rayCast(boxPosition + new Vector3(0.0f, 0.0f, 0.0f), direction, z * epsilon))
         {
-            if (direction.z > 0.0f)
-            {
-                if (calculatedMotion.z > 0.0f)
-                {
-                    calculatedMotion.z = 0.0f;
-                    return true;
-                }
-            }
-            else if (calculatedMotion.z < 0.0f)
-            {
-                calculatedMotion.z = 0.0f;
-                return true;
-            }
+            calculatedMotion.z = 0.0f;
+            return true;
         }
         if (rayCast(boxPosition + new Vector3(x, 0.0f, 0.0f), direction, z * epsilon))
         {
-            if (direction.z> 0.0f)
-            {
-                if (calculatedMotion.z > 0.0f)
-                {
-                    calculatedMotion.z = 0.0f;
-                    return true;
-                }
-            }
-            else if (calculatedMotion.z < 0.0f)
-            {
-                calculatedMotion.z = 0.0f;
-                return true;
-            }
+            calculatedMotion.z = 0.0f;
+            return true;
         }
         if (rayCast(boxPosition + new Vector3(-x, 0.0f, 0.0f), direction, z * epsilon))
         {
-            if (direction.z > 0.0f)
-            {
-                if (calculatedMotion.z > 0.0f)
-                {
-                    calculatedMotion.z = 0.0f;
-                    return true;
-                }
-            }
-            else if (calculatedMotion.z < 0.0f)
-            {
-                calculatedMotion.z = 0.0f;
-                return true;
-            }
+            calculatedMotion.z = 0.0f;
+            return true;
         }
         return false;
     }
@@ -190,51 +162,18 @@ public class CharacterMove : MonoBehaviour {
     {
         if (rayCast(boxPosition + new Vector3(0.0f, 0.0f, 0.0f), direction, x * epsilon))
         {
-            if(direction.x > 0.0f)
-            {
-                if (calculatedMotion.x > 0.0f)
-                {
-                    calculatedMotion.x = 0.0f;
-                    return true;
-                }
-            }
-            else if (calculatedMotion.x < 0.0f)
-            {
-                calculatedMotion.x = 0.0f;
-                return true;
-            }
+            calculatedMotion.x = 0.0f;
+            return true;
         }
         if (rayCast(boxPosition + new Vector3(0.0f, 0.0f, z), direction, x * epsilon))
         {
-            if (direction.x > 0.0f)
-            {
-                if (calculatedMotion.x > 0.0f)
-                {
-                    calculatedMotion.x = 0.0f;
-                    return true;
-                }
-            }
-            else if (calculatedMotion.x < 0.0f)
-            {
-                calculatedMotion.x = 0.0f;
-                return true;
-            }
+            calculatedMotion.x = 0.0f;
+            return true;
         }
         if (rayCast(boxPosition + new Vector3(0.0f, 0.0f, -z), direction, x * epsilon))
         {
-            if(direction.x > 0.0f)
-            {
-                if (calculatedMotion.x > 0.0f)
-                {
-                    calculatedMotion.x = 0.0f;
-                    return true;
-                }
-            }
-            else if (calculatedMotion.x < 0.0f)
-            {
-                calculatedMotion.x = 0.0f;
-                return true;
-            }
+            calculatedMotion.x = 0.0f;
+            return true;
         }
         return false;
     }

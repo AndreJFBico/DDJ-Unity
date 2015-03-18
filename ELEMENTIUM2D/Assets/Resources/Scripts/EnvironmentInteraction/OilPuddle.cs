@@ -13,7 +13,7 @@ public class OilPuddle : ElementalyModifiable {
 	void Start () {
         damage = 5;
         slow = 0.5f;
-        duration = 1;
+        durability = 1;
 	}
 
     protected void OnTriggerStay(Collider other)

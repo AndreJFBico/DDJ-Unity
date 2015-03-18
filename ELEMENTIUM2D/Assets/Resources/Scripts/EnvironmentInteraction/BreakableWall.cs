@@ -9,8 +9,8 @@ public class BreakableWall : Breakable {
 	// Use this for initialization
     void Start()
     {
-        maxHealth = 50;
-        health = maxHealth;
+        maxDurability = 50;
+        durability = maxDurability;
 	}
 
     public override void dealWithProjectile(Elements projType, float damage)
@@ -21,7 +21,7 @@ public class BreakableWall : Breakable {
                 switch (projType)
                 {
                     case Elements.NEUTRAL:
-                        health -= damage;
+                        durability -= damage;
                         break;
                     default:
                         break;
@@ -31,7 +31,7 @@ public class BreakableWall : Breakable {
                 switch (projType)
                 {  
                     case Elements.FROST:
-                        health -= damage;
+                        durability -= damage;
                         break;
                     default:
                         break;
@@ -41,7 +41,7 @@ public class BreakableWall : Breakable {
                 switch (projType)
                 {
                     case Elements.FIRE:
-                        health -= damage;
+                        durability -= damage;
                         break;
                     default:
                         break;
@@ -51,7 +51,7 @@ public class BreakableWall : Breakable {
                 switch (projType)
                 {
                     case Elements.EARTH:
-                        health -= damage;
+                        durability -= damage;
                         break;
                     default:
                         break;
@@ -60,15 +60,15 @@ public class BreakableWall : Breakable {
             default:
                 break;
         }
-        if (health <= maxHealth/4)
+        if (durability <= maxDurability / 4)
         {
             transform.localScale = new Vector3(0.33f, 0.33f, 0.33f);
         }
-        else if(health <= maxHealth/2)
+        else if (durability <= maxDurability / 2)
         {
             transform.localScale = new Vector3(0.66f, 0.66f, 0.66f);
         }
-        if(health <= 0)
+        if (durability <= 0)
             Destroy(gameObject);
     }
 	

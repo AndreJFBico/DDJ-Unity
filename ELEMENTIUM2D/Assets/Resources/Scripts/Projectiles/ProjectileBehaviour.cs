@@ -21,7 +21,7 @@ public class ProjectileBehaviour : MonoBehaviour
         Destroy(gameObject);
     }
 
-    void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         enteredBreakableTrigger(other);
     }
@@ -41,7 +41,7 @@ public class ProjectileBehaviour : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer(Constants.breakable))
         {
-            collision.gameObject.GetComponent<Breakable>().dealWithProjectile(type, damage);
+            collision.gameObject.GetComponent<Modifiable>().dealWithProjectile(type, damage);
             return true;
         }
         return false;
@@ -51,7 +51,7 @@ public class ProjectileBehaviour : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer(Constants.elementalyModifiable))
         {
-            other.gameObject.GetComponent<ElementalyModifiable>().dealWithProjectile(type);
+            other.gameObject.GetComponent<Modifiable>().dealWithProjectile(type);
             return true;
         }
         return false;

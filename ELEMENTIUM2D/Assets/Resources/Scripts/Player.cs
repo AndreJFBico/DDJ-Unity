@@ -105,7 +105,7 @@ public class Player : Agent {
         if (health <= 0)
         {
             //Application.Quit();
-            UnityEditor.EditorApplication.isPlaying = false;
+//            UnityEditor.EditorApplication.isPlaying = false;
         }
         OnGUI();
     }

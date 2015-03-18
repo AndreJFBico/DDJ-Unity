@@ -2,17 +2,15 @@
 using System.Collections;
 using Includes;
 
-public class WaterPuddle : ElementalyModifiable{
+public class WaterPuddle : Breakable{
 
-    private float health;
-    private float maxHealth;
     public GameObject iceWall;
 
     // Use this for initialization
     void Start()
     {
-        maxHealth = 5;
-        health = maxHealth;
+        maxDurability = 5;
+        durability = maxDurability;
     }
 
     protected void OnTriggerEnter(Collider other)
@@ -26,8 +24,8 @@ public class WaterPuddle : ElementalyModifiable{
     {
         if (type == Elements.FIRE)
         {
-            health--;
-            if(health <= 0)
+            durability--;
+            if (durability <= 0)
             {
                 Destroy(transform.parent.gameObject);
             }
@@ -43,6 +41,6 @@ public class WaterPuddle : ElementalyModifiable{
 
     public void resetValues()
     {
-        health = 5;
+        durability = maxDurability;
     }
 }
