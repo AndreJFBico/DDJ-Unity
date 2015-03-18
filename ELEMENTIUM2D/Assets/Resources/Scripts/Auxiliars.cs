@@ -212,5 +212,6 @@ namespace Includes
         public static float waterResist = 0;
         public static float earthResist = 0;
         public static float fireResist = 0;
+        public static float damageTimer = 2.35f;
     }
 }
