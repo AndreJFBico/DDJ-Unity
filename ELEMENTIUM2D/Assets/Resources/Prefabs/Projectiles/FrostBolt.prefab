@@ -29,6 +29,8 @@ GameObject:
   - 4: {fileID: 449820}
   - 212: {fileID: 21249472}
   - 95: {fileID: 9552148}
+  - 114: {fileID: 11427884}
+  - 114: {fileID: 11496116}
   m_Layer: 16
   m_Name: Sprite
   m_TagString: Untagged
@@ -115,6 +117,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83003b42c5f97b48afac4563ea0b73b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11427884
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b28fac91207db45bdf33432bee0b9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  position: 0
+  list: []
+--- !u!114 &11496116
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b28fac91207db45bdf33432bee0b9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  position: 0
+  list: []
 --- !u!136 &13625202
 CapsuleCollider:
   m_ObjectHideFlags: 1

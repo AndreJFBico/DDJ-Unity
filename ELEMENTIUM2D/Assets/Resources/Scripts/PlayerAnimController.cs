@@ -18,7 +18,7 @@ public class PlayerAnimController : MonoBehaviour {
 	// Update is called once per frame
     void Update()
     {
-        GetComponent<Renderer>().sortingOrder = Mathf.RoundToInt(-transform.parent.position.y * 10);
+        //GetComponent<Renderer>().sortingOrder = Mathf.RoundToInt(-transform.parent.position.y * 10);
         anim.SetFloat("Horizontal", horizontal);
         anim.SetFloat("Vertical", vertical);
         anim.SetBool("Idle", idle);
