@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 411496}
   - 212: {fileID: 21212964}
   - 114: {fileID: 11407600}
+  - 114: {fileID: 11432116}
   m_Layer: 16
   m_Name: Sprite
   m_TagString: Untagged
@@ -134,6 +135,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
+  position: 0
+  list: []
 --- !u!114 &11419154
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -145,6 +148,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 784a957b81b988740a0ba57be7940ace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11432116
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b28fac91207db45bdf33432bee0b9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  position: 0
+  list: []
 --- !u!135 &13566160
 SphereCollider:
   m_ObjectHideFlags: 1
