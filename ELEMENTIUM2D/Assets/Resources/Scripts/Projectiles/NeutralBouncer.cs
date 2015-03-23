@@ -82,7 +82,7 @@ public class NeutralBouncer : ProjectileBehaviour {
         Destroy(gameObject);
     }
 
-    public override void applyMovement()
+    public override void initiate(GameObject startingObject)
     {
     }
 }

@@ -7,7 +7,7 @@ public class NeutralEnemyScript : EnemyScript
     protected LineRenderer lr;
 
     // Use this for initialization
-    protected override void Start()
+    protected override void Awake()
     {
         type = Elements.NEUTRAL;
         maxHealth = EnemyStats.Neutral.maxHealth;
@@ -20,7 +20,7 @@ public class NeutralEnemyScript : EnemyScript
         //lr = gameObject.AddComponent<LineRenderer>();
         //lr.SetWidth(0.01f, 0.01f);
         //lr.SetVertexCount(2);
-        base.Start();
+        base.Awake();
     }
 
     void alignLineRenderer()

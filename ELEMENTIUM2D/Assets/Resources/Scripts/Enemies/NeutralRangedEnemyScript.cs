@@ -14,7 +14,7 @@ public class NeutralRangedEnemyScript : EnemyScript
     protected bool isShooting = false;
 
     // Use this for initialization
-    protected override void Start()
+    protected override void Awake()
     {
         type = Elements.NEUTRAL;
         agent = gameObject.GetComponentInChildren<PathAgent>();
@@ -31,7 +31,7 @@ public class NeutralRangedEnemyScript : EnemyScript
         //lr = gameObject.AddComponent<LineRenderer>();
         //lr.SetWidth(0.01f, 0.01f);
         //lr.SetVertexCount(2);
-        base.Start();
+        base.Awake();
     }
 
     void alignLineRenderer()
@@ -51,14 +51,14 @@ public class NeutralRangedEnemyScript : EnemyScript
     }
 
     // Attack Range Radius
-    protected void OnTriggerStay(Collider collider)
+    /*protected void OnTriggerStay(Collider collider)
     {
         if (agent.hasTarget() && collider.tag.CompareTo("Enemy") == 0 && !isShooting)
         {
             InvokeRepeating("sendProjectile", 0f, EnemyStats.Neutral.rangedAttackSpeed);
             isShooting = true;
         }
-    }
+    }*/
 
     // Attack Range Radius
     protected void OnTriggerEnter(Collider collider)
@@ -75,7 +75,7 @@ public class NeutralRangedEnemyScript : EnemyScript
         if(agent.hasTarget())
         {
             GameObject p = Instantiate(projectile, transform.position, Quaternion.LookRotation(agent.target.position - transform.position)) as GameObject;
-            p.GetComponent<ProjectileBehaviour>().applyMovement();
+            p.GetComponent<ProjectileBehaviour>().initiate(this.gameObject);
         }
         else
         {

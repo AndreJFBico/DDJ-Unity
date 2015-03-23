@@ -12,6 +12,7 @@ TagManager:
   - navmeshObject
   - pointgraph2D
   - Minimap
+  - Ui
   layers:
   - Default
   - TransparentFX

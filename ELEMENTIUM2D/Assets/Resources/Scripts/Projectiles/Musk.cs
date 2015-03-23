@@ -27,7 +27,7 @@ public class Musk : ProjectileBehaviour
         base.OnCollisionEnter(collision);
     }
 
-    public override void applyMovement()
+    public override void initiate(GameObject startingObject)
     {
         ConstantForce constantForce = gameObject.AddComponent<ConstantForce>();
         constantForce.relativeForce = new Vector3(0.0f, 0.0f, AbilityStats.Neutral.ability1.movementForce / 2.0f);

@@ -11,15 +11,20 @@ public class EnemyScript : Agent
 
     protected SpawnScript spawnScript;
     protected PathAgent pathAgent;
-
+    protected GameObject gui;
+    protected GameObject myGui;
 
 	// Use this for initialization
-    protected virtual void Start()
+    protected virtual void Awake()
     {
+        base.Awake();
         Vector2 targetPos = Camera.main.WorldToScreenPoint(transform.position);
         healthbar_background.position = targetPos;
         pathAgent = GetComponentInChildren<PathAgent>();
         centerHealthBar = true;
+        gui = GameObject.Find("GUI");
+        myGui = transform.FindChild("Ui").gameObject;
+        sendGuiToCanvas();
 	}
 	
 	// Update is called once per frame
@@ -92,6 +97,16 @@ public class EnemyScript : Agent
         }
     }
 
+    public void sendGuiToCanvas()
+    {
+        myGui.transform.parent = gui.transform;
+    }
+
+    public void retrieveGuiFromCanvas()
+    {
+        myGui.transform.parent = transform;
+    }
+
     private void Eliminate()
     {
         if (spawnScript != null)
@@ -100,7 +115,11 @@ public class EnemyScript : Agent
             health = maxHealth;
             spawnScript.despawn(transform);
         }
-        else Destroy(gameObject);
+        else
+        {
+            retrieveGuiFromCanvas();
+            Destroy(gameObject);
+        } 
     }
 
     // Is initiated by the spawner

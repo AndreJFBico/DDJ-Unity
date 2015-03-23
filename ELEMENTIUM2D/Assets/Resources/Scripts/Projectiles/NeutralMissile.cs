@@ -55,7 +55,7 @@ public class NeutralMissile : ProjectileBehaviour {
         Destroy(gameObject);
     }
 
-    public override void applyMovement()
+    public override void initiate(GameObject startingObject)
     {
         // Rotates the missile randomly
         int result = Random.Range(0, 360);
