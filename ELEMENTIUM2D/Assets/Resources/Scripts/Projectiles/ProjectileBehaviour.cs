@@ -8,7 +8,10 @@ public class ProjectileBehaviour : MonoBehaviour
     protected float damage;
     protected Elements type;
     protected GameObject explosion;
-    protected virtual void Start() { }
+
+    protected virtual void Start() 
+    {
+    }
 
     protected virtual void Awake()
     {
@@ -63,7 +66,7 @@ public class ProjectileBehaviour : MonoBehaviour
     }
 
     // This function applys initial movement to the projectile
-    public virtual void applyMovement()
+    public virtual void initiate( GameObject startingObject)
     {
 
     }

@@ -26,7 +26,7 @@ public class IceShard : ProjectileBehaviour
         base.OnCollisionEnter(collision);
     }
 
-    public override void applyMovement()
+    public override void initiate(GameObject startingObject)
     {
         ConstantForce constantForce = gameObject.AddComponent<ConstantForce>();
         constantForce.relativeForce = new Vector3(0.0f, 0.0f, AbilityStats.Frost.ability1.movementForce);

@@ -12,6 +12,7 @@ public class PathAgent : MonoBehaviour
     //private Seeker seeker;
     //private bool on_a_Path;
     private NavMeshAgent agent;
+    private Agent agentScrpt;
 
     public void Start()
     {
@@ -19,20 +20,22 @@ public class PathAgent : MonoBehaviour
         agent = transform.parent.GetComponent<NavMeshAgent>();
         roamRadius = Constants.enemyRoamRadius;
         InvokeRepeating("checkMovement", 0, 0.5f);
+        agentScrpt = transform.parent.gameObject.GetComponent<Agent>();
     }
 
-    public void OnTriggerStay(Collider collision)
+    /*public void OnTriggerStay(Collider collision)
     {
         if (collision.gameObject.tag.CompareTo("Player") == 0)
         {
             target = collision.transform;
         }
-    }
+    }*/
 
     public void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag.CompareTo("Player") == 0)
         {
+            agentScrpt.setAlerted(true);
             target = collision.transform;
         }
     }

@@ -26,7 +26,7 @@ public class Fireball : ProjectileBehaviour
         base.OnCollisionEnter(collision);
     }
 
-    public override void applyMovement()
+    public override void initiate(GameObject startingObject)
     {
         float rndm = Random.Range(AbilityStats.Fire.ability1.minForce, AbilityStats.Fire.ability1.maxForce);
         ConstantForce constantForce = gameObject.AddComponent<ConstantForce>();

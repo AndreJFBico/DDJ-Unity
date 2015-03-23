@@ -27,6 +27,7 @@ public class SpawnScript : MonoBehaviour {
             obj.GetComponent<EnemyScript>().setSpawner(this);
             // deactivates the object
            // Debug.Log(obj);
+            obj.GetComponent<EnemyScript>().retrieveGuiFromCanvas();
             obj.SetActive(false);
             toSpawn.Add(obj.transform);
         }
@@ -39,6 +40,7 @@ public class SpawnScript : MonoBehaviour {
         {
             Transform obj = toSpawn[0];
             obj.gameObject.SetActive(true);
+            obj.GetComponent<EnemyScript>().sendGuiToCanvas();   
             toSpawn.Remove(obj);
             spawned.Add(obj);
         }
@@ -47,6 +49,8 @@ public class SpawnScript : MonoBehaviour {
     public void despawn(Transform obj)
     {
         obj.GetComponentInChildren<PathAgent>().target = null;
+        obj.GetComponent<EnemyScript>().retrieveGuiFromCanvas();
+        //obj.gameObject.SetActive(false);
         obj.transform.position = transform.position;
         obj.transform.rotation = transform.rotation;
         spawned.Remove(obj);

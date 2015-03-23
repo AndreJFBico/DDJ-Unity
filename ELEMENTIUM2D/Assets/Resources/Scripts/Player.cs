@@ -11,8 +11,9 @@ public class Player : Agent {
     private CharacterMove characterMoveScrpt;
     private bool alphaed = false;
 
-    void Start()
+    void Awake()
     {
+        base.Awake();
         maxHealth = PlayerStats.maxHealth;
         health = maxHealth;
         damage = PlayerStats.damage;
@@ -21,7 +22,7 @@ public class Player : Agent {
         earthResist = PlayerStats.earthResist;
         fireResist = PlayerStats.fireResist;
         characterMoveScrpt = transform.gameObject.GetComponent<CharacterMove>();
-        InvokeRepeating("blink", 0f, 0.10f);
+        InvokeRepeating("blink", 0f, 0.10f);      
     }
 
     public override void OnCollisionStay(Collision collision)
