@@ -1,0 +1,8 @@
+
+// Move explosion Resources.load to a static class Explosion in Auxiliars
+
+// Fix PathAgent not on Navmesh error
+
+// Iterate all enemies and abilities and put values in Includes
+
+// Fix CanShoot script currently the autoattack speed is the same as the last ability used of the same element
