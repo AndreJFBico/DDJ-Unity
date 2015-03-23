@@ -22,7 +22,7 @@ public class IceShard : ProjectileBehaviour
     {
         if (collidedWith(collision, damage)) ;
         else if (collidedWithBreakable(collision)) ;
-        else if ()
+        //else if ();
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Unhitable"))
             return;
         base.OnCollisionEnter(collision);
