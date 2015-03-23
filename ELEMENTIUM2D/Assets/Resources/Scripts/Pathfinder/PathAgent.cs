@@ -40,6 +40,15 @@ public class PathAgent : MonoBehaviour
         }
     }
 
+    public void OnTriggerExit(Collider collision)
+    {
+        if (collision.gameObject.tag.CompareTo("Player") == 0)
+        {
+            agentScrpt.setAlerted(false);
+            target = null;
+        }
+    }
+
     public bool hasTarget()
     {
         if (target != null)

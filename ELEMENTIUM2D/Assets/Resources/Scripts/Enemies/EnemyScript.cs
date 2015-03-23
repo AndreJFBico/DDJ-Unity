@@ -115,7 +115,11 @@ public class EnemyScript : Agent
             health = maxHealth;
             spawnScript.despawn(transform);
         }
-        else Destroy(gameObject);
+        else
+        {
+            retrieveGuiFromCanvas();
+            Destroy(gameObject);
+        } 
     }
 
     // Is initiated by the spawner

@@ -1,13 +1,11 @@
 fileFormatVersion: 2
-guid: 980cfbfc81543bb43afe52f908cb4426
-timeCreated: 1427110541
+guid: 03c3d4d021bffe14688423dba9b2f22b
+timeCreated: 1427121856
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: spawner_0
-    21300002: spawner_1
-    21300004: spawner_2
-    21300006: spawner_3
+    21300000: rangedDefaultAnim_0
+    21300002: rangedDefaultAnim_1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,10 +28,10 @@ TextureImporter:
   cubemapConvolutionSteps: 8
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -3
-  maxTextureSize: 1024
+  textureFormat: -1
+  maxTextureSize: 512
   textureSettings:
-    filterMode: 2
+    filterMode: -1
     aniso: 16
     mipBias: -1
     wrapMode: 1
@@ -53,23 +51,23 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: spawner_0
+    - name: rangedDefaultAnim_0
       rect:
         serializedVersion: 2
-        x: 99
+        x: 0
         y: 0
-        width: 356
+        width: 530
         height: 480
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: spawner_1
+    - name: rangedDefaultAnim_1
       rect:
         serializedVersion: 2
-        x: 653
+        x: 553
         y: 0
-        width: 356
-        height: 476
+        width: 531
+        height: 480
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

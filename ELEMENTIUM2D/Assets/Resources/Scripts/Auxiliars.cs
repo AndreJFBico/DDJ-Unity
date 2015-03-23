@@ -68,11 +68,12 @@ namespace Includes
 
             public class ability2
             {
-                public static float attackSpeed = 0.25f;
-                public static int projectile_number = 1;
+                public static float attackSpeed = 2.01f;
+                public static int projectile_number = 20;
                 public static float damage = 5;
-                public static float movementForce = 200;
-                public static string sprite = "Prefabs/Projectiles/";
+                public static float movementForce = 20;
+                public static string sprite = "Prefabs/Projectiles/WaterProjectile";
+                public static float deathTimer = 5;
             }
             public class ability3
             {

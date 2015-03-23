@@ -7,7 +7,7 @@ public class Agent : MonoBehaviour {
     public RectTransform healthbar_background;
     public RectTransform healthbar;
     public RectTransform alertedSign;
-    protected Sprite figure;
+    protected SpriteRenderer figure;
     protected float maxHealth;
     protected float health;
     protected float damage;
@@ -21,7 +21,7 @@ public class Agent : MonoBehaviour {
     protected void Awake()
     {
         // Findes the sprite associated to the agent
-        figure = transform.gameObject.GetComponentInChildren<SpriteRenderer>().sprite;
+        figure = transform.gameObject.GetComponentInChildren<SpriteRenderer>();
     }
 
     protected virtual void OnGUI()
@@ -30,7 +30,7 @@ public class Agent : MonoBehaviour {
         Vector2 targetPos = healthbar_background.position;
         if(centerHealthBar)
         {
-            targetPos = Camera.main.WorldToScreenPoint(transform.position);
+            targetPos = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x, transform.position.y, transform.position.z + 0.1f));
         }
         
         healthbar_background.position = targetPos;
@@ -48,7 +48,7 @@ public class Agent : MonoBehaviour {
         {
             alertedSign.transform.gameObject.SetActive(false);
         }
-        alertedSign.position = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x, transform.position.y, transform.position.z + figure.bounds.extents.y / 2.0f));
+        alertedSign.position = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x - 0.1f, transform.position.y, transform.position.z + 0.1f));
     }
 
     public virtual void Update()

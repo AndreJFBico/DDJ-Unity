@@ -1,13 +1,12 @@
 fileFormatVersion: 2
-guid: 980cfbfc81543bb43afe52f908cb4426
-timeCreated: 1427110541
+guid: 562f7c161f2d41d4bb242ba1dedca4df
+timeCreated: 1427124884
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: spawner_0
-    21300002: spawner_1
-    21300004: spawner_2
-    21300006: spawner_3
+    21300000: enemy_0
+    21300002: enemy_1
+    21300004: enemy_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,10 +29,10 @@ TextureImporter:
   cubemapConvolutionSteps: 8
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -3
-  maxTextureSize: 1024
+  textureFormat: -1
+  maxTextureSize: 2048
   textureSettings:
-    filterMode: 2
+    filterMode: -1
     aniso: 16
     mipBias: -1
     wrapMode: 1
@@ -53,23 +52,33 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: spawner_0
+    - name: enemy_0
       rect:
         serializedVersion: 2
-        x: 99
+        x: 124
         y: 0
-        width: 356
+        width: 307
         height: 480
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: spawner_1
+    - name: enemy_1
       rect:
         serializedVersion: 2
-        x: 653
+        x: 676
         y: 0
-        width: 356
-        height: 476
+        width: 310
+        height: 480
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_2
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 0
+        width: 307
+        height: 480
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
