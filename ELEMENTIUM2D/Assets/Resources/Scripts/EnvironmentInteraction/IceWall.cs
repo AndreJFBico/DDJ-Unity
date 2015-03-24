@@ -13,12 +13,21 @@ public class IceWall : BreakableWall{
         durability = maxDurability;
     }
 
+    private bool hasPuddle()
+    {
+        if(waterPuddle != null)
+        {
+            return true;
+        }
+        return false;
+    }
+
     public override void dealWithProjectile(Elements type, float damage)
     {
         if (type == Elements.EARTH)
         {
             durability -= damage;
-            if (durability <= 0)
+            if (hasPuddle() && durability <= 0)
             {
                 Destroy(transform.parent.gameObject);
             }
@@ -30,7 +39,8 @@ public class IceWall : BreakableWall{
             if (durability <= 0)
             {
                 resetValues();
-                waterPuddle.SetActive(true);
+                if (hasPuddle())
+                    waterPuddle.SetActive(true);
                 gameObject.SetActive(false);
             }
             

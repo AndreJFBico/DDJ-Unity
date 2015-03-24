@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 462308}
   - 212: {fileID: 21257246}
   - 114: {fileID: 11423966}
-  m_Layer: 16
+  m_Layer: 19
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ GameObject:
   - 54: {fileID: 5475084}
   - 136: {fileID: 13635862}
   - 114: {fileID: 11411622}
-  m_Layer: 16
+  m_Layer: 19
   m_Name: WaterProjectile
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -86,18 +86,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8767953bbf9b44c479f066ad23c74ddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waterBurst: {fileID: 0}
 --- !u!114 &11423966
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 102090}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0b28fac91207db45bdf33432bee0b9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
+  type: 0
   position: 0
   list: []
 --- !u!136 &13635862
@@ -136,7 +137,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -32768
   m_Sprite: {fileID: 21300000, guid: ca3568186ad95644c9c6931ec9e9da26, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000

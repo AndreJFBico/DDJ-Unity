@@ -13,6 +13,7 @@ TagManager:
   - pointgraph2D
   - Minimap
   - Ui
+  - StayingProjectile
   layers:
   - Default
   - TransparentFX
@@ -33,7 +34,7 @@ TagManager:
   - PlayerProjectile
   - EnemyProjectile
   - Enemy
-  - 
+  - Puddle
   - 
   - 
   - 

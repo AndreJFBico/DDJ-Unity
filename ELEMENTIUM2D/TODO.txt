@@ -6,3 +6,14 @@
 // Iterate all enemies and abilities and put values in Includes
 
 // Fix CanShoot script currently the autoattack speed is the same as the last ability used of the same element
+
+// Replace Auxiliars.cs public static string "sprite" and "childSprite" to "projectile" and "childProjectile"
+
+// Add a global class that has all the resources loaded like the player, different types of enemies and projectiles
+	-> "ObjectManager".... etc ......
+
+// Normalize Scripts sprites and prefabs names example: IceShard and FrostBolt
+
+// WaterProjectile sorting script has been disabled and replaced by direct atribution or ordering layer -32768
+
+// IceWall Class has a null check for waterPuddle that needs to be removed.

@@ -45,6 +45,7 @@ public class ShootElement : MonoBehaviour
                 bullet.transform.Rotate(new Vector3(-90, 0, 0));
                 // Invokes ability specific movement behaviour
                 bullet.GetComponent<ProjectileBehaviour>().initiate(gameObject);
+                bullet.name = bulletPrefab.name;
                 //Physics2D.IgnoreCollision(bullet.GetComponent<Collider2D>(), transform.GetComponent<Collider2D>());
                 
             }

@@ -4,6 +4,7 @@ using Includes;
 
 public class WaterSpray : ProjectileBehaviour {
 
+    public WaterBurst waterBurst;
     private ConstantForce constantForce;
     private SpriteRenderer spriteR;
     private float time = 0.1f;
@@ -25,6 +26,13 @@ public class WaterSpray : ProjectileBehaviour {
 
     public override void OnCollisionEnter(Collision collision)
     {
+        if (collision.transform.gameObject.layer == LayerMask.NameToLayer("PlayerProjectile") || collision.transform.gameObject.layer == LayerMask.NameToLayer("EnemyProjectile"))
+        {
+            if (collision.transform.name.CompareTo("FrostBolt") == 0)
+            {
+                waterBurst.handleCollision(collision);
+            }
+        }
         if(!waterPuddle)
         {
             if (!deltDamage && collidedWith(collision, damage)) 
@@ -38,25 +46,27 @@ public class WaterSpray : ProjectileBehaviour {
     protected void Update()
     {
         time += Time.deltaTime;
-        if (Vector3.Dot(transform.GetComponent<Rigidbody>().velocity, transform.forward) < 0.0f)
+        if (!waterPuddle && Vector3.Dot(transform.GetComponent<Rigidbody>().velocity, transform.forward) < 0.0f)
         {
             GetComponent<Rigidbody>().velocity = new Vector3(0.0f, 0.0f, 0.0f);
             GetComponent<ConstantForce>().enabled = false;
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             waterPuddle = true;
-            //transform.gameObject.layer = LayerMask.GetMask("Unhitable");
+            //transform.gameObject.layer = LayerMask.NameToLayer("Puddle");
         }
-        if(time >= AbilityStats.Frost.ability2.deathTimer)
+        if (time >= AbilityStats.Frost.ability2.deathTimer)
         {
             // Kill it
+            Destroy(waterBurst);
             Destroy(gameObject);
         }
         else
         {
             // Set alpha acordingly
             Color color = spriteR.material.GetColor("_TintColor");
-            color.a =  1.0f - (time / AbilityStats.Frost.ability2.deathTimer);
+            color.a = 1.0f - (time / AbilityStats.Frost.ability2.deathTimer);
             spriteR.material.SetColor("_TintColor", color);
-        }
+        }     
     }
 
     public override void initiate(GameObject startingObject)
