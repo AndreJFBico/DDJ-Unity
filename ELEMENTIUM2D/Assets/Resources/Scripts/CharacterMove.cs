@@ -128,7 +128,7 @@ public class CharacterMove : MonoBehaviour {
     bool rayCast(Vector3 position, Vector3 direction, float distance)
     {
         RaycastHit hit;
-        if (Physics.Raycast(new Ray(position, direction), out hit, distance, LayerMask.GetMask("Obstacles") | LayerMask.GetMask("Breakable")))
+        if (Physics.Raycast(new Ray(position, direction), out hit, distance, LayerMask.GetMask("Obstacles") | LayerMask.GetMask(Constants.breakable)))
         {
             Debug.DrawRay(position, direction);
             return true;

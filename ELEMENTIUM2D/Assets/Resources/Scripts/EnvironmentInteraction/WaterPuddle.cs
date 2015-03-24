@@ -11,6 +11,7 @@ public class WaterPuddle : Breakable{
     {
         maxDurability = 5;
         durability = maxDurability;
+        iceWall = GameManager.Instance.IceWall;
     }
 
     protected void OnTriggerEnter(Collider other)
@@ -27,16 +28,23 @@ public class WaterPuddle : Breakable{
             durability--;
             if (durability <= 0)
             {
-                Destroy(transform.parent.gameObject);
+                Destroy(gameObject);
+                Destroy(this);
             }
         }
 
         if(type == Elements.FROST)
         {
             resetValues();
-            iceWall.SetActive(true);
-            gameObject.SetActive(false);
+            genIceWall();
+            Destroy(gameObject);
+            Destroy(this);
         }
+    }
+
+    private void genIceWall()
+    {
+        Instantiate(iceWall, transform.position, Quaternion.identity);
     }
 
     public void resetValues()

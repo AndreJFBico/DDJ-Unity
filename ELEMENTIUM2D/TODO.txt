@@ -1,5 +1,5 @@
 
-// Move explosion Resources.load to a static class Explosion in Auxiliars
+// Move explosion Resources.load to a static class GameManager in Auxiliars
 
 // Fix PathAgent not on Navmesh error
 
@@ -10,10 +10,8 @@
 // Replace Auxiliars.cs public static string "sprite" and "childSprite" to "projectile" and "childProjectile"
 
 // Add a global class that has all the resources loaded like the player, different types of enemies and projectiles
-	-> "ObjectManager".... etc ......
+	-> "GameManager".... etc ...... -> in Progress
 
 // Normalize Scripts sprites and prefabs names example: IceShard and FrostBolt
 
 // WaterProjectile sorting script has been disabled and replaced by direct atribution or ordering layer -32768
-
-// IceWall Class has a null check for waterPuddle that needs to be removed.

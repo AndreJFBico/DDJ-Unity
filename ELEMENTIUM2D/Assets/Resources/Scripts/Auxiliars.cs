@@ -1,6 +1,6 @@
 ﻿
 #define DEBUG
-
+using System;
 using UnityEngine;
 using System.Collections;
 
@@ -236,5 +236,36 @@ namespace Includes
         public static float earthResist = 0;
         public static float fireResist = 0;
         public static float damageTimer = 2.35f;
+    }
+
+    [Serializable]
+    public class GameManager
+    {
+        private static GameManager _instance = null;
+        private static GameObject iceWall;
+        private static GameObject waterPuddle;
+
+        protected GameManager() { }
+        // Singleton pattern implementation
+
+        public GameObject IceWall
+        {
+            get { return iceWall; }
+        }
+
+        public GameObject WaterPuddle
+        {
+            get { return waterPuddle; }
+        }
+
+        public static GameManager Instance { get { if (_instance == null) { _instance = new GameManager(); init(); } return _instance; } }
+
+        private static void init()
+        {
+            iceWall = (GameObject) Resources.Load("Prefabs/Environment/IceWall");
+            waterPuddle = (GameObject) Resources.Load("Prefabs/Environment/WaterPuddle");
+        }
+
+
     }
 }
