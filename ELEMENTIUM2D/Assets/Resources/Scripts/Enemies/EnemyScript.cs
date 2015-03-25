@@ -8,11 +8,13 @@ public class EnemyScript : Agent
 
     protected Elements type;
     protected float visionRadiusValue = 5.46f;
+    protected bool isAlerted = false;
 
     protected SpawnScript spawnScript;
     protected PathAgent pathAgent;
     protected GameObject gui;
     protected GameObject myGui;
+    public RectTransform alertedSign;
 
 	// Use this for initialization
     protected virtual void Awake()
@@ -26,7 +28,27 @@ public class EnemyScript : Agent
         myGui = transform.FindChild("Ui").gameObject;
         sendGuiToCanvas();
 	}
-	
+
+    protected override void OnGUI()
+    {
+        base.OnGUI();
+
+        // Alerted sign
+        if (isAlerted)
+        {
+            if(pathAgent.hasTarget())
+            {
+                alertedSign.transform.gameObject.SetActive(true);
+            }
+        }
+        else
+        {
+            alertedSign.transform.gameObject.SetActive(false);
+        }
+        alertedSign.position = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x - 0.1f, transform.position.y, transform.position.z + 0.1f));
+
+    }
+
 	// Update is called once per frame
     protected virtual void Update()
     {
@@ -136,5 +158,21 @@ public class EnemyScript : Agent
     public Elements getElementType()
     {
         return type;
+    }
+
+    public override void setAlerted(bool val)
+    {
+        isAlerted = val;
+    }
+
+    public override bool getAlerted()
+    {
+        return isAlerted;
+    }
+
+    public void playerSighted()
+    {
+        pathAgent.playerSighted(GameManager.Instance.Player.transform);
+        pathAgent.stopChasing();
     }
 }

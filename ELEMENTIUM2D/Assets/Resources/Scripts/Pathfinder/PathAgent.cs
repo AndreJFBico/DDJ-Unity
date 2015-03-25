@@ -14,6 +14,8 @@ public class PathAgent : MonoBehaviour
     private NavMeshAgent agent;
     private Agent agentScrpt;
 
+    private bool inSight = false;
+
     public void Start()
     {
         target = null;
@@ -31,12 +33,18 @@ public class PathAgent : MonoBehaviour
         }
     }*/
 
+    public void playerSighted(Transform collision)
+    {
+        inSight = true;
+        agentScrpt.setAlerted(true);
+        target = collision;
+    }
+
     public void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag.CompareTo("Player") == 0)
         {
-            agentScrpt.setAlerted(true);
-            target = collision.transform;
+            playerSighted(collision.transform);
         }
     }
 
@@ -44,16 +52,25 @@ public class PathAgent : MonoBehaviour
     {
         if (collision.gameObject.tag.CompareTo("Player") == 0)
         {
-            agentScrpt.setAlerted(false);
-            target = null;
+            stopChasing();
         }
+    }
+
+    public void stopChasing()
+    {
+        inSight = false;
+        Invoke("stopChase", 1);
+    }
+
+    private void stopChase()
+    {
+        if (!inSight)
+            target = null;
     }
 
     public bool hasTarget()
     {
-        if (target != null)
-            return true;
-        return false;
+        return target != null;
     }
 
     void checkMovement()
@@ -104,6 +121,7 @@ public class PathAgent : MonoBehaviour
 
     void FreeRoam()
     {
+        agentScrpt.setAlerted(false);
         Vector3 randomDirection = Random.insideUnitSphere * roamRadius;
         randomDirection += startPosition;
         NavMeshHit hit;

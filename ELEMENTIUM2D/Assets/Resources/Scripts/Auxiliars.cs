@@ -229,7 +229,7 @@ namespace Includes
     {
         public static float moveSpeed = 2.5f;
         public static float moveInContactWithEnemy = 1.0f;
-        public static float maxHealth = 50;
+        public static float maxHealth = 500;
         public static float damage = 3;
         public static float defence = 0;
         public static float waterResist = 0;
@@ -244,6 +244,7 @@ namespace Includes
         private static GameManager _instance = null;
         private static GameObject iceWall;
         private static GameObject waterPuddle;
+        private static GameObject player;
 
         protected GameManager() { }
         // Singleton pattern implementation
@@ -258,12 +259,18 @@ namespace Includes
             get { return waterPuddle; }
         }
 
+        public GameObject Player
+        {
+            get { return player; }
+        }
+
         public static GameManager Instance { get { if (_instance == null) { _instance = new GameManager(); init(); } return _instance; } }
 
         private static void init()
         {
             iceWall = (GameObject) Resources.Load("Prefabs/Environment/IceWall");
             waterPuddle = (GameObject) Resources.Load("Prefabs/Environment/WaterPuddle");
+            player = GameObject.FindWithTag("Player");
         }
 
 

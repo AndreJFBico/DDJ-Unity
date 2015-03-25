@@ -31,7 +31,14 @@ public class ProjectileBehaviour : MonoBehaviour
 
     protected bool collidedWith(Collision collision, float damage)
     {
-        if ((collision.gameObject.tag.CompareTo("Enemy") == 0) || (LayerMask.NameToLayer("Player") == collision.gameObject.layer))
+        if (collision.gameObject.tag.CompareTo("Enemy") == 0)
+        {
+            Agent enemy = collision.gameObject.GetComponent<Agent>();
+            collision.gameObject.GetComponent<EnemyScript>().playerSighted();
+            enemy.takeDamage(damage, type);
+            return true;
+        }
+        else if(LayerMask.NameToLayer("Player") == collision.gameObject.layer)
         {
             Agent enemy = collision.gameObject.GetComponent<Agent>();
             enemy.takeDamage(damage, type);

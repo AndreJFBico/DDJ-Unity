@@ -4,12 +4,12 @@ using Includes;
 
 public class IceWall : BreakableWall{
 
-    public GameObject waterPuddle;
+    private GameObject waterPuddle;
 
     // Use this for initialization
     void Start()
     {
-        maxDurability = 5;
+        maxDurability = 50;
         durability = maxDurability;
         waterPuddle = GameManager.Instance.WaterPuddle;
     }
