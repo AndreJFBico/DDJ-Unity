@@ -2,22 +2,20 @@
 using System.Collections;
 using Includes;
 
-public class ProjectileBehaviour : MonoBehaviour
+public class AbilityBehaviour : MonoBehaviour
 {
 
     protected float damage;
     protected Elements type;
     protected GameObject explosion;
 
-    protected virtual void Start() 
-    {
-    }
+    #region Start and Awake
+    protected virtual void Start() { }
 
-    protected virtual void Awake()
-    {
+    protected virtual void Awake() { } 
+    #endregion
 
-    }
-
+    #region OnTrigger and OnCollision Functions
     public virtual void OnCollisionEnter(Collision collision)
     {
         createExplosion();
@@ -27,8 +25,10 @@ public class ProjectileBehaviour : MonoBehaviour
     protected virtual void OnTriggerEnter(Collider other)
     {
         enteredBreakableTrigger(other);
-    }
+    } 
+    #endregion
 
+    #region Collision and trigger behaviours
     protected bool collidedWith(Collision collision, float damage)
     {
         if (collision.gameObject.tag.CompareTo("Enemy") == 0)
@@ -38,7 +38,7 @@ public class ProjectileBehaviour : MonoBehaviour
             enemy.takeDamage(damage, type);
             return true;
         }
-        else if(LayerMask.NameToLayer("Player") == collision.gameObject.layer)
+        else if (LayerMask.NameToLayer("Player") == collision.gameObject.layer)
         {
             Agent enemy = collision.gameObject.GetComponent<Agent>();
             enemy.takeDamage(damage, type);
@@ -65,7 +65,8 @@ public class ProjectileBehaviour : MonoBehaviour
             return true;
         }
         return false;
-    }
+    } 
+    #endregion
 
     public virtual void createExplosion()
     {
@@ -73,8 +74,5 @@ public class ProjectileBehaviour : MonoBehaviour
     }
 
     // This function applys initial movement to the projectile
-    public virtual void initiate( GameObject startingObject)
-    {
-
-    }
+    public virtual void initiate(GameObject startingObject) { }
 }

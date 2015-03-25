@@ -16,6 +16,7 @@ public class BurningStatusEffect : StatusEffect
         sprite = Resources.Load<Texture2D>("GUIImages/Elements/Fire");
 	}
 
+    #region GUI
     //#############################################################
     //############################ GUI ############################
     //#############################################################
@@ -30,7 +31,9 @@ public class BurningStatusEffect : StatusEffect
 
         GUI.color = prevColor;
     }
+    #endregion
 
+    #region Variable Modifiers
     //#############################################################
     //################### VARIABLE MODIFIERS ######################
     //#############################################################
@@ -54,7 +57,9 @@ public class BurningStatusEffect : StatusEffect
     {
         burningTimer = dur;
     }
+    #endregion
 
+    #region Effect Responsible
     //#############################################################
     //################### EFFECT RESPONSIBLE ######################
     //#############################################################
@@ -92,4 +97,5 @@ public class BurningStatusEffect : StatusEffect
             StartCoroutine("burning", script);
         }
     }
+    #endregion
 }

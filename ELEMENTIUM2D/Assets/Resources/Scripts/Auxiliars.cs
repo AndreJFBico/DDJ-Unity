@@ -10,14 +10,17 @@ namespace Includes
     public enum Elements { NEUTRAL, FIRE, EARTH, FROST };
     public enum BreakableWalls { NEUTRAL, FIRE, EARTH, FROST};
     public enum StatusEffects { BURNING, SLOW, STUN}
-    
+
+    #region Constants
     public class Constants
     {
         public const string breakable = "Breakable";
         public const string elementalyModifiable = "ElementalyModifiable";
         public const float enemyRoamRadius = 2.0f;
-    }
-    
+    } 
+    #endregion
+
+    #region Ability Stats
     public class AbilityStats
     {
         // NEUTRAL
@@ -147,8 +150,10 @@ namespace Includes
                 public static string sprite = "Prefabs/Projectiles/";
             }
         }
-    }
+    } 
+    #endregion
 
+    #region Enemy Stats
     public class EnemyStats
     {
         // NEUTRAL
@@ -222,9 +227,11 @@ namespace Includes
             public static Elements shieldType = Elements.FROST;
             public static float shieldHP = 40;
         }
-    }
+    } 
+    #endregion
 
     // STARTING STATS
+    #region PlayerStats
     public class PlayerStats
     {
         public static float moveSpeed = 2.5f;
@@ -236,8 +243,10 @@ namespace Includes
         public static float earthResist = 0;
         public static float fireResist = 0;
         public static float damageTimer = 2.35f;
-    }
+    } 
+    #endregion
 
+    #region Game Manager
     [Serializable]
     public class GameManager
     {
@@ -268,11 +277,10 @@ namespace Includes
 
         private static void init()
         {
-            iceWall = (GameObject) Resources.Load("Prefabs/Environment/IceWall");
-            waterPuddle = (GameObject) Resources.Load("Prefabs/Environment/WaterPuddle");
+            iceWall = (GameObject)Resources.Load("Prefabs/Environment/IceWall");
+            waterPuddle = (GameObject)Resources.Load("Prefabs/Environment/WaterPuddle");
             player = GameObject.FindWithTag("Player");
         }
-
-
-    }
+    } 
+    #endregion
 }

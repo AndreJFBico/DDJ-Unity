@@ -2,7 +2,7 @@
 using System.Collections;
 using Includes;
 
-public class NeutralBlast : ProjectileBehaviour 
+public class NeutralBlast : AbilityBehaviour 
 {
 
     protected override void Awake()

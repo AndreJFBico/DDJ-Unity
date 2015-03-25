@@ -2,7 +2,8 @@
 using System.Collections;
 using Includes;
 
-public class Agent : MonoBehaviour {
+public class Agent : MonoBehaviour
+{
 
     public RectTransform healthbar_background;
     public RectTransform healthbar;
@@ -15,7 +16,7 @@ public class Agent : MonoBehaviour {
     protected float earthResist;
     protected float fireResist;
     protected bool centerHealthBar = false;
-    
+
     protected void Awake()
     {
         // Findes the sprite associated to the agent
@@ -26,38 +27,31 @@ public class Agent : MonoBehaviour {
     {
         // Health bar
         Vector2 targetPos = healthbar_background.position;
-        if(centerHealthBar)
+        if (centerHealthBar)
         {
             targetPos = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x, transform.position.y, transform.position.z + 0.1f));
         }
-        
+
         healthbar_background.position = targetPos;
         float percentage = health / maxHealth;
-        //float distance = percentage * healthbar.rect.width;
-        //float desiredX = healthbar.position.x + distance;
-        healthbar.transform.localScale = new Vector3(percentage, 1.0f, 1.0f);        
+        healthbar.transform.localScale = new Vector3(percentage, 1.0f, 1.0f);
     }
 
-    public virtual void Update(){}
+    public virtual void Update() { }
 
-    /*public virtual void OnTriggerStay(Collider collision)
-    {
+    public virtual void OnTriggerExit(Collider collision) { }
 
-    }*/
+    public virtual void OnTriggerEnter(Collider collision) { }
 
-    public virtual void OnTriggerExit(Collider collision){}
+    public virtual void OnCollisionStay(Collision collision) { }
 
-    public virtual void OnTriggerEnter(Collider collision){}
+    public virtual void OnCollisionEnter(Collision collision) { }
 
-    public virtual void OnCollisionStay(Collision collision){}
+    public virtual void OnCollisionExit(Collision collision) { }
 
-    public virtual void OnCollisionEnter(Collision collision){}
+    public virtual void takeDamage(float amount, Elements type) { }
 
-    public virtual void OnCollisionExit(Collision collision){}
-
-    public virtual void takeDamage(float amount, Elements type) {}
-
-    public virtual void setAlerted(bool val){}
+    public virtual void setAlerted(bool val) { }
 
     public virtual bool getAlerted() { return false; }
 }

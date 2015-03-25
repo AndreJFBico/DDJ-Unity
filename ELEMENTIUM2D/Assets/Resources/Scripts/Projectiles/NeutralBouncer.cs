@@ -2,7 +2,7 @@
 using System.Collections;
 using Includes;
 
-public class NeutralBouncer : ProjectileBehaviour {
+public class NeutralBouncer : AbilityBehaviour {
 
     private float disabledTimer = 0.06f;
     private int numSplit = 0;

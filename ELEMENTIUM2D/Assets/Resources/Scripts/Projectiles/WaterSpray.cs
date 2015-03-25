@@ -2,7 +2,7 @@
 using System.Collections;
 using Includes;
 
-public class WaterSpray : ProjectileBehaviour {
+public class WaterSpray : AbilityBehaviour {
 
     public WaterBurst waterBurst;
     private ConstantForce constantForce;

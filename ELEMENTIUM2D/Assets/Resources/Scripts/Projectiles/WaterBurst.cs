@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Includes;
 
-public class WaterBurst : ProjectileBehaviour
+public class WaterBurst : AbilityBehaviour
 {
 
     private GameObject cs;
@@ -51,7 +51,7 @@ public class WaterBurst : ProjectileBehaviour
         for (int i = 0; i < AbilityStats.Frost.ability2.child_projectile_number; i++ )
         {
             GameObject projectile = Instantiate(cs, transform.position, transform.rotation) as GameObject;
-            projectile.GetComponent<ProjectileBehaviour>().initiate(this.gameObject);
+            projectile.GetComponent<AbilityBehaviour>().initiate(this.gameObject);
             projectile.GetComponent<WaterSpray>().waterBurst = this;
             projectile.transform.parent = transform;
             waterProjectiles.Add(projectile);

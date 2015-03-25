@@ -2,7 +2,7 @@
 using System.Collections;
 using Includes;
 
-public class NeutralMissile : ProjectileBehaviour {
+public class NeutralMissile : AbilityBehaviour {
 
     private Transform target;
     private float timer = 0.0f;

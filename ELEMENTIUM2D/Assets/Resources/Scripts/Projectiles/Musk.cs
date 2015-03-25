@@ -2,7 +2,7 @@
 using System.Collections;
 using Includes;
 
-public class Musk : ProjectileBehaviour
+public class Musk : AbilityBehaviour
 {
 
     protected override void Awake()

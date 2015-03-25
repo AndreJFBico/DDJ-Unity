@@ -2,7 +2,7 @@
 using System.Collections;
 using Includes;
 
-public class EarthShield : ProjectileBehaviour {
+public class EarthShield : AbilityBehaviour {
 
     protected override void Awake()
     {

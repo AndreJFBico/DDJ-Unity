@@ -2,7 +2,7 @@
 using System.Collections;
 using Includes;
 
-public class Fireball : ProjectileBehaviour 
+public class Fireball : AbilityBehaviour 
 {
 
     protected override void Awake()

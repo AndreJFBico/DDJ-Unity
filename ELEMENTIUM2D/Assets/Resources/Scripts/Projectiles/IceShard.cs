@@ -2,7 +2,7 @@
 using System.Collections;
 using Includes;
 
-public class IceShard : ProjectileBehaviour
+public class IceShard : AbilityBehaviour
 {
     protected int numWaterToIce = 3;
 

@@ -51,16 +51,6 @@ public class NeutralRangedEnemyScript : EnemyScript
     }
 
     // Attack Range Radius
-    /*protected void OnTriggerStay(Collider collider)
-    {
-        if (agent.hasTarget() && collider.tag.CompareTo("Enemy") == 0 && !isShooting)
-        {
-            InvokeRepeating("sendProjectile", 0f, EnemyStats.Neutral.rangedAttackSpeed);
-            isShooting = true;
-        }
-    }*/
-
-    // Attack Range Radius
     protected void OnTriggerEnter(Collider collider)
     {
         if(agent.hasTarget() && collider.tag.CompareTo("Enemy") == 0 && !isShooting)
@@ -75,7 +65,7 @@ public class NeutralRangedEnemyScript : EnemyScript
         if(agent.hasTarget())
         {
             GameObject p = Instantiate(projectile, transform.position, Quaternion.LookRotation(agent.target.position - transform.position)) as GameObject;
-            p.GetComponent<ProjectileBehaviour>().initiate(this.gameObject);
+            p.GetComponent<AbilityBehaviour>().initiate(this.gameObject);
         }
         else
         {

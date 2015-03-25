@@ -2,7 +2,7 @@
 using System.Collections;
 using Includes;
 
-public class EarthDisk : ProjectileBehaviour {
+public class EarthDisk : AbilityBehaviour {
 
     protected override void Awake()
     {
