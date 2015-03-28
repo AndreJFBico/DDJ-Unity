@@ -7,8 +7,8 @@ public class EnemyScript : Agent
     //private SpawnScript script;
 
     protected Elements type;
-    protected float visionRadiusValue = 5.46f;
     protected bool isAlerted = false;
+    protected float rangedRadius;
 
     protected SpawnScript spawnScript;
     protected PathAgent pathAgent;
@@ -168,6 +168,21 @@ public class EnemyScript : Agent
     public override bool getAlerted()
     {
         return isAlerted;
+    }
+
+    public void stop()
+    {
+        pathAgent.stop();
+    }
+
+    public void restart(bool retarget)
+    {
+        pathAgent.restart(retarget);
+    }
+
+    public bool inRangeWithPlayer()
+    {
+        return (Vector3.Distance(GameManager.Instance.Player.transform.position, transform.position) <= rangedRadius);
     }
 
     public void playerSighted()

@@ -40,7 +40,8 @@ public class SpawnScript : MonoBehaviour {
         {
             Transform obj = toSpawn[0];
             obj.GetComponent<EnemyScript>().sendGuiToCanvas();   
-            obj.gameObject.SetActive(true);     
+            obj.gameObject.SetActive(true);
+            obj.GetComponentInChildren<PathAgent>().startCheckingMovement();
             toSpawn.Remove(obj);
             spawned.Add(obj);
         }
@@ -49,12 +50,12 @@ public class SpawnScript : MonoBehaviour {
     public void despawn(Transform obj)
     {
         obj.GetComponentInChildren<PathAgent>().target = null;
-        obj.GetComponent<EnemyScript>().retrieveGuiFromCanvas();      
+        obj.GetComponent<EnemyScript>().retrieveGuiFromCanvas();
+        obj.gameObject.SetActive(false);
         obj.transform.position = transform.position;
         //obj.transform.rotation = transform.rotation;
         spawned.Remove(obj);
-        toSpawn.Add(obj);
-        obj.gameObject.SetActive(false);
+        toSpawn.Add(obj);       
     }
 	
 	// Update is called once per frame

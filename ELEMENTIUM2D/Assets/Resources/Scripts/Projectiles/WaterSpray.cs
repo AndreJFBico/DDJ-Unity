@@ -48,10 +48,10 @@ public class WaterSpray : AbilityBehaviour {
         time += Time.deltaTime;
         if (!waterPuddle && Vector3.Dot(transform.GetComponent<Rigidbody>().velocity, transform.forward) < 0.0f)
         {
+            waterPuddle = true;
             GetComponent<Rigidbody>().velocity = new Vector3(0.0f, 0.0f, 0.0f);
             GetComponent<ConstantForce>().enabled = false;
-            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-            waterPuddle = true;
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;          
             //transform.gameObject.layer = LayerMask.NameToLayer("Puddle");
         }
         if (time >= AbilityStats.Frost.ability2.deathTimer)

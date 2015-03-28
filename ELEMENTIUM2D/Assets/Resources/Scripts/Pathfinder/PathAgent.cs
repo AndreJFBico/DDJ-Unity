@@ -13,25 +13,30 @@ public class PathAgent : MonoBehaviour
     //private bool on_a_Path;
     private NavMeshAgent agent;
     private Agent agentScrpt;
+    private float previousSpeed;
+    private Transform previousTarget;
 
     private bool inSight = false;
 
-    public void Start()
+    public void Awake() 
     {
         target = null;
         agent = transform.parent.GetComponent<NavMeshAgent>();
         roamRadius = Constants.enemyRoamRadius;
-        InvokeRepeating("checkMovement", 0, 0.5f);
+        //InvokeRepeating("checkMovement", 0, 0.5f);
         agentScrpt = transform.parent.gameObject.GetComponent<Agent>();
+        previousSpeed = agent.speed;   
+    } 
+
+    public void Start()
+    {
+        startCheckingMovement();
     }
 
-    /*public void OnTriggerStay(Collider collision)
+    public void startCheckingMovement()
     {
-        if (collision.gameObject.tag.CompareTo("Player") == 0)
-        {
-            target = collision.transform;
-        }
-    }*/
+        StartCoroutine("checkMovement");
+    }
 
     public void playerSighted(Transform collision)
     {
@@ -56,6 +61,27 @@ public class PathAgent : MonoBehaviour
         }
     }
 
+    public void stop()
+    {
+        agent.speed = 0;
+        inSight = false;
+        previousTarget = target;
+        target = null;
+    }
+
+    public void restart(bool chase)
+    {
+        agent.speed = previousSpeed;
+        if(chase)
+        {
+            if(previousTarget != null)
+            {
+                inSight = true;
+                target = previousTarget;
+            }
+        }
+    }
+
     public void stopChasing()
     {
         inSight = false;
@@ -73,11 +99,33 @@ public class PathAgent : MonoBehaviour
         return target != null;
     }
 
-    void checkMovement()
+    IEnumerator checkMovement()
     {
-        if (agent.hasPath)
+        for ( ; ; )
         {
-            if(AtEndOfPath())
+            if (agent.hasPath)
+            {
+                if (AtEndOfPath())
+                {
+                    if (hasTarget())
+                    {
+                        agent.SetDestination(target.position);
+                    }
+                    else
+                    {
+                        FreeRoam();
+                    }
+                }
+                else
+                {
+                    //  To implement time limit to the follow of the agents make target be null
+                    if (hasTarget())
+                    {
+                        agent.SetDestination(target.position);
+                    }
+                }
+            }
+            else
             {
                 if (hasTarget())
                 {
@@ -88,25 +136,7 @@ public class PathAgent : MonoBehaviour
                     FreeRoam();
                 }
             }
-            else
-            {
-                //  To implement time limit to the follow of the agents make target be null
-                if (hasTarget())
-                {
-                    agent.SetDestination(target.position);
-                }
-            }
-        }
-        else
-        {
-            if (hasTarget())
-            {
-                agent.SetDestination(target.position);
-            }
-            else
-            {
-                FreeRoam();
-            }
+            yield return new WaitForSeconds(.5f);
         }
     }
 

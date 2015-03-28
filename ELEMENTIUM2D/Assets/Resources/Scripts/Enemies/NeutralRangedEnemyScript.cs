@@ -7,17 +7,22 @@ public class NeutralRangedEnemyScript : EnemyScript
 {
 
     protected LineRenderer lr;
-    protected float rangedRadius;
-    protected PathAgent agent;
     protected GameObject projectile;
     protected Vector3 latestTargetPosition;
     protected bool isShooting = false;
+    protected Transform activeWeapon;
+
+    public Transform left;
+    public Transform left_firepoint;
+    public Transform right;
+    public Transform right_firepoint;
+
+    private Transform currentFireTransform;
 
     // Use this for initialization
     protected override void Awake()
     {
         type = Elements.NEUTRAL;
-        agent = gameObject.GetComponentInChildren<PathAgent>();
         projectile = Resources.Load(EnemyStats.Neutral.neutralEnemyProjectile) as GameObject;
         rangedRadius = EnemyStats.Neutral.rangedRadius;
         maxHealth = EnemyStats.Neutral.maxHealth;
@@ -31,6 +36,9 @@ public class NeutralRangedEnemyScript : EnemyScript
         //lr = gameObject.AddComponent<LineRenderer>();
         //lr.SetWidth(0.01f, 0.01f);
         //lr.SetVertexCount(2);
+        activeWeapon = left;
+        currentFireTransform = left_firepoint;
+        right.gameObject.SetActive(false);
         base.Awake();
     }
 
@@ -53,7 +61,7 @@ public class NeutralRangedEnemyScript : EnemyScript
     // Attack Range Radius
     protected void OnTriggerEnter(Collider collider)
     {
-        if(agent.hasTarget() && collider.tag.CompareTo("Enemy") == 0 && !isShooting)
+        if(pathAgent.hasTarget() && collider.tag.CompareTo("Enemy") == 0 && !isShooting)
         {
             InvokeRepeating("sendProjectile", 0f, EnemyStats.Neutral.rangedAttackSpeed);
             isShooting = true;
@@ -62,9 +70,9 @@ public class NeutralRangedEnemyScript : EnemyScript
 
     protected void sendProjectile()
     {
-        if(agent.hasTarget())
+        if (pathAgent.hasTarget())
         {
-            GameObject p = Instantiate(projectile, transform.position, Quaternion.LookRotation(agent.target.position - transform.position)) as GameObject;
+            GameObject p = Instantiate(projectile, currentFireTransform.position, Quaternion.LookRotation(pathAgent.target.position - transform.position)) as GameObject;
             p.GetComponent<AbilityBehaviour>().initiate(this.gameObject);
         }
         else
@@ -76,6 +84,28 @@ public class NeutralRangedEnemyScript : EnemyScript
 
     protected override void LateUpdate()
     {
+        if (pathAgent.hasTarget())
+        {
+            if(pathAgent.target.position.x >= transform.position.x)
+            {
+                left.gameObject.SetActive(true);
+                activeWeapon = left;
+                right.gameObject.SetActive(false);
+                currentFireTransform = left_firepoint;
+            }
+            else
+            {
+                right.gameObject.SetActive(true);
+                activeWeapon = right;
+                left.gameObject.SetActive(false);
+                currentFireTransform = right_firepoint;
+            }
+            activeWeapon.LookAt(pathAgent.target.position);
+        }
+        else
+        {
+            activeWeapon.rotation = Quaternion.identity;
+        }
         base.LateUpdate();
     }
 

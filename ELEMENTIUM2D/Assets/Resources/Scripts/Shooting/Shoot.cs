@@ -53,44 +53,44 @@ public class Shoot : MonoBehaviour {
         {
             if (data.currentElement == (int)Elements.FIRE)
             {
-                fireShoot.fireMain(AbilityStats.Fire.ability2.attackSpeed, AbilityStats.Fire.ability2.projectile_number, (GameObject)Resources.Load(AbilityStats.Fire.ability2.sprite));
+                fireShoot.fireSecondary(AbilityStats.Fire.ability2.attackSpeed, AbilityStats.Fire.ability2.projectile_number, (GameObject)Resources.Load(AbilityStats.Fire.ability2.sprite));
             }
 
             if (data.currentElement == (int)Elements.FROST)
             {
-                frostShoot.fireMain(AbilityStats.Frost.ability2.attackSpeed, AbilityStats.Frost.ability2.projectile_number, (GameObject)Resources.Load(AbilityStats.Frost.ability2.sprite));
+                frostShoot.fireSecondary(AbilityStats.Frost.ability2.attackSpeed, AbilityStats.Frost.ability2.projectile_number, (GameObject)Resources.Load(AbilityStats.Frost.ability2.sprite));
             }
 
             if (data.currentElement == (int)Elements.EARTH)
             {
-                earthShoot.fireMain(AbilityStats.Earth.ability2.attackSpeed, AbilityStats.Earth.ability2.projectile_number, (GameObject)Resources.Load(AbilityStats.Earth.ability2.sprite));
+                earthShoot.fireSecondary(AbilityStats.Earth.ability2.attackSpeed, AbilityStats.Earth.ability2.projectile_number, (GameObject)Resources.Load(AbilityStats.Earth.ability2.sprite));
             }
 
             if (data.currentElement == (int)Elements.NEUTRAL)
             {
-                neutralShoot.fireMain(AbilityStats.Neutral.ability2.attackSpeed, AbilityStats.Neutral.ability2.projectile_number, (GameObject)Resources.Load(AbilityStats.Neutral.ability2.sprite));
+                neutralShoot.fireSecondary(AbilityStats.Neutral.ability2.attackSpeed, AbilityStats.Neutral.ability2.projectile_number, (GameObject)Resources.Load(AbilityStats.Neutral.ability2.sprite));
             }
         }
         else if (ability3 > 0)
         {
             if (data.currentElement == (int)Elements.FIRE)
             {
-                fireShoot.fireMain(AbilityStats.Fire.ability3.attackSpeed, AbilityStats.Fire.ability3.projectile_number, (GameObject)Resources.Load(AbilityStats.Fire.ability3.sprite));
+                fireShoot.fireTerciary(AbilityStats.Fire.ability3.attackSpeed, AbilityStats.Fire.ability3.projectile_number, (GameObject)Resources.Load(AbilityStats.Fire.ability3.sprite));
             }
 
             if (data.currentElement == (int)Elements.FROST)
             {
-                frostShoot.fireMain(AbilityStats.Frost.ability3.attackSpeed, AbilityStats.Frost.ability3.projectile_number, (GameObject)Resources.Load(AbilityStats.Frost.ability3.sprite));
+                frostShoot.fireTerciary(AbilityStats.Frost.ability3.attackSpeed, AbilityStats.Frost.ability3.projectile_number, (GameObject)Resources.Load(AbilityStats.Frost.ability3.sprite));
             }
 
             if (data.currentElement == (int)Elements.EARTH)
             {
-                earthShoot.fireMain(AbilityStats.Earth.ability3.attackSpeed, AbilityStats.Earth.ability3.projectile_number, (GameObject)Resources.Load(AbilityStats.Earth.ability3.sprite));
+                earthShoot.fireTerciary(AbilityStats.Earth.ability3.attackSpeed, AbilityStats.Earth.ability3.projectile_number, (GameObject)Resources.Load(AbilityStats.Earth.ability3.sprite));
             }
 
             if (data.currentElement == (int)Elements.NEUTRAL)
             {
-                neutralShoot.fireMain(AbilityStats.Neutral.ability3.attackSpeed, AbilityStats.Neutral.ability3.projectile_number, (GameObject)Resources.Load(AbilityStats.Neutral.ability3.sprite));
+                neutralShoot.fireTerciary(AbilityStats.Neutral.ability3.attackSpeed, AbilityStats.Neutral.ability3.projectile_number, (GameObject)Resources.Load(AbilityStats.Neutral.ability3.sprite));
             }
         }
     }
