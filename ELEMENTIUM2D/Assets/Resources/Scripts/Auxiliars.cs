@@ -147,7 +147,7 @@ namespace Includes
                 public static int projectile_number = 1;
                 public static float damage = 5;
                 public static float movementForce = 200;
-                public static string sprite = "Prefabs/Projectiles/";
+                public static string sprite = "Prefabs/Projectiles/EarthStun";
             }
         }
     } 

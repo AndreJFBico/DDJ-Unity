@@ -63,7 +63,7 @@ public class PathAgent : MonoBehaviour
 
     public void stop()
     {
-        agent.speed = 0;
+        agent.speed = 0.0f;
         inSight = false;
         previousTarget = target;
         target = null;

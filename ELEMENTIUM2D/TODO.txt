@@ -15,3 +15,11 @@
 // Normalize Scripts sprites and prefabs names example: IceShard and FrostBolt
 
 // WaterProjectile sorting script has been disabled and replaced by direct atribution or ordering layer -32768
+
+// Memory leak in instanciating and destroying storeUi elements and lists.
+
+// Store ui add extra variable instead of reusing UIpoints
+
+// simpplify code to adjust pointer by adding a relocatepointerfunc that receives an int determining the line;
+
+// Need to rework how the storeui is aligned when different resolutions are used, see how the pointer is moved between vertical lines and rework the default ui alignment in the editor acording to anchoredPosition3D
