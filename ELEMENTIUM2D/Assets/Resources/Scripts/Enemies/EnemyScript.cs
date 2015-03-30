@@ -187,7 +187,10 @@ public class EnemyScript : Agent
 
     public void playerSighted()
     {
-        pathAgent.playerSighted(GameManager.Instance.Player.transform);
-        pathAgent.stopChasing();
+        if (pathAgent != null)
+        {
+            pathAgent.playerSighted(GameManager.Instance.Player.transform);
+            pathAgent.stopChasing();
+        }
     }
 }

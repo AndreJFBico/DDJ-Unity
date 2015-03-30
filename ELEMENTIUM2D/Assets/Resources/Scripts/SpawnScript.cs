@@ -51,6 +51,11 @@ public class SpawnScript : MonoBehaviour {
     {
         obj.GetComponentInChildren<PathAgent>().target = null;
         obj.GetComponent<EnemyScript>().retrieveGuiFromCanvas();
+        StatusEffect[] effects = obj.GetComponents<StatusEffect>();
+        foreach (StatusEffect item in effects)
+	    {
+            Destroy(item);
+	    }
         obj.gameObject.SetActive(false);
         obj.transform.position = transform.position;
         //obj.transform.rotation = transform.rotation;

@@ -7,8 +7,6 @@
 
 // Fix CanShoot script currently the autoattack speed is the same as the last ability used of the same element
 
-// Replace Auxiliars.cs public static string "sprite" and "childSprite" to "projectile" and "childProjectile"
-
 // Add a global class that has all the resources loaded like the player, different types of enemies and projectiles
 	-> "GameManager".... etc ...... -> in Progress
 

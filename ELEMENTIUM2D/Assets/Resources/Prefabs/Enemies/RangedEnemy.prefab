@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &114844
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 404372}
+  - 114: {fileID: 11442094}
+  m_Layer: 20
+  m_Name: Minimap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &118366
 GameObject:
   m_ObjectHideFlags: 1
@@ -245,6 +261,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &404372
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114844}
+  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: .707573593, y: .707573593, z: .707573593}
+  m_Children: []
+  m_Father: {fileID: 405980}
+  m_RootOrder: 3
 --- !u!4 &405418
 Transform:
   m_ObjectHideFlags: 1
@@ -264,12 +292,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 161528}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.698000014, y: .100000001, z: -.209999993}
+  m_LocalPosition: {x: 2.6901958, y: .100000001, z: -1.24547386}
   m_LocalScale: {x: .207240894, y: .207240894, z: .207240894}
   m_Children:
   - {fileID: 472164}
   - {fileID: 499594}
   - {fileID: 487996}
+  - {fileID: 404372}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &424046
@@ -424,6 +453,18 @@ MonoBehaviour:
   left_firepoint: {fileID: 468484}
   right: {fileID: 431762}
   right_firepoint: {fileID: 426062}
+--- !u!114 &11442094
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea3ed39306ef44e448edc36b6925b3ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
 --- !u!114 &11450748
 MonoBehaviour:
   m_ObjectHideFlags: 1

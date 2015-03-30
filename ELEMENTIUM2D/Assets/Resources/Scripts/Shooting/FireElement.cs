@@ -28,9 +28,23 @@ public class FireElement: ShootElement {
 
         //attackSpeed = 0.5f;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
+    protected void fire()
+    {
+        gunBlast1.SetActive(true);
+        gunBlast2.SetActive(true);
+        Invoke("deactivateBlast", 0.1f);
+        OilPuddleManager.Instance.addOilPuddle((GameObject)Instantiate(OilPuddleManager.Instance.OilPuddle, barrelEnd.position, OilPuddleManager.Instance.OilPuddle.transform.rotation));        
+    }
+
+    public void fireSecondary()
+    {
+        if (canSecondary)
+        {
+            canSecondary = false;
+            Invoke("resetSecondary", OilPuddleManager.Instance.internalCooldown());
+            fire();
+        }
+    }
+
 }

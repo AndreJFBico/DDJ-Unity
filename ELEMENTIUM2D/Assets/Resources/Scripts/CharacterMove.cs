@@ -5,6 +5,8 @@ using Includes;
 
 public class CharacterMove : MonoBehaviour {
 
+    #region Variables
+    private float currentMoveSpeed;
     private float moveSpeed;
     private float inContactWithEnemySpeed;
 
@@ -30,7 +32,16 @@ public class CharacterMove : MonoBehaviour {
     private bool blockedLeft = false;
     private bool blockedUp = false;
     private bool blockedDown = false;
-    //private List<Collision> collidedWith;
+    //private List<Collision> collidedWith; 
+    #endregion
+
+    public float MoveSpeed
+    {
+        get
+        {
+            return moveSpeed;
+        }
+    }
 
 	// Use this for initialization
 	void Start () {
@@ -45,6 +56,7 @@ public class CharacterMove : MonoBehaviour {
         epsilon = 1.4f;
 	}
 
+    #region OnCollision Handlers
     public void CollisionStay(Collision collision)
     {
         /*if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
@@ -58,7 +70,8 @@ public class CharacterMove : MonoBehaviour {
                 }
             }
         }
-        else */if (collision.transform.tag.CompareTo("Enemy") == 0)
+        else */
+        if (collision.transform.tag.CompareTo("Enemy") == 0)
         {
             if (!inContactWithEnemy)
             {
@@ -92,7 +105,8 @@ public class CharacterMove : MonoBehaviour {
                 }
            }
         }
-        else */if (collision.transform.tag.CompareTo("Enemy") == 0)
+        else */
+        if (collision.transform.tag.CompareTo("Enemy") == 0)
         {
             if (!inContactWithEnemy)
             {
@@ -115,16 +129,19 @@ public class CharacterMove : MonoBehaviour {
 
     public void CollisionExit(Collision collision)
     {
-       /* if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
-        {
-            inContact = false;
-        }
-        else */if (collision.transform.tag.CompareTo("Enemy") == 0)
+        /* if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
+         {
+             inContact = false;
+         }
+         else */
+        if (collision.transform.tag.CompareTo("Enemy") == 0)
         {
             inContactWithEnemy = false;
         }
-    }
+    } 
+    #endregion
 
+    #region RayCast functions
     bool rayCast(Vector3 position, Vector3 direction, float distance)
     {
         RaycastHit hit;
@@ -176,7 +193,8 @@ public class CharacterMove : MonoBehaviour {
             return true;
         }
         return false;
-    }
+    } 
+    #endregion
     
 	
 	// Update is called once per frame
@@ -245,12 +263,14 @@ public class CharacterMove : MonoBehaviour {
         Vector3 targetPosition = transform.position + calculatedMotion;
         targetPosition.y = transform.position.y;
 
-
+        
         if(inContactWithEnemy)
         {
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, inContactWithEnemySpeed * Time.deltaTime);
+            currentMoveSpeed = inContactWithEnemySpeed;
         }
-        else transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+        else currentMoveSpeed = moveSpeed;
+
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, currentMoveSpeed * Time.deltaTime);
 
         if (hDir == 0 && vDir == 0)
             playerAnim.idle = true;

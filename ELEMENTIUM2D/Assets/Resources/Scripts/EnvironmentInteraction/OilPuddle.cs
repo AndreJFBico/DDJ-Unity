@@ -7,7 +7,11 @@ public class OilPuddle : ElementalyModifiable {
     private float damage;
     private float slow;
     public GameObject onFire;
-    private bool canBurn = false;
+    public bool canBurn = false;
+
+    public OilPuddle previous;
+    public OilPuddle next;
+
 
 	// Use this for initialization
 	void Start () {
@@ -33,8 +37,33 @@ public class OilPuddle : ElementalyModifiable {
     {
         if(type == Elements.FIRE)
         {
+            burnPuddle();
+        }
+    }
+
+    private void propagateFire()
+    {
+        if(previous != null)
+        {
+            previous.burnPuddle();
+        }
+        if(next != null)
+        {
+            next.burnPuddle();
+        }
+    }
+
+    public void burnPuddle()
+    {
+        if (!canBurn)
+        {
             onFire.SetActive(true);
             canBurn = true;
+            propagateFire();
+        }
+        if((previous!= null && !previous.canBurn) || (next != null && !next.canBurn))
+        {
+            propagateFire();
         }
     }
 
