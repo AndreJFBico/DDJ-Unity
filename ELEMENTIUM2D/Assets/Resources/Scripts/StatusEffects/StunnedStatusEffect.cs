@@ -13,7 +13,7 @@ public class StunnedStatusEffect : StatusEffect
     // Use this for initialization
     protected override void Start()
     {
-        stunnedTimer = duration;
+        stunnedTimer = duration;// = duration
         sprite = Resources.Load<Texture2D>("GUIImages/Elements/Neutral");
     }
 
