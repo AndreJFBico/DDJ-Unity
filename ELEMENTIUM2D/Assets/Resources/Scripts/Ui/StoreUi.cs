@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using Includes;
 
 public class StoreUi : MonoBehaviour
 {
@@ -81,8 +82,36 @@ public class StoreUi : MonoBehaviour
                 updateAvailablePoints();
             }
         }
+        if(Input.GetButtonDown("UI_ENTER"))
+        {
+            UpdatePlayerStats();
+            Application.LoadLevel("defaultScene");
+        }
     }
 
+    int findStatAndReturnCount(string stat)
+    {
+        foreach(StoreUiElement elem in values)
+        {
+            if(elem.name.CompareTo(stat) == 0)
+            {
+                return elem.getNumcheck();
+            }
+        }
+        return 0;
+    }
+
+    void UpdatePlayerStats()
+    {
+        PlayerStats.damage = PlayerStats.def_damage + findStatAndReturnCount("Attack") * PlayerStats.inc_damage_level;
+        PlayerStats.defence = findStatAndReturnCount("Defence");
+        PlayerStats.earth_level = findStatAndReturnCount("Earth");
+        PlayerStats.water_level = findStatAndReturnCount("Water");
+        PlayerStats.fire_level = findStatAndReturnCount("Fire");
+        PlayerStats.maxHealth = PlayerStats.def_health + findStatAndReturnCount("Health") * PlayerStats.def_inc_health;
+        //PlayerStats.defence = ;
+        //PlayerStats.maxHealth = ;
+    }
 
     // CALCULATES VERTICAL AND HORIZONTAL OFFSET VALUES
     void CalculateAndLoadValues()

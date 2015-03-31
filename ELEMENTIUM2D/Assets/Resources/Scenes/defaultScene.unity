@@ -122,7 +122,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2779377}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa1bc005f265eac459ba28caa5dcc56e, type: 3}
   m_Name: 
@@ -535,7 +535,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: bdc28b1cc9cabf243848221317606018, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: bdc28b1cc9cabf243848221317606018, type: 2}
       propertyPath: m_Name
@@ -657,11 +657,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 405980, guid: 2c2da5613eb9393439ee67fbbcdfbc7f, type: 2}
       propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 161528, guid: 2c2da5613eb9393439ee67fbbcdfbc7f, type: 2}
-      propertyPath: m_IsActive
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2c2da5613eb9393439ee67fbbcdfbc7f, type: 2}
@@ -1096,10 +1092,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 353138638}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &408070082
-GameObject:
-  m_PrefabParentObject: {fileID: 104890, guid: 2a8dc48e77b54cc4a9e6d6c9045e4acd, type: 2}
-  m_PrefabInternal: {fileID: 1528881177}
 --- !u!1 &434986978
 GameObject:
   m_ObjectHideFlags: 0
@@ -1377,7 +1369,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: bdc28b1cc9cabf243848221317606018, type: 2}
       propertyPath: m_RootOrder
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: bdc28b1cc9cabf243848221317606018, type: 2}
       propertyPath: enemy
@@ -2145,15 +2137,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: bdc28b1cc9cabf243848221317606018, type: 2}
       propertyPath: m_RootOrder
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: bdc28b1cc9cabf243848221317606018, type: 2}
-      propertyPath: amount_to_spawn
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 21200000, guid: bdc28b1cc9cabf243848221317606018, type: 2}
-      propertyPath: m_SortingOrder
-      value: -1
+      value: 19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bdc28b1cc9cabf243848221317606018, type: 2}
@@ -2601,6 +2585,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a9a5c18970c811141b7ece8b49a514f3, type: 2}
+    - target: {fileID: 151676, guid: 01a16bd36317c414084aeb5f474cf886, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 01a16bd36317c414084aeb5f474cf886, type: 2}
   m_IsPrefabParent: 0
@@ -3709,7 +3697,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 470832, guid: b7e813a02438bf249978b95288e12422, type: 2}
       propertyPath: m_RootOrder
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b7e813a02438bf249978b95288e12422, type: 2}
@@ -4914,7 +4902,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400018, guid: 1b060d92f54e10e429429abd3342e628, type: 2}
       propertyPath: m_RootOrder
-      value: 19
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 11400014, guid: 1b060d92f54e10e429429abd3342e628, type: 2}
       propertyPath: healthbar_background
@@ -4924,10 +4912,10 @@ Prefab:
       propertyPath: healthbar
       value: 
       objectReference: {fileID: 601767157}
-    - target: {fileID: 11400014, guid: 1b060d92f54e10e429429abd3342e628, type: 2}
-      propertyPath: reloadButton
-      value: 
-      objectReference: {fileID: 408070082}
+    - target: {fileID: 100018, guid: 1b060d92f54e10e429429abd3342e628, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b060d92f54e10e429429abd3342e628, type: 2}
   m_IsPrefabParent: 0
@@ -7600,7 +7588,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: bdc28b1cc9cabf243848221317606018, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: bdc28b1cc9cabf243848221317606018, type: 2}
       propertyPath: m_Name

@@ -240,17 +240,35 @@ namespace Includes
 
     // STARTING STATS
     #region PlayerStats
-    public class PlayerStats
+    public static class PlayerStats
     {
+        public const float def_damage = 3;
+        public const float inc_damage_level = 1.5f;
+
+        public const float def_defence = 0;
+
+        public const float def_neutral_level = 3;
+        public const float def_earth_level = 0;
+        public const float def_water_level = 0;
+        public const float def_fire_level = 0;
+
+        public const float def_health = 30.0f;
+        public const float def_inc_health = 10.5f;
+
         public static float moveSpeed = 2.5f;
         public static float moveInContactWithEnemy = 1.0f;
-        public static float maxHealth = 500;
-        public static float damage = 3;
-        public static float defence = 0;
+        public static float maxHealth = def_health;
+        public static float damage = def_damage;
+        public static float defence = def_defence;
         public static float waterResist = 0;
         public static float earthResist = 0;
         public static float fireResist = 0;
         public static float damageTimer = 2.35f;
+
+        public static float neutral_level = def_neutral_level;
+        public static float earth_level = def_earth_level;
+        public static float water_level = def_water_level;
+        public static float fire_level = def_fire_level;
     } 
     #endregion
 
