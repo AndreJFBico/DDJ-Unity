@@ -21,16 +21,6 @@ public class MapDoor : MonoBehaviour {
 
     public Transform doorNavmesh;
 
-	void Start () 
-    {
-
-	}
-	
-	void Update () 
-    {
-
-	}
-
 	public void resetDoor(){
 		used = false;
 		leadsTo = null;
