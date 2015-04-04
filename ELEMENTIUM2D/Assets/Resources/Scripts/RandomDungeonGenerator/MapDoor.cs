@@ -50,7 +50,7 @@ public class MapDoor : MonoBehaviour {
 		}
 		else if(used)
 			Gizmos.color = new Color (0.0f,0.0f,1.0f,0.5f);
-		else if(branchTries >= RoomManager.MAX_BRANCH_TRIES || normalTries >= 1)
+		else if(branchTries >= RoomManagerV2.MAX_BRANCH_TRIES || normalTries >= 1)
 			Gizmos.color = new Color (0.0f,0.0f,0.0f,0.5f);
 		else
 			Gizmos.color = new Color (1.0f,0.0f,0.0f,0.5f);

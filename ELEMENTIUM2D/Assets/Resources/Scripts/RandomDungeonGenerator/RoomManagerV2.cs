@@ -51,7 +51,7 @@ public class RoomManagerV2 : MonoBehaviour {
 	{
 		
 		string line;
-		StreamReader theReader = new StreamReader(Application.dataPath + "/Maps/" + mapType, Encoding.Default);
+		StreamReader theReader = new StreamReader(Application.dataPath + "/Resources/Map/Maps/" + mapType, Encoding.Default);
 		
 		//parse rooms
 		line = theReader.ReadLine();

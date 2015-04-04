@@ -14,7 +14,7 @@ public class ResourcesPool {
         if (objectsPool.ContainsKey(path))
             return objectsPool[path];
         else {
-            UnityEngine.Object obj = Resources.Load(path);
+            UnityEngine.Object obj = Resources.Load("Map/Rooms/" + path);
             objectsPool.Add(path, obj);
             return obj;
         }
