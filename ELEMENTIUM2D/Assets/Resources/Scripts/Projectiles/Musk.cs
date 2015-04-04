@@ -14,7 +14,7 @@ public class Musk : AbilityBehaviour
     {
         base.Start();
         //This has to change one thing is the damage the enemy does when it touches the player the other is the ranged projectile damage
-        damage = EnemyStats.Neutral.damage;
+        damage = EnemyStats.BasicNeutral.damage;
         type = Elements.NEUTRAL;
     }
 

@@ -9,7 +9,6 @@ public class NeutralRangedEnemyScript : EnemyScript
     protected LineRenderer lr;
     protected GameObject projectile;
     protected Vector3 latestTargetPosition;
-    protected bool isShooting = false;
     protected Transform activeWeapon;
 
     public Transform left;
@@ -23,22 +22,23 @@ public class NeutralRangedEnemyScript : EnemyScript
     protected override void Awake()
     {
         type = Elements.NEUTRAL;
-        projectile = Resources.Load(EnemyStats.Neutral.neutralEnemyProjectile) as GameObject;
-        rangedRadius = EnemyStats.Neutral.rangedRadius;
-        maxHealth = EnemyStats.Neutral.maxHealth;
+        projectile = Resources.Load(EnemyStats.RangedNeutral.neutralEnemyProjectile) as GameObject;
+        rangedRadius = EnemyStats.RangedNeutral.rangedRadius;
+        maxHealth = EnemyStats.RangedNeutral.maxHealth;
         health = maxHealth;
-        damage = EnemyStats.Neutral.damage;
-        defence = EnemyStats.Neutral.defence;
-        waterResist = EnemyStats.Neutral.waterResist;
-        earthResist = EnemyStats.Neutral.earthResist;
-        fireResist = EnemyStats.Neutral.fireResist;
-        gameObject.GetComponent<SphereCollider>().radius = EnemyStats.Neutral.rangedRadius;
+        damage = EnemyStats.RangedNeutral.damage;
+        defence = EnemyStats.RangedNeutral.defence;
+        waterResist = EnemyStats.RangedNeutral.waterResist;
+        earthResist = EnemyStats.RangedNeutral.earthResist;
+        fireResist = EnemyStats.RangedNeutral.fireResist;
+        gameObject.GetComponent<SphereCollider>().radius = EnemyStats.RangedNeutral.rangedRadius;
         //lr = gameObject.AddComponent<LineRenderer>();
         //lr.SetWidth(0.01f, 0.01f);
         //lr.SetVertexCount(2);
         activeWeapon = left;
         currentFireTransform = left_firepoint;
         right.gameObject.SetActive(false);
+        
         base.Awake();
     }
 
@@ -59,27 +59,31 @@ public class NeutralRangedEnemyScript : EnemyScript
     }
 
     // Attack Range Radius
-    protected void OnTriggerEnter(Collider collider)
+    /*public override void OnTriggerEnter(Collider collider)
     {
-        if(pathAgent.hasTarget() && collider.tag.CompareTo("Enemy") == 0 && !isShooting)
+        if(!pathAgent.hasTarget() && collider.tag.CompareTo("Player") == 0 && !isShooting)
         {
-            InvokeRepeating("sendProjectile", 0f, EnemyStats.Neutral.rangedAttackSpeed);
+            pathAgent.playerSighted(collider.transform);
             isShooting = true;
         }
+    }*/
+
+    void OnEnable()
+    {
+        StartCoroutine("sendProjectile");
     }
 
-    protected void sendProjectile()
+    protected IEnumerator sendProjectile()
     {
-        if (pathAgent.hasTarget())
+        while(true)
         {
-            GameObject p = Instantiate(projectile, currentFireTransform.position, Quaternion.LookRotation(pathAgent.target.position - transform.position)) as GameObject;
-            p.GetComponent<AbilityBehaviour>().initiate(this.gameObject);
-        }
-        else
-        {
-            isShooting = false;
-            CancelInvoke();
-        }
+            if (pathAgent.hasTarget())
+            {
+                GameObject p = Instantiate(projectile, currentFireTransform.position, Quaternion.LookRotation(pathAgent.target.position - transform.position)) as GameObject;
+                p.GetComponent<AbilityBehaviour>().initiate(this.gameObject);
+            }
+            yield return new WaitForSeconds(EnemyStats.RangedNeutral.rangedAttackSpeed);
+       }
     }
 
     protected override void LateUpdate()

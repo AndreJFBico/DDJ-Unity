@@ -13,7 +13,7 @@ public class RoomManager : MonoBehaviour
     public static int MAX_BRANCH_TRIES = 1;
     public static int MAX_TRIES = 1;
 
-    public int timeLimit = 300;
+   /* public int timeLimit = 300;
 
     public string mapType;
     public Dictionary<int, string> rooms = new Dictionary<int, string>();
@@ -70,7 +70,6 @@ public class RoomManager : MonoBehaviour
             }
         } else if (!merged)
         {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMove>().init();
             pathManager.genGraph();
             merged = true;
         }
@@ -657,5 +656,5 @@ public class RoomManager : MonoBehaviour
             }
             Debug.Log(result);
         }
-    }
+    }*/
 }

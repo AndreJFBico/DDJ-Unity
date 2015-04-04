@@ -3,9 +3,10 @@ using System.Collections;
 
 public class DestroyClone : MonoBehaviour {
 
+    public float destroytimer = 1.5f;
 	// Use this for initialization
 	void Start () {
-        Invoke("destroyClone", 1.5f);
+        Invoke("destroyClone", destroytimer);
 	}
 	
     private void destroyClone()

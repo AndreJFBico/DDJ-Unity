@@ -10,9 +10,7 @@ public class MinimapComponent : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        sprite = Resources.Load<Sprite>("Sprites/square");
-        SpriteRenderer spRenderer = gameObject.AddComponent<SpriteRenderer>();
-        spRenderer.sprite = sprite;
+        SpriteRenderer spRenderer = gameObject.GetComponent<SpriteRenderer>();
         switch (type)
         {
             case Type.OBSTACLE:

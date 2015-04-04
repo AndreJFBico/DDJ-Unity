@@ -117,6 +117,8 @@ public class EnemyScript : Agent
         {
             Eliminate();
         }
+        if (health >= maxHealth)
+            health = maxHealth;
     }
 
     public void sendGuiToCanvas()

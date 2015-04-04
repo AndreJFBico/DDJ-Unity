@@ -37,6 +37,11 @@ public class Agent : MonoBehaviour
         healthbar.transform.localScale = new Vector3(percentage, 1.0f, 1.0f);
     }
 
+    public bool isHurt()
+    {
+        return health < maxHealth;
+    }
+
     public virtual void Update() { }
 
     public virtual void OnTriggerExit(Collider collision) { }

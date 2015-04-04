@@ -1,0 +1,46 @@
+::rooms
+1 RoomBiggerV2
+2 Room2
+3 Room3
+4 RoomDeadEnd
+5 R1o
+6 R2o
+7 R3o
+8 RDeado
+::
+::groups
+a 1
+b 1
+c 1
+d 1
+e 1
+f 1
+::
+::dungeon
+Random 50 100
+
+:part 1
+S 1 f
+S 1 f
+R c 3 3 f
+S 1 f
+:goto 3|Y 2|Y
+
+:part 2
+R c 8 8 f
+:goto 6|Y 5|Y
+
+:part 5
+S 1 f
+R e 4 5 f
+:goto
+
+:part 6
+S 1 f
+R e 3 4 f
+:goto 3|Y
+
+:part 3
+R e 10 10 f
+:goto
+::
