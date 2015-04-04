@@ -225,6 +225,10 @@ public class RoomManagerV2 : MonoBehaviour {
 			
 			if(currentDepth <= maxDepth){
 				if(currentRoom.parked){
+
+					if(!generation)
+						currentRoom.transform.FindChild("Scenery").gameObject.SetActive(true);
+
 					if(currentRoom == room){
 						//position doesnt really matter, means nothing is turned on
 						if(generation)
@@ -252,8 +256,7 @@ public class RoomManagerV2 : MonoBehaviour {
 			}else{
 				if(!currentRoom.parked){
 					//park room
-					currentRoom.transform.position = new Vector3(-1000, 1000, 1000);
-					currentRoom.parked = true;
+					parkRoom(currentRoom);
 					continue;
 				}
 			}
@@ -291,8 +294,7 @@ public class RoomManagerV2 : MonoBehaviour {
 
 			if(!currentRoom.parked && currentRoom != room){
 				//park room
-				currentRoom.transform.position = new Vector3(-1000, 1000, 1000);
-				currentRoom.parked = true;
+				parkRoom (currentRoom);
 			}
 			
 			foreach(MapDoor door in currentRoom.doors){
@@ -324,8 +326,7 @@ public class RoomManagerV2 : MonoBehaviour {
 
 			if(!currentRoom.parked){ //also park all the rooms, fixes a bug
 				//park room
-				currentRoom.transform.position = new Vector3(-1000, 1000, 1000);
-				currentRoom.parked = true;
+				parkRoom(currentRoom);
 			}
 
 			foreach(MapDoor door in currentRoom.doors){
@@ -335,6 +336,20 @@ public class RoomManagerV2 : MonoBehaviour {
 						queue.Enqueue( new KeyValuePair<DungeonRoom, KeyValuePair<MapDoor, int>>(door.leadsTo, new KeyValuePair<MapDoor, int>(door, currentDepth + 1)));
 					}
 				}
+			}
+		}
+	}
+
+	private void parkRoom(DungeonRoom room){
+		room.transform.position = new Vector3(-1000, 1000, 1000);
+		room.parked = true;
+		room.transform.FindChild("Scenery").gameObject.SetActive(false);
+		Transform other = room.transform.FindChild("Other");
+		foreach(Transform c in other){
+			if(c.GetComponent<EnemyScript>() != null){
+				c.GetComponent<EnemyScript>().Eliminate();
+			}else{
+				Destroy (c.gameObject);
 			}
 		}
 	}
