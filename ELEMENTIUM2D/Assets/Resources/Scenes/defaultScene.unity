@@ -103,7 +103,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2779378
 Transform:
   m_ObjectHideFlags: 0
@@ -1920,7 +1920,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 818294944}
-  - 114: {fileID: 818294943}
   m_Layer: 0
   m_Name: PathManager
   m_TagString: Untagged
@@ -1928,17 +1927,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &818294943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 818294942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ef3ca6e817188b498fdb5ebea396ee0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &818294944
 Transform:
   m_ObjectHideFlags: 0
@@ -2276,7 +2264,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 138516, guid: 87c89cf33d884e54a893dd5a1d883bf9, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 87c89cf33d884e54a893dd5a1d883bf9, type: 2}
@@ -2773,6 +2761,10 @@ Prefab:
       propertyPath: reloadButton
       value: 
       objectReference: {fileID: 2080856745}
+    - target: {fileID: 100018, guid: 1b060d92f54e10e429429abd3342e628, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b060d92f54e10e429429abd3342e628, type: 2}
   m_IsPrefabParent: 0

@@ -131,7 +131,7 @@ public class EnemyScript : Agent
         myGui.transform.parent = transform;
     }
 
-    private void Eliminate()
+    public void Eliminate()
     {
         if (spawnScript != null)
         {

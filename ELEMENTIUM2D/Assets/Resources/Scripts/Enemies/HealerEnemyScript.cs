@@ -72,10 +72,6 @@ public class HealerEnemyScript : EnemyScript {
         if(collider.tag.CompareTo("Enemy") == 0)
         {
             targetedEnemies.Add(collider.transform);
-            if (!hasEnemyTarget())
-            {
-                //InvokeRepeating("heal", 0.001f, EnemyStats.HealerNeutral.rangedAttackSpeed);
-            }
         }
     }
 
