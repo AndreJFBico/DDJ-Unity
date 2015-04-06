@@ -174,7 +174,7 @@ public class RoomManagerV2 : MonoBehaviour {
 		//bool result = generateNode(dungeonHead, null);
 		generateBranches();
 		activateDoorsNavmesh();
-		toggleRooms(dungeonRoomsHead, true, false);
+		toggleRooms(dungeonRoomsHead, false, false);
 		watch.Stop();
 		long elapsedMs = watch.ElapsedMilliseconds;
 		Debug.Log("map generated in " + elapsedMs + "ms");
@@ -353,16 +353,22 @@ public class RoomManagerV2 : MonoBehaviour {
         if(!generation)
         {
             Transform other = room.transform.FindChild("Other");
+            List<EnemyScript> enemies = new List<EnemyScript>();
             foreach (Transform c in other)
             {
                 if (c.GetComponent<EnemyScript>() != null)
                 {
-                    c.GetComponent<EnemyScript>().Eliminate();
+                    enemies.Add(c.GetComponent<EnemyScript>());
                 }
                 else
                 {
                     Destroy(c.gameObject);
                 }
+            }
+
+            foreach(EnemyScript scrpt in enemies)
+            {
+                scrpt.Eliminate();
             }
 
             Transform scenery = room.transform.FindChild("Scenery");

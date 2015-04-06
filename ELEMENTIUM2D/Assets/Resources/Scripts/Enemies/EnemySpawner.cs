@@ -15,6 +15,8 @@ public class EnemySpawner : EnemyScript
     private Transform position;
 
 
+    private IEnumerator spawnEnemy;
+
 	// Use this for initialization
 	protected override void Awake()
     {
@@ -26,14 +28,20 @@ public class EnemySpawner : EnemyScript
         waterResist = EnemyStats.BasicNeutral.waterResist;
         earthResist = EnemyStats.BasicNeutral.earthResist;
         fireResist = EnemyStats.BasicNeutral.fireResist;
-
+        spawnEnemy = SpawnEnemy();
         base.Awake();
 	}
+
+    public override void Disable()
+    {
+        retrieveGuiFromCanvas();
+        StopCoroutine(spawnEnemy);
+    }
 
     public override void Enable()
     {
         base.Enable();
-        StartCoroutine("SpawnEnemy");       
+        StartCoroutine(spawnEnemy);       
     }
 
     public override void Init()
