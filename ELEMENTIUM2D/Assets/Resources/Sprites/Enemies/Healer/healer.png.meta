@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 31cd30f4df28f94449fc43c18b56f289
-timeCreated: 1428245156
+timeCreated: 1428337908
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -111,10 +111,10 @@ TextureImporter:
   cubemapConvolutionSteps: 8
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: -3
   maxTextureSize: 1024
   textureSettings:
-    filterMode: 1
+    filterMode: 2
     aniso: 16
     mipBias: -1
     wrapMode: 1
@@ -138,32 +138,32 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 122
-        y: 0
-        width: 313
-        height: 457
+        y: 2
+        width: 312
+        height: 472
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 11, z: 0, w: 7}
     - name: healer_1
       rect:
         serializedVersion: 2
-        x: 693
-        y: 10
-        width: 279
-        height: 407
+        x: 738
+        y: 4
+        width: 326
+        height: 499
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 14, z: 0, w: 0}
     - name: healer_2
       rect:
         serializedVersion: 2
-        x: 1230
-        y: 24
-        width: 312
-        height: 456
+        x: 1367
+        y: 44
+        width: 314
+        height: 472
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 10, z: 0, w: 16}
   spritePackingTag: 
   userData: 
   assetBundleName: 

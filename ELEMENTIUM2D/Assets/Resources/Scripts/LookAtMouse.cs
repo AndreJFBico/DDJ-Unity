@@ -50,19 +50,24 @@ public class LookAtMouse : MonoBehaviour {
 
     void detectTargetPosition()
     {
-        Vector3 aux = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 aux = worldPosition - transform.position;
         aux.Normalize();
+
+        point = new Vector3(worldPosition.x, transform.position.y, worldPosition.z);
+
+        Vector3 test = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         float rot_y = Mathf.Atan2(aux.x, aux.z) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(90.0f, rot_y, 0f);
 
-        RaycastHit hit;
+        //RaycastHit hit;
         //Vector3 aux = Vector3.right;
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        /*Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit, Mathf.Infinity))
         {
             point = new Vector3(hit.point.x, transform.position.y, hit.point.z);
-        }
+        }*/
         //transform.LookAt(aux);
     }
     

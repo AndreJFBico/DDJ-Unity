@@ -14,14 +14,13 @@ public class EnemyScript : Agent
     protected PathAgent pathAgent;
     protected GameObject gui;
     protected GameObject myGui;
-    public RectTransform alertedSign;
+    public Transform alertedSign;
 
 	// Use this for initialization
     protected virtual void Awake()
     {
         base.Awake();
         Vector2 targetPos = Camera.main.WorldToScreenPoint(transform.position);
-        healthbar_background.position = targetPos;
         pathAgent = GetComponentInChildren<PathAgent>();
         centerHealthBar = true;
         gui = GameObject.Find("GUI");
@@ -126,6 +125,22 @@ public class EnemyScript : Agent
         }
         if (health >= maxHealth)
             health = maxHealth;
+        updateGUI();
+    }
+
+    void updateGUI()
+    {
+        healthbar_background.gameObject.SetActive(true);
+        // Health bar
+        //Vector2 targetPos = healthbar_background.position;
+        /*if (centerHealthBar)
+        {
+            targetPos = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x, transform.position.y, transform.position.z + 0.1f));
+        }
+
+        healthbar_background.position = targetPos;*/
+        float percentage = health / maxHealth;
+        healthbar.transform.localScale = new Vector3(percentage, 1.0f, 1.0f);
     }
 
     private void uniformValues(Transform obj)
@@ -134,18 +149,21 @@ public class EnemyScript : Agent
         obj.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
     }
 
+    // Deprecated and should be removed
     public void sendGuiToCanvas()
     {
+        /*
         myGui.transform.parent = gui.transform;
         // Attention need to investigate why this uniformization is needed
-        uniformValues(myGui.transform);
+        uniformValues(myGui.transform);*/
     }
 
+    // Deprecated and should be removed
     public void retrieveGuiFromCanvas()
     {
-        myGui.transform.parent = transform;
+        /*myGui.transform.parent = transform;
         // Attention need to investigate why this uniformization is needed
-        uniformValues(myGui.transform);
+        uniformValues(myGui.transform);*/
     }
 
     public override void Init()
@@ -199,6 +217,9 @@ public class EnemyScript : Agent
 
     public override void setAlerted(bool val)
     {
+        if(val)
+            alertedSign.transform.gameObject.SetActive(true);
+        else alertedSign.transform.gameObject.SetActive(false);
         isAlerted = val;
     }
 

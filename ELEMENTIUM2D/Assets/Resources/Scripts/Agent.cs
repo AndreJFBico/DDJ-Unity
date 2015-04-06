@@ -5,8 +5,8 @@ using Includes;
 public class Agent : ElementiumMonoBehaviour
 {
 
-    public RectTransform healthbar_background;
-    public RectTransform healthbar;
+    public Transform healthbar_background;
+    public Transform healthbar;
     protected SpriteRenderer figure;
     protected float maxHealth;
     protected float health;
