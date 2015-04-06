@@ -699,6 +699,11 @@ public class RoomManagerV2 : MonoBehaviour {
 		}
 		else
 		{
+			Transform scenery = room.transform.FindChild("Scenery");
+			foreach(Transform child in scenery){
+				child.forward = new Vector3(0, 0, 1);
+			}
+
 			//doesnt collide on the correct position, so it can be used
 			door.used = true;
 			door.leadsTo = room;
