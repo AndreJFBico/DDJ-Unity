@@ -21,3 +21,8 @@
 // simpplify code to adjust pointer by adding a relocatepointerfunc that receives an int determining the line;
 
 // Need to rework how the storeui is aligned when different resolutions are used, see how the pointer is moved between vertical lines and rework the default ui alignment in the editor acording to anchoredPosition3D
+
+
+// Healer enemies have deleated null transforms
+
+// Change all classes that extend MonoBehaviour to extend ElementiumMonoBehaviour

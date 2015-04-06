@@ -194,8 +194,8 @@ public class RoomManagerV2 : MonoBehaviour {
 		if(room == null)
 			return;
 
-		//bool localFullSearch = fullSearch; //possible bugs, lighter
-		bool localFullSearch = true; //best results, heavier
+		bool localFullSearch = fullSearch; //possible bugs, lighter
+		//bool localFullSearch = true; //best results, heavier
 
 		if(localFullSearch)
 			parkAllRooms(room);
@@ -224,10 +224,7 @@ public class RoomManagerV2 : MonoBehaviour {
 			currentRoom.lastSearch = searchId;
 			
 			if(currentDepth <= maxDepth){
-				if(currentRoom.parked){
-
-					if(!generation)
-						currentRoom.transform.FindChild("Scenery").gameObject.SetActive(true);
+				if(currentRoom.parked){				
 
 					if(currentRoom == room){
 						//position doesnt really matter, means nothing is turned on
@@ -252,12 +249,24 @@ public class RoomManagerV2 : MonoBehaviour {
 						currentRoom.transform.position = currentDoor.transform.position + currentRoom.transform.position - door.transform.position;
 						currentRoom.parked = false;
 					}
+
+                    if (!generation){
+                        Transform scenery = currentRoom.transform.FindChild("Scenery");//.gameObject.SetActive(true);
+                        foreach (Transform t in scenery){
+                            ElementiumMonoBehaviour[] elemList = t.GetComponents<ElementiumMonoBehaviour>();
+                            foreach(ElementiumMonoBehaviour elem in elemList)
+                            {
+                                elem.tryInitialize();
+                            }
+                        }
+                    }
 				}
 			}else{
 				if(!currentRoom.parked){
 					//park room
-					parkRoom(currentRoom);
-					continue;
+					parkRoom(currentRoom, generation);
+					if(generation)
+                        continue;
 				}
 			}
 
@@ -294,7 +303,7 @@ public class RoomManagerV2 : MonoBehaviour {
 
 			if(!currentRoom.parked && currentRoom != room){
 				//park room
-				parkRoom (currentRoom);
+				parkRoom (currentRoom, true);
 			}
 			
 			foreach(MapDoor door in currentRoom.doors){
@@ -326,7 +335,7 @@ public class RoomManagerV2 : MonoBehaviour {
 
 			if(!currentRoom.parked){ //also park all the rooms, fixes a bug
 				//park room
-				parkRoom(currentRoom);
+				parkRoom(currentRoom, true);
 			}
 
 			foreach(MapDoor door in currentRoom.doors){
@@ -340,18 +349,34 @@ public class RoomManagerV2 : MonoBehaviour {
 		}
 	}
 
-	private void parkRoom(DungeonRoom room){
+	private void parkRoom(DungeonRoom room, bool generation){
+        if(!generation)
+        {
+            Transform other = room.transform.FindChild("Other");
+            foreach (Transform c in other)
+            {
+                if (c.GetComponent<EnemyScript>() != null)
+                {
+                    c.GetComponent<EnemyScript>().Eliminate();
+                }
+                else
+                {
+                    Destroy(c.gameObject);
+                }
+            }
+
+            Transform scenery = room.transform.FindChild("Scenery");
+            foreach (Transform c in scenery)
+            {
+                ElementiumMonoBehaviour[] emlist = c.GetComponents<ElementiumMonoBehaviour>();
+                foreach(ElementiumMonoBehaviour elem in emlist)
+                {
+                    elem.Disable();
+                }
+            }
+        }
 		room.transform.position = new Vector3(-1000, 1000, 1000);
 		room.parked = true;
-		room.transform.FindChild("Scenery").gameObject.SetActive(false);
-		Transform other = room.transform.FindChild("Other");
-		foreach(Transform c in other){
-			if(c.GetComponent<EnemyScript>() != null){
-				c.GetComponent<EnemyScript>().Eliminate();
-			}else{
-				Destroy (c.gameObject);
-			}
-		}
 	}
 
 	/*******/

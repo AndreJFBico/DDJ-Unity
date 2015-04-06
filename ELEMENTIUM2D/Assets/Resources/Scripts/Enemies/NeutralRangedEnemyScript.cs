@@ -49,14 +49,14 @@ public class NeutralRangedEnemyScript : EnemyScript
     }
 
     // Update is called once per frame
-    protected override void Update()
+    /*protected override void Update()
     {
         if (pathAgent.target != null)
         {
             alignLineRenderer();
         }
         base.Update();
-    }
+    }*/
 
     // Attack Range Radius
     /*public override void OnTriggerEnter(Collider collider)
@@ -119,8 +119,8 @@ public class NeutralRangedEnemyScript : EnemyScript
     }*/
 
     // Health bar
-    protected override void OnGUI()
+    /*protected override void OnGUI()
     {
         base.OnGUI();
-    }
+    }*/
 }

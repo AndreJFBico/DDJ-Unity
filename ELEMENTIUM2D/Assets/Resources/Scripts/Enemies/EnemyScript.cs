@@ -10,7 +10,7 @@ public class EnemyScript : Agent
     protected bool isAlerted = false;
     protected float rangedRadius;
 
-    protected SpawnScript spawnScript;
+    protected EnemySpawner spawnScript;
     protected PathAgent pathAgent;
     protected GameObject gui;
     protected GameObject myGui;
@@ -29,7 +29,7 @@ public class EnemyScript : Agent
         sendGuiToCanvas();
 	}
 
-    protected override void OnGUI()
+    /*protected override void OnGUI()
     {
         base.OnGUI();
 
@@ -47,13 +47,20 @@ public class EnemyScript : Agent
         }
         alertedSign.position = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x - 0.1f, transform.position.y, transform.position.z + 0.1f));
 
-    }
+    }*/
 
 	// Update is called once per frame
-    protected virtual void Update()
+    /*protected virtual void Update()
     {
-        
-	}
+        if(this.gameObject.GetComponentInChildren<SpriteRenderer>().isVisible)
+        {
+            sendGuiToCanvas();
+        }
+        else
+        {
+            retrieveGuiFromCanvas();
+        }
+	}*/
 
     protected virtual void LateUpdate()
     {
@@ -121,14 +128,41 @@ public class EnemyScript : Agent
             health = maxHealth;
     }
 
+    private void uniformValues(Transform obj)
+    {
+        obj.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+        obj.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
+    }
+
     public void sendGuiToCanvas()
     {
         myGui.transform.parent = gui.transform;
+        // Attention need to investigate why this uniformization is needed
+        uniformValues(myGui.transform);
     }
 
     public void retrieveGuiFromCanvas()
     {
         myGui.transform.parent = transform;
+        // Attention need to investigate why this uniformization is needed
+        uniformValues(myGui.transform);
+    }
+
+    public override void Init()
+    {
+        Enable();
+    }
+
+    public override void Enable()
+    {
+        sendGuiToCanvas();
+        gameObject.SetActive(true);
+    }
+
+    public override void Disable()
+    {
+        retrieveGuiFromCanvas();
+        gameObject.SetActive(false);
     }
 
     public void Eliminate()
@@ -137,6 +171,7 @@ public class EnemyScript : Agent
         {
             // I was spawned!!!
             health = maxHealth;
+            retrieveGuiFromCanvas();
             spawnScript.despawn(transform);
         }
         else
@@ -147,7 +182,7 @@ public class EnemyScript : Agent
     }
 
     // Is initiated by the spawner
-    public void setSpawner(SpawnScript scrpt)
+    public void setSpawner(EnemySpawner scrpt)
     {
         spawnScript = scrpt;
     }

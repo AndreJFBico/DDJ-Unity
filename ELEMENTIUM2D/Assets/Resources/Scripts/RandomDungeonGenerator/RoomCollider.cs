@@ -12,7 +12,7 @@ public class RoomCollider : MonoBehaviour {
 		}
         else if (other.gameObject.GetComponentInParent<EnemyScript>() != null)
         {
-            other.transform.parent = transform.parent.parent.FindChild("Other");
+            other.transform.parent.parent = transform.parent.parent.FindChild("Other");
         }
 	}
 }

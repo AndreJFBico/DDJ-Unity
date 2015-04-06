@@ -30,14 +30,14 @@ public class NeutralEnemyScript : EnemyScript
     }
 
     // Update is called once per frame
-    protected override void Update()
+    /*protected override void Update()
     {
         if (pathAgent.target != null)
         {
             alignLineRenderer();
         }
         base.Update();
-    }
+    }*/
 
     protected override void LateUpdate()
     {
@@ -50,8 +50,8 @@ public class NeutralEnemyScript : EnemyScript
     }*/
 
     // Health bar
-    protected override void OnGUI()
+    /*protected override void OnGUI()
     {
         base.OnGUI();
-    }
+    }*/
 }

@@ -2,7 +2,7 @@
 using System.Collections;
 using Includes;
 
-public class AbilityBehaviour : MonoBehaviour
+public class AbilityBehaviour : ElementiumMonoBehaviour
 {
 
     protected float damage;

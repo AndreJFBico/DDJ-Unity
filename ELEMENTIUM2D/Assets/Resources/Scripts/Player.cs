@@ -46,7 +46,7 @@ public class Player : Agent {
         characterMoveScrpt.CollisionStay(collision);
     }
 
-    public override void Update()
+    protected void Update()
     {
         if (timerRunning)
             damageTimer += Time.deltaTime;
@@ -55,8 +55,6 @@ public class Player : Agent {
             timerRunning = false;
             damageTimer = 0.0f;
         }
-            
- 	    base.Update();
     }
 
     void blink()
@@ -155,6 +153,5 @@ public class Player : Agent {
         {
             reloadButton.SetActive(true);
         }
-        OnGUI();
     }
 }

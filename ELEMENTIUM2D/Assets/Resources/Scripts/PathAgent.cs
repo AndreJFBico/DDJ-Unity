@@ -28,16 +28,6 @@ public class PathAgent : MonoBehaviour
         previousSpeed = agent.speed;   
     } 
 
-    public void Start()
-    {
-        startCheckingMovement();
-    }
-
-    public void startCheckingMovement()
-    {
-        StartCoroutine("checkMovement");
-    }
-
     public void playerSighted(Transform collision)
     {
         inSight = true;
@@ -99,6 +89,11 @@ public class PathAgent : MonoBehaviour
         return target != null;
     }
 
+    void OnEnable()
+    {
+        StartCoroutine("checkMovement");
+    }
+
     IEnumerator checkMovement()
     {
         for ( ; ; )
@@ -111,7 +106,7 @@ public class PathAgent : MonoBehaviour
                     {
                         agent.SetDestination(target.position);
                     }
-                    else
+                    else if(agent.isOnNavMesh)
                     {
                         FreeRoam();
                     }
@@ -131,7 +126,7 @@ public class PathAgent : MonoBehaviour
                 {
                     agent.SetDestination(target.position);
                 }
-                else
+                else if (agent.isOnNavMesh)
                 {
                     FreeRoam();
                 }
