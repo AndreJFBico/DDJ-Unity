@@ -425,7 +425,7 @@ GameObject:
   - 4: {fileID: 439798}
   - 114: {fileID: 11425338}
   - 212: {fileID: 21274248}
-  m_Layer: 12
+  m_Layer: 20
   m_Name: MinimapSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -607,7 +607,7 @@ GameObject:
   - 4: {fileID: 466412}
   - 114: {fileID: 11482582}
   - 212: {fileID: 21273938}
-  m_Layer: 12
+  m_Layer: 20
   m_Name: MinimapSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1000,7 +1000,7 @@ GameObject:
   - 4: {fileID: 457384}
   - 114: {fileID: 11461380}
   - 212: {fileID: 21207048}
-  m_Layer: 12
+  m_Layer: 20
   m_Name: MinimapSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1248,7 +1248,7 @@ GameObject:
   - 4: {fileID: 420916}
   - 114: {fileID: 11411484}
   - 212: {fileID: 21246742}
-  m_Layer: 12
+  m_Layer: 20
   m_Name: MinimapSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3359,7 +3359,7 @@ MonoBehaviour:
   healthbar: {fileID: 445244}
   alertedSign: {fileID: 418438}
   enemy: {fileID: 470832, guid: b7e813a02438bf249978b95288e12422, type: 2}
-  amount_to_spawn: 10
+  amount_to_spawn: 4
   spawn_timer: 1
 --- !u!114 &11408242
 MonoBehaviour:
@@ -3375,8 +3375,8 @@ MonoBehaviour:
   healthbar_background: {fileID: 482354}
   healthbar: {fileID: 482930}
   alertedSign: {fileID: 494446}
-  enemy: {fileID: 470832, guid: b7e813a02438bf249978b95288e12422, type: 2}
-  amount_to_spawn: 10
+  enemy: {fileID: 405980, guid: 2c2da5613eb9393439ee67fbbcdfbc7f, type: 2}
+  amount_to_spawn: 4
   spawn_timer: 1
 --- !u!114 &11411484
 MonoBehaviour:
@@ -3749,7 +3749,7 @@ MonoBehaviour:
   healthbar: {fileID: 477150}
   alertedSign: {fileID: 461896}
   enemy: {fileID: 470832, guid: b7e813a02438bf249978b95288e12422, type: 2}
-  amount_to_spawn: 10
+  amount_to_spawn: 4
   spawn_timer: 1
 --- !u!114 &11485516
 MonoBehaviour:
@@ -3765,8 +3765,8 @@ MonoBehaviour:
   healthbar_background: {fileID: 419628}
   healthbar: {fileID: 439366}
   alertedSign: {fileID: 477208}
-  enemy: {fileID: 470832, guid: b7e813a02438bf249978b95288e12422, type: 2}
-  amount_to_spawn: 10
+  enemy: {fileID: 470578, guid: 137cd70f6d84bad438a658ea48021656, type: 2}
+  amount_to_spawn: 4
   spawn_timer: 1
 --- !u!114 &11485860
 MonoBehaviour:
@@ -4441,7 +4441,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 980cfbfc81543bb43afe52f908cb4426, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21243816
@@ -4467,7 +4467,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 980cfbfc81543bb43afe52f908cb4426, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21246742
@@ -4701,7 +4701,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 980cfbfc81543bb43afe52f908cb4426, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21270604
@@ -4935,7 +4935,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 980cfbfc81543bb43afe52f908cb4426, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21288028

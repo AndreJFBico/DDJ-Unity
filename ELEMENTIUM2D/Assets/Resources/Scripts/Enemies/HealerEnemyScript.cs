@@ -69,7 +69,7 @@ public class HealerEnemyScript : EnemyScript {
     // Attack Range Radius
     public override void OnTriggerEnter(Collider collider)
     {
-        if(collider.tag.CompareTo("Enemy") == 0)
+        if(collider.tag.CompareTo("Enemy") == 0 )
         {
             targetedEnemies.Add(collider.transform);
         }
@@ -79,7 +79,7 @@ public class HealerEnemyScript : EnemyScript {
     {
         if (collider.tag.CompareTo("Enemy") == 0)
         {
-            targetedEnemies.RemoveAll(x => x.GetInstanceID() == collider.GetInstanceID());
+            targetedEnemies.RemoveAll(x => x.GetInstanceID() == collider.transform.GetInstanceID());
             if (hasEnemyTarget() && collider.GetInstanceID() == targetedEnemy.GetInstanceID())
             {
                 targetedEnemy = null;
@@ -92,7 +92,7 @@ public class HealerEnemyScript : EnemyScript {
         StartCoroutine("heal");
     }
 
-    protected IEnumerable heal()
+    protected IEnumerator heal()
     {
         while(true)
         {
@@ -149,7 +149,11 @@ public class HealerEnemyScript : EnemyScript {
                 currentFireTransform = right_firepoint;
             }
             activeWeapon.LookAt(targetedEnemy);
+            if(!targetedEnemy.GetComponent<EnemyScript>().isHurt())
+            {
+                targetedEnemy = null;
             }
+        }
         else
         {
             updateTargetedEnemy();

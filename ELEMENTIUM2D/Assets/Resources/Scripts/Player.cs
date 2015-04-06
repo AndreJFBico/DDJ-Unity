@@ -151,7 +151,7 @@ public class Player : Agent {
         }
         if (health <= 0)
         {
-            reloadButton.SetActive(true);
+            Application.LoadLevel("storeScene");
         }
     }
 

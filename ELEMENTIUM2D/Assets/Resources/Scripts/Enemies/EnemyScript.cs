@@ -130,7 +130,9 @@ public class EnemyScript : Agent
 
     void updateGUI()
     {
-        healthbar_background.gameObject.SetActive(true);
+        if(health != maxHealth)
+            healthbar_background.gameObject.SetActive(true);
+        else healthbar_background.gameObject.SetActive(false);
         // Health bar
         //Vector2 targetPos = healthbar_background.position;
         /*if (centerHealthBar)

@@ -24,7 +24,7 @@ public class MinimapComponent : MonoBehaviour {
                 spRenderer.color = Color.red;
                 break;
             case Type.SPAWNER:
-                spRenderer.color = Color.grey;
+                spRenderer.color = Color.green;
                 break;
             case Type.PROP:
                 spRenderer.color = Color.yellow;
