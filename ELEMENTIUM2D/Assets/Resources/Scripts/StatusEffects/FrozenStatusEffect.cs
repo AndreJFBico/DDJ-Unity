@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class StunnedStatusEffect : StatusEffect
-{
+public class FrozenStatusEffect : StatusEffect {
+
 
     private float previousSpeed;
 
@@ -14,7 +14,7 @@ public class StunnedStatusEffect : StatusEffect
     protected override void Start()
     {
         stunnedTimer = duration;// = duration
-        sprite = Resources.Load<Texture2D>("GUIImages/stunned");
+        sprite = Resources.Load<Texture2D>("GUIImages/frozen");
     }
 
 
@@ -40,7 +40,7 @@ public class StunnedStatusEffect : StatusEffect
 
     public override void applyStatusEffect(EnemyScript script)
     {
-        applyStunnedStatus(script);
+        applyFrozenStatus(script);
     }
 
     public override void resetDuration(float dur)
@@ -62,11 +62,11 @@ public class StunnedStatusEffect : StatusEffect
     //#############################################################
     //################### EFFECT RESPONSIBLE ######################
     //#############################################################
-    private IEnumerator stun(EnemyScript script)
+    private IEnumerator freeze(EnemyScript script)
     {
         EnemyScript agent = GetComponent<EnemyScript>();
         agent.stop();
-        
+
         while (stunnedTimer > 0)
         {
             stunnedTimer -= Time.deltaTime;
@@ -79,8 +79,8 @@ public class StunnedStatusEffect : StatusEffect
         Destroy(this);
     }
 
-    public void applyStunnedStatus(EnemyScript script)
+    public void applyFrozenStatus(EnemyScript script)
     {
-        StartCoroutine("stun", script);
+        StartCoroutine("freeze", script);
     }
 }

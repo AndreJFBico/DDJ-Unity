@@ -25,4 +25,8 @@
 
 // Healer enemies have deleated null transforms
 
+// Spawners arent being stopped/stunned correctly due to the stop function only disabling the pathagent target
+
+// Differentiate stunned from frozen
+
 // Change all classes that extend MonoBehaviour to extend ElementiumMonoBehaviour

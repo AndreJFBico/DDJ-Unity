@@ -86,10 +86,10 @@ namespace Includes
             public class ability3
             {
                 public static float attackSpeed = 0.25f;
-                public static int projectile_number = 1;
+                public static int projectile_number = 7;
                 public static float damage = 5;
-                public static float movementForce = 200;
-                public static string projectile = "Prefabs/Projectiles/";
+                public static float movementForce = 1.5f;
+                public static string projectile = "Prefabs/Projectiles/IceNova";
             }
         } 
         #endregion
@@ -101,7 +101,8 @@ namespace Includes
             public class ability1
             {
                 public static float attackSpeed = 0.30f;
-                public static int projectile_number = 4;
+                public static int projectile_number = 1;
+                public static int collisionNumber = 3;
                 public static float damage = 6;
                 public static float maxForce = 20;
                 public static float minForce = 5;

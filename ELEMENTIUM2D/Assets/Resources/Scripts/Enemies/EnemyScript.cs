@@ -232,7 +232,8 @@ public class EnemyScript : Agent
 
     public void stop()
     {
-        pathAgent.stop();
+        if (pathAgent != null)
+            pathAgent.stop();
     }
 
     public void restart(bool retarget)
