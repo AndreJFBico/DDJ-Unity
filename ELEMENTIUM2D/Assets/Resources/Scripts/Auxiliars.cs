@@ -86,10 +86,10 @@ namespace Includes
             public class ability3
             {
                 public static float attackSpeed = 0.25f;
-                public static int projectile_number = 1;
+                public static int projectile_number = 7;
                 public static float damage = 5;
-                public static float movementForce = 200;
-                public static string projectile = "Prefabs/Projectiles/";
+                public static float movementForce = 1.5f;
+                public static string projectile = "Prefabs/Projectiles/IceNova";
             }
         } 
         #endregion
@@ -101,7 +101,8 @@ namespace Includes
             public class ability1
             {
                 public static float attackSpeed = 0.30f;
-                public static int projectile_number = 4;
+                public static int projectile_number = 1;
+                public static int collisionNumber = 3;
                 public static float damage = 6;
                 public static float maxForce = 20;
                 public static float minForce = 5;
@@ -145,7 +146,8 @@ namespace Includes
                 public static float attackSpeed = 0.25f;
                 public static int projectile_number = 1;
                 public static float damage = 5;
-                public static float movementForce = 200;
+                public static float movementForce = 5;
+                public static float abilityTimer = 4.0f;
                 public static string projectile = "Prefabs/Projectiles/EarthShield";
             }
             public class ability3
@@ -165,7 +167,19 @@ namespace Includes
     public class EnemyStats
     {
         // NEUTRAL
-        public class Neutral
+        #region Neutral Enemies
+        public class BasicNeutral
+        {
+            public static float maxHealth = 50;
+            public static float damage = 10;
+            public static float defence = 2;
+            public static float waterResist = 5;
+            public static float earthResist = 5;
+            public static float fireResist = 5;
+            public static float visionRadius = 5.46f;
+        }
+
+        public class RangedNeutral
         {
             public static float maxHealth = 50;
             public static float damage = 10;
@@ -176,48 +190,25 @@ namespace Includes
             public static float visionRadius = 5.46f;
             public static float rangedRadius = 1.5f;
             public static float rangedAttackSpeed = 0.5f;
-            // This has to be more specific there might by more neutral projectiles, and the damage a projectile does is different from a basic neutral enemy
             public static string neutralEnemyProjectile = "Prefabs/Projectiles/Musk";
         }
 
-        // Frost
-        public class Frost
+        public class HealerNeutral
         {
-            public static float maxHealth = 100;
+            public static float maxHealth = 50;
+            public static float healAmount = 3;
             public static float damage = 10;
             public static float defence = 2;
             public static float waterResist = 5;
             public static float earthResist = 5;
             public static float fireResist = 5;
             public static float visionRadius = 5.46f;
+            public static float rangedRadius = 1.5f;
+            public static float rangedAttackSpeed = 0.5f;
+            public static string neutralEnemyProjectile = "Prefabs/Projectiles/Healing";
         }
 
-        // FIRE
-        public class Fire
-        {
-            public static float maxHealth = 100;
-            public static float damage = 10;
-            public static float defence = 2;
-            public static float waterResist = 5;
-            public static float earthResist = 5;
-            public static float fireResist = 5;
-            public static float visionRadius = 5.46f;
-        }
-
-        // EARTH
-        public class Earth
-        {
-            public static float maxHealth = 100;
-            public static float damage = 10;
-            public static float defence = 2;
-            public static float waterResist = 5;
-            public static float earthResist = 5;
-            public static float fireResist = 5;
-            public static float visionRadius = 5.46f;
-        }
-
-        // NEUTRAL
-        public class NeutralShielded
+        public class NeutralShield
         {
             public static float maxHealth = 50;
             public static float damage = 10;
@@ -235,22 +226,83 @@ namespace Includes
             public static Elements shieldType = Elements.FROST;
             public static float shieldHP = 40;
         }
+        #endregion
+
+        // Frost
+        #region Frost/Water Enemies
+        public class Frost
+        {
+            public static float maxHealth = 100;
+            public static float damage = 10;
+            public static float defence = 2;
+            public static float waterResist = 5;
+            public static float earthResist = 5;
+            public static float fireResist = 5;
+            public static float visionRadius = 5.46f;
+        }
+        #endregion
+
+        // FIRE
+        #region Fire Enemies
+        public class Fire
+        {
+            public static float maxHealth = 100;
+            public static float damage = 10;
+            public static float defence = 2;
+            public static float waterResist = 5;
+            public static float earthResist = 5;
+            public static float fireResist = 5;
+            public static float visionRadius = 5.46f;
+        }
+        #endregion
+
+        // EARTH
+        #region Earth Enemies
+        public class Earth
+        {
+            public static float maxHealth = 100;
+            public static float damage = 10;
+            public static float defence = 2;
+            public static float waterResist = 5;
+            public static float earthResist = 5;
+            public static float fireResist = 5;
+            public static float visionRadius = 5.46f;
+        }
+        #endregion
     } 
     #endregion
 
     // STARTING STATS
     #region PlayerStats
-    public class PlayerStats
+    public static class PlayerStats
     {
+        public const float def_damage = 3;
+        public const float inc_damage_level = 1.5f;
+
+        public const float def_defence = 0;
+
+        public const float def_neutral_level = 3;
+        public const float def_earth_level = 0;
+        public const float def_water_level = 0;
+        public const float def_fire_level = 0;
+
+        public const float def_health = 30.0f;
+        public const float def_inc_health = 10.5f;
+
         public static float moveSpeed = 2.5f;
         public static float moveInContactWithEnemy = 1.0f;
-        public static float maxHealth = 500;
-        public static float damage = 3;
-        public static float defence = 0;
+        public static float maxHealth = def_health;
+        public static float damage = def_damage;
+        public static float defence = def_defence;
         public static float waterResist = 0;
         public static float earthResist = 0;
         public static float fireResist = 0;
         public static float damageTimer = 2.35f;
+
+        public static float neutral_level = def_neutral_level;
+        public static float earth_level = def_earth_level;
+        public static float water_level = def_water_level;
+        public static float fire_level = def_fire_level;
     } 
     #endregion
 
@@ -265,7 +317,7 @@ namespace Includes
         private static GameObject waterPuddle;
         private static GameObject oilPuddle;
 
-        protected GameManager() { }
+        protected GameManager() { init(); }
         // Singleton pattern implementation
 
         public GameObject IceWall { get { return iceWall; } }
@@ -276,7 +328,7 @@ namespace Includes
 
         public GameObject Player { get { return player; } }
 
-        public static GameManager Instance { get { if (_instance == null) { _instance = new GameManager(); init(); } return _instance; } }
+        public static GameManager Instance { get { if (_instance == null) { _instance = new GameManager();  } return _instance; } }
 
         private static void init()
         {

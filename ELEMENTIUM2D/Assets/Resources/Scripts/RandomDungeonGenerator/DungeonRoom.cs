@@ -8,6 +8,16 @@ public class DungeonRoom : MonoBehaviour {
 
 	public int nodeId = 0;
 
+	public DungeonPart part;
+
+	public int partId;
+
+	public int id = 0;
+
+	public int lastSearch = 0;
+
+	public bool parked = false;
+
 	public string randomGroup = "";
 
 	void Awake () {

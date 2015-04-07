@@ -19,24 +19,26 @@ public class EarthStun : AbilityBehaviour {
 
     public override void OnCollisionEnter(Collision collision)
     {
-
-    }
-
-    public void OnTriggerEnter(Collider collider)
-    {
-        if (collider.transform.tag.CompareTo("Enemy") == 0)
+        if (collision.transform.tag.CompareTo("Enemy") == 0)
         {
-            if(collider.gameObject.GetComponent<StunnedStatusEffect>() == null)
+            if (collision.gameObject.GetComponent<StunnedStatusEffect>() == null)
             {
-                StunnedStatusEffect sse = collider.gameObject.AddComponent<StunnedStatusEffect>();
-                sse.setDuration(2.0f);
-                sse.applyStatusEffect(collider.gameObject.GetComponent<EnemyScript>());
-            }             
+                StunnedStatusEffect sse = collision.gameObject.AddComponent<StunnedStatusEffect>();
+                sse.setDuration(5.0f);
+                sse.applyStatusEffect(collision.gameObject.GetComponent<EnemyScript>());
+            }
         }
+        if (collidedWith(collision, damage)) ;
+        else if (collidedWithBreakable(collision)) ;
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("Unhitable"))
+            return;
+        base.OnCollisionEnter(collision);
     }
+
 
     public override void initiate(GameObject startingObject)
     {
-        transform.parent = startingObject.transform;
+        ConstantForce constantForce = gameObject.AddComponent<ConstantForce>();
+        constantForce.relativeForce = new Vector3(0.0f, 0.0f, AbilityStats.Earth.ability2.movementForce);
     }
 }

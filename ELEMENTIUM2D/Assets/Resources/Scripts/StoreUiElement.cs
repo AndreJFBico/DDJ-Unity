@@ -100,4 +100,9 @@ public class StoreUiElement
         boxes.Clear();
         boxes = new List<Image>();
     }
+
+    public int getNumcheck()
+    {
+        return numChecked;
+    }
 }

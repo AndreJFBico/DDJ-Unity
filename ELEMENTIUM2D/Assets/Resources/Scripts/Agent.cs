@@ -2,11 +2,11 @@
 using System.Collections;
 using Includes;
 
-public class Agent : MonoBehaviour
+public class Agent : ElementiumMonoBehaviour
 {
 
-    public RectTransform healthbar_background;
-    public RectTransform healthbar;
+    public Transform healthbar_background;
+    public Transform healthbar;
     protected SpriteRenderer figure;
     protected float maxHealth;
     protected float health;
@@ -23,7 +23,7 @@ public class Agent : MonoBehaviour
         figure = transform.gameObject.GetComponentInChildren<SpriteRenderer>();
     }
 
-    protected virtual void OnGUI()
+    /*protected virtual void OnGUI()
     {
         // Health bar
         Vector2 targetPos = healthbar_background.position;
@@ -35,9 +35,12 @@ public class Agent : MonoBehaviour
         healthbar_background.position = targetPos;
         float percentage = health / maxHealth;
         healthbar.transform.localScale = new Vector3(percentage, 1.0f, 1.0f);
-    }
+    }*/
 
-    public virtual void Update() { }
+    public bool isHurt()
+    {
+        return health < maxHealth;
+    }
 
     public virtual void OnTriggerExit(Collider collision) { }
 

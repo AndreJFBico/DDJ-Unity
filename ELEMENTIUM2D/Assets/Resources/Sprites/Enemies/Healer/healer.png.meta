@@ -1,0 +1,170 @@
+fileFormatVersion: 2
+guid: 31cd30f4df28f94449fc43c18b56f289
+timeCreated: 1428337908
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: healer_0
+    21300002: healer_1
+    21300004: healer_2
+    21300006: healer_3
+    21300008: healer_4
+    21300010: healer_5
+    21300012: healer_6
+    21300014: healer_7
+    21300016: healer_8
+    21300018: healer_9
+    21300020: healer_10
+    21300022: healer_11
+    21300024: healer_12
+    21300026: healer_13
+    21300028: healer_14
+    21300030: healer_15
+    21300032: healer_16
+    21300034: healer_17
+    21300036: healer_18
+    21300038: healer_19
+    21300040: healer_20
+    21300042: healer_21
+    21300044: healer_22
+    21300046: healer_23
+    21300048: healer_24
+    21300050: healer_25
+    21300052: healer_26
+    21300054: healer_27
+    21300056: healer_28
+    21300058: healer_29
+    21300060: healer_30
+    21300062: healer_31
+    21300064: healer_32
+    21300066: healer_33
+    21300068: healer_34
+    21300070: healer_35
+    21300072: healer_36
+    21300074: healer_37
+    21300076: healer_38
+    21300078: healer_39
+    21300080: healer_40
+    21300082: healer_41
+    21300084: healer_42
+    21300086: healer_43
+    21300088: healer_44
+    21300090: healer_45
+    21300092: healer_46
+    21300094: healer_47
+    21300096: healer_48
+    21300098: healer_49
+    21300100: healer_50
+    21300102: healer_51
+    21300104: healer_52
+    21300106: healer_53
+    21300108: healer_54
+    21300110: healer_55
+    21300112: healer_56
+    21300114: healer_57
+    21300116: healer_58
+    21300118: healer_59
+    21300120: healer_60
+    21300122: healer_61
+    21300124: healer_62
+    21300126: healer_63
+    21300128: healer_64
+    21300130: healer_65
+    21300132: healer_66
+    21300134: healer_67
+    21300136: healer_68
+    21300138: healer_69
+    21300140: healer_70
+    21300142: healer_71
+    21300144: healer_72
+    21300146: healer_73
+    21300148: healer_74
+    21300150: healer_75
+    21300152: healer_76
+    21300154: healer_77
+    21300156: healer_78
+    21300158: healer_79
+    21300160: healer_80
+    21300162: healer_81
+    21300164: healer_82
+    21300166: healer_83
+    21300168: healer_84
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 2
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: healer_0
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 2
+        width: 312
+        height: 472
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 11, z: 0, w: 7}
+    - name: healer_1
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 4
+        width: 326
+        height: 499
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 14, z: 0, w: 0}
+    - name: healer_2
+      rect:
+        serializedVersion: 2
+        x: 1367
+        y: 44
+        width: 314
+        height: 472
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 10, z: 0, w: 16}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

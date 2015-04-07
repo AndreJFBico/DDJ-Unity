@@ -14,7 +14,7 @@ public class StunnedStatusEffect : StatusEffect
     protected override void Start()
     {
         stunnedTimer = duration;// = duration
-        sprite = Resources.Load<Texture2D>("GUIImages/Elements/Neutral");
+        sprite = Resources.Load<Texture2D>("GUIImages/stunned");
     }
 
 
@@ -25,11 +25,11 @@ public class StunnedStatusEffect : StatusEffect
     void OnGUI()
     {
         Color guiColor = Color.white;
-        guiColor.a = 0.55f;
+        guiColor.a = 1.0f;
         Color prevColor = GUI.color;
         GUI.color = guiColor;
         Vector3 objPos = Camera.main.WorldToScreenPoint(gameObject.transform.position);
-        GUI.DrawTexture(new Rect(objPos.x - 10, Screen.height - objPos.y - 10, 20, 20), sprite);
+        GUI.DrawTexture(new Rect(objPos.x - 60, Screen.height - objPos.y - 50, 120, 100), sprite, ScaleMode.ScaleToFit, true, 1.0F);
 
         GUI.color = prevColor;
     }

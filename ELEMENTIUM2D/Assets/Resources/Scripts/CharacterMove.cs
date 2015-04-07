@@ -198,7 +198,7 @@ public class CharacterMove : MonoBehaviour {
     
 	
 	// Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         boxPosition = GetComponent<BoxCollider>().bounds.center;
         hDir = Input.GetAxis("Horizontal");

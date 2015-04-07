@@ -10,18 +10,17 @@ public class EnemyScript : Agent
     protected bool isAlerted = false;
     protected float rangedRadius;
 
-    protected SpawnScript spawnScript;
+    protected EnemySpawner spawnScript;
     protected PathAgent pathAgent;
     protected GameObject gui;
     protected GameObject myGui;
-    public RectTransform alertedSign;
+    public Transform alertedSign;
 
 	// Use this for initialization
     protected virtual void Awake()
     {
         base.Awake();
         Vector2 targetPos = Camera.main.WorldToScreenPoint(transform.position);
-        healthbar_background.position = targetPos;
         pathAgent = GetComponentInChildren<PathAgent>();
         centerHealthBar = true;
         gui = GameObject.Find("GUI");
@@ -29,7 +28,7 @@ public class EnemyScript : Agent
         sendGuiToCanvas();
 	}
 
-    protected override void OnGUI()
+    /*protected override void OnGUI()
     {
         base.OnGUI();
 
@@ -47,13 +46,20 @@ public class EnemyScript : Agent
         }
         alertedSign.position = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x - 0.1f, transform.position.y, transform.position.z + 0.1f));
 
-    }
+    }*/
 
 	// Update is called once per frame
-    protected virtual void Update()
+    /*protected virtual void Update()
     {
-        
-	}
+        if(this.gameObject.GetComponentInChildren<SpriteRenderer>().isVisible)
+        {
+            sendGuiToCanvas();
+        }
+        else
+        {
+            retrieveGuiFromCanvas();
+        }
+	}*/
 
     protected virtual void LateUpdate()
     {
@@ -117,24 +123,75 @@ public class EnemyScript : Agent
         {
             Eliminate();
         }
+        if (health >= maxHealth)
+            health = maxHealth;
+        updateGUI();
     }
 
+    void updateGUI()
+    {
+        if(health != maxHealth)
+            healthbar_background.gameObject.SetActive(true);
+        else healthbar_background.gameObject.SetActive(false);
+        // Health bar
+        //Vector2 targetPos = healthbar_background.position;
+        /*if (centerHealthBar)
+        {
+            targetPos = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x, transform.position.y, transform.position.z + 0.1f));
+        }
+
+        healthbar_background.position = targetPos;*/
+        float percentage = health / maxHealth;
+        healthbar.transform.localScale = new Vector3(percentage, 1.0f, 1.0f);
+    }
+
+    private void uniformValues(Transform obj)
+    {
+        obj.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+        obj.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
+    }
+
+    // Deprecated and should be removed
     public void sendGuiToCanvas()
     {
+        /*
         myGui.transform.parent = gui.transform;
+        // Attention need to investigate why this uniformization is needed
+        uniformValues(myGui.transform);*/
     }
 
+    // Deprecated and should be removed
     public void retrieveGuiFromCanvas()
     {
-        myGui.transform.parent = transform;
+        /*myGui.transform.parent = transform;
+        // Attention need to investigate why this uniformization is needed
+        uniformValues(myGui.transform);*/
     }
 
-    private void Eliminate()
+    public override void Init()
+    {
+        Enable();
+    }
+
+    public override void Enable()
+    {
+        sendGuiToCanvas();
+        gameObject.SetActive(true);
+    }
+
+    public override void Disable()
+    {
+        retrieveGuiFromCanvas();
+        gameObject.SetActive(false);
+    }
+
+    public void Eliminate()
     {
         if (spawnScript != null)
         {
             // I was spawned!!!
             health = maxHealth;
+            retrieveGuiFromCanvas();
             spawnScript.despawn(transform);
         }
         else
@@ -145,7 +202,7 @@ public class EnemyScript : Agent
     }
 
     // Is initiated by the spawner
-    public void setSpawner(SpawnScript scrpt)
+    public void setSpawner(EnemySpawner scrpt)
     {
         spawnScript = scrpt;
     }
@@ -162,6 +219,9 @@ public class EnemyScript : Agent
 
     public override void setAlerted(bool val)
     {
+        if(val)
+            alertedSign.transform.gameObject.SetActive(true);
+        else alertedSign.transform.gameObject.SetActive(false);
         isAlerted = val;
     }
 
@@ -172,7 +232,8 @@ public class EnemyScript : Agent
 
     public void stop()
     {
-        pathAgent.stop();
+        if (pathAgent != null)
+            pathAgent.stop();
     }
 
     public void restart(bool retarget)

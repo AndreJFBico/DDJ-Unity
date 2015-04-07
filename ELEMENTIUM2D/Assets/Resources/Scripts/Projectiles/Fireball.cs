@@ -4,7 +4,7 @@ using Includes;
 
 public class Fireball : AbilityBehaviour 
 {
-
+    private int collisionNumber = 0;
     protected override void Awake()
     {
         explosion = Resources.Load("Prefabs/Explosions/fireExplosion") as GameObject;
@@ -23,7 +23,10 @@ public class Fireball : AbilityBehaviour
         else if (collidedWithBreakable(collision)) ;
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Unhitable"))
             return;
-        base.OnCollisionEnter(collision);
+        //base.OnCollisionEnter(collision);
+        if (collisionNumber >= AbilityStats.Fire.ability1.collisionNumber)
+            base.OnCollisionEnter(collision);
+        collisionNumber++;
     }
 
     public override void initiate(GameObject startingObject)

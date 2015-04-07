@@ -21,3 +21,12 @@
 // simpplify code to adjust pointer by adding a relocatepointerfunc that receives an int determining the line;
 
 // Need to rework how the storeui is aligned when different resolutions are used, see how the pointer is moved between vertical lines and rework the default ui alignment in the editor acording to anchoredPosition3D
+
+
+// Healer enemies have deleated null transforms
+
+// Spawners arent being stopped/stunned correctly due to the stop function only disabling the pathagent target
+
+// Differentiate stunned from frozen
+
+// Change all classes that extend MonoBehaviour to extend ElementiumMonoBehaviour
