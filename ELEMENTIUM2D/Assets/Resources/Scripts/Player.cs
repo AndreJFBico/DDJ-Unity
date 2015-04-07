@@ -11,9 +11,13 @@ public class Player : Agent {
     private CharacterMove characterMoveScrpt;
     private bool alphaed = false;
 
+    private float previousSpeed = 0;
+
     void Awake()
     {
         base.Awake();
+        GameManager.Instance.sceneInit();
+        OilPuddleManager.Instance.sceneInit();
         maxHealth = PlayerStats.maxHealth;
         health = maxHealth;
         damage = PlayerStats.damage;
@@ -103,6 +107,11 @@ public class Player : Agent {
         base.OnCollisionEnter(collision);
     }
 
+    public override void applyStatusEffect(StatusEffect scrpt)
+    {
+        scrpt.applyStatusEffect(this);
+    }
+
     public override void OnCollisionExit(Collision collision)
     {
         characterMoveScrpt.CollisionExit(collision);
@@ -167,5 +176,15 @@ public class Player : Agent {
         //healthbar_background.position = targetPos;
         float percentage = health / maxHealth;
         healthbar.transform.localScale = new Vector3(percentage, 1.0f, 1.0f);
+    }
+
+    public override void slowSelf(float intensity)
+    {
+        characterMoveScrpt.Slow *= intensity;
+    }
+
+    public override void restoreMoveSpeed(float intensity)
+    {
+        characterMoveScrpt.Slow /= intensity;
     }
 }

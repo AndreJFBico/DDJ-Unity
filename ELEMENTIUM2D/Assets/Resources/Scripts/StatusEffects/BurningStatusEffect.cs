@@ -37,7 +37,7 @@ public class BurningStatusEffect : StatusEffect
     //#############################################################
     //################### VARIABLE MODIFIERS ######################
     //#############################################################
-    public override void applyStatusEffect(EnemyScript script)
+    public override void applyStatusEffect(Agent script)
     {
         applyBurningStatus(script);
     }
@@ -63,20 +63,20 @@ public class BurningStatusEffect : StatusEffect
     //#############################################################
     //################### EFFECT RESPONSIBLE ######################
     //#############################################################
-    private IEnumerator burning(EnemyScript script)
+    private IEnumerator burning(Agent script)
     {
         while (burningTimer > 0)
         {
             script.takeDamage(intensity, Elements.FIRE);
-            burningTimer -= 1;
-            yield return new WaitForSeconds(1);
+            burningTimer -= 0.2f;
+            yield return new WaitForSeconds(0.2f);
         }
         Destroy(this);
         isBurning = false;
         burningDamage = 0;
     }
 
-    public void applyBurningStatus(EnemyScript script)
+    public void applyBurningStatus(Agent script)
     {
         Debug.LogWarning("Taking Damage");
         if (isBurning)

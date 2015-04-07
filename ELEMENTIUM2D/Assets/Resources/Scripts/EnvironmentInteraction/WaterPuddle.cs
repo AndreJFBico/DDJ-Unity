@@ -14,7 +14,7 @@ public class WaterPuddle : ElementalyModifiable{
         iceWall = GameManager.Instance.IceWall;
     }
 
-    protected void OnTriggerEnter(Collider other)
+    protected override void dealWithAgent(Collider other)
     {
         if (other.gameObject.tag.CompareTo("Enemy") == 0)
         {

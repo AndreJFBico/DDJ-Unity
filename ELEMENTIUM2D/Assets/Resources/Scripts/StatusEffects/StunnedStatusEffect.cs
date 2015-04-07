@@ -38,7 +38,7 @@ public class StunnedStatusEffect : StatusEffect
     //################### VARIABLE MODIFIERS ######################
     //#############################################################
 
-    public override void applyStatusEffect(EnemyScript script)
+    public override void applyStatusEffect(Agent script)
     {
         applyStunnedStatus(script);
     }
@@ -62,7 +62,7 @@ public class StunnedStatusEffect : StatusEffect
     //#############################################################
     //################### EFFECT RESPONSIBLE ######################
     //#############################################################
-    private IEnumerator stun(EnemyScript script)
+    private IEnumerator stun(Agent script)
     {
         EnemyScript agent = GetComponent<EnemyScript>();
         agent.stop();
@@ -79,7 +79,7 @@ public class StunnedStatusEffect : StatusEffect
         Destroy(this);
     }
 
-    public void applyStunnedStatus(EnemyScript script)
+    public void applyStunnedStatus(Agent script)
     {
         StartCoroutine("stun", script);
     }

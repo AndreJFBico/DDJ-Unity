@@ -19,23 +19,20 @@ public class OilPuddle : ElementalyModifiable {
 
 	// Use this for initialization
 	void Start () {
-        damage = 5;
+        damage = 1;
         slow = 0.5f;
         durability = 20;
         StartCoroutine("reduceSize", 10);
         Invoke("destroySelf", durability);
 	}
 
-    protected void OnTriggerStay(Collider other)
+    protected override void dealWithAgent(Collider other)
     {
-        if (other.gameObject.tag.CompareTo("Enemy") == 0)
+        if (canBurn)
+            applyStatus(other, StatusEffects.BURNING, damage);
+        else
         {
-            if (canBurn)
-                applyStatus(other, StatusEffects.BURNING, damage);
-            else
-            {
-                applyStatus(other, StatusEffects.SLOW, slow);
-            }
+            applyStatus(other, StatusEffects.SLOW, slow);
         }
     }
 

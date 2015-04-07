@@ -38,7 +38,7 @@ public class FrozenStatusEffect : StatusEffect {
     //################### VARIABLE MODIFIERS ######################
     //#############################################################
 
-    public override void applyStatusEffect(EnemyScript script)
+    public override void applyStatusEffect(Agent script)
     {
         applyFrozenStatus(script);
     }
@@ -62,7 +62,7 @@ public class FrozenStatusEffect : StatusEffect {
     //#############################################################
     //################### EFFECT RESPONSIBLE ######################
     //#############################################################
-    private IEnumerator freeze(EnemyScript script)
+    private IEnumerator freeze(Agent script)
     {
         EnemyScript agent = GetComponent<EnemyScript>();
         agent.stop();
@@ -79,7 +79,7 @@ public class FrozenStatusEffect : StatusEffect {
         Destroy(this);
     }
 
-    public void applyFrozenStatus(EnemyScript script)
+    public void applyFrozenStatus(Agent script)
     {
         StartCoroutine("freeze", script);
     }

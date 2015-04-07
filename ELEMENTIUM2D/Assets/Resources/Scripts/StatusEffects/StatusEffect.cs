@@ -22,6 +22,6 @@ public class StatusEffect : MonoBehaviour {
 
     public virtual void resetDuration(float dur){}
 
-    public virtual void applyStatusEffect(EnemyScript script){}
+    public virtual void applyStatusEffect(Agent script){}
 	
 }

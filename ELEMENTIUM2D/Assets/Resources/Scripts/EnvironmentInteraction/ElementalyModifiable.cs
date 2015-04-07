@@ -37,7 +37,7 @@ public class ElementalyModifiable : Modifiable {
             StatusEffect burn = other.gameObject.AddComponent<BurningStatusEffect>();
             burn.setIntensity(intensity);
             burn.setDuration(durability);
-            other.gameObject.GetComponent<EnemyScript>().applyStatusEffect(burn);
+            other.gameObject.GetComponent<Agent>().applyStatusEffect(burn);
         }
         else
         {
@@ -49,18 +49,19 @@ public class ElementalyModifiable : Modifiable {
 
     private void applySlow(Collider other, float intensity)
     {
+        float duration = 1;
         if (other.gameObject.GetComponent<SlowStatusEffect>() == null)
         {
             StatusEffect slow = other.gameObject.AddComponent<SlowStatusEffect>();
             slow.setIntensity(intensity);
-            slow.setDuration(durability);
-            other.gameObject.GetComponent<EnemyScript>().applyStatusEffect(slow);
+            slow.setDuration(duration);
+            other.gameObject.GetComponent<Agent>().applyStatusEffect(slow);
         }
         else
         {
             //Need an extra check to see if damage > this damage
             StatusEffect slow = other.gameObject.GetComponent<SlowStatusEffect>();
-            slow.resetDuration(durability);
+            slow.resetDuration(duration);
         }
     }
 
@@ -74,7 +75,7 @@ public class ElementalyModifiable : Modifiable {
         {
             StatusEffect wet = other.gameObject.AddComponent<WetStatusEffect>();
             wet.setDuration(durability);
-            other.gameObject.GetComponent<EnemyScript>().applyStatusEffect(wet);
+            other.gameObject.GetComponent<Agent>().applyStatusEffect(wet);
         }
         else
         {
@@ -84,8 +85,16 @@ public class ElementalyModifiable : Modifiable {
         }
     }
 
+    protected void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.GetComponent<Agent>() != null)
+        {
+            dealWithAgent(other);
+        }
+    }
+
     public virtual void dealWithEnemy(EnemyScript scrpt){}
 
-    public virtual void dealWithPlayer(Interactions scrpt){}
+    protected virtual void dealWithAgent(Collider other) { }
 
 }

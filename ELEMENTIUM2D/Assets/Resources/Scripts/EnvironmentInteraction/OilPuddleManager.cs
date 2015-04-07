@@ -67,6 +67,10 @@ public class OilPuddleManager {
 
     private static void init()
     {
+    }
+
+    public void sceneInit()
+    {
         _activeOilPuddles = new List<OilPuddle>();
         _playerMove = GameObject.FindWithTag("Player").GetComponent<CharacterMove>();
         _oilPuddle = GameManager.Instance.OilPuddle;

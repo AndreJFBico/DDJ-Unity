@@ -36,7 +36,7 @@ public class WetStatusEffect : StatusEffect
     //#############################################################
     //################### VARIABLE MODIFIERS ######################
     //#############################################################
-    public override void applyStatusEffect(EnemyScript script)
+    public override void applyStatusEffect(Agent script)
     {
         applyWetStatus(script);
     }
@@ -62,7 +62,7 @@ public class WetStatusEffect : StatusEffect
     //#############################################################
     //################### EFFECT RESPONSIBLE ######################
     //#############################################################
-    private IEnumerator wet(EnemyScript script)
+    private IEnumerator wet(Agent script)
     {
         while (wetTimer > 0)
         {
@@ -73,7 +73,7 @@ public class WetStatusEffect : StatusEffect
         Destroy(this);
     }
 
-    public void applyWetStatus(EnemyScript script)
+    public void applyWetStatus(Agent script)
     {
         if (isWet)
         {

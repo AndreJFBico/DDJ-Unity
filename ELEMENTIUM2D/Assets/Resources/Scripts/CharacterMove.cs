@@ -9,17 +9,15 @@ public class CharacterMove : MonoBehaviour {
     private float currentMoveSpeed;
     private float moveSpeed;
     private float inContactWithEnemySpeed;
+    private float slowFactor;
+    private float boostFactor;
 
     private PlayerAnimController playerAnim;
 
     private float hDir;
     private float vDir;
 
-    private float inContactNumber = 0;
-
-    private bool inContact;
     private bool inContactWithEnemy;
-    private Vector3 collisionNormal;
     private Vector3 collisionWithEnemyNormal;
     private List<Collision> collisions;
     private float diagonalLength;
@@ -28,19 +26,25 @@ public class CharacterMove : MonoBehaviour {
     private Vector3 boxPosition;
     private float epsilon;
 
-    private bool blockedRight = false;
-    private bool blockedLeft = false;
-    private bool blockedUp = false;
-    private bool blockedDown = false;
     //private List<Collision> collidedWith; 
     #endregion
 
     public float MoveSpeed
     {
-        get
-        {
-            return moveSpeed;
-        }
+        get { return moveSpeed;}
+        set { moveSpeed = value;}
+    }
+
+    public float Slow
+    {
+        get { return slowFactor; }
+        set { slowFactor = value; }
+    }
+
+    public float Boost
+    {
+        get { return boostFactor; }
+        set { boostFactor = value; }
     }
 
 	// Use this for initialization
@@ -250,7 +254,8 @@ public class CharacterMove : MonoBehaviour {
                 calculatedMotion = calculatedMotion - undesiredMotion;          
             }
         }
-        else */if (inContactWithEnemy)
+        else */
+        if (inContactWithEnemy)
         {
             float dotProduct = Vector3.Dot(calculatedMotion, collisionWithEnemyNormal);
             // Facing a wall
@@ -270,6 +275,7 @@ public class CharacterMove : MonoBehaviour {
         }
         else currentMoveSpeed = moveSpeed;
 
+        currentMoveSpeed = currentMoveSpeed * slowFactor / boostFactor;
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, currentMoveSpeed * Time.deltaTime);
 
         if (hDir == 0 && vDir == 0)
@@ -281,11 +287,12 @@ public class CharacterMove : MonoBehaviour {
     {
         moveSpeed = PlayerStats.moveSpeed;
         inContactWithEnemySpeed = PlayerStats.moveInContactWithEnemy;
+        slowFactor = 1;
+        boostFactor = 1;
 
         hDir = 0;
         vDir = 0;
 
-        inContact = false;
         inContactWithEnemy = false;
     }
 }

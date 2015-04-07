@@ -36,7 +36,7 @@ public class SlowStatusEffect : StatusEffect
     //################### VARIABLE MODIFIERS ######################
     //#############################################################
 
-    public override void applyStatusEffect(EnemyScript script)
+    public override void applyStatusEffect(Agent script)
     {
         applySlowStatus(script);
     }
@@ -60,11 +60,9 @@ public class SlowStatusEffect : StatusEffect
     //#############################################################
     //################### EFFECT RESPONSIBLE ######################
     //#############################################################
-    private IEnumerator slowing(EnemyScript script)
+    private IEnumerator slowing(Agent script)
     {
-        NavMeshAgent agent = GetComponent<NavMeshAgent>();
-        previousSpeed = agent.speed;
-        agent.speed *= intensity;
+        script.slowSelf(intensity);
 
         while (slowTimer > 0)
         {
@@ -72,11 +70,12 @@ public class SlowStatusEffect : StatusEffect
             yield return new WaitForEndOfFrame();
         }
 
-        agent.speed = previousSpeed;
+        script.restoreMoveSpeed(intensity);
+
         Destroy(this);
     }
 
-    public void applySlowStatus(EnemyScript script)
+    public void applySlowStatus(Agent script)
     {
         StartCoroutine("slowing", script);
     }

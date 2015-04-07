@@ -330,13 +330,18 @@ namespace Includes
 
         public static GameManager Instance { get { if (_instance == null) { _instance = new GameManager();  } return _instance; } }
 
-        private static void init()
+        private void init()
         {
-            player = GameObject.FindWithTag("Player");
             iceWall = (GameObject)Resources.Load("Prefabs/Environment/IceWall");
             waterPuddle = (GameObject)Resources.Load("Prefabs/Environment/WaterPuddle");
             oilPuddle = (GameObject)Resources.Load("Prefabs/Environment/OilPuddle");
         }
+
+        public void sceneInit()
+        {
+            player = GameObject.FindWithTag("Player");
+        }
+
     } 
     #endregion
 }

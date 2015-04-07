@@ -10,17 +10,21 @@ public class EnemyScript : Agent
     protected bool isAlerted = false;
     protected float rangedRadius;
 
+    protected NavMeshAgent navMeshAgent;
     protected EnemySpawner spawnScript;
     protected PathAgent pathAgent;
     protected GameObject gui;
     protected GameObject myGui;
     public Transform alertedSign;
 
+    protected float prevSpeed = 0;
+
 	// Use this for initialization
     protected virtual void Awake()
     {
         base.Awake();
         Vector2 targetPos = Camera.main.WorldToScreenPoint(transform.position);
+        navMeshAgent = GetComponent<NavMeshAgent>();
         pathAgent = GetComponentInChildren<PathAgent>();
         centerHealthBar = true;
         gui = GameObject.Find("GUI");
@@ -90,7 +94,7 @@ public class EnemyScript : Agent
         }
     }*/
 
-    public void applyStatusEffect(StatusEffect scrpt)
+    public override void applyStatusEffect(StatusEffect scrpt)
     {
         scrpt.applyStatusEffect(this);
     }
@@ -238,7 +242,8 @@ public class EnemyScript : Agent
 
     public void restart(bool retarget)
     {
-        pathAgent.restart(retarget);
+        if(pathAgent != null)
+            pathAgent.restart(retarget);
     }
 
     public bool inRangeWithPlayer()
@@ -253,5 +258,16 @@ public class EnemyScript : Agent
             pathAgent.playerSighted(GameManager.Instance.Player.transform);
             pathAgent.stopChasing();
         }
+    }
+
+    public override void slowSelf(float intensity)
+    {
+        prevSpeed = navMeshAgent.speed;
+        navMeshAgent.speed *= intensity;
+    }
+
+    public override void restoreMoveSpeed(float intensity)
+    {
+        navMeshAgent.speed /= intensity;
     }
 }

@@ -57,4 +57,10 @@ public class Agent : ElementiumMonoBehaviour
     public virtual void setAlerted(bool val) { }
 
     public virtual bool getAlerted() { return false; }
+
+    public virtual void applyStatusEffect(StatusEffect scrpt) { }
+
+    public virtual void slowSelf(float intensity) { }
+
+    public virtual void restoreMoveSpeed(float intensity) { }
 }
