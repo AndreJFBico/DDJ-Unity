@@ -17,6 +17,10 @@ public class ElementalyModifiable : Modifiable {
         {
             applySlow(other, intensity);
         }
+        if (status == StatusEffects.WET)
+        {
+            applyWet(other, intensity);
+        }
     }
 
     //#############################################################
@@ -24,6 +28,10 @@ public class ElementalyModifiable : Modifiable {
     //#############################################################
     private void applyBurning(Collider other, float intensity)
     {
+        if (other.gameObject.GetComponent<WetStatusEffect>() != null)
+        {
+            Destroy(other.gameObject.GetComponent<WetStatusEffect>());
+        }
         if (other.gameObject.GetComponent<BurningStatusEffect>() == null)
         {
             StatusEffect burn = other.gameObject.AddComponent<BurningStatusEffect>();
@@ -53,6 +61,26 @@ public class ElementalyModifiable : Modifiable {
             //Need an extra check to see if damage > this damage
             StatusEffect slow = other.gameObject.GetComponent<SlowStatusEffect>();
             slow.resetDuration(durability);
+        }
+    }
+
+    private void applyWet(Collider other, float intensity)
+    {
+        if (other.gameObject.GetComponent<BurningStatusEffect>() != null)
+        {
+            Destroy(other.gameObject.GetComponent<BurningStatusEffect>());
+        }
+        if (other.gameObject.GetComponent<WetStatusEffect>() == null)
+        {
+            StatusEffect wet = other.gameObject.AddComponent<WetStatusEffect>();
+            wet.setDuration(durability);
+            other.gameObject.GetComponent<EnemyScript>().applyStatusEffect(wet);
+        }
+        else
+        {
+            //Need an extra check to see if damage > this damage
+            StatusEffect wet = other.gameObject.GetComponent<WetStatusEffect>();
+            wet.resetDuration(durability);
         }
     }
 

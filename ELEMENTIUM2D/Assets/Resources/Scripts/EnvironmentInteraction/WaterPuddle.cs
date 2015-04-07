@@ -2,7 +2,7 @@
 using System.Collections;
 using Includes;
 
-public class WaterPuddle : Breakable{
+public class WaterPuddle : ElementalyModifiable{
 
     private GameObject iceWall;
 
@@ -18,6 +18,7 @@ public class WaterPuddle : Breakable{
     {
         if (other.gameObject.tag.CompareTo("Enemy") == 0)
         {
+            applyStatus(other, StatusEffects.WET, 1);
         }
     }
 

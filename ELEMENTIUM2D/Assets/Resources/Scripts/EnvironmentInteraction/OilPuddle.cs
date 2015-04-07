@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using Includes;
 
 public class OilPuddle : ElementalyModifiable {
@@ -9,15 +10,20 @@ public class OilPuddle : ElementalyModifiable {
     public GameObject onFire;
     public bool canBurn = false;
 
-    public OilPuddle previous;
-    public OilPuddle next;
+    public List<OilPuddle> _connected;
 
+    protected override void Awake()
+    {
+        _connected = new List<OilPuddle>();
+    }
 
 	// Use this for initialization
 	void Start () {
         damage = 5;
         slow = 0.5f;
-        durability = 1;
+        durability = 20;
+        StartCoroutine("reduceSize", 10);
+        Invoke("destroySelf", durability);
 	}
 
     protected void OnTriggerStay(Collider other)
@@ -43,14 +49,10 @@ public class OilPuddle : ElementalyModifiable {
 
     private void propagateFire()
     {
-        if(previous != null)
-        {
-            previous.burnPuddle();
-        }
-        if(next != null)
-        {
-            next.burnPuddle();
-        }
+        foreach (OilPuddle item in _connected)
+	    {
+            item.burnPuddle();
+	    }
     }
 
     public void burnPuddle()
@@ -61,24 +63,30 @@ public class OilPuddle : ElementalyModifiable {
             canBurn = true;
             propagateFire();
         }
-        if((previous!= null && !previous.canBurn) || (next != null && !next.canBurn))
+    }
+
+    public void checkIfShouldBurn()
+    {
+        foreach (OilPuddle item in _connected)
         {
-            propagateFire();
+            if (item.canBurn)
+                burnPuddle();
         }
     }
 
-    public virtual void dealWithEnemy(EnemyScript scrpt)
+    private IEnumerator reduceSize(int steps)
     {
-        //scrpt.applyBurningStatus(damage);
+        float step = durability / steps;
+        float decrease = 1-(1.0f / steps);
+        while(true)
+        {
+            yield return new WaitForSeconds(step);
+            transform.localScale *= (decrease);
+        }
     }
 
-    public virtual void dealWithPlayer(Interactions scrpt)
+    private void destroySelf()
     {
-        //scrpt.applyBurningStatus(damage);
+        OilPuddleManager.Instance.removeOilPuddle(this);
     }
-
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }

@@ -9,7 +9,7 @@ namespace Includes
 {
     public enum Elements { NEUTRAL, FIRE, EARTH, FROST };
     public enum BreakableWalls { NEUTRAL, FIRE, EARTH, FROST};
-    public enum StatusEffects { BURNING, SLOW, STUN}
+    public enum StatusEffects { BURNING, SLOW, STUN, WET}
 
     #region Constants
     public class Constants
