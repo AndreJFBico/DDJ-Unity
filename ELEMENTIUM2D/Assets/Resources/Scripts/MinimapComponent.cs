@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(Sprite))]
 public class MinimapComponent : MonoBehaviour {
 
     public enum Type { OBSTACLE, PLAYER, ENEMY, SPAWNER, PROP}
@@ -17,14 +18,14 @@ public class MinimapComponent : MonoBehaviour {
                 spRenderer.color = Color.white;
                 break;
             case Type.PLAYER:
-                spRenderer.color = Color.blue;
+                spRenderer.color = Color.cyan;
                 spRenderer.sortingOrder = 1000;
                 break;
             case Type.ENEMY:
                 spRenderer.color = Color.red;
                 break;
             case Type.SPAWNER:
-                spRenderer.color = Color.green;
+                spRenderer.color = Color.magenta;
                 break;
             case Type.PROP:
                 spRenderer.color = Color.yellow;

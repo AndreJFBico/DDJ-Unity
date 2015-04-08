@@ -25,6 +25,9 @@ public class CharacterMove : MonoBehaviour {
     private float z;
     private Vector3 boxPosition;
     private float epsilon;
+    Vector3 calculatedMotion;
+
+    private Transform transf;
 
     //private List<Collision> collidedWith; 
     #endregion
@@ -58,6 +61,7 @@ public class CharacterMove : MonoBehaviour {
         diagonalLength = Mathf.Sqrt(Mathf.Pow(x, 2.0f) + Mathf.Pow(z, 2.0f)) * 1.2f;
         boxPosition = GetComponent<BoxCollider>().bounds.center;
         epsilon = 1.4f;
+        transf = transform;
 	}
 
     #region OnCollision Handlers
@@ -151,10 +155,10 @@ public class CharacterMove : MonoBehaviour {
         RaycastHit hit;
         if (Physics.Raycast(new Ray(position, direction), out hit, distance, LayerMask.GetMask("Obstacles") | LayerMask.GetMask(Constants.breakable)))
         {
-            Debug.DrawRay(position, direction);
+            Debug.DrawRay(position, direction, Color.red);
             return true;
         }
-        Debug.DrawRay(position, direction);
+        Debug.DrawRay(position, direction, Color.white);
         return false;
     }
 
@@ -202,17 +206,17 @@ public class CharacterMove : MonoBehaviour {
     
 	
 	// Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         boxPosition = GetComponent<BoxCollider>().bounds.center;
         hDir = Input.GetAxis("Horizontal");
         vDir = Input.GetAxis("Vertical");
 
-        Vector3 calculatedMotion = transform.forward * vDir + transform.right * hDir;
+        calculatedMotion = transf.forward * vDir + transf.right * hDir;
        
-        rayCastX(ref calculatedMotion, transform.right * hDir);
+        rayCastX(ref calculatedMotion, transf.right * hDir);
 
-        rayCastZ(ref calculatedMotion, transform.forward * vDir);
+        rayCastZ(ref calculatedMotion, transf.forward * vDir);
 
 
         /*if (rayCast(new Vector3(x, 0.0f, z), diagonalLength))
@@ -265,8 +269,8 @@ public class CharacterMove : MonoBehaviour {
                 calculatedMotion = calculatedMotion - undesiredMotion / 2.0f;
             }
         }
-        Vector3 targetPosition = transform.position + calculatedMotion;
-        targetPosition.y = transform.position.y;
+        Vector3 targetPosition = transf.position + calculatedMotion;
+        targetPosition.y = transf.position.y;
 
         
         if(inContactWithEnemy)
@@ -276,11 +280,16 @@ public class CharacterMove : MonoBehaviour {
         else currentMoveSpeed = moveSpeed;
 
         currentMoveSpeed = currentMoveSpeed * slowFactor / boostFactor;
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, currentMoveSpeed * Time.deltaTime);
+        transf.position = Vector3.MoveTowards(transf.position, targetPosition, currentMoveSpeed * Time.deltaTime);
 
         if (hDir == 0 && vDir == 0)
             playerAnim.idle = true;
         else playerAnim.idle = false;
+    }
+
+    void Update()
+    {
+        transform.position = transf.position;
     }
 
     public void init()
