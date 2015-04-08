@@ -1,0 +1,132 @@
+fileFormatVersion: 2
+guid: 6961968c06da87c4e9e86915325585c0
+timeCreated: 1428440171
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: upL_0
+    21300002: upL_1
+    21300004: upL_2
+    21300006: upL_3
+    21300008: upL_4
+    21300010: upL_5
+    21300012: upL_6
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: upL_0
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 58
+        width: 267
+        height: 703
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: upL_1
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 58
+        width: 266
+        height: 703
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: upL_2
+      rect:
+        serializedVersion: 2
+        x: 1326
+        y: 58
+        width: 268
+        height: 703
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: upL_3
+      rect:
+        serializedVersion: 2
+        x: 1907
+        y: 58
+        width: 266
+        height: 703
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: upL_4
+      rect:
+        serializedVersion: 2
+        x: 2486
+        y: 58
+        width: 267
+        height: 703
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: upL_5
+      rect:
+        serializedVersion: 2
+        x: 3067
+        y: 58
+        width: 267
+        height: 703
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: upL_6
+      rect:
+        serializedVersion: 2
+        x: 3646
+        y: 58
+        width: 267
+        height: 703
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

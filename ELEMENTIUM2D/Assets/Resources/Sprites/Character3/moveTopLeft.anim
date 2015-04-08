@@ -18,13 +18,19 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 3addf4db1bbc11b479fa9d9e449609ed, type: 3}
+      value: {fileID: 21300000, guid: 6961968c06da87c4e9e86915325585c0, type: 3}
     - time: .0833333358
-      value: {fileID: 21300000, guid: 5f421393acfcad74187c355f547631b6, type: 3}
+      value: {fileID: 21300002, guid: 6961968c06da87c4e9e86915325585c0, type: 3}
     - time: .166666672
-      value: {fileID: 21300000, guid: f6574e79d22bbf041aa3a2737e2428a9, type: 3}
+      value: {fileID: 21300004, guid: 6961968c06da87c4e9e86915325585c0, type: 3}
     - time: .25
-      value: {fileID: 21300000, guid: fba70338a2466e4428da612244046435, type: 3}
+      value: {fileID: 21300006, guid: 6961968c06da87c4e9e86915325585c0, type: 3}
+    - time: .333333343
+      value: {fileID: 21300008, guid: 6961968c06da87c4e9e86915325585c0, type: 3}
+    - time: .416666687
+      value: {fileID: 21300010, guid: 6961968c06da87c4e9e86915325585c0, type: 3}
+    - time: .5
+      value: {fileID: 21300012, guid: 6961968c06da87c4e9e86915325585c0, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -43,14 +49,17 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 3addf4db1bbc11b479fa9d9e449609ed, type: 3}
-    - {fileID: 21300000, guid: 5f421393acfcad74187c355f547631b6, type: 3}
-    - {fileID: 21300000, guid: f6574e79d22bbf041aa3a2737e2428a9, type: 3}
-    - {fileID: 21300000, guid: fba70338a2466e4428da612244046435, type: 3}
+    - {fileID: 21300000, guid: 6961968c06da87c4e9e86915325585c0, type: 3}
+    - {fileID: 21300002, guid: 6961968c06da87c4e9e86915325585c0, type: 3}
+    - {fileID: 21300004, guid: 6961968c06da87c4e9e86915325585c0, type: 3}
+    - {fileID: 21300006, guid: 6961968c06da87c4e9e86915325585c0, type: 3}
+    - {fileID: 21300008, guid: 6961968c06da87c4e9e86915325585c0, type: 3}
+    - {fileID: 21300010, guid: 6961968c06da87c4e9e86915325585c0, type: 3}
+    - {fileID: 21300012, guid: 6961968c06da87c4e9e86915325585c0, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_StartTime: 0
-    m_StopTime: .333333343
+    m_StopTime: .583333313
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
