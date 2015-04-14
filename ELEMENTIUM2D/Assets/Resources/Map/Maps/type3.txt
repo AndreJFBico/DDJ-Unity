@@ -1,17 +1,13 @@
 ::rooms
-1 RoomBiggerV2
-2 Room2
-3 Room3
-4 RoomDeadEnd
-5 R1o
-6 R2o
-7 R3o
-8 RDeado
+1 Rectangle
+2 Corridor
+3 Cross
+4 Curve
 ::
 ::groups
 a 1
 b 1
-c 1
+c 4
 d 1
 e 1
 f 1
@@ -27,7 +23,7 @@ S 1 f
 :goto 3|Y 2|Y
 
 :part 2
-R c 8 8 f
+R d 8 8 f
 :goto 6|Y 5|Y
 
 :part 5

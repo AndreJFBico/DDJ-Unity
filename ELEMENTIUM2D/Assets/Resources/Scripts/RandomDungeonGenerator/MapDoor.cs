@@ -47,7 +47,7 @@ public class MapDoor : MonoBehaviour {
 		Gizmos.DrawCube (transform.position, new Vector3 (size, size, size));
 
 		Gizmos.color = new Color (0.0f, 1.0f, 0.0f, 0.5f);
-		Gizmos.DrawCube (transform.position + (0.3f * transform.forward), new Vector3 (0.1f, 0.1f, 0.1f));
+		Gizmos.DrawCube (transform.position + (0.32f * transform.forward), new Vector3 (0.1f, 0.1f, 0.1f));
 	}
 
     public void activateNavmesh()

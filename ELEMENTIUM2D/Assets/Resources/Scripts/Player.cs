@@ -16,21 +16,22 @@ public class Player : Agent {
     void Awake()
     {
         base.Awake();
-        maxHealth = PlayerStats.maxHealth;
+        GameManager.Instance.sceneInit();
+        OilPuddleManager.Instance.sceneInit();
+        maxHealth = GameManager.Instance.Stats.maxHealth;
         health = maxHealth;
-        damage = PlayerStats.damage;
-        defence = PlayerStats.defence;
-        waterResist = PlayerStats.waterResist;
-        earthResist = PlayerStats.earthResist;
-        fireResist = PlayerStats.fireResist;
+        damage = GameManager.Instance.Stats.damage;
+        defence = GameManager.Instance.Stats.defence;
+        waterResist = GameManager.Instance.Stats.waterResist;
+        earthResist = GameManager.Instance.Stats.earthResist;
+        fireResist = GameManager.Instance.Stats.fireResist;
         characterMoveScrpt = transform.gameObject.GetComponent<CharacterMove>();
+        GameManager.Instance.Stats.dumpStats();
         InvokeRepeating("blink", 0f, 0.10f);      
     }
 
     void Start()
     {
-        GameManager.Instance.sceneInit();
-        OilPuddleManager.Instance.sceneInit();
         FloatingText.Instance.sceneInit();
     }
 
@@ -59,7 +60,7 @@ public class Player : Agent {
     {
         if (timerRunning)
             damageTimer += Time.deltaTime;
-        if (damageTimer >= PlayerStats.damageTimer)
+        if (damageTimer >= GameManager.Instance.Stats.damageTimer)
         {
             timerRunning = false;
             damageTimer = 0.0f;
@@ -127,7 +128,7 @@ public class Player : Agent {
     {
         if (timerRunning)
         {
-            if (!(damageTimer >= PlayerStats.damageTimer))
+            if (!(damageTimer >= GameManager.Instance.Stats.damageTimer))
             {
                 return;
             }
@@ -165,7 +166,7 @@ public class Player : Agent {
         }
         if (health <= 0)
         {
-            Application.LoadLevel("storeScene");
+            Application.LoadLevel("SkillTree");
         }
     }
 

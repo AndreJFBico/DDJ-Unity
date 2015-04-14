@@ -7,9 +7,12 @@ public class SortLayer : MonoBehaviour {
     public enum Objects { STATIC, DYNAMIC };
     public enum Position { FRONT, BACK };
     private GameObject player;
+    private IEnumerator sLayerRoutine;
     public Objects type;
     public Position position;
     public List<SpriteRenderer> list;
+
+    private bool inited;
 
 	// Use this for initialization
 	void Start () {
@@ -25,24 +28,61 @@ public class SortLayer : MonoBehaviour {
                     sr.sortingOrder = GetComponent<Renderer>().sortingOrder - 1;
             }
         }
+        inited = true;
+        sLayerRoutine = sortLayer();      
+        StartCoroutine(sLayerRoutine);
 	}
+
+    /*void OnBecameVisible()
+    {
+        #if UNITY_EDITOR
+        if (Camera.current.name == "SceneCamera")
+                    return;
+        #endif
+
+        //Debug.Log(Camera.current.name);
+        if ( Camera.current.name.CompareTo(Camera.main.name) == 0)
+        {
+            if(!inited)
+            {
+                inited = true;
+                StartCoroutine(sLayerRoutine);              
+            }    
+        }
+    }
+
+    void OnBecameInvisible()
+    {
+        #if UNITY_EDITOR
+                if (Camera.current != null && Camera.current.name == "SceneCamera")
+                    return;
+        #endif
+        Debug.Log("OnBecameInvisible");
+        inited = false;
+        StopCoroutine(sLayerRoutine);
+    }*/
 	
 	// Update is called once per frame
-	void Update () {
-	    if(type != Objects.STATIC)
+    IEnumerator sortLayer()
+    {
+        while (true)
         {
-            GetComponent<Renderer>().sortingOrder = Mathf.RoundToInt(-(transform.position.z + 250) * 100);
-            if (list != null && list.Capacity > 0)
+            if (type != Objects.STATIC)
             {
-                foreach (SpriteRenderer sr in list)
+                GetComponent<Renderer>().sortingOrder = Mathf.RoundToInt(-(transform.position.z + 250) * 100);
+                if (list != null && list.Capacity > 0)
                 {
-                    if (position == Position.FRONT)
-                        sr.sortingOrder = GetComponent<Renderer>().sortingOrder + 1;
+                    foreach (SpriteRenderer sr in list)
+                    {
+                        if (position == Position.FRONT)
+                            sr.sortingOrder = GetComponent<Renderer>().sortingOrder + 1;
 
-                    if (position == Position.BACK)
-                        sr.sortingOrder = GetComponent<Renderer>().sortingOrder - 1;
+                        if (position == Position.BACK)
+                            sr.sortingOrder = GetComponent<Renderer>().sortingOrder - 1;
+                    }
                 }
             }
+            yield return new WaitForSeconds(0.017f);
         }
     }
 }

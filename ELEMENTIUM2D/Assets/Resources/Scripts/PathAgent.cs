@@ -4,6 +4,7 @@ using Includes;
 
 public class PathAgent : MonoBehaviour
 {
+    //Spawning position or startposition
     public Vector3 startPosition;
     public float roamRadius;
     public Transform target;
