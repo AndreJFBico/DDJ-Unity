@@ -103,12 +103,12 @@ public class StoreUi : MonoBehaviour
 
     void UpdatePlayerStats()
     {
-        PlayerStats.damage = PlayerStats.def_damage + findStatAndReturnCount("Attack") * PlayerStats.inc_damage_level;
-        PlayerStats.defence = findStatAndReturnCount("Defence");
-        PlayerStats.earth_level = findStatAndReturnCount("Earth");
-        PlayerStats.water_level = findStatAndReturnCount("Water");
-        PlayerStats.fire_level = findStatAndReturnCount("Fire");
-        PlayerStats.maxHealth = PlayerStats.def_health + findStatAndReturnCount("Health") * PlayerStats.def_inc_health;
+        GameManager.Instance.Stats.damage = PlayerStats.def_damage + findStatAndReturnCount("Attack") * 1.2f;//PlayerStats.inc_damage_level;
+        GameManager.Instance.Stats.defence = findStatAndReturnCount("Defence");
+/*        GameManager.Instance.Stats.earth_level = findStatAndReturnCount("Earth");
+        GameManager.Instance.Stats.water_level = findStatAndReturnCount("Water");
+        GameManager.Instance.Stats.fire_level = findStatAndReturnCount("Fire");*/
+        GameManager.Instance.Stats.maxHealth = PlayerStats.def_health + findStatAndReturnCount("Health") * 1.2f;// PlayerStats.def_inc_health;
         //PlayerStats.defence = ;
         //PlayerStats.maxHealth = ;
     }

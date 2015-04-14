@@ -74,6 +74,8 @@ public class EnemySpawner : EnemyScript
                 obj.GetComponent<EnemyScript>().sendGuiToCanvas();
                 obj.transform.position = transform.FindChild("SpawnPosition").position;
                 obj.gameObject.SetActive(true);
+                PathAgent pa = obj.GetComponentInChildren<PathAgent>();
+                pa.startPosition = transform.position;
                 //obj.GetComponentInChildren<PathAgent>().startCheckingMovement();
                 toSpawn.Remove(obj);
                 spawned.Add(obj);

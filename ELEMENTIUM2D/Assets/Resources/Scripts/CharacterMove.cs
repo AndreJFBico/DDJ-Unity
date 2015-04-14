@@ -294,8 +294,8 @@ public class CharacterMove : MonoBehaviour {
 
     public void init()
     {
-        moveSpeed = PlayerStats.moveSpeed;
-        inContactWithEnemySpeed = PlayerStats.moveInContactWithEnemy;
+        moveSpeed = GameManager.Instance.Stats.moveSpeed;
+        inContactWithEnemySpeed = GameManager.Instance.Stats.moveInContactWithEnemy;
         slowFactor = 1;
         boostFactor = 1;
 
