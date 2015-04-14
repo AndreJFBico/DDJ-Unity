@@ -473,6 +473,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &153840
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 448202}
+  - 114: {fileID: 11403046}
+  m_Layer: 11
+  m_Name: Spawners
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &155490
 GameObject:
   m_ObjectHideFlags: 1
@@ -1114,7 +1130,7 @@ Transform:
   - {fileID: 444654}
   - {fileID: 405966}
   - {fileID: 436480}
-  m_Father: {fileID: 450352}
+  m_Father: {fileID: 448202}
   m_RootOrder: 1
 --- !u!4 &423182
 Transform:
@@ -1324,7 +1340,7 @@ Transform:
   - {fileID: 457774}
   - {fileID: 452920}
   - {fileID: 495740}
-  m_Father: {fileID: 450352}
+  m_Father: {fileID: 448202}
   m_RootOrder: 0
 --- !u!4 &445968
 Transform:
@@ -1338,6 +1354,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 421030}
   m_RootOrder: 2
+--- !u!4 &448202
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 153840}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 445922}
+  - {fileID: 421030}
+  m_Father: {fileID: 450352}
+  m_RootOrder: 0
 --- !u!4 &448664
 Transform:
   m_ObjectHideFlags: 1
@@ -1361,8 +1391,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 445922}
-  - {fileID: 421030}
+  - {fileID: 448202}
   m_Father: {fileID: 425816}
   m_RootOrder: 1
 --- !u!4 &452920
@@ -2242,6 +2271,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11403046
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 153840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af5cf29844f51a94caa1676bb8c33201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _minSpawners: 1
+  _maxSpawners: 2
+  _treasure: {fileID: 142420, guid: 5b4413938bf8e1342b265ec43a032ac3, type: 2}
 --- !u!114 &11410788
 MonoBehaviour:
   m_ObjectHideFlags: 1

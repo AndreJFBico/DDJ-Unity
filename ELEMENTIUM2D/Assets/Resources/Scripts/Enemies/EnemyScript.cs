@@ -5,7 +5,6 @@ using Includes;
 public class EnemyScript : Agent
 {  
     protected Elements type;
-    protected EnemyClass enemyClass;
     protected bool isAlerted = false;
     protected float rangedRadius;
 

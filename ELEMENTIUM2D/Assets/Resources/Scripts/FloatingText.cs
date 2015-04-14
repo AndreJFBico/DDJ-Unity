@@ -29,6 +29,8 @@ public class FloatingText{
 
     public void sceneInit()
     {
+        _beingUsedTexts = new List<TextFloat>();
+        _floatingTexts = new List<TextFloat>();        
         numberTexts = 30;
         List<GameObject> objs = PrefabFactory.createPrefabs(_floatText, numberTexts);
         foreach (GameObject o in objs)

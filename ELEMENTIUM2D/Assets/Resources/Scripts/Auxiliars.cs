@@ -11,8 +11,6 @@ namespace Includes
     public enum Elements { NEUTRAL, FIRE, EARTH, FROST };
     public enum BreakableWalls { NEUTRAL, FIRE, EARTH, FROST};
     public enum StatusEffects { BURNING, SLOW, STUN, WET};
-    public enum BreakableWalls { NEUTRAL, FIRE, EARTH, FROST };
-    public enum StatusEffects { BURNING, SLOW, STUN, WET };
 
     public enum MathOperations { SUM, MUL, SET};
 
@@ -450,24 +448,19 @@ namespace Includes
 
         public GameObject Player { get { return player; } }
 
-<<<<<<< HEAD
-        public static GameManager Instance { get { if (_instance == null) { _instance = new GameManager(); } return _instance; } }
-=======
         public PlayerStats Stats { get { return playerStats; } }
 
         public List<string> StatNames { get { return statNames; } }
 
         public static GameManager Instance { get { if (_instance == null) { _instance = new GameManager(); playerStats = new PlayerStats(); } return _instance; } }
->>>>>>> 8c587178fbcaf26d130e6278315a93ade86e9ee6
+
 
         private void init()
         {
             iceWall = (GameObject)Resources.Load("Prefabs/Environment/IceWall");
             waterPuddle = (GameObject)Resources.Load("Prefabs/Environment/WaterPuddle");
             oilPuddle = (GameObject)Resources.Load("Prefabs/Environment/OilPuddle");
-<<<<<<< HEAD
             neutralEnemies = Resources.LoadAll("Prefabs/Enemies/Neutral") as GameObject[];
-=======
 
             statNames = new List<string>();
             Type type = typeof(PlayerStats); // Get type pointer
@@ -517,7 +510,6 @@ namespace Includes
         public void resetPlayerStats()
         {
             playerStats.reset();
->>>>>>> 8c587178fbcaf26d130e6278315a93ade86e9ee6
         }
 
         public void sceneInit()

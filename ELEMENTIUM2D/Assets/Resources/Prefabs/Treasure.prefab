@@ -27,7 +27,7 @@ GameObject:
   - 4: {fileID: 464266}
   - 23: {fileID: 2323594}
   - 102: {fileID: 10227274}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: InteractionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ GameObject:
   - 4: {fileID: 471382}
   - 135: {fileID: 13562778}
   - 114: {fileID: 11436648}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Interaction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 149860}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
-  m_LocalPosition: {x: 0, y: 0, z: -1.29000032}
+  m_LocalPosition: {x: 0, y: 0, z: 2.1400001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 471382}
@@ -100,7 +100,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 142420}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.00300000003, y: .100000001, z: 1.50100005}
+  m_LocalPosition: {x: 1.13998342, y: -6.49071355e-17, z: 2.92315745}
   m_LocalScale: {x: .158381343, y: .158381343, z: .158381343}
   m_Children:
   - {fileID: 495274}
