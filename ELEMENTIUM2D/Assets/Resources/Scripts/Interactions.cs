@@ -15,6 +15,8 @@ public class Interactions : MonoBehaviour {
 
     private Player data;
 
+    private TreasureChest _treasure = null;
+
     //private float cycleTime = 0.2f;
 
     //private bool canCycle = true;
@@ -29,6 +31,7 @@ public class Interactions : MonoBehaviour {
         data = GetComponent<Player>();
     }
 
+    #region Change Element
     public void changeCurrentElement(bool forward, bool backward)
     {
         if (forward)
@@ -71,10 +74,32 @@ public class Interactions : MonoBehaviour {
             default:
                 break;
         }
+    } 
+    #endregion
+
+    #region Environment Interaction
+
+    #region Chests
+
+    public TreasureChest Treasure
+    {
+        get
+        {
+            return _treasure;
+        }
+        set
+        {
+            _treasure = value;
+        }
     }
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
+    public void openChest()
+    {
+        _treasure.applyEffect();
+    } 
+
+    #endregion
+
+    #endregion
+
 }

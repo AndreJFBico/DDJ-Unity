@@ -9,7 +9,8 @@ namespace Includes
 {
     public enum Elements { NEUTRAL, FIRE, EARTH, FROST };
     public enum BreakableWalls { NEUTRAL, FIRE, EARTH, FROST};
-    public enum StatusEffects { BURNING, SLOW, STUN, WET}
+    public enum StatusEffects { BURNING, SLOW, STUN, WET};
+    public enum EnemyClass { MELEE, RANGED, HEALER};
 
     #region Constants
     public class Constants
@@ -29,18 +30,18 @@ namespace Includes
         {
             public class ability1
             {
-                public static float attackSpeed = 0.10f;
+                public static float attackSpeed = 0.25f;
                 public static int projectile_number = 1;
-                public static float damage = 5;
+                public static float damage = 12.5f;
                 public static float movementForce = 10;
                 public static string projectile = "Prefabs/Projectiles/NeutralBlast";
             }
 
             public class ability2
             {
-                public static float attackSpeed = 0.25f;
+                public static float attackSpeed = 1f;
                 public static int projectile_number = 10;
-                public static float damage = 5;
+                public static float damage = 7.5f;
                 public static float movementForce = 1.5f;
                 public static string projectile = "Prefabs/Projectiles/NeutralMissile";
             }
@@ -317,6 +318,8 @@ namespace Includes
         private static GameObject waterPuddle;
         private static GameObject oilPuddle;
 
+        private static GameObject[] neutralEnemies;
+
         protected GameManager() { init(); }
         // Singleton pattern implementation
 
@@ -328,13 +331,14 @@ namespace Includes
 
         public GameObject Player { get { return player; } }
 
-        public static GameManager Instance { get { if (_instance == null) { _instance = new GameManager();  } return _instance; } }
+        public static GameManager Instance { get { if (_instance == null) { _instance = new GameManager(); } return _instance; } }
 
         private void init()
         {
             iceWall = (GameObject)Resources.Load("Prefabs/Environment/IceWall");
             waterPuddle = (GameObject)Resources.Load("Prefabs/Environment/WaterPuddle");
             oilPuddle = (GameObject)Resources.Load("Prefabs/Environment/OilPuddle");
+            neutralEnemies = Resources.LoadAll("Prefabs/Enemies/Neutral") as GameObject[];
         }
 
         public void sceneInit()

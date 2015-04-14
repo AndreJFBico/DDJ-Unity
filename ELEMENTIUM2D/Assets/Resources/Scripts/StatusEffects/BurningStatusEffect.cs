@@ -65,11 +65,12 @@ public class BurningStatusEffect : StatusEffect
     //#############################################################
     private IEnumerator burning(Agent script)
     {
+        float interval = 1f;
         while (burningTimer > 0)
         {
-            script.takeDamage(intensity, Elements.FIRE);
-            burningTimer -= 0.2f;
-            yield return new WaitForSeconds(0.2f);
+            script.takeDamage(intensity/(duration/interval), Elements.FIRE);
+            burningTimer -= interval;
+            yield return new WaitForSeconds(interval);
         }
         Destroy(this);
         isBurning = false;

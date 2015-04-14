@@ -4,9 +4,8 @@ using Includes;
 
 public class EnemyScript : Agent
 {  
-    //private SpawnScript script;
-
     protected Elements type;
+    protected EnemyClass enemyClass;
     protected bool isAlerted = false;
     protected float rangedRadius;
 
@@ -29,70 +28,16 @@ public class EnemyScript : Agent
         centerHealthBar = true;
         gui = GameObject.Find("GUI");
         myGui = transform.FindChild("Ui").gameObject;
-        sendGuiToCanvas();
 	}
-
-    /*protected override void OnGUI()
-    {
-        base.OnGUI();
-
-        // Alerted sign
-        if (isAlerted)
-        {
-            if(pathAgent.hasTarget())
-            {
-                alertedSign.transform.gameObject.SetActive(true);
-            }
-        }
-        else
-        {
-            alertedSign.transform.gameObject.SetActive(false);
-        }
-        alertedSign.position = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x - 0.1f, transform.position.y, transform.position.z + 0.1f));
-
-    }*/
-
-	// Update is called once per frame
-    /*protected virtual void Update()
-    {
-        if(this.gameObject.GetComponentInChildren<SpriteRenderer>().isVisible)
-        {
-            sendGuiToCanvas();
-        }
-        else
-        {
-            retrieveGuiFromCanvas();
-        }
-	}*/
 
     protected virtual void LateUpdate()
     {
         transform.position.Set(transform.position.x, 0.1f, transform.position.z);
     }
 
-    public override void OnCollisionStay(Collision collision)
-    {
-        base.OnCollisionStay(collision);
-    }
-
-    public override void OnCollisionExit(Collision collision)
-    {
-        base.OnCollisionExit(collision);
-    }
-
-    public override void OnCollisionEnter(Collision collision)
-    {
-        //
-        base.OnCollisionEnter(collision);
-    }
-
-    /*protected virtual void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.tag.CompareTo("Projectile") == 0)
-        {
-            collision.gameObject.GetComponent<ProjectileBehaviour>().handleCollision(transform);
-        }
-    }*/
+    public override void OnCollisionStay(Collision collision) { base.OnCollisionStay(collision); }
+    public override void OnCollisionExit(Collision collision) { base.OnCollisionExit(collision); }
+    public override void OnCollisionEnter(Collision collision) { base.OnCollisionEnter(collision); }
 
     public override void applyStatusEffect(StatusEffect scrpt)
     {
@@ -102,27 +47,35 @@ public class EnemyScript : Agent
     
     public override void takeDamage(float amount, Elements type)
     {
+        float totalDamage = 0;
+        Color color = Color.white;
         switch (type)
         {
             case Elements.NEUTRAL:
-                health -= amount * (1-((defence + waterResist + earthResist + fireResist) / 100.0f));
+                totalDamage = amount * (1-((defence + waterResist + earthResist + fireResist) / 100.0f));
+                color = Color.black;
                 break;
 
             case Elements.FIRE:
-                health -= amount * (1-((defence + fireResist) / 100.0f));
+                totalDamage = amount * (1 - ((defence + fireResist) / 100.0f));
+                color = Color.red;
                 break;
 
             case Elements.EARTH:
-                health -= amount * (1-((defence + earthResist) / 100.0f));
+                totalDamage = amount * (1 - ((defence + earthResist) / 100.0f));
+                color = Color.green;
                 break;
 
             case Elements.FROST:
-                health -= amount * (1-((defence + waterResist) / 100.0f));
+                totalDamage = amount * (1 - ((defence + waterResist) / 100.0f));
+                color = Color.blue;
                 break;
 
             default:
                 break;
         }
+        health -= totalDamage;
+        FloatingText.Instance.createFloatingText(transform, totalDamage + " Damage", color);
         if(health <= 0)
         {
             Eliminate();
@@ -155,23 +108,6 @@ public class EnemyScript : Agent
         obj.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
     }
 
-    // Deprecated and should be removed
-    public void sendGuiToCanvas()
-    {
-        /*
-        myGui.transform.parent = gui.transform;
-        // Attention need to investigate why this uniformization is needed
-        uniformValues(myGui.transform);*/
-    }
-
-    // Deprecated and should be removed
-    public void retrieveGuiFromCanvas()
-    {
-        /*myGui.transform.parent = transform;
-        // Attention need to investigate why this uniformization is needed
-        uniformValues(myGui.transform);*/
-    }
-
     public override void Init()
     {
         Enable();
@@ -179,28 +115,23 @@ public class EnemyScript : Agent
 
     public override void Enable()
     {
-        sendGuiToCanvas();
         gameObject.SetActive(true);
     }
 
     public override void Disable()
     {
-        retrieveGuiFromCanvas();
         gameObject.SetActive(false);
     }
 
-    public void Eliminate()
+    public virtual void Eliminate()
     {
         if (spawnScript != null)
         {
-            // I was spawned!!!
             health = maxHealth;
-            retrieveGuiFromCanvas();
             spawnScript.despawn(transform);
         }
         else
         {
-            retrieveGuiFromCanvas();
             Destroy(gameObject);
         } 
     }

@@ -349,6 +349,9 @@ MonoBehaviour:
   healthbar_background: {fileID: 22432688}
   healthbar: {fileID: 22496184}
   alertedSign: {fileID: 22456776}
+  enemy: {fileID: 0}
+  amount_to_spawn: 10
+  spawn_timer: 1
 --- !u!114 &11440114
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -408,9 +411,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f358bd2ffa95ba3478c70bee9485e2b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 470832, guid: b7e813a02438bf249978b95288e12422, type: 2}
-  amount_to_spawn: 3
-  spawn_timer: 2
 --- !u!114 &11499126
 MonoBehaviour:
   m_ObjectHideFlags: 1

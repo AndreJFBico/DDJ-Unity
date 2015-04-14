@@ -12,6 +12,8 @@ public class Action : MonoBehaviour {
     public bool changeElementForward = false;
     public bool changeElementBackward = false;
 
+    public bool interact = false;
+
     private Shoot shooting;
     private Interactions interaction;
 
@@ -23,6 +25,7 @@ public class Action : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        #region Fire weapon
         //##########################################################################################
         //####################### FIRE #############################################################
         //##########################################################################################
@@ -30,12 +33,14 @@ public class Action : MonoBehaviour {
         fire1 = Input.GetAxis("Fire1");
         fire2 = Input.GetAxis("Fire2");
         fire3 = Input.GetAxis("Fire3");
-        
+
         if (fire1 + fire2 + fire3 > 0)
         {
             shooting.shoot(fire1, fire2, fire3);
-        }
+        } 
+        #endregion
 
+        #region Change Element
         //##########################################################################################
         //####################### CHANGE ELEMENT ###################################################
         //##########################################################################################
@@ -46,7 +51,19 @@ public class Action : MonoBehaviour {
         if (changeElementForward || changeElementBackward)
         {
             interaction.changeCurrentElement(changeElementForward, changeElementBackward);
-        }
+        } 
+        #endregion
+
+        //##########################################################################################
+        //####################### ENVIRONMENT INTERACTION ##########################################
+        //##########################################################################################
+
+        interact = Input.GetButtonDown("Interact");
+
+        if (interact && interaction.Treasure)
+        {
+            interaction.openChest();
+        } 
 
 	}
 }

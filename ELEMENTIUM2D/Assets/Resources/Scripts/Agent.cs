@@ -63,4 +63,6 @@ public class Agent : ElementiumMonoBehaviour
     public virtual void slowSelf(float intensity) { }
 
     public virtual void restoreMoveSpeed(float intensity) { }
+
+    public virtual void createFloatingText(string message) { }
 }

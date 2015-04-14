@@ -251,14 +251,8 @@ public class RoomManagerV2 : MonoBehaviour {
 					}
 
                     if (!generation){
-                        Transform scenery = currentRoom.transform.FindChild("Scenery");//.gameObject.SetActive(true);
-                        foreach (Transform t in scenery){
-                            ElementiumMonoBehaviour[] elemList = t.GetComponents<ElementiumMonoBehaviour>();
-                            foreach(ElementiumMonoBehaviour elem in elemList)
-                            {
-                                elem.tryInitialize();
-                            }
-                        }
+                        Transform scenery = currentRoom.transform.FindChild("Scenery/Spawners");//.gameObject.SetActive(true);
+                        scenery.GetComponent<SpawnerManager>().generateSpawners();
                     }
 				}
 			}else{
@@ -374,10 +368,18 @@ public class RoomManagerV2 : MonoBehaviour {
             Transform scenery = room.transform.FindChild("Scenery");
             foreach (Transform c in scenery)
             {
-                ElementiumMonoBehaviour[] emlist = c.GetComponents<ElementiumMonoBehaviour>();
-                foreach(ElementiumMonoBehaviour elem in emlist)
+                if (String.Compare(c.name, "Spawners") == 0)
                 {
-                    elem.Disable();
+                    c.GetComponent<SpawnerManager>().disableSpawners();
+                    continue;
+                }
+                foreach (Transform k in c)
+                {
+                    ElementiumMonoBehaviour[] emlist = k.GetComponents<ElementiumMonoBehaviour>();
+                    foreach (ElementiumMonoBehaviour elem in emlist)
+                    {
+                        elem.Disable();
+                    }
                 }
             }
         }

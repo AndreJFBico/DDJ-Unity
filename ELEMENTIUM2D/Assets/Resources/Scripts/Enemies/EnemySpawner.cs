@@ -13,6 +13,7 @@ public class EnemySpawner : EnemyScript
     private List<Transform> spawned;
 
     private Transform position;
+    private SpawnerManager _spawnerManager;
 
 
     private IEnumerator spawnEnemy;
@@ -34,7 +35,6 @@ public class EnemySpawner : EnemyScript
 
     public override void Disable()
     {
-        retrieveGuiFromCanvas();
         StopCoroutine(spawnEnemy);
     }
 
@@ -55,9 +55,6 @@ public class EnemySpawner : EnemyScript
             PathAgent pa = obj.GetComponentInChildren<PathAgent>();
             pa.startPosition = transform.position;
             obj.GetComponent<EnemyScript>().setSpawner(this);
-            // deactivates the object
-            // Debug.Log(obj);
-            obj.GetComponent<EnemyScript>().retrieveGuiFromCanvas();
             obj.SetActive(false);
             toSpawn.Add(obj.transform);
         }
@@ -71,7 +68,6 @@ public class EnemySpawner : EnemyScript
             if (toSpawn.Count > 0)
             {
                 Transform obj = toSpawn[0];
-                obj.GetComponent<EnemyScript>().sendGuiToCanvas();
                 obj.transform.position = transform.FindChild("SpawnPosition").position;
                 obj.gameObject.SetActive(true);
                 //obj.GetComponentInChildren<PathAgent>().startCheckingMovement();
@@ -99,8 +95,21 @@ public class EnemySpawner : EnemyScript
         toSpawn.Add(obj);
     }
 
-    /*protected override void OnGUI()
+    public override void Eliminate()
     {
-        base.OnGUI();
-    }*/
+        if(_spawnerManager == null)
+            Destroy(gameObject);
+        else
+        {
+            _spawnerManager.destroySpawner(this);
+        }
+    }
+
+    public SpawnerManager SpawnerManager
+    {
+        set{
+            _spawnerManager = value;
+        }
+    }
+
 }

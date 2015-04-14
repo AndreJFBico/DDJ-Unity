@@ -1,11 +1,8 @@
-
 // Move explosion Resources.load to a static class GameManager in Auxiliars
 
 // Fix PathAgent not on Navmesh error
 
 // Iterate all enemies and abilities and put values in Includes
-
-// Fix CanShoot script currently the autoattack speed is the same as the last ability used of the same element
 
 // Add a global class that has all the resources loaded like the player, different types of enemies and projectiles
 	-> "GameManager".... etc ...... -> in Progress
@@ -14,19 +11,18 @@
 
 // WaterProjectile sorting script has been disabled and replaced by direct atribution or ordering layer -32768
 
-// Memory leak in instanciating and destroying storeUi elements and lists.
+// Healer enemies have deleted null transforms
 
-// Store ui add extra variable instead of reusing UIpoints
-
-// simpplify code to adjust pointer by adding a relocatepointerfunc that receives an int determining the line;
-
-// Need to rework how the storeui is aligned when different resolutions are used, see how the pointer is moved between vertical lines and rework the default ui alignment in the editor acording to anchoredPosition3D
-
-
-// Healer enemies have deleated null transforms
-
-// Spawners arent being stopped/stunned correctly due to the stop function only disabling the pathagent target
+// Spawners aren't being stopped/stunned correctly due to the stop function only disabling the pathagent target
 
 // Differentiate stunned from frozen
 
 // Change all classes that extend MonoBehaviour to extend ElementiumMonoBehaviour
+
+//Replace BurningStatus for higher damage Burning;
+
+####################### OLD STORE
+// Memory leak in instanciating and destroying storeUi elements and lists.
+// Store ui add extra variable instead of reusing UIpoints
+// simplify code to adjust pointer by adding a relocatepointerfunc that receives an int determining the line;
+// Need to rework how the storeui is aligned when different resolutions are used, see how the pointer is moved between vertical lines and rework the default ui alignment in the editor acording to anchoredPosition3D

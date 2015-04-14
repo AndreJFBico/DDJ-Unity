@@ -16,8 +16,6 @@ public class Player : Agent {
     void Awake()
     {
         base.Awake();
-        GameManager.Instance.sceneInit();
-        OilPuddleManager.Instance.sceneInit();
         maxHealth = PlayerStats.maxHealth;
         health = maxHealth;
         damage = PlayerStats.damage;
@@ -27,6 +25,13 @@ public class Player : Agent {
         fireResist = PlayerStats.fireResist;
         characterMoveScrpt = transform.gameObject.GetComponent<CharacterMove>();
         InvokeRepeating("blink", 0f, 0.10f);      
+    }
+
+    void Start()
+    {
+        GameManager.Instance.sceneInit();
+        OilPuddleManager.Instance.sceneInit();
+        FloatingText.Instance.sceneInit();
     }
 
     public override void OnCollisionStay(Collision collision)
@@ -187,4 +192,9 @@ public class Player : Agent {
     {
         characterMoveScrpt.Slow /= intensity;
     }
+
+    public override void createFloatingText(string message)
+    {
+        FloatingText.Instance.createFloatingText(transform, message, Color.yellow);
+    }    
 }
