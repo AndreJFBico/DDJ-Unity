@@ -5,9 +5,11 @@ using Includes;
 public class Interactable : MonoBehaviour {
 
     protected GameObject textDisplay;
+    protected Interactions playerInteractions;
 
-    void Awake()
+    public virtual void Start()
     {
+        playerInteractions = GameManager.Instance.Player.GetComponent<Interactions>();
         textDisplay = transform.FindChild("InteractionText").gameObject;
         textDisplay.SetActive(false);
     }

@@ -4,7 +4,6 @@ using Includes;
 
 public class Player : Agent {
 
-    public int currentElement = (int)Elements.NEUTRAL;
     public GameObject reloadButton;
     private float damageTimer = 0.0f;
     private bool timerRunning = false;
@@ -39,17 +38,6 @@ public class Player : Agent {
     {
         if (collision.transform.tag.CompareTo("Enemy") == 0)
         {
-            /*if(!timerRunning)
-            {
-                EnemyScript agent = collision.gameObject.GetComponent<EnemyScript>();
-                takeDamage(agent.getDamage(), agent.getElementType());
-            }
-            else if (damageTimer >= PlayerStats.damageTimer)
-            {
-                damageTimer = 0.0f;
-                EnemyScript agent = collision.gameObject.GetComponent<EnemyScript>();
-                takeDamage(agent.getDamage(), agent.getElementType());
-            }*/
             EnemyScript agent = collision.gameObject.GetComponent<EnemyScript>();
             takeDamage(agent.getDamage(), agent.getElementType());
         }
@@ -89,23 +77,11 @@ public class Player : Agent {
     }
 
 
-    // ATTENTION THIS SHOULD NOT BE HERE, this should either be implemented in the enemies themselves or in the corresponding projectile behaviours
+    //TODO ATTENTION THIS SHOULD NOT BE HERE, this should either be implemented in the enemies themselves or in the corresponding projectile behaviours
     public override void OnCollisionEnter(Collision collision)
     {
-        //Debug.Log("Collided with play");
         if (collision.transform.tag.CompareTo("Enemy") == 0)
         {
-            /*if (!timerRunning)
-            {
-                EnemyScript agent = collision.gameObject.GetComponent<EnemyScript>();
-                takeDamage(agent.getDamage(), agent.getElementType());
-            }
-            else if (damageTimer >= PlayerStats.damageTimer)
-            {
-                damageTimer = 0.0f;
-                EnemyScript agent = collision.gameObject.GetComponent<EnemyScript>();
-                takeDamage(agent.getDamage(), agent.getElementType());
-            }*/
             EnemyScript agent = collision.gameObject.GetComponent<EnemyScript>();
             takeDamage(agent.getDamage(), agent.getElementType());
         }
@@ -172,14 +148,6 @@ public class Player : Agent {
 
     protected virtual void OnGUI()
     {
-        // Health bar
-        /*Vector2 targetPos = healthbar_background.position;
-        if (centerHealthBar)
-        {
-            targetPos = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x, transform.position.y, transform.position.z + 0.1f));
-        }*/
-
-        //healthbar_background.position = targetPos;
         float percentage = health / maxHealth;
         healthbar.transform.localScale = new Vector3(percentage, 1.0f, 1.0f);
     }

@@ -346,17 +346,17 @@ namespace Includes
         public float lim_secondary_neutral_level = 1;
         public float lim_terciary_neutral_level = 1;
 
-        public float lim_primary_earth_level = 0;
-        public float lim_secondary_earth_level = 0;
-        public float lim_terciary_earth_level = 0;
+        public float lim_primary_earth_level = 1;
+        public float lim_secondary_earth_level = 1;
+        public float lim_terciary_earth_level = 1;
 
-        public float lim_primary_fire_level = 0;
-        public float lim_secondary_fire_level = 0;
-        public float lim_terciary_fire_level = 0;
+        public float lim_primary_fire_level = 1;
+        public float lim_secondary_fire_level = 1;
+        public float lim_terciary_fire_level = 1;
 
-        public float lim_primary_water_level = 0;
-        public float lim_secondary_water_level = 0;
-        public float lim_terciary_water_level = 0;
+        public float lim_primary_water_level = 1;
+        public float lim_secondary_water_level = 1;
+        public float lim_terciary_water_level = 1;
 
         public float lim_points = 4;
 
@@ -434,6 +434,7 @@ namespace Includes
         private static GameObject oilPuddle;
         private static PlayerStats playerStats;
         private static List<string> statNames;
+        private static ShootElement currentElement;
 
         private static GameObject[] neutralEnemies;
 
@@ -451,6 +452,8 @@ namespace Includes
         public PlayerStats Stats { get { return playerStats; } }
 
         public List<string> StatNames { get { return statNames; } }
+
+        public ShootElement CurrentElement { get { return currentElement; } set { currentElement = value; } }
 
         public static GameManager Instance { get { if (_instance == null) { _instance = new GameManager(); playerStats = new PlayerStats(); } return _instance; } }
 

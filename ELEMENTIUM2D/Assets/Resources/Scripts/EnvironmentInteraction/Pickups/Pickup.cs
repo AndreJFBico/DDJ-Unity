@@ -2,14 +2,14 @@
 using System.Collections;
 using Includes;
 
-public class PickupElement : Interactable {
+public class Pickup : Interactable {
 
     void OnTriggerEnter(Collider other)
     {
         if (other.tag.CompareTo("Player") == 0)
         {
             displayText();
-            GameManager.Instance.Player.GetComponent<Interactions>().Interactable = this;
+            playerInteractions.Interactable = this;
 
         }
     }
@@ -19,12 +19,7 @@ public class PickupElement : Interactable {
         if (other.tag.CompareTo("Player") == 0)
         {
             hideText();
-            GameManager.Instance.Player.GetComponent<Interactions>().Interactable = null;
+            playerInteractions.Interactable = null;
         }
-    }
-
-    public override void applyEffect()
-    {
-
     }
 }

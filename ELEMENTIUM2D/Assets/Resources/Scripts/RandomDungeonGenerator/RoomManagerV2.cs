@@ -252,7 +252,8 @@ public class RoomManagerV2 : MonoBehaviour {
 
                     if (!generation){
                         Transform scenery = currentRoom.transform.FindChild("Scenery/Spawners");//.gameObject.SetActive(true);
-                        scenery.GetComponent<SpawnerManager>().generateSpawners();
+                        if(scenery != null)
+                            scenery.GetComponent<SpawnerManager>().generateSpawners();
                     }
 				}
 			}else{
@@ -702,9 +703,7 @@ public class RoomManagerV2 : MonoBehaviour {
 		else
 		{
 			Transform scenery = room.transform.FindChild("Scenery");
-			foreach(Transform child in scenery){
-				child.forward = new Vector3(0, 0, 1);
-			}
+            rotateToCamera(scenery);
 
 			//doesnt collide on the correct position, so it can be used
 			door.used = true;
@@ -725,6 +724,20 @@ public class RoomManagerV2 : MonoBehaviour {
 			return true;
 		}
 	}
+
+    private void rotateToCamera(Transform scenery)
+    {
+        foreach (Transform child in scenery)
+        {
+            if (scenery.childCount == 0)
+                child.forward = new Vector3(0, 0, 1);
+            else
+            {
+                foreach (Transform children in child)
+                    children.forward = new Vector3(0, 0, 1);
+            }
+        }
+    }
 
 	private bool tryToConnectRooms(DungeonRoom room, DungeonRoom roomToConnectTo, bool allowsRandomTarget){
 

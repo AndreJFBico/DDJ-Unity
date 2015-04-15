@@ -58,6 +58,8 @@ public class SkillTreeManager : MonoBehaviour
 
         predictBox = GameObject.Find("PredictBox").transform;
         startNode = GameObject.Find("Parent").transform;
+
+        GameManager.Instance.resetPlayerStats();
     }
 
     // Update is called once per frame

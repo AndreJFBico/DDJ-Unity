@@ -1,8 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Includes;
 
 public class ShootElement : MonoBehaviour
 {
+    protected Elements _elementType;
+    protected bool _active;
+
     #region Variables
     protected Transform barrelEnd;
     protected Transform rotator;
@@ -11,9 +15,17 @@ public class ShootElement : MonoBehaviour
     protected GameObject gunBlast1;
     protected GameObject gunBlast2;
 
+    protected GameObject projectile1;
+    protected GameObject projectile2;
+    protected GameObject projectile3;
+
     protected bool canMain = true;
     protected bool canSecondary = true;
     protected bool canTerciary = true;
+
+    protected bool mainUnlocked;
+    protected bool secondaryUnlocked;
+    protected bool terciaryUnlocked;
     
     #endregion
 
@@ -38,7 +50,6 @@ public class ShootElement : MonoBehaviour
         gunBlast2.SetActive(false);
     }
 
-    #region Fire functions
     protected void fire(float attackSpeed, int projectileNumber, GameObject bulletPrefab)
     {
         gunBlast1.SetActive(true);
@@ -51,45 +62,37 @@ public class ShootElement : MonoBehaviour
             // Invokes ability specific movement behaviour
             bullet.GetComponent<AbilityBehaviour>().initiate(gameObject);
             bullet.name = bulletPrefab.name;
-            //Physics2D.IgnoreCollision(bullet.GetComponent<Collider2D>(), transform.GetComponent<Collider2D>());
 
-        }
-        //bullet.GetComponent<Rigidbody2D>().AddForce(barrelEnd.transform.up * 10f, ForceMode2D.Impulse);
-    }
-
-    // Receives a certain ability attackSpeed
-    public void fireMain(float attackSpeed, int projectileNumber, GameObject bulletPrefab)
-    {
-        if (canMain)
-        {
-            canMain = false;
-            Invoke("resetMain", attackSpeed);
-            fire(attackSpeed, projectileNumber, bulletPrefab);
         }
     }
 
-    // Receives a certain ability attackSpeed
-    public void fireSecondary(float attackSpeed, int projectileNumber, GameObject bulletPrefab)
-    {
-        if (canSecondary)
-        {
-            canSecondary = false;
-            Invoke("resetSecondary", attackSpeed);
-            fire(attackSpeed, projectileNumber, bulletPrefab);
-        }
-    }
-
-    // Receives a certain ability attackSpeed
-    public void fireTerciary(float attackSpeed, int projectileNumber, GameObject bulletPrefab)
-    {
-        if (canTerciary)
-        {
-            canTerciary = false;
-            Invoke("resetTerciary", attackSpeed);
-            fire(attackSpeed, projectileNumber, bulletPrefab);
-        }
-    }
+    public virtual void fireMain(){ }
+    public virtual void fireSecondary() { }
+    public virtual void fireTerciary() { }
+    public virtual void updateUnlocked() { }
     
-    #endregion
+    public Elements Type
+    {
+        get
+        {
+            return _elementType;
+        }
+        set
+        {
+            _elementType = value;
+        }
+    }
+
+    public bool Active
+    {
+        get
+        {
+            return _active;
+        }
+        set
+        {
+            _active = value;
+        }
+    }
 
 }

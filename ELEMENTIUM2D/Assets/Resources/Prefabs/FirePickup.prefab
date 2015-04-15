@@ -59,7 +59,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 431112}
   - 135: {fileID: 13582168}
-  - 114: {fileID: 11458052}
+  - 114: {fileID: 11473182}
   m_Layer: 0
   m_Name: Interaction
   m_TagString: Untagged
@@ -182,7 +182,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: .25, y: 1, z: .25}
+  m_Size: {x: .25, y: 1, z: .100000001}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!102 &10230626
 TextMesh:
@@ -220,7 +220,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21266726}
---- !u!114 &11458052
+--- !u!114 &11473182
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -228,7 +228,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 151990}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a343d0d02ea126747a9eb06e5aaf0d1c, type: 3}
+  m_Script: {fileID: 11500000, guid: ef3e74c23c52e1f458a9e1f200117d23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!135 &13582168
@@ -252,7 +252,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: .125, y: .5, z: .125}
+  m_Extents: {x: .125, y: .5, z: .0500000007}
   m_MoveThreshold: .100000001
   m_Carve: 0
   m_CarveOnlyStationary: 1

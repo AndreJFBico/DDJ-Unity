@@ -64,7 +64,7 @@ public class Action : MonoBehaviour {
 
         if (interact && interaction.Interactable)
         {
-            interaction.openChest();
+            interaction.interact();
         } 
 
 	}

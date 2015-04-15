@@ -9,6 +9,12 @@ public class TreasureChest : Interactable{
 
     public bool locked = false;
 
+    public override void Start()
+    {
+        base.Start();
+        openChest = Resources.Load<Sprite>("Sprites/treasureChestOpen");
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if(other.tag.CompareTo("Player") == 0)
@@ -16,7 +22,7 @@ public class TreasureChest : Interactable{
             displayText();
             if (!locked)
             {
-                GameManager.Instance.Player.GetComponent<Interactions>().Interactable = this;
+                playerInteractions.Interactable = this;
             }
             else
                 textDisplay.GetComponent<TextMesh>().text = "Locked";
@@ -29,7 +35,7 @@ public class TreasureChest : Interactable{
         if(other.tag.CompareTo("Player") == 0)
         {
             hideText();
-            GameManager.Instance.Player.GetComponent<Interactions>().Interactable = null;
+            playerInteractions.Interactable = null;
         }
     }
 

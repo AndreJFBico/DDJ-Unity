@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Includes;
 
 public class FireElement: ShootElement {
 
@@ -24,27 +25,75 @@ public class FireElement: ShootElement {
         gunBlast1.SetActive(false);
         gunBlast2.SetActive(false);
 
-        //bulletPrefab = (GameObject) Resources.Load("Prefabs/Projectiles/Fireball");
+        _elementType = Includes.Elements.FIRE;
+        _active = false;
 
-        //attackSpeed = 0.5f;
-	}
+        projectile1 = (GameObject)Resources.Load(AbilityStats.Fire.ability1.projectile);
+        projectile2 = (GameObject)Resources.Load(AbilityStats.Fire.ability2.projectile);
+        projectile3 = (GameObject)Resources.Load(AbilityStats.Fire.ability3.projectile);
 
-    protected void fire()
-    {
-        gunBlast1.SetActive(true);
-        gunBlast2.SetActive(true);
-        Invoke("deactivateBlast", 0.1f);
-        OilPuddleManager.Instance.addOilPuddle((GameObject)Instantiate(OilPuddleManager.Instance.OilPuddle, barrelEnd.position, OilPuddleManager.Instance.OilPuddle.transform.rotation));        
+        updateUnlocked();
+
+        //attackSpeed = 0.25f;
     }
 
-    public void fireSecondary()
+    public override void updateUnlocked()
     {
+        mainUnlocked = GameManager.Instance.Stats.primary_fire_level > 0;
+        secondaryUnlocked = GameManager.Instance.Stats.secondary_fire_level > 0;
+        terciaryUnlocked = GameManager.Instance.Stats.terciary_fire_level > 0;
+    }
+
+    #region Fire functions
+
+    public override void fireMain()
+    {
+        if (!mainUnlocked)
+            return;
+
+        float attackSpeed = AbilityStats.Fire.ability1.attackSpeed;
+        int projectileNumber = AbilityStats.Fire.ability1.projectile_number;
+
+        if (canMain)
+        {
+            canMain = false;
+            Invoke("resetMain", attackSpeed);
+            fire(attackSpeed, projectileNumber, projectile1);
+        }
+    }
+
+    public override void fireSecondary()
+    {
+        if (!secondaryUnlocked)
+            return;
+
         if (canSecondary)
         {
             canSecondary = false;
             Invoke("resetSecondary", OilPuddleManager.Instance.internalCooldown());
-            fire();
+            gunBlast1.SetActive(true);
+            gunBlast2.SetActive(true);
+            Invoke("deactivateBlast", 0.1f);
+            OilPuddleManager.Instance.addOilPuddle((GameObject)Instantiate(OilPuddleManager.Instance.OilPuddle, barrelEnd.position, OilPuddleManager.Instance.OilPuddle.transform.rotation));
         }
     }
+
+    public override void fireTerciary()
+    {
+        if (!terciaryUnlocked)
+            return;
+
+        float attackSpeed = AbilityStats.Fire.ability3.attackSpeed;
+        int projectileNumber = AbilityStats.Fire.ability3.projectile_number;
+
+        if (canTerciary)
+        {
+            canTerciary = false;
+            Invoke("resetTerciary", attackSpeed);
+            fire(attackSpeed, projectileNumber, projectile3);
+        }
+    }
+
+    #endregion
 
 }
