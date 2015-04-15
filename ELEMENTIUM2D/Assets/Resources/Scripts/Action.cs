@@ -25,6 +25,8 @@ public class Action : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        bool shot = false;
+
         #region Fire weapon
         //##########################################################################################
         //####################### FIRE #############################################################
@@ -36,7 +38,7 @@ public class Action : MonoBehaviour {
 
         if (fire1 + fire2 + fire3 > 0)
         {
-            shooting.shoot(fire1, fire2, fire3);
+            shot = shooting.shoot(fire1, fire2, fire3);
         } 
         #endregion
 

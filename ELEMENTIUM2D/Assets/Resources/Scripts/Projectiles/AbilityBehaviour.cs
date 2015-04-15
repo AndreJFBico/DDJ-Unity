@@ -16,52 +16,57 @@ public class AbilityBehaviour : ElementiumMonoBehaviour
     #endregion
 
     #region OnTrigger and OnCollision Functions
-    public virtual void OnCollisionEnter(Collision collision)
+    public void destroyBehaviour()
     {
         createExplosion();
         Destroy(gameObject);
     }
 
-    protected virtual void OnTriggerEnter(Collider other)
+    public virtual void OnCollisionEnter(Collision collision)
     {
-        enteredBreakableTrigger(other);
+        destroyBehaviour();
+    }
+
+    public virtual void OnTriggerEnter(Collider other)
+    {
+        enteredBreakableTrigger(other.gameObject);
     } 
     #endregion
 
     #region Collision and trigger behaviours
-    protected bool collidedWith(Collision collision, float damage)
+    protected bool collidedWith(GameObject collidedObj, float damage)
     {
-        if (collision.gameObject.tag.CompareTo("Enemy") == 0)
+        if (collidedObj.tag.CompareTo("Enemy") == 0)
         {
-            Agent enemy = collision.gameObject.GetComponent<Agent>();
-            collision.gameObject.GetComponent<EnemyScript>().playerSighted();
+            Agent enemy = collidedObj.GetComponent<Agent>();
+            collidedObj.GetComponent<EnemyScript>().playerSighted();
             enemy.takeDamage(damage, type);
             return true;
         }
-        else if (LayerMask.NameToLayer("Player") == collision.gameObject.layer)
+        else if (LayerMask.NameToLayer("Player") == collidedObj.layer)
         {
-            Agent enemy = collision.gameObject.GetComponent<Agent>();
-            enemy.takeDamage(damage, type);
+            Agent player = collidedObj.GetComponent<Agent>();
+            player.takeDamage(damage, type);
             return true;
         }
         return false;
     }
 
-    protected bool collidedWithBreakable(Collision collision)
+    protected bool collidedWithBreakable(GameObject collidedObj)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer(Constants.breakable))
+        if (collidedObj.layer == LayerMask.NameToLayer(Constants.breakable))
         {
-            collision.gameObject.GetComponent<Modifiable>().dealWithProjectile(type, damage);
+            collidedObj.GetComponent<Modifiable>().dealWithProjectile(type, damage);
             return true;
         }
         return false;
     }
 
-    protected bool enteredBreakableTrigger(Collider other)
+    protected bool enteredBreakableTrigger(GameObject collidedObj)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer(Constants.elementalyModifiable))
+        if (collidedObj.layer == LayerMask.NameToLayer(Constants.elementalyModifiable))
         {
-            other.gameObject.GetComponent<Modifiable>().dealWithProjectile(type);
+            collidedObj.GetComponent<Modifiable>().dealWithProjectile(type);
             return true;
         }
         return false;

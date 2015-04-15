@@ -22,8 +22,8 @@ public class NeutralMissile : AbilityBehaviour {
 
     public override void OnCollisionEnter(Collision collision)
     {
-        if (collidedWith(collision, damage)) ;
-        else if (collidedWithBreakable(collision)) ;
+        if (collidedWith(collision.gameObject, damage)) ;
+        else if (collidedWithBreakable(collision.gameObject)) ;
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Unhitable"))
             return;
         base.OnCollisionEnter(collision);

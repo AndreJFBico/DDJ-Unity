@@ -457,11 +457,6 @@ namespace Includes
 
         private void init()
         {
-            iceWall = (GameObject)Resources.Load("Prefabs/Environment/IceWall");
-            waterPuddle = (GameObject)Resources.Load("Prefabs/Environment/WaterPuddle");
-            oilPuddle = (GameObject)Resources.Load("Prefabs/Environment/OilPuddle");
-            neutralEnemies = Resources.LoadAll("Prefabs/Enemies/Neutral") as GameObject[];
-
             statNames = new List<string>();
             Type type = typeof(PlayerStats); // Get type pointer
             FieldInfo[] fields = type.GetFields(); // Obtain all fields
@@ -515,6 +510,10 @@ namespace Includes
         public void sceneInit()
         {
             player = GameObject.FindWithTag("Player");
+            iceWall = (GameObject)Resources.Load("Prefabs/Environment/IceWall");
+            waterPuddle = (GameObject)Resources.Load("Prefabs/Environment/WaterPuddle");
+            oilPuddle = (GameObject)Resources.Load("Prefabs/Environment/OilPuddle");
+            neutralEnemies = Resources.LoadAll("Prefabs/Enemies/Neutral") as GameObject[];
         }
 
     }

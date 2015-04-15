@@ -35,9 +35,9 @@ public class WaterSpray : AbilityBehaviour {
         }
         if(!waterPuddle)
         {
-            if (!deltDamage && collidedWith(collision, damage)) 
+            if (!deltDamage && collidedWith(collision.gameObject, damage)) 
                 deltDamage = true;
-            else if (collidedWithBreakable(collision)) ;
+            else if (collidedWithBreakable(collision.gameObject)) ;
             else if (collision.gameObject.layer == LayerMask.NameToLayer("Unhitable"))
                 return;
         }
