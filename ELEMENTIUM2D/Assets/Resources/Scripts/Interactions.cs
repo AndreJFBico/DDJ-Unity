@@ -94,44 +94,39 @@ public class Interactions : MonoBehaviour {
             {
                 if (field.Name.Contains("primary_") && !field.Name.Contains("def_"))
                 {
-
-                    if (field.Name.Contains("lim_"))
+                    if (field.Name.Contains("neutral") && string.Compare("neutral", element) == 0)
                     {
-
-                        if (field.Name.Contains("neutral") && string.Compare("neutral", element) == 0)
-                        {
-                            _elements[0].Active = true;
-                            typeof(PlayerStats).GetField(field.Name).SetValue(GameManager.Instance.Stats, 1);
-                            _elements[0].updateUnlocked();
-                            continue;
-                        }
-                        if (field.Name.Contains("fire") && string.Compare("fire", element) == 0)
-                        {
-                            _elements[1].Active = true;
-                            typeof(PlayerStats).GetField(field.Name).SetValue(GameManager.Instance.Stats, 1);
-                            _elements[1].updateUnlocked();
-                            continue;
-                        }
-                        if (field.Name.Contains("earth") && string.Compare("earth", element) == 0)
-                        {
-                            _elements[2].Active = true;
-                            typeof(PlayerStats).GetField(field.Name).SetValue(GameManager.Instance.Stats, 1);
-                            _elements[2].updateUnlocked();
-                            continue;
-                        }
-                        if (field.Name.Contains("water") && string.Compare("water", element) == 0)
-                        {
-                            _elements[3].Active = true;
-                            typeof(PlayerStats).GetField(field.Name).SetValue(GameManager.Instance.Stats, 1);
-                            _elements[3].updateUnlocked();
-                        }
+                        _elements[0].Active = true;
+                        typeof(PlayerStats).GetField(field.Name).SetValue(GameManager.Instance.Stats, 1);
+                        _elements[0].updateUnlocked();
+                        continue;
                     }
-                    else if (field.Name.Contains("terciary_") || field.Name.Contains("secondary_"))
+                    if (field.Name.Contains("fire") && string.Compare("fire", element) == 0)
                     {
-                        if (field.Name.Contains(element))
-                        {
-                            typeof(PlayerStats).GetField(field.Name).SetValue(GameManager.Instance.Stats, 1);
-                        }
+                        _elements[1].Active = true;
+                        typeof(PlayerStats).GetField(field.Name).SetValue(GameManager.Instance.Stats, 1);
+                        _elements[1].updateUnlocked();
+                        continue;
+                    }
+                    if (field.Name.Contains("earth") && string.Compare("earth", element) == 0)
+                    {
+                        _elements[2].Active = true;
+                        typeof(PlayerStats).GetField(field.Name).SetValue(GameManager.Instance.Stats, 1);
+                        _elements[2].updateUnlocked();
+                        continue;
+                    }
+                    if (field.Name.Contains("water") && string.Compare("water", element) == 0)
+                    {
+                        _elements[3].Active = true;
+                        typeof(PlayerStats).GetField(field.Name).SetValue(GameManager.Instance.Stats, 1);
+                        _elements[3].updateUnlocked();
+                    }
+                }
+                else if (field.Name.Contains("lim_") && (field.Name.Contains("terciary_") || field.Name.Contains("secondary_")))
+                {
+                    if (field.Name.Contains(element))
+                    {
+                        typeof(PlayerStats).GetField(field.Name).SetValue(GameManager.Instance.Stats, 1);
                     }
                 }
             }
