@@ -28,6 +28,8 @@ public class SkillTreeNode : MonoBehaviour
 
     public bool lockedForever = false;
 
+    private bool unknown = false;
+
     [SerializeField]
     int choiceIndex = 0;
 
@@ -35,7 +37,7 @@ public class SkillTreeNode : MonoBehaviour
     string variableBeingChanged;
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         manager = (GameObject.Find("SkillTree") as GameObject).GetComponent<SkillTreeManager>();
     }
@@ -54,9 +56,12 @@ public class SkillTreeNode : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!selected)
+        if(isUknown())
+            gameObject.GetComponent<Image>().color = new Color(1f, 1f, 1f, 0.40f);
+        else if (!selected)
             gameObject.GetComponent<Image>().color = new Color(1f, 1f, 1f, 0.20f);
-        else gameObject.GetComponent<Image>().color = new Color(1f, 1f, 1f, 1.00f);
+        else if(selected)
+            gameObject.GetComponent<Image>().color = new Color(1f, 1f, 1f, 1.00f);      
     }
 
     void OnGUI()
@@ -72,6 +77,35 @@ public class SkillTreeNode : MonoBehaviour
                     fatherNode.GetComponent<RectTransform>().position.x, 
                     fatherNode.GetComponent<RectTransform>().position.y), Color.white);
         }
+    }
+
+    public void setUnknown()
+    {
+        GetComponent<Image>().sprite = GameManager.Instance.UnknownSymbol;
+        unknown = true;
+    }
+
+    public bool checkIndividualLimit()
+    {
+        if(selected)
+            return true;
+        var type = typeof(SkillTreeManager); // Get type pointer
+        FieldInfo[] fields = type.GetFields(); // Obtain all fields
+        foreach (var field in fields) // Loop through fields
+        {
+            // is a float
+            if (typeof(float).IsAssignableFrom(field.FieldType))
+            {
+                if (field.Name.CompareTo("cur_lim_" + variableBeingChanged) == 0)
+                {
+                    if (((float)field.GetValue(manager)) < GameManager.Instance.getStatVariable("lim_" + variableBeingChanged))
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
     }
 
     void checkIfLimits()
@@ -124,7 +158,7 @@ public class SkillTreeNode : MonoBehaviour
 
     public void MouseCallBack()
     {
-        if (fatherNode != null && !lockedForever)
+        if (fatherNode != null && !lockedForever && !unknown)
         {
             if (fatherNode.selected && !selected)
             {
@@ -142,7 +176,6 @@ public class SkillTreeNode : MonoBehaviour
                 checkIfLimits();
             }
         }
-
     }
 
     public void setVariableBeingChanged(string var)
@@ -178,6 +211,11 @@ public class SkillTreeNode : MonoBehaviour
     public void setPreviousChoiceIndex(int ci)
     {
         choiceIndex = ci;
+    }
+
+    public bool isUknown()
+    {
+        return unknown;
     }
 
     public SkillTreeNode getFatherNode()

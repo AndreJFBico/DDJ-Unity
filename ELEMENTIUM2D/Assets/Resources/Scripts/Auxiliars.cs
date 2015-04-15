@@ -332,15 +332,15 @@ namespace Includes
         public float terciary_water_level = def_terciary_water_level;
 
         // LIMITS, these will never be reset
-        public float lim_moveSpeed = 2;
-        public float lim_moveInContactWithEnemy = 0;
-        public float lim_maxHealth = 3;
-        public float lim_damage = 3;
-        public float lim_defence = 2;
-        public float lim_waterResist = 0;
-        public float lim_earthResist = 0;
-        public float lim_fireResist = 0;
-        public float lim_damageTimer = 3f;
+        public float lim_moveSpeed = float.MaxValue;
+        public float lim_moveInContactWithEnemy = float.MaxValue;
+        public float lim_maxHealth = float.MaxValue;
+        public float lim_damage = float.MaxValue;
+        public float lim_defence = float.MaxValue;
+        public float lim_waterResist = float.MaxValue;
+        public float lim_earthResist = float.MaxValue;
+        public float lim_fireResist = float.MaxValue;
+        public float lim_damageTimer = float.MaxValue;
 
         public float lim_primary_neutral_level = 1;
         public float lim_secondary_neutral_level = 1;
@@ -359,6 +359,8 @@ namespace Includes
         public float lim_terciary_water_level = 0;
 
         public float lim_points = 4;
+
+        public float depth = 1;
 
         //ATTENTION IF YOU ADD A NEW VARIABLE PLS DONT FORGET TO ADD IT TO RESET!!!!!!!
         public void reset()
@@ -432,6 +434,7 @@ namespace Includes
         private static GameObject iceWall;
         private static GameObject waterPuddle;
         private static GameObject oilPuddle;
+        private static Sprite unknownSymbol;
         private static PlayerStats playerStats;
         private static List<string> statNames;
 
@@ -448,6 +451,8 @@ namespace Includes
 
         public GameObject Player { get { return player; } }
 
+        public Sprite UnknownSymbol { get { return unknownSymbol; } }
+
         public PlayerStats Stats { get { return playerStats; } }
 
         public List<string> StatNames { get { return statNames; } }
@@ -457,6 +462,11 @@ namespace Includes
 
         private void init()
         {
+            unknownSymbol = Resources.Load<Sprite>("GUIImages/Elements/round_unknown");
+            iceWall = (GameObject)Resources.Load("Prefabs/Environment/IceWall");
+            waterPuddle = (GameObject)Resources.Load("Prefabs/Environment/WaterPuddle");
+            oilPuddle = (GameObject)Resources.Load("Prefabs/Environment/OilPuddle");
+            neutralEnemies = Resources.LoadAll("Prefabs/Enemies/Neutral") as GameObject[];
             statNames = new List<string>();
             Type type = typeof(PlayerStats); // Get type pointer
             FieldInfo[] fields = type.GetFields(); // Obtain all fields
@@ -510,10 +520,6 @@ namespace Includes
         public void sceneInit()
         {
             player = GameObject.FindWithTag("Player");
-            iceWall = (GameObject)Resources.Load("Prefabs/Environment/IceWall");
-            waterPuddle = (GameObject)Resources.Load("Prefabs/Environment/WaterPuddle");
-            oilPuddle = (GameObject)Resources.Load("Prefabs/Environment/OilPuddle");
-            neutralEnemies = Resources.LoadAll("Prefabs/Enemies/Neutral") as GameObject[];
         }
 
     }
