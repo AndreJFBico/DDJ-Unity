@@ -52,7 +52,7 @@ public class EnemyScript : Agent
         {
             case Elements.NEUTRAL:
                 totalDamage = amount * (1-((defence + waterResist + earthResist + fireResist) / 100.0f));
-                color = Color.black;
+                color = Color.white;
                 break;
 
             case Elements.FIRE:
@@ -74,7 +74,7 @@ public class EnemyScript : Agent
                 break;
         }
         health -= totalDamage;
-        FloatingText.Instance.createFloatingText(transform, totalDamage + " Damage", color);
+        FloatingText.Instance.createFloatingText(transform, (int)totalDamage + " Damage", color);
         if(health <= 0)
         {
             Eliminate();

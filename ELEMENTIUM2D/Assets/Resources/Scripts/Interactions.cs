@@ -15,7 +15,7 @@ public class Interactions : MonoBehaviour {
 
     private Player data;
 
-    private TreasureChest _treasure = null;
+    private Interactable _interactable = null;
 
     //private float cycleTime = 0.2f;
 
@@ -81,21 +81,21 @@ public class Interactions : MonoBehaviour {
 
     #region Chests
 
-    public TreasureChest Treasure
+    public Interactable Interactable
     {
         get
         {
-            return _treasure;
+            return _interactable;
         }
         set
         {
-            _treasure = value;
+            _interactable = value;
         }
     }
 
     public void openChest()
     {
-        _treasure.applyEffect();
+        _interactable.applyEffect();
     } 
 
     #endregion

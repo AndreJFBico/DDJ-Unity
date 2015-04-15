@@ -60,7 +60,7 @@ public class Action : MonoBehaviour {
 
         interact = Input.GetButtonDown("Interact");
 
-        if (interact && interaction.Treasure)
+        if (interact && interaction.Interactable)
         {
             interaction.openChest();
         } 

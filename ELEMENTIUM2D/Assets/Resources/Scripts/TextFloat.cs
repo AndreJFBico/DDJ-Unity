@@ -6,10 +6,12 @@ public class TextFloat : MonoBehaviour {
     private TextMesh text;
     private float maxDuration;
     private float duration;
+    private TextMesh childText;
 
 	// Use this for initialization
 	void Awake () {
         text = GetComponent<TextMesh>();
+        childText = transform.FindChild("Child").GetComponent<TextMesh>();
         maxDuration = 0.4f;
         duration = maxDuration;
 	}
@@ -18,6 +20,7 @@ public class TextFloat : MonoBehaviour {
     {
         duration = maxDuration;
         text.text = message;
+        childText.text = message;
         text.color = color;
     }
 
