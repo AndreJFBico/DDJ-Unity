@@ -26,10 +26,8 @@ public class NeutralBouncer : AbilityBehaviour {
         base.OnCollisionEnter(coll);
     }
 
-    void instanciateSplittedEnemies(Collision collision)
+    void instanciateSplittedEnemies(Collision collision, EnemyScript enemy)
     {
-        EnemyScript enemy = collision.gameObject.GetComponent<EnemyScript>();
-        enemy.takeDamage(damage, Elements.NEUTRAL);
         for (int i = 0; i < AbilityStats.Neutral.ability3.splitNumber; i++)
         {
             GameObject forkedObj = (GameObject)Instantiate(this.gameObject, collision.transform.position + transform.forward * ((collision.collider.bounds.size.z + collision.collider.bounds.size.x) / 2.0f), transform.rotation);
@@ -47,21 +45,26 @@ public class NeutralBouncer : AbilityBehaviour {
     {
         if (disabledTimer > 0.05f )
         {
-            if (collision.gameObject.tag.CompareTo("Enemy") == 0 && numSplit < AbilityStats.Neutral.ability3.numSplits )
+            if(collision.gameObject.tag.CompareTo("Enemy") == 0)
             {
-                if (previousEnemy != null)
+                EnemyScript enemy = collision.gameObject.GetComponent<EnemyScript>();
+                enemy.takeDamage(damage, Elements.NEUTRAL);
+                if ( numSplit < AbilityStats.Neutral.ability3.numSplits )
                 {
-                    if(previousEnemy.GetInstanceID() != collision.gameObject.GetInstanceID())
+                    if (previousEnemy != null)
                     {
-                        instanciateSplittedEnemies(collision);
+                        if(previousEnemy.GetInstanceID() != collision.gameObject.GetInstanceID())
+                        {
+                            instanciateSplittedEnemies(collision, enemy);
+                        }
+                    }
+                    else
+                    {
+                        instanciateSplittedEnemies(collision, enemy);
                     }
                 }
-                else
-                {
-                    instanciateSplittedEnemies(collision);
-                }
             }
-            else if (collidedWithBreakable(collision)) ;
+            else if (collidedWithBreakable(collision.gameObject)) ;
             else if (collision.gameObject.layer == LayerMask.NameToLayer("Unhitable"))
             return;
             //Invoke("destroyClone", 0.1f);

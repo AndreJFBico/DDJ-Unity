@@ -19,7 +19,7 @@ public class EarthShield : AbilityBehaviour {
 
     }
 
-    protected override void OnTriggerEnter(Collider other)
+    public override void OnTriggerEnter(Collider other)
     {
     } 
 

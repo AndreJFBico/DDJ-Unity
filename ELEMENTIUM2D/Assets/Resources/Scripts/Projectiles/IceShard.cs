@@ -20,8 +20,8 @@ public class IceShard : AbilityBehaviour
 
     public override void OnCollisionEnter(Collision collision)
     {
-        if (collidedWith(collision, damage)) ;
-        else if (collidedWithBreakable(collision)) ;
+        if (collidedWith(collision.gameObject, damage)) ;
+        else if (collidedWithBreakable(collision.gameObject)) ;
         //else if ();
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Unhitable"))
             return;
