@@ -421,6 +421,11 @@ namespace Includes
                 
                 );
         }
+
+        public float IncPoints
+        {
+            set { lim_points += value; }
+        }
     }
     #endregion
 

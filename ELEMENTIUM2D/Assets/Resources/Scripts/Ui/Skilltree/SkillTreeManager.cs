@@ -46,12 +46,13 @@ public class SkillTreeManager : MonoBehaviour
     public float cur_lim_secondary_water_level = 0;
     public float cur_lim_terciary_water_level = 0;
 
-    public float cur_lim_points = GameManager.Instance.Stats.lim_points;
+    public float cur_lim_points;
 
     // Use this for initialization
     void Start()
     {
         availablePoints = GameObject.Find("Points").transform;
+        cur_lim_points = GameManager.Instance.Stats.lim_points;
         availablePoints.GetComponent<Text>().text = "Available Points: " + cur_lim_points;
 
         infobox = GameObject.Find("InfoBox").transform;
