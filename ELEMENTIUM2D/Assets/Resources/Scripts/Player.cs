@@ -21,6 +21,7 @@ public class Player : Agent {
         health = maxHealth;
         damage = GameManager.Instance.Stats.damage;
         defence = GameManager.Instance.Stats.defence;
+        GameManager.Instance.Stats.getDefence();
         waterResist = GameManager.Instance.Stats.waterResist;
         earthResist = GameManager.Instance.Stats.earthResist;
         fireResist = GameManager.Instance.Stats.fireResist;
