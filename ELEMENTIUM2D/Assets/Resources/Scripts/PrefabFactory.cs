@@ -22,4 +22,12 @@ public class PrefabFactory : MonoBehaviour {
         }
         return obj;
     }
+
+    public static GameObject createPrefab(GameObject prefab)
+    {
+        GameObject created = Instantiate(prefab) as GameObject;
+        created.transform.parent = thisObject.transform;
+
+        return created;
+    }
 }

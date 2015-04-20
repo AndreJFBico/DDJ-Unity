@@ -31,6 +31,7 @@ public class EnemySpawner : EnemyScript
         fireResist = EnemyStats.BasicNeutral.fireResist;
         spawnEnemy = SpawnEnemy();
         base.Awake();
+        multiplier = 5;
 	}
 
     public override void Disable()
@@ -99,7 +100,8 @@ public class EnemySpawner : EnemyScript
 
     public override void Eliminate()
     {
-        if(_spawnerManager == null)
+        GameManager.Instance.Player.GetComponent<Player>().increaseMultiplier(multiplier);
+        if (_spawnerManager == null)
             Destroy(gameObject);
         else
         {

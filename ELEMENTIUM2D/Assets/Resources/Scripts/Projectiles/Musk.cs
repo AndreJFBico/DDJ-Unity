@@ -8,13 +8,12 @@ public class Musk : AbilityBehaviour
     protected override void Awake()
     {
         explosion = Resources.Load("Prefabs/Explosions/earthExplosion") as GameObject;
+        damage = 1;
     }
 
     protected override void Start()
     {
         base.Start();
-        //This has to change one thing is the damage the enemy does when it touches the player the other is the ranged projectile damage
-        damage = EnemyStats.BasicNeutral.damage;
         type = Elements.NEUTRAL;
     }
 
@@ -27,8 +26,9 @@ public class Musk : AbilityBehaviour
         base.OnCollisionEnter(collision);
     }
 
-    public override void initiate(GameObject startingObject)
+    public override void initiate(GameObject startingObject, float dmg)
     {
+        damage = dmg;
         ConstantForce constantForce = gameObject.AddComponent<ConstantForce>();
         constantForce.relativeForce = new Vector3(0.0f, 0.0f, AbilityStats.Neutral.ability1.movementForce / 2.0f);
     }

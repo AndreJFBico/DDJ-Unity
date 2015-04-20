@@ -8,12 +8,22 @@ public class EnemyScript : Agent
     protected bool isAlerted = false;
     protected float rangedRadius;
 
+    protected float maxHealth;
+    protected float health;
+    protected float damage;
+    protected float defence;
+    protected float waterResist;
+    protected float earthResist;
+    protected float fireResist;
+
     protected NavMeshAgent navMeshAgent;
     protected EnemySpawner spawnScript;
     protected PathAgent pathAgent;
     protected GameObject gui;
     protected GameObject myGui;
     public Transform alertedSign;
+
+    protected int multiplier;
 
     protected float prevSpeed = 0;
 
@@ -27,6 +37,7 @@ public class EnemyScript : Agent
         centerHealthBar = true;
         gui = GameObject.Find("GUI");
         myGui = transform.FindChild("Ui").gameObject;
+        multiplier = 1;
 	}
 
     protected virtual void LateUpdate()
@@ -43,7 +54,11 @@ public class EnemyScript : Agent
         scrpt.applyStatusEffect(this);
     }
 
-    
+    public override bool isHurt()
+    {
+        return health < maxHealth;
+    }
+
     public override void takeDamage(float amount, Elements type)
     {
         float totalDamage = 0;
@@ -124,6 +139,7 @@ public class EnemyScript : Agent
 
     public virtual void Eliminate()
     {
+        GameManager.Instance.Player.GetComponent<Player>().increaseMultiplier(multiplier);
         if (spawnScript != null)
         {
             health = maxHealth;

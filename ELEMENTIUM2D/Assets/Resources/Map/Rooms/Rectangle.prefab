@@ -2221,6 +2221,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &193678
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 482136}
+  m_Layer: 11
+  m_Name: Pickups
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &194238
 GameObject:
   m_ObjectHideFlags: 1
@@ -3399,8 +3414,8 @@ Transform:
   m_Children:
   - {fileID: 407336}
   - {fileID: 410410}
-  m_Father: {fileID: 484552}
-  m_RootOrder: 1
+  m_Father: {fileID: 482136}
+  m_RootOrder: 0
 --- !u!4 &453048
 Transform:
   m_ObjectHideFlags: 1
@@ -3577,8 +3592,8 @@ Transform:
   m_Children:
   - {fileID: 469906}
   - {fileID: 456140}
-  m_Father: {fileID: 484552}
-  m_RootOrder: 3
+  m_Father: {fileID: 482136}
+  m_RootOrder: 2
 --- !u!4 &462070
 Transform:
   m_ObjectHideFlags: 1
@@ -3604,8 +3619,8 @@ Transform:
   m_Children:
   - {fileID: 453048}
   - {fileID: 477828}
-  m_Father: {fileID: 484552}
-  m_RootOrder: 2
+  m_Father: {fileID: 482136}
+  m_RootOrder: 1
 --- !u!4 &462858
 Transform:
   m_ObjectHideFlags: 1
@@ -3983,6 +3998,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 412678}
   m_RootOrder: 4
+--- !u!4 &482136
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 193678}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 452988}
+  - {fileID: 462642}
+  - {fileID: 460674}
+  m_Father: {fileID: 484552}
+  m_RootOrder: 1
 --- !u!4 &482730
 Transform:
   m_ObjectHideFlags: 1
@@ -4050,9 +4080,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 433548}
-  - {fileID: 452988}
-  - {fileID: 462642}
-  - {fileID: 460674}
+  - {fileID: 482136}
   m_Father: {fileID: 435216}
   m_RootOrder: 1
 --- !u!4 &485302

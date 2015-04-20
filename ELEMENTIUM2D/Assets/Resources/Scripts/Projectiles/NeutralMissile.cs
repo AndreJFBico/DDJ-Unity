@@ -10,12 +10,12 @@ public class NeutralMissile : AbilityBehaviour {
     protected override void Awake()
     {
         explosion = Resources.Load("Prefabs/Explosions/neutralExplosion") as GameObject;
+        damage = 1;
     }
 
     protected override void Start()
     {
         base.Start();
-        damage = AbilityStats.Neutral.ability2.damage;
         Invoke("destroyClone", 6f);
         type = Elements.NEUTRAL;
     }
@@ -55,8 +55,9 @@ public class NeutralMissile : AbilityBehaviour {
         Destroy(gameObject);
     }
 
-    public override void initiate(GameObject startingObject)
+    public override void initiate(GameObject startingObject, float dmg)
     {
+        damage = dmg;
         // Rotates the missile randomly
         int result = Random.Range(0, 360);
         transform.Rotate(new Vector3(0.0f, result, 0.0f));

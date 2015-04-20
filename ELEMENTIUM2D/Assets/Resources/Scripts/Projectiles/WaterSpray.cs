@@ -15,12 +15,12 @@ public class WaterSpray : AbilityBehaviour {
     {
         spriteR = GetComponentInChildren<SpriteRenderer>();
         explosion = Resources.Load("Prefabs/Explosions/frostExplosion") as GameObject;
+        damage = 1;
     }
 
     protected override void Start()
     {
         base.Start();
-        damage = AbilityStats.Frost.ability2.damage;
         type = Elements.FROST;
     }
 
@@ -69,8 +69,9 @@ public class WaterSpray : AbilityBehaviour {
         }     
     }
 
-    public override void initiate(GameObject startingObject)
+    public override void initiate(GameObject startingObject, float dmg)
     {
+        damage = dmg;
         // Rotates the missile randomly
         float randomVal = Random.Range(-15, 15);
         transform.Rotate(new Vector3(0.0f, randomVal, 0.0f));

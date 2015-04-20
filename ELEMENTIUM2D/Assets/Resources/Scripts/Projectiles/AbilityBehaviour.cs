@@ -4,10 +4,9 @@ using Includes;
 
 public class AbilityBehaviour : ElementiumMonoBehaviour
 {
-
-    protected float damage;
     protected Elements type;
     protected GameObject explosion;
+    protected float damage;
 
     #region Start and Awake
     protected virtual void Start() { }
@@ -79,5 +78,5 @@ public class AbilityBehaviour : ElementiumMonoBehaviour
     }
 
     // This function applys initial movement to the projectile
-    public virtual void initiate(GameObject startingObject) { }
+    public virtual void initiate(GameObject startingObject, float damage) { }
 }

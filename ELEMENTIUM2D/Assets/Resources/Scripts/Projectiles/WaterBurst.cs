@@ -18,12 +18,12 @@ public class WaterBurst : AbilityBehaviour
         cs = Resources.Load(AbilityStats.Frost.ability2.childProjectile) as GameObject;
         explosion = Resources.Load("Prefabs/Explosions/frostExplosion") as GameObject;
         iceBlock = Resources.Load("Prefabs/Environment/IceWall") as GameObject;
+        damage = 0;
     }
 
     protected override void Start()
     {
         base.Start();
-        damage = 0;
         type = Elements.FROST;
     }
 
@@ -46,12 +46,13 @@ public class WaterBurst : AbilityBehaviour
         Destroy(gameObject);
     }
 
-    public override void initiate(GameObject startingObject)
+    public override void initiate(GameObject startingObject, float dmg)
     {
+        damage = dmg;
         for (int i = 0; i < AbilityStats.Frost.ability2.child_projectile_number; i++ )
         {
             GameObject projectile = Instantiate(cs, transform.position, transform.rotation) as GameObject;
-            projectile.GetComponent<AbilityBehaviour>().initiate(this.gameObject);
+            projectile.GetComponent<AbilityBehaviour>().initiate(this.gameObject, damage);
             projectile.GetComponent<WaterSpray>().waterBurst = this;
             projectile.transform.parent = transform;
             waterProjectiles.Add(projectile);

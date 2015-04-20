@@ -12,12 +12,14 @@ public class TreasureChest : Interactable{
     public override void Start()
     {
         base.Start();
-        openChest = Resources.Load<Sprite>("Sprites/treasureChestOpen");
+        openChest = Resources.Load<Sprite>("Sprites/Environment/Chests/treasureChestOpen");
     }
+
+    #region OntriggerEnter and Exit
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.tag.CompareTo("Player") == 0)
+        if (other.tag.CompareTo("Player") == 0)
         {
             displayText();
             if (!locked)
@@ -32,16 +34,23 @@ public class TreasureChest : Interactable{
 
     void OnTriggerExit(Collider other)
     {
-        if(other.tag.CompareTo("Player") == 0)
+        if (other.tag.CompareTo("Player") == 0)
         {
             hideText();
             playerInteractions.Interactable = null;
         }
     }
+    
+    #endregion
+
+    public virtual void updateClosedSprite(Sprite sp)
+    {
+        spriteRenderer.sprite = sp;
+    }
 
     public override void applyEffect()
     {
-        //use reflection to select form a list of player attributes a random one to increase by 1%
+        //use reflection to select from a list of player attributes a random one to increase by 1%
         spriteRenderer.sprite = openChest;
         Destroy(gameObject);
     }

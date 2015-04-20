@@ -17,5 +17,6 @@ public class EarthElementPickup : Pickup
         //update ElementElement to unlock its main weapon;
         playerInteractions.updateActiveElements("earth");
         GameManager.Instance.Stats.lim_points++;
+        Destroy(transform.parent.gameObject);
     }
 }
