@@ -354,13 +354,13 @@ namespace Includes
         public float lim_secondary_fire_level = 0;
         public float lim_terciary_fire_level = 0;
 
-        public float lim_primary_water_level = 0;
-        public float lim_secondary_water_level = 0;
-        public float lim_terciary_water_level = 0;
+        public float lim_primary_water_level = 1;
+        public float lim_secondary_water_level = 1;
+        public float lim_terciary_water_level = 1;
 
         public float lim_points = 4;
 
-        public float depth = 1;
+        public float depth = 2;
 
         //ATTENTION IF YOU ADD A NEW VARIABLE PLS DONT FORGET TO ADD IT TO RESET!!!!!!!
         public void reset()
