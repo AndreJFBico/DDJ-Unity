@@ -7,13 +7,12 @@ public class EarthStun : AbilityBehaviour {
     protected override void Awake()
     {
         explosion = Resources.Load("Prefabs/Explosions/earthExplosion") as GameObject;
+        damage = 1;
     }
 
     protected override void Start()
     {
         base.Start();
-        //This has to change one thing is the damage the enemy does when it touches the player the other is the ranged projectile damage
-        damage = EnemyStats.Earth.damage;
         type = Elements.EARTH;
     }
 
@@ -36,8 +35,9 @@ public class EarthStun : AbilityBehaviour {
     }
 
 
-    public override void initiate(GameObject startingObject)
+    public override void initiate(GameObject startingObject, float dmg)
     {
+        damage = dmg;
         ConstantForce constantForce = gameObject.AddComponent<ConstantForce>();
         constantForce.relativeForce = new Vector3(0.0f, 0.0f, AbilityStats.Earth.ability2.movementForce);
     }

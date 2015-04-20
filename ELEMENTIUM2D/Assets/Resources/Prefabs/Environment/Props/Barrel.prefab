@@ -190,8 +190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onFire: {fileID: 187582}
   canBurn: 0
-  previous: {fileID: 0}
-  next: {fileID: 0}
+  _connected: []
 --- !u!114 &11451426
 MonoBehaviour:
   m_ObjectHideFlags: 1

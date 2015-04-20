@@ -51,6 +51,7 @@ public class FireElement: ShootElement {
         if (!mainUnlocked)
             return;
 
+        float damage = AbilityStats.Fire.ability1.Damage;
         float attackSpeed = AbilityStats.Fire.ability1.attackSpeed;
         int projectileNumber = AbilityStats.Fire.ability1.projectile_number;
 
@@ -58,7 +59,7 @@ public class FireElement: ShootElement {
         {
             canMain = false;
             Invoke("resetMain", attackSpeed);
-            fire(attackSpeed, projectileNumber, projectile1);
+            fire(attackSpeed, projectileNumber, damage, projectile1);
         }
     }
 
@@ -83,6 +84,7 @@ public class FireElement: ShootElement {
         if (!terciaryUnlocked)
             return;
 
+        float damage = AbilityStats.Fire.ability3.Damage;
         float attackSpeed = AbilityStats.Fire.ability3.attackSpeed;
         int projectileNumber = AbilityStats.Fire.ability3.projectile_number;
 
@@ -90,7 +92,7 @@ public class FireElement: ShootElement {
         {
             canTerciary = false;
             Invoke("resetTerciary", attackSpeed);
-            fire(attackSpeed, projectileNumber, projectile3);
+            fire(attackSpeed, projectileNumber, damage, projectile3);
         }
     }
 

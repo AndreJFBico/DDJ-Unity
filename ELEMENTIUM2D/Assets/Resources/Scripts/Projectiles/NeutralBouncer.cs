@@ -11,12 +11,12 @@ public class NeutralBouncer : AbilityBehaviour {
     protected override void Awake()
     {
         explosion = Resources.Load("Prefabs/Explosions/neutralExplosion") as GameObject;
+        damage = 1;
     }
 
     protected override void Start()
     {
         base.Start();
-        damage = AbilityStats.Neutral.ability3.damage;
         Invoke("destroyClone", 6f);
         type = Elements.NEUTRAL;     
     }
@@ -85,7 +85,8 @@ public class NeutralBouncer : AbilityBehaviour {
         Destroy(gameObject);
     }
 
-    public override void initiate(GameObject startingObject)
+    public override void initiate(GameObject startingObject, float dmg)
     {
+        damage = dmg;
     }
 }

@@ -61,8 +61,9 @@ public class EarthShield : AbilityBehaviour {
         }
     }
 
-    public override void initiate(GameObject startingObject)
+    public override void initiate(GameObject startingObject, float dmg)
     {
+        damage = dmg;
         transform.position = startingObject.transform.position;
         transform.parent = startingObject.transform;
         transform.rotation = Quaternion.identity;

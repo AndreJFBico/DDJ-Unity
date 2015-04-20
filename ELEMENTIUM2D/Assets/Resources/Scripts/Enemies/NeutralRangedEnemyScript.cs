@@ -80,7 +80,7 @@ public class NeutralRangedEnemyScript : EnemyScript
             if (pathAgent.hasTarget())
             {
                 GameObject p = Instantiate(projectile, currentFireTransform.position, Quaternion.LookRotation(pathAgent.target.position - transform.position)) as GameObject;
-                p.GetComponent<AbilityBehaviour>().initiate(this.gameObject);
+                p.GetComponent<AbilityBehaviour>().initiate(this.gameObject, damage);
             }
             yield return new WaitForSeconds(EnemyStats.RangedNeutral.rangedAttackSpeed);
        }

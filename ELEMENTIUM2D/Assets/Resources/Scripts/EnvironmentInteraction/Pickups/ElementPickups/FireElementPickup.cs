@@ -17,5 +17,6 @@ public class FireElementPickup : Pickup
         //update ElementElement to unlock its main weapon;
         playerInteractions.updateActiveElements("fire");
         GameManager.Instance.Stats.lim_points++;
+        Destroy(transform.parent.gameObject);
     }
 }

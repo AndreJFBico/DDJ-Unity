@@ -35,7 +35,6 @@ public class NeutralElement : ShootElement
 
         updateUnlocked();
 
-        //attackSpeed = 0.25f;
     }
 
     public override void updateUnlocked()
@@ -50,6 +49,7 @@ public class NeutralElement : ShootElement
         if (!mainUnlocked)
             return;
 
+        float damage = AbilityStats.Neutral.ability1.Damage;
         float attackSpeed = AbilityStats.Neutral.ability1.attackSpeed;
         int projectileNumber = AbilityStats.Neutral.ability1.projectile_number;
 
@@ -57,7 +57,7 @@ public class NeutralElement : ShootElement
         {
             canMain = false;
             Invoke("resetMain", attackSpeed);
-            fire(attackSpeed, projectileNumber, projectile1);
+            fire(attackSpeed, projectileNumber, damage, projectile1);
         }
     }
 
@@ -66,6 +66,7 @@ public class NeutralElement : ShootElement
         if (!secondaryUnlocked)
             return;
 
+        float damage = AbilityStats.Neutral.ability2.Damage;
         float attackSpeed = AbilityStats.Neutral.ability2.attackSpeed;
         int projectileNumber = AbilityStats.Neutral.ability2.projectile_number;
 
@@ -73,7 +74,7 @@ public class NeutralElement : ShootElement
         {
             canSecondary = false;
             Invoke("resetSecondary", attackSpeed);
-            fire(attackSpeed, projectileNumber, projectile2);
+            fire(attackSpeed, projectileNumber, damage, projectile2);
         }
     }
 
@@ -82,6 +83,7 @@ public class NeutralElement : ShootElement
         if (!terciaryUnlocked)
             return;
 
+        float damage = AbilityStats.Neutral.ability3.Damage;
         float attackSpeed = AbilityStats.Neutral.ability3.attackSpeed;
         int projectileNumber = AbilityStats.Neutral.ability3.projectile_number;
 
@@ -89,7 +91,7 @@ public class NeutralElement : ShootElement
         {
             canTerciary = false;
             Invoke("resetTerciary", attackSpeed);
-            fire(attackSpeed, projectileNumber, projectile3);
+            fire(attackSpeed, projectileNumber, damage, projectile3);
         }
     }
 }

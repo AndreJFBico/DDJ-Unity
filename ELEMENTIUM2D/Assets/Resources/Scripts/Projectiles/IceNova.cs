@@ -8,12 +8,12 @@ public class IceNova : AbilityBehaviour
     protected override void Awake()
     {
         explosion = Resources.Load("Prefabs/Explosions/frostExplosion") as GameObject;
+        damage = 1;
     }
 
     protected override void Start()
     {
         base.Start();
-        damage = AbilityStats.Neutral.ability3.damage;
         Invoke("destroyClone", 6f);
         type = Elements.FROST;
     }
@@ -44,9 +44,10 @@ public class IceNova : AbilityBehaviour
         Destroy(gameObject);
     }
 
-    public override void initiate(GameObject startingObject)
+    public override void initiate(GameObject startingObject, float dmg)
     {
         // Rotates the missile randomly
+        damage = dmg;
         int result = Random.Range(0, 360);
         transform.Rotate(new Vector3(0.0f, result, 0.0f));
     }

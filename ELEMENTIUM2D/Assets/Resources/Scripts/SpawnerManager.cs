@@ -74,8 +74,10 @@ public class SpawnerManager : MonoBehaviour {
         _spawners.Remove(spawner);
         if(_spawners.Count < 1)
         {
-            GameObject treasure = (GameObject)Instantiate(_treasure, spawner.transform.position, spawner.transform.rotation);
+            GameObject treasure = ChestManager.Instance.randomChest();//(GameObject)Instantiate(_treasure, spawner.transform.position, spawner.transform.rotation);
             treasure.transform.parent = gameObject.transform.parent;
+            treasure.transform.position = spawner.transform.position;
+            treasure.transform.rotation = spawner.transform.rotation;
             GameManager.Instance.Player.GetComponent<Player>().createFloatingText("Treasure Appeared!");
         }
         Destroy(spawner.gameObject);

@@ -6,7 +6,6 @@ using Includes;
 
 public class SkillTreeManager : MonoBehaviour
 {
-
     private Transform availablePoints;
 
     private Transform infobox;

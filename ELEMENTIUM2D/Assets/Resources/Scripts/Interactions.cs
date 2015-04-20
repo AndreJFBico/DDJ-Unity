@@ -135,14 +135,6 @@ public class Interactions : MonoBehaviour {
 
     public int CurrentElement { get { return _currentElement; } set { _currentElement = value; } }
 
-    private void cycleElements()
-    {
-        while (true)
-        {
-            
-        }
-    }
-
     #region Change Element
     public void changeCurrentElement(bool forward, bool backward)
     {

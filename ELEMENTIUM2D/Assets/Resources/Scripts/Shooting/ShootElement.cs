@@ -50,7 +50,7 @@ public class ShootElement : MonoBehaviour
         gunBlast2.SetActive(false);
     }
 
-    protected void fire(float attackSpeed, int projectileNumber, GameObject bulletPrefab)
+    protected void fire(float attackSpeed, int projectileNumber, float damage, GameObject bulletPrefab)
     {
         gunBlast1.SetActive(true);
         gunBlast2.SetActive(true);
@@ -60,7 +60,7 @@ public class ShootElement : MonoBehaviour
             GameObject bullet = (GameObject)Instantiate(bulletPrefab, barrelEnd.position, rotator.localRotation);
             bullet.transform.Rotate(new Vector3(-90, 0, 0));
             // Invokes ability specific movement behaviour
-            bullet.GetComponent<AbilityBehaviour>().initiate(gameObject);
+            bullet.GetComponent<AbilityBehaviour>().initiate(gameObject, damage);
             bullet.name = bulletPrefab.name;
 
         }

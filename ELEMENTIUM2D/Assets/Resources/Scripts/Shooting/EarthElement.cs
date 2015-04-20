@@ -49,6 +49,7 @@ public class EarthElement : ShootElement
         if (!mainUnlocked)
             return;
 
+        float damage = AbilityStats.Earth.ability1.Damage;
         float attackSpeed = AbilityStats.Earth.ability1.attackSpeed;
         int projectileNumber = AbilityStats.Earth.ability1.projectile_number;
 
@@ -56,7 +57,7 @@ public class EarthElement : ShootElement
         {
             canMain = false;
             Invoke("resetMain", attackSpeed);
-            fire(attackSpeed, projectileNumber, projectile1);
+            fire(attackSpeed, projectileNumber, damage, projectile1);
         }
     }
 
@@ -65,6 +66,7 @@ public class EarthElement : ShootElement
         if (!secondaryUnlocked)
             return;
 
+        float damage = AbilityStats.Earth.ability2.Damage;
         float attackSpeed = AbilityStats.Earth.ability2.attackSpeed;
         int projectileNumber = AbilityStats.Earth.ability2.projectile_number;
 
@@ -72,7 +74,7 @@ public class EarthElement : ShootElement
         {
             canSecondary = false;
             Invoke("resetSecondary", attackSpeed);
-            fire(attackSpeed, projectileNumber, projectile2);
+            fire(attackSpeed, projectileNumber, damage, projectile2);
         }
     }
 
@@ -81,6 +83,7 @@ public class EarthElement : ShootElement
         if (!terciaryUnlocked)
             return;
 
+        float damage = AbilityStats.Earth.ability3.Damage;
         float attackSpeed = AbilityStats.Earth.ability3.attackSpeed;
         int projectileNumber = AbilityStats.Earth.ability3.projectile_number;
 
@@ -88,7 +91,7 @@ public class EarthElement : ShootElement
         {
             canTerciary = false;
             Invoke("resetTerciary", attackSpeed);
-            fire(attackSpeed, projectileNumber, projectile3);
+            fire(attackSpeed, projectileNumber, damage, projectile3);
         }
     }
 }

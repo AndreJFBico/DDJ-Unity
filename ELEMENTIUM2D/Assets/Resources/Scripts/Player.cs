@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Includes;
+using System;
 
 public class Player : Agent {
 
@@ -10,6 +11,18 @@ public class Player : Agent {
     private CharacterMove characterMoveScrpt;
     private bool alphaed = false;
 
+    protected Func<float> maxHealth;
+    protected Func<float, float> setMaxHealth;
+    protected Func<float> health;
+    protected Func<float, float> addHealth;
+    protected Func<float> damage;
+    protected Func<float> defence;
+    protected Func<float> waterResist;
+    protected Func<float> earthResist;
+    protected Func<float> fireResist;
+
+    protected MultiplierManager multiplierManager;
+
     private float previousSpeed = 0;
 
     void Awake()
@@ -17,14 +30,20 @@ public class Player : Agent {
         base.Awake();
         GameManager.Instance.sceneInit();
         OilPuddleManager.Instance.sceneInit();
-        maxHealth = GameManager.Instance.Stats.maxHealth;
-        health = maxHealth;
-        damage = GameManager.Instance.Stats.damage;
-        defence = GameManager.Instance.Stats.defence;
-        GameManager.Instance.Stats.getDefence();
-        waterResist = GameManager.Instance.Stats.waterResist;
-        earthResist = GameManager.Instance.Stats.earthResist;
-        fireResist = GameManager.Instance.Stats.fireResist;
+        ChestManager.Instance.sceneInit();
+        maxHealth = () => { return GameManager.Instance.Stats.maxHealth; };
+        setMaxHealth = (a) => { float diff = a - GameManager.Instance.Stats.maxHealth;
+                                GameManager.Instance.Stats.maxHealth = a;
+                                GameManager.Instance.Stats.health += a;
+                                return 1;};
+        health = () => { return GameManager.Instance.Stats.health; };
+        addHealth = (a) => { return GameManager.Instance.Stats.health += a; };
+        damage = () => { return GameManager.Instance.Stats.damage; };
+        defence = () => { return GameManager.Instance.Stats.defence; };
+        waterResist = () => { return GameManager.Instance.Stats.waterResist; };
+        earthResist = () => { return GameManager.Instance.Stats.earthResist; };
+        fireResist = () => { return GameManager.Instance.Stats.fireResist; };
+        multiplierManager = GetComponent<MultiplierManager>();
         characterMoveScrpt = transform.gameObject.GetComponent<CharacterMove>();
         GameManager.Instance.Stats.dumpStats();
         InvokeRepeating("blink", 0f, 0.10f);      
@@ -101,6 +120,11 @@ public class Player : Agent {
         base.OnCollisionExit(collision);
     }
 
+    public override bool isHurt()
+    {
+        return health() < maxHealth();
+    }
+
     public override void takeDamage(float amount, Elements type)
     {
         if (timerRunning)
@@ -123,25 +147,25 @@ public class Player : Agent {
         switch (type)
         {
             case Elements.NEUTRAL:
-                health -= amount * (1 - ((defence + waterResist + earthResist + fireResist) / 100.0f));
+                addHealth(-amount * (1 - (defence() / 100.0f))); 
                 break;
 
             case Elements.FIRE:
-                health -= amount * (1 - ((defence + fireResist) / 100.0f));
+                addHealth(-amount * (1 - ((defence() + fireResist()) / 100.0f)));
                 break;
 
             case Elements.EARTH:
-                health -= amount * (1 - ((defence + earthResist) / 100.0f));
+                addHealth(-amount * (1 - ((defence() + earthResist()) / 100.0f)));
                 break;
 
             case Elements.FROST:
-                health -= amount * (1 - ((defence + waterResist) / 100.0f));
+                addHealth(-amount * (1 - ((defence() + waterResist()) / 100.0f)));
                 break;
 
             default:
                 break;
         }
-        if (health <= 0)
+        if (health() <= 0)
         {
             Application.LoadLevel("SkillTree");
         }
@@ -149,7 +173,7 @@ public class Player : Agent {
 
     protected virtual void OnGUI()
     {
-        float percentage = health / maxHealth;
+        float percentage = health() / maxHealth();
         healthbar.transform.localScale = new Vector3(percentage, 1.0f, 1.0f);
     }
 
@@ -166,5 +190,11 @@ public class Player : Agent {
     public override void createFloatingText(string message)
     {
         FloatingText.Instance.createFloatingText(transform, message, Color.yellow);
-    }    
+    }
+
+    public void increaseMultiplier(int inc)
+    {
+        multiplierManager.increaseMultiplier(inc);
+    }
+
 }

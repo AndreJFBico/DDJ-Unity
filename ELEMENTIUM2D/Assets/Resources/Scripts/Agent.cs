@@ -8,13 +8,6 @@ public class Agent : ElementiumMonoBehaviour
     public Transform healthbar_background;
     public Transform healthbar;
     protected SpriteRenderer figure;
-    protected float maxHealth;
-    protected float health;
-    protected float damage;
-    protected float defence;
-    protected float waterResist;
-    protected float earthResist;
-    protected float fireResist;
     protected bool centerHealthBar = false;
 
     protected void Awake()
@@ -37,10 +30,7 @@ public class Agent : ElementiumMonoBehaviour
         healthbar.transform.localScale = new Vector3(percentage, 1.0f, 1.0f);
     }*/
 
-    public bool isHurt()
-    {
-        return health < maxHealth;
-    }
+    public virtual bool isHurt() { return false; }
 
     public virtual void OnTriggerExit(Collider collision) { }
 

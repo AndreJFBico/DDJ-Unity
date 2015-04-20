@@ -17,5 +17,6 @@ public class WaterElementPickup : Pickup
         //update ElementElement to unlock its main weapon;
         playerInteractions.updateActiveElements("water");
         GameManager.Instance.Stats.lim_points++;
+        Destroy(transform.parent.gameObject);
     }
 }
