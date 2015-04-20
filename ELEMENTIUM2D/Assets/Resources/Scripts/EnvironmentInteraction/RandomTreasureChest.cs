@@ -11,7 +11,7 @@ public class RandomTreasureChest : TemporaryTreasureChest {
     public override void Start()
     {
         base.Start();
-        increase = 1.02f; // 10%
+        increase = 1.05f; // 10%
         stats = new List<string>();
         stats.Add("maxHealth");
         stats.Add("damage");
