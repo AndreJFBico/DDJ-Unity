@@ -19,6 +19,8 @@ public class MapDoor : MonoBehaviour {
 	public int normalTries = 0;
 	public int backTries = 0;
 
+	public string staticDoor = "";
+
     public Transform doorNavmesh;
 
 	public void resetDoor(){

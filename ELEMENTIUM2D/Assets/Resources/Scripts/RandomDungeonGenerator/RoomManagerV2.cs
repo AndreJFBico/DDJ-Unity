@@ -16,8 +16,10 @@ public class RoomManagerV2 : MonoBehaviour {
 	System.Diagnostics.Stopwatch watch;
 
 	public Dictionary<int, string> rooms = new Dictionary<int, string>();
+	public Dictionary<string, string> doors = new Dictionary<string, string>();
 	public Dictionary<string, List<int>> groups = new Dictionary<string, List<int>>();
 	public Dictionary<int, DungeonPart> parts = new Dictionary<int, DungeonPart>();
+	public Dictionary<string, string> doorsUsage = new Dictionary<string, string>();
 	public ResourcesPool pool;
 	public DungeonRoom dungeonRoomsHead = null;
 	public DungeonPart firstPart = null;
@@ -83,6 +85,17 @@ public class RoomManagerV2 : MonoBehaviour {
 			groups.Add(content[0], list);
 		}
 		//dumpDictionary(groups);
+
+		//parse doors
+		line = theReader.ReadLine();
+		while (true)
+		{
+			line = theReader.ReadLine();
+			if (line == "::")
+				break;
+			string[] content = line.Split(' ');
+			doors.Add(content[0], content[1]);
+		}
 		
 		//parse dungeon
 		line = theReader.ReadLine(); //::dungeon
@@ -93,7 +106,7 @@ public class RoomManagerV2 : MonoBehaviour {
 		maxRandom = int.Parse(random[2]);
 		line = theReader.ReadLine(); //blank
 
-		Dictionary<int, List<KeyValuePair<int,bool>>> gotos = new Dictionary<int, List<KeyValuePair<int, bool>>>();
+		Dictionary<int, List<KeyValuePair<int,KeyValuePair<bool, string>>>> gotos = new Dictionary<int, List<KeyValuePair<int, KeyValuePair<bool, string>>>>();
 		
 		int idcounter = 0;
 		while (true){
@@ -107,7 +120,7 @@ public class RoomManagerV2 : MonoBehaviour {
 			string[] part = line.Split(' ');
 			int partId = int.Parse(part[1]);
 			DungeonPart currentPart = new DungeonPart(partId);
-			gotos[partId] = new List<KeyValuePair<int,bool>>();
+			gotos[partId] = new List<KeyValuePair<int,KeyValuePair<bool, string>>>();
 			if(firstPart == null)
 				firstPart = currentPart;
 			while(true){
@@ -139,14 +152,19 @@ public class RoomManagerV2 : MonoBehaviour {
 				bool value = false;
 				if(target[1] == "Y")
 					value = true;
-				gotos[partId].Add(new KeyValuePair<int, bool>(key, value));
+				string d = "";
+				if(target.Count() > 2)
+					d = target[2];
+				gotos[partId].Add(new KeyValuePair<int, KeyValuePair<bool, string>>(key, new KeyValuePair<bool, string>(value, d)));
 			}
 			parts[partId] = currentPart;
 		}
-		foreach(KeyValuePair<int, List<KeyValuePair<int, bool>>> pair in gotos){
-			foreach(KeyValuePair<int, bool> kvp in pair.Value){
+		foreach(KeyValuePair<int, List<KeyValuePair<int, KeyValuePair<bool, string>>>> pair in gotos){
+			foreach(KeyValuePair<int, KeyValuePair<bool, string>> kvp in pair.Value){
 				int i = kvp.Key;
-				bool type = kvp.Value;
+				bool type = kvp.Value.Key;
+				string door = kvp.Value.Value;
+				doorsUsage[pair.Key + "+" + i] = door;
 				parts[pair.Key].addAdjacentEnd(parts[i], type);
 				parts[i].addAdjacentStart(parts[pair.Key]);
 			}
@@ -154,6 +172,7 @@ public class RoomManagerV2 : MonoBehaviour {
 		dumpParts();
 
 		theReader.Close();
+		Debug.Log(doorsUsage);
 		return;
 	}
 	
@@ -189,11 +208,10 @@ public class RoomManagerV2 : MonoBehaviour {
 		bool result = false;
 		if(previousRoom == null){ //first part
 			result = generateNode(part.getFirstNode(), null, part);
-			Debug.Log (result);
-
 		}
-		else //other parts
+		else{ //other parts
 			result = generateNode(part.getFirstNode(), previousRoom, part);
+		}
 		return result;
 	}
 
@@ -345,6 +363,13 @@ public class RoomManagerV2 : MonoBehaviour {
 			foreach(MapDoor door in currentRoom.doors){
 				if(door.used){
 					door.activateNavmesh();
+
+					if(door.staticDoor != ""){
+						GameObject go = Instantiate(Resources.Load("Prefabs/Environment/BreakableWalls/" + doors[door.staticDoor])) as GameObject;
+						go.transform.parent = door.transform;
+						go.transform.position = door.transform.position;
+					}
+
 					if(door.leadsTo.lastSearch < searchId){
 						queue.Enqueue( new KeyValuePair<DungeonRoom, KeyValuePair<MapDoor, int>>(door.leadsTo, new KeyValuePair<MapDoor, int>(door, currentDepth + 1)));
 					}
@@ -732,9 +757,14 @@ public class RoomManagerV2 : MonoBehaviour {
 				room.nodeId = currentNode.id;
 				room.randomGroup = currentNode.randomgroup;
 			}
+
 			newdoor.used = true;
 			newdoor.leadsTo = lastRoom;
 			newdoor.goesBackward = true;
+
+			if(lastRoom != null && lastRoom.partId != room.partId){
+				door.staticDoor = doorsUsage[lastRoom.partId + "+" + room.partId];
+			}
 			return true;
 		}
 	}
@@ -801,6 +831,8 @@ public class RoomManagerV2 : MonoBehaviour {
 									newdoor.resetDoor();
 									continue;
 								}
+
+								door.staticDoor = doorsUsage[room.partId + "+" + roomToConnectTo.partId];
 
 								//back to the original so it doesnt cause problems
 								toggleRooms(room, true, true);
