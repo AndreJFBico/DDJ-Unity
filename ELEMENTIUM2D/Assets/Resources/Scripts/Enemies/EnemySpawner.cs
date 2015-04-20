@@ -100,7 +100,6 @@ public class EnemySpawner : EnemyScript
 
     public override void Eliminate()
     {
-        GameManager.Instance.Player.GetComponent<Player>().increaseMultiplier(multiplier);
         if (_spawnerManager == null)
             Destroy(gameObject);
         else

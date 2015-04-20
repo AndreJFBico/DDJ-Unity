@@ -92,6 +92,7 @@ public class EnemyScript : Agent
         FloatingText.Instance.createFloatingText(transform, (int)totalDamage + " Damage", color);
         if(health <= 0)
         {
+            GameManager.Instance.Player.GetComponent<Player>().increaseMultiplier(multiplier);
             Eliminate();
         }
         if (health >= maxHealth)
@@ -139,7 +140,6 @@ public class EnemyScript : Agent
 
     public virtual void Eliminate()
     {
-        GameManager.Instance.Player.GetComponent<Player>().increaseMultiplier(multiplier);
         if (spawnScript != null)
         {
             health = maxHealth;
