@@ -78,6 +78,7 @@ public class DungeonPart {
 			value += "n";
 			value += " ";
 		}
+		value += "rooms: " + getNumberOfRooms();
 		Debug.Log(value);
 	}
 }

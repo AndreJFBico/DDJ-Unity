@@ -12,6 +12,9 @@ public class SkillTreeManager : MonoBehaviour
 
     private Transform predictBox;
 
+    [SerializeField]
+    private List<SkillTreeNode> allNodeList = new List<SkillTreeNode>();
+
     // Node being pointed at.
     Transform current;
 
@@ -73,28 +76,102 @@ public class SkillTreeManager : MonoBehaviour
         }
     }
 
-    void iterateAndCheckDepth(int depth, List<SkillTreeNode> nodeList)
+    bool checkIfHasOneEnabled(SkillTreeNode node, bool checkForUnknown)
+    {
+        foreach (SkillTreeNode n in node.sucessors)
+        {
+            if(checkForUnknown)
+            {
+                if (n.gameObject.activeSelf && !n.isUknown())
+                    return true;
+            }
+            else
+            {
+                if (n.gameObject.activeSelf)
+                    return true;
+            }
+
+        }
+        return false;
+    }
+
+    bool checkIfHasOneSelected(SkillTreeNode node)
+    {
+        foreach (SkillTreeNode n in node.sucessors)
+        {
+            if (n.selected)
+                return true;
+        }
+        return false;
+    }
+
+    void iterateAndAddUnknowns(List<SkillTreeNode> nodeList)
     {
         List<SkillTreeNode> nextNodeList = new List<SkillTreeNode>();
         foreach (SkillTreeNode n in nodeList)
         {
-            // Checks if the node is at the correct depth if its limit is ok and if its father is disabled
-            if (depth > GameManager.Instance.Stats.depth || !n.checkIndividualLimit() || !n.fatherNode.gameObject.activeSelf)
+            if (!n.startNode )
             {
-                if (n.fatherNode.gameObject.activeSelf && !n.fatherNode.isUknown())
+                if (!n.isSearched())
                 {
-                    n.setUnknown();
-                    //n.transform.gameObject.SetActive(false);
-                }          
-                else
+                    if (!checkIfHasOneEnabled(n, true))
+                    {
+                        n.transform.gameObject.SetActive(false);
+                    }
+                    else
+                    {
+                        if(!n.transform.gameObject.activeSelf)
+                        {
+                            n.transform.gameObject.SetActive(true);
+                            n.setUnknown();
+                        }
+                    }
+                    n.setSearched();
+                    foreach (SkillTreeNode ns in n.sucessors)
+                    {
+                        if (!ns.isSearched())
+                        {
+                            nextNodeList.Add(ns);
+                        }
+                    }
+                }
+            }
+        }
+        if (nextNodeList.Count > 0)
+            iterateAndAddUnknowns(nextNodeList);
+    }
+
+    void iterateAndCheckDepth(int depth, List<SkillTreeNode> nodeList)
+    {
+        bool depthIncrease = false;
+        List<SkillTreeNode> nextNodeList = new List<SkillTreeNode>();
+        foreach (SkillTreeNode n in nodeList)
+        {
+            if(!n.startNode)
+            {
+                // Checks if the node is at the correct depth if its limit is ok and if its father is disabled
+                if (depth > GameManager.Instance.Stats.depth || !n.checkIndividualLimit())
                 {
                     n.transform.gameObject.SetActive(false);
                 }
-            }
-            nextNodeList.AddRange(n.sucessors);                 
+                if (!n.isSearched())
+                {
+                    n.setSearched();
+                    foreach(SkillTreeNode ns in n.sucessors)
+                    {
+                        if (!ns.isSearched())
+                        {
+                            nextNodeList.Add(ns);
+                            depthIncrease = true;
+                        }
+                    }
+                }  
+            }    
         }
+        if (depthIncrease)
+            depth++;
         if (nextNodeList.Count > 0 )
-            iterateAndCheckDepth(depth + 1, nextNodeList);
+            iterateAndCheckDepth(depth, nextNodeList);
     }
 
     void checkDepth()
@@ -105,6 +182,9 @@ public class SkillTreeManager : MonoBehaviour
         }
         SkillTreeNode node = startNode.GetComponent<SkillTreeNode>();
         iterateAndCheckDepth(1, node.sucessors);
+        setAllUnsearched(false);
+        iterateAndAddUnknowns(node.sucessors);
+        setAllUnsearched(false);
     }
 
     void iterateAndSet(List<SkillTreeNode> nodeList)
@@ -112,8 +192,13 @@ public class SkillTreeManager : MonoBehaviour
         List<SkillTreeNode> nextNodeList = new List<SkillTreeNode>();
         foreach (SkillTreeNode n in nodeList)
         {
-            n.transform.parent = n.fatherNode.transform;
-            nextNodeList.AddRange(n.sucessors);
+            if (n.father != null)
+                n.transform.SetParent(n.father.transform);
+            if(!n.isSearched())
+            {
+                nextNodeList.AddRange(n.sucessors);
+                n.setSearched();
+            }
         }
         if (nextNodeList.Count > 0)
             iterateAndSet(nextNodeList);
@@ -127,6 +212,47 @@ public class SkillTreeManager : MonoBehaviour
         }
         SkillTreeNode node = startNode.GetComponent<SkillTreeNode>();
         iterateAndSet(node.sucessors);
+        setAllUnsearched(false);
+    }
+
+    bool findNode(List<SkillTreeNode> nodeList, int instanceToIgnore, int instanceToFind)
+    {
+        bool found = false;
+        List<SkillTreeNode> nextNodeList = new List<SkillTreeNode>();
+        foreach (SkillTreeNode n in nodeList)
+        {
+            if(!n.isSearched())
+            {
+                if (n.transform.GetInstanceID() == instanceToFind)
+                    found = true;
+                if (n.transform.GetInstanceID() != instanceToIgnore)
+                {
+                    if (n.selected)
+                    {
+                        foreach (SkillTreeNode sn in n.sucessors)
+                        {
+                            if (!sn.startNode && !sn.isSearched() && sn.isSearchable())
+                                nextNodeList.Add(sn);
+                        }
+                    }
+                }
+            }
+            n.setSearched();
+        }
+        if (found)
+            return true;
+        if (nextNodeList.Count > 0)
+            return findNode(nextNodeList, instanceToIgnore, instanceToFind);
+        return false;
+    }
+
+    public bool checkPath(SkillTreeNode currentNode, SkillTreeNode nodeToCheck)
+    {
+        setAllUnsearched(false);
+        startNode = GameObject.Find("Parent").transform;
+        bool retVal = findNode(startNode.GetComponent<SkillTreeNode>().sucessors, currentNode.transform.GetInstanceID(), nodeToCheck.transform.GetInstanceID());
+        setAllUnsearched(false);
+        return retVal;
     }
 
     void iterate(List<SkillTreeNode> nodeList)
@@ -149,23 +275,43 @@ public class SkillTreeManager : MonoBehaviour
             iterate(nextNodeList);
     }
 
+    void setAllUnsearched(bool unparent)
+    {
+        foreach(SkillTreeNode n in allNodeList)
+        {
+            if (unparent)
+                n.transform.SetParent(startNode);
+            n.setUnsearched();
+        }
+    }
+
     void iterateChildren(List<SkillTreeNode> nodeList)
     {
         List<SkillTreeNode> nextNodeList = new List<SkillTreeNode>();
         foreach (SkillTreeNode n in nodeList)
         {
-            n.setupHiearchy();
-            n.transform.parent = startNode;
-            nextNodeList.AddRange(n.sucessors);
-        }
+            if(!n.startNode)
+            {
+                n.setupHiearchy();
+                allNodeList.Add(n);
+                //n.transform.parent = startNode;
+                if (!n.isSearched())
+                {
+                    nextNodeList.AddRange(n.sucessors);
+                    n.setSearched();
+                }
+            }
+        }  
         if (nextNodeList.Count > 0)
             iterateChildren(nextNodeList);
     }
 
     public void setupHiearchy()
     {
+        allNodeList.Clear();
         startNode = GameObject.Find("Parent").transform;
         iterateChildren(startNode.GetComponent<SkillTreeNode>().sucessors);
+        setAllUnsearched(true);
     }
 
     public void updatePointsText()

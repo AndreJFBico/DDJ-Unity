@@ -1,0 +1,176 @@
+fileFormatVersion: 2
+guid: 374584ac0099e9743910488ec3c2a40f
+timeCreated: 1429555696
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: telegraphEnemy_0
+    21300002: telegraphEnemy_1
+    21300004: telegraphEnemy_2
+    21300006: telegraphEnemy_3
+    21300008: telegraphEnemy_4
+    21300010: telegraphEnemy_5
+    21300012: telegraphEnemy_6
+    21300014: telegraphEnemy_7
+    21300016: telegraphEnemy_8
+    21300018: telegraphEnemy_9
+    21300020: telegraphEnemy_10
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: telegraphEnemy_0
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 58
+        width: 251
+        height: 295
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: telegraphEnemy_1
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 58
+        width: 252
+        height: 295
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: telegraphEnemy_2
+      rect:
+        serializedVersion: 2
+        x: 1896
+        y: 58
+        width: 270
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: telegraphEnemy_3
+      rect:
+        serializedVersion: 2
+        x: 2624
+        y: 49
+        width: 270
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: telegraphEnemy_4
+      rect:
+        serializedVersion: 2
+        x: 3350
+        y: 38
+        width: 252
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: telegraphEnemy_5
+      rect:
+        serializedVersion: 2
+        x: 4805
+        y: 58
+        width: 251
+        height: 295
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: telegraphEnemy_6
+      rect:
+        serializedVersion: 2
+        x: 5531
+        y: 60
+        width: 252
+        height: 293
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: telegraphEnemy_7
+      rect:
+        serializedVersion: 2
+        x: 6241
+        y: 60
+        width: 270
+        height: 293
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: telegraphEnemy_8
+      rect:
+        serializedVersion: 2
+        x: 6950
+        y: 38
+        width: 287
+        height: 283
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: telegraphEnemy_9
+      rect:
+        serializedVersion: 2
+        x: 7712
+        y: 38
+        width: 252
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: telegraphEnemy_10
+      rect:
+        serializedVersion: 2
+        x: 8458
+        y: 47
+        width: 234
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -7,7 +7,7 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Resources/Scenes/SkillTree.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/Resources/Scenes/JLTest.unity
   - enabled: 1
     path: Assets/Resources/Scenes/defaultScene.unity

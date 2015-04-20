@@ -23,6 +23,12 @@
 
 //Player.cs ATTENTION THIS SHOULD NOT BE HERE, this should either be implemented in the enemies themselves or in the corresponding projectile behaviours
 
+// Skill tree rework 
+- remove father nodes to only have sucessor nodes
+- add reroute nodes to the unity hierarchy to allow nodes with multiple fathers
+- Onclick check must do 2 searches to see if a node can be disabled
+- Onclick check must check if theres at least 1 selected node in sucessors
+
 ####################### OLD STORE
 // Memory leak in instanciating and destroying storeUi elements and lists.
 // Store ui add extra variable instead of reusing UIpoints

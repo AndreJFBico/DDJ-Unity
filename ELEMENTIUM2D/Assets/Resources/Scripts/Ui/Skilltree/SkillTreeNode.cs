@@ -17,9 +17,9 @@ public class SkillTreeNode : MonoBehaviour
 
     public List<SkillTreeNode> sucessors = new List<SkillTreeNode>();
 
-    public SkillTreeNode fatherNode;
-
     public MathOperations operation;
+
+    public SkillTreeNode father;
 
     // Checks if the node has been selected by the player
     public bool selected = false;
@@ -44,9 +44,14 @@ public class SkillTreeNode : MonoBehaviour
 
     public void setupHiearchy()
     {
-        if (!startNode)
-            fatherNode = transform.parent.GetComponent<SkillTreeNode>();
         sucessors.Clear();
+        if (!startNode)
+        {
+            father = transform.parent.GetComponent<SkillTreeNode>();
+            sucessors.Add(transform.parent.GetComponent<SkillTreeNode>());
+        }
+            
+        
         foreach (Transform t in transform)
         {
             sucessors.Add(t.GetComponent<SkillTreeNode>());
@@ -64,18 +69,23 @@ public class SkillTreeNode : MonoBehaviour
             gameObject.GetComponent<Image>().color = new Color(1f, 1f, 1f, 1.00f);      
     }
 
+
+    //Attentiont lines will be repeated
     void OnGUI()
     {
-        if (fatherNode != null)
+        foreach(SkillTreeNode n in sucessors)
         {
-            GuiHelper.DrawLine(new Vector2(GetComponent<RectTransform>().position.x, Screen.height - GetComponent<RectTransform>().position.y), new Vector2(fatherNode.GetComponent<RectTransform>().position.x, Screen.height - fatherNode.GetComponent<RectTransform>().position.y), Color.white);
-            Debug.DrawLine(
-                new Vector2(
-                    GetComponent<RectTransform>().position.x,
-                    GetComponent<RectTransform>().position.y), 
-                new Vector2(
-                    fatherNode.GetComponent<RectTransform>().position.x, 
-                    fatherNode.GetComponent<RectTransform>().position.y), Color.white);
+            if(n.gameObject.activeSelf && !n.isUknown())
+            {
+                GuiHelper.DrawLine(new Vector2(GetComponent<RectTransform>().position.x, Screen.height - GetComponent<RectTransform>().position.y), new Vector2(n.GetComponent<RectTransform>().position.x, Screen.height - n.GetComponent<RectTransform>().position.y), Color.white);
+                Debug.DrawLine(
+                    new Vector2(
+                        GetComponent<RectTransform>().position.x,
+                        GetComponent<RectTransform>().position.y),
+                    new Vector2(
+                        n.GetComponent<RectTransform>().position.x,
+                        n.GetComponent<RectTransform>().position.y), Color.white);
+            }
         }
     }
 
@@ -130,6 +140,7 @@ public class SkillTreeNode : MonoBehaviour
                                 manager.cur_lim_points -= 1;
                                 manager.updatePointsText();
                                 manager.predictChanges();
+                                return;
                             }
                         }
                     }
@@ -142,6 +153,7 @@ public class SkillTreeNode : MonoBehaviour
                             manager.cur_lim_points += 1;
                             manager.updatePointsText();
                             manager.predictChanges();
+                            return;
                         }
                     }
                 }
@@ -158,17 +170,27 @@ public class SkillTreeNode : MonoBehaviour
 
     public void MouseCallBack()
     {
-        if (fatherNode != null && !lockedForever && !unknown)
+        if (!lockedForever && !unknown)
         {
-            if (fatherNode.selected && !selected)
+            //not selected
+            if (!selected)
             {
-                checkIfLimits();
+                foreach (SkillTreeNode node in sucessors)
+                {
+                    if(node.selected)
+                    {
+                        checkIfLimits();
+                        return;
+                    }
+                }
             }
-            else if (fatherNode.selected && selected)
+            else // selected
             {
                 foreach(SkillTreeNode n in sucessors)
                 {
-                    if(n.selected)
+                    // Checks if theres a path to the selected path
+                    // if there isnt return
+                    if(!n.startNode && (n.selected && !manager.checkPath(this, n)))
                     {
                         return;
                     }                        
@@ -193,9 +215,19 @@ public class SkillTreeNode : MonoBehaviour
         return changeWithValue;
     }
 
+    public void setUnsearched()
+    {
+        searched = false;
+    }
+
     public void setSearched()
     {
         searched = true;
+    }
+
+    public bool isSearched()
+    {
+        return searched;
     }
 
     public bool isSearchable()
@@ -216,10 +248,5 @@ public class SkillTreeNode : MonoBehaviour
     public bool isUknown()
     {
         return unknown;
-    }
-
-    public SkillTreeNode getFatherNode()
-    {
-        return fatherNode;
     }
 }

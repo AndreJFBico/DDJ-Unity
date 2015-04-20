@@ -6,6 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using System.ComponentModel;
+using System.IO;
 
 namespace Includes
 {
@@ -369,6 +370,9 @@ namespace Includes
         public float damage = def_damage;
         public float attackSpeed = def_attackSpeed; //Player AttackSpeed is to be incremented by int numbers
         public float defence = def_defence;
+
+        public Func<float> getDefence = () => { return def_defence * 2.0f; };
+
         public float waterResist = 0;
         public float earthResist = 0;
         public float fireResist = 0;
@@ -417,13 +421,14 @@ namespace Includes
         public float lim_secondary_fire_level = 0;
         public float lim_terciary_fire_level = 0;
 
-        public float lim_primary_water_level = 0;
-        public float lim_secondary_water_level = 0;
-        public float lim_terciary_water_level = 0;
+        public float lim_primary_water_level = 1;
+        public float lim_secondary_water_level = 1;
+        public float lim_terciary_water_level = 1;
 
         public float lim_points = 4;
 
-        public float depth = 1;
+        public float depth = 3;
+
 
         //ATTENTION IF YOU ADD A NEW VARIABLE PLS DONT FORGET TO ADD IT TO RESET!!!!!!!
         public void reset()
@@ -553,6 +558,8 @@ namespace Includes
             waterPuddle = (GameObject)Resources.Load("Prefabs/Environment/WaterPuddle");
             oilPuddle = (GameObject)Resources.Load("Prefabs/Environment/OilPuddle");
             neutralEnemies = Resources.LoadAll("Prefabs/Enemies/Neutral") as GameObject[];
+
+            // Obtains all variable names within player stats
             statNames = new List<string>();
             Type type = typeof(PlayerStats); // Get type pointer
             FieldInfo[] fields = type.GetFields(); // Obtain all fields
