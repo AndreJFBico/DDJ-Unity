@@ -11,6 +11,7 @@ GameObject:
   - 114: {fileID: 11415888}
   - 114: {fileID: 11492486}
   - 65: {fileID: 6536748}
+  - 208: {fileID: 20889564}
   m_Layer: 13
   m_Name: BreakableWater
   m_TagString: Untagged
@@ -172,6 +173,21 @@ MonoBehaviour:
   type: 0
   position: 0
   list: []
+--- !u!208 &20889564
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 102198}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: .5, y: .5, z: .683947027}
+  m_MoveThreshold: .100000001
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: .0148525797}
+  m_TimeToStationary: .5
 --- !u!212 &21212774
 SpriteRenderer:
   m_ObjectHideFlags: 1

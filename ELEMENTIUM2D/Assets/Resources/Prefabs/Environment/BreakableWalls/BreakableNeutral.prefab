@@ -45,6 +45,7 @@ GameObject:
   - 114: {fileID: 11437336}
   - 114: {fileID: 11451234}
   - 65: {fileID: 6597100}
+  - 208: {fileID: 20842626}
   m_Layer: 13
   m_Name: BreakableNeutral
   m_TagString: Untagged
@@ -172,6 +173,21 @@ MonoBehaviour:
   type: 0
   position: 0
   list: []
+--- !u!208 &20842626
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 196906}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: .5, y: .5, z: .692961514}
+  m_MoveThreshold: .100000001
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: -.00120794796}
+  m_TimeToStationary: .5
 --- !u!212 &21225254
 SpriteRenderer:
   m_ObjectHideFlags: 1

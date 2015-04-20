@@ -11,6 +11,7 @@ GameObject:
   - 114: {fileID: 11484844}
   - 114: {fileID: 11493462}
   - 65: {fileID: 6559418}
+  - 208: {fileID: 20867744}
   m_Layer: 13
   m_Name: BreakableEarth
   m_TagString: Untagged
@@ -172,6 +173,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
+--- !u!208 &20867744
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149998}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: .5, y: .5, z: .677402496}
+  m_MoveThreshold: .100000001
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: .00389182591}
+  m_TimeToStationary: .5
 --- !u!212 &21224378
 SpriteRenderer:
   m_ObjectHideFlags: 1
