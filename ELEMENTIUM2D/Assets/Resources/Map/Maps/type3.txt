@@ -1,43 +1,65 @@
 ::rooms
-1 Rectangle
-2 Corridor
-3 Cross
-4 Curve
-5 Type1
+1 Starting
+2 Neutral_Cross
+3 Neutral_Curve
+4 Neutral_Rectangle
+5 Earth_Cross
+6 Earth_Type1
+7 Element_Earth
+8 Fire_Corridor
+9 Fire_Curve
+10 Fire_Rectangle
+11 Element_Fire
+12 Ice_Cross
 ::
 ::groups
-a 1
-b 1
-c 4 3 2
-d 3 2
-e 1 3
-f 3
+a 2 3 4
+b 5 6
+c 8 9 10
+d 2 4
 ::
 ::dungeon
-Random 50 100
+Random 0 0
 
 :part 1
-S 1 f
-S 1 f
-R f 3 3 f
-S 1 f
-:goto 3|Y 2|Y
+S 1 0
+:goto 2|N 4|N 8|Y
 
 :part 2
-R d 8 8 f
-:goto 6|Y 5|Y
-
-:part 5
-S 1 f
-R e 4 5 f
-:goto
-
-:part 6
-S 1 f
-R e 3 4 f
-:goto 3|Y
+R b 2 4 0
+:goto 3|N
 
 :part 3
-R e 10 10 f
+R b 2 4 0
+S 7 0
+R b 2 4 0
+:goto 6|Y
+
+:part 4
+R c 2 4 0
+:goto 5|N
+
+:part 5
+R c 2 4 0
+S 11 0
+R c 2 4 0
+:goto 6|N
+
+:part 6
+R d 1 1 0
+:goto 7|N
+
+:part 7
+R d 1 1 0
+R a 3 6 0
+S 12 0
 :goto
+
+:part 8
+R a 1 1 0
+:goto 9|Y
+
+:part 9
+R d 1 1 0
+:goto 7|N
 ::

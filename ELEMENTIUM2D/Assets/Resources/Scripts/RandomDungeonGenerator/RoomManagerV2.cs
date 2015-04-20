@@ -252,9 +252,11 @@ public class RoomManagerV2 : MonoBehaviour {
 
                     if (!generation){
                         Transform scenery = currentRoom.transform.FindChild("Scenery/Spawners");//.gameObject.SetActive(true);
-                        if(scenery != null)
-                            scenery.GetComponent<SpawnerManager>().generateSpawners();
-                    }
+                        if(scenery != null){
+							if(scenery.GetComponent<SpawnerManager>() != null)
+                            	scenery.GetComponent<SpawnerManager>().generateSpawners();
+						}
+					}
 				}
 			}else{
 				if(!currentRoom.parked){
@@ -371,7 +373,9 @@ public class RoomManagerV2 : MonoBehaviour {
             {
                 if (String.Compare(c.name, "Spawners") == 0)
                 {
-                    c.GetComponent<SpawnerManager>().disableSpawners();
+                    if(c.GetComponent<SpawnerManager>() != null){
+						c.GetComponent<SpawnerManager>().disableSpawners();
+					}
                     continue;
                 }
                 foreach (Transform k in c)
