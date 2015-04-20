@@ -26,6 +26,8 @@ public class RoomManagerV2 : MonoBehaviour {
 	public int minRandom = 0;
 	public int maxRandom = 0;
 
+	public int timeLimit = 5000;
+
 	private Vector3 cemiteryPosition = new Vector3(10000, 1000, 1000);
 	public int state = 0;
 
@@ -38,8 +40,8 @@ public class RoomManagerV2 : MonoBehaviour {
 		
 	void Update () {
 		if(state == 0){
-			generateMap ();
-			state = 1;
+			if(generateMap ())
+				state = 1;
 		}
 		else if(state == 1){
 			posGeneration();
@@ -155,16 +157,18 @@ public class RoomManagerV2 : MonoBehaviour {
 		return;
 	}
 	
-	private void generateMap(){
+	private bool generateMap(){
 		watch = System.Diagnostics.Stopwatch.StartNew();
+		bool result;
+
+		result = generatePart (firstPart, null);
 		
-		//bool result = generateNode(dungeonHead, null);
-		generatePart (firstPart, null);
 		parkAllRooms(dungeonRoomsHead);
 		watch.Stop();
 		long elapsedMs = watch.ElapsedMilliseconds;
 		Debug.Log("map generated in " + elapsedMs + "ms");
 		generationDone = true;
+		return true;
 	}
 
 
@@ -183,8 +187,11 @@ public class RoomManagerV2 : MonoBehaviour {
 
 	private bool generatePart(DungeonPart part, DungeonRoom previousRoom){
 		bool result = false;
-		if(previousRoom == null) //first part
+		if(previousRoom == null){ //first part
 			result = generateNode(part.getFirstNode(), null, part);
+			Debug.Log (result);
+
+		}
 		else //other parts
 			result = generateNode(part.getFirstNode(), previousRoom, part);
 		return result;
@@ -396,16 +403,17 @@ public class RoomManagerV2 : MonoBehaviour {
 
 	private bool generateNode(DungeonNode node, DungeonRoom lastRoom, DungeonPart currentPart) 
 	{
-		//if (watch.ElapsedMilliseconds > timeLimit)
-		//{
-		//	Debug.Log("demorou muito tempo" + watch.ElapsedMilliseconds + "ms");
-		//	throw new Exception("TEST");
-		//}
+		if (watch.ElapsedMilliseconds > timeLimit)
+		{
+			Debug.Log("demorou muito tempo" + watch.ElapsedMilliseconds + "ms");
+			throw new Exception("TEST");
+		}
 		//Debug.Log("generating node " + node.id);
 		if (node.type == DungeonNode.DungeonNodeType.Random)
 		{
 			for (int i = 0; i < MAX_TRIES; i++)
 			{
+				//Debug.Log ("random node try");
 				toggleRooms(lastRoom, false, true);//
 				bool result = generateRandomNode(node, lastRoom, currentPart);
 				if (result)
@@ -434,11 +442,11 @@ public class RoomManagerV2 : MonoBehaviour {
 	
 	private bool generateRandomNode(DungeonNode node, DungeonRoom lastRoom, DungeonPart currentPart)
 	{
-		/*if (watch.ElapsedMilliseconds > timeLimit)
+		if (watch.ElapsedMilliseconds > timeLimit)
 		{
 			Debug.Log("demorou muito tempo" + watch.ElapsedMilliseconds + "ms");
 			throw new Exception("TEST");
-		}*/
+		}
 		List<int> group = groups[node.group];
 		DungeonNode child = currentPart.getNextNode(node);
 		//if(child != null){
@@ -457,7 +465,12 @@ public class RoomManagerV2 : MonoBehaviour {
 			if (!sucessfullPath)
 			{
 				//Debug.Log("cleaning children");
-				cleanAllChildrenRooms(lastRoom);
+				List<MapDoor> prevdoors = lastRoom.doors;
+				foreach (MapDoor door in prevdoors){
+					if(door.used && door.leadsTo.nodeId == node.id){
+						cleanAllChildrenRooms(door.leadsTo);
+					}
+				}
 				return false;
 			}
 		//}
@@ -466,22 +479,20 @@ public class RoomManagerV2 : MonoBehaviour {
 	
 	private int generateRandomRoom(DungeonRoom lastRoom, DungeonNode child, List<int> group, int depth, DungeonNode currentNode, DungeonPart currentPart)
 	{
-		/*if (watch.ElapsedMilliseconds > timeLimit)
+		if (watch.ElapsedMilliseconds > timeLimit)
 		{
 			Debug.Log("demorou muito tempo" + watch.ElapsedMilliseconds + "ms");
 			throw new Exception("TEST");
-		}*/
+		}
 		if (depth == 0)
 		{
 			if (child == null){
 				foreach(KeyValuePair<DungeonPart, bool> kvp in currentPart.adjacentEnd){
 					DungeonPart p = kvp.Key;
 					toggleRooms(lastRoom, false, true);//
-					//Debug.Log("trying part " + p.id);
 
 					if(p.getNumberOfRooms() == 0){
 						if(!generatePart (p, lastRoom)){
-							Debug.Log ("part failed");
 							cleanAllChildrenRooms(lastRoom);
 							return 1;
 						}
@@ -489,7 +500,7 @@ public class RoomManagerV2 : MonoBehaviour {
 						DungeonRoom roomToJumpTo = p.getLowestRoom();
 						if(!tryToConnectRooms(lastRoom, roomToJumpTo, kvp.Value)){
 							
-							Debug.Log ("connect failed");
+							//Debug.Log ("connect failed");
 							cleanAllChildrenRooms(lastRoom);
 							return 1;
 						}
@@ -626,7 +637,6 @@ public class RoomManagerV2 : MonoBehaviour {
 			foreach(KeyValuePair<DungeonPart, bool> kvp in currentPart.adjacentEnd){
 				DungeonPart p = kvp.Key;
 				toggleRooms(room, false, true);//
-				//Debug.Log("trying part " + p.id);
 				if(p.getNumberOfRooms() == 0){
 					if(!generatePart (p, room)){
 
@@ -687,7 +697,7 @@ public class RoomManagerV2 : MonoBehaviour {
 	//returns if these two rooms can be connected by these doors without collisions
 	private bool positionRoom(MapDoor door, MapDoor newdoor, DungeonRoom room, DungeonRoom lastRoom, DungeonNode currentNode)
 	{
-		
+
 		//position the piece correctly
 		float angle = 180.0f - Vector3.Angle(door.transform.forward, newdoor.transform.forward);
 		room.transform.RotateAround(room.transform.position, Vector3.up, angle);
