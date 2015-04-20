@@ -29,7 +29,7 @@ S 1 0
 
 :part 2
 R b 4 4 0
-:goto 3|N 5|N
+:goto 3|N
 
 :part 3
 R b 2 4 0
