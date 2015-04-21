@@ -148,7 +148,7 @@ public class EnemyScript : Agent
         else
         {
             Destroy(gameObject);
-        } 
+        }
     }
 
     // Is initiated by the spawner

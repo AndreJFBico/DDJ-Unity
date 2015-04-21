@@ -135,6 +135,11 @@ public class CharacterMove : MonoBehaviour {
         }
     }
 
+    public void setInContactWithEnemy(bool val)
+    {
+        inContactWithEnemy = val;
+    }
+
     public void CollisionExit(Collision collision)
     {
         /* if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
