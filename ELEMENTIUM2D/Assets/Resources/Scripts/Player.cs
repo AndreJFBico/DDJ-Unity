@@ -25,6 +25,8 @@ public class Player : Agent {
 
     private float previousSpeed = 0;
 
+    private Transform lastCollidedWith = null;
+
     void Awake()
     {
         base.Awake();
@@ -73,6 +75,14 @@ public class Player : Agent {
             timerRunning = false;
             damageTimer = 0.0f;
         }
+        if(lastCollidedWith != null && !lastCollidedWith.gameObject.activeSelf)
+        {
+            characterMoveScrpt.setInContactWithEnemy(false);     
+        }
+        else if (lastCollidedWith == null)
+        {
+            characterMoveScrpt.setInContactWithEnemy(false);
+        }
     }
 
     void blink()
@@ -106,6 +116,7 @@ public class Player : Agent {
             takeDamage(agent.getDamage(), agent.getElementType());
         }
         characterMoveScrpt.CollisionEnter(collision);
+        lastCollidedWith = collision.transform;
         base.OnCollisionEnter(collision);
     }
 

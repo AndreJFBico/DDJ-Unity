@@ -8,7 +8,7 @@ using System;
 
 public class RoomManagerV2 : MonoBehaviour {
 
-	public static int SPHERE_RADIUS = 50;
+	public static int SPHERE_RADIUS = 5000;
 	public static int MAX_BRANCH_TRIES = 3;
 	public static int MAX_TRIES = 2;
 
@@ -762,7 +762,7 @@ public class RoomManagerV2 : MonoBehaviour {
 			newdoor.leadsTo = lastRoom;
 			newdoor.goesBackward = true;
 
-			if(lastRoom != null && lastRoom.partId != room.partId){
+			if(lastRoom != null && lastRoom.partId != room.partId && lastRoom.partId != 0 && room.partId != 0){
 				door.staticDoor = doorsUsage[lastRoom.partId + "+" + room.partId];
 			}
 			return true;
