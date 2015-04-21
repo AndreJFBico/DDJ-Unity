@@ -20,8 +20,8 @@ d 2 4
 e 8 10
 ::
 ::walls
-A BreakableEarth
-B BreakableFire
+A BreakableWater
+B BreakableEarth
 ::
 ::dungeon
 Random 0 0

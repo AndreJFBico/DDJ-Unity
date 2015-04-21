@@ -16,6 +16,9 @@ public class RandomTreasureChest : TemporaryTreasureChest {
         stats.Add("maxHealth");
         stats.Add("damage");
         stats.Add("defence");
+        stats.Add("lim_points");
+        stats.Add("lim_points");
+        stats.Add("lim_points");
     }
 
     public override void applyEffect()
@@ -37,6 +40,9 @@ public class RandomTreasureChest : TemporaryTreasureChest {
             case "defence":
                 intensity = updateEffectIntesity(true);
                 GameManager.Instance.changeStatVariable("defence", intensity, MathOperations.DEFENCE);
+                break;
+            case "lim_points":
+                GameManager.Instance.changeStatVariable("lim_points", 1, MathOperations.SUM);
                 break;
             default:
                 break;

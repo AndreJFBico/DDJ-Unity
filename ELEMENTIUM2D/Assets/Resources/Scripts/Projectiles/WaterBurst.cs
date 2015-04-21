@@ -17,7 +17,7 @@ public class WaterBurst : AbilityBehaviour
         waterProjectiles = new List<GameObject>();
         cs = Resources.Load(AbilityStats.Frost.ability2.childProjectile) as GameObject;
         explosion = Resources.Load("Prefabs/Explosions/frostExplosion") as GameObject;
-        iceBlock = Resources.Load("Prefabs/Environment/IceWall") as GameObject;
+        iceBlock = Resources.Load("Prefabs/Environment/AbilityCreated/IceWall") as GameObject;
         damage = 0;
     }
 

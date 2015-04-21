@@ -123,7 +123,7 @@ namespace Includes
             }
             public class ability3
             {
-                public static float attackSpeed = 0.25f;
+                public static float attackSpeed = 1.5f;
                 public static int projectile_number = 7;
                 public static float damage = 1;
                 public static float movementForce = 1.5f;
@@ -196,7 +196,7 @@ namespace Includes
 
             public class ability2
             {
-                public static float attackSpeed = 0.25f;
+                public static float attackSpeed = 4f;
                 public static int projectile_number = 1;
                 public static float damage = 1;
                 public static float movementForce = 5;
@@ -359,7 +359,7 @@ namespace Includes
         public const float def_secondary_water_level = 0;
         public const float def_terciary_water_level = 0;
 
-        public const float def_health = 3000.0f;
+        public const float def_health = 40.0f;
         //public const float def_inc_health = 10.5f;
         
         // VARIABLES, these can be changed and reset at will they represent the current player stats
@@ -554,9 +554,9 @@ namespace Includes
         private void init()
         {
             unknownSymbol = Resources.Load<Sprite>("GUIImages/Elements/round_unknown");
-            iceWall = (GameObject)Resources.Load("Prefabs/Environment/IceWall");
-            waterPuddle = (GameObject)Resources.Load("Prefabs/Environment/WaterPuddle");
-            oilPuddle = (GameObject)Resources.Load("Prefabs/Environment/OilPuddle");
+            iceWall = (GameObject)Resources.Load("Prefabs/Environment/AbilityCreated/IceWall");
+            waterPuddle = (GameObject)Resources.Load("Prefabs/Environment/AbilityCreated/WaterPuddle");
+            oilPuddle = (GameObject)Resources.Load("Prefabs/Environment/AbilityCreated/OilPuddle");
             neutralEnemies = Resources.LoadAll("Prefabs/Enemies/Neutral") as GameObject[];
 
             // Obtains all variable names within player stats
