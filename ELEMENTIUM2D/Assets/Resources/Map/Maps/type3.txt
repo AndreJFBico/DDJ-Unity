@@ -24,7 +24,7 @@ A BreakableEarth
 B BreakableFire
 ::
 ::dungeon
-Random 0 0
+Random 20 30
 
 :part 1
 S 1 0
@@ -32,24 +32,24 @@ S 1 0
 :goto 2|N 4|N
 
 :part 2
-R b 4 4 0
+R b 4 4 b
 :goto 3|N
 
 :part 3
-R b 2 4 0
+R b 2 4 b
 S 7 0
-R b 2 4 0
+R b 2 4 b
 :goto 6|Y
 
 :part 4
-R c 2 3 0
+R c 2 3 c
 :goto 5|N
 
 :part 5
-R e 1 1 0
-R c 1 3 0
+R e 1 1 c
+R c 1 3 c
 S 11 0
-R c 2 4 0
+R c 2 4 c
 :goto 6|N
 
 :part 6
@@ -61,8 +61,8 @@ R d 1 1 0
 :goto 8|N|B
 
 :part 8
-R d 1 1 0
-R a 3 6 0
+R d 1 1 d
+R a 3 6 a
 S 12 0
 :goto
 ::
