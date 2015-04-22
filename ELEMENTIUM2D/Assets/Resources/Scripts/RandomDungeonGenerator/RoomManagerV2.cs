@@ -723,6 +723,8 @@ public class RoomManagerV2 : MonoBehaviour {
 	private bool positionRoom(MapDoor door, MapDoor newdoor, DungeonRoom room, DungeonRoom lastRoom, DungeonNode currentNode)
 	{
 
+        toggleRooms(lastRoom, false, true);
+
 		//position the piece correctly
 		float angle = 180.0f - Vector3.Angle(door.transform.forward, newdoor.transform.forward);
 		room.transform.RotateAround(room.transform.position, Vector3.up, angle);
