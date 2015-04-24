@@ -2330,6 +2330,7 @@ MonoBehaviour:
   branchTries: 0
   normalTries: 0
   backTries: 0
+  staticDoor: 
   doorNavmesh: {fileID: 0}
 --- !u!114 &11434182
 MonoBehaviour:
@@ -2401,7 +2402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af5cf29844f51a94caa1676bb8c33201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawners: 1
+  _minSpawners: 2
   _maxSpawners: 2
   _treasure: {fileID: 142420, guid: 5b4413938bf8e1342b265ec43a032ac3, type: 2}
 --- !u!114 &11455212
@@ -2516,7 +2517,7 @@ MonoBehaviour:
   healthbar_background: {fileID: 448260}
   healthbar: {fileID: 477102}
   alertedSign: {fileID: 484116}
-  enemy: {fileID: 470832, guid: b7e813a02438bf249978b95288e12422, type: 2}
+  enemy: {fileID: 407410, guid: e96f6d303cd9c764a9a04f7e46724d0f, type: 2}
   amount_to_spawn: 2
   spawn_timer: 1
 --- !u!114 &11495534
@@ -2540,6 +2541,7 @@ MonoBehaviour:
   branchTries: 0
   normalTries: 0
   backTries: 0
+  staticDoor: 
   doorNavmesh: {fileID: 0}
 --- !u!114 &11497514
 MonoBehaviour:

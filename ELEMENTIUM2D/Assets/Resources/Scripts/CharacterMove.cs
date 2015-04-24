@@ -11,9 +11,10 @@ public class CharacterMove : MonoBehaviour {
     private float inContactWithEnemySpeed;
     private float slowFactor;
     private float boostFactor;
-
+    private Vector3 velocity = Vector3.zero;
     private PlayerAnimController playerAnim;
 
+    private bool fixedUpdate = false;
     private float hDir;
     private float vDir;
 
@@ -213,6 +214,7 @@ public class CharacterMove : MonoBehaviour {
 	// Update is called once per frame
     void FixedUpdate()
     {
+        fixedUpdate = true;
         boxPosition = GetComponent<BoxCollider>().bounds.center;
         hDir = Input.GetAxis("Horizontal");
         vDir = Input.GetAxis("Vertical");
@@ -285,8 +287,9 @@ public class CharacterMove : MonoBehaviour {
         else currentMoveSpeed = moveSpeed;
 
         currentMoveSpeed = currentMoveSpeed * slowFactor / boostFactor;
-        transf.position = Vector3.MoveTowards(transf.position, targetPosition, currentMoveSpeed * Time.deltaTime);
-
+        //transf.position = Vector3.SmoothDamp(transf.position, targetPosition, ref velocity, 0.9f);
+        transf.position = Vector3.MoveTowards(transf.position, targetPosition, currentMoveSpeed * Time.smoothDeltaTime);
+        
         if (hDir == 0 && vDir == 0)
             playerAnim.idle = true;
         else playerAnim.idle = false;
@@ -294,7 +297,19 @@ public class CharacterMove : MonoBehaviour {
 
     void Update()
     {
-        transform.position = transf.position;
+        if (fixedUpdate)
+        {
+            transform.position = transf.position;
+            fixedUpdate = false;
+        } 
+    }
+
+    Vector3 SmoothApproach( Vector3 pastPosition, Vector3 pastTargetPosition, Vector3 targetPosition, float speed )
+    {
+        float t = Time.deltaTime * speed;
+        Vector3 v = ( targetPosition - pastTargetPosition ) / t;
+        Vector3 f = pastPosition - pastTargetPosition + v;
+        return targetPosition - v + f * Mathf.Exp( -t );
     }
 
     public void init()

@@ -4476,6 +4476,7 @@ MonoBehaviour:
   branchTries: 0
   normalTries: 0
   backTries: 0
+  staticDoor: 
   doorNavmesh: {fileID: 0}
 --- !u!114 &11457274
 MonoBehaviour:
@@ -4527,6 +4528,7 @@ MonoBehaviour:
   branchTries: 0
   normalTries: 0
   backTries: 0
+  staticDoor: 
   doorNavmesh: {fileID: 0}
 --- !u!114 &11468830
 MonoBehaviour:
@@ -4567,6 +4569,7 @@ MonoBehaviour:
   branchTries: 0
   normalTries: 0
   backTries: 0
+  staticDoor: 
   doorNavmesh: {fileID: 0}
 --- !u!114 &11473746
 MonoBehaviour:
@@ -4589,6 +4592,7 @@ MonoBehaviour:
   branchTries: 0
   normalTries: 0
   backTries: 0
+  staticDoor: 
   doorNavmesh: {fileID: 0}
 --- !u!114 &11477598
 MonoBehaviour:
