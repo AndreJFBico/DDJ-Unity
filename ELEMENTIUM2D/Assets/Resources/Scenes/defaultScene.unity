@@ -1051,6 +1051,48 @@ Transform:
   - {fileID: 549105325}
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!1001 &846816355
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 401354, guid: c457eb6847aa1e749b77fb67d8918250, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 401354, guid: c457eb6847aa1e749b77fb67d8918250, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 401354, guid: c457eb6847aa1e749b77fb67d8918250, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 401354, guid: c457eb6847aa1e749b77fb67d8918250, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 401354, guid: c457eb6847aa1e749b77fb67d8918250, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 401354, guid: c457eb6847aa1e749b77fb67d8918250, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 401354, guid: c457eb6847aa1e749b77fb67d8918250, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 401354, guid: c457eb6847aa1e749b77fb67d8918250, type: 2}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: c457eb6847aa1e749b77fb67d8918250, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &912058683
 Prefab:
   m_ObjectHideFlags: 0
@@ -1232,8 +1274,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: .300000012
-  far clip plane: 1000
+  near clip plane: .400000006
+  far clip plane: 50
   field of view: 60
   orthographic: 1
   orthographic size: 3
@@ -1259,7 +1301,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95b397e5302f457418135924a37b57fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoothTime: .100000001
+  smoothTime: 0
+  pixelToUnits: 200
 --- !u!4 &1214224101
 Transform:
   m_PrefabParentObject: {fileID: 455102, guid: d7180570d4d912c41a93455e644b97e1, type: 2}
@@ -1283,7 +1326,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1290227216
 Transform:
   m_ObjectHideFlags: 0
@@ -1322,7 +1365,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4293918203
   m_Lightmapping: 4
   m_BounceIntensity: .75999999
   m_ShadowRadius: 0
