@@ -295,12 +295,13 @@ public class CharacterMove : MonoBehaviour {
         else playerAnim.idle = false;
     }
 
-    void Update()
+    void LateUpdate()
     {
         if (fixedUpdate)
         {
             transform.position = transf.position;
             fixedUpdate = false;
+
         } 
     }
 

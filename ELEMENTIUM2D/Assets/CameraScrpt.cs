@@ -14,7 +14,7 @@ public class CameraScrpt : MonoBehaviour {
         GetComponent<UnityEngine.Camera>().transparencySortMode = TransparencySortMode.Orthographic;
 	}
 
-    void Update()
+    void FixedUpdate()
     {
         if (!target) 
             return;
