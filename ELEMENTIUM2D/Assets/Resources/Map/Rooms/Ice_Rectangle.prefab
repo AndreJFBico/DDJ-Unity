@@ -5557,6 +5557,7 @@ MonoBehaviour:
   branchTries: 0
   normalTries: 0
   backTries: 0
+  staticDoor: 
   doorNavmesh: {fileID: 0}
 --- !u!114 &11431974
 MonoBehaviour:
@@ -5707,6 +5708,7 @@ MonoBehaviour:
   branchTries: 0
   normalTries: 0
   backTries: 0
+  staticDoor: 
   doorNavmesh: {fileID: 0}
 --- !u!114 &11451158
 MonoBehaviour:
@@ -5729,6 +5731,7 @@ MonoBehaviour:
   branchTries: 0
   normalTries: 0
   backTries: 0
+  staticDoor: 
   doorNavmesh: {fileID: 0}
 --- !u!114 &11452158
 MonoBehaviour:
@@ -6019,6 +6022,7 @@ MonoBehaviour:
   branchTries: 0
   normalTries: 0
   backTries: 0
+  staticDoor: 
   doorNavmesh: {fileID: 0}
 --- !u!114 &11491124
 MonoBehaviour:
@@ -6697,7 +6701,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: ec1c93278e097994a96216be003468c7, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -6801,7 +6805,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: ec1c93278e097994a96216be003468c7, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -6905,7 +6909,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: ec1c93278e097994a96216be003468c7, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -7061,7 +7065,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: ec1c93278e097994a96216be003468c7, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -7373,7 +7377,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: ec1c93278e097994a96216be003468c7, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -7789,7 +7793,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: ec1c93278e097994a96216be003468c7, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
