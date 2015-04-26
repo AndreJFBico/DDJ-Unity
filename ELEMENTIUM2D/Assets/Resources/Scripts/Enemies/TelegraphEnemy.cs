@@ -49,15 +49,29 @@ public class TelegraphEnemy : EnemyScript {
     Transform getBestTelegraph()
     {
         Transform bestTelegraph = null;
+        Transform worstTelegraph = null;
         float bestPriority = float.MaxValue;
+        float worsePriority = 0;
         foreach (Transform t in telegraphs)
         {
             Telegraph telegraph = t.GetComponent<Telegraph>();
             if(telegraph.priority < bestPriority)
             {
                 bestTelegraph = t;
+                bestPriority = telegraph.priority;
+            }
+            if(telegraph.priority > worsePriority)
+            {
+                worstTelegraph = t;
+                worsePriority = telegraph.priority;
             }
         }
+        bestTelegraph.GetComponent<Telegraph>().priority = worsePriority;
+        if(worstTelegraph.GetComponent<Telegraph>().priority > 0)
+        {
+            worstTelegraph.GetComponent<Telegraph>().priority -= 1;
+        }
+
         return bestTelegraph;
     }
 
