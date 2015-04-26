@@ -13,6 +13,7 @@ public class Action : MonoBehaviour {
     public bool changeElementBackward = false;
 
     public bool interact = false;
+    public bool showStats = false;
 
     private Shoot shooting;
     private Interactions interaction;
@@ -56,6 +57,7 @@ public class Action : MonoBehaviour {
         } 
         #endregion
 
+        #region Environment Interaction
         //##########################################################################################
         //####################### ENVIRONMENT INTERACTION ##########################################
         //##########################################################################################
@@ -66,6 +68,17 @@ public class Action : MonoBehaviour {
         {
             interaction.interact();
         } 
+        #endregion 
+
+        #region Stats
+        //##########################################################################################
+        //##################################### STATS ##############################################
+        //##########################################################################################
+
+        showStats = Input.GetButtonDown("ShowStats");
+        interaction.showStats();
+        
+        #endregion 
 
 	}
 }

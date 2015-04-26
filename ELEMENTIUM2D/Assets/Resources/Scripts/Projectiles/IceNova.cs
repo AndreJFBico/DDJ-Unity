@@ -46,6 +46,7 @@ public class IceNova : AbilityBehaviour
 
     public override void initiate(GameObject startingObject, float dmg)
     {
+        base.initiate(startingObject, dmg);
         // Rotates the missile randomly
         damage = dmg;
         int result = Random.Range(0, 360);

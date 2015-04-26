@@ -364,7 +364,7 @@ namespace Includes
         
         // VARIABLES, these can be changed and reset at will they represent the current player stats
         public float moveSpeed = 2.5f;
-        public float moveInContactWithEnemy = 1.0f;
+        public float moveInContactWithEnemy = 1f;
         public float maxHealth = def_health;
         public float health = def_health;
         public float damage = def_damage;
@@ -434,7 +434,7 @@ namespace Includes
         public void reset()
         {
             moveSpeed = 2.5f;
-            moveInContactWithEnemy = 1.0f;
+            moveInContactWithEnemy = 1f;
             maxHealth = def_health;
             health = def_health;
             damage = def_damage;
@@ -527,6 +527,11 @@ namespace Includes
         private static List<string> statNames;
         private static ShootElement currentElement;
 
+        private static Sprite neutralElement;
+        private static Sprite fireElement;
+        private static Sprite earthElement;
+        private static Sprite waterElement;
+
         private static GameObject[] neutralEnemies;
 
         protected GameManager() { init(); }
@@ -546,6 +551,14 @@ namespace Includes
 
         public List<string> StatNames { get { return statNames; } }
 
+        public Sprite FireElement { get { return fireElement; } }
+
+        public Sprite EarthElement { get { return earthElement; } }
+
+        public Sprite WaterElement { get { return waterElement; } }
+
+        public Sprite NeutralElement { get { return neutralElement; } }
+
         public ShootElement CurrentElement { get { return currentElement; } set { currentElement = value; } }
 
         public static GameManager Instance { get { if (_instance == null) { _instance = new GameManager(); playerStats = new PlayerStats(); } return _instance; } }
@@ -557,6 +570,10 @@ namespace Includes
             iceWall = (GameObject)Resources.Load("Prefabs/Environment/AbilityCreated/IceWall");
             waterPuddle = (GameObject)Resources.Load("Prefabs/Environment/AbilityCreated/WaterPuddle");
             oilPuddle = (GameObject)Resources.Load("Prefabs/Environment/AbilityCreated/OilPuddle");
+            neutralElement = Resources.Load<Sprite>("GUIImages/Elements/Neutral");
+            fireElement = Resources.Load<Sprite>("GUIImages/Elements/Fire");
+            earthElement = Resources.Load<Sprite>("GUIImages/Elements/Earth");
+            waterElement = Resources.Load<Sprite>("GUIImages/Elements/Frost");
             neutralEnemies = Resources.LoadAll("Prefabs/Enemies/Neutral") as GameObject[];
 
             // Obtains all variable names within player stats

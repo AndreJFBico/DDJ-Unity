@@ -87,6 +87,7 @@ public class NeutralBouncer : AbilityBehaviour {
 
     public override void initiate(GameObject startingObject, float dmg)
     {
+        base.initiate(startingObject, dmg);
         damage = dmg;
     }
 }

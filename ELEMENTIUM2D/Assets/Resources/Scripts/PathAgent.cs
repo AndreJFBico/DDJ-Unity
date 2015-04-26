@@ -29,11 +29,11 @@ public class PathAgent : MonoBehaviour
         previousSpeed = agent.speed;   
     } 
 
-    public void playerSighted(Transform collision)
+    public void playerSighted(Transform player)
     {
         inSight = true;
         agentScrpt.setAlerted(true);
-        target = collision;
+        target = player;
     }
 
     public void OnTriggerEnter(Collider collision)
@@ -97,6 +97,7 @@ public class PathAgent : MonoBehaviour
 
     IEnumerator checkMovement()
     {
+        yield return new WaitForSeconds(.1f);
         for ( ; ; )
         {
             if (agent.hasPath)
@@ -132,7 +133,7 @@ public class PathAgent : MonoBehaviour
                     FreeRoam();
                 }
             }
-            yield return new WaitForSeconds(.5f);
+            yield return new WaitForSeconds(.2f);
         }
     }
 

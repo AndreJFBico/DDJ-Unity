@@ -8,12 +8,7 @@ using Includes;
 [RequireComponent(typeof(Player))]
 public class Interactions : MonoBehaviour {
 
-    private Image elementGUI;
-
-    private Sprite neutralElement;
-    private Sprite fireElement;
-    private Sprite earthElement;
-    private Sprite frostElement;
+    private GUIManager gui;
 
     private int _currentElement = (int)Elements.NEUTRAL;
 
@@ -32,11 +27,7 @@ public class Interactions : MonoBehaviour {
 	void Start () {
         stats = GameManager.Instance.Stats;
         _elements = new List<ShootElement>();
-        elementGUI = GameObject.Find("CurrentElementGUI").GetComponent<Image>();
-        neutralElement = Resources.Load<Sprite>("GUIImages/Elements/Neutral");
-        fireElement = Resources.Load<Sprite>("GUIImages/Elements/Fire");
-        earthElement = Resources.Load<Sprite>("GUIImages/Elements/Earth");
-        frostElement = Resources.Load<Sprite>("GUIImages/Elements/Frost");
+        gui = GameObject.Find("GUI").GetComponent<GUIManager>();
         _elements.Add(GetComponent<NeutralElement>());
         _elements.Add(GetComponent<FireElement>());
         _elements.Add(GetComponent<EarthElement>());
@@ -46,6 +37,7 @@ public class Interactions : MonoBehaviour {
         GameManager.Instance.CurrentElement = _elements[0];
     }
 
+    #region Element Updating
     private void checkAvailableElements()
     {
         //Iterate all element limits and check which ones are unlock
@@ -132,6 +124,8 @@ public class Interactions : MonoBehaviour {
             }
         }
     }
+    
+    #endregion
 
     public int CurrentElement { get { return _currentElement; } set { _currentElement = value; } }
 
@@ -165,30 +159,9 @@ public class Interactions : MonoBehaviour {
         }
 
         GameManager.Instance.CurrentElement = _elements[_currentElement];
-        updateIcon();
+        gui.changeCurrentElementDisplay(_currentElement);
     }
 
-    private void updateIcon()
-    {
-        switch (_currentElement)
-        {
-            case 0:
-                elementGUI.sprite = neutralElement;
-                break;
-            case 1:
-                elementGUI.sprite = fireElement;
-                break;
-            case 2:
-                elementGUI.sprite = earthElement;
-                break;
-            case 3:
-                elementGUI.sprite = frostElement;
-                break;
-
-            default:
-                break;
-        }
-    } 
     #endregion
 
     #region Environment Interaction
@@ -211,5 +184,10 @@ public class Interactions : MonoBehaviour {
     } 
 
     #endregion
+
+    public void showStats()
+    {
+
+    }
 
 }

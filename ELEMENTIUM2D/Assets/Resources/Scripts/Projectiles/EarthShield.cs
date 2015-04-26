@@ -63,6 +63,7 @@ public class EarthShield : AbilityBehaviour {
 
     public override void initiate(GameObject startingObject, float dmg)
     {
+        base.initiate(startingObject, dmg);
         damage = dmg;
         transform.position = startingObject.transform.position;
         transform.parent = startingObject.transform;

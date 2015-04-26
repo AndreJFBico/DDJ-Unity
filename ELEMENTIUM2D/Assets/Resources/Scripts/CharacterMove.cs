@@ -292,6 +292,12 @@ public class CharacterMove : MonoBehaviour {
         else playerAnim.idle = false;
     }
 
+    public void playerDead()
+    {
+        slowFactor = 0;
+        playerAnim.dead = true;
+    }
+
     void Update()
     {
         transform.position = transf.position;

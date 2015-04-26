@@ -5,7 +5,7 @@ using System;
 
 public class Player : Agent {
 
-    public GameObject reloadButton;
+    private GUIManager gui;
     private float damageTimer = 0.0f;
     private bool timerRunning = false;
     private CharacterMove characterMoveScrpt;
@@ -33,6 +33,7 @@ public class Player : Agent {
         GameManager.Instance.sceneInit();
         OilPuddleManager.Instance.sceneInit();
         ChestManager.Instance.sceneInit();
+        gui = GameObject.Find("GUI").GetComponent<GUIManager>();
         maxHealth = () => { return GameManager.Instance.Stats.maxHealth; };
         setMaxHealth = (a) => { float diff = a - GameManager.Instance.Stats.maxHealth;
                                 GameManager.Instance.Stats.maxHealth = a;
@@ -178,7 +179,11 @@ public class Player : Agent {
         }
         if (health() <= 0)
         {
-            Application.LoadLevel("SkillTree");
+            transform.FindChild("Sprite").gameObject.SetActive(false);
+            transform.FindChild("Rotator").gameObject.SetActive(false);
+            transform.FindChild("RIP").gameObject.SetActive(true);
+            characterMoveScrpt.playerDead();
+            gui.playerDeath();
         }
     }
 

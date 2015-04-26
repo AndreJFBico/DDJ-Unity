@@ -7,6 +7,7 @@ public class AbilityBehaviour : ElementiumMonoBehaviour
     protected Elements type;
     protected GameObject explosion;
     protected float damage;
+    protected float startSpeed = 150;
 
     #region Start and Awake
     protected virtual void Start() { }
@@ -78,5 +79,9 @@ public class AbilityBehaviour : ElementiumMonoBehaviour
     }
 
     // This function applys initial movement to the projectile
-    public virtual void initiate(GameObject startingObject, float damage) { }
+    public virtual void initiate(GameObject startingObject, float damage)
+    {
+        if (GetComponent<Rigidbody>() != null)
+            GetComponent<Rigidbody>().AddForce(transform.forward * startSpeed);
+    }
 }

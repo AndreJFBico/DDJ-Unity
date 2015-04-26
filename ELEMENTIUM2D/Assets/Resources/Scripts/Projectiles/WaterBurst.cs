@@ -48,6 +48,7 @@ public class WaterBurst : AbilityBehaviour
 
     public override void initiate(GameObject startingObject, float dmg)
     {
+        base.initiate(startingObject, dmg);
         damage = dmg;
         for (int i = 0; i < AbilityStats.Frost.ability2.child_projectile_number; i++ )
         {

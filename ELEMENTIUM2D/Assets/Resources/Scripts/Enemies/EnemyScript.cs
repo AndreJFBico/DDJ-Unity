@@ -2,6 +2,7 @@
 using System.Collections;
 using Includes;
 
+[RequireComponent(typeof(NavMeshAgent))]
 public class EnemyScript : Agent
 {  
     protected Elements type;
@@ -26,6 +27,8 @@ public class EnemyScript : Agent
     protected int multiplier;
 
     protected float prevSpeed = 0;
+    protected float unalertedSpeed = 0.5f;
+    protected float alertedSpeed = 2f;
 
 	// Use this for initialization
     protected virtual void Awake()
@@ -169,9 +172,17 @@ public class EnemyScript : Agent
 
     public override void setAlerted(bool val)
     {
-        if(val)
+        if (val)
+        {
             alertedSign.transform.gameObject.SetActive(true);
-        else alertedSign.transform.gameObject.SetActive(false);
+            navMeshAgent.speed = alertedSpeed;
+            navMeshAgent.SetDestination(GameManager.Instance.Player.GetComponent<Player>().transform.position);
+        }
+        else
+        {
+            alertedSign.transform.gameObject.SetActive(false);
+            navMeshAgent.speed = unalertedSpeed;
+        }
         isAlerted = val;
     }
 

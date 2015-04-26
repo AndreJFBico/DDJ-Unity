@@ -7,6 +7,7 @@ public class PlayerAnimController : MonoBehaviour {
     public float horizontal;
     public float vertical;
     public bool idle;
+    public bool dead;
 
     private Animator anim;
 
@@ -22,5 +23,6 @@ public class PlayerAnimController : MonoBehaviour {
         anim.SetFloat("Horizontal", horizontal);
         anim.SetFloat("Vertical", vertical);
         anim.SetBool("Idle", idle);
+        anim.SetBool("Dead", dead);
 	}
 }
