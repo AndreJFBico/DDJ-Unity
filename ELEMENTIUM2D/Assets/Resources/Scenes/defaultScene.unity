@@ -1051,48 +1051,6 @@ Transform:
   - {fileID: 549105325}
   m_Father: {fileID: 0}
   m_RootOrder: 4
---- !u!1001 &846816355
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 401354, guid: c457eb6847aa1e749b77fb67d8918250, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 401354, guid: c457eb6847aa1e749b77fb67d8918250, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 401354, guid: c457eb6847aa1e749b77fb67d8918250, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 401354, guid: c457eb6847aa1e749b77fb67d8918250, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 401354, guid: c457eb6847aa1e749b77fb67d8918250, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 401354, guid: c457eb6847aa1e749b77fb67d8918250, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 401354, guid: c457eb6847aa1e749b77fb67d8918250, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 401354, guid: c457eb6847aa1e749b77fb67d8918250, type: 2}
-      propertyPath: m_RootOrder
-      value: 13
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: c457eb6847aa1e749b77fb67d8918250, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1001 &912058683
 Prefab:
   m_ObjectHideFlags: 0
@@ -1301,7 +1259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95b397e5302f457418135924a37b57fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoothTime: 0
+  smoothTime: .100000001
   pixelToUnits: 200
 --- !u!4 &1214224101
 Transform:

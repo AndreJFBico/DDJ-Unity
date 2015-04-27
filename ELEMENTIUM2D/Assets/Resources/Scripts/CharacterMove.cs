@@ -28,7 +28,9 @@ public class CharacterMove : MonoBehaviour {
     private float epsilon;
     Vector3 calculatedMotion;
 
-    private Transform transf;
+    //private Transform transf;
+
+    private Vector3 positionToMove;
 
     private Vector3 pastFollowerPosition;
     private Vector3 pastTargetPosition;
@@ -55,6 +57,7 @@ public class CharacterMove : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        Application.targetFrameRate = 60;
         collisions = new List<Collision>();
         playerAnim = GetComponentInChildren<PlayerAnimController>();
         //collidedWith = new List<Collision>();
@@ -64,9 +67,10 @@ public class CharacterMove : MonoBehaviour {
         diagonalLength = Mathf.Sqrt(Mathf.Pow(x, 2.0f) + Mathf.Pow(z, 2.0f)) * 1.2f;
         boxPosition = GetComponent<BoxCollider>().bounds.center;
         epsilon = 1.4f;
-        transf = transform;
+        //transf = transform;
+        positionToMove = transform.position;
         pastFollowerPosition = transform.position;
-        pastTargetPosition = transf.position;
+        pastTargetPosition = transform.position;
 	}
 
     #region OnCollision Handlers
@@ -218,16 +222,18 @@ public class CharacterMove : MonoBehaviour {
 	// Update is called once per frame
     void Update()
     {
-        //fixedUpdate = true;
+        
         boxPosition = GetComponent<BoxCollider>().bounds.center;
         hDir = Input.GetAxis("Horizontal");
         vDir = Input.GetAxis("Vertical");
+        float startTimer = Time.time;
+        if (vDir == 0.0f && hDir == 0.0f)
+            return;
+        calculatedMotion = transform.forward * vDir + transform.right * hDir;
 
-        calculatedMotion = transf.forward * vDir + transf.right * hDir;
-       
-        rayCastX(ref calculatedMotion, transf.right * hDir);
+        rayCastX(ref calculatedMotion, transform.right * hDir);
 
-        rayCastZ(ref calculatedMotion, transf.forward * vDir);
+        rayCastZ(ref calculatedMotion, transform.forward * vDir);
 
 
         /*if (rayCast(new Vector3(x, 0.0f, z), diagonalLength))
@@ -280,8 +286,8 @@ public class CharacterMove : MonoBehaviour {
                 calculatedMotion = calculatedMotion - undesiredMotion / 2.0f;
             }
         }
-        Vector3 targetPosition = transf.position + calculatedMotion;
-        targetPosition.y = transf.position.y;
+        Vector3 targetPosition = transform.position + calculatedMotion;
+        targetPosition.y = transform.position.y;
 
         
         if(inContactWithEnemy)
@@ -294,11 +300,14 @@ public class CharacterMove : MonoBehaviour {
         //transf.position = Vector3.SmoothDamp(transf.position, targetPosition, ref velocity, 0.9f);
 
 
-        transf.position = SmoothApproach(pastFollowerPosition, pastTargetPosition, targetPosition, currentMoveSpeed);
+        /*positionToMove = SmoothApproach(pastFollowerPosition, pastTargetPosition, targetPosition, currentMoveSpeed);
+        Debug.Log(vDir + " " +hDir);
+        
         pastFollowerPosition = transform.position;
-        pastTargetPosition = targetPosition;
-
-        //transf.position = Vector3.MoveTowards(transf.position, targetPosition, currentMoveSpeed * Time.smoothDeltaTime);
+        pastTargetPosition = targetPosition;*/
+        fixedUpdate = true;
+        float endTimer = startTimer - Time.time;
+        positionToMove = Vector3.MoveTowards(transform.position, targetPosition, currentMoveSpeed * (Time.deltaTime - endTimer));
         
         if (hDir == 0 && vDir == 0)
             playerAnim.idle = true;
@@ -307,14 +316,12 @@ public class CharacterMove : MonoBehaviour {
 
     void LateUpdate()
     {
-        /*if (fixedUpdate)
-        {*/
-
-
-
-            transform.position = transf.position;
+        if(fixedUpdate)
+        {
+            transform.position = positionToMove;
             fixedUpdate = false;
-        //} 
+        }
+        
     }
 
     Vector3 SmoothApproach( Vector3 pastPosition, Vector3 pastTargetPosition, Vector3 targetPosition, float speed )
