@@ -226,7 +226,7 @@ public class CharacterMove : MonoBehaviour {
         boxPosition = GetComponent<BoxCollider>().bounds.center;
         hDir = Input.GetAxis("Horizontal");
         vDir = Input.GetAxis("Vertical");
-        float startTimer = Time.time;
+        float startTimer = Time.realtimeSinceStartup;
         if (vDir == 0.0f && hDir == 0.0f)
             return;
         calculatedMotion = transform.forward * vDir + transform.right * hDir;
@@ -306,7 +306,7 @@ public class CharacterMove : MonoBehaviour {
         pastFollowerPosition = transform.position;
         pastTargetPosition = targetPosition;*/
         fixedUpdate = true;
-        float endTimer = startTimer - Time.time;
+        float endTimer = startTimer - Time.realtimeSinceStartup;
         positionToMove = Vector3.MoveTowards(transform.position, targetPosition, currentMoveSpeed * (Time.deltaTime - endTimer));
         
         if (hDir == 0 && vDir == 0)
