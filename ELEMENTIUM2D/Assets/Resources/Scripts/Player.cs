@@ -30,6 +30,7 @@ public class Player : Agent {
     void Awake()
     {
         base.Awake();
+        Application.targetFrameRate = 60;
         GameManager.Instance.sceneInit();
         OilPuddleManager.Instance.sceneInit();
         ChestManager.Instance.sceneInit();

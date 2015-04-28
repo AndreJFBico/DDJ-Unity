@@ -28,7 +28,7 @@ public class CharacterMove : MonoBehaviour {
     private float epsilon;
     Vector3 calculatedMotion;
 
-    private Transform transf;
+    private Vector3 transf;
 
     private Vector3 pastFollowerPosition;
     private Vector3 pastTargetPosition;
@@ -64,9 +64,9 @@ public class CharacterMove : MonoBehaviour {
         diagonalLength = Mathf.Sqrt(Mathf.Pow(x, 2.0f) + Mathf.Pow(z, 2.0f)) * 1.2f;
         boxPosition = GetComponent<BoxCollider>().bounds.center;
         epsilon = 1.4f;
-        transf = transform;
-        pastFollowerPosition = transform.position;
-        pastTargetPosition = transf.position;
+        transf = transform.position;
+        pastFollowerPosition = transf;
+        pastTargetPosition = transf;
 	}
 
     #region OnCollision Handlers
@@ -218,18 +218,17 @@ public class CharacterMove : MonoBehaviour {
 	// Update is called once per frame
     void Update()
     {
-        //fixedUpdate = true;
         boxPosition = GetComponent<BoxCollider>().bounds.center;
         hDir = Input.GetAxis("Horizontal");
         vDir = Input.GetAxis("Vertical");
 
-        calculatedMotion = transf.forward * vDir + transf.right * hDir;
-       
-        rayCastX(ref calculatedMotion, transf.right * hDir);
+        calculatedMotion = Vector3.forward * vDir + Vector3.right * hDir;
 
-        rayCastZ(ref calculatedMotion, transf.forward * vDir);
+        rayCastX(ref calculatedMotion, Vector3.right * hDir);
 
+        rayCastZ(ref calculatedMotion, Vector3.forward * vDir);
 
+        #region Commented Region
         /*if (rayCast(new Vector3(x, 0.0f, z), diagonalLength))
         {
             if (calculatedMotion.z > 0.0f)
@@ -270,6 +269,8 @@ public class CharacterMove : MonoBehaviour {
             }
         }
         else */
+        #endregion
+
         if (inContactWithEnemy)
         {
             float dotProduct = Vector3.Dot(calculatedMotion, collisionWithEnemyNormal);
@@ -280,11 +281,11 @@ public class CharacterMove : MonoBehaviour {
                 calculatedMotion = calculatedMotion - undesiredMotion / 2.0f;
             }
         }
-        Vector3 targetPosition = transf.position + calculatedMotion;
-        targetPosition.y = transf.position.y;
+        Vector3 targetPosition = transform.position + calculatedMotion;
+        targetPosition.y = transform.position.y;
 
-        
-        if(inContactWithEnemy)
+
+        if (inContactWithEnemy)
         {
             currentMoveSpeed = inContactWithEnemySpeed;
         }
@@ -294,38 +295,75 @@ public class CharacterMove : MonoBehaviour {
         //transf.position = Vector3.SmoothDamp(transf.position, targetPosition, ref velocity, 0.9f);
 
 
-        transf.position = SmoothApproach(pastFollowerPosition, pastTargetPosition, targetPosition, currentMoveSpeed);
-        pastFollowerPosition = transform.position;
-        pastTargetPosition = targetPosition;
+        //transform.position = SmoothApproach(pastFollowerPosition, pastTargetPosition, targetPosition, currentMoveSpeed);
+        //pastFollowerPosition = transform.position;
+        //pastTargetPosition = targetPosition;
 
-        //transf.position = Vector3.MoveTowards(transf.position, targetPosition, currentMoveSpeed * Time.smoothDeltaTime);
-        
+        transform.position = Vector3.Lerp(transform.position, targetPosition, currentMoveSpeed * Time.deltaTime);
+
         if (hDir == 0 && vDir == 0)
             playerAnim.idle = true;
         else playerAnim.idle = false;
+
+    }
+
+    //void Update()
+    //{
+    //    boxPosition = GetComponent<BoxCollider>().bounds.center;
+    //    hDir = Input.GetAxis("Horizontal");
+    //    vDir = Input.GetAxis("Vertical");
+
+    //    calculatedMotion = Vector3.forward * vDir + Vector3.right * hDir;
+
+    //    if (inContactWithEnemy)
+    //    {
+    //        float dotProduct = Vector3.Dot(calculatedMotion, collisionWithEnemyNormal);
+    //        // Facing a wall
+    //        if (dotProduct < 0.0f)
+    //        {
+    //            Vector3 undesiredMotion = collisionWithEnemyNormal * dotProduct;
+    //            calculatedMotion = calculatedMotion - undesiredMotion / 2.0f;
+    //        }
+    //    }
+    //    Vector3 targetPosition = transf + calculatedMotion;
+    //    targetPosition.y = transf.y;
+
+
+    //    if (inContactWithEnemy)
+    //    {
+    //        currentMoveSpeed = inContactWithEnemySpeed;
+    //    }
+    //    else currentMoveSpeed = moveSpeed;
+
+    //    currentMoveSpeed = currentMoveSpeed * slowFactor / boostFactor;
+    //    //transf.position = Vector3.SmoothDamp(transf.position, targetPosition, ref velocity, 0.9f);
+
+
+    //    //transf = SmoothApproach(pastFollowerPosition, pastTargetPosition, targetPosition, currentMoveSpeed);
+    //    //pastFollowerPosition = transform.position;
+    //    //pastTargetPosition = targetPosition;
+
+    //    transf = Vector3.MoveTowards(transf, targetPosition, currentMoveSpeed * Time.fixedDeltaTime);
+
+    //    if (hDir == 0 && vDir == 0)
+    //        playerAnim.idle = true;
+    //    else playerAnim.idle = false;
+    //}
+
+    Vector3 SmoothApproach( Vector3 pastPosition, Vector3 pastTargetPosition, Vector3 targetPosition, float speed )
+    {
+        float t = Time.smoothDeltaTime * speed;
+        if (t == 0)
+            return targetPosition;
+        Vector3 v = ( targetPosition - pastTargetPosition ) / t;
+        Vector3 f = pastPosition - pastTargetPosition + v;
+        return targetPosition - v + f * Mathf.Exp( -t );
     }
 
     public void playerDead()
     {
         slowFactor = 0;
         playerAnim.dead = true;
-    }
-
-    void LateUpdate()
-    {
-        /*if (fixedUpdate)
-        {*/
-            transform.position = transf.position;
-            fixedUpdate = false;
-        //} 
-    }
-
-    Vector3 SmoothApproach( Vector3 pastPosition, Vector3 pastTargetPosition, Vector3 targetPosition, float speed )
-    {
-        float t = Time.smoothDeltaTime * speed;
-        Vector3 v = ( targetPosition - pastTargetPosition ) / t;
-        Vector3 f = pastPosition - pastTargetPosition + v;
-        return targetPosition - v + f * Mathf.Exp( -t );
     }
 
     public void init()
