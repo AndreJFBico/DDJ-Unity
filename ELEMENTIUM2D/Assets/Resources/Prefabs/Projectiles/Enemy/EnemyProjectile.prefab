@@ -13,7 +13,7 @@ GameObject:
   - 54: {fileID: 5440698}
   - 136: {fileID: 13664156}
   m_Layer: 16
-  m_Name: enemyProjectile
+  m_Name: EnemyProjectile
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,6 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bac7c8f1a7a91343aea0780bb9511f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroytimer: 1.5
 --- !u!114 &11472666
 MonoBehaviour:
   m_ObjectHideFlags: 1
