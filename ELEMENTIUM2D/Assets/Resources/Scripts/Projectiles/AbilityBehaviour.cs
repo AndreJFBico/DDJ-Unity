@@ -34,7 +34,7 @@ public class AbilityBehaviour : ElementiumMonoBehaviour
     #endregion
 
     #region Collision and trigger behaviours
-    protected bool collidedWith(GameObject collidedObj, float damage)
+    protected virtual bool collidedWith(GameObject collidedObj, float damage)
     {
         if (collidedObj.tag.CompareTo("Enemy") == 0)
         {

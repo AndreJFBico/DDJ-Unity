@@ -22,6 +22,8 @@ namespace Includes
         public const string breakable = "Breakable";
         public const string elementalyModifiable = "ElementalyModifiable";
         public const string obstacles = "Obstacles";
+        public static int playerProjectileLayer = LayerMask.GetMask("PlayerProjectile");
+        public static int enemyProjectileLayer = LayerMask.GetMask("EnemyProjectile");
         public const float enemyRoamRadius = 2.0f;
     }
     #endregion
@@ -266,9 +268,10 @@ namespace Includes
             public static float visionRadius = 5.46f;
             public static float rangedRadius = 1.5f;
             public static float rangedAttackSpeed = 0.5f;
-            public static string neutralEnemyProjectile = "Prefabs/Projectiles/Musk";
+            public static float movementForce = 5f;
+            public static string neutralEnemyProjectile = "Prefabs/Projectiles/Enemy/Musk";
             public static float unalertedSpeed = 0.5f;
-            public static float alertedSpeed = 1.5f;
+            public static float alertedSpeed = 1.15f;
         }
 
         public class HealerNeutral
@@ -283,7 +286,7 @@ namespace Includes
             public static float visionRadius = 5.46f;
             public static float rangedRadius = 1.5f;
             public static float rangedAttackSpeed = 0.5f;
-            public static string neutralEnemyProjectile = "Prefabs/Projectiles/Healing";
+            public static string neutralEnemyProjectile = "Prefabs/Projectiles/Enemy/Healing";
             public static float unalertedSpeed = 0.5f;
             public static float alertedSpeed = 1.5f;
         }
@@ -300,7 +303,7 @@ namespace Includes
             public static float rangedRadius = 1.5f;
             public static float rangedAttackSpeed = 0.5f;
             // This has to be more specific there might by more neutral projectiles, and the damage a projectile does is different from a basic neutral enemy
-            public static string neutralEnemyProjectile = "Prefabs/Projectiles/Musk";
+            public static string neutralEnemyProjectile = "Prefabs/Projectiles/Enemy/Musk";
 
             public static bool shielded = true;
             public static Elements shieldType = Elements.WATER;
@@ -350,13 +353,16 @@ namespace Includes
             public static float maxHealth = 20;
             public static float damage = 5;
             public static float defence = 0;
-            public static float waterResist = 5;
-            public static float earthResist = 5;
-            public static float fireResist = 5;
+            public static float waterResist = -50;
+            public static float earthResist = 0;
+            public static float fireResist = 80;
             public static float visionRadius = 5.46f;
-            public static Elements type = Elements.FIRE;
+            public static float rangedRadius = 1.5f;
+            public static float rangedAttackSpeed = 0.5f;
+            public static float movementForce = 5f;
+            public static string neutralEnemyProjectile = "Prefabs/Projectiles/Enemy/EnemyFireball";
             public static float unalertedSpeed = 0.5f;
-            public static float alertedSpeed = 1.5f;
+            public static float alertedSpeed = 1.15f;
         }
         #endregion
 

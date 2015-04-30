@@ -2,7 +2,6 @@
 using System.Collections;
 using Includes;
 
-[RequireComponent(typeof(PathAgent))]
 public class FireRangedEnemyScript : EnemyScript
 {
 
@@ -22,18 +21,18 @@ public class FireRangedEnemyScript : EnemyScript
     protected override void Awake()
     {
         type = Elements.NEUTRAL;
-        projectile = Resources.Load(EnemyStats.RangedNeutral.neutralEnemyProjectile) as GameObject;
-        rangedRadius = EnemyStats.RangedNeutral.rangedRadius;
-        maxHealth = EnemyStats.RangedNeutral.maxHealth;
+        projectile = Resources.Load(EnemyStats.FireRanged.neutralEnemyProjectile) as GameObject;
+        rangedRadius = EnemyStats.FireRanged.rangedRadius;
+        maxHealth = EnemyStats.FireRanged.maxHealth;
         health = maxHealth;
-        damage = EnemyStats.RangedNeutral.damage;
-        defence = EnemyStats.RangedNeutral.defence;
-        waterResist = EnemyStats.RangedNeutral.waterResist;
-        earthResist = EnemyStats.RangedNeutral.earthResist;
-        fireResist = EnemyStats.RangedNeutral.fireResist;
-        gameObject.GetComponent<SphereCollider>().radius = EnemyStats.RangedNeutral.rangedRadius;
-        unalertedSpeed = EnemyStats.FireBasic.unalertedSpeed;
-        alertedSpeed = EnemyStats.FireBasic.alertedSpeed;
+        damage = EnemyStats.FireRanged.damage;
+        defence = EnemyStats.FireRanged.defence;
+        waterResist = EnemyStats.FireRanged.waterResist;
+        earthResist = EnemyStats.FireRanged.earthResist;
+        fireResist = EnemyStats.FireRanged.fireResist;
+        gameObject.GetComponent<SphereCollider>().radius = EnemyStats.FireRanged.rangedRadius;
+        unalertedSpeed = EnemyStats.FireRanged.unalertedSpeed;
+        alertedSpeed = EnemyStats.FireRanged.alertedSpeed;
 
         activeWeapon = left;
         currentFireTransform = left_firepoint;
@@ -56,7 +55,7 @@ public class FireRangedEnemyScript : EnemyScript
                 GameObject p = Instantiate(projectile, currentFireTransform.position, Quaternion.LookRotation(pathAgent.target.position - transform.position)) as GameObject;
                 p.GetComponent<AbilityBehaviour>().initiate(this.gameObject, damage);
             }
-            yield return new WaitForSeconds(EnemyStats.RangedNeutral.rangedAttackSpeed);
+            yield return new WaitForSeconds(EnemyStats.FireRanged.rangedAttackSpeed);
        }
     }
 

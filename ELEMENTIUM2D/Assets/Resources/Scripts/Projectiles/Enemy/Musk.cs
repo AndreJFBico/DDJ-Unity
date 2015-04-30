@@ -2,8 +2,7 @@
 using System.Collections;
 using Includes;
 
-public class Musk : AbilityBehaviour
-{
+public class Musk : AbilityBehaviour{
 
     protected override void Awake()
     {
@@ -32,6 +31,6 @@ public class Musk : AbilityBehaviour
         GetComponent<Rigidbody>().AddForce(transform.forward * startSpeed);
         damage = dmg;
         ConstantForce constantForce = gameObject.AddComponent<ConstantForce>();
-        constantForce.relativeForce = new Vector3(0.0f, 0.0f, AbilityStats.Neutral.ability1.movementForce / 2.0f);
+        constantForce.relativeForce = new Vector3(0.0f, 0.0f, EnemyStats.RangedNeutral.movementForce);
     }
 }
