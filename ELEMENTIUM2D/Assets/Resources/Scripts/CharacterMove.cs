@@ -28,6 +28,8 @@ public class CharacterMove : MonoBehaviour {
     private float epsilon;
     Vector3 calculatedMotion;
 
+    private float previousRenderTime = 0f;
+
     //private Transform transf;
 
     private Vector3 positionToMove;
@@ -57,7 +59,6 @@ public class CharacterMove : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Application.targetFrameRate = 60;
         collisions = new List<Collision>();
         playerAnim = GetComponentInChildren<PlayerAnimController>();
         //collidedWith = new List<Collision>();
@@ -172,7 +173,7 @@ public class CharacterMove : MonoBehaviour {
     bool rayCast(Vector3 position, Vector3 direction, float distance)
     {
         RaycastHit hit;
-        if (Physics.Raycast(new Ray(position, direction), out hit, distance, LayerMask.GetMask("Obstacles") | LayerMask.GetMask(Constants.breakable)))
+        if (Physics.Raycast(new Ray(position, direction), out hit, distance, LayerMask.GetMask(Constants.obstacles) | LayerMask.GetMask(Constants.breakable)))
         {
             Debug.DrawRay(position, direction, Color.red);
             return true;
@@ -232,7 +233,10 @@ public class CharacterMove : MonoBehaviour {
         vDir = Input.GetAxis("Vertical");
         float startTimer = Time.realtimeSinceStartup;
         if (vDir == 0.0f && hDir == 0.0f)
+        {
+            previousRenderTime = Time.realtimeSinceStartup;
             return;
+        }
         calculatedMotion = transform.forward * vDir + transform.right * hDir;
 
         rayCastX(ref calculatedMotion, transform.right * hDir);
@@ -312,8 +316,10 @@ public class CharacterMove : MonoBehaviour {
         pastTargetPosition = targetPosition;*/
         fixedUpdate = true;
         float endTimer = startTimer - Time.realtimeSinceStartup;
-        positionToMove = Vector3.MoveTowards(transform.position, targetPosition, currentMoveSpeed * (Time.deltaTime - endTimer));
-        
+        positionToMove = Vector3.MoveTowards(transform.position, targetPosition, currentMoveSpeed * (Time.realtimeSinceStartup - previousRenderTime+0.0000001f));
+
+        previousRenderTime = Time.realtimeSinceStartup;
+
         if (hDir == 0 && vDir == 0)
             playerAnim.idle = true;
         else playerAnim.idle = false;

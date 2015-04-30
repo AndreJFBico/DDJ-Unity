@@ -19,7 +19,7 @@ public class OilPuddle : ElementalyModifiable {
 
 	// Use this for initialization
 	void Start () {
-        damage = 50;
+        damage = 10;
         slow = 0.5f;
         durability = 20;
         StartCoroutine("reduceSize", 10);

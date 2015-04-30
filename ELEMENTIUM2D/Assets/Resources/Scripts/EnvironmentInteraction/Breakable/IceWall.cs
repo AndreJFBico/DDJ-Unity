@@ -9,7 +9,7 @@ public class IceWall : BreakableWall{
     // Use this for initialization
     void Start()
     {
-        maxDurability = 50;
+        maxDurability = 20;
         durability = maxDurability;
         waterPuddle = GameManager.Instance.WaterPuddle;
     }

@@ -9,7 +9,7 @@ public class BreakableWall : Breakable {
 	// Use this for initialization
     void Start()
     {
-        maxDurability = 50;
+        maxDurability = 20;
         durability = maxDurability;
 	}
 
@@ -30,7 +30,7 @@ public class BreakableWall : Breakable {
             case BreakableWalls.FIRE:
                 switch (projType)
                 {  
-                    case Elements.FROST:
+                    case Elements.WATER:
                         durability -= damage;
                         break;
                     default:

@@ -5,13 +5,11 @@ using Includes;
 
 public class WaterBurst : AbilityBehaviour
 {
-
     private GameObject cs;
     private GameObject iceBlock;
     private List<GameObject> waterProjectiles;
     protected bool iced = false;
     
-
     protected override void Awake()
     {
         waterProjectiles = new List<GameObject>();
@@ -24,7 +22,7 @@ public class WaterBurst : AbilityBehaviour
     protected override void Start()
     {
         base.Start();
-        type = Elements.FROST;
+        type = Elements.WATER;
     }
 
     public void handleCollision(Collision collider)

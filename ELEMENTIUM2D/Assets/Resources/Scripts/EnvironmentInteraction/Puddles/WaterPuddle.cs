@@ -16,10 +16,7 @@ public class WaterPuddle : ElementalyModifiable{
 
     protected override void dealWithAgent(Collider other)
     {
-        if (other.gameObject.tag.CompareTo("Enemy") == 0)
-        {
-            applyStatus(other, StatusEffects.WET, 1);
-        }
+        applyStatus(other, StatusEffects.WET, 1);
     }
 
     public override void dealWithProjectile(Elements type)
@@ -34,7 +31,7 @@ public class WaterPuddle : ElementalyModifiable{
             }
         }
 
-        if(type == Elements.FROST)
+        if(type == Elements.WATER)
         {
             resetValues();
             genIceWall();

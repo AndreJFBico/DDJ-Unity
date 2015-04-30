@@ -29,10 +29,11 @@ public class TelegraphEnemy : EnemyScript {
         waterResist = EnemyStats.BasicNeutral.waterResist;
         earthResist = EnemyStats.BasicNeutral.earthResist;
         fireResist = EnemyStats.BasicNeutral.fireResist;
+        unalertedSpeed = EnemyStats.BasicNeutral.unalertedSpeed;
+        alertedSpeed = EnemyStats.BasicNeutral.alertedSpeed;
+
         activeWeapon = left;
-        //lr = gameObject.AddComponent<LineRenderer>();
-        //lr.SetWidth(0.01f, 0.01f);
-        //lr.SetVertexCount(2);
+
         base.Awake();
     }
 
@@ -115,5 +116,10 @@ public class TelegraphEnemy : EnemyScript {
             activeWeapon.rotation = Quaternion.identity;
         }
         base.LateUpdate();
+    }
+
+    public override void dealDamage(Player player)
+    {
+        player.takeDamage(damage, type);
     }
 }

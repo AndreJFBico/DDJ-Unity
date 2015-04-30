@@ -22,13 +22,13 @@ public class EnemySpawner : EnemyScript
 	protected override void Awake()
     {
         type = Elements.NEUTRAL;
-        maxHealth = EnemyStats.BasicNeutral.maxHealth;
+        maxHealth = EnemyStats.Spawner.maxHealth;
         health = maxHealth;
-        damage = EnemyStats.BasicNeutral.damage;
-        defence = EnemyStats.BasicNeutral.defence;
-        waterResist = EnemyStats.BasicNeutral.waterResist;
-        earthResist = EnemyStats.BasicNeutral.earthResist;
-        fireResist = EnemyStats.BasicNeutral.fireResist;
+        damage = EnemyStats.Spawner.damage;
+        defence = EnemyStats.Spawner.defence;
+        waterResist = EnemyStats.Spawner.waterResist;
+        earthResist = EnemyStats.Spawner.earthResist;
+        fireResist = EnemyStats.Spawner.fireResist;
         spawnEnemy = SpawnEnemy();
         base.Awake();
         multiplier = 5;
@@ -108,11 +108,5 @@ public class EnemySpawner : EnemyScript
         }
     }
 
-    public SpawnerManager SpawnerManager
-    {
-        set{
-            _spawnerManager = value;
-        }
-    }
-
+    public SpawnerManager SpawnerManager { set{ _spawnerManager = value; } }
 }

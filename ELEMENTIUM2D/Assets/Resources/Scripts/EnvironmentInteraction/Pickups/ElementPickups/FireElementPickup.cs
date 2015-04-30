@@ -6,7 +6,7 @@ public class FireElementPickup : Pickup
 {
     public override void Start()
     {
-        if (GameManager.Instance.Stats.lim_primary_fire_level > 0)
+        if (GameManager.Instance.Stats.primary_fire_level > 0)
             Destroy(transform.parent.gameObject);
         base.Start();
     }

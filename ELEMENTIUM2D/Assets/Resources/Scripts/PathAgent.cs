@@ -16,6 +16,7 @@ public class PathAgent : MonoBehaviour
     private Agent agentScrpt;
     private float previousSpeed;
     private Transform previousTarget;
+    private bool imobilized = false;
 
     private bool inSight = false;
 
@@ -34,6 +35,8 @@ public class PathAgent : MonoBehaviour
         inSight = true;
         agentScrpt.setAlerted(true);
         target = player;
+        if (imobilized)
+            agent.speed = 0;
     }
 
     public void OnTriggerEnter(Collider collision)
@@ -58,10 +61,12 @@ public class PathAgent : MonoBehaviour
         inSight = false;
         previousTarget = target;
         target = null;
+        imobilized = true;
     }
 
     public void restart(bool chase)
     {
+        imobilized = false;
         agent.speed = previousSpeed;
         if(chase)
         {

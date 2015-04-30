@@ -22,7 +22,7 @@ public class WaterSpray : AbilityBehaviour {
     protected override void Start()
     {
         base.Start();
-        type = Elements.FROST;
+        type = Elements.WATER;
     }
 
     public override void OnCollisionEnter(Collision collision)

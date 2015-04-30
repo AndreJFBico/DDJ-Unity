@@ -58,16 +58,6 @@ public class Player : Agent {
         FloatingText.Instance.sceneInit();
     }
 
-    public override void OnCollisionStay(Collision collision)
-    {
-        if (collision.transform.tag.CompareTo("Enemy") == 0)
-        {
-            EnemyScript agent = collision.gameObject.GetComponent<EnemyScript>();
-            takeDamage(agent.getDamage(), agent.getElementType());
-        }
-        characterMoveScrpt.CollisionStay(collision);
-    }
-
     protected void Update()
     {
         if (timerRunning)
@@ -77,14 +67,14 @@ public class Player : Agent {
             timerRunning = false;
             damageTimer = 0.0f;
         }
-        if(lastCollidedWith != null && !lastCollidedWith.gameObject.activeSelf)
+        if ((lastCollidedWith != null && !lastCollidedWith.gameObject.activeSelf) || lastCollidedWith == null)
         {
             characterMoveScrpt.setInContactWithEnemy(false);     
         }
-        else if (lastCollidedWith == null)
-        {
-            characterMoveScrpt.setInContactWithEnemy(false);
-        }
+        //else if (lastCollidedWith == null)
+        //{
+        //    characterMoveScrpt.setInContactWithEnemy(false);
+        //}
     }
 
     void blink()
@@ -109,17 +99,40 @@ public class Player : Agent {
     }
 
 
+    #region OnCollision Handlers
     //TODO ATTENTION THIS SHOULD NOT BE HERE, this should either be implemented in the enemies themselves or in the corresponding projectile behaviours
     public override void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.tag.CompareTo("Enemy") == 0)
         {
-            EnemyScript agent = collision.gameObject.GetComponent<EnemyScript>();
-            takeDamage(agent.getDamage(), agent.getElementType());
+            takeDamageFromEnemyContact(collision.gameObject);
         }
         characterMoveScrpt.CollisionEnter(collision);
         lastCollidedWith = collision.transform;
         base.OnCollisionEnter(collision);
+    }
+
+    public override void OnCollisionStay(Collision collision)
+    {
+        if (collision.transform.tag.CompareTo("Enemy") == 0)
+        {
+            takeDamageFromEnemyContact(collision.gameObject);
+        }
+        characterMoveScrpt.CollisionStay(collision);
+    }
+
+    public override void OnCollisionExit(Collision collision)
+    {
+        characterMoveScrpt.CollisionExit(collision);
+        base.OnCollisionExit(collision);
+    } 
+    #endregion
+
+    private void takeDamageFromEnemyContact(GameObject obj)
+    {
+        if (timerRunning) return;
+        EnemyScript agent = obj.GetComponent<EnemyScript>();
+        agent.dealDamage(this);
     }
 
     public override void applyStatusEffect(StatusEffect scrpt)
@@ -127,19 +140,24 @@ public class Player : Agent {
         scrpt.applyStatusEffect(this);
     }
 
-    public override void OnCollisionExit(Collision collision)
-    {
-        characterMoveScrpt.CollisionExit(collision);
-        base.OnCollisionExit(collision);
-    }
-
     public override bool isHurt()
     {
         return health() < maxHealth();
     }
+    
+    public override void takePeriodicDamage(float amount, Elements type)
+    {
+        if (health() <= 0) return;
+
+        calculateDamageTaken(amount, type);
+
+        checkIfDead();
+    }
 
     public override void takeDamage(float amount, Elements type)
     {
+        if (health() <= 0) return;
+
         if (timerRunning)
         {
             if (!(damageTimer >= GameManager.Instance.Stats.damageTimer))
@@ -157,10 +175,17 @@ public class Player : Agent {
             timerRunning = true;          
         }
 
+        calculateDamageTaken(amount, type);
+
+        checkIfDead();
+    }
+
+    private void calculateDamageTaken(float amount, Elements type)
+    {
         switch (type)
         {
             case Elements.NEUTRAL:
-                addHealth(-amount * (1 - (defence() / 100.0f))); 
+                addHealth(-amount * (1 - (defence() / 100.0f)));
                 break;
 
             case Elements.FIRE:
@@ -171,13 +196,17 @@ public class Player : Agent {
                 addHealth(-amount * (1 - ((defence() + earthResist()) / 100.0f)));
                 break;
 
-            case Elements.FROST:
+            case Elements.WATER:
                 addHealth(-amount * (1 - ((defence() + waterResist()) / 100.0f)));
                 break;
 
             default:
                 break;
         }
+    }
+
+    private void checkIfDead()
+    {
         if (health() <= 0)
         {
             transform.FindChild("Sprite").gameObject.SetActive(false);

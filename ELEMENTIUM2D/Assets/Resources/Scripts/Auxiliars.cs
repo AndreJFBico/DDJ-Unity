@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Includes
 {
-    public enum Elements { NEUTRAL, FIRE, EARTH, FROST };
+    public enum Elements { NEUTRAL, FIRE, EARTH, WATER };
     public enum BreakableWalls { NEUTRAL, FIRE, EARTH, FROST};
     public enum StatusEffects { BURNING, SLOW, STUN, WET};
 
@@ -21,6 +21,7 @@ namespace Includes
     {
         public const string breakable = "Breakable";
         public const string elementalyModifiable = "ElementalyModifiable";
+        public const string obstacles = "Obstacles";
         public const float enemyRoamRadius = 2.0f;
     }
     #endregion
@@ -99,7 +100,7 @@ namespace Includes
             {
                 public static float attackSpeed = 0.25f;
                 public static int projectile_number = 1;
-                public static float damage = 4;
+                public static float damage = 2.5f;
                 public static float movementForce = 5;
                 public static string projectile = "Prefabs/Projectiles/FrostBolt";
 
@@ -124,7 +125,7 @@ namespace Includes
             public class ability3
             {
                 public static float attackSpeed = 1.5f;
-                public static int projectile_number = 7;
+                public static int projectile_number = 15;
                 public static float damage = 1;
                 public static float movementForce = 1.5f;
                 public static string projectile = "Prefabs/Projectiles/IceNova";
@@ -144,7 +145,7 @@ namespace Includes
                 public static float attackSpeed = 0.30f;
                 public static int projectile_number = 1;
                 public static int collisionNumber = 3;
-                public static float damage = 2;
+                public static float damage = 1;
                 public static float maxForce = 20;
                 public static float minForce = 5;
                 public static string projectile = "Prefabs/Projectiles/Fireball";
@@ -168,7 +169,7 @@ namespace Includes
             {
                 public static float attackSpeed = 0.25f;
                 public static int projectile_number = 1;
-                public static float damage = 2;
+                public static float damage = 1;
                 public static float movementForce = 200;
                 public static string projectile = "Prefabs/Projectiles/Fireball";
 
@@ -184,9 +185,9 @@ namespace Includes
         {
             public class ability1
             {
-                public static float attackSpeed = 0.50f;
+                public static float attackSpeed = 1f;
                 public static int projectile_number = 1;
-                public static float damage = 5;
+                public static float damage = 6;
                 public static float movementForce = 10;
                 public static string projectile = "Prefabs/Projectiles/EarthDisk";
 
@@ -208,9 +209,9 @@ namespace Includes
             }
             public class ability3
             {
-                public static float attackSpeed = 0.25f;
+                public static float attackSpeed = 0.5f;
                 public static int projectile_number = 1;
-                public static float damage = 1;
+                public static float damage = 3;
                 public static float movementForce = 200;
                 public static string projectile = "Prefabs/Projectiles/EarthStun";
 
@@ -227,50 +228,70 @@ namespace Includes
     {
         // NEUTRAL
         #region Neutral Enemies
+
+        public class Spawner
+        {
+            public static float maxHealth = 20;
+            public static float damage = 0;
+            public static float defence = 50;
+            public static float waterResist = 50;
+            public static float earthResist = 50;
+            public static float fireResist = 50;
+            public static float visionRadius = 0;
+            public static float unalertedSpeed = 0;
+            public static float alertedSpeed = 0;
+        }
+
         public class BasicNeutral
         {
-            public static float maxHealth = 50;
-            public static float damage = 10;
-            public static float defence = 2;
-            public static float waterResist = 5;
-            public static float earthResist = 5;
-            public static float fireResist = 5;
+            public static float maxHealth = 20;
+            public static float damage = 5;
+            public static float defence = 0;
+            public static float waterResist = 0;
+            public static float earthResist = 0;
+            public static float fireResist = 0;
             public static float visionRadius = 5.46f;
+            public static float unalertedSpeed = 0.5f;
+            public static float alertedSpeed = 1.5f;
         }
 
         public class RangedNeutral
         {
-            public static float maxHealth = 50;
-            public static float damage = 10;
-            public static float defence = 2;
-            public static float waterResist = 5;
-            public static float earthResist = 5;
-            public static float fireResist = 5;
+            public static float maxHealth = 20;
+            public static float damage = 5;
+            public static float defence = 0;
+            public static float waterResist = 0;
+            public static float earthResist = 0;
+            public static float fireResist = 0;
             public static float visionRadius = 5.46f;
             public static float rangedRadius = 1.5f;
             public static float rangedAttackSpeed = 0.5f;
             public static string neutralEnemyProjectile = "Prefabs/Projectiles/Musk";
+            public static float unalertedSpeed = 0.5f;
+            public static float alertedSpeed = 1.5f;
         }
 
         public class HealerNeutral
         {
-            public static float maxHealth = 50;
-            public static float healAmount = 3;
-            public static float damage = 10;
-            public static float defence = 2;
-            public static float waterResist = 5;
-            public static float earthResist = 5;
-            public static float fireResist = 5;
+            public static float maxHealth = 20;
+            public static float healAmount = 1;
+            public static float damage = 2;
+            public static float defence = 0;
+            public static float waterResist = 0;
+            public static float earthResist = 0;
+            public static float fireResist = 0;
             public static float visionRadius = 5.46f;
             public static float rangedRadius = 1.5f;
             public static float rangedAttackSpeed = 0.5f;
             public static string neutralEnemyProjectile = "Prefabs/Projectiles/Healing";
+            public static float unalertedSpeed = 0.5f;
+            public static float alertedSpeed = 1.5f;
         }
 
         public class NeutralShield
         {
-            public static float maxHealth = 50;
-            public static float damage = 10;
+            public static float maxHealth = 20;
+            public static float damage = 5;
             public static float defence = 2;
             public static float waterResist = 5;
             public static float earthResist = 5;
@@ -282,50 +303,93 @@ namespace Includes
             public static string neutralEnemyProjectile = "Prefabs/Projectiles/Musk";
 
             public static bool shielded = true;
-            public static Elements shieldType = Elements.FROST;
+            public static Elements shieldType = Elements.WATER;
             public static float shieldHP = 40;
         }
         #endregion
 
         // Frost
         #region Frost/Water Enemies
-        public class Frost
+        public class WaterBasic
         {
-            public static float maxHealth = 100;
-            public static float damage = 10;
-            public static float defence = 2;
-            public static float waterResist = 5;
-            public static float earthResist = 5;
-            public static float fireResist = 5;
+            public static float maxHealth = 20;
+            public static float damage = 5;
+            public static float defence = 0;
+            public static float waterResist = 80;
+            public static float earthResist = -50;
+            public static float fireResist = 0;
             public static float visionRadius = 5.46f;
+            public static Elements type = Elements.WATER;
+            public static float statusDurability = 5;
+            public static float statusIntensity = 1f;
+            public static float unalertedSpeed = 0.5f;
+            public static float alertedSpeed = 1.5f;
         }
         #endregion
 
         // FIRE
         #region Fire Enemies
-        public class Fire
+        public class FireBasic
         {
-            public static float maxHealth = 100;
-            public static float damage = 10;
-            public static float defence = 2;
+            public static float maxHealth = 20;
+            public static float damage = 5;
+            public static float defence = 0;
+            public static float waterResist = -50;
+            public static float earthResist = 0;
+            public static float fireResist = 80;
+            public static float visionRadius = 5.46f;
+            public static Elements type = Elements.FIRE;
+            public static float statusDurability = 5;
+            public static float statusIntensity = 5f;
+            public static float unalertedSpeed = 0.5f;
+            public static float alertedSpeed = 1.5f;
+        }
+
+        public class FireRanged
+        {
+            public static float maxHealth = 20;
+            public static float damage = 5;
+            public static float defence = 0;
             public static float waterResist = 5;
             public static float earthResist = 5;
             public static float fireResist = 5;
             public static float visionRadius = 5.46f;
+            public static Elements type = Elements.FIRE;
+            public static float unalertedSpeed = 0.5f;
+            public static float alertedSpeed = 1.5f;
         }
         #endregion
 
         // EARTH
         #region Earth Enemies
-        public class Earth
+        public class EarthBasic
         {
-            public static float maxHealth = 100;
+            public static float maxHealth = 50;
+            public static float damage = 15;
+            public static float defence = 0;
+            public static float waterResist = 0;
+            public static float earthResist = 80;
+            public static float fireResist = -50;
+            public static float visionRadius = 5.46f;
+            public static Elements type = Elements.EARTH;
+            public static float statusDurability = 3;
+            public static float statusIntensity = 0.35f;
+            public static float unalertedSpeed = 0.35f;
+            public static float alertedSpeed = 1f;
+        }
+
+        public class EarthRanged
+        {
+            public static float maxHealth = 20;
             public static float damage = 10;
             public static float defence = 2;
             public static float waterResist = 5;
             public static float earthResist = 5;
             public static float fireResist = 5;
             public static float visionRadius = 5.46f;
+            public static Elements type = Elements.EARTH;
+            public static float unalertedSpeed = 0.5f;
+            public static float alertedSpeed = 1.5f;
         }
         #endregion
     }
@@ -336,10 +400,11 @@ namespace Includes
     [Serializable]
     public class PlayerStats
     {
-        public const float def_damage = 10;
+        public const float def_damage = 2;
         public const float def_attackSpeed = 0;//Player AttackSpeed is to be incremented by int numbers
         //public const float inc_damage_level = 1.5f;
 
+        public const float def_health = 30.0f;
         public const float def_defence = 0;
         public const float def_multiplierTimer = 4;
 
@@ -359,11 +424,10 @@ namespace Includes
         public const float def_secondary_water_level = 0;
         public const float def_terciary_water_level = 0;
 
-        public const float def_health = 40.0f;
         //public const float def_inc_health = 10.5f;
         
         // VARIABLES, these can be changed and reset at will they represent the current player stats
-        public float moveSpeed = 2.5f;
+        public float moveSpeed = 2f;
         public float moveInContactWithEnemy = 1f;
         public float maxHealth = def_health;
         public float health = def_health;
@@ -376,7 +440,7 @@ namespace Includes
         public float waterResist = 0;
         public float earthResist = 0;
         public float fireResist = 0;
-        public float damageTimer = 2.35f;
+        public float damageTimer = 1.5f;
         public float multiplierTimer = def_multiplierTimer;
         public int currentMultiplier = 0;
         public int[] multiplierLevels = { 7, 12, 20 };
@@ -413,17 +477,17 @@ namespace Includes
         public float lim_secondary_neutral_level = 1;
         public float lim_terciary_neutral_level = 1;
 
-        public float lim_primary_earth_level = 0;
-        public float lim_secondary_earth_level = 0;
-        public float lim_terciary_earth_level = 0;
+        public float lim_primary_earth_level = 1;
+        public float lim_secondary_earth_level = 1;
+        public float lim_terciary_earth_level = 1;
 
-        public float lim_primary_fire_level = 0;
-        public float lim_secondary_fire_level = 0;
-        public float lim_terciary_fire_level = 0;
+        public float lim_primary_fire_level = 1;
+        public float lim_secondary_fire_level = 1;
+        public float lim_terciary_fire_level = 1;
 
-        public float lim_primary_water_level = 0;
-        public float lim_secondary_water_level = 0;
-        public float lim_terciary_water_level = 0;
+        public float lim_primary_water_level = 1;
+        public float lim_secondary_water_level = 1;
+        public float lim_terciary_water_level = 1;
 
         public float lim_points = 4;
 
@@ -433,7 +497,7 @@ namespace Includes
         //ATTENTION IF YOU ADD A NEW VARIABLE PLS DONT FORGET TO ADD IT TO RESET!!!!!!!
         public void reset()
         {
-            moveSpeed = 2.5f;
+            moveSpeed = 2f;
             moveInContactWithEnemy = 1f;
             maxHealth = def_health;
             health = def_health;

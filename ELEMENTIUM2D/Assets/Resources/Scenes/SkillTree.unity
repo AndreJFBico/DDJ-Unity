@@ -963,7 +963,7 @@ MonoBehaviour:
   changeWithValue: 1.10000002
   sucessors:
   - {fileID: 1011148598}
-  operation: 1
+  operation: 4
   father: {fileID: 1011148598}
   selected: 0
   lockedForever: 0
@@ -4926,7 +4926,7 @@ MonoBehaviour:
   changeWithValue: 1.10000002
   sucessors:
   - {fileID: 1752853467}
-  operation: 1
+  operation: 4
   father: {fileID: 1752853467}
   selected: 0
   lockedForever: 0

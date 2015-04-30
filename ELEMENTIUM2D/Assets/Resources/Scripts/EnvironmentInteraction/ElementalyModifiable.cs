@@ -28,61 +28,17 @@ public class ElementalyModifiable : Modifiable {
     //#############################################################
     private void applyBurning(Collider other, float intensity)
     {
-        if (other.gameObject.GetComponent<WetStatusEffect>() != null)
-        {
-            Destroy(other.gameObject.GetComponent<WetStatusEffect>());
-        }
-        if (other.gameObject.GetComponent<BurningStatusEffect>() == null)
-        {
-            StatusEffect burn = other.gameObject.AddComponent<BurningStatusEffect>();
-            burn.setIntensity(intensity);
-            burn.setDuration(durability);
-            other.gameObject.GetComponent<Agent>().applyStatusEffect(burn);
-        }
-        else
-        {
-            //Need an extra check to see if damage > this damage
-            StatusEffect burn = other.gameObject.GetComponent<BurningStatusEffect>();
-            burn.resetDuration(durability);
-        }
+        StatusEffectManager.Instance.applyBurning(other.gameObject, intensity, durability);
     }
 
     private void applySlow(Collider other, float intensity)
     {
-        float duration = 1;
-        if (other.gameObject.GetComponent<SlowStatusEffect>() == null)
-        {
-            StatusEffect slow = other.gameObject.AddComponent<SlowStatusEffect>();
-            slow.setIntensity(intensity);
-            slow.setDuration(duration);
-            other.gameObject.GetComponent<Agent>().applyStatusEffect(slow);
-        }
-        else
-        {
-            //Need an extra check to see if damage > this damage
-            StatusEffect slow = other.gameObject.GetComponent<SlowStatusEffect>();
-            slow.resetDuration(duration);
-        }
+        StatusEffectManager.Instance.applySlow(other.gameObject, intensity, durability);
     }
 
     private void applyWet(Collider other, float intensity)
     {
-        if (other.gameObject.GetComponent<BurningStatusEffect>() != null)
-        {
-            Destroy(other.gameObject.GetComponent<BurningStatusEffect>());
-        }
-        if (other.gameObject.GetComponent<WetStatusEffect>() == null)
-        {
-            StatusEffect wet = other.gameObject.AddComponent<WetStatusEffect>();
-            wet.setDuration(durability);
-            other.gameObject.GetComponent<Agent>().applyStatusEffect(wet);
-        }
-        else
-        {
-            //Need an extra check to see if damage > this damage
-            StatusEffect wet = other.gameObject.GetComponent<WetStatusEffect>();
-            wet.resetDuration(durability);
-        }
+        StatusEffectManager.Instance.applyWet(other.gameObject, intensity, durability);
     }
 
     protected void OnTriggerStay(Collider other)

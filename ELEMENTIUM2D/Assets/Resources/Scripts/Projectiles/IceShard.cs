@@ -15,7 +15,7 @@ public class IceShard : AbilityBehaviour
     protected override void Start()
     {
         base.Start();
-        type = Elements.FROST;
+        type = Elements.WATER;
     }
 
     public override void OnCollisionEnter(Collision collision)
@@ -31,6 +31,7 @@ public class IceShard : AbilityBehaviour
     public override void initiate(GameObject startingObject, float dmg)
     {
         base.initiate(startingObject, dmg);
+        GetComponent<Rigidbody>().AddForce(transform.forward * startSpeed);
         damage = dmg;
         ConstantForce constantForce = gameObject.AddComponent<ConstantForce>();
         constantForce.relativeForce = new Vector3(0.0f, 0.0f, AbilityStats.Frost.ability1.movementForce);

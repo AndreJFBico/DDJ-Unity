@@ -81,7 +81,5 @@ public class AbilityBehaviour : ElementiumMonoBehaviour
     // This function applys initial movement to the projectile
     public virtual void initiate(GameObject startingObject, float damage)
     {
-        if (GetComponent<Rigidbody>() != null)
-            GetComponent<Rigidbody>().AddForce(transform.forward * startSpeed);
     }
 }

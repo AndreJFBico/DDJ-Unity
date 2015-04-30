@@ -53,19 +53,26 @@ public class RoomManagerV2 : MonoBehaviour {
 
 	private void loadMapType()
 	{
-        TextAsset text = Resources.Load("Map/Maps/type3") as TextAsset;
-        File.Create("Map.txt");
+        TextAsset textAsset = Resources.Load("Map/Maps/type3") as TextAsset;
+        //File.Create("Map.txt");
 
-        StreamWriter file2 = new StreamWriter("/Map.txt", true);
-        file2.WriteLine(text.text);
-        file2.Close();
+        //StreamWriter file2 = new StreamWriter("/Map.txt", true);
+        //file2.WriteLine(textAsset.text);
+        //file2.Close();
 
+        //string line;
+        //StreamReader theReader = new StreamReader("/Map.txt", Encoding.Default);
+
+        byte[] byteArray = Encoding.UTF8.GetBytes(textAsset.text);
+        MemoryStream stream = new MemoryStream(byteArray);
+
+        StreamReader theReader = new StreamReader(stream);
         string line;
-        StreamReader theReader = new StreamReader("/Map.txt", Encoding.Default);
 
         //string line;
         //StreamReader theReader = new StreamReader(Application.dataPath + "/Resources/Map/Maps/" + mapType, Encoding.Default);
 		
+
 		//parse rooms
 		line = theReader.ReadLine();
 		while (true)

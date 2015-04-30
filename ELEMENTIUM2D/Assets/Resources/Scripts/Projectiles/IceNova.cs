@@ -15,7 +15,7 @@ public class IceNova : AbilityBehaviour
     {
         base.Start();
         Invoke("destroyClone", 6f);
-        type = Elements.FROST;
+        type = Elements.WATER;
     }
 
     public override void OnCollisionEnter(Collision collision)
@@ -24,9 +24,7 @@ public class IceNova : AbilityBehaviour
         {
             if (collision.gameObject.GetComponent<FrozenStatusEffect>() == null)
             {
-                FrozenStatusEffect sse = collision.gameObject.AddComponent<FrozenStatusEffect>();
-                sse.setDuration(5.0f);
-                sse.applyStatusEffect(collision.gameObject.GetComponent<EnemyScript>());
+                StatusEffectManager.Instance.applyFrozen(collision.gameObject, 0, 5);
             }
         }
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Unhitable"))

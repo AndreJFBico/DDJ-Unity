@@ -25,7 +25,7 @@ public class FrostElement : ShootElement {
         gunBlast1.SetActive(false);
         gunBlast2.SetActive(false);
 
-        _elementType = Includes.Elements.FROST;
+        _elementType = Includes.Elements.WATER;
         _active = false;
 
         projectile1 = (GameObject)Resources.Load(AbilityStats.Frost.ability1.projectile);

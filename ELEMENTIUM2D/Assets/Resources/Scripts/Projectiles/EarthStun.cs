@@ -22,9 +22,7 @@ public class EarthStun : AbilityBehaviour {
         {
             if (collision.gameObject.GetComponent<StunnedStatusEffect>() == null)
             {
-                StunnedStatusEffect sse = collision.gameObject.AddComponent<StunnedStatusEffect>();
-                sse.setDuration(5.0f);
-                sse.applyStatusEffect(collision.gameObject.GetComponent<EnemyScript>());
+                StatusEffectManager.Instance.applyStun(collision.gameObject, 0, 5);
             }
         }
         if (collidedWith(collision.gameObject, damage)) ;
@@ -38,6 +36,7 @@ public class EarthStun : AbilityBehaviour {
     public override void initiate(GameObject startingObject, float dmg)
     {
         base.initiate(startingObject, dmg);
+        GetComponent<Rigidbody>().AddForce(transform.forward * startSpeed);
         damage = dmg;
         ConstantForce constantForce = gameObject.AddComponent<ConstantForce>();
         constantForce.relativeForce = new Vector3(0.0f, 0.0f, AbilityStats.Earth.ability2.movementForce);
