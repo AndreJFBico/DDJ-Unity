@@ -33,7 +33,8 @@ public class CameraScrpt : MonoBehaviour {
         transf = new Vector3(rounded_x, transform.position.y, rounded_y); // this is 2d, so my camera is that far from the screen.
         transform.position  = transf = Vector3.SmoothDamp(transform.position, transf, ref velocity, smoothTime);*/
         Vector3 targetPosition = target.TransformPoint(new Vector3(0, 20, 0));
-        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
+        transform.position = targetPosition;
+        //transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
     }
 
     public float RoundToNearestPixel(float unityUnits)
