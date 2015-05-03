@@ -34,19 +34,20 @@ public class AbilityBehaviour : ElementiumMonoBehaviour
     #endregion
 
     #region Collision and trigger behaviours
+    // Note in the future this function will have to receive a boolean acordingly to the projectile definition of going trough blinking targets
     protected virtual bool collidedWith(GameObject collidedObj, float damage)
     {
         if (collidedObj.tag.CompareTo("Enemy") == 0)
         {
             Agent enemy = collidedObj.GetComponent<Agent>();
             collidedObj.GetComponent<EnemyScript>().playerSighted();
-            enemy.takeDamage(damage, type);
+            enemy.takeDamage(damage, type, false);
             return true;
         }
         else if (LayerMask.NameToLayer("Player") == collidedObj.layer)
         {
             Agent player = collidedObj.GetComponent<Agent>();
-            player.takeDamage(damage, type);
+            player.takeDamage(damage, type, false);
             return true;
         }
         return false;

@@ -88,6 +88,6 @@ public class FireRangedEnemyScript : EnemyScript
 
     public override void dealDamage(Player player)
     {
-        player.takeDamage(damage, type);
+        player.takeDamage(damage, type, false);
     }
 }

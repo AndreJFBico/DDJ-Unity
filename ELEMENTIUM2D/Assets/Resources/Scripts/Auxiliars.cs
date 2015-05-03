@@ -169,13 +169,14 @@ namespace Includes
             }
             public class ability3
             {
-                public static float attackSpeed = 0.25f;
+                public static float attackSpeed = 4.25f;
                 public static int projectile_number = 1;
                 public static float damage = 1;
                 public static float movementForce = 200;
-                public static string projectile = "Prefabs/Projectiles/Fireball";
+                public static string projectile = "Prefabs/Projectiles/FireHeal";
+                public static float abilityTimer = 1.3f;
 
-                public static float Damage { get { return damage + GameManager.Instance.Stats.damage * 1f; } }
+                public static float Damage { get { return damage + -GameManager.Instance.Stats.damage * 1f; } }
                 public static float AttackSpeed { get { return attackSpeed + GameManager.Instance.Stats.attackSpeed * attackSpeed / 10; } } //Player AttackSpeed is to be incremented by int numbers
             }
         }

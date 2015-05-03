@@ -64,10 +64,11 @@ public class EnemyScript : Agent
 
     public override void takePeriodicDamage(float amount, Elements type)
     {
-        takeDamage(amount, type);
+        takeDamage(amount, type, true);
     }
 
-    public override void takeDamage(float amount, Elements type)
+    //Currently enemies do not blink some of them will in the future!
+    public override void takeDamage(float amount, Elements type, bool goTroughBlink)
     {
         float totalDamage = 0;
         Color color = Color.white;

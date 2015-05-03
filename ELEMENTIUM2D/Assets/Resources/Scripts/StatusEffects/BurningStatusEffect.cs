@@ -79,7 +79,6 @@ public class BurningStatusEffect : StatusEffect
 
     public void applyBurningStatus(Agent script)
     {
-        Debug.LogWarning("Taking Damage");
         if (isBurning)
         {
             if (intensity > burningDamage)

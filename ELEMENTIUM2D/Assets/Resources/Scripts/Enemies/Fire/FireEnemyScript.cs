@@ -33,7 +33,7 @@ public class FireEnemyScript : EnemyScript
 
     public override void dealDamage(Player player)
     {
-        player.takeDamage(damage, type);
+        player.takeDamage(damage, type, false);
         int i = RandomGenerator.Next(4);
         if(i == 0)
         {

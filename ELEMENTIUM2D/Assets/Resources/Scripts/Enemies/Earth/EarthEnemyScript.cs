@@ -34,7 +34,7 @@ public class EarthEnemyScript : EnemyScript
 
     public override void dealDamage(Player player)
     {
-        player.takeDamage(damage, type);
+        player.takeDamage(damage, type, false);
 
         StatusEffectManager.Instance.applySlow(player.gameObject, statusIntensity, statusDurability);
     }

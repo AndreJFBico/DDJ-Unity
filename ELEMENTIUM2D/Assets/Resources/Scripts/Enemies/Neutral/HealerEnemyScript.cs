@@ -84,7 +84,7 @@ public class HealerEnemyScript : EnemyScript {
             {
                 GameObject p = Instantiate(projectile, targetedEnemy.position, Quaternion.identity) as GameObject;
                 p.transform.parent = targetedEnemy.transform;
-                targetedEnemy.GetComponent<EnemyScript>().takeDamage(-EnemyStats.HealerNeutral.healAmount, type);
+                targetedEnemy.GetComponent<EnemyScript>().takeDamage(-EnemyStats.HealerNeutral.healAmount, type, true);
                 //p.GetComponent<AbilityBehaviour>().initiate(this.gameObject);
             }
             yield return new WaitForSeconds(EnemyStats.HealerNeutral.rangedAttackSpeed);
@@ -148,6 +148,6 @@ public class HealerEnemyScript : EnemyScript {
 
     public override void dealDamage(Player player)
     {
-        player.takeDamage(damage, type);
+        player.takeDamage(damage, type, false);
     }
 }

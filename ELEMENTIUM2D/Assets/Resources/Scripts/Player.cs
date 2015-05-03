@@ -154,13 +154,13 @@ public class Player : Agent {
         checkIfDead();
     }
 
-    public override void takeDamage(float amount, Elements type)
+    public override void takeDamage(float amount, Elements type, bool goTroughBlink)
     {
         if (health() <= 0) return;
 
         if (timerRunning)
         {
-            if (!(damageTimer >= GameManager.Instance.Stats.damageTimer))
+            if (!(damageTimer >= GameManager.Instance.Stats.damageTimer) && !goTroughBlink)
             {
                 return;
             }
