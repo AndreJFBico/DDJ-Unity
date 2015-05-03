@@ -84,6 +84,7 @@ public class EnemySpawner : EnemyScript
     public void despawn(Transform obj)
     {
         obj.GetComponentInChildren<PathAgent>().target = null;
+        obj.GetComponentInChildren<PathAgent>().instantStopChase();
         StatusEffect[] effects = obj.GetComponents<StatusEffect>();
         foreach (StatusEffect item in effects)
         {

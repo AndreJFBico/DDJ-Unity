@@ -170,6 +170,7 @@ GameObject:
   - 4: {fileID: 419168}
   - 114: {fileID: 11413348}
   - 65: {fileID: 6575318}
+  - 208: {fileID: 20844896}
   m_Layer: 12
   m_Name: EarthSpawner
   m_TagString: Enemy
@@ -404,6 +405,21 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21246882}
+--- !u!208 &20844896
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 199546}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: .129999995, y: .0850000009, z: 9.99999975e-06}
+  m_MoveThreshold: .100000001
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: .100000001, z: 0}
+  m_TimeToStationary: .5
 --- !u!212 &21209910
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -95,4 +95,9 @@ public class ShootElement : MonoBehaviour
         }
     }
 
+    public void setBarrelEnd(Transform t)
+    {
+        barrelEnd = t;
+    }
+
 }

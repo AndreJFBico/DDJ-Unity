@@ -235,7 +235,7 @@ public class Player : Agent {
 
     public override void createFloatingText(string message)
     {
-        FloatingText.Instance.createFloatingText(transform, message, Color.yellow);
+        FloatingText.Instance.createFloatingText(transform, message, Color.yellow, true);
     }
 
     public void increaseMultiplier(int inc)

@@ -97,7 +97,7 @@ public class EnemyScript : Agent
                 break;
         }
         health -= totalDamage;
-        FloatingText.Instance.createFloatingText(transform, (int)totalDamage + " Damage", color);
+        FloatingText.Instance.createFloatingText(transform, "" + (int)totalDamage + "", color, true);
         if(health <= 0)
         {
             GameManager.Instance.Player.GetComponent<Player>().increaseMultiplier(multiplier);

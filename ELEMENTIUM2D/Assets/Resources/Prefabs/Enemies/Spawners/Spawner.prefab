@@ -60,6 +60,7 @@ GameObject:
   - 4: {fileID: 436884}
   - 114: {fileID: 11415342}
   - 65: {fileID: 6564478}
+  - 208: {fileID: 20808336}
   m_Layer: 12
   m_Name: Spawner
   m_TagString: Enemy
@@ -404,6 +405,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
+--- !u!208 &20808336
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125066}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: .129999995, y: .0850000009, z: 9.99999975e-06}
+  m_MoveThreshold: .100000001
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: .100000001, z: 0}
+  m_TimeToStationary: .5
 --- !u!212 &21207912
 SpriteRenderer:
   m_ObjectHideFlags: 1

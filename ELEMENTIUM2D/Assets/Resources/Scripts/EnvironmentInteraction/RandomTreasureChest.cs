@@ -47,8 +47,8 @@ public class RandomTreasureChest : TemporaryTreasureChest {
             default:
                 break;
         }
-
-        FloatingText.Instance.createFloatingText(transform, stats[random] + " increased by " + (intensity-1)*100 + "%", Color.yellow);
+        effectApplied = stats[random] + " increased by " + (intensity-1)*100 + "%";
+        FloatingText.Instance.createFloatingText(transform, effectApplied, Color.yellow, false);
         
         base.applyEffect();
     }

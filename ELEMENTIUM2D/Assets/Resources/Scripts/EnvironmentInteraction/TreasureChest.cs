@@ -8,6 +8,8 @@ public class TreasureChest : Interactable{
     private Sprite openChest;
 
     public bool locked = false;
+    private bool used = false;
+    protected string effectApplied;
 
     public override void Start()
     {
@@ -22,13 +24,19 @@ public class TreasureChest : Interactable{
         if (other.tag.CompareTo("Player") == 0)
         {
             displayText();
-            if (!locked)
+            if(used)
             {
-                playerInteractions.Interactable = this;
+                textDisplay.GetComponent<TextMesh>().text = effectApplied;
             }
             else
-                textDisplay.GetComponent<TextMesh>().text = "Locked";
-
+            {
+                if (!locked)
+                {
+                    playerInteractions.Interactable = this;
+                }
+                else
+                    textDisplay.GetComponent<TextMesh>().text = "Locked";
+            }
         }
     }
 
@@ -52,7 +60,10 @@ public class TreasureChest : Interactable{
     {
         //use reflection to select from a list of player attributes a random one to increase by 1%
         spriteRenderer.sprite = openChest;
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        used = true;
+        hideText();
+        playerInteractions.Interactable = null;
     }
 
 }

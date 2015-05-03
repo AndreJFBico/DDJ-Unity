@@ -78,6 +78,12 @@ public class PathAgent : MonoBehaviour
         }
     }
 
+    public void instantStopChase()
+    {
+        inSight = false;
+        Invoke("stopChase", 0);
+    }
+
     public void stopChasing()
     {
         inSight = false;
