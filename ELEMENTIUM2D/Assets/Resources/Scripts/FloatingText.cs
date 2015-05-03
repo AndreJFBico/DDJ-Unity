@@ -56,7 +56,7 @@ public class FloatingText{
         {
             text = _beingUsedTexts[0];
             _beingUsedTexts.RemoveAt(0);
-            _beingUsedTexts.Add(text);
+            _floatingTexts.Add(text);
         }
 
         text.gameObject.transform.position = transf.position;
