@@ -514,7 +514,7 @@ namespace Includes
             waterResist = 0;
             earthResist = 0;
             fireResist = 0;
-            damageTimer = 2.35f;
+            damageTimer = 1.5f;
             multiplierTimer = def_multiplierTimer;
             multiplierLevels = new int[]{ 7, 12, 20};
             currentMultiplier = 0;

@@ -62,11 +62,6 @@ public class EnemyScript : Agent
         return health < maxHealth;
     }
 
-    public override void takePeriodicDamage(float amount, Elements type)
-    {
-        takeDamage(amount, type, true);
-    }
-
     //Currently enemies do not blink some of them will in the future!
     public override void takeDamage(float amount, Elements type, bool goTroughBlink)
     {

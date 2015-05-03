@@ -57,6 +57,7 @@ public class AbilityBehaviour : ElementiumMonoBehaviour
     {
         if (collidedObj.layer == LayerMask.NameToLayer(Constants.breakable))
         {
+            Debug.Log("Collided With Breakable Bitch!");
             collidedObj.GetComponent<Modifiable>().dealWithProjectile(type, damage);
             return true;
         }

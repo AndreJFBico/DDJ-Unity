@@ -144,34 +144,25 @@ public class Player : Agent {
     {
         return health() < maxHealth();
     }
-    
-    public override void takePeriodicDamage(float amount, Elements type)
-    {
-        if (health() <= 0) return;
-
-        calculateDamageTaken(amount, type);
-
-        checkIfDead();
-    }
-
+   
     public override void takeDamage(float amount, Elements type, bool goTroughBlink)
     {
         if (health() <= 0) return;
-        if (health() >= maxHealth()) return;
+        if (health() > maxHealth()) return;
 
         if (timerRunning)
         {
-            if (!(damageTimer >= GameManager.Instance.Stats.damageTimer) && !goTroughBlink)
+            if (isBlinking() && !goTroughBlink)
             {
                 return;
             }
-            else
+            else if (!goTroughBlink)
             {
                 timerRunning = false;
                 damageTimer = 0.0f;
             }
         }
-        else
+        else if(!timerRunning && !goTroughBlink)
         {
             timerRunning = true;          
         }
@@ -179,6 +170,11 @@ public class Player : Agent {
         calculateDamageTaken(amount, type);
 
         checkIfDead();
+    }
+
+    private bool isBlinking()
+    {
+        return damageTimer < GameManager.Instance.Stats.damageTimer;
     }
 
     private void calculateDamageTaken(float amount, Elements type)
