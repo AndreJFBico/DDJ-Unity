@@ -30,8 +30,7 @@ public class StatusEffectManager{
         if (agent.GetComponent<BurningStatusEffect>() == null)
         {
             StatusEffect burn = agent.AddComponent<BurningStatusEffect>();
-            burn.setIntensity(intensity);
-            burn.setDuration(durability);
+            burn.initiate(intensity, durability);
             agent.GetComponent<Agent>().applyStatusEffect(burn);
         }
         else
@@ -48,8 +47,7 @@ public class StatusEffectManager{
         if (agent.GetComponent<SlowStatusEffect>() == null)
         {
             StatusEffect slow = agent.AddComponent<SlowStatusEffect>();
-            slow.setIntensity(intensity);
-            slow.setDuration(duration);
+            slow.initiate(intensity, durability);
             agent.GetComponent<Agent>().applyStatusEffect(slow);
         }
         else
@@ -69,7 +67,7 @@ public class StatusEffectManager{
         if (agent.GetComponent<WetStatusEffect>() == null)
         {
             StatusEffect wet = agent.AddComponent<WetStatusEffect>();
-            wet.setDuration(durability);
+            wet.initiate(intensity, durability);
             agent.GetComponent<Agent>().applyStatusEffect(wet);
         }
         else
@@ -83,14 +81,14 @@ public class StatusEffectManager{
     public void applyStun(GameObject agent, float intensity, float durability)
     {
         StunnedStatusEffect sse = agent.AddComponent<StunnedStatusEffect>();
-        sse.setDuration(durability);
+        sse.initiate(intensity, durability);
         sse.applyStatusEffect(agent.GetComponent<EnemyScript>());
     }
 
     public void applyFrozen(GameObject agent, float intensity, float durability)
     {
         FrozenStatusEffect sse = agent.AddComponent<FrozenStatusEffect>();
-        sse.setDuration(durability);
+        sse.initiate(intensity, durability);
         sse.applyStatusEffect(agent.GetComponent<EnemyScript>());
     }
 

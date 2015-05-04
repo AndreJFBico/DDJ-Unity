@@ -11,14 +11,30 @@ public class StatusEffect : MonoBehaviour {
 	
 	}
 
-    public virtual void setIntensity(float dmg){
-        intensity = dmg;
+    public float Intensity{
+        get
+        {
+            return intensity;
+        }
+        set
+        {
+            intensity = value;
+        }
     }
 
-    public virtual void setDuration(float dur)
+    public float Duration
     {
-        duration = dur;
+        get
+        {
+            return duration;
+        }
+        set
+        {
+            duration = value;
+        }
     }
+
+    public virtual void initiate(float inten, float dur) { }
 
     public virtual void resetDuration(float dur){}
 

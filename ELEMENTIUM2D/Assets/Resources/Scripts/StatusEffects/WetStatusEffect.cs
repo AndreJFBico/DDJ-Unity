@@ -41,14 +41,10 @@ public class WetStatusEffect : StatusEffect
         applyWetStatus(script);
     }
 
-    public override void setIntensity(float inten)
+    public override void initiate(float inten, float dur)
     {
-        base.setIntensity(inten);
-    }
-
-    public override void setDuration(float dur)
-    {
-        base.setDuration(dur);
+        Intensity = inten;
+        Duration = dur;
         wetTimer = duration;
     }
 

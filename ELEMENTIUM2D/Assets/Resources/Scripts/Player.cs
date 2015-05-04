@@ -148,7 +148,7 @@ public class Player : Agent {
     public override void takeDamage(float amount, Elements type, bool goTroughBlink)
     {
         if (health() <= 0) return;
-        if (health() > maxHealth()) return;
+        if (health() - amount > maxHealth()) return;
 
         if (timerRunning)
         {
@@ -217,6 +217,7 @@ public class Player : Agent {
     protected virtual void OnGUI()
     {
         float percentage = health() / maxHealth();
+        if (health() < 0) addHealth(-health());
         healthbar.transform.localScale = new Vector3(percentage, 1.0f, 1.0f);
     }
 
