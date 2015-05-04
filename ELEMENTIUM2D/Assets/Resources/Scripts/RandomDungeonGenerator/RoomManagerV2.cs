@@ -5,6 +5,7 @@ using System.Text;
 using System.IO;
 using System.Linq;
 using System;
+using Includes;
 
 public class RoomManagerV2 : MonoBehaviour {
 
@@ -102,6 +103,33 @@ public class RoomManagerV2 : MonoBehaviour {
 		}
 		//dumpDictionary(groups);
 
+		//parse drop_groups
+		line = theReader.ReadLine();
+		Dictionary<string, List<string>> dropGroups = new Dictionary<string, List<string>>(); 
+		while (true)
+		{
+			line = theReader.ReadLine();
+			if (line == "::")
+				break;
+			string[] content = line.Split(' ');
+			List<string> list = new List<string>();
+			for (int i = content.Length; i > 1; i--)
+			{
+				string[] aux = content[i - 1].Split('|');
+				string type = aux[0];
+				int count = int.Parse(aux[1]);
+				for(int j = count; j > 0; j--){
+					list.Add(type);
+				}
+			}
+			list.Shuffle();
+			dropGroups.Add(content[0], list);
+		}
+		if(GameManager.Instance.FirstGeneration == true){
+			GameManager.Instance.FirstGeneration = false;
+			GameManager.Instance.DropGroups = dropGroups;
+		}
+
 		//parse doors
 		line = theReader.ReadLine();
 		while (true)
@@ -136,6 +164,7 @@ public class RoomManagerV2 : MonoBehaviour {
 			string[] part = line.Split(' ');
 			int partId = int.Parse(part[1]);
 			DungeonPart currentPart = new DungeonPart(partId);
+			currentPart.dropGroup = part[2];
 			gotos[partId] = new List<KeyValuePair<int,KeyValuePair<bool, string>>>();
 			if(firstPart == null)
 				firstPart = currentPart;
@@ -1061,6 +1090,8 @@ public class RoomManagerV2 : MonoBehaviour {
 									emptydoors.Add(idoor);
 								}
 							}
+							room.part = door.belongsTo.part;
+							room.partId = door.belongsTo.partId;
 							roomDone = true;
 							break;
 						}
