@@ -43,7 +43,7 @@ public class FloatingText{
  
 	#endregion
 
-    public void createFloatingText(Transform transf, string message, Color color, bool parent)
+    public void createFloatingText(Transform transf, string message, Color color)
     {
         TextFloat text;
         if(_floatingTexts.Count > 0)
@@ -60,10 +60,6 @@ public class FloatingText{
         }
 
         text.gameObject.transform.position = transf.position;
-        if(parent)
-        {
-            text.gameObject.transform.parent = transf;
-        }
         
         text.gameObject.GetComponent<MeshRenderer>().sortingOrder = 3000;
         text.gameObject.SetActive(true);
@@ -72,7 +68,6 @@ public class FloatingText{
 
     public void returnText(TextFloat obj)
     {
-        obj.transform.parent = null;
         _beingUsedTexts.Remove(obj);
         _floatingTexts.Add(obj);
         obj.gameObject.SetActive(false);

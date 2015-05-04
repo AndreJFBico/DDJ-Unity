@@ -32,23 +32,25 @@ public class RandomTreasureChest : TemporaryTreasureChest {
             case "maxHealth":
                 intensity = updateEffectIntesity(false);
                 GameManager.Instance.changeStatVariable("maxHealth", intensity, MathOperations.MAXHP);
+                effectApplied = stats[random] + " increased by " + (float)System.Math.Round((intensity-1)*100) + "%";
                 break;
             case "damage":
                 intensity = updateEffectIntesity(false);
                 GameManager.Instance.changeStatVariable("damage", intensity, MathOperations.MUL);
+                effectApplied = stats[random] + " increased by " + (float)System.Math.Round((intensity-1)*100) + "%";
                 break;
             case "defence":
                 intensity = updateEffectIntesity(true);
-                GameManager.Instance.changeStatVariable("defence", intensity, MathOperations.DEFENCE);
+                effectApplied = stats[random] + " increased by " + (float)System.Math.Round(GameManager.Instance.changeStatVariable("defence", intensity, MathOperations.DEFENCE)) + "%";
                 break;
             case "lim_points":
                 GameManager.Instance.changeStatVariable("lim_points", 1, MathOperations.SUM);
+                effectApplied = stats[random] + " increased by " + 1;
                 break;
             default:
                 break;
         }
-        effectApplied = stats[random] + " increased by " + (intensity-1)*100 + "%";
-        FloatingText.Instance.createFloatingText(transform, effectApplied, Color.yellow, false);
+        FloatingText.Instance.createFloatingText(transform, effectApplied, Color.yellow);
         
         base.applyEffect();
     }
@@ -67,6 +69,7 @@ public class RandomTreasureChest : TemporaryTreasureChest {
         {
             intensity += (increase - 1)/2;
         }
+
         return intensity;
     }
 }

@@ -672,7 +672,7 @@ namespace Includes
             return (float)f.GetValue(ob);
         }
 
-        public void changeStatVariable(string field, float value, MathOperations operation)
+        public float changeStatVariable(string field, float value, MathOperations operation)
         {
             var ob = playerStats;
             var typ = typeof(PlayerStats);
@@ -691,8 +691,9 @@ namespace Includes
                     f.SetValue(ob, value);
                     break;
                 case MathOperations.DEFENCE:
-                    f.SetValue(ob, val + (100 - val) * (0.04f * value));
-                    break;
+                    float v = (100 - val) * (0.04f * value);
+                    f.SetValue(ob, val + v);
+                    return v;
                 case MathOperations.MAXHP:
                     float newval = val * value;
                     float diff = newval - val;
@@ -700,6 +701,7 @@ namespace Includes
                     typ.GetField("health").SetValue(ob, (float)typ.GetField("health").GetValue(ob) + diff);
                     break;
             }
+            return 1;
         }
 
         public void resetPlayerStats()
