@@ -2,18 +2,16 @@
 using System.Collections;
 using Includes;
 
-public class BreakableWall : Breakable {
+public class Tree : BreakableWall {
 
-    public BreakableWalls type;
-    public Transform particleSystem;
     private bool affected;
 
-	// Use this for initialization
+    // Use this for initialization
     void Start()
     {
         maxDurability = 20;
         durability = maxDurability;
-	}
+    }
 
     public override void dealWithProjectile(Elements projType, float damage)
     {
@@ -31,7 +29,7 @@ public class BreakableWall : Breakable {
                 break;
             case BreakableWalls.FIRE:
                 switch (projType)
-                {  
+                {
                     case Elements.WATER:
                         durability -= damage;
                         break;
@@ -43,7 +41,14 @@ public class BreakableWall : Breakable {
                 switch (projType)
                 {
                     case Elements.FIRE:
-                        durability -= damage;
+                        //durability -= damage;
+
+                        if (!affected)
+                        {
+                            affected = true;
+                            affectNeighboringBreakables(projType, damage);
+                        }
+                        StartCoroutine(DealTemporaryDamage(damage, 0.8f));
                         break;
                     default:
                         break;
@@ -76,13 +81,33 @@ public class BreakableWall : Breakable {
             {
                 transform.localScale = new Vector3(0.66f, 0.66f, 0.66f);
             }
-        }   
+        }
         if (durability <= 0)
             Destroy(gameObject);
     }
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
+    void affectNeighboringBreakables(Elements projType, float damage)
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 1.0f);
+        int i = 0;
+        while (i < hitColliders.Length)
+        {
+            if (hitColliders[i].gameObject.layer == LayerMask.NameToLayer("Breakable"))
+            {
+                hitColliders[i].gameObject.GetComponent<BreakableWall>().dealWithProjectile(projType, damage);
+            }
+            i++;
+        }
+    }
+
+    IEnumerator DealTemporaryDamage(float damage, float time)
+    {
+        while (true)
+        {
+            durability -= damage;
+            if (durability <= 0)
+                Destroy(gameObject);
+            yield return new WaitForSeconds(time * 2.0f);
+        }
+    }
 }

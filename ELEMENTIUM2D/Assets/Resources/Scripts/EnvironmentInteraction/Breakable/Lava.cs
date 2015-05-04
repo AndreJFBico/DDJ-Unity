@@ -2,18 +2,16 @@
 using System.Collections;
 using Includes;
 
-public class BreakableWall : Breakable {
+public class Lava : BreakableWall {
 
-    public BreakableWalls type;
-    public Transform particleSystem;
     private bool affected;
 
-	// Use this for initialization
+    // Use this for initialization
     void Start()
     {
         maxDurability = 20;
         durability = maxDurability;
-	}
+    }
 
     public override void dealWithProjectile(Elements projType, float damage)
     {
@@ -31,9 +29,11 @@ public class BreakableWall : Breakable {
                 break;
             case BreakableWalls.FIRE:
                 switch (projType)
-                {  
+                {
                     case Elements.WATER:
                         durability -= damage;
+                        affected = true;
+                        StartCoroutine(DealTemporaryDamage(damage, 0.8f));
                         break;
                     default:
                         break;
@@ -76,13 +76,26 @@ public class BreakableWall : Breakable {
             {
                 transform.localScale = new Vector3(0.66f, 0.66f, 0.66f);
             }
-        }   
+        }
         if (durability <= 0)
-            Destroy(gameObject);
+            turnIntoColdLava();
     }
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
+    IEnumerator DealTemporaryDamage(float damage, float time)
+    {
+        while (true)
+        {
+            durability -= damage;
+            if (durability <= 0)
+                turnIntoColdLava();
+            yield return new WaitForSeconds(time);
+        }
+    }
+
+    void turnIntoColdLava()
+    {
+        transform.FindChild("Sprite").GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Environment/Lava/lava_cold");
+        transform.gameObject.GetComponent<SphereCollider>().enabled = false;
+        enabled = false;
+    }
 }

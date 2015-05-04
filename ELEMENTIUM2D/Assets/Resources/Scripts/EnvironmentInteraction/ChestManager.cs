@@ -84,13 +84,22 @@ public class ChestManager{
         chest.gameObject.SetActive(true);
     }
 
-    public GameObject randomChest()
+    public GameObject randomChest(DungeonRoom room)
     {
         GameObject chest = PrefabFactory.createPrefab(_randomChest);
         int index = PlayerStats.multiplierLevelIndex();
 
-        chest.GetComponentInChildren<TreasureChest>().updateClosedSprite(_chestQualitySprites[index]);
+		RandomTreasureChest treasure = (RandomTreasureChest)chest.GetComponentInChildren<TreasureChest>();
+		Dictionary<string, List<string>> groups = GameManager.Instance.DropGroups;
 
+		if(room.part.dropGroup != "0" && GameManager.Instance.DropGroups[room.part.dropGroup].Count != 0){
+			string stat = GameManager.Instance.DropGroups[room.part.dropGroup][0];
+			GameManager.Instance.DropGroups[room.part.dropGroup].RemoveAt(0);
+			treasure.addStats(stat);
+			treasure.updateClosedSprite(_chestQualitySprites[index]);
+		}else{
+			//TODO - no chest?
+		}
         return chest;
     }
 }

@@ -8,18 +8,26 @@ public class RandomTreasureChest : TemporaryTreasureChest {
     private List<string> stats;
     private float increase;
 
+	void Awake(){
+		stats = new List<string>();
+	}
+
     public override void Start()
     {
         base.Start();
         increase = 1.05f; // 10%
-        stats = new List<string>();
-        stats.Add("maxHealth");
+        /*stats.Add("maxHealth");
         stats.Add("damage");
         stats.Add("defence");
         stats.Add("lim_points");
         stats.Add("lim_points");
-        stats.Add("lim_points");
+        stats.Add("lim_points");*/
     }
+
+	public void addStats(string stat){
+		Debug.Log("stat: " + stat);
+		stats.Add(stat);
+	}
 
     public override void applyEffect()
     {
