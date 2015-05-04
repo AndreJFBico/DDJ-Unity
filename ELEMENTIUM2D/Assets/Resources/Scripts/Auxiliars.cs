@@ -588,7 +588,9 @@ namespace Includes
     public class GameManager
     {
         private static GameManager _instance = null;
-        private static GameObject player;
+		private static bool firstGeneration = true;
+		private static Dictionary<string, List<string>> dropGroups; 
+		private static GameObject player;
 
         private static GameObject iceWall;
         private static GameObject waterPuddle;
@@ -634,6 +636,9 @@ namespace Includes
 
         public static GameManager Instance { get { if (_instance == null) { _instance = new GameManager(); playerStats = new PlayerStats(); } return _instance; } }
 
+		public bool FirstGeneration { get {return firstGeneration; } set { firstGeneration = value; } }
+
+		public Dictionary<string, List<string>> DropGroups { get { return dropGroups;} set { dropGroups = value;} }
 
         private void init()
         {

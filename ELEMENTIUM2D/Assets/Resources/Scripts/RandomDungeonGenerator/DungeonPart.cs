@@ -12,6 +12,8 @@ public class DungeonPart {
 
 	public int id = 0;
 
+	public string dropGroup = "0";
+
 	public DungeonPart(int id_a){
 		id = id_a;
 	}
