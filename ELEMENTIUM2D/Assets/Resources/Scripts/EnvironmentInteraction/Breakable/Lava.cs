@@ -13,55 +13,8 @@ public class Lava : BreakableWall {
         durability = maxDurability;
     }
 
-    public override void dealWithProjectile(Elements projType, float damage)
+    void activateParticleSystem()
     {
-        switch (type)
-        {
-            case BreakableWalls.NEUTRAL:
-                switch (projType)
-                {
-                    case Elements.NEUTRAL:
-                        durability -= damage;
-                        break;
-                    default:
-                        break;
-                }
-                break;
-            case BreakableWalls.FIRE:
-                switch (projType)
-                {
-                    case Elements.WATER:
-                        durability -= damage;
-                        affected = true;
-                        StartCoroutine(DealTemporaryDamage(damage, 0.8f));
-                        break;
-                    default:
-                        break;
-                }
-                break;
-            case BreakableWalls.EARTH:
-                switch (projType)
-                {
-                    case Elements.FIRE:
-                        durability -= damage;
-                        break;
-                    default:
-                        break;
-                }
-                break;
-            case BreakableWalls.FROST:
-                switch (projType)
-                {
-                    case Elements.EARTH:
-                        durability -= damage;
-                        break;
-                    default:
-                        break;
-                }
-                break;
-            default:
-                break;
-        }
         if (particleSystem != null)
         {
             particleSystem.gameObject.SetActive(true);
@@ -77,6 +30,62 @@ public class Lava : BreakableWall {
                 transform.localScale = new Vector3(0.66f, 0.66f, 0.66f);
             }
         }
+    }
+
+    public override void dealWithProjectile(Elements projType, float damage)
+    {
+        switch (type)
+        {
+            case BreakableWalls.NEUTRAL:
+                switch (projType)
+                {
+                    case Elements.NEUTRAL:
+                        durability -= damage;
+                        activateParticleSystem();
+                        break;
+                    default:
+                        break;
+                }
+                break;
+            case BreakableWalls.FIRE:
+                switch (projType)
+                {
+                    case Elements.WATER:
+                        durability -= damage;
+                        activateParticleSystem();
+                        affected = true;
+                        StartCoroutine(DealTemporaryDamage(damage, 0.8f));
+                        break;
+                    default:
+                        break;
+                }
+                break;
+            case BreakableWalls.EARTH:
+                switch (projType)
+                {
+                    case Elements.FIRE:
+                        durability -= damage;
+                        activateParticleSystem();
+                        break;
+                    default:
+                        break;
+                }
+                break;
+            case BreakableWalls.FROST:
+                switch (projType)
+                {
+                    case Elements.EARTH:
+                        durability -= damage;
+                        activateParticleSystem();
+                        break;
+                    default:
+                        break;
+                }
+                break;
+            default:
+                break;
+        }
+
         if (durability <= 0)
             turnIntoColdLava();
     }

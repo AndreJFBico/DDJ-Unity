@@ -16,6 +16,8 @@ public class Telegraph : MonoBehaviour {
     [SerializeField]
     public string initScrpt;
 
+    [SerializeField]
+    public float timeBetweenTelegraphs = 1.5f;
 
     public int damageValue = 10;
 
@@ -61,19 +63,25 @@ public class Telegraph : MonoBehaviour {
         {
             motion.applyMotion(sObj, transform);
         }
-        if(timer >= duration + 1.5f)
+        if (timer >= duration + timeBetweenTelegraphs)
         {
+            transform.FindChild("Colliders").gameObject.SetActive(true);
             particleSystem.gameObject.SetActive(false);
             gameObject.SetActive(false);
             timer = 0.0f;
             moving = false;
+            damage.deltDamage = false;
+            player = null;
         }
         else
         if (timer >= duration)
         {
-            if(player!= null)
+            if(player!= null )
+            {
                 damage.damage(player, damageValue);
+            }
             //hides the sprite
+            transform.FindChild("Colliders").gameObject.SetActive(false);
             GetComponentInChildren<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.0f);
             particleSystem.gameObject.SetActive(true);
         }
@@ -107,7 +115,7 @@ public class Telegraph : MonoBehaviour {
 
     void OnTriggerEnter(Collider collider)
     {
-        if(collider.tag.CompareTo("Player") == 0)
+        if(collider.tag.CompareTo("Player") == 0 && timer <= duration)
         {
             player = collider.transform;
         }

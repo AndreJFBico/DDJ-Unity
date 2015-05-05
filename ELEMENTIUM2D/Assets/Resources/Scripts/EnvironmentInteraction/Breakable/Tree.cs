@@ -13,6 +13,25 @@ public class Tree : BreakableWall {
         durability = maxDurability;
     }
 
+    void activateParticleSystem()
+    {
+        if (particleSystem != null)
+        {
+            particleSystem.gameObject.SetActive(true);
+        }
+        else
+        {
+            if (durability <= maxDurability / 4)
+            {
+                transform.localScale = new Vector3(0.33f, 0.33f, 0.33f);
+            }
+            else if (durability <= maxDurability / 2)
+            {
+                transform.localScale = new Vector3(0.66f, 0.66f, 0.66f);
+            }
+        }
+    }
+
     public override void dealWithProjectile(Elements projType, float damage)
     {
         switch (type)
@@ -22,6 +41,7 @@ public class Tree : BreakableWall {
                 {
                     case Elements.NEUTRAL:
                         durability -= damage;
+                        activateParticleSystem();
                         break;
                     default:
                         break;
@@ -32,6 +52,7 @@ public class Tree : BreakableWall {
                 {
                     case Elements.WATER:
                         durability -= damage;
+                        activateParticleSystem();
                         break;
                     default:
                         break;
@@ -48,6 +69,7 @@ public class Tree : BreakableWall {
                             affected = true;
                             affectNeighboringBreakables(projType, damage);
                         }
+                        activateParticleSystem();
                         StartCoroutine(DealTemporaryDamage(damage, 0.8f));
                         break;
                     default:
@@ -59,6 +81,7 @@ public class Tree : BreakableWall {
                 {
                     case Elements.EARTH:
                         durability -= damage;
+                        activateParticleSystem();
                         break;
                     default:
                         break;
@@ -67,21 +90,7 @@ public class Tree : BreakableWall {
             default:
                 break;
         }
-        if (particleSystem != null)
-        {
-            particleSystem.gameObject.SetActive(true);
-        }
-        else
-        {
-            if (durability <= maxDurability / 4)
-            {
-                transform.localScale = new Vector3(0.33f, 0.33f, 0.33f);
-            }
-            else if (durability <= maxDurability / 2)
-            {
-                transform.localScale = new Vector3(0.66f, 0.66f, 0.66f);
-            }
-        }
+
         if (durability <= 0)
             Destroy(gameObject);
     }

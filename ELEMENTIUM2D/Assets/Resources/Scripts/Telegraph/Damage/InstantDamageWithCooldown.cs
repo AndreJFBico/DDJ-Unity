@@ -9,7 +9,11 @@ namespace TelegraphEffect
     {
         public override void damage(Transform entity, float damage)
         {
-            entity.GetComponent<Agent>().takeDamage(damage, Includes.Elements.FIRE, true);
+            if(!deltDamage)
+            {
+                entity.GetComponent<Agent>().takeDamage(damage, Includes.Elements.FIRE, true);
+                deltDamage = true;
+            }         
         }
     }
 }
