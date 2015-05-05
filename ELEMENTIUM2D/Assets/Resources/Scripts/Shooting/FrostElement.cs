@@ -58,6 +58,7 @@ public class FrostElement : ShootElement {
             canMain = false;
             Invoke("resetMain", attackSpeed);
             fire(attackSpeed, projectileNumber, damage, projectile1);
+            GameManager.Instance.GUI.GetComponent<GUIManager>().addCoolDown(0, attackSpeed);
         }
     }
 
@@ -75,6 +76,7 @@ public class FrostElement : ShootElement {
             canSecondary = false;
             Invoke("resetSecondary", attackSpeed);
             fire(attackSpeed, projectileNumber, damage, projectile2);
+            GameManager.Instance.GUI.GetComponent<GUIManager>().addCoolDown(1, attackSpeed);
         }
     }
 
@@ -92,6 +94,7 @@ public class FrostElement : ShootElement {
             canTerciary = false;
             Invoke("resetTerciary", attackSpeed);
             fire(attackSpeed, projectileNumber, damage, projectile3);
+            GameManager.Instance.GUI.GetComponent<GUIManager>().addCoolDown(2, attackSpeed);
         }
     }
 }

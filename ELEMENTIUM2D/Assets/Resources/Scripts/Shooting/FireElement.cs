@@ -60,6 +60,7 @@ public class FireElement: ShootElement {
             canMain = false;
             Invoke("resetMain", attackSpeed);
             fire(attackSpeed, projectileNumber, damage, projectile1);
+            GameManager.Instance.GUI.GetComponent<GUIManager>().addCoolDown(0, attackSpeed);
         }
     }
 
@@ -76,6 +77,7 @@ public class FireElement: ShootElement {
             gunBlast2.SetActive(true);
             Invoke("deactivateBlast", 0.1f);
             OilPuddleManager.Instance.addOilPuddle((GameObject)Instantiate(OilPuddleManager.Instance.OilPuddle, barrelEnd.position, OilPuddleManager.Instance.OilPuddle.transform.rotation));
+            GameManager.Instance.GUI.GetComponent<GUIManager>().addCoolDown(1, OilPuddleManager.Instance.internalCooldown());
         }
     }
 
@@ -93,6 +95,7 @@ public class FireElement: ShootElement {
             canTerciary = false;
             Invoke("resetTerciary", attackSpeed);
             fire(attackSpeed, projectileNumber, damage, projectile3);
+            GameManager.Instance.GUI.GetComponent<GUIManager>().addCoolDown(2, attackSpeed);
         }
     }
 

@@ -411,7 +411,7 @@ namespace Includes
         public const float def_attackSpeed = 0;//Player AttackSpeed is to be incremented by int numbers
         //public const float inc_damage_level = 1.5f;
 
-        public const float def_health = 30.0f;
+        public const float def_maxHealth = 30.0f;
         public const float def_defence = 0;
         public const float def_multiplierTimer = 4;
 
@@ -436,13 +436,13 @@ namespace Includes
         // VARIABLES, these can be changed and reset at will they represent the current player stats
         public float moveSpeed = 2f;
         public float moveInContactWithEnemy = 1f;
-        public float maxHealth = def_health;
-        public float health = def_health;
+        public float maxHealth = def_maxHealth;
+        public float health = def_maxHealth;
         public float damage = def_damage;
         public float attackSpeed = def_attackSpeed; //Player AttackSpeed is to be incremented by int numbers
         public float defence = def_defence;
 
-        public Func<float> getDefence = () => { return def_defence * 2.0f; };
+        //public Func<float> getDefence = () => { return def_defence * 2.0f; };
 
         public float waterResist = 0;
         public float earthResist = 0;
@@ -506,8 +506,8 @@ namespace Includes
         {
             moveSpeed = 2f;
             moveInContactWithEnemy = 1f;
-            maxHealth = def_health;
-            health = def_health;
+            maxHealth = def_maxHealth;
+            health = def_maxHealth;
             damage = def_damage;
             attackSpeed = def_attackSpeed;
             defence = def_defence;
@@ -591,6 +591,7 @@ namespace Includes
 		private static bool firstGeneration = true;
 		private static Dictionary<string, List<string>> dropGroups; 
 		private static GameObject player;
+        private static GameObject gui;
 
         private static GameObject iceWall;
         private static GameObject waterPuddle;
@@ -617,6 +618,8 @@ namespace Includes
         public GameObject OilPuddle { get { return oilPuddle; } }
 
         public GameObject Player { get { return player; } }
+
+        public GameObject GUI { get { return gui; } }
 
         public Sprite UnknownSymbol { get { return unknownSymbol; } }
 
@@ -682,15 +685,21 @@ namespace Includes
             var ob = playerStats;
             var typ = typeof(PlayerStats);
             var f = typ.GetField(field);
-            //var prop = typ.GetProperty("DataFile");
             var val = (float)f.GetValue(ob);
+            var faux = typ.GetField(field);
+            var valaux = (float)faux.GetValue(ob);
+            float defInc = 0;
+
             switch (operation)
             {
                 case MathOperations.SUM:
                     f.SetValue(ob, value + val);
                     break;
                 case MathOperations.MUL:
-                    f.SetValue(ob, val * value);
+                    faux = typ.GetField("def_" + field);
+                    valaux = (float)faux.GetValue(ob);
+                    defInc = (valaux * value) - valaux;
+                    f.SetValue(ob, val + defInc);
                     break;
                 case MathOperations.SET:
                     f.SetValue(ob, value);
@@ -700,10 +709,11 @@ namespace Includes
                     f.SetValue(ob, val + v);
                     return v;
                 case MathOperations.MAXHP:
-                    float newval = val * value;
-                    float diff = newval - val;
-                    f.SetValue(ob, val * value);
-                    typ.GetField("health").SetValue(ob, (float)typ.GetField("health").GetValue(ob) + diff);
+                    faux = typ.GetField("def_" + field);
+                    valaux = (float)faux.GetValue(ob);
+                    defInc = (valaux * value) - valaux;
+                    f.SetValue(ob, val + defInc);
+                    typ.GetField("health").SetValue(ob, (float)typ.GetField("health").GetValue(ob) + defInc);
                     break;
             }
             return 1;
@@ -717,6 +727,7 @@ namespace Includes
         public void sceneInit()
         {
             player = GameObject.FindWithTag("Player");
+            gui = GameObject.Find("GUI");
         }
 
     }

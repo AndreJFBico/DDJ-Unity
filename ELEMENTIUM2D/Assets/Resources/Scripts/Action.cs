@@ -76,7 +76,8 @@ public class Action : MonoBehaviour {
         //##########################################################################################
 
         showStats = Input.GetButtonDown("ShowStats");
-        interaction.showStats();
+        if(showStats)
+            interaction.showStats();
         
         #endregion 
 

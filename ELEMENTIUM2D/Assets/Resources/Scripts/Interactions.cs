@@ -19,6 +19,9 @@ public class Interactions : MonoBehaviour {
 
     private Interactable _interactable = null;
 
+    private bool showingStats = false;
+    private int numberActiveElements = 0;
+
     //private float cycleTime = 0.2f;
 
     //private bool canCycle = true;
@@ -34,6 +37,7 @@ public class Interactions : MonoBehaviour {
         _elements.Add(GetComponent<FrostElement>());
         data = GetComponent<Player>();
         checkAvailableElements();
+        gui.processCoolDownWindows(numberActiveElements);
         GameManager.Instance.CurrentElement = _elements[0];
     }
 
@@ -43,6 +47,7 @@ public class Interactions : MonoBehaviour {
         //Iterate all element limits and check which ones are unlock
         var type = typeof(PlayerStats); // Get type pointer
         FieldInfo[] fields = type.GetFields(); // Obtain all fields
+        int numActiveElem = 0;
         foreach (var field in fields) // Loop through fields
         {
             // is a float
@@ -53,32 +58,46 @@ public class Interactions : MonoBehaviour {
                     if (field.Name.Contains("neutral"))
                     {
                         if ((float)field.GetValue(GameManager.Instance.Stats) > 0)
+                        {
                             _elements[0].Active = true;
+                            numActiveElem++;
+                        }
                     }
                     if (field.Name.Contains("fire"))
                     {
                         if ((float)field.GetValue(GameManager.Instance.Stats) > 0)
+                        {
                             _elements[1].Active = true;
+                            numActiveElem++;
+                        }
                     }
                     if (field.Name.Contains("earth"))
                     {
                         if ((float)field.GetValue(GameManager.Instance.Stats) > 0)
+                        {
                             _elements[2].Active = true;
+                            numActiveElem++;
+                        }
                     }
                     if (field.Name.Contains("water"))
                     {
                         if ((float)field.GetValue(GameManager.Instance.Stats) > 0)
+                        {
                             _elements[3].Active = true;
+                            numActiveElem++;
+                        }
                     }
                 }
             }
         }
+        numberActiveElements = numActiveElem;
     }
 
     public void updateActiveElements(string element)
     {
         var type = typeof(PlayerStats); // Get type pointer
         FieldInfo[] fields = type.GetFields(); // Obtain all fields
+        int numActiveElem = 0;
         foreach (var field in fields) // Loop through fields
         {
             // is a float
@@ -89,6 +108,7 @@ public class Interactions : MonoBehaviour {
                     if (field.Name.Contains("neutral") && string.Compare("neutral", element) == 0)
                     {
                         _elements[0].Active = true;
+                        numActiveElem++;
                         typeof(PlayerStats).GetField(field.Name).SetValue(GameManager.Instance.Stats, 1);
                         _elements[0].updateUnlocked();
                         continue;
@@ -96,6 +116,7 @@ public class Interactions : MonoBehaviour {
                     if (field.Name.Contains("fire") && string.Compare("fire", element) == 0)
                     {
                         _elements[1].Active = true;
+                        numActiveElem++;
                         typeof(PlayerStats).GetField(field.Name).SetValue(GameManager.Instance.Stats, 1);
                         _elements[1].updateUnlocked();
                         continue;
@@ -103,6 +124,7 @@ public class Interactions : MonoBehaviour {
                     if (field.Name.Contains("earth") && string.Compare("earth", element) == 0)
                     {
                         _elements[2].Active = true;
+                        numActiveElem++;
                         typeof(PlayerStats).GetField(field.Name).SetValue(GameManager.Instance.Stats, 1);
                         _elements[2].updateUnlocked();
                         continue;
@@ -110,6 +132,7 @@ public class Interactions : MonoBehaviour {
                     if (field.Name.Contains("water") && string.Compare("water", element) == 0)
                     {
                         _elements[3].Active = true;
+                        numActiveElem++;
                         typeof(PlayerStats).GetField(field.Name).SetValue(GameManager.Instance.Stats, 1);
                         _elements[3].updateUnlocked();
                     }
@@ -123,6 +146,7 @@ public class Interactions : MonoBehaviour {
                 }
             }
         }
+        numberActiveElements = numActiveElem;
     }
     
     #endregion
@@ -187,7 +211,16 @@ public class Interactions : MonoBehaviour {
 
     public void showStats()
     {
-
+        if (!showingStats)
+        {
+            gui.showStats();
+            showingStats = true;
+        }
+        else
+        {
+            showingStats = false;
+            gui.hideStats();
+        }
     }
 
 }

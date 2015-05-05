@@ -33,22 +33,7 @@ public class DisplayMultiplier : MonoBehaviour {
 
             text.color = colors[i];
             text.fontSize = baseFontSize + fontSizeInc * (i * 2 + 1);
-            
-            //if (multiplier > GameManager.Instance.Stats.multiplierLevels[0])
-            //{
-            //    text.color = Color.blue;
-            //    text.fontSize = baseFontSize + fontSizeInc;
-            //}
-            //if (multiplier > GameManager.Instance.Stats.multiplierLevels[1])
-            //{
-            //    text.color = Color.yellow;
-            //    text.fontSize = baseFontSize + fontSizeInc*2;
-            //}
-            //if (multiplier > GameManager.Instance.Stats.multiplierLevels[2])
-            //{
-            //    text.color = Color.red;
-            //    text.fontSize = baseFontSize + fontSizeInc * 5;
-            //}
+
             text.text = multiplier + " X";
         }
     }
