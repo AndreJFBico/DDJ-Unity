@@ -147,12 +147,19 @@ public class EnemyScript : Agent
         if (spawnScript != null)
         {
             health = maxHealth;
+            restart();
             spawnScript.despawn(transform);
         }
         else
         {
             Destroy(gameObject);
         }
+    }
+
+    private void restart()
+    {
+        navMeshAgent.speed = unalertedSpeed;
+        pathAgent.restart(false);
     }
 
     // Is initiated by the spawner
