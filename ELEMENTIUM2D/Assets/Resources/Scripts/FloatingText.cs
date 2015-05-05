@@ -72,7 +72,6 @@ public class FloatingText{
 
     public void returnText(TextFloat obj)
     {
-        obj.transform.parent = null;
         _beingUsedTexts.Remove(obj);
         _floatingTexts.Add(obj);
         obj.gameObject.SetActive(false);

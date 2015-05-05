@@ -85,7 +85,7 @@ public class TelegraphEnemy : EnemyScript {
                 Transform t = getBestTelegraph();
                 t.GetComponent<Telegraph>().init(pathAgent.target, currentFireTransform);
                 t.GetComponent<Telegraph>().setupMotion();
-                yield return new WaitForSeconds(t.GetComponent<Telegraph>().duration + t.GetComponent<Telegraph>().timeBetweenTelegraphs);
+                yield return new WaitForSeconds(t.GetComponent<Telegraph>().duration + t.GetComponent<Telegraph>().timeBetweenTelegraphs + 0.02f);
             }
             else yield return new WaitForSeconds(0.2f);
         }
@@ -120,6 +120,6 @@ public class TelegraphEnemy : EnemyScript {
 
     public override void dealDamage(Player player)
     {
-        player.takeDamage(damage, type, true);
+        player.takeDamage(damage, type, false);
     }
 }
