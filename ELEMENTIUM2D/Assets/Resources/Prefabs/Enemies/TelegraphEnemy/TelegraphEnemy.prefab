@@ -14,7 +14,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &104698
 GameObject:
   m_ObjectHideFlags: 1
@@ -1376,6 +1376,7 @@ MonoBehaviour:
   particleSystem: {fileID: 495588}
   initIndex: 0
   initScrpt: ParentWithEnemy
+  timeBetweenTelegraphs: 1.5
   damageValue: 10
   damageIndex: 0
   damScrpt: InstantDamageWithCooldown
@@ -1457,6 +1458,7 @@ MonoBehaviour:
   particleSystem: {fileID: 490362}
   initIndex: 0
   initScrpt: ParentWithEnemy
+  timeBetweenTelegraphs: 1.5
   damageValue: 10
   damageIndex: 0
   damScrpt: InstantDamageWithCooldown
