@@ -48,7 +48,7 @@ public class Interactions : MonoBehaviour {
             // is a float
             if (typeof(float).IsAssignableFrom(field.FieldType))
             {
-                if (field.Name.Contains("primary_") && !field.Name.Contains("def_") && !field.Name.Contains("lim_"))
+                if ((field.Name.Contains("primary_") || field.Name.Contains("secondary_") || field.Name.Contains("terciary_")) && !field.Name.Contains("def_") && !field.Name.Contains("lim_"))
                 {
                     if (field.Name.Contains("neutral"))
                     {
@@ -84,7 +84,7 @@ public class Interactions : MonoBehaviour {
             // is a float
             if (typeof(float).IsAssignableFrom(field.FieldType))
             {
-                if (field.Name.Contains("primary_") && !field.Name.Contains("def_"))
+                if ((field.Name.Contains("primary_") || field.Name.Contains("secondary_") || field.Name.Contains("terciary_")) && !field.Name.Contains("def_"))
                 {
                     if (field.Name.Contains("neutral") && string.Compare("neutral", element) == 0)
                     {
