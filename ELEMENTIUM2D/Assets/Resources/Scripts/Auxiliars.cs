@@ -498,7 +498,7 @@ namespace Includes
 
         public float lim_points = 4;
 
-        public float depth = 3;
+        public float depth = 10;
 
 
         //ATTENTION IF YOU ADD A NEW VARIABLE PLS DONT FORGET TO ADD IT TO RESET!!!!!!!
