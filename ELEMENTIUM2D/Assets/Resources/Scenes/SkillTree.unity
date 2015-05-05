@@ -236,6 +236,7 @@ MonoBehaviour:
   father: {fileID: 0}
   selected: 1
   lockedForever: 1
+  information: 
   choiceIndex: 0
   variableBeingChanged: moveSpeed
 --- !u!114 &203360175
@@ -254,12 +255,11 @@ MonoBehaviour:
   changeWithValue: 1
   sucessors:
   - {fileID: 75295024}
-  - {fileID: 560719113}
-  - {fileID: 522703633}
   operation: 2
   father: {fileID: 75295024}
   selected: 0
   lockedForever: 0
+  information: Unlocks earth trowing boulder ability
   choiceIndex: 18
   variableBeingChanged: primary_earth_level
 --- !u!1 &207107490
@@ -351,7 +351,7 @@ RectTransform:
   - {fileID: 1589728802}
   - {fileID: 574807772}
   - {fileID: 1014262536}
-  - {fileID: 936773911}
+  - {fileID: 1572162729}
   - {fileID: 751013426}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -389,10 +389,6 @@ MonoBehaviour:
   - {fileID: 1752853467}
   - {fileID: 609157648}
   - {fileID: 1852362432}
-  - {fileID: 2023410151}
-  - {fileID: 668492318}
-  - {fileID: 560719113}
-  - {fileID: 522703633}
   - {fileID: 858211518}
   - {fileID: 1926146836}
   - {fileID: 858211518}
@@ -409,20 +405,28 @@ MonoBehaviour:
   - {fileID: 1734890391}
   - {fileID: 503376060}
   - {fileID: 503376060}
-  - {fileID: 1450492789}
-  - {fileID: 1450492789}
-  - {fileID: 203360175}
-  - {fileID: 203360175}
   - {fileID: 1412076567}
-  - {fileID: 805443761}
+  - {fileID: 2023410151}
   - {fileID: 2134919173}
   - {fileID: 1066777357}
+  - {fileID: 560719113}
   - {fileID: 1404779444}
+  - {fileID: 522703633}
   - {fileID: 1011148598}
+  - {fileID: 668492318}
   - {fileID: 1752853467}
+  - {fileID: 1460976887}
   - {fileID: 1926146836}
-  - {fileID: 1230403021}
-  - {fileID: 805443761}
+  - {fileID: 295646284}
+  - {fileID: 1182075408}
+  - {fileID: 510607658}
+  - {fileID: 1734890391}
+  - {fileID: 520578288}
+  - {fileID: 1460976887}
+  - {fileID: 1288139814}
+  - {fileID: 520578288}
+  - {fileID: 951030262}
+  - {fileID: 1288139814}
   cur_lim_moveSpeed: 0
   cur_lim_moveInContactWithEnemy: 0
   cur_lim_maxHealth: 0
@@ -562,6 +566,24 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 295646284}
+          m_MethodName: PointerExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &295646283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -632,10 +654,12 @@ MonoBehaviour:
   changeWithValue: 1.10000002
   sucessors:
   - {fileID: 1066777357}
+  - {fileID: 560719113}
   operation: 1
   father: {fileID: 1066777357}
   selected: 0
   lockedForever: 0
+  information: Increases defence by 10%
   choiceIndex: 6
   variableBeingChanged: defence
 --- !u!114 &295646285
@@ -676,13 +700,13 @@ RectTransform:
   m_GameObject: {fileID: 295646281}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.00000072, y: 1, z: 1}
+  m_LocalScale: {x: .289175272, y: .289175123, z: .289175123}
   m_Children: []
-  m_Father: {fileID: 1066777358}
-  m_RootOrder: 0
+  m_Father: {fileID: 75295022}
+  m_RootOrder: 19
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -34.0320168, y: 221.580612}
+  m_AnchoredPosition: {x: -8.01434994, y: 214.463165}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!1 &296661486
@@ -767,6 +791,7 @@ MonoBehaviour:
   father: {fileID: 75295024}
   selected: 0
   lockedForever: 0
+  information: Unlocks ice projectile ability
   choiceIndex: 24
   variableBeingChanged: primary_water_level
 --- !u!114 &503376060
@@ -791,8 +816,9 @@ MonoBehaviour:
   father: {fileID: 75295024}
   selected: 1
   lockedForever: 1
-  choiceIndex: 9
-  variableBeingChanged: earthResist
+  information: Unlocks the first projectile ability, its unlocked by default
+  choiceIndex: 15
+  variableBeingChanged: primary_neutral_level
 --- !u!1 &510607653
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,13 +849,13 @@ RectTransform:
   m_GameObject: {fileID: 510607653}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1.00000072, z: 1.00000072}
+  m_LocalScale: {x: .276499569, y: .276499361, z: .276499361}
   m_Children: []
-  m_Father: {fileID: 1011148594}
-  m_RootOrder: 0
+  m_Father: {fileID: 75295022}
+  m_RootOrder: 21
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 151.155869, y: 215.78154}
+  m_AnchoredPosition: {x: 83.3999939, y: 154.000046}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &510607655
@@ -850,6 +876,24 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 510607658}
           m_MethodName: PointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 510607658}
+          m_MethodName: PointerExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -963,10 +1007,12 @@ MonoBehaviour:
   changeWithValue: 1.10000002
   sucessors:
   - {fileID: 1011148598}
+  - {fileID: 668492318}
   operation: 4
   father: {fileID: 1011148598}
   selected: 0
   lockedForever: 0
+  information: Increases max health by 10%
   choiceIndex: 2
   variableBeingChanged: maxHealth
 --- !u!114 &510607659
@@ -998,6 +1044,231 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 510607653}
+--- !u!1 &520578287
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 124716, guid: 6811719d7cc6a614a91bd9fdfa6fc508, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 520578289}
+  - 222: {fileID: 520578294}
+  - 114: {fileID: 520578293}
+  - 114: {fileID: 520578288}
+  - 114: {fileID: 520578292}
+  - 114: {fileID: 520578291}
+  - 114: {fileID: 520578290}
+  m_Layer: 5
+  m_Name: Health 4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &520578288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11450860, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 520578287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07140636fc29fac4786fdcdd42f0b8ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startNode: 0
+  changeWithValue: 1.10000002
+  sucessors:
+  - {fileID: 1460976887}
+  - {fileID: 1288139814}
+  operation: 4
+  father: {fileID: 1460976887}
+  selected: 0
+  lockedForever: 0
+  information: Increases max health by 10%
+  choiceIndex: 2
+  variableBeingChanged: maxHealth
+--- !u!224 &520578289
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22472534, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 520578287}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: .276499569, y: .276499182, z: .276499182}
+  m_Children: []
+  m_Father: {fileID: 75295022}
+  m_RootOrder: 28
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 241.995132, y: 97.4390411}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &520578290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 520578287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 520578288}
+          m_MethodName: PointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 520578288}
+          m_MethodName: PointerExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &520578291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11408194, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 520578287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 520578288}
+          m_MethodName: PointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &520578292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11469116, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 520578287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: .960784316, g: .960784316, b: .960784316, a: 1}
+    m_PressedColor: {r: .784313738, g: .784313738, b: .784313738, a: 1}
+    m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
+    m_ColorMultiplier: 1
+    m_FadeDuration: .100000001
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 520578293}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 520578288}
+        m_MethodName: MouseCallBack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &520578293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11451922, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 520578287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: .200000003}
+  m_Sprite: {fileID: 21300000, guid: 2586372606a66144b9d7884c48177888, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &520578294
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22241088, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 520578287}
 --- !u!1 &522703629
 GameObject:
   m_ObjectHideFlags: 0
@@ -1027,13 +1298,13 @@ RectTransform:
   m_GameObject: {fileID: 522703629}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: .999999881, z: .999999881}
+  m_LocalScale: {x: .27649951, y: .276499569, z: .276499569}
   m_Children: []
-  m_Father: {fileID: 1757837437}
-  m_RootOrder: 1
+  m_Father: {fileID: 75295022}
+  m_RootOrder: 25
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 132.000031, y: -183.999969}
+  m_AnchoredPosition: {x: -105.300003, y: 249.899994}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &522703631
@@ -1054,6 +1325,24 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 522703633}
           m_MethodName: PointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 522703633}
+          m_MethodName: PointerExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1135,11 +1424,12 @@ MonoBehaviour:
   startNode: 0
   changeWithValue: 1
   sucessors:
-  - {fileID: 203360175}
+  - {fileID: 1182075408}
   operation: 2
-  father: {fileID: 203360175}
+  father: {fileID: 1182075408}
   selected: 0
   lockedForever: 0
+  information: Unlocks earth shield ability
   choiceIndex: 19
   variableBeingChanged: secondary_earth_level
 --- !u!114 &522703634
@@ -1193,6 +1483,7 @@ MonoBehaviour:
   father: {fileID: 75295024}
   selected: 0
   lockedForever: 0
+  information: Increases defence by 10%
   choiceIndex: 6
   variableBeingChanged: defence
 --- !u!1 &541201242
@@ -1308,13 +1599,13 @@ RectTransform:
   m_GameObject: {fileID: 560719109}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: .999999881, z: .999999881}
+  m_LocalScale: {x: .27649954, y: .27649954, z: .27649954}
   m_Children: []
-  m_Father: {fileID: 1757837437}
-  m_RootOrder: 0
+  m_Father: {fileID: 75295022}
+  m_RootOrder: 24
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 231.000031, y: -33.0000687}
+  m_AnchoredPosition: {x: -43.2000008, y: 260.799988}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &560719111
@@ -1335,6 +1626,24 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 560719113}
           m_MethodName: PointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 560719113}
+          m_MethodName: PointerExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1416,11 +1725,12 @@ MonoBehaviour:
   startNode: 0
   changeWithValue: 1
   sucessors:
-  - {fileID: 203360175}
+  - {fileID: 295646284}
   operation: 2
-  father: {fileID: 203360175}
+  father: {fileID: 295646284}
   selected: 0
   lockedForever: 0
+  information: Unlocks earth stun ability
   choiceIndex: 20
   variableBeingChanged: terciary_earth_level
 --- !u!114 &560719114
@@ -1588,13 +1898,13 @@ RectTransform:
   m_GameObject: {fileID: 609157644}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .999999702, y: 1, z: 1}
+  m_LocalScale: {x: .27649942, y: .27649954, z: .27649954}
   m_Children: []
-  m_Father: {fileID: 1696152884}
-  m_RootOrder: 0
+  m_Father: {fileID: 75295022}
+  m_RootOrder: 15
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -152.599716, y: -171.599976}
+  m_AnchoredPosition: {x: -170.999969, y: -89.4030151}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &609157646
@@ -1615,6 +1925,24 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 609157648}
           m_MethodName: PointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 609157648}
+          m_MethodName: PointerExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1701,6 +2029,7 @@ MonoBehaviour:
   father: {fileID: 503376060}
   selected: 0
   lockedForever: 0
+  information: Unlocks the splitting projectile ability
   choiceIndex: 17
   variableBeingChanged: terciary_neutral_level
 --- !u!114 &609157649
@@ -1834,13 +2163,13 @@ RectTransform:
   m_GameObject: {fileID: 668492314}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: .276499569, y: .276499361, z: .276499361}
   m_Children: []
-  m_Father: {fileID: 1870241802}
-  m_RootOrder: 1
+  m_Father: {fileID: 75295022}
+  m_RootOrder: 26
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 96.900116, y: -160.09996}
+  m_AnchoredPosition: {x: 102.500031, y: 204.499939}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &668492316
@@ -1861,6 +2190,24 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 668492318}
           m_MethodName: PointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 668492318}
+          m_MethodName: PointerExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1942,11 +2289,12 @@ MonoBehaviour:
   startNode: 0
   changeWithValue: 1
   sucessors:
-  - {fileID: 1450492789}
+  - {fileID: 510607658}
   operation: 2
-  father: {fileID: 1450492789}
+  father: {fileID: 510607658}
   selected: 0
   lockedForever: 0
+  information: Unlocks heal ability
   choiceIndex: 23
   variableBeingChanged: terciary_fire_level
 --- !u!114 &668492319
@@ -2080,11 +2428,11 @@ MonoBehaviour:
   changeWithValue: 1.10000002
   sucessors:
   - {fileID: 2134919173}
-  - {fileID: 805443761}
   operation: 1
   father: {fileID: 2134919173}
   selected: 0
   lockedForever: 0
+  information: Increases attack by 10%
   choiceIndex: 4
   variableBeingChanged: damage
 --- !u!224 &782262000
@@ -2096,13 +2444,13 @@ RectTransform:
   m_GameObject: {fileID: 782261998}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1.00000072, z: 1.00000072}
+  m_LocalScale: {x: .276499569, y: .276499361, z: .276499361}
   m_Children: []
-  m_Father: {fileID: 2134919174}
-  m_RootOrder: 0
+  m_Father: {fileID: 75295022}
+  m_RootOrder: 18
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -150.000183, y: 62.0000267}
+  m_AnchoredPosition: {x: -249.739914, y: 70.7850037}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &782262001
@@ -2123,6 +2471,24 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 782261999}
           m_MethodName: PointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 782261999}
+          m_MethodName: PointerExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2218,33 +2584,13 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 782261998}
---- !u!1 &805443760
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 151232, guid: 6811719d7cc6a614a91bd9fdfa6fc508, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 805443762}
-  - 222: {fileID: 805443766}
-  - 114: {fileID: 805443765}
-  - 114: {fileID: 805443761}
-  - 114: {fileID: 805443764}
-  - 114: {fileID: 805443763}
-  m_Layer: 5
-  m_Name: Attack 4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &805443761
+--- !u!114 &858211518
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11468742, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
     type: 2}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 805443760}
+  m_GameObject: {fileID: 1632627397}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07140636fc29fac4786fdcdd42f0b8ab, type: 3}
@@ -2253,40 +2599,150 @@ MonoBehaviour:
   startNode: 0
   changeWithValue: 1.10000002
   sucessors:
-  - {fileID: 1926146836}
-  - {fileID: 1230403021}
-  - {fileID: 782261999}
+  - {fileID: 75295024}
+  - {fileID: 1412076567}
+  - {fileID: 2134919173}
   operation: 1
-  father: {fileID: 1926146836}
+  father: {fileID: 75295024}
   selected: 0
   lockedForever: 0
+  information: Increases attack by 10%
   choiceIndex: 4
   variableBeingChanged: damage
---- !u!224 &805443762
+--- !u!1 &936773910
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 936773911}
+  - 222: {fileID: 936773913}
+  - 114: {fileID: 936773912}
+  m_Layer: 2
+  m_Name: background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &936773911
 RectTransform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 22433784, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 805443760}
+  m_GameObject: {fileID: 936773910}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1.00000012, z: 1.00000012}
-  m_Children:
-  - {fileID: 1230403022}
-  m_Father: {fileID: 1926146837}
+  m_LocalScale: {x: 1.56873775, y: 1.79340196, z: 1.95291972}
+  m_Children: []
+  m_Father: {fileID: 1572162729}
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -115.999939, y: -89.0003662}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: .5, y: .5}
---- !u!114 &805443763
+  m_AnchoredPosition: {x: 47.9606781, y: 24.0924492}
+  m_SizeDelta: {x: 60, y: 27}
+  m_Pivot: {x: 1, y: 1}
+--- !u!114 &936773912
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 805443760}
+  m_GameObject: {fileID: 936773910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 5
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: 'Info:'
+--- !u!222 &936773913
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 936773910}
+--- !u!1 &951030261
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 124716, guid: 6811719d7cc6a614a91bd9fdfa6fc508, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 951030263}
+  - 222: {fileID: 951030268}
+  - 114: {fileID: 951030267}
+  - 114: {fileID: 951030262}
+  - 114: {fileID: 951030266}
+  - 114: {fileID: 951030265}
+  - 114: {fileID: 951030264}
+  m_Layer: 5
+  m_Name: Health 6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &951030262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11450860, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 951030261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07140636fc29fac4786fdcdd42f0b8ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startNode: 0
+  changeWithValue: 1.10000002
+  sucessors:
+  - {fileID: 1288139814}
+  operation: 4
+  father: {fileID: 1288139814}
+  selected: 0
+  lockedForever: 0
+  information: Increases max health by 10%
+  choiceIndex: 2
+  variableBeingChanged: maxHealth
+--- !u!224 &951030263
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22472534, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 951030261}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: .276499569, y: .276499152, z: .276499152}
+  m_Children: []
+  m_Father: {fileID: 75295022}
+  m_RootOrder: 30
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 196.649414, y: 203.891388}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &951030264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 951030261}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
@@ -2297,7 +2753,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 805443761}
+        - m_Target: {fileID: 951030262}
           m_MethodName: PointerEnter
           m_Mode: 1
           m_Arguments:
@@ -2311,13 +2767,62 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
---- !u!114 &805443764
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 951030262}
+          m_MethodName: PointerExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &951030265
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11422774, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
+  m_PrefabParentObject: {fileID: 11408194, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
     type: 2}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 805443760}
+  m_GameObject: {fileID: 951030261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 951030262}
+          m_MethodName: PointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &951030266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11469116, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 951030261}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
@@ -2347,11 +2852,11 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 805443765}
+  m_TargetGraphic: {fileID: 951030267}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 805443761}
+      - m_Target: {fileID: 951030262}
         m_MethodName: MouseCallBack
         m_Mode: 1
         m_Arguments:
@@ -2365,13 +2870,13 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &805443765
+--- !u!114 &951030267
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11421540, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
+  m_PrefabParentObject: {fileID: 11451922, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
     type: 2}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 805443760}
+  m_GameObject: {fileID: 951030261}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
@@ -2379,7 +2884,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: .200000003}
-  m_Sprite: {fileID: 21300000, guid: 2a6ee2adcd307fe4abe54267373d9004, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2586372606a66144b9d7884c48177888, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2387,103 +2892,13 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!222 &805443766
+--- !u!222 &951030268
 CanvasRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 22219054, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
+  m_PrefabParentObject: {fileID: 22241088, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
     type: 2}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 805443760}
---- !u!114 &858211518
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11468742, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1632627397}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07140636fc29fac4786fdcdd42f0b8ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startNode: 0
-  changeWithValue: 1.10000002
-  sucessors:
-  - {fileID: 75295024}
-  - {fileID: 1412076567}
-  - {fileID: 2134919173}
-  operation: 1
-  father: {fileID: 75295024}
-  selected: 0
-  lockedForever: 0
-  choiceIndex: 4
-  variableBeingChanged: damage
---- !u!1 &936773910
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 936773911}
-  - 222: {fileID: 936773913}
-  - 114: {fileID: 936773912}
-  m_Layer: 5
-  m_Name: InfoBox
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &936773911
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 936773910}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 207107494}
-  m_RootOrder: 5
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -225.100006, y: 3.79999995}
-  m_SizeDelta: {x: 100, y: 200}
-  m_Pivot: {x: .5, y: .5}
---- !u!114 &936773912
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 936773910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 5
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 1
-    m_LineSpacing: 1
-  m_Text: 'Info:'
---- !u!222 &936773913
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 936773910}
+  m_GameObject: {fileID: 951030261}
 --- !u!1 &1011148593
 GameObject:
   m_ObjectHideFlags: 0
@@ -2496,7 +2911,6 @@ GameObject:
   - 114: {fileID: 1011148599}
   - 114: {fileID: 1011148598}
   - 114: {fileID: 1011148597}
-  - 114: {fileID: 1011148596}
   - 114: {fileID: 1011148595}
   m_Layer: 5
   m_Name: Health 1
@@ -2514,14 +2928,13 @@ RectTransform:
   m_GameObject: {fileID: 1011148593}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1.00000012, z: 1.00000012}
-  m_Children:
-  - {fileID: 510607654}
-  m_Father: {fileID: 1206261926}
-  m_RootOrder: 0
+  m_LocalScale: {x: .276499569, y: .276499569, z: .276499569}
+  m_Children: []
+  m_Father: {fileID: 75295022}
+  m_RootOrder: 13
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 27.9999008, y: 194.999924}
+  m_AnchoredPosition: {x: 69.6000366, y: 108.699997}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1011148595
@@ -2554,25 +2967,12 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
---- !u!114 &1011148596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11408194, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1011148593}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delegates:
-  - eventID: 0
+  - eventID: 1
     callback:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1011148598}
-          m_MethodName: PointerEnter
+          m_MethodName: PointerExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2660,6 +3060,7 @@ MonoBehaviour:
   father: {fileID: 1206261929}
   selected: 0
   lockedForever: 0
+  information: Increases max health by 10%
   choiceIndex: 2
   variableBeingChanged: maxHealth
 --- !u!114 &1011148599
@@ -2839,6 +3240,7 @@ MonoBehaviour:
   father: {fileID: 540851062}
   selected: 0
   lockedForever: 0
+  information: Increases defence by 10%
   choiceIndex: 6
   variableBeingChanged: defence
 --- !u!224 &1066777358
@@ -2850,14 +3252,13 @@ RectTransform:
   m_GameObject: {fileID: 1066777356}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .999999881, y: 1, z: 1}
-  m_Children:
-  - {fileID: 295646287}
-  m_Father: {fileID: 1718501690}
-  m_RootOrder: 0
+  m_LocalScale: {x: .289175093, y: .289175123, z: .289175123}
+  m_Children: []
+  m_Father: {fileID: 75295022}
+  m_RootOrder: 9
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 60.6000214, y: 129.999802}
+  m_AnchoredPosition: {x: -5.12259674, y: 162.989975}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1066777359
@@ -2878,6 +3279,24 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1066777357}
           m_MethodName: PointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1066777357}
+          m_MethodName: PointerExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3009,10 +3428,12 @@ MonoBehaviour:
   changeWithValue: 1.10000002
   sucessors:
   - {fileID: 1404779444}
+  - {fileID: 522703633}
   operation: 1
   father: {fileID: 1404779444}
   selected: 0
   lockedForever: 0
+  information: Increases defence by 10%
   choiceIndex: 6
   variableBeingChanged: defence
 --- !u!224 &1182075409
@@ -3024,13 +3445,13 @@ RectTransform:
   m_GameObject: {fileID: 1182075407}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.00000072, y: 1, z: 1}
+  m_LocalScale: {x: .289175272, y: .289175123, z: .289175123}
   m_Children: []
-  m_Father: {fileID: 1404779445}
-  m_RootOrder: 0
+  m_Father: {fileID: 75295022}
+  m_RootOrder: 20
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -82.3798065, y: 219.866257}
+  m_AnchoredPosition: {x: -116.705269, y: 193.846542}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1182075410
@@ -3051,6 +3472,24 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1182075408}
           m_MethodName: PointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1182075408}
+          m_MethodName: PointerExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3158,7 +3597,6 @@ GameObject:
   - 114: {fileID: 1206261930}
   - 114: {fileID: 1206261929}
   - 114: {fileID: 1696152887}
-  - 114: {fileID: 1206261928}
   - 114: {fileID: 1206261927}
   m_Layer: 5
   m_Name: Health
@@ -3176,15 +3614,13 @@ RectTransform:
   m_GameObject: {fileID: 1206261925}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .38463521, y: .38463521, z: .38463521}
-  m_Children:
-  - {fileID: 1011148594}
-  - {fileID: 1752853463}
+  m_LocalScale: {x: .276499569, y: .27649954, z: .27649954}
+  m_Children: []
   m_Father: {fileID: 75295022}
   m_RootOrder: 3
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 90, y: 106.300003}
+  m_AnchoredPosition: {x: 63.0999985, y: 62.5999985}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1206261927
@@ -3217,25 +3653,12 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
---- !u!114 &1206261928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11408194, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1206261925}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delegates:
-  - eventID: 0
+  - eventID: 1
     callback:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1206261929}
-          m_MethodName: PointerEnter
+          m_MethodName: PointerExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3270,6 +3693,7 @@ MonoBehaviour:
   father: {fileID: 75295024}
   selected: 0
   lockedForever: 0
+  information: Increases max health by 10%
   choiceIndex: 2
   variableBeingChanged: maxHealth
 --- !u!114 &1206261930
@@ -3301,179 +3725,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1206261925}
---- !u!1 &1230403020
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 151232, guid: 6811719d7cc6a614a91bd9fdfa6fc508, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 1230403022}
-  - 222: {fileID: 1230403026}
-  - 114: {fileID: 1230403025}
-  - 114: {fileID: 1230403021}
-  - 114: {fileID: 1230403024}
-  - 114: {fileID: 1230403023}
-  m_Layer: 5
-  m_Name: Attack 5
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1230403021
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11468742, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1230403020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07140636fc29fac4786fdcdd42f0b8ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startNode: 0
-  changeWithValue: 1.10000002
-  sucessors:
-  - {fileID: 805443761}
-  operation: 1
-  father: {fileID: 805443761}
-  selected: 0
-  lockedForever: 0
-  choiceIndex: 4
-  variableBeingChanged: damage
---- !u!224 &1230403022
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 22433784, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1230403020}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 805443762}
-  m_RootOrder: 0
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 16.0000305, y: 244.000412}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: .5, y: .5}
---- !u!114 &1230403023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1230403020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1230403021}
-          m_MethodName: PointerEnter
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
-              Culture=neutral, PublicKeyToken=null
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
---- !u!114 &1230403024
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11422774, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1230403020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: .960784316, g: .960784316, b: .960784316, a: 1}
-    m_PressedColor: {r: .784313738, g: .784313738, b: .784313738, a: 1}
-    m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
-    m_ColorMultiplier: 1
-    m_FadeDuration: .100000001
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1230403025}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1230403021}
-        m_MethodName: MouseCallBack
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &1230403025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11421540, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1230403020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: .200000003}
-  m_Sprite: {fileID: 21300000, guid: 2a6ee2adcd307fe4abe54267373d9004, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 1
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!222 &1230403026
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 22219054, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1230403020}
 --- !u!1 &1269495514
 GameObject:
   m_ObjectHideFlags: 0
@@ -3524,6 +3775,24 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 332801494}
+          m_MethodName: PointerExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!224 &1269495516
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3533,10 +3802,8 @@ RectTransform:
   m_GameObject: {fileID: 1269495514}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .38463518, y: .38463527, z: .38463527}
-  m_Children:
-  - {fileID: 2043932850}
-  - {fileID: 1639319460}
+  m_LocalScale: {x: .27649954, y: .276499599, z: .276499599}
+  m_Children: []
   m_Father: {fileID: 75295022}
   m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
@@ -3627,6 +3894,231 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1269495514}
+--- !u!1 &1288139813
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 124716, guid: 6811719d7cc6a614a91bd9fdfa6fc508, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1288139815}
+  - 222: {fileID: 1288139820}
+  - 114: {fileID: 1288139819}
+  - 114: {fileID: 1288139814}
+  - 114: {fileID: 1288139818}
+  - 114: {fileID: 1288139817}
+  - 114: {fileID: 1288139816}
+  m_Layer: 5
+  m_Name: Health 5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1288139814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11450860, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1288139813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07140636fc29fac4786fdcdd42f0b8ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startNode: 0
+  changeWithValue: 1.10000002
+  sucessors:
+  - {fileID: 520578288}
+  - {fileID: 951030262}
+  operation: 4
+  father: {fileID: 520578288}
+  selected: 0
+  lockedForever: 0
+  information: Increases max health by 10%
+  choiceIndex: 2
+  variableBeingChanged: maxHealth
+--- !u!224 &1288139815
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22472534, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1288139813}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: .276499569, y: .276499122, z: .276499122}
+  m_Children: []
+  m_Father: {fileID: 75295022}
+  m_RootOrder: 29
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 231.211792, y: 153.56842}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &1288139816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1288139813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1288139814}
+          m_MethodName: PointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1288139814}
+          m_MethodName: PointerExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &1288139817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11408194, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1288139813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1288139814}
+          m_MethodName: PointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &1288139818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11469116, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1288139813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: .960784316, g: .960784316, b: .960784316, a: 1}
+    m_PressedColor: {r: .784313738, g: .784313738, b: .784313738, a: 1}
+    m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
+    m_ColorMultiplier: 1
+    m_FadeDuration: .100000001
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1288139819}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1288139814}
+        m_MethodName: MouseCallBack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1288139819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11451922, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1288139813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: .200000003}
+  m_Sprite: {fileID: 21300000, guid: 2586372606a66144b9d7884c48177888, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1288139820
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22241088, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1288139813}
 --- !u!1 &1404779443
 GameObject:
   m_ObjectHideFlags: 0
@@ -3668,6 +4160,7 @@ MonoBehaviour:
   father: {fileID: 540851062}
   selected: 0
   lockedForever: 0
+  information: Increases defence by 10%
   choiceIndex: 6
   variableBeingChanged: defence
 --- !u!224 &1404779445
@@ -3679,14 +4172,13 @@ RectTransform:
   m_GameObject: {fileID: 1404779443}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .999999881, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1182075409}
-  m_Father: {fileID: 1718501690}
-  m_RootOrder: 1
+  m_LocalScale: {x: .289175093, y: .289175123, z: .289175123}
+  m_Children: []
+  m_Father: {fileID: 75295022}
+  m_RootOrder: 10
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -186.600067, y: 81.599968}
+  m_AnchoredPosition: {x: -104.559921, y: 143.53009}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1404779446
@@ -3707,6 +4199,24 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1404779444}
           m_MethodName: PointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1404779444}
+          m_MethodName: PointerExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3843,6 +4353,7 @@ MonoBehaviour:
   father: {fileID: 858211518}
   selected: 0
   lockedForever: 0
+  information: Increases attack by 10%
   choiceIndex: 4
   variableBeingChanged: damage
 --- !u!224 &1412076568
@@ -3854,14 +4365,13 @@ RectTransform:
   m_GameObject: {fileID: 1412076566}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1.00000012, z: 1.00000012}
-  m_Children:
-  - {fileID: 1926146837}
-  m_Father: {fileID: 1632627398}
-  m_RootOrder: 0
+  m_LocalScale: {x: .276499569, y: .276499569, z: .276499569}
+  m_Children: []
+  m_Father: {fileID: 75295022}
+  m_RootOrder: 7
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -105.900192, y: 184.700089}
+  m_AnchoredPosition: {x: -147.729965, y: 130.440155}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1412076569
@@ -3882,6 +4392,24 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1412076567}
           m_MethodName: PointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1412076567}
+          m_MethodName: PointerExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3993,14 +4521,312 @@ MonoBehaviour:
   changeWithValue: 1
   sucessors:
   - {fileID: 75295024}
-  - {fileID: 2023410151}
-  - {fileID: 668492318}
   operation: 2
   father: {fileID: 75295024}
   selected: 0
   lockedForever: 0
+  information: Unlocks fire ball ability
   choiceIndex: 21
   variableBeingChanged: primary_fire_level
+--- !u!1 &1460976886
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 124716, guid: 6811719d7cc6a614a91bd9fdfa6fc508, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1460976888}
+  - 222: {fileID: 1460976893}
+  - 114: {fileID: 1460976892}
+  - 114: {fileID: 1460976887}
+  - 114: {fileID: 1460976891}
+  - 114: {fileID: 1460976890}
+  - 114: {fileID: 1460976889}
+  m_Layer: 5
+  m_Name: Health 5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1460976887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11450860, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1460976886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07140636fc29fac4786fdcdd42f0b8ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startNode: 0
+  changeWithValue: 1.10000002
+  sucessors:
+  - {fileID: 1734890391}
+  - {fileID: 520578288}
+  operation: 4
+  father: {fileID: 1734890391}
+  selected: 0
+  lockedForever: 0
+  information: Increases max health by 10%
+  choiceIndex: 2
+  variableBeingChanged: maxHealth
+--- !u!224 &1460976888
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22472534, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1460976886}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: .276499569, y: .276499331, z: .276499331}
+  m_Children: []
+  m_Father: {fileID: 75295022}
+  m_RootOrder: 27
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 215.451218, y: 62.0471039}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &1460976889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1460976886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1460976887}
+          m_MethodName: PointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1460976887}
+          m_MethodName: PointerExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &1460976890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11408194, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1460976886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1460976887}
+          m_MethodName: PointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &1460976891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11469116, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1460976886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: .960784316, g: .960784316, b: .960784316, a: 1}
+    m_PressedColor: {r: .784313738, g: .784313738, b: .784313738, a: 1}
+    m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
+    m_ColorMultiplier: 1
+    m_FadeDuration: .100000001
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1460976892}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1460976887}
+        m_MethodName: MouseCallBack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1460976892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11451922, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1460976886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: .200000003}
+  m_Sprite: {fileID: 21300000, guid: 2586372606a66144b9d7884c48177888, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1460976893
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22241088, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1460976886}
+--- !u!1 &1572162728
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1572162729}
+  - 222: {fileID: 1572162731}
+  - 114: {fileID: 1572162730}
+  - 114: {fileID: 1572162732}
+  m_Layer: 2
+  m_Name: InfoBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1572162729
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1572162728}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: .637455165, y: .557599485, z: .512053847}
+  m_Children:
+  - {fileID: 936773911}
+  m_Father: {fileID: 207107494}
+  m_RootOrder: 5
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: -236.199997, y: 93.6999969}
+  m_SizeDelta: {x: 100, y: 55}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &1572162730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1572162728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: .323583484, g: .567925274, b: .772058845, a: 1}
+  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1572162731
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1572162728}
+--- !u!114 &1572162732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1572162728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87681328d98b05643b7c228d8f35c050, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1589728801
 GameObject:
   m_ObjectHideFlags: 0
@@ -4096,10 +4922,8 @@ RectTransform:
   m_GameObject: {fileID: 1632627397}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .38463521, y: .38463521, z: .38463521}
-  m_Children:
-  - {fileID: 1412076568}
-  - {fileID: 2134919174}
+  m_LocalScale: {x: .276499569, y: .27649954, z: .27649954}
+  m_Children: []
   m_Father: {fileID: 75295022}
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
@@ -4125,6 +4949,24 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 858211518}
           m_MethodName: PointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 858211518}
+          m_MethodName: PointerExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -4249,13 +5091,13 @@ RectTransform:
   m_GameObject: {fileID: 1639319459}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .999999702, y: 1, z: 1}
+  m_LocalScale: {x: .27649942, y: .27649954, z: .27649954}
   m_Children: []
-  m_Father: {fileID: 1269495516}
-  m_RootOrder: 1
+  m_Father: {fileID: 75295022}
+  m_RootOrder: 12
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 182.800079, y: -91.8000183}
+  m_AnchoredPosition: {x: 244.409958, y: -41.2100601}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1639319461
@@ -4276,6 +5118,24 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1639319463}
           m_MethodName: PointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1639319463}
+          m_MethodName: PointerExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -4362,6 +5222,7 @@ MonoBehaviour:
   father: {fileID: 332801494}
   selected: 0
   lockedForever: 0
+  information: Unlocks water burst ability
   choiceIndex: 25
   variableBeingChanged: secondary_water_level
 --- !u!114 &1639319464
@@ -4422,10 +5283,8 @@ RectTransform:
   m_GameObject: {fileID: 1696152883}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .38463518, y: .38463527, z: .38463527}
-  m_Children:
-  - {fileID: 609157645}
-  - {fileID: 1852362429}
+  m_LocalScale: {x: .27649954, y: .276499599, z: .276499599}
+  m_Children: []
   m_Father: {fileID: 75295022}
   m_RootOrder: 4
   m_AnchorMin: {x: .5, y: .5}
@@ -4451,6 +5310,24 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 503376060}
           m_MethodName: PointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 503376060}
+          m_MethodName: PointerExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -4650,6 +5527,24 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 540851062}
+          m_MethodName: PointerExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &1718501689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4713,10 +5608,8 @@ RectTransform:
   m_GameObject: {fileID: 1718501687}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .402267992, y: .402268082, z: .402268082}
-  m_Children:
-  - {fileID: 1066777358}
-  - {fileID: 1404779445}
+  m_LocalScale: {x: .289175093, y: .289175153, z: .289175153}
+  m_Children: []
   m_Father: {fileID: 75295022}
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
@@ -4783,13 +5676,13 @@ RectTransform:
   m_GameObject: {fileID: 1734890386}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1.00000072, z: 1.00000072}
+  m_LocalScale: {x: .276499569, y: .276499361, z: .276499361}
   m_Children: []
-  m_Father: {fileID: 1752853463}
-  m_RootOrder: 0
+  m_Father: {fileID: 75295022}
+  m_RootOrder: 22
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 186.87999, y: 187.097015}
+  m_AnchoredPosition: {x: 162.086731, y: 50.1575546}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1734890388
@@ -4810,6 +5703,24 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1734890391}
           m_MethodName: PointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1734890391}
+          m_MethodName: PointerExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -4923,10 +5834,12 @@ MonoBehaviour:
   changeWithValue: 1.10000002
   sucessors:
   - {fileID: 1752853467}
+  - {fileID: 1460976887}
   operation: 4
   father: {fileID: 1752853467}
   selected: 0
   lockedForever: 0
+  information: Increases max health by 10%
   choiceIndex: 2
   variableBeingChanged: maxHealth
 --- !u!114 &1734890392
@@ -4970,7 +5883,6 @@ GameObject:
   - 114: {fileID: 1752853468}
   - 114: {fileID: 1752853467}
   - 114: {fileID: 1752853466}
-  - 114: {fileID: 1752853465}
   - 114: {fileID: 1752853464}
   m_Layer: 5
   m_Name: Health 2
@@ -4988,14 +5900,13 @@ RectTransform:
   m_GameObject: {fileID: 1752853462}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1.00000012, z: 1.00000012}
-  m_Children:
-  - {fileID: 1734890387}
-  m_Father: {fileID: 1206261926}
-  m_RootOrder: 1
+  m_LocalScale: {x: .276499569, y: .276499569, z: .276499569}
+  m_Children: []
+  m_Father: {fileID: 75295022}
+  m_RootOrder: 14
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 241.000092, y: 67.9999542}
+  m_AnchoredPosition: {x: 106.786774, y: 45.4570694}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1752853464
@@ -5028,25 +5939,12 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
---- !u!114 &1752853465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11408194, guid: 6811719d7cc6a614a91bd9fdfa6fc508,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1752853462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delegates:
-  - eventID: 0
+  - eventID: 1
     callback:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1752853467}
-          m_MethodName: PointerEnter
+          m_MethodName: PointerExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -5134,6 +6032,7 @@ MonoBehaviour:
   father: {fileID: 1206261929}
   selected: 0
   lockedForever: 0
+  information: Increases max health by 10%
   choiceIndex: 2
   variableBeingChanged: maxHealth
 --- !u!114 &1752853468
@@ -5194,12 +6093,10 @@ RectTransform:
   m_GameObject: {fileID: 1757837436}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .38463515, y: .384635299, z: .384635299}
-  m_Children:
-  - {fileID: 560719110}
-  - {fileID: 522703630}
+  m_LocalScale: {x: .27649951, y: .276499599, z: .276499599}
+  m_Children: []
   m_Father: {fileID: 75295022}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 111.900002, y: -82.9000015}
@@ -5223,6 +6120,24 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 203360175}
           m_MethodName: PointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 203360175}
+          m_MethodName: PointerExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -5347,13 +6262,13 @@ RectTransform:
   m_GameObject: {fileID: 1852362428}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .999999702, y: 1, z: 1}
+  m_LocalScale: {x: .27649942, y: .27649954, z: .27649954}
   m_Children: []
-  m_Father: {fileID: 1696152884}
-  m_RootOrder: 1
+  m_Father: {fileID: 75295022}
+  m_RootOrder: 16
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -231.500153, y: 46.3999214}
+  m_AnchoredPosition: {x: -201.339981, y: -5.552948}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1852362430
@@ -5374,6 +6289,24 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1852362432}
           m_MethodName: PointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1852362432}
+          m_MethodName: PointerExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -5460,6 +6393,7 @@ MonoBehaviour:
   father: {fileID: 503376060}
   selected: 0
   lockedForever: 0
+  information: Unlocks homing missiles ability
   choiceIndex: 16
   variableBeingChanged: secondary_neutral_level
 --- !u!114 &1852362433
@@ -5520,15 +6454,13 @@ RectTransform:
   m_GameObject: {fileID: 1870241801}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .38463515, y: .38463527, z: .38463527}
-  m_Children:
-  - {fileID: 2023410154}
-  - {fileID: 668492315}
+  m_LocalScale: {x: .276499569, y: .27649951, z: .27649951}
+  m_Children: []
   m_Father: {fileID: 75295022}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 5, y: -104}
+  m_AnchoredPosition: {x: -20.2999992, y: -115.900002}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1870241803
@@ -5549,6 +6481,24 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1450492789}
           m_MethodName: PointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1450492789}
+          m_MethodName: PointerExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -5680,11 +6630,12 @@ MonoBehaviour:
   changeWithValue: 1.10000002
   sucessors:
   - {fileID: 1412076567}
-  - {fileID: 805443761}
+  - {fileID: 2023410151}
   operation: 1
   father: {fileID: 1412076567}
   selected: 0
   lockedForever: 0
+  information: Increases attack by 10%
   choiceIndex: 4
   variableBeingChanged: damage
 --- !u!224 &1926146837
@@ -5696,14 +6647,13 @@ RectTransform:
   m_GameObject: {fileID: 1926146835}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1.00000072, z: 1.00000072}
-  m_Children:
-  - {fileID: 805443762}
-  m_Father: {fileID: 1412076568}
-  m_RootOrder: 0
+  m_LocalScale: {x: .276499569, y: .276499361, z: .276499361}
+  m_Children: []
+  m_Father: {fileID: 75295022}
+  m_RootOrder: 17
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -118.99984, y: 83.9999008}
+  m_AnchoredPosition: {x: -192.522903, y: 162.790588}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1926146838
@@ -5724,6 +6674,24 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1926146836}
           m_MethodName: PointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1926146836}
+          m_MethodName: PointerExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -5869,6 +6837,24 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2023410151}
+          m_MethodName: PointerExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &2023410150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5938,11 +6924,12 @@ MonoBehaviour:
   startNode: 0
   changeWithValue: 1
   sucessors:
-  - {fileID: 1450492789}
+  - {fileID: 1926146836}
   operation: 2
-  father: {fileID: 1450492789}
+  father: {fileID: 1926146836}
   selected: 0
   lockedForever: 0
+  information: Unlocks an oil puddle that can be set on fire
   choiceIndex: 22
   variableBeingChanged: secondary_fire_level
 --- !u!114 &2023410152
@@ -5983,13 +6970,13 @@ RectTransform:
   m_GameObject: {fileID: 2023410148}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: .276499569, y: .276499361, z: .276499361}
   m_Children: []
-  m_Father: {fileID: 1870241802}
-  m_RootOrder: 0
+  m_Father: {fileID: 75295022}
+  m_RootOrder: 23
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -96.6997223, y: -170.799866}
+  m_AnchoredPosition: {x: -234.500061, y: 178.499969}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!1 &2043932849
@@ -6021,13 +7008,13 @@ RectTransform:
   m_GameObject: {fileID: 2043932849}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .999999702, y: 1, z: 1}
+  m_LocalScale: {x: .27649942, y: .27649954, z: .27649954}
   m_Children: []
-  m_Father: {fileID: 1269495516}
-  m_RootOrder: 0
+  m_Father: {fileID: 75295022}
+  m_RootOrder: 11
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 189.600433, y: 76.0999908}
+  m_AnchoredPosition: {x: 247.029861, y: 23.3709564}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &2043932851
@@ -6048,6 +7035,24 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 2043932853}
           m_MethodName: PointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2043932853}
+          m_MethodName: PointerExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -6134,6 +7139,7 @@ MonoBehaviour:
   father: {fileID: 332801494}
   selected: 0
   lockedForever: 0
+  information: Unlocks freezing ability
   choiceIndex: 26
   variableBeingChanged: terciary_water_level
 --- !u!114 &2043932854
@@ -6206,6 +7212,7 @@ MonoBehaviour:
   father: {fileID: 858211518}
   selected: 0
   lockedForever: 0
+  information: Increases attack by 10%
   choiceIndex: 4
   variableBeingChanged: damage
 --- !u!224 &2134919174
@@ -6217,14 +7224,13 @@ RectTransform:
   m_GameObject: {fileID: 2134919172}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1.00000012, z: 1.00000012}
-  m_Children:
-  - {fileID: 782262000}
-  m_Father: {fileID: 1632627398}
-  m_RootOrder: 1
+  m_LocalScale: {x: .276499569, y: .276499569, z: .276499569}
+  m_Children: []
+  m_Father: {fileID: 75295022}
+  m_RootOrder: 8
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -221.100098, y: -32.4000549}
+  m_AnchoredPosition: {x: -192.040039, y: 46.9380455}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &2134919175
@@ -6245,6 +7251,24 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 2134919173}
           m_MethodName: PointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2134919173}
+          m_MethodName: PointerExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

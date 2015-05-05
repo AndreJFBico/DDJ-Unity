@@ -51,6 +51,7 @@ public class PathAgent : MonoBehaviour
     {
         if (collision.gameObject.tag.CompareTo("Player") == 0)
         {
+            inSight = false;
             stopChasing();
         }
     }
@@ -86,7 +87,6 @@ public class PathAgent : MonoBehaviour
 
     public void stopChasing()
     {
-        inSight = false;
         Invoke("stopChase", 1);
     }
 

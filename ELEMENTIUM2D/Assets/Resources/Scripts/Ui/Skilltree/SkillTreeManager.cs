@@ -58,6 +58,7 @@ public class SkillTreeManager : MonoBehaviour
         availablePoints.GetComponent<Text>().text = "Available Points: " + cur_lim_points;
 
         infobox = GameObject.Find("InfoBox").transform;
+        infobox.gameObject.SetActive(false);
 
         predictBox = GameObject.Find("PredictBox").transform;
         startNode = GameObject.Find("Parent").transform;
@@ -74,6 +75,7 @@ public class SkillTreeManager : MonoBehaviour
             UpdatePlayerStats();
             Application.LoadLevel("defaultScene");
         }
+
     }
 
     bool checkIfHasOneEnabled(SkillTreeNode node, bool checkForUnknown)
@@ -319,10 +321,16 @@ public class SkillTreeManager : MonoBehaviour
         availablePoints.GetComponent<Text>().text = "Available Points: " + cur_lim_points;
     }
 
-    public void displayInfo(string info)
+    public void hideInfoBox()
     {
+        infobox.gameObject.SetActive(false);
+    }
 
-        infobox.GetComponent<Text>().text = "Info:" + "\n" + info;
+    public void displayInfo(string info, Transform node)
+    {
+        infobox.gameObject.SetActive(true);
+        infobox.transform.position = node.transform.position;
+        infobox.GetComponentInChildren<Text>().text = "Info:" + "\n" + info;
     }
 
     //ATTENTION CURRENTLY ITS ONLY A DUMP OF THE NUMBER OF POINTS USED

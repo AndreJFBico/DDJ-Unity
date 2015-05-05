@@ -71,7 +71,6 @@ public class Telegraph : MonoBehaviour {
             timer = 0.0f;
             moving = false;
             damage.deltDamage = false;
-            player = null;
         }
         else
         if (timer >= duration)

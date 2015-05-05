@@ -31,6 +31,9 @@ public class SkillTreeNode : MonoBehaviour
     private bool unknown = false;
 
     [SerializeField]
+    public string information;
+
+    [SerializeField]
     int choiceIndex = 0;
 
     [SerializeField]
@@ -163,9 +166,20 @@ public class SkillTreeNode : MonoBehaviour
 
     public void PointerEnter()
     {
-        string info = "Changing: " + variableBeingChanged + "\n"
-                    + "With " + operation.ToString() + " " + changeWithValue;
-        manager.displayInfo(info);
+        /*string info = information;= "Changing: " + variableBeingChanged + "\n"
+                    + "With " + operation.ToString() + " " + changeWithValue;*/
+        if(isUknown())
+        {
+            manager.displayInfo("Uknown node", transform);
+        }
+        else manager.displayInfo(information, transform);
+    }
+
+    public void PointerExit()
+    {
+        /*string info = information;= "Changing: " + variableBeingChanged + "\n"
+                    + "With " + operation.ToString() + " " + changeWithValue;*/
+        manager.hideInfoBox();
     }
 
     public void MouseCallBack()
