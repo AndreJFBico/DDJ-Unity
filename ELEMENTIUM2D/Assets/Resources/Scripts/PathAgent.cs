@@ -18,8 +18,6 @@ public class PathAgent : MonoBehaviour
     private Transform previousTarget;
     private bool imobilized = false;
 
-    private bool inSight = false;
-
     public void Awake() 
     {
         target = null;
@@ -32,7 +30,6 @@ public class PathAgent : MonoBehaviour
 
     public void playerSighted(Transform player)
     {
-        inSight = true;
         agentScrpt.setAlerted(true);
         target = player;
         if (imobilized)
@@ -51,7 +48,6 @@ public class PathAgent : MonoBehaviour
     {
         if (collision.gameObject.tag.CompareTo("Player") == 0)
         {
-            inSight = false;
             stopChasing();
         }
     }
@@ -59,7 +55,6 @@ public class PathAgent : MonoBehaviour
     public void stop()
     {
         agent.speed = 0.0f;
-        inSight = false;
         previousTarget = target;
         target = null;
         imobilized = true;
@@ -73,7 +68,6 @@ public class PathAgent : MonoBehaviour
         {
             if(previousTarget != null)
             {
-                inSight = true;
                 target = previousTarget;
             }
         }
@@ -81,7 +75,6 @@ public class PathAgent : MonoBehaviour
 
     public void instantStopChase()
     {
-        inSight = false;
         Invoke("stopChase", 0);
     }
 
@@ -92,8 +85,16 @@ public class PathAgent : MonoBehaviour
 
     private void stopChase()
     {
-        if (!inSight)
+        if(target != null)
+        {
+            float distance = (target.position - transform.parent.position).magnitude;
+            if (distance < GetComponent<CapsuleCollider>().bounds.max.x - GetComponent<CapsuleCollider>().bounds.center.x)
+            {
+                Invoke("stopChase", 1);
+                return;
+            }
             target = null;
+        }
     }
 
     public bool hasTarget()

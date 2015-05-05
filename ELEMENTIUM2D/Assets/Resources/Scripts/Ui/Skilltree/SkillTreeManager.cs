@@ -75,6 +75,10 @@ public class SkillTreeManager : MonoBehaviour
             UpdatePlayerStats();
             Application.LoadLevel("defaultScene");
         }
+        if(Input.GetKeyDown(KeyCode.K))
+        {
+            cur_lim_points += 1;
+        }
 
     }
 

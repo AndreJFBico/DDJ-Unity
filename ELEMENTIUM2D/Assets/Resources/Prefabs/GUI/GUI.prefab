@@ -12,12 +12,12 @@ GameObject:
   - 114: {fileID: 11499454}
   - 114: {fileID: 11424334}
   m_Layer: 0
-  m_Name: Button
+  m_Name: RestartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &107724
 GameObject:
   m_ObjectHideFlags: 0
