@@ -76,7 +76,8 @@ public class FireElement: ShootElement {
             gunBlast1.SetActive(true);
             gunBlast2.SetActive(true);
             Invoke("deactivateBlast", 0.1f);
-            OilPuddleManager.Instance.addOilPuddle((GameObject)Instantiate(OilPuddleManager.Instance.OilPuddle, barrelEnd.position, OilPuddleManager.Instance.OilPuddle.transform.rotation));
+            Instantiate(OilPuddleManager.Instance.OilPuddle, barrelEnd.position, OilPuddleManager.Instance.OilPuddle.transform.rotation);
+
             GameManager.Instance.GUI.GetComponent<GUIManager>().addCoolDown(1, OilPuddleManager.Instance.internalCooldown());
         }
     }

@@ -9,6 +9,7 @@ public class OilPuddle : ElementalyModifiable {
     private float slow;
     public GameObject onFire;
     public bool canBurn = false;
+    public bool eternal = false;
 
     public List<OilPuddle> _connected;
 
@@ -22,8 +23,12 @@ public class OilPuddle : ElementalyModifiable {
         damage = 10;
         slow = 0.5f;
         durability = 20;
-        StartCoroutine("reduceSize", 10);
-        Invoke("destroySelf", durability);
+        if(!eternal)
+        {
+            StartCoroutine("reduceSize", 10);
+            Invoke("destroySelf", durability);
+        }          
+        OilPuddleManager.Instance.addOilPuddle(gameObject);
 	}
 
     protected override void dealWithAgent(Collider other)
@@ -59,6 +64,11 @@ public class OilPuddle : ElementalyModifiable {
             onFire.SetActive(true);
             canBurn = true;
             propagateFire();
+            if(eternal)
+            {
+                Invoke("destroySelf", durability);
+                StartCoroutine("reduceSize", 10);
+            }
         }
     }
 
@@ -74,8 +84,8 @@ public class OilPuddle : ElementalyModifiable {
     private IEnumerator reduceSize(int steps)
     {
         float step = durability / steps;
-        float decrease = 1-(1.0f / steps);
-        while(true)
+        float decrease = 1 - (1.0f / steps);
+        while (true)
         {
             yield return new WaitForSeconds(step);
             transform.localScale *= (decrease);

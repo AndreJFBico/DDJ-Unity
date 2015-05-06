@@ -156,11 +156,6 @@ public class Player : Agent {
             {
                 return;
             }
-            else if (!goTroughBlink)
-            {
-                timerRunning = false;
-                damageTimer = 0.0f;
-            }
         }
         else if(!timerRunning && !goTroughBlink)
         {

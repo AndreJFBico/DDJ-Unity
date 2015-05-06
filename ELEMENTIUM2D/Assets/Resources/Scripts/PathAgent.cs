@@ -17,6 +17,7 @@ public class PathAgent : MonoBehaviour
     private float previousSpeed;
     private Transform previousTarget;
     private bool imobilized = false;
+    private int numFreeRoam = 0;
 
     public void Awake() 
     {
@@ -160,13 +161,29 @@ public class PathAgent : MonoBehaviour
 
     void FreeRoam()
     {
-        agentScrpt.setAlerted(false);
         Vector3 randomDirection = Random.insideUnitSphere * roamRadius;
         randomDirection += startPosition;
         NavMeshHit hit;
         NavMesh.SamplePosition(randomDirection, out hit, roamRadius, 1);
         Vector3 finalPosition = hit.position;
-        agent.destination = finalPosition;
+        //agent.destination = finalPosition;
+
+        NavMeshPath path = new NavMeshPath();
+        agent.CalculatePath(finalPosition, path);
+        float distance = 0;
+        Vector3 comparingNode = agent.transform.position;
+        numFreeRoam++;
+        foreach (Vector3 v in path.corners)
+        {
+            distance += (v - comparingNode).magnitude; 
+        }
+        if (distance > roamRadius * 2.0f && numFreeRoam <= 5)
+        {
+            FreeRoam();
+        }
+        numFreeRoam = 0;
+        agent.SetPath(path);
+        agentScrpt.setAlerted(false);
     }
 
     public void LateUpdate()
