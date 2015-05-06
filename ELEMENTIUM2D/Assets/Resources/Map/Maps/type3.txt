@@ -21,9 +21,9 @@ d 2 4
 e 8 10
 ::
 ::drop_groups
-A maxHealth|10 damage|5 defence|5
-B maxHealth|5
-C damage|2 defence|2 lim_points|1
+A maxHealth|10 damage|5 defence|5 lim_points|10
+B maxHealth|5 lim_points|10
+C damage|2 defence|2 lim_points|5
 ::
 ::walls
 A BreakableWater
