@@ -66,6 +66,7 @@ public class StunnedStatusEffect : StatusEffect
         while (stunnedTimer > 0)
         {
             stunnedTimer -= Time.deltaTime;
+            agent.stop();
             yield return new WaitForEndOfFrame();
         }
 

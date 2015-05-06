@@ -39,9 +39,12 @@ public class OilPuddleManager {
         OilPuddle objScript = oilPuddle.GetComponent<OilPuddle>();
         foreach (OilPuddle item in _activeOilPuddles)
 	    {
-            if (closeEnough(item.transform.position, oilPuddle.transform.position))
+            if(item)
             {
-                addConnected(item, objScript);
+                if (closeEnough(item.transform.position, oilPuddle.transform.position))
+                {
+                    addConnected(item, objScript);
+                }
             }
 	    }
         objScript.checkIfShouldBurn();

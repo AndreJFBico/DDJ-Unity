@@ -56,12 +56,12 @@ public class Telegraph : MonoBehaviour {
         return _type;
     }
 
-
     void Update()
     {
         if(moving)
         {
             motion.applyMotion(sObj, transform);
+            timer += Time.deltaTime;
         }
         if (timer >= duration + timeBetweenTelegraphs)
         {
@@ -70,14 +70,19 @@ public class Telegraph : MonoBehaviour {
             gameObject.SetActive(false);
             timer = 0.0f;
             moving = false;
+            player = null;
             damage.deltDamage = false;
         }
         else
-        if (timer >= duration)
+        if (timer > duration)
         {
             if(player!= null )
             {
                 damage.damage(player, damageValue);
+            }
+            else
+            {
+                Debug.Log("OK.....");
             }
             //hides the sprite
             transform.FindChild("Colliders").gameObject.SetActive(false);
@@ -85,11 +90,12 @@ public class Telegraph : MonoBehaviour {
             particleSystem.gameObject.SetActive(true);
         }
         else GetComponentInChildren<SpriteRenderer>().color = new Color(1f, 1f, 1f, timer / duration);
-        timer += Time.deltaTime;
     }
 
     public void init(Transform startingObject, Transform currentFireTransform)
     {
+        timer = 0.0f;
+        player = null;
         // INIT
         Type type = FindTypeInLoadedAssemblies("TelegraphEffect." + initScrpt);
         initialization = (TelegraphInit)Activator.CreateInstance(type);
@@ -114,7 +120,7 @@ public class Telegraph : MonoBehaviour {
 
     void OnTriggerEnter(Collider collider)
     {
-        if(collider.tag.CompareTo("Player") == 0 && timer <= duration)
+        if(collider.tag.CompareTo("Player") == 0 && timer < duration)
         {
             player = collider.transform;
         }

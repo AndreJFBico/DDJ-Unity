@@ -44,6 +44,11 @@ public class TelegraphEnemy : EnemyScript {
 
     void OnEnable()
     {
+        targetedEnemy = null;
+        foreach (Transform t in telegraphs)
+        {
+            t.gameObject.SetActive(false);
+        }
         StartCoroutine("telegraphControl");
     }
 
