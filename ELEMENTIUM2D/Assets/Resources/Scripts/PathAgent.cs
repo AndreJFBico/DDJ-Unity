@@ -9,24 +9,48 @@ public class PathAgent : MonoBehaviour
     public float roamRadius;
     public Transform target;
     public float pathEndThreshold = 0.1f;
-    //private PathManager manager;
-    //private Seeker seeker;
-    //private bool on_a_Path;
+
     private NavMeshAgent agent;
     private Agent agentScrpt;
-    private float previousSpeed;
     private Transform previousTarget;
     private bool imobilized = false;
+
+    private float previousSpeed;
+    private float unalertedSpeed;
+    private float alertedSpeed;
 
     public void Awake() 
     {
         target = null;
         agent = transform.parent.GetComponent<NavMeshAgent>();
         roamRadius = Constants.enemyRoamRadius;
-        //InvokeRepeating("checkMovement", 0, 0.5f);
         agentScrpt = transform.parent.gameObject.GetComponent<Agent>();
         previousSpeed = agent.speed;   
     } 
+
+    public float UnalertedSpeed
+    {
+        get
+        {
+            return unalertedSpeed;
+        }
+        set
+        {
+            unalertedSpeed = value;
+        }
+    }
+
+    public float AlertedSpeed
+    {
+        get
+        {
+            return alertedSpeed;
+        }
+        set
+        {
+            alertedSpeed = value;
+        }
+    }
 
     public void playerSighted(Transform player)
     {
@@ -58,6 +82,16 @@ public class PathAgent : MonoBehaviour
         previousTarget = target;
         target = null;
         imobilized = true;
+    }
+
+    public void setAlerted(bool val)
+    {
+        if (val)
+        {
+            agent.speed = alertedSpeed;
+            agent.SetDestination(GameManager.Instance.Player.GetComponent<Player>().transform.position);
+        }
+        else agent.speed = unalertedSpeed;
     }
 
     public void restart(bool chase)
@@ -167,6 +201,17 @@ public class PathAgent : MonoBehaviour
         NavMesh.SamplePosition(randomDirection, out hit, roamRadius, 1);
         Vector3 finalPosition = hit.position;
         agent.destination = finalPosition;
+    }
+
+    public void slowSelf(float intensity)
+    {
+        previousSpeed = agent.speed;
+        agent.speed *= intensity;
+    }
+
+    public void restoreMoveSpeed(float intensity)
+    {
+        agent.speed /= intensity;
     }
 
     public void LateUpdate()

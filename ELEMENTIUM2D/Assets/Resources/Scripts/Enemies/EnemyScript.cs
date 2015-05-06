@@ -17,7 +17,6 @@ public class EnemyScript : Agent
     protected float earthResist;
     protected float fireResist;
 
-    protected NavMeshAgent navMeshAgent;
     protected EnemySpawner spawnScript;
     protected PathAgent pathAgent;
     protected GameObject gui;
@@ -26,16 +25,11 @@ public class EnemyScript : Agent
 
     protected int multiplier;
 
-    protected float prevSpeed = 0;
-    protected float unalertedSpeed;
-    protected float alertedSpeed;
-
 	// Use this for initialization
     protected virtual void Awake()
     {
         base.Awake();
         Vector2 targetPos = Camera.main.WorldToScreenPoint(transform.position);
-        navMeshAgent = GetComponent<NavMeshAgent>();
         pathAgent = GetComponentInChildren<PathAgent>();
         centerHealthBar = true;
         gui = GameObject.Find("GUI");
@@ -158,7 +152,6 @@ public class EnemyScript : Agent
 
     private void restart()
     {
-        navMeshAgent.speed = unalertedSpeed;
         pathAgent.restart(false);
     }
 
@@ -181,16 +174,11 @@ public class EnemyScript : Agent
     public override void setAlerted(bool val)
     {
         if (val)
-        {
             alertedSign.transform.gameObject.SetActive(true);
-            navMeshAgent.speed = alertedSpeed;
-            navMeshAgent.SetDestination(GameManager.Instance.Player.GetComponent<Player>().transform.position);
-        }
+
         else
-        {
             alertedSign.transform.gameObject.SetActive(false);
-            navMeshAgent.speed = unalertedSpeed;
-        }
+        pathAgent.setAlerted(val);
         isAlerted = val;
     }
 
@@ -227,13 +215,12 @@ public class EnemyScript : Agent
 
     public override void slowSelf(float intensity)
     {
-        prevSpeed = navMeshAgent.speed;
-        navMeshAgent.speed *= intensity;
+        pathAgent.slowSelf(intensity);
     }
 
     public override void restoreMoveSpeed(float intensity)
     {
-        navMeshAgent.speed /= intensity;
+        restoreMoveSpeed(intensity);
     }
 
     public virtual void dealDamage(Player player) {}

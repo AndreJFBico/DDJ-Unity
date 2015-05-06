@@ -10,6 +10,7 @@ public class EarthEnemyScript : EnemyScript
     // Use this for initialization
     protected override void Awake()
     {
+        base.Awake();
         type = EnemyStats.EarthBasic.type;
         maxHealth = EnemyStats.EarthBasic.maxHealth;
         health = maxHealth;
@@ -20,10 +21,9 @@ public class EarthEnemyScript : EnemyScript
         fireResist = EnemyStats.EarthBasic.fireResist;
         statusDurability = EnemyStats.EarthBasic.statusDurability;
         statusIntensity = EnemyStats.EarthBasic.statusIntensity;
-        unalertedSpeed = EnemyStats.EarthBasic.unalertedSpeed;
-        alertedSpeed = EnemyStats.EarthBasic.alertedSpeed;
+        pathAgent.UnalertedSpeed = EnemyStats.EarthBasic.unalertedSpeed;
+        pathAgent.AlertedSpeed = EnemyStats.EarthBasic.alertedSpeed;
 
-        base.Awake();
     }
 
 

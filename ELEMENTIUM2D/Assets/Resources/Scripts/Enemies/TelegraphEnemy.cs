@@ -21,6 +21,7 @@ public class TelegraphEnemy : EnemyScript {
     // Use this for initialization
     protected override void Awake()
     {
+        base.Awake();
         type = Elements.NEUTRAL;
         maxHealth = EnemyStats.BasicNeutral.maxHealth;
         health = maxHealth;
@@ -29,12 +30,11 @@ public class TelegraphEnemy : EnemyScript {
         waterResist = EnemyStats.BasicNeutral.waterResist;
         earthResist = EnemyStats.BasicNeutral.earthResist;
         fireResist = EnemyStats.BasicNeutral.fireResist;
-        unalertedSpeed = EnemyStats.BasicNeutral.unalertedSpeed;
-        alertedSpeed = EnemyStats.BasicNeutral.alertedSpeed;
+        pathAgent.UnalertedSpeed = EnemyStats.BasicNeutral.unalertedSpeed;
+        pathAgent.AlertedSpeed = EnemyStats.BasicNeutral.alertedSpeed;
 
         activeWeapon = left;
 
-        base.Awake();
     }
 
     bool hasEnemyTarget()

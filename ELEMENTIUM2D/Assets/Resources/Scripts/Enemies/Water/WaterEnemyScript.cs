@@ -9,6 +9,7 @@ public class WaterEnemyScript : EnemyScript
     // Use this for initialization
     protected override void Awake()
     {
+        base.Awake();
         type = EnemyStats.WaterBasic.type;
         maxHealth = EnemyStats.WaterBasic.maxHealth;
         health = maxHealth;
@@ -17,10 +18,9 @@ public class WaterEnemyScript : EnemyScript
         waterResist = EnemyStats.WaterBasic.waterResist;
         earthResist = EnemyStats.WaterBasic.earthResist;
         fireResist = EnemyStats.WaterBasic.fireResist;
-        unalertedSpeed = EnemyStats.WaterBasic.unalertedSpeed;
-        alertedSpeed = EnemyStats.WaterBasic.alertedSpeed;
+        pathAgent.UnalertedSpeed = EnemyStats.WaterBasic.unalertedSpeed;
+        pathAgent.AlertedSpeed = EnemyStats.WaterBasic.alertedSpeed;
 
-        base.Awake();
     }
 
     protected override void LateUpdate()

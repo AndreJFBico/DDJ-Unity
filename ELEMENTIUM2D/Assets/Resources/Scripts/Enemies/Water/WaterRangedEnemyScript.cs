@@ -20,6 +20,7 @@ public class WaterRangedEnemyScript : EnemyScript
     // Use this for initialization
     protected override void Awake()
     {
+        base.Awake();
         type = Elements.NEUTRAL;
         projectile = Resources.Load(EnemyStats.RangedNeutral.neutralEnemyProjectile) as GameObject;
         rangedRadius = EnemyStats.RangedNeutral.rangedRadius;
@@ -31,14 +32,13 @@ public class WaterRangedEnemyScript : EnemyScript
         earthResist = EnemyStats.RangedNeutral.earthResist;
         fireResist = EnemyStats.RangedNeutral.fireResist;
         gameObject.GetComponent<SphereCollider>().radius = EnemyStats.RangedNeutral.rangedRadius;
-        unalertedSpeed = EnemyStats.WaterBasic.unalertedSpeed;
-        alertedSpeed = EnemyStats.WaterBasic.alertedSpeed;
+        pathAgent.UnalertedSpeed = EnemyStats.WaterBasic.unalertedSpeed;
+        pathAgent.AlertedSpeed = EnemyStats.WaterBasic.alertedSpeed;
 
         activeWeapon = left;
         currentFireTransform = left_firepoint;
         right.gameObject.SetActive(false);
         
-        base.Awake();
     }
 
     void OnEnable()

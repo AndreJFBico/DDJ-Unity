@@ -46,12 +46,19 @@ public class BurningStatusEffect : StatusEffect
     {
         Intensity = inten;
         Duration = dur;
-        burningTimer = duration;
+        burningTimer = Duration;
     }
 
     public override void resetDuration(float dur)
     {
         burningTimer = dur;
+    }
+
+    public float getRemainderDamage()
+    {
+        if (burningTimer == Duration)
+            return intensity;
+        return intensity / (Duration / burningTimer);
     }
     #endregion
 
@@ -64,7 +71,7 @@ public class BurningStatusEffect : StatusEffect
         float interval = 1f;
         while (burningTimer > 0)
         {
-            script.takeDamage(intensity/(duration/interval), Elements.FIRE, true);
+            script.takeDamage(intensity / (duration / interval), Elements.FIRE, true);
             burningTimer -= interval;
             yield return new WaitForSeconds(interval);
         }

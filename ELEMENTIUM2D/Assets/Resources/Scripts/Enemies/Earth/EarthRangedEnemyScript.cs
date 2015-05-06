@@ -21,6 +21,7 @@ public class EarthRangedEnemyScript : EnemyScript
     // Use this for initialization
     protected override void Awake()
     {
+        base.Awake();
         type = Elements.NEUTRAL;
         projectile = Resources.Load(EnemyStats.RangedNeutral.neutralEnemyProjectile) as GameObject;
         rangedRadius = EnemyStats.RangedNeutral.rangedRadius;
@@ -32,14 +33,13 @@ public class EarthRangedEnemyScript : EnemyScript
         earthResist = EnemyStats.RangedNeutral.earthResist;
         fireResist = EnemyStats.RangedNeutral.fireResist;
         gameObject.GetComponent<SphereCollider>().radius = EnemyStats.RangedNeutral.rangedRadius;
-        unalertedSpeed = EnemyStats.FireBasic.unalertedSpeed;
-        alertedSpeed = EnemyStats.FireBasic.alertedSpeed;
+        pathAgent.UnalertedSpeed = EnemyStats.FireBasic.unalertedSpeed;
+        pathAgent.AlertedSpeed = EnemyStats.FireBasic.alertedSpeed;
 
         activeWeapon = left;
         currentFireTransform = left_firepoint;
         right.gameObject.SetActive(false);
         
-        base.Awake();
     }
 
     void OnEnable()

@@ -27,7 +27,7 @@ public class StatusEffectManager{
         {
             GodScript.destroyComponent(agent.GetComponent<WetStatusEffect>());
         }
-        if (agent.GetComponent<BurningStatusEffect>() == null)
+        else if (agent.GetComponent<BurningStatusEffect>() == null)
         {
             StatusEffect burn = agent.AddComponent<BurningStatusEffect>();
             burn.initiate(intensity, durability);
@@ -36,8 +36,9 @@ public class StatusEffectManager{
         else
         {
             //Need an extra check to see if damage > this damage
-            StatusEffect burn = agent.GetComponent<BurningStatusEffect>();
-            burn.resetDuration(durability);
+            BurningStatusEffect burn = agent.GetComponent<BurningStatusEffect>();
+            if (burn.getRemainderDamage() < intensity)
+                burn.initiate(intensity, durability);
         }
     }
 
@@ -64,7 +65,7 @@ public class StatusEffectManager{
         {
             GodScript.destroyComponent(agent.GetComponent<BurningStatusEffect>());
         }
-        if (agent.GetComponent<WetStatusEffect>() == null)
+        else if (agent.GetComponent<WetStatusEffect>() == null)
         {
             StatusEffect wet = agent.AddComponent<WetStatusEffect>();
             wet.initiate(intensity, durability);

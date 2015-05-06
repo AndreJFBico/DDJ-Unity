@@ -10,6 +10,7 @@ public class FireEnemyScript : EnemyScript
     // Use this for initialization
     protected override void Awake()
     {
+        base.Awake();
         type = EnemyStats.FireBasic.type;
         maxHealth = EnemyStats.FireBasic.maxHealth;
         health = maxHealth;
@@ -20,10 +21,9 @@ public class FireEnemyScript : EnemyScript
         fireResist = EnemyStats.FireBasic.fireResist;
         statusDurability = EnemyStats.FireBasic.statusDurability;
         statusIntensity = EnemyStats.FireBasic.statusIntensity;
-        unalertedSpeed = EnemyStats.FireBasic.unalertedSpeed;
-        alertedSpeed = EnemyStats.FireBasic.alertedSpeed;
+        pathAgent.UnalertedSpeed = EnemyStats.FireBasic.unalertedSpeed;
+        pathAgent.AlertedSpeed = EnemyStats.FireBasic.alertedSpeed;
 
-        base.Awake();
     }
 
     protected override void LateUpdate()

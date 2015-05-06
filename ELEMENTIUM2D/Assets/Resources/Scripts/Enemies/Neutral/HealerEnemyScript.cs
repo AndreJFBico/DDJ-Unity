@@ -24,6 +24,7 @@ public class HealerEnemyScript : EnemyScript {
     // Use this for initialization
     protected override void Awake()
     {
+        base.Awake();
         targetedEnemies = new List<Transform>();
         type = Elements.NEUTRAL;
         projectile = Resources.Load(EnemyStats.HealerNeutral.neutralEnemyProjectile) as GameObject;
@@ -36,13 +37,12 @@ public class HealerEnemyScript : EnemyScript {
         earthResist = EnemyStats.HealerNeutral.earthResist;
         fireResist = EnemyStats.HealerNeutral.fireResist;
         gameObject.GetComponent<SphereCollider>().radius = EnemyStats.HealerNeutral.rangedRadius;
-        unalertedSpeed = EnemyStats.HealerNeutral.unalertedSpeed;
-        alertedSpeed = EnemyStats.HealerNeutral.alertedSpeed;
+        pathAgent.UnalertedSpeed = EnemyStats.HealerNeutral.unalertedSpeed;
+        pathAgent.AlertedSpeed = EnemyStats.HealerNeutral.alertedSpeed;
 
         activeWeapon = left;
         currentFireTransform = left_firepoint;
         right.gameObject.SetActive(false);
-        base.Awake();
     }
 
     protected bool hasEnemyTarget()

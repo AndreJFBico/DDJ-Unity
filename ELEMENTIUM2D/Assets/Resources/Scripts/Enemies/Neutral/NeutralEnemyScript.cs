@@ -9,6 +9,7 @@ public class NeutralEnemyScript : EnemyScript
     // Use this for initialization
     protected override void Awake()
     {
+        base.Awake();
         type = Elements.NEUTRAL;
         maxHealth = EnemyStats.BasicNeutral.maxHealth;
         health = maxHealth;
@@ -17,10 +18,9 @@ public class NeutralEnemyScript : EnemyScript
         waterResist = EnemyStats.BasicNeutral.waterResist;
         earthResist = EnemyStats.BasicNeutral.earthResist;
         fireResist = EnemyStats.BasicNeutral.fireResist;
-        unalertedSpeed = EnemyStats.BasicNeutral.unalertedSpeed;
-        alertedSpeed = EnemyStats.BasicNeutral.alertedSpeed;
+        pathAgent.UnalertedSpeed = EnemyStats.BasicNeutral.unalertedSpeed;
+        pathAgent.AlertedSpeed = EnemyStats.BasicNeutral.alertedSpeed;
 
-        base.Awake();
     }
 
     protected override void LateUpdate()
