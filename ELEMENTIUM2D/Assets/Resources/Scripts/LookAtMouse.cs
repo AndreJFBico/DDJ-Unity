@@ -50,26 +50,51 @@ public class LookAtMouse : MonoBehaviour {
 
     void detectTargetPosition()
     {
-        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 aux = worldPosition - transform.position;
-        aux.Normalize();
+		Transform targetMarker = transform.FindChild("BarrelEnd").FindChild("JoystickTarget");
 
-        point = new Vector3(worldPosition.x, transform.position.y, worldPosition.z);
+		if(Input.GetJoystickNames().Length > 0){
+			targetMarker.gameObject.SetActive(true);
+			float hor = Input.GetAxisRaw ("JoystickRightHor");
+			float ver = Input.GetAxisRaw ("JoystickRightVer");
+			if(Mathf.Abs(hor) < 0.1)
+				hor = 0;
+			if(Mathf.Abs(ver) < 0.1)
+				ver = 0;
+			if(hor == 0 && ver == 0)
+				return;
 
-        Vector3 test = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			//Debug.Log (hor + " " + ver);
+			point = new Vector3(transform.position.x + hor, transform.position.y, transform.position.z + ver);
+			float rot_y = Mathf.Atan2(hor, ver) * Mathf.Rad2Deg;
+			transform.rotation = Quaternion.Euler(90.0f, rot_y, 0f);
 
-        float rot_y = Mathf.Atan2(aux.x, aux.z) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(90.0f, rot_y, 0f);
+			float n = Mathf.Sqrt( hor * hor + ver * ver);
+			float nhor = hor / n;
+			float nver = ver / n;
+			targetMarker.position = new Vector3(transform.position.x + nhor, transform.position.y, transform.position.z + nver); 
+		}
+		else{
+			targetMarker.gameObject.SetActive(false);
+			Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+	        Vector3 aux = worldPosition - transform.position;
+	        aux.Normalize();
 
-        //RaycastHit hit;
-        //Vector3 aux = Vector3.right;
-        /*Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
-        {
-            point = new Vector3(hit.point.x, transform.position.y, hit.point.z);
-        }*/
-        //transform.LookAt(aux);
-    }
+	        point = new Vector3(worldPosition.x, transform.position.y, worldPosition.z);
+			
+
+	        float rot_y = Mathf.Atan2(aux.x, aux.z) * Mathf.Rad2Deg;
+	        transform.rotation = Quaternion.Euler(90.0f, rot_y, 0f);
+
+	        //RaycastHit hit;
+	        //Vector3 aux = Vector3.right;
+	        /*Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+	        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+	        {
+	            point = new Vector3(hit.point.x, transform.position.y, hit.point.z);
+	        }*/
+	        //transform.LookAt(aux);
+		}
+	}
     
     void LateUpdate()
     {

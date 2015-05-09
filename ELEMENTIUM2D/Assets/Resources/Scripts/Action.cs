@@ -34,8 +34,14 @@ public class Action : MonoBehaviour {
         //##########################################################################################
 
         fire1 = Input.GetAxis("Fire1");
-        fire2 = Input.GetAxis("Fire2");
-        fire3 = Input.GetAxis("Fire3");
+		fire2 = Input.GetAxis("Fire2") + Input.GetAxis("JoystickFire2");
+		fire3 = Input.GetAxis("Fire3") + Input.GetAxis("JoystickFire3");
+
+		float hor = Mathf.Abs(Input.GetAxisRaw ("JoystickRightHor"));
+		float ver = Mathf.Abs(Input.GetAxisRaw ("JoystickRightVer"));
+
+		if(hor + ver > 0.4f)
+			fire1 += hor + ver;
 
         if (fire1 + fire2 + fire3 > 0)
         {

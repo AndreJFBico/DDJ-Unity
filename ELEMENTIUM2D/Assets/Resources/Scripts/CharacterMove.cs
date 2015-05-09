@@ -249,13 +249,25 @@ public class CharacterMove : MonoBehaviour {
 
     void doubleTap()
     {
-        if (Input.GetKeyDown(KeyCode.V) && !doubleTapping)
+		if ((Input.GetKeyDown(KeyCode.V) && !doubleTapping) || (Input.GetKeyDown(KeyCode.Joystick1Button5) && !doubleTapping))
         {
             doubleTapping = true;
             previousMoveSpeed = moveSpeed;
             moveSpeed = moveSpeed * 2.0f;
             Invoke("stopDoubleTap", 0.1f);
         }
+    }
+
+    float signedAngleRadian(Vector3 vec1, Vector3 vec2)
+    {
+        //Get the dot product
+        float dot = Vector3.Dot(vec1, vec2);
+        // Divide the dot by the product of the magnitudes of the vectors
+        dot = dot / (vec1.magnitude * vec2.magnitude);
+        //Get the arc cosin of the angle, you now have your angle in radians 
+        var acos = Mathf.Acos(dot);
+
+        return acos * Mathf.Sign(Vector3.Cross(vec1, vec2).y);
     }
 
 	// Update is called once per frame
@@ -274,8 +286,20 @@ public class CharacterMove : MonoBehaviour {
             previousRenderTime = Time.realtimeSinceStartup;
             return;
         }
+ 
+        Vector3 direction = transform.forward * vDir + transform.right * hDir;;
+        float angle = signedAngleRadian(direction, transform.right); 
 
-        calculatedMotion = transform.forward * vDir + transform.right * hDir;
+        float x = 0;
+        float z = 0;
+
+        // h is 1
+        x = Mathf.Cos(angle) * 1;
+
+        // h is 1
+        z = Mathf.Sin(angle) * 1;
+
+        calculatedMotion = transform.forward * z + transform.right * x;
 
         rayCastX(ref calculatedMotion, transform.right * hDir);
 
