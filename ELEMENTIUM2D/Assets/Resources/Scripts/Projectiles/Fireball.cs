@@ -25,7 +25,6 @@ public class Fireball : AbilityBehaviour
         // We do not interact with other triggers
         if (!collision.gameObject.GetComponent<Collider>().isTrigger)
         {
-
             if (collidedWithBreakable(collision.gameObject)) ;
             else if (collision.gameObject.layer == LayerMask.NameToLayer("Unhitable"))
                 return;

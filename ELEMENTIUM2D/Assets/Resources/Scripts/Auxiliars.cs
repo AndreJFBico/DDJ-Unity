@@ -176,7 +176,7 @@ namespace Includes
                 public static string projectile = "Prefabs/Projectiles/FireHeal";
                 public static float abilityTimer = 1.3f;
 
-                public static float Damage { get { return damage + -GameManager.Instance.Stats.damage * 1f; } }
+                public static float Damage { get { return damage + GameManager.Instance.Stats.damage * 1f; } }
                 public static float AttackSpeed { get { return attackSpeed + GameManager.Instance.Stats.attackSpeed * attackSpeed / 10; } } //Player AttackSpeed is to be incremented by int numbers
             }
         }

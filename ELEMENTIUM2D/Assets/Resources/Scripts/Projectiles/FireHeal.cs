@@ -13,6 +13,12 @@ public class FireHeal : AbilityBehaviour
 
     }
 
+    protected override void Start()
+    {
+        base.Start();
+        type = Elements.FIRE;
+    }
+
     public override void OnCollisionEnter(Collision collision)
     {
 
@@ -28,7 +34,7 @@ public class FireHeal : AbilityBehaviour
         if (timer >= AbilityStats.Fire.ability3.abilityTimer)
         {
             Agent ag = sobj.GetComponent<Agent>();
-            ag.takeDamage(damage, type, true);
+            ag.healSelf(damage, type);
             Destroy(this);
         }
     }

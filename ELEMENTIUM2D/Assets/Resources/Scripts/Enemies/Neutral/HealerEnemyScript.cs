@@ -61,10 +61,10 @@ public class HealerEnemyScript : EnemyScript {
 
     public override void OnTriggerExit(Collider collider)
     {
-        if (collider.tag.CompareTo("Enemy") == 0)
+        if (targetedEnemies.Contains(collider.transform))
         {
-            targetedEnemies.RemoveAll(x => x.GetInstanceID() == collider.transform.GetInstanceID());
-            if (hasEnemyTarget() && collider.GetInstanceID() == targetedEnemy.GetInstanceID())
+            targetedEnemies.Remove(collider.transform);
+            if (hasEnemyTarget() && collider.transform.GetInstanceID() == targetedEnemy.GetInstanceID())
             {
                 targetedEnemy = null;
             }
@@ -84,7 +84,7 @@ public class HealerEnemyScript : EnemyScript {
             {
                 GameObject p = Instantiate(projectile, targetedEnemy.position, Quaternion.identity) as GameObject;
                 p.transform.parent = targetedEnemy.transform;
-                targetedEnemy.GetComponent<EnemyScript>().takeDamage(-EnemyStats.HealerNeutral.healAmount, type, true);
+                targetedEnemy.GetComponent<EnemyScript>().healSelf(EnemyStats.HealerNeutral.healAmount, type);
                 //p.GetComponent<AbilityBehaviour>().initiate(this.gameObject);
             }
             yield return new WaitForSeconds(EnemyStats.HealerNeutral.rangedAttackSpeed);
@@ -132,6 +132,10 @@ public class HealerEnemyScript : EnemyScript {
                 left.gameObject.SetActive(false);
                 currentFireTransform = right_firepoint;
             }
+            if((targetedEnemy.position - transform.position).magnitude < 1)
+            {
+
+            }
             activeWeapon.LookAt(targetedEnemy);
             if(!targetedEnemy.GetComponent<EnemyScript>().isHurt())
             {
@@ -144,6 +148,18 @@ public class HealerEnemyScript : EnemyScript {
             activeWeapon.rotation = Quaternion.identity;
         }
         base.LateUpdate();
+    }
+
+    public override void playerSighted()
+    {
+        if(targetedEnemy == null)
+        {
+            base.playerSighted();
+        }
+        else
+        {
+            pathAgent.target = targetedEnemy;
+        }
     }
 
     public override void dealDamage(Player player)

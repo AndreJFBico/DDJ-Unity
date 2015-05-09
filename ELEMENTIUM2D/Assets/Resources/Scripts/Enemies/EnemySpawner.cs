@@ -109,5 +109,19 @@ public class EnemySpawner : EnemyScript
         }
     }
 
+    public override void takeDamage(float amount, Elements type, bool goTroughBlink)
+    {
+        base.takeDamage(amount, type, goTroughBlink);
+        warnAllMyEnemies();
+    }
+
+    private void warnAllMyEnemies()
+    {
+        foreach (Transform enemy in spawned)
+        {
+            enemy.GetComponent<EnemyScript>().playerSighted();
+        }
+    }
+
     public SpawnerManager SpawnerManager { set{ _spawnerManager = value; } }
 }

@@ -228,18 +228,11 @@ public class PathAgent : MonoBehaviour
 
     public void restoreMoveSpeed(float intensity)
     {
-        agent.speed /= intensity;
+        agent.speed = previousSpeed;
     }
 
     public void LateUpdate()
     {
         transform.position = new Vector3(transform.position.x, 0.1f, transform.position.z);
-        //checkMovement();
-        /*if (manager.initialized && !on_a_Path)
-        {           
-            //Start a new path to the targetPosition, return the result to the OnPathComplete function
-            seeker.StartPath(transform.position, target.position, OnPathComplete);
-            on_a_Path = true;
-        }*/
     }
 }

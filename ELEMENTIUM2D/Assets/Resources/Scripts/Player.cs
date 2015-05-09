@@ -167,6 +167,43 @@ public class Player : Agent {
         checkIfDead();
     }
 
+    public override void healSelf(float amount, Elements type)
+    {
+        float heal = 0;
+        Color color = Color.white;
+        switch (type)
+        {
+            case Elements.NEUTRAL:
+                heal = amount;
+                color = Color.white;
+                break;
+
+            case Elements.FIRE:
+                heal = amount * (1 - ((defence() * 0.1f + fireResist()) / 100.0f));
+                color = Color.red;
+                break;
+
+            case Elements.EARTH:
+                heal = amount * (1 - ((defence() * 0.1f + earthResist()) / 100.0f));
+                color = Color.green;
+                break;
+
+            case Elements.WATER:
+                heal = amount * (1 - ((defence() * 0.1f + waterResist()) / 100.0f));
+                color = Color.blue;
+                break;
+
+            default:
+                break;
+        }
+
+        if (health() + heal > maxHealth())
+            heal = maxHealth() - health();
+        addHealth(heal);
+        FloatingText.Instance.createFloatingText(transform, "+" + (int)heal + "", color);
+    }
+
+
     private bool isBlinking()
     {
         return damageTimer < GameManager.Instance.Stats.damageTimer;

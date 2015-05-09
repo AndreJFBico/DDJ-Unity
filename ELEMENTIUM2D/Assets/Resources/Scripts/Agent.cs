@@ -44,6 +44,8 @@ public class Agent : ElementiumMonoBehaviour
 
     public virtual void takeDamage(float amount, Elements type, bool goTroughBlink) { }
 
+    public virtual void healSelf(float amount, Elements type) { }
+
     public virtual void setAlerted(bool val) { }
 
     public virtual bool getAlerted() { return false; }
