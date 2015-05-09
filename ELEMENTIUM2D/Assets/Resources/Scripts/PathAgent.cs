@@ -228,7 +228,7 @@ public class PathAgent : MonoBehaviour
 
     public void restoreMoveSpeed(float intensity)
     {
-        agent.speed /= intensity;
+        agent.speed = previousSpeed;
     }
 
     public void LateUpdate()

@@ -220,7 +220,7 @@ public class EnemyScript : Agent
 
     public override void restoreMoveSpeed(float intensity)
     {
-        restoreMoveSpeed(intensity);
+        pathAgent.restoreMoveSpeed(intensity);
     }
 
     public virtual void dealDamage(Player player) {}

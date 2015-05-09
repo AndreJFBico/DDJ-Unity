@@ -6,10 +6,12 @@ using Includes;
 public class CharacterMove : MonoBehaviour {
 
     #region Variables
+    public Transform fadeSprite;
     private float currentMoveSpeed;
     private float moveSpeed;
     private float inContactWithEnemySpeed;
     private float slowFactor;
+    private float previousMoveSpeed;
     private float boostFactor;
     private Vector3 velocity = Vector3.zero;
     private PlayerAnimController playerAnim;
@@ -17,6 +19,8 @@ public class CharacterMove : MonoBehaviour {
     private bool fixedUpdate = false;
     private float hDir;
     private float vDir;
+
+    private bool doubleTapping = false;
 
     private bool inContactWithEnemy;
     private Vector3 collisionWithEnemyNormal;
@@ -224,19 +228,53 @@ public class CharacterMove : MonoBehaviour {
     } 
     #endregion
     
-	
+    void FixedUpdate()
+    {
+       /* boxPosition = GetComponent<BoxCollider>().bounds.center;
+        hDir = Input.GetAxis("Horizontal");
+        vDir = Input.GetAxis("Vertical");
+
+        calculatedMotion = transform.forward * vDir + transform.right * hDir;
+
+        rayCastX(ref calculatedMotion, transform.right * hDir);
+
+        rayCastZ(ref calculatedMotion, transform.forward * vDir);*/
+    }
+
+    void stopDoubleTap()
+    {
+        moveSpeed = previousMoveSpeed;
+        doubleTapping = false;
+    }
+
+    void doubleTap()
+    {
+        if (Input.GetKeyDown(KeyCode.V) && !doubleTapping)
+        {
+            doubleTapping = true;
+            previousMoveSpeed = moveSpeed;
+            moveSpeed = moveSpeed * 2.0f;
+            Invoke("stopDoubleTap", 0.1f);
+        }
+    }
+
 	// Update is called once per frame
     void Update()
     {
         boxPosition = GetComponent<BoxCollider>().bounds.center;
         hDir = Input.GetAxis("Horizontal");
         vDir = Input.GetAxis("Vertical");
+
+        // Double tap
+        doubleTap();
+
         float startTimer = Time.realtimeSinceStartup;
         if (vDir == 0.0f && hDir == 0.0f)
         {
             previousRenderTime = Time.realtimeSinceStartup;
             return;
         }
+
         calculatedMotion = transform.forward * vDir + transform.right * hDir;
 
         rayCastX(ref calculatedMotion, transform.right * hDir);
@@ -296,8 +334,7 @@ public class CharacterMove : MonoBehaviour {
                 calculatedMotion = calculatedMotion - undesiredMotion / 2.0f;
             }
         }
-        Vector3 targetPosition = transform.position + calculatedMotion;
-        targetPosition.y = transform.position.y;
+
 
         if (inContactWithEnemy)
         {
@@ -306,6 +343,9 @@ public class CharacterMove : MonoBehaviour {
         else currentMoveSpeed = moveSpeed;
 
         currentMoveSpeed = currentMoveSpeed * slowFactor / boostFactor;
+
+        Vector3 targetPosition = transform.position + calculatedMotion * currentMoveSpeed;
+        targetPosition.y = transform.position.y;
         //transf.position = Vector3.SmoothDamp(transf.position, targetPosition, ref velocity, 0.9f);
 
 
@@ -315,25 +355,30 @@ public class CharacterMove : MonoBehaviour {
         pastFollowerPosition = transform.position;
         pastTargetPosition = targetPosition;*/
         fixedUpdate = true;
+        
         float endTimer = startTimer - Time.realtimeSinceStartup;
-        positionToMove = Vector3.MoveTowards(transform.position, targetPosition, currentMoveSpeed * (Time.realtimeSinceStartup - previousRenderTime+0.0000001f));
+        positionToMove = Vector3.MoveTowards(transform.position, targetPosition, (targetPosition - transform.position).magnitude * (Time.realtimeSinceStartup - previousRenderTime + 0.0000001f));
 
-        previousRenderTime = Time.realtimeSinceStartup;
+        // We dont accept delta times greater than 0.333f seconds due in order to not allow big translations of the character screwing up collision with walls(UNTESTED CHANGE)
+        if ((Time.realtimeSinceStartup - previousRenderTime) <= 0.333f)
+            previousRenderTime = Time.realtimeSinceStartup;
 
         if (hDir == 0 && vDir == 0)
             playerAnim.idle = true;
         else playerAnim.idle = false;
-
     }
 
     void LateUpdate()
     {
         if(fixedUpdate)
-        {
+            if(doubleTapping)
+            {
+                GameObject fade = GameObject.Instantiate( fadeSprite.gameObject, transform.position, Quaternion.identity) as GameObject;
+                fade.GetComponentInChildren<SpriteRenderer>().sprite = GetComponentInChildren<SpriteRenderer>().sprite;
+                fade.GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
+            }
             transform.position = positionToMove;
             fixedUpdate = false;
-        }
-        
     }
 
     Vector3 SmoothApproach( Vector3 pastPosition, Vector3 pastTargetPosition, Vector3 targetPosition, float speed )

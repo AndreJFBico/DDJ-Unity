@@ -34,6 +34,8 @@ public class Telegraph : MonoBehaviour {
     [SerializeField]
     public string motScrpt;
 
+    //band aid until concave mesh colliders are added to the game
+    private float numberOfTriggeredEvents = 0;
 
     public float priority = 1;
     public float duration = 4.0f;
@@ -80,10 +82,6 @@ public class Telegraph : MonoBehaviour {
             {
                 damage.damage(player, damageValue);
             }
-            else
-            {
-                Debug.Log("OK.....");
-            }
             //hides the sprite
             transform.FindChild("Colliders").gameObject.SetActive(false);
             GetComponentInChildren<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.0f);
@@ -120,8 +118,9 @@ public class Telegraph : MonoBehaviour {
 
     void OnTriggerEnter(Collider collider)
     {
-        if(collider.tag.CompareTo("Player") == 0 && timer < duration)
+        if(collider.tag.CompareTo("Player") == 0 )
         {
+            numberOfTriggeredEvents++;
             player = collider.transform;
         }
     }
@@ -130,7 +129,9 @@ public class Telegraph : MonoBehaviour {
     {
         if (collider.tag.CompareTo("Player") == 0)
         {
-            player = null;
+            if (numberOfTriggeredEvents > 0)
+                numberOfTriggeredEvents--;
+            else player = null;
         }
     }
 }
