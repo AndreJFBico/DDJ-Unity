@@ -77,10 +77,12 @@ public class NeutralRangedEnemyScript : EnemyScript
                 left.gameObject.SetActive(false);
                 currentFireTransform = right_firepoint;
             }
+            pathAgent.setStoppingDistance(1.5f);
             activeWeapon.LookAt(pathAgent.target.position);
         }
         else
         {
+            pathAgent.resetStoppingDistance();
             activeWeapon.rotation = Quaternion.identity;
         }
         base.LateUpdate();

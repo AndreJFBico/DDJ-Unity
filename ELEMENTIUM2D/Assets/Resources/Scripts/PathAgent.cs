@@ -90,7 +90,8 @@ public class PathAgent : MonoBehaviour
         if (val)
         {
             agent.speed = alertedSpeed;
-            agent.SetDestination(GameManager.Instance.Player.GetComponent<Player>().transform.position);
+            target = GameManager.Instance.Player.GetComponent<Player>().transform;
+            agent.SetDestination(target.position);
         }
         else agent.speed = unalertedSpeed;
     }
@@ -130,6 +131,16 @@ public class PathAgent : MonoBehaviour
             }
             target = null;
         }
+    }
+
+    public void setStoppingDistance(float val)
+    {
+        agent.stoppingDistance = val;
+    }
+
+    public void resetStoppingDistance()
+    {
+        agent.stoppingDistance = 0.05f;
     }
 
     public bool hasTarget()
