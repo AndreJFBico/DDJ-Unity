@@ -5709,7 +5709,7 @@ MonoBehaviour:
   alertedSign: {fileID: 446686}
   enemy: {fileID: 479764, guid: 773f0565eba5ea140b99f72f59ed3dcd, type: 2}
   amount_to_spawn: 2
-  spawn_timer: 1
+  spawn_timer: 4
 --- !u!114 &11428936
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6349,7 +6349,7 @@ MonoBehaviour:
   alertedSign: {fileID: 430684}
   enemy: {fileID: 479764, guid: 773f0565eba5ea140b99f72f59ed3dcd, type: 2}
   amount_to_spawn: 2
-  spawn_timer: 1
+  spawn_timer: 4
 --- !u!114 &11485782
 MonoBehaviour:
   m_ObjectHideFlags: 1

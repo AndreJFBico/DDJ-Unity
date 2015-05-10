@@ -7382,7 +7382,7 @@ MonoBehaviour:
   alertedSign: {fileID: 412860}
   enemy: {fileID: 479764, guid: 773f0565eba5ea140b99f72f59ed3dcd, type: 2}
   amount_to_spawn: 2
-  spawn_timer: 1
+  spawn_timer: 4
 --- !u!114 &11414134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8346,7 +8346,7 @@ MonoBehaviour:
   alertedSign: {fileID: 480806}
   enemy: {fileID: 405980, guid: 2c2da5613eb9393439ee67fbbcdfbc7f, type: 2}
   amount_to_spawn: 2
-  spawn_timer: 1
+  spawn_timer: 4
 --- !u!114 &11479094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8390,7 +8390,7 @@ MonoBehaviour:
   alertedSign: {fileID: 499238}
   enemy: {fileID: 479764, guid: 773f0565eba5ea140b99f72f59ed3dcd, type: 2}
   amount_to_spawn: 2
-  spawn_timer: 1
+  spawn_timer: 4
 --- !u!114 &11481120
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8565,7 +8565,7 @@ MonoBehaviour:
   alertedSign: {fileID: 460540}
   enemy: {fileID: 470578, guid: 137cd70f6d84bad438a658ea48021656, type: 2}
   amount_to_spawn: 2
-  spawn_timer: 1
+  spawn_timer: 4
 --- !u!114 &11495070
 MonoBehaviour:
   m_ObjectHideFlags: 1
