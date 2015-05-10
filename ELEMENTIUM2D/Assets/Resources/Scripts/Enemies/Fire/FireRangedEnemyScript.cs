@@ -63,7 +63,7 @@ public class FireRangedEnemyScript : EnemyScript
     {
         if (pathAgent.hasTarget())
         {
-            if(pathAgent.target.position.x >= transform.position.x)
+            if (pathAgent.target.position.x >= transform.position.x)
             {
                 left.gameObject.SetActive(true);
                 activeWeapon = left;
@@ -77,10 +77,12 @@ public class FireRangedEnemyScript : EnemyScript
                 left.gameObject.SetActive(false);
                 currentFireTransform = right_firepoint;
             }
+            pathAgent.setStoppingDistance(1.5f);
             activeWeapon.LookAt(pathAgent.target.position);
         }
         else
         {
+            pathAgent.resetStoppingDistance();
             activeWeapon.rotation = Quaternion.identity;
         }
         base.LateUpdate();

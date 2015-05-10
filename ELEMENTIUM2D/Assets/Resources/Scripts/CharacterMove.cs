@@ -21,6 +21,7 @@ public class CharacterMove : MonoBehaviour {
     private float vDir;
 
     private bool doubleTapping = false;
+    private bool update = false;
 
     private bool inContactWithEnemy;
     private Vector3 collisionWithEnemyNormal;
@@ -30,6 +31,7 @@ public class CharacterMove : MonoBehaviour {
     private float z;
     private Vector3 boxPosition;
     private float epsilon;
+    private float maximumDeltaTime = 0.3333f;
     Vector3 calculatedMotion;
 
     private float previousRenderTime = 0f;
@@ -37,9 +39,7 @@ public class CharacterMove : MonoBehaviour {
     //private Transform transf;
 
     private Vector3 positionToMove;
-
-    private Vector3 pastFollowerPosition;
-    private Vector3 pastTargetPosition;
+    private Vector3 previousPosition;
     //private List<Collision> collidedWith; 
     #endregion
 
@@ -79,8 +79,7 @@ public class CharacterMove : MonoBehaviour {
 
         //transf = transform;
         positionToMove = transform.position;
-        pastFollowerPosition = transform.position;
-        pastTargetPosition = transform.position;
+        previousPosition = transform.position;
 	}
 
     #region OnCollision Handlers
@@ -227,19 +226,6 @@ public class CharacterMove : MonoBehaviour {
         return false;
     } 
     #endregion
-    
-    void FixedUpdate()
-    {
-       /* boxPosition = GetComponent<BoxCollider>().bounds.center;
-        hDir = Input.GetAxis("Horizontal");
-        vDir = Input.GetAxis("Vertical");
-
-        calculatedMotion = transform.forward * vDir + transform.right * hDir;
-
-        rayCastX(ref calculatedMotion, transform.right * hDir);
-
-        rayCastZ(ref calculatedMotion, transform.forward * vDir);*/
-    }
 
     void stopDoubleTap()
     {
@@ -270,7 +256,11 @@ public class CharacterMove : MonoBehaviour {
         return acos * Mathf.Sign(Vector3.Cross(vec1, vec2).y);
     }
 
-	// Update is called once per frame
+    bool checkPosition(Vector3 pos)
+    {
+        return !rayCast(transform.position, pos - transform.position, (pos - transform.position).magnitude * epsilon);
+    }
+
     void Update()
     {
         boxPosition = GetComponent<BoxCollider>().bounds.center;
@@ -283,17 +273,17 @@ public class CharacterMove : MonoBehaviour {
         float startTimer = Time.realtimeSinceStartup;
         if (vDir == 0.0f && hDir == 0.0f)
         {
-            if((Time.realtimeSinceStartup - previousRenderTime) <= 0.033f)
+            if ((Time.realtimeSinceStartup - previousRenderTime) <= maximumDeltaTime)
                 previousRenderTime = Time.realtimeSinceStartup;
             else
             {
-                previousRenderTime = Time.realtimeSinceStartup + 0.033f;
+                previousRenderTime = Time.realtimeSinceStartup + maximumDeltaTime;
             }
             return;
         }
- 
-        Vector3 direction = transform.forward * vDir + transform.right * hDir;;
-        float angle = signedAngleRadian(direction, transform.right); 
+
+        Vector3 direction = transform.forward * vDir + transform.right * hDir;
+        float angle = signedAngleRadian(direction, transform.right);
 
         float x = 0;
         float z = 0;
@@ -364,7 +354,6 @@ public class CharacterMove : MonoBehaviour {
             }
         }
 
-
         if (inContactWithEnemy)
         {
             currentMoveSpeed = inContactWithEnemySpeed;
@@ -383,20 +372,30 @@ public class CharacterMove : MonoBehaviour {
         
         pastFollowerPosition = transform.position;
         pastTargetPosition = targetPosition;*/
-        fixedUpdate = true;
+        update = true;
         
         float endTimer = startTimer - Time.realtimeSinceStartup;
 
-
-        positionToMove = Vector3.MoveTowards(transform.position, targetPosition, (targetPosition - transform.position).magnitude * (Time.realtimeSinceStartup - previousRenderTime + 0.0000001f));
-
         // We dont accept delta times greater than 0.333f seconds due in order to not allow big translations of the character screwing up collision with walls(UNTESTED CHANGE)
-        if ((Time.realtimeSinceStartup - previousRenderTime) <= 0.033f)
-            previousRenderTime = Time.realtimeSinceStartup;
+        if ((Time.realtimeSinceStartup - previousRenderTime) <= maximumDeltaTime)
+        {
+            positionToMove = Vector3.MoveTowards(transform.position, targetPosition, (targetPosition - transform.position).magnitude * (Time.realtimeSinceStartup - previousRenderTime + 0.0000001f));
+            if(!checkPosition(positionToMove))
+            {
+                positionToMove = transform.position;
+            }
+            previousRenderTime = Time.realtimeSinceStartup;     
+        }         
         else
         {
-            previousRenderTime = Time.realtimeSinceStartup + 0.033f;
+            positionToMove = Vector3.MoveTowards(transform.position, targetPosition, (targetPosition - transform.position).magnitude * (maximumDeltaTime + 0.0000001f));
+            if (!checkPosition(positionToMove))
+            {
+                positionToMove = transform.position;
+            }
+            previousRenderTime = Time.realtimeSinceStartup + maximumDeltaTime;
         }
+
         if (hDir == 0 && vDir == 0)
             playerAnim.idle = true;
         else playerAnim.idle = false;
@@ -404,15 +403,16 @@ public class CharacterMove : MonoBehaviour {
 
     void LateUpdate()
     {
-        if(fixedUpdate)
+        if (update)
             if(doubleTapping)
             {
                 GameObject fade = GameObject.Instantiate( fadeSprite.gameObject, transform.position, Quaternion.identity) as GameObject;
                 fade.GetComponentInChildren<SpriteRenderer>().sprite = GetComponentInChildren<SpriteRenderer>().sprite;
                 fade.GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
             }
+            previousPosition = transform.position;
             transform.position = positionToMove;
-            fixedUpdate = false;
+            update = false;
     }
 
     Vector3 SmoothApproach( Vector3 pastPosition, Vector3 pastTargetPosition, Vector3 targetPosition, float speed )

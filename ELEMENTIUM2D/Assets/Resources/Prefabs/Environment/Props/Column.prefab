@@ -33,22 +33,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &134120
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 439792}
-  - 64: {fileID: 6487822}
-  m_Layer: 12
-  m_Name: col2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &143646
 GameObject:
   m_ObjectHideFlags: 1
@@ -73,6 +57,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 455398}
+  - 65: {fileID: 6567620}
   m_Layer: 12
   m_Name: Colliders
   m_TagString: Untagged
@@ -80,34 +65,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &191428
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 420456}
-  - 64: {fileID: 6441686}
-  m_Layer: 12
-  m_Name: col1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &420456
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 191428}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -.587000012}
-  m_LocalScale: {x: .527860403, y: .629999995, z: .254371583}
-  m_Children: []
-  m_Father: {fileID: 455398}
-  m_RootOrder: 0
 --- !u!4 &421934
 Transform:
   m_ObjectHideFlags: 1
@@ -135,18 +92,6 @@ Transform:
   - {fileID: 449332}
   m_Father: {fileID: 421934}
   m_RootOrder: 0
---- !u!4 &439792
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 134120}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 2.41398811e-06}
-  m_LocalPosition: {x: 0, y: 0, z: -1.07599998}
-  m_LocalScale: {x: .527860403, y: .629999995, z: .216293827}
-  m_Children: []
-  m_Father: {fileID: 455398}
-  m_RootOrder: 1
 --- !u!4 &449332
 Transform:
   m_ObjectHideFlags: 1
@@ -154,8 +99,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 143646}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.30999994, z: 0}
-  m_LocalScale: {x: 2.22054219, y: 2.14028215, z: 2.14028215}
+  m_LocalPosition: {x: 0, y: -1.18700004, z: -0}
+  m_LocalScale: {x: 1.42114711, y: 1.36978066, z: 1.36978066}
   m_Children: []
   m_Father: {fileID: 437866}
   m_RootOrder: 0
@@ -168,35 +113,21 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 420456}
-  - {fileID: 439792}
+  m_Children: []
   m_Father: {fileID: 421934}
   m_RootOrder: 1
---- !u!64 &6441686
-MeshCollider:
+--- !u!65 &6567620
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 191428}
+  m_GameObject: {fileID: 167336}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 1
-  m_Mesh: {fileID: 4300000, guid: c867c6d7c954d4a4781c9ed26f275e3e, type: 3}
---- !u!64 &6487822
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 134120}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 1
-  m_Mesh: {fileID: 4300000, guid: c867c6d7c954d4a4781c9ed26f275e3e, type: 3}
+  m_Size: {x: .550000012, y: 1, z: .439999998}
+  m_Center: {x: 0, y: 0, z: -.879999995}
 --- !u!114 &11421002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -221,11 +152,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .625}
+  m_Extents: {x: .275000006, y: .5, z: .219999999}
   m_MoveThreshold: .100000001
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: -.939999998}
+  m_Center: {x: 0, y: 0, z: -.879999995}
   m_TimeToStationary: .5
 --- !u!212 &21231296
 SpriteRenderer:
