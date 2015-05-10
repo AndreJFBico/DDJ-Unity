@@ -231,6 +231,7 @@ public class EnemyScript : Agent
     private void restart()
     {
         pathAgent.restart(false);
+        StopAllCoroutines();
     }
 
     // Is initiated by the spawner

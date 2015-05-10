@@ -283,7 +283,12 @@ public class CharacterMove : MonoBehaviour {
         float startTimer = Time.realtimeSinceStartup;
         if (vDir == 0.0f && hDir == 0.0f)
         {
-            previousRenderTime = Time.realtimeSinceStartup;
+            if((Time.realtimeSinceStartup - previousRenderTime) <= 0.033f)
+                previousRenderTime = Time.realtimeSinceStartup;
+            else
+            {
+                previousRenderTime = Time.realtimeSinceStartup + 0.033f;
+            }
             return;
         }
  
@@ -381,12 +386,17 @@ public class CharacterMove : MonoBehaviour {
         fixedUpdate = true;
         
         float endTimer = startTimer - Time.realtimeSinceStartup;
+
+
         positionToMove = Vector3.MoveTowards(transform.position, targetPosition, (targetPosition - transform.position).magnitude * (Time.realtimeSinceStartup - previousRenderTime + 0.0000001f));
 
         // We dont accept delta times greater than 0.333f seconds due in order to not allow big translations of the character screwing up collision with walls(UNTESTED CHANGE)
-        if ((Time.realtimeSinceStartup - previousRenderTime) <= 0.333f)
+        if ((Time.realtimeSinceStartup - previousRenderTime) <= 0.033f)
             previousRenderTime = Time.realtimeSinceStartup;
-
+        else
+        {
+            previousRenderTime = Time.realtimeSinceStartup + 0.033f;
+        }
         if (hDir == 0 && vDir == 0)
             playerAnim.idle = true;
         else playerAnim.idle = false;

@@ -63,7 +63,7 @@ public class PathAgent : MonoBehaviour
 
     public void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.tag.CompareTo("Player") == 0)
+        if (collision.gameObject.tag.CompareTo("Player") == 0 && target == null)
         {
             playerSighted(collision.transform);
         }
