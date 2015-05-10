@@ -2312,8 +2312,8 @@ MonoBehaviour:
   healthbar: {fileID: 443874}
   alertedSign: {fileID: 419306}
   enemy: {fileID: 470832, guid: b7e813a02438bf249978b95288e12422, type: 2}
-  amount_to_spawn: 2
-  spawn_timer: 1
+  amount_to_spawn: 3
+  spawn_timer: 4
 --- !u!114 &11414906
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2330,7 +2330,7 @@ MonoBehaviour:
   alertedSign: {fileID: 483534}
   enemy: {fileID: 405980, guid: 2c2da5613eb9393439ee67fbbcdfbc7f, type: 2}
   amount_to_spawn: 2
-  spawn_timer: 1
+  spawn_timer: 4
 --- !u!114 &11418666
 MonoBehaviour:
   m_ObjectHideFlags: 1
