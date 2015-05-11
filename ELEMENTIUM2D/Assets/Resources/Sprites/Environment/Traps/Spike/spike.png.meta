@@ -1,0 +1,114 @@
+fileFormatVersion: 2
+guid: 3bfdf0332d63f77499375d047a147b98
+timeCreated: 1431349952
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: spike_0
+    21300002: spike_1
+    21300004: spike_2
+    21300006: spike_3
+    21300008: spike_4
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 2
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Standalone
+    maxTextureSize: 4096
+    textureFormat: -1
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: spike_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 0
+        width: 213
+        height: 574
+      alignment: 9
+      pivot: {x: .49232015, y: .158250064}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spike_1
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 0
+        width: 211
+        height: 574
+      alignment: 9
+      pivot: {x: .492097408, y: .163719937}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spike_2
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 216
+        height: 574
+      alignment: 9
+      pivot: {x: .492426842, y: .158997998}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spike_3
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 0
+        width: 210
+        height: 574
+      alignment: 9
+      pivot: {x: .5, y: .161129802}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spike_4
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 0
+        width: 220
+        height: 574
+      alignment: 9
+      pivot: {x: .492564529, y: .164368376}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
