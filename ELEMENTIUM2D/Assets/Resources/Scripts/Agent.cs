@@ -12,23 +12,9 @@ public class Agent : ElementiumMonoBehaviour
 
     protected void Awake()
     {
-        // Findes the sprite associated to the agent
+        // Finds the sprite associated to the agent
         figure = transform.gameObject.GetComponentInChildren<SpriteRenderer>();
     }
-
-    /*protected virtual void OnGUI()
-    {
-        // Health bar
-        Vector2 targetPos = healthbar_background.position;
-        if (centerHealthBar)
-        {
-            targetPos = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x, transform.position.y, transform.position.z + 0.1f));
-        }
-
-        healthbar_background.position = targetPos;
-        float percentage = health / maxHealth;
-        healthbar.transform.localScale = new Vector3(percentage, 1.0f, 1.0f);
-    }*/
 
     public virtual bool isHurt() { return false; }
 

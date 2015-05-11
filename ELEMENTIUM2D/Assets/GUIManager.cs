@@ -164,7 +164,7 @@ public class GUIManager : MonoBehaviour {
         {
             statWindowText.GetComponent<Text>().text =
                 "Damage: " + System.Math.Round(GameManager.Instance.Stats.damage, 1) + "\n" + "\n" +
-            "Defence: " + System.Math.Round(GameManager.Instance.Stats.defence, 1) + "\n" + "\n" +
+            "Defence: " + System.Math.Round(GameManager.Instance.Stats.defence, 1) + "%" + "\n" + "\n" +
             "Fire Resist: " + System.Math.Round(GameManager.Instance.Stats.fireResist, 1) + "\n" + "\n" +
             "Water Resist: " + System.Math.Round(GameManager.Instance.Stats.waterResist, 1) + "\n" + "\n" + 
             "Earth Resist: " + System.Math.Round(GameManager.Instance.Stats.earthResist, 1);

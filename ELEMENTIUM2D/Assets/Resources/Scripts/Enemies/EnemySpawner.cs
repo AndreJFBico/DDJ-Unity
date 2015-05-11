@@ -81,15 +81,6 @@ public class EnemySpawner : EnemyScript
         }
     }
 
-    public override void takeDamage(float amount, Elements type, bool goTroughBlink)
-    {
-        foreach (Transform t in spawned)
-        {
-            t.GetComponent<EnemyScript>().setAlerted(true);
-        }
-        base.takeDamage(amount, type, goTroughBlink);
-    }
-
     public void despawn(Transform obj)
     {
         obj.GetComponentInChildren<PathAgent>().target = null;

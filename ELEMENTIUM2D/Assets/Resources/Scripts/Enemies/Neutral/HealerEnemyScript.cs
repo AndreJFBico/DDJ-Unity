@@ -133,7 +133,10 @@ public class HealerEnemyScript : EnemyScript {
                 currentFireTransform = right_firepoint;
             }
             
-            //pathAgent.setStoppingDistance(0.5f);
+            if(targetedEnemy.gameObject != GameManager.Instance.Player)
+                pathAgent.setStoppingDistance(1.5f);
+            else
+                pathAgent.resetStoppingDistance();
 
             activeWeapon.LookAt(targetedEnemy);
             if(!targetedEnemy.GetComponent<EnemyScript>().isHurt())
@@ -144,7 +147,7 @@ public class HealerEnemyScript : EnemyScript {
         else
         {
             updateTargetedEnemy();
-            //pathAgent.resetStoppingDistance();
+            pathAgent.resetStoppingDistance();
             activeWeapon.rotation = Quaternion.identity;
         }
         base.LateUpdate();
