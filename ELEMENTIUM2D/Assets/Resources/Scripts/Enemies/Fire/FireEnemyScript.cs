@@ -19,6 +19,10 @@ public class FireEnemyScript : EnemyScript
         waterResist = EnemyStats.FireBasic.waterResist;
         earthResist = EnemyStats.FireBasic.earthResist;
         fireResist = EnemyStats.FireBasic.fireResist;
+
+        visionRadius = EnemyStats.FireBasic.visionRadius;
+        pathAgent.GetComponent<CapsuleCollider>().radius = visionRadius;
+
         statusDurability = EnemyStats.FireBasic.statusDurability;
         statusIntensity = EnemyStats.FireBasic.statusIntensity;
         pathAgent.UnalertedSpeed = EnemyStats.FireBasic.unalertedSpeed;

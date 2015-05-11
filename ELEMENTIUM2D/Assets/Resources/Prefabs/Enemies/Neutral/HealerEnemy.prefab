@@ -387,7 +387,7 @@ Transform:
   m_GameObject: {fileID: 102582}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: .200000003, y: .200000003, z: .200000003}
   m_Children:
   - {fileID: 436004}
   - {fileID: 456464}
@@ -400,8 +400,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 101446}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.31506085, y: -1.39943491e-18, z: .0630249456}
-  m_LocalScale: {x: .200000003, y: .200000003, z: .200000003}
+  m_LocalPosition: {x: -2.51169634, y: 1.94697703e-17, z: -.876840532}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 475462}
   - {fileID: 409824}
@@ -417,8 +417,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176222}
   m_LocalRotation: {x: .707105994, y: 0, z: 0, w: .707107604}
-  m_LocalPosition: {x: 0, y: 0, z: -.129999995}
-  m_LocalScale: {x: .46084249, y: .460842311, z: .460842311}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: .0920000002, y: .0920000002, z: .0920000002}
   m_Children:
   - {fileID: 485476}
   - {fileID: 449730}
@@ -469,7 +469,7 @@ Transform:
   m_GameObject: {fileID: 158398}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
   m_LocalPosition: {x: 0, y: -.513999999, z: 0}
-  m_LocalScale: {x: 12.543889, y: 12.5439043, z: 12.5439043}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_Children: []
   m_Father: {fileID: 470578}
   m_RootOrder: 2
@@ -481,7 +481,7 @@ Transform:
   m_GameObject: {fileID: 183998}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.07800138, y: 1.07800162, z: 1.07800162}
+  m_LocalScale: {x: .209999993, y: .209999993, z: .209999993}
   m_Children: []
   m_Father: {fileID: 470578}
   m_RootOrder: 3
@@ -641,7 +641,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 7.1500001
+  m_Radius: 1.42999995
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &13533520
 SphereCollider:
@@ -664,7 +664,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 8.18999958
+  m_Radius: 1.63999999
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -677,8 +677,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: .349999994
-  m_Height: .810000002
+  m_Radius: .0700000003
+  m_Height: .159999996
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &19548648
@@ -688,7 +688,7 @@ NavMeshAgent:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 101446}
   m_Enabled: 1
-  m_Radius: .400000006
+  m_Radius: .0799999982
   m_Speed: .819999993
   m_Acceleration: 8
   avoidancePriority: 50

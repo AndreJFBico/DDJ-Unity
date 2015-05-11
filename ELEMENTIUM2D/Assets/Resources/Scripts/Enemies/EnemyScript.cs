@@ -13,9 +13,10 @@ public class EnemyScript : Agent
     protected float health;
     protected float damage;
     protected float defence;
+    protected float fireResist;
     protected float waterResist;
     protected float earthResist;
-    protected float fireResist;
+    protected float visionRadius;
 
     protected EnemySpawner spawnScript;
     protected PathAgent pathAgent;
@@ -303,4 +304,9 @@ public class EnemyScript : Agent
     }
 
     public virtual void dealDamage(Player player) {}
+
+    public bool isFullHealth()
+    {
+        return health == maxHealth;
+    }
 }

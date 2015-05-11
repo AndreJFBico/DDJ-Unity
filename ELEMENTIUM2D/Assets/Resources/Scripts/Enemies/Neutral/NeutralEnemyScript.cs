@@ -18,6 +18,10 @@ public class NeutralEnemyScript : EnemyScript
         waterResist = EnemyStats.BasicNeutral.waterResist;
         earthResist = EnemyStats.BasicNeutral.earthResist;
         fireResist = EnemyStats.BasicNeutral.fireResist;
+
+        visionRadius = EnemyStats.BasicNeutral.visionRadius;
+        pathAgent.GetComponent<CapsuleCollider>().radius = visionRadius;
+
         pathAgent.UnalertedSpeed = EnemyStats.BasicNeutral.unalertedSpeed;
         pathAgent.AlertedSpeed = EnemyStats.BasicNeutral.alertedSpeed;
 

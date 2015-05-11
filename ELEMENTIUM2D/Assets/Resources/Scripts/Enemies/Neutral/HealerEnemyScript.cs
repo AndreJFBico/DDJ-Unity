@@ -36,7 +36,11 @@ public class HealerEnemyScript : EnemyScript {
         waterResist = EnemyStats.HealerNeutral.waterResist;
         earthResist = EnemyStats.HealerNeutral.earthResist;
         fireResist = EnemyStats.HealerNeutral.fireResist;
-        gameObject.GetComponent<SphereCollider>().radius = EnemyStats.HealerNeutral.rangedRadius;
+
+        visionRadius = EnemyStats.HealerNeutral.visionRadius;
+        pathAgent.GetComponent<CapsuleCollider>().radius = visionRadius;
+
+        gameObject.GetComponent<SphereCollider>().radius = rangedRadius;
         pathAgent.UnalertedSpeed = EnemyStats.HealerNeutral.unalertedSpeed;
         pathAgent.AlertedSpeed = EnemyStats.HealerNeutral.alertedSpeed;
 
@@ -85,7 +89,12 @@ public class HealerEnemyScript : EnemyScript {
                 GameObject p = Instantiate(projectile, targetedEnemy.position, Quaternion.identity) as GameObject;
                 p.transform.parent = targetedEnemy.transform;
                 targetedEnemy.GetComponent<EnemyScript>().healSelf(EnemyStats.HealerNeutral.healAmount, type);
-                //p.GetComponent<AbilityBehaviour>().initiate(this.gameObject);
+                if(targetedEnemy.GetComponent<EnemyScript>().isFullHealth())
+                {
+                    targetedEnemy = null;
+                    pathAgent.target = null;
+                    updateTargetedEnemy();
+                }
             }
             yield return new WaitForSeconds(EnemyStats.HealerNeutral.rangedAttackSpeed);
         }
@@ -111,6 +120,12 @@ public class HealerEnemyScript : EnemyScript {
                 }
             }
             targetedEnemy = closestEnemy;
+            if (closestEnemy != null)
+            {
+                pathAgent.setAlerted(true);
+                pathAgent.target = targetedEnemy;
+                pathAgent.setStoppingDistance(rangedRadius);
+            }
         }
     }
 
@@ -134,7 +149,7 @@ public class HealerEnemyScript : EnemyScript {
             }
             
             if(targetedEnemy.gameObject != GameManager.Instance.Player)
-                pathAgent.setStoppingDistance(1.5f);
+                pathAgent.setStoppingDistance(rangedRadius);
             else
                 pathAgent.resetStoppingDistance();
 
@@ -165,8 +180,29 @@ public class HealerEnemyScript : EnemyScript {
         }
     }
 
+    public override void setAlerted(bool val)
+    {
+        if (targetedEnemy == null)
+        {
+            if (val)
+                alertedSign.transform.gameObject.SetActive(true);
+
+            else
+                alertedSign.transform.gameObject.SetActive(false);
+            pathAgent.setAlerted(val);
+            isAlerted = val;
+        }
+    }
+
     public override void dealDamage(Player player)
     {
         player.takeDamage(damage, type, false);
+    }
+
+    public override void Eliminate()
+    {
+        base.Eliminate();
+        targetedEnemies.Clear();
+        targetedEnemy = null;
     }
 }

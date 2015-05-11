@@ -18,6 +18,10 @@ public class WaterEnemyScript : EnemyScript
         waterResist = EnemyStats.WaterBasic.waterResist;
         earthResist = EnemyStats.WaterBasic.earthResist;
         fireResist = EnemyStats.WaterBasic.fireResist;
+
+        visionRadius = EnemyStats.WaterBasic.visionRadius;
+        pathAgent.GetComponent<CapsuleCollider>().radius = visionRadius;
+
         pathAgent.UnalertedSpeed = EnemyStats.WaterBasic.unalertedSpeed;
         pathAgent.AlertedSpeed = EnemyStats.WaterBasic.alertedSpeed;
 

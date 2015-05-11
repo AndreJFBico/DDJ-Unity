@@ -240,7 +240,7 @@ namespace Includes
             public static float waterResist = 50;
             public static float earthResist = 50;
             public static float fireResist = 50;
-            public static float visionRadius = 0;
+            public static float visionRadius = 1.65f;
             public static float unalertedSpeed = 0;
             public static float alertedSpeed = 0;
         }
@@ -253,7 +253,7 @@ namespace Includes
             public static float waterResist = 0;
             public static float earthResist = 0;
             public static float fireResist = 0;
-            public static float visionRadius = 5.46f;
+            public static float visionRadius = 1.65f;
             public static float unalertedSpeed = 0.5f;
             public static float alertedSpeed = 1.5f;
         }
@@ -266,13 +266,13 @@ namespace Includes
             public static float waterResist = 0;
             public static float earthResist = 0;
             public static float fireResist = 0;
-            public static float visionRadius = 5.46f;
+            public static float visionRadius = 2f;
             public static float rangedRadius = 1.5f;
             public static float rangedAttackSpeed = 0.5f;
             public static float movementForce = 5f;
             public static string neutralEnemyProjectile = "Prefabs/Projectiles/Enemy/Musk";
             public static float unalertedSpeed = 0.5f;
-            public static float alertedSpeed = 1.15f;
+            public static float alertedSpeed = 1.0f;
         }
 
         public class HealerNeutral
@@ -284,12 +284,12 @@ namespace Includes
             public static float waterResist = 0;
             public static float earthResist = 0;
             public static float fireResist = 0;
-            public static float visionRadius = 5.46f;
+            public static float visionRadius = 1.65f;
             public static float rangedRadius = 1.5f;
             public static float rangedAttackSpeed = 0.5f;
             public static string neutralEnemyProjectile = "Prefabs/Projectiles/Enemy/Healing";
             public static float unalertedSpeed = 0.5f;
-            public static float alertedSpeed = 1.5f;
+            public static float alertedSpeed = 1.8f;
         }
 
         public class NeutralShield
@@ -300,7 +300,7 @@ namespace Includes
             public static float waterResist = 5;
             public static float earthResist = 5;
             public static float fireResist = 5;
-            public static float visionRadius = 5.46f;
+            public static float visionRadius = 1.65f;
             public static float rangedRadius = 1.5f;
             public static float rangedAttackSpeed = 0.5f;
             // This has to be more specific there might by more neutral projectiles, and the damage a projectile does is different from a basic neutral enemy
@@ -322,7 +322,7 @@ namespace Includes
             public static float waterResist = 80;
             public static float earthResist = -50;
             public static float fireResist = 0;
-            public static float visionRadius = 5.46f;
+            public static float visionRadius = 1.65f;
             public static Elements type = Elements.WATER;
             public static float statusDurability = 5;
             public static float statusIntensity = 1f;
@@ -341,7 +341,7 @@ namespace Includes
             public static float waterResist = -50;
             public static float earthResist = 0;
             public static float fireResist = 80;
-            public static float visionRadius = 5.46f;
+            public static float visionRadius = 1.65f;
             public static Elements type = Elements.FIRE;
             public static float statusDurability = 5;
             public static float statusIntensity = 5f;
@@ -357,13 +357,13 @@ namespace Includes
             public static float waterResist = -50;
             public static float earthResist = 0;
             public static float fireResist = 80;
-            public static float visionRadius = 5.46f;
+            public static float visionRadius = 2f;
             public static float rangedRadius = 1.5f;
             public static float rangedAttackSpeed = 0.5f;
             public static float movementForce = 5f;
             public static string neutralEnemyProjectile = "Prefabs/Projectiles/Enemy/EnemyFireball";
             public static float unalertedSpeed = 0.5f;
-            public static float alertedSpeed = 1.15f;
+            public static float alertedSpeed = 1.0f;
         }
         #endregion
 
@@ -377,7 +377,7 @@ namespace Includes
             public static float waterResist = 0;
             public static float earthResist = 80;
             public static float fireResist = -50;
-            public static float visionRadius = 5.46f;
+            public static float visionRadius = 1.65f;
             public static Elements type = Elements.EARTH;
             public static float statusDurability = 3;
             public static float statusIntensity = 0.35f;
@@ -393,7 +393,7 @@ namespace Includes
             public static float waterResist = 5;
             public static float earthResist = 5;
             public static float fireResist = 5;
-            public static float visionRadius = 5.46f;
+            public static float visionRadius = 2f;
             public static Elements type = Elements.EARTH;
             public static float unalertedSpeed = 0.5f;
             public static float alertedSpeed = 1.5f;
