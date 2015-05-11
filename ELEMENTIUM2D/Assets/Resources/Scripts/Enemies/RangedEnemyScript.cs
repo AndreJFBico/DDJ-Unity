@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Includes;
 
 public class RangedEnemyScript : EnemyScript {
 
@@ -15,27 +16,11 @@ public class RangedEnemyScript : EnemyScript {
 
     protected Transform currentFireTransform;
 
-    protected GameObject firingTarget;
+    protected Transform firingTarget;
 
     void OnEnable()
     {
         StartCoroutine("sendProjectile");
-    }
-
-    public override void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.name.CompareTo("Pathing") != 0 && other.tag.CompareTo("Player") == 0)
-        {
-            firingTarget = other.gameObject;
-        }
-    }
-
-    public override void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.name.CompareTo("Pathing") != 0 && firingTarget != null && other.gameObject.GetInstanceID() == firingTarget.gameObject.GetInstanceID())
-        {
-            firingTarget = null;
-        }
     }
 
     protected IEnumerator sendProjectile()
@@ -44,7 +29,7 @@ public class RangedEnemyScript : EnemyScript {
         {
             if (firingTarget != null)
             {
-                GameObject p = Instantiate(projectile, currentFireTransform.position, Quaternion.LookRotation(firingTarget.transform.position - transform.position)) as GameObject;
+                GameObject p = Instantiate(projectile, currentFireTransform.position, Quaternion.LookRotation(firingTarget.position - transform.position)) as GameObject;
                 p.GetComponent<AbilityBehaviour>().initiate(this.gameObject, damage);
             }
             yield return new WaitForSeconds(attackSpeed);
@@ -56,11 +41,45 @@ public class RangedEnemyScript : EnemyScript {
         return firingTarget != null;
     }
 
+    private void checkIfTargetInRange()
+    {
+        if(pathAgent.hasTarget())
+        {
+            if ((pathAgent.target.position - transform.position).magnitude < rangedRadius && checkIfTargetInLOS(pathAgent.target))
+            {
+                firingTarget = pathAgent.target;
+            }
+            else
+            {
+                firingTarget = null;
+            }
+        }
+        else
+        {
+            firingTarget = null;
+        }
+    }
+
+    private bool checkIfTargetInLOS(Transform target)
+    {
+        Vector3 direction = (target.position - currentFireTransform.position).normalized;
+        Vector3 origin = currentFireTransform.position - direction * 0.3f;
+        RaycastHit hit;
+        if (Physics.SphereCast(new Ray(origin, direction), 0.1f, out hit, (target.position - currentFireTransform.position).magnitude, LayerMask.GetMask(Constants.obstacles) | LayerMask.GetMask(Constants.breakable)))
+        {
+            Debug.DrawRay(origin, hit.point - origin, Color.cyan);
+            return false;
+        }
+        Debug.DrawRay(origin, target.position - origin, Color.red);
+        return true;
+    }
+
     protected override void LateUpdate()
     {
-        if (hasFiringTarget())
+        checkIfTargetInRange();
+        if (pathAgent.hasTarget())
         {
-            if (firingTarget.transform.position.x >= transform.position.x)
+            if (pathAgent.target.position.x >= transform.position.x)
             {
                 left.gameObject.SetActive(true);
                 activeWeapon = left;
@@ -74,8 +93,15 @@ public class RangedEnemyScript : EnemyScript {
                 left.gameObject.SetActive(false);
                 currentFireTransform = right_firepoint;
             }
-            pathAgent.setStoppingDistance(rangedRadius);
-            activeWeapon.LookAt(firingTarget.transform.position);
+            if (hasFiringTarget())
+            {
+                pathAgent.setStoppingDistance(rangedRadius);
+            }
+            else
+            {
+                pathAgent.resetStoppingDistance();
+            }
+            activeWeapon.LookAt(pathAgent.target.position);
         }
         else
         {
