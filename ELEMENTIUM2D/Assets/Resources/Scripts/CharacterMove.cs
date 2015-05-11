@@ -179,7 +179,8 @@ public class CharacterMove : MonoBehaviour {
         if (Physics.Raycast(new Ray(position, direction), out hit, distance, LayerMask.GetMask(Constants.obstacles) | LayerMask.GetMask(Constants.breakable)))
         {
             Debug.DrawRay(position, direction, Color.red);
-            return true;
+            if(!hit.collider.isTrigger)
+                return true;
         }
         Debug.DrawRay(position, direction, Color.white);
         return false;
