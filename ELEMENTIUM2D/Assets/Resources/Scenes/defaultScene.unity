@@ -480,7 +480,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400018, guid: 1b060d92f54e10e429429abd3342e628, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 11400014, guid: 1b060d92f54e10e429429abd3342e628, type: 2}
       propertyPath: healthbar_background

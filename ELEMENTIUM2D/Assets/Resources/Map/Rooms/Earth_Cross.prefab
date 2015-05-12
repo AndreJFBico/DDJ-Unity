@@ -8534,7 +8534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af5cf29844f51a94caa1676bb8c33201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawners: 1
+  _minSpawners: 2
   _maxSpawners: 3
   _treasure: {fileID: 142420, guid: 5b4413938bf8e1342b265ec43a032ac3, type: 2}
 --- !u!114 &11492688
