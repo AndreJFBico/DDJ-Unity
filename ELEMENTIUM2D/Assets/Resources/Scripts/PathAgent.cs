@@ -148,6 +148,11 @@ public class PathAgent : MonoBehaviour
         return target != null;
     }
 
+    void OnDisable()
+    {
+        StopCoroutine("checkMovement");
+    }
+
     void OnEnable()
     {
         StartCoroutine("checkMovement");
