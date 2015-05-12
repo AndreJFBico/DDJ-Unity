@@ -4,8 +4,6 @@ using Includes;
 
 public class Lava : BreakableWall {
 
-    private bool affected;
-
     // Use this for initialization
     void Start()
     {
@@ -53,7 +51,6 @@ public class Lava : BreakableWall {
                     case Elements.WATER:
                         durability -= damage;
                         activateParticleSystem();
-                        affected = true;
                         StartCoroutine(DealTemporaryDamage(damage, 0.8f));
                         break;
                     default:

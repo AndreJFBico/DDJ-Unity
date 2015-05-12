@@ -3728,7 +3728,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 161752}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.30999994, y: 0, z: -.709999979}
+  m_LocalPosition: {x: 1.34000003, y: 0, z: -1.14999998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 419398}
@@ -4638,7 +4638,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 144496}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.30999994, y: 0, z: .810000002}
+  m_LocalPosition: {x: 1.09000003, y: 0, z: 2.18000007}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 468076}
@@ -5309,7 +5309,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112078}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.710000038, y: 0, z: -.730000019}
+  m_LocalPosition: {x: -2.00999999, y: 0, z: -.959999979}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 481880}
@@ -5525,7 +5525,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 141388}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.710000038, y: 0, z: .790000021}
+  m_LocalPosition: {x: -2.57999992, y: 0, z: 1.76999998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 496670}
@@ -7381,8 +7381,9 @@ MonoBehaviour:
   healthbar: {fileID: 451064}
   alertedSign: {fileID: 412860}
   enemy: {fileID: 479764, guid: 773f0565eba5ea140b99f72f59ed3dcd, type: 2}
-  amount_to_spawn: 2
-  spawn_timer: 4
+  amount_to_spawn: 3
+  spawn_timer: 1
+  total_spawn_time: 6
 --- !u!114 &11414134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8346,7 +8347,8 @@ MonoBehaviour:
   alertedSign: {fileID: 480806}
   enemy: {fileID: 405980, guid: 2c2da5613eb9393439ee67fbbcdfbc7f, type: 2}
   amount_to_spawn: 2
-  spawn_timer: 4
+  spawn_timer: 1
+  total_spawn_time: 8
 --- !u!114 &11479094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8389,8 +8391,9 @@ MonoBehaviour:
   healthbar: {fileID: 465642}
   alertedSign: {fileID: 499238}
   enemy: {fileID: 479764, guid: 773f0565eba5ea140b99f72f59ed3dcd, type: 2}
-  amount_to_spawn: 2
-  spawn_timer: 4
+  amount_to_spawn: 3
+  spawn_timer: 1
+  total_spawn_time: 6
 --- !u!114 &11481120
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8531,8 +8534,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af5cf29844f51a94caa1676bb8c33201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpawners: 2
-  _maxSpawners: 4
+  _minSpawners: 1
+  _maxSpawners: 3
   _treasure: {fileID: 142420, guid: 5b4413938bf8e1342b265ec43a032ac3, type: 2}
 --- !u!114 &11492688
 MonoBehaviour:
@@ -8565,7 +8568,8 @@ MonoBehaviour:
   alertedSign: {fileID: 460540}
   enemy: {fileID: 470578, guid: 137cd70f6d84bad438a658ea48021656, type: 2}
   amount_to_spawn: 2
-  spawn_timer: 4
+  spawn_timer: 1
+  total_spawn_time: 6
 --- !u!114 &11495070
 MonoBehaviour:
   m_ObjectHideFlags: 1

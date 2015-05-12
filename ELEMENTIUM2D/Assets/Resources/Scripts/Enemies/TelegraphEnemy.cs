@@ -23,19 +23,19 @@ public class TelegraphEnemy : EnemyScript {
     {
         base.Awake();
         type = Elements.NEUTRAL;
-        maxHealth = EnemyStats.BasicNeutral.maxHealth;
+        maxHealth = EnemyStats.BasicTelegraph.maxHealth;
         health = maxHealth;
-        damage = EnemyStats.BasicNeutral.damage;
-        defence = EnemyStats.BasicNeutral.defence;
-        waterResist = EnemyStats.BasicNeutral.waterResist;
-        earthResist = EnemyStats.BasicNeutral.earthResist;
-        fireResist = EnemyStats.BasicNeutral.fireResist;
-        
-        visionRadius = EnemyStats.BasicNeutral.visionRadius;
+        damage = EnemyStats.BasicTelegraph.damage;
+        defence = EnemyStats.BasicTelegraph.defence;
+        waterResist = EnemyStats.BasicTelegraph.waterResist;
+        earthResist = EnemyStats.BasicTelegraph.earthResist;
+        fireResist = EnemyStats.BasicTelegraph.fireResist;
+
+        visionRadius = EnemyStats.BasicTelegraph.visionRadius;
         pathAgent.GetComponent<CapsuleCollider>().radius = visionRadius;
 
-        pathAgent.UnalertedSpeed = EnemyStats.BasicNeutral.unalertedSpeed;
-        pathAgent.AlertedSpeed = EnemyStats.BasicNeutral.alertedSpeed;
+        pathAgent.UnalertedSpeed = EnemyStats.BasicTelegraph.unalertedSpeed;
+        pathAgent.AlertedSpeed = EnemyStats.BasicTelegraph.alertedSpeed;
 
         activeWeapon = left;
 

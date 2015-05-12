@@ -49,6 +49,7 @@ public class NeutralBouncer : AbilityBehaviour {
             {
                 EnemyScript enemy = collision.gameObject.GetComponent<EnemyScript>();
                 enemy.takeDamage(damage, Elements.NEUTRAL, false);
+                enemy.playerSighted();
                 if ( numSplit < AbilityStats.Neutral.ability3.numSplits )
                 {
                     if (previousEnemy != null)

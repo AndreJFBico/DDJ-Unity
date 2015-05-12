@@ -7,14 +7,16 @@ public class EnemySpawner : EnemyScript
 {
     public Transform enemy;
     public int amount_to_spawn = 10;
+    // Time between each individual spawn
     public int spawn_timer = 1;
+    // Time between start of spawning
+    public int total_spawn_time = 4;
 
     private List<Transform> toSpawn;
     private List<Transform> spawned;
 
     private Transform position;
     private SpawnerManager _spawnerManager;
-
 
     private IEnumerator spawnEnemy;
 
@@ -77,6 +79,7 @@ public class EnemySpawner : EnemyScript
                 toSpawn.Remove(obj);
                 spawned.Add(obj);
             }
+            else yield return new WaitForSeconds(total_spawn_time);
             yield return new WaitForSeconds(spawn_timer);
         }
     }

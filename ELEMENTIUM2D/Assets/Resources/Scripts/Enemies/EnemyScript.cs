@@ -94,6 +94,7 @@ public class EnemyScript : Agent
         }
         health -= totalDamage;
         FloatingText.Instance.createFloatingText(transform, "" + (int)totalDamage + "", color);
+        setInCombat();
         if (health <= 0)
         {
             GameManager.Instance.Player.GetComponent<Player>().increaseMultiplier(multiplier);
@@ -102,7 +103,7 @@ public class EnemyScript : Agent
         if (health >= maxHealth)
             health = maxHealth;
 
-        setInCombat();
+
         updateGUI();
     }
 

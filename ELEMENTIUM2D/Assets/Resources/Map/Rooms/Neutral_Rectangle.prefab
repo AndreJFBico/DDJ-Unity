@@ -5208,7 +5208,8 @@ MonoBehaviour:
   alertedSign: {fileID: 453882}
   enemy: {fileID: 498408, guid: a02b491722b2ee241b5ea19b3219e4bb, type: 2}
   amount_to_spawn: 2
-  spawn_timer: 4
+  spawn_timer: 1
+  total_spawn_time: 6
 --- !u!114 &11408322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5345,7 +5346,8 @@ MonoBehaviour:
   alertedSign: {fileID: 427016}
   enemy: {fileID: 405980, guid: 2c2da5613eb9393439ee67fbbcdfbc7f, type: 2}
   amount_to_spawn: 2
-  spawn_timer: 4
+  spawn_timer: 1
+  total_spawn_time: 8
 --- !u!114 &11426578
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5362,7 +5364,8 @@ MonoBehaviour:
   alertedSign: {fileID: 490576}
   enemy: {fileID: 470832, guid: b7e813a02438bf249978b95288e12422, type: 2}
   amount_to_spawn: 2
-  spawn_timer: 4
+  spawn_timer: 1
+  total_spawn_time: 6
 --- !u!114 &11428808
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5432,7 +5435,8 @@ MonoBehaviour:
   alertedSign: {fileID: 415520}
   enemy: {fileID: 470578, guid: 137cd70f6d84bad438a658ea48021656, type: 2}
   amount_to_spawn: 2
-  spawn_timer: 4
+  spawn_timer: 1
+  total_spawn_time: 6
 --- !u!114 &11439924
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5473,7 +5477,8 @@ MonoBehaviour:
   alertedSign: {fileID: 412522}
   enemy: {fileID: 430928, guid: f348339b6a635a948bff61bbce58d393, type: 2}
   amount_to_spawn: 2
-  spawn_timer: 4
+  spawn_timer: 1
+  total_spawn_time: 6
 --- !u!114 &11448800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5626,7 +5631,8 @@ MonoBehaviour:
   alertedSign: {fileID: 467070}
   enemy: {fileID: 470578, guid: 137cd70f6d84bad438a658ea48021656, type: 2}
   amount_to_spawn: 2
-  spawn_timer: 4
+  spawn_timer: 1
+  total_spawn_time: 6
 --- !u!114 &11481188
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5688,7 +5694,8 @@ MonoBehaviour:
   alertedSign: {fileID: 416752}
   enemy: {fileID: 405980, guid: 2c2da5613eb9393439ee67fbbcdfbc7f, type: 2}
   amount_to_spawn: 2
-  spawn_timer: 4
+  spawn_timer: 1
+  total_spawn_time: 8
 --- !u!114 &11486110
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5705,7 +5712,8 @@ MonoBehaviour:
   alertedSign: {fileID: 469344}
   enemy: {fileID: 470578, guid: 137cd70f6d84bad438a658ea48021656, type: 2}
   amount_to_spawn: 2
-  spawn_timer: 4
+  spawn_timer: 1
+  total_spawn_time: 6
 --- !u!114 &11488448
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5722,7 +5730,8 @@ MonoBehaviour:
   alertedSign: {fileID: 481430}
   enemy: {fileID: 470832, guid: b7e813a02438bf249978b95288e12422, type: 2}
   amount_to_spawn: 2
-  spawn_timer: 4
+  spawn_timer: 1
+  total_spawn_time: 6
 --- !u!114 &11491522
 MonoBehaviour:
   m_ObjectHideFlags: 1

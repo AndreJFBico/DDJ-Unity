@@ -112,6 +112,7 @@ public class GUIManager : MonoBehaviour {
             abilitiesSlider[i].Add(coolDownsAll[i].transform.FindChild("RMBCDStrip").gameObject);
             abilitiesSlider[i].Add(coolDownsAll[i].transform.FindChild("MMBCDStrip").gameObject);
         }
+        coolDownsAll[_currentElementIndex].SetActive(true);
     }
 
     private IEnumerator decreaseCooldowns()

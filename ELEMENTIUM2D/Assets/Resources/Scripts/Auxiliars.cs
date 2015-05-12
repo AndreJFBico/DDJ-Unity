@@ -245,6 +245,19 @@ namespace Includes
             public static float alertedSpeed = 0;
         }
 
+        public class BasicTelegraph
+        {
+            public static float maxHealth = 40;
+            public static float damage = 5;
+            public static float defence = 0;
+            public static float waterResist = 0;
+            public static float earthResist = 0;
+            public static float fireResist = 0;
+            public static float visionRadius = 1.65f;
+            public static float unalertedSpeed = 0.5f;
+            public static float alertedSpeed = 1.5f;
+        }
+
         public class BasicNeutral
         {
             public static float maxHealth = 20;
@@ -481,16 +494,16 @@ namespace Includes
         public float lim_damageTimer = float.MaxValue;
 
         public float lim_primary_neutral_level = 1;
-        public float lim_secondary_neutral_level = 1;
-        public float lim_terciary_neutral_level = 1;
+        public float lim_secondary_neutral_level = 0;
+        public float lim_terciary_neutral_level = 0;
 
-        public float lim_primary_earth_level = 1;
-        public float lim_secondary_earth_level = 1;
-        public float lim_terciary_earth_level = 1;
+        public float lim_primary_earth_level = 0;
+        public float lim_secondary_earth_level = 0;
+        public float lim_terciary_earth_level = 0;
 
-        public float lim_primary_fire_level = 1;
-        public float lim_secondary_fire_level = 1;
-        public float lim_terciary_fire_level = 1;
+        public float lim_primary_fire_level = 0;
+        public float lim_secondary_fire_level = 0;
+        public float lim_terciary_fire_level = 0;
 
         public float lim_primary_water_level = 1;
         public float lim_secondary_water_level = 1;
