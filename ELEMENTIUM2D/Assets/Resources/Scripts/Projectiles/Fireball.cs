@@ -23,7 +23,7 @@ public class Fireball : AbilityBehaviour
     public override void OnTriggerEnter(Collider collision)
     {
         // We do not interact with other triggers
-        if (!collision.gameObject.GetComponent<Collider>().isTrigger)
+        if (!collision.isTrigger)
         {
             if (collidedWithBreakable(collision.gameObject)) ;
             else if (collision.gameObject.layer == LayerMask.NameToLayer("Unhitable"))
