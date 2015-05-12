@@ -5,12 +5,17 @@ using System;
 
 public class Player : Agent {
 
+    public Transform staminabar;
+    public Transform staminabar_background;
     private GUIManager gui;
     private float damageTimer = 0.0f;
     private bool timerRunning = false;
     private CharacterMove characterMoveScrpt;
     private bool alphaed = false;
 
+    protected Func<float> stamina;
+    protected Func<float> maxStamina;
+    protected Func<float, float> addStamina;
     protected Func<float> maxHealth;
     protected Func<float, float> setMaxHealth;
     protected Func<float> health;
@@ -35,6 +40,9 @@ public class Player : Agent {
         OilPuddleManager.Instance.sceneInit();
         ChestManager.Instance.sceneInit();
         gui = GameObject.Find("GUI").GetComponent<GUIManager>();
+        stamina = () => { return GameManager.Instance.Stats.stamina; };
+        maxStamina = () => { return GameManager.Instance.Stats.maxStamina; };
+        addStamina = (a) => { return GameManager.Instance.Stats.stamina += a; };
         maxHealth = () => { return GameManager.Instance.Stats.maxHealth; };
         setMaxHealth = (a) => { float diff = a - GameManager.Instance.Stats.maxHealth;
                                 GameManager.Instance.Stats.maxHealth = a;
@@ -50,7 +58,8 @@ public class Player : Agent {
         multiplierManager = GetComponent<MultiplierManager>();
         characterMoveScrpt = transform.gameObject.GetComponent<CharacterMove>();
         GameManager.Instance.Stats.dumpStats();
-        InvokeRepeating("blink", 0f, 0.10f);      
+        InvokeRepeating("blink", 0f, 0.10f);
+        StartCoroutine("regenStamina");
     }
 
     void Start()
@@ -143,6 +152,36 @@ public class Player : Agent {
     public override bool isHurt()
     {
         return health() < maxHealth();
+    }
+
+    public bool isTired()
+    {
+        return (stamina() == 0);
+    }
+
+    public void consumeStamina(float val)
+    {
+        if((stamina() - val) < 0)
+        {
+            addStamina(-stamina());
+        }
+        else addStamina(-val);
+    }
+
+    IEnumerator regenStamina()
+    {
+        while(true)
+        {
+            if (!characterMoveScrpt.isDoubleTapping())
+            {
+                if ((stamina() + 0.3f) > maxStamina())
+                {
+                    addStamina(maxStamina() - stamina());
+                }
+                else addStamina(0.3f);
+            }
+            yield return new WaitForSeconds(0.1f);
+        }
     }
    
     public override void takeDamage(float amount, Elements type, bool goTroughBlink)
@@ -251,6 +290,9 @@ public class Player : Agent {
         float percentage = health() / maxHealth();
         if (health() < 0) addHealth(-health());
         healthbar.transform.localScale = new Vector3(percentage, 1.0f, 1.0f);
+
+        float staminaPercentage = stamina() / maxStamina();
+        staminabar.transform.localScale = new Vector3(staminaPercentage, 1.0f, 1.0f);
     }
 
     public override void slowSelf(float intensity)

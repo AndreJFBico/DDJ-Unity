@@ -444,6 +444,8 @@ namespace Includes
         public const float def_secondary_water_level = 0;
         public const float def_terciary_water_level = 0;
 
+        public const float def_stamina = 10;
+
         //public const float def_inc_health = 10.5f;
         
         // VARIABLES, these can be changed and reset at will they represent the current player stats
@@ -492,6 +494,8 @@ namespace Includes
         public float lim_earthResist = float.MaxValue;
         public float lim_fireResist = float.MaxValue;
         public float lim_damageTimer = float.MaxValue;
+        public float lim_stamina = float.MaxValue;
+        public float lim_maxStamina = float.MaxValue;
 
         public float lim_primary_neutral_level = 1;
         public float lim_secondary_neutral_level = 0;
@@ -512,6 +516,8 @@ namespace Includes
         public float lim_points = 4;
 
         public float depth = 10;
+        public float stamina = def_stamina;
+        public float maxStamina = def_stamina;
 
 
         //ATTENTION IF YOU ADD A NEW VARIABLE PLS DONT FORGET TO ADD IT TO RESET!!!!!!!
@@ -531,6 +537,9 @@ namespace Includes
             multiplierTimer = def_multiplierTimer;
             multiplierLevels = new int[]{ 7, 12, 20};
             currentMultiplier = 0;
+
+            stamina = def_stamina;
+            maxStamina = def_stamina;
 
             primary_neutral_level = def_primary_neutral_level;
             secondary_neutral_level = def_secondary_neutral_level;
@@ -556,6 +565,7 @@ namespace Includes
                 + moveInContactWithEnemy + "\n"
 
                 + maxHealth + "\n"
+                + stamina + "\n"
                 + damage + "\n"
                 + attackSpeed + "\n"
                 + defence + "\n"
