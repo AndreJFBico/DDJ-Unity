@@ -236,7 +236,7 @@ public class CharacterMove : MonoBehaviour {
 
     void doubleTap()
     {
-		if ((Input.GetKeyDown(KeyCode.V) && !doubleTapping) || (Input.GetKeyDown(KeyCode.Joystick1Button5) && !doubleTapping))
+		if (Input.GetAxis("Dodge") > 0 && !doubleTapping)
         {
             doubleTapping = true;
             previousMoveSpeed = moveSpeed;

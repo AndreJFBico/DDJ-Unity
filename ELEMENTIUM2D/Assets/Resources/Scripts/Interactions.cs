@@ -36,8 +36,8 @@ public class Interactions : MonoBehaviour {
         _elements.Add(GetComponent<EarthElement>());
         _elements.Add(GetComponent<FrostElement>());
         data = GetComponent<Player>();
-        checkAvailableElements();
         GameManager.Instance.CurrentElement = _elements[0];
+        checkAvailableElements();
     }
 
     #region Element Updating

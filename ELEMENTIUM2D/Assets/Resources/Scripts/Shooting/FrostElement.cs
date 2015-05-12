@@ -5,7 +5,7 @@ using Includes;
 public class FrostElement : ShootElement {
 
 	// Use this for initialization
-    void Start()
+    void Awake()
     {
         Transform[] aux = GetComponentsInChildren<Transform>();
         foreach (Transform item in aux)
@@ -44,6 +44,16 @@ public class FrostElement : ShootElement {
         terciaryUnlocked = GameManager.Instance.Stats.terciary_water_level > 0;
     }
 
+    public override void checkAbilitiesCoolDown()
+    {
+        if (mainUnlocked)
+            GameManager.Instance.GUI.GetComponent<GUIManager>().addCoolDown(_elementType, 0, AbilityStats.Frost.ability1.attackSpeed);
+        if (secondaryUnlocked)
+            GameManager.Instance.GUI.GetComponent<GUIManager>().addCoolDown(_elementType, 1, AbilityStats.Frost.ability2.attackSpeed);
+        if (terciaryUnlocked)
+            GameManager.Instance.GUI.GetComponent<GUIManager>().addCoolDown(_elementType, 2, AbilityStats.Frost.ability3.attackSpeed);
+    }
+
     public override void fireMain()
     {
         if (!mainUnlocked)
@@ -58,7 +68,7 @@ public class FrostElement : ShootElement {
             canMain = false;
             Invoke("resetMain", attackSpeed);
             fire(attackSpeed, projectileNumber, damage, projectile1);
-            GameManager.Instance.GUI.GetComponent<GUIManager>().addCoolDown(0, attackSpeed);
+            GameManager.Instance.GUI.GetComponent<GUIManager>().addCoolDown(_elementType, 0, attackSpeed);
         }
     }
 
@@ -76,7 +86,7 @@ public class FrostElement : ShootElement {
             canSecondary = false;
             Invoke("resetSecondary", attackSpeed);
             fire(attackSpeed, projectileNumber, damage, projectile2);
-            GameManager.Instance.GUI.GetComponent<GUIManager>().addCoolDown(1, attackSpeed);
+            GameManager.Instance.GUI.GetComponent<GUIManager>().addCoolDown(_elementType, 1, attackSpeed);
         }
     }
 
@@ -94,7 +104,7 @@ public class FrostElement : ShootElement {
             canTerciary = false;
             Invoke("resetTerciary", attackSpeed);
             fire(attackSpeed, projectileNumber, damage, projectile3);
-            GameManager.Instance.GUI.GetComponent<GUIManager>().addCoolDown(2, attackSpeed);
+            GameManager.Instance.GUI.GetComponent<GUIManager>().addCoolDown(_elementType, 2, attackSpeed);
         }
     }
 }

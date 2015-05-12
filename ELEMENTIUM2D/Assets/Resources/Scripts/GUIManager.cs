@@ -80,8 +80,13 @@ public class GUIManager : MonoBehaviour {
         {
             for (int i = 0; i < maxCDs[j].Length; i++)
             {
+                cds[j][i] = int.MaxValue;
                 maxCDs[j][i] = int.MaxValue;
             }
+        }
+        foreach (ShootElement e in elements)
+        {
+            e.checkAbilitiesCoolDown();
         }
         coolDownsAll[0].SetActive(true);
     }
@@ -112,6 +117,10 @@ public class GUIManager : MonoBehaviour {
             abilitiesSlider[i].Add(coolDownsAll[i].transform.FindChild("RMBCDStrip").gameObject);
             abilitiesSlider[i].Add(coolDownsAll[i].transform.FindChild("MMBCDStrip").gameObject);
         }
+        foreach (ShootElement e in elements)
+        {
+            e.checkAbilitiesCoolDown();
+        }
         coolDownsAll[_currentElementIndex].SetActive(true);
     }
 
@@ -139,29 +148,10 @@ public class GUIManager : MonoBehaviour {
         }
     }
 
-    public void addCoolDown(int whichAbility, float timer)
+    public void addCoolDown(Elements type, int whichAbility, float timer)
     {
-        switch (GameManager.Instance.CurrentElement.Type)
-        {
-            case Elements.NEUTRAL:
-                cds[0][whichAbility] = timer;
-                maxCDs[0][whichAbility] = timer;
-                break;
-            case Elements.FIRE:
-                cds[1][whichAbility] = timer;
-                maxCDs[1][whichAbility] = timer;
-                break;
-            case Elements.EARTH:
-                cds[2][whichAbility] = timer;
-                maxCDs[2][whichAbility] = timer;
-                break;
-            case Elements.WATER:
-                cds[3][whichAbility] = timer;
-                maxCDs[3][whichAbility] = timer;
-                break;
-            default:
-                break;
-        }
+        cds[(int)type][whichAbility] = timer;
+        maxCDs[(int)type][whichAbility] = timer;
     }
  
     private void changeCoolDownsDisplay(int state)

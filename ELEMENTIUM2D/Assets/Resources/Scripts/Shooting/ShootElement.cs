@@ -100,4 +100,6 @@ public class ShootElement : MonoBehaviour
         barrelEnd = t;
     }
 
+    public virtual void checkAbilitiesCoolDown(){}
+
 }

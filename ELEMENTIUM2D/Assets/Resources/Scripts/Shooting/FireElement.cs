@@ -5,7 +5,7 @@ using Includes;
 public class FireElement: ShootElement {
 
 	// Use this for initialization
-    void Start()
+    void Awake()
     {
         Transform[] aux = GetComponentsInChildren<Transform>();
         foreach (Transform item in aux)
@@ -44,6 +44,16 @@ public class FireElement: ShootElement {
         terciaryUnlocked = GameManager.Instance.Stats.terciary_fire_level > 0;
     }
 
+    public override void checkAbilitiesCoolDown()
+    {
+        if (mainUnlocked)
+            GameManager.Instance.GUI.GetComponent<GUIManager>().addCoolDown(_elementType, 0, AbilityStats.Fire.ability1.attackSpeed);
+        if (secondaryUnlocked)
+            GameManager.Instance.GUI.GetComponent<GUIManager>().addCoolDown(_elementType, 1, OilPuddleManager.Instance.internalCooldown());
+        if (terciaryUnlocked)
+            GameManager.Instance.GUI.GetComponent<GUIManager>().addCoolDown(_elementType, 2, AbilityStats.Fire.ability3.attackSpeed);
+    }
+
     #region Fire functions
 
     public override void fireMain()
@@ -60,7 +70,7 @@ public class FireElement: ShootElement {
             canMain = false;
             Invoke("resetMain", attackSpeed);
             fire(attackSpeed, projectileNumber, damage, projectile1);
-            GameManager.Instance.GUI.GetComponent<GUIManager>().addCoolDown(0, attackSpeed);
+            GameManager.Instance.GUI.GetComponent<GUIManager>().addCoolDown(_elementType, 0, attackSpeed);
         }
     }
 
@@ -78,7 +88,7 @@ public class FireElement: ShootElement {
             Invoke("deactivateBlast", 0.1f);
             Instantiate(OilPuddleManager.Instance.OilPuddle, barrelEnd.position, OilPuddleManager.Instance.OilPuddle.transform.rotation);
 
-            GameManager.Instance.GUI.GetComponent<GUIManager>().addCoolDown(1, OilPuddleManager.Instance.internalCooldown());
+            GameManager.Instance.GUI.GetComponent<GUIManager>().addCoolDown(_elementType, 1, OilPuddleManager.Instance.internalCooldown());
         }
     }
 
@@ -96,7 +106,7 @@ public class FireElement: ShootElement {
             canTerciary = false;
             Invoke("resetTerciary", attackSpeed);
             fire(attackSpeed, projectileNumber, damage, projectile3);
-            GameManager.Instance.GUI.GetComponent<GUIManager>().addCoolDown(2, attackSpeed);
+            GameManager.Instance.GUI.GetComponent<GUIManager>().addCoolDown(_elementType, 2, attackSpeed);
         }
     }
 
