@@ -15,7 +15,7 @@ public class WaterElementPickup : Pickup
         //update PlayerStats to set primary_element_level and lim_element;
         //update Interactions to set element active;
         //update ElementElement to unlock its main weapon;
-        playerInteractions.updateActiveElements("water");
+        playerInteractions.updateActiveElements("primary_water");
         GameManager.Instance.Stats.lim_points++;
         Destroy(transform.parent.gameObject);
     }

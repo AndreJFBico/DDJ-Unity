@@ -37,7 +37,6 @@ public class Interactions : MonoBehaviour {
         _elements.Add(GetComponent<FrostElement>());
         data = GetComponent<Player>();
         checkAvailableElements();
-        gui.processCoolDownWindows(numberActiveElements);
         GameManager.Instance.CurrentElement = _elements[0];
     }
 
@@ -91,6 +90,40 @@ public class Interactions : MonoBehaviour {
             }
         }
         numberActiveElements = numActiveElem;
+
+        gui.initCoolDownWindows(_elements);
+    }
+
+    private void checkElementTypeToModify(FieldInfo field, ref int numActiveElem, string element)
+    {
+        if (field.Name.Contains("neutral") && element.Contains("neutral"))
+        {
+            _elements[0].Active = true;
+            numActiveElem++;
+            typeof(PlayerStats).GetField(field.Name).SetValue(GameManager.Instance.Stats, 1);
+            _elements[0].updateUnlocked();
+        }
+        else if (field.Name.Contains("fire") && element.Contains("fire"))
+        {
+            _elements[1].Active = true;
+            numActiveElem++;
+            typeof(PlayerStats).GetField(field.Name).SetValue(GameManager.Instance.Stats, 1);
+            _elements[1].updateUnlocked();
+        }
+        else if (field.Name.Contains("earth") && element.Contains("earth"))
+        {
+            _elements[2].Active = true;
+            numActiveElem++;
+            typeof(PlayerStats).GetField(field.Name).SetValue(GameManager.Instance.Stats, 1);
+            _elements[2].updateUnlocked();
+        }
+        else if (field.Name.Contains("water") && element.Contains("water"))
+        {
+            _elements[3].Active = true;
+            numActiveElem++;
+            typeof(PlayerStats).GetField(field.Name).SetValue(GameManager.Instance.Stats, 1);
+            _elements[3].updateUnlocked();
+        }
     }
 
     public void updateActiveElements(string element)
@@ -103,41 +136,19 @@ public class Interactions : MonoBehaviour {
             // is a float
             if (typeof(float).IsAssignableFrom(field.FieldType))
             {
-                if ((field.Name.Contains("primary_") || field.Name.Contains("secondary_") || field.Name.Contains("terciary_")) && !field.Name.Contains("def_"))
+                if (field.Name.Contains("primary_") && element.Contains("primary_") && !field.Name.Contains("def_"))
                 {
-                    if (field.Name.Contains("neutral") && string.Compare("neutral", element) == 0)
-                    {
-                        _elements[0].Active = true;
-                        numActiveElem++;
-                        typeof(PlayerStats).GetField(field.Name).SetValue(GameManager.Instance.Stats, 1);
-                        _elements[0].updateUnlocked();
-                        continue;
-                    }
-                    if (field.Name.Contains("fire") && string.Compare("fire", element) == 0)
-                    {
-                        _elements[1].Active = true;
-                        numActiveElem++;
-                        typeof(PlayerStats).GetField(field.Name).SetValue(GameManager.Instance.Stats, 1);
-                        _elements[1].updateUnlocked();
-                        continue;
-                    }
-                    if (field.Name.Contains("earth") && string.Compare("earth", element) == 0)
-                    {
-                        _elements[2].Active = true;
-                        numActiveElem++;
-                        typeof(PlayerStats).GetField(field.Name).SetValue(GameManager.Instance.Stats, 1);
-                        _elements[2].updateUnlocked();
-                        continue;
-                    }
-                    if (field.Name.Contains("water") && string.Compare("water", element) == 0)
-                    {
-                        _elements[3].Active = true;
-                        numActiveElem++;
-                        typeof(PlayerStats).GetField(field.Name).SetValue(GameManager.Instance.Stats, 1);
-                        _elements[3].updateUnlocked();
-                    }
+                    checkElementTypeToModify(field, ref numActiveElem, element);
                 }
-                else if (field.Name.Contains("lim_") && (field.Name.Contains("terciary_") || field.Name.Contains("secondary_")))
+                else if (field.Name.Contains("secondary_") && element.Contains("secondary_") && !field.Name.Contains("def_"))
+                {
+                    checkElementTypeToModify(field, ref numActiveElem, element);
+                }
+                else if (field.Name.Contains("terciary_") && element.Contains("terciary_") && !field.Name.Contains("def_"))
+                {
+                    checkElementTypeToModify(field, ref numActiveElem, element);
+                }
+                else if (field.Name.Contains("lim_"))
                 {
                     if (field.Name.Contains(element))
                     {
@@ -147,6 +158,8 @@ public class Interactions : MonoBehaviour {
             }
         }
         numberActiveElements = numActiveElem;
+
+        gui.processCoolDownWindows(_elements);
     }
     
     #endregion
@@ -183,7 +196,7 @@ public class Interactions : MonoBehaviour {
         }
 
         GameManager.Instance.CurrentElement = _elements[_currentElement];
-        gui.changeCurrentElementDisplay(_currentElement);
+        gui.changeCurrentElement(_currentElement);
     }
 
     #endregion

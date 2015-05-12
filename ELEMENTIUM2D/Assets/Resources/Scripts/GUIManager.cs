@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using Includes;
 using System.Collections.Generic;
+using System;
 
 public class GUIManager : MonoBehaviour {
 
@@ -13,13 +14,15 @@ public class GUIManager : MonoBehaviour {
     public GameObject multiplierText;
     public GameObject statWindowText;
     public GameObject statWindow;
-    public List<GameObject> coolDownsAll;
 
+    private List<GameObject> coolDownsAll;
     private List<GameObject> coolDowns;
 
     private List<float[]> cds;//left - right - middle
     private List<float[]> maxCDs;//left - right - middle
     private List<List<GameObject>> abilitiesSlider;
+
+    private int _currentElementIndex = 0;
 
     void Awake()
     {
@@ -27,6 +30,13 @@ public class GUIManager : MonoBehaviour {
         maxCDs = new List<float[]>();
         abilitiesSlider = new List<List<GameObject>>();
         coolDowns = new List<GameObject>();
+        coolDownsAll = new List<GameObject>();
+
+        string[] elements = Enum.GetNames(typeof(Elements));
+        for(int i = 0; i < elements.Length; i++)
+        {
+            coolDownsAll.Add(transform.FindChild("CoolDowns " + elements[i]).gameObject);
+        }
     }
 
     void Start()
@@ -36,7 +46,7 @@ public class GUIManager : MonoBehaviour {
     }
 
     #region Cooldows
-    public void processCoolDownWindows(int numberElements)
+    public void initCoolDownWindows(List<ShootElement> elements)
     {
         coolDowns = new List<GameObject>();
         cds = new List<float[]>();
@@ -44,14 +54,59 @@ public class GUIManager : MonoBehaviour {
         abilitiesSlider = new List<List<GameObject>>();
         coolDowns.AddRange(coolDownsAll);
 
-        while (coolDowns.Count > numberElements)
+        List<int> inactiveIndexes = new List<int>();
+        for(int i = 0; i < elements.Count; i++)
         {
-            coolDowns.RemoveAt(coolDowns.Count - 1);
+            if (!elements[i].Active)
+            {
+                inactiveIndexes.Add(i);
+            }
+            coolDownsAll[i].SetActive(false);
+        }
+        for(int i = inactiveIndexes.Count; i > 0; i--)
+        {
+            coolDowns.RemoveAt(inactiveIndexes[i-1]);
         }
         for (int i = 0; i < coolDownsAll.Count; i++)
         {
             cds.Add(new float[3]);
             maxCDs.Add(new float[3]);
+            abilitiesSlider.Add(new List<GameObject>());
+            abilitiesSlider[i].Add(coolDownsAll[i].transform.FindChild("LMBCDStrip").gameObject);
+            abilitiesSlider[i].Add(coolDownsAll[i].transform.FindChild("RMBCDStrip").gameObject);
+            abilitiesSlider[i].Add(coolDownsAll[i].transform.FindChild("MMBCDStrip").gameObject);
+        }
+        for (int j = 0; j < maxCDs.Count; j++)
+        {
+            for (int i = 0; i < maxCDs[j].Length; i++)
+            {
+                maxCDs[j][i] = int.MaxValue;
+            }
+        }
+        coolDownsAll[0].SetActive(true);
+    }
+
+    public void processCoolDownWindows(List<ShootElement> elements)
+    {
+        coolDowns = new List<GameObject>();
+        abilitiesSlider = new List<List<GameObject>>();
+        coolDowns.AddRange(coolDownsAll);
+
+        List<int> inactiveIndexes = new List<int>();
+        for (int i = 0; i < elements.Count; i++)
+        {
+            if (!elements[i].Active)
+            {
+                inactiveIndexes.Add(i);
+            }
+            coolDownsAll[i].SetActive(false);
+        }
+        for (int i = inactiveIndexes.Count; i > 0; i--)
+        {
+            coolDowns.RemoveAt(inactiveIndexes[i - 1]);
+        }
+        for (int i = 0; i < coolDownsAll.Count; i++)
+        {
             abilitiesSlider.Add(new List<GameObject>());
             abilitiesSlider[i].Add(coolDownsAll[i].transform.FindChild("LMBCDStrip").gameObject);
             abilitiesSlider[i].Add(coolDownsAll[i].transform.FindChild("RMBCDStrip").gameObject);
@@ -71,10 +126,13 @@ public class GUIManager : MonoBehaviour {
                     if (cds[j][i] <= 0)
                     {
                         cds[j][i] = 0;
+                        if (j == _currentElementIndex)
+                            abilitiesSlider[j][i].transform.localScale = new Vector3(1.0f, cds[j][i] / maxCDs[j][i], 1.0f);
                         continue;
                     }
                     cds[j][i] -= Time.deltaTime;
-                    abilitiesSlider[j][i].transform.localScale = new Vector3(1.0f, cds[j][i] / maxCDs[j][i], 1.0f);
+                    if (j == _currentElementIndex)
+                        abilitiesSlider[j][i].transform.localScale = new Vector3(1.0f, cds[j][i] / maxCDs[j][i], 1.0f);
                 }
             }
         }
@@ -107,26 +165,25 @@ public class GUIManager : MonoBehaviour {
  
     private void changeCoolDownsDisplay(int state)
     {
-        switch (state)
+        for(int i = 0; i < coolDownsAll.Count; i++)
         {
-            case 0:
-                break;
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-            default:
-                break;
+            if (i == state)
+                coolDownsAll[i].SetActive(true);
+            else
+                coolDownsAll[i].SetActive(false);
         }
     }
     #endregion
 
-
+    public void changeCurrentElement(int state)
+    {
+        changeCurrentElementDisplay(state);
+        changeCoolDownsDisplay(state);
+    }
 
     public void changeCurrentElementDisplay(int state)
     {
+        _currentElementIndex = state;
         switch (state)
         {
             case 0:
