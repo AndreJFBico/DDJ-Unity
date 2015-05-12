@@ -29,13 +29,13 @@ public class Spike : BreakableProp
 
     void OnTriggerEnter(Collider col)
     {
-        if ((LayerMask.NameToLayer("Player") == col.gameObject.layer || (LayerMask.NameToLayer("Enemy") == col.gameObject.layer && !damageEnemies)) && !animator.GetBool("Triggered") && !col.isTrigger)
+        if ((LayerMask.NameToLayer("Player") == col.gameObject.layer || (LayerMask.NameToLayer("Enemy") == col.gameObject.layer && damageEnemies)) && !animator.GetBool("Triggered") && !col.isTrigger)
         {
             animator.SetBool("Triggered", true);
             Agent ag = col.gameObject.GetComponent<Agent>();
             if (ag)
             {
-                ag.takeDamage(damage, element, false);
+                ag.takeDamage(damage, element, true);
             }
             Invoke("resetTrigger", 1.4f);      
         }
