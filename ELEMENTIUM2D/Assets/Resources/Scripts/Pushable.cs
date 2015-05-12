@@ -6,7 +6,7 @@ using Includes;
 public class Pushable : BreakableProp
 {
     public float pushStrength = 0.2f;
-
+    private bool attached = false;
     private Collider latestCollision;
     private List<Collider> attachedColls;
 
@@ -26,12 +26,14 @@ public class Pushable : BreakableProp
             Debug.DrawRay(position, direction, Color.red);
             if (!hit.collider.isTrigger && hit.transform.GetInstanceID() != transform.GetInstanceID())
             {
-                if(hit.collider.gameObject.GetComponent<Pushable>())
+                Pushable p = hit.collider.gameObject.GetComponent<Pushable>();
+                if(p)
                 {
-                    if(latestCollision)
+                    if (latestCollision && !attachedColls.Contains(hit.collider) && !p.attached)
                     {
-                        hit.collider.gameObject.GetComponent<Pushable>().setCol(latestCollision);
+                        p.setCol(latestCollision);
                         attachedColls.Add(hit.collider);
+                        p.attached = true;
                     }             
                 }
                 return true;
@@ -78,10 +80,12 @@ public class Pushable : BreakableProp
             {
                 if (col.GetComponent<Pushable>())
                 {
-                    if (latestCollision)
+                    Pushable p = gameObject.GetComponent<Pushable>();
+                    if (latestCollision && !attachedColls.Contains(col) && !p.attached)
                     {
-                        col.GetComponent<Pushable>().setCol(latestCollision);
+                        p.setCol(latestCollision);
                         attachedColls.Add(col);
+                        p.attached = true;
                     }
                 }
             }
@@ -95,11 +99,18 @@ public class Pushable : BreakableProp
 
     public void clearAttached()
     {
+        List<Pushable> pushables = new List<Pushable>();
         foreach(Collider c in attachedColls)
         {
             c.GetComponent<Pushable>().setCol(null);
+            pushables.Add(c.GetComponent<Pushable>());
         }
         attachedColls.Clear();
+        foreach(Pushable p in pushables)
+        {
+            p.clearAttached();
+        }
+        attached = false;
     }
 
     void OnTriggerExit(Collider col)
@@ -107,10 +118,6 @@ public class Pushable : BreakableProp
         if (LayerMask.NameToLayer("Player") == col.gameObject.layer)
         {
             latestCollision = null;
-            foreach(Collider c in attachedColls)
-            {
-                c.GetComponent<Pushable>().setCol(null);
-            }
             clearAttached();
         }
         else if(LayerMask.NameToLayer("Breakable") == col.gameObject.layer)
@@ -119,11 +126,7 @@ public class Pushable : BreakableProp
             {
                 if (latestCollision)
                 {
-                    foreach(Collider c in attachedColls)
-                    {
-                        c.GetComponent<Pushable>().setCol(null);
-                        c.GetComponent<Pushable>().clearAttached();
-                    }
+                    clearAttached();
                 }
             }
         }
