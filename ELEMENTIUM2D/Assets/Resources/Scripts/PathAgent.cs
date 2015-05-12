@@ -214,7 +214,7 @@ public class PathAgent : MonoBehaviour
         Vector3 randomDirection = Random.insideUnitSphere * roamRadius;
         randomDirection += startPosition;
         NavMeshHit hit;
-        NavMesh.SamplePosition(randomDirection, out hit, roamRadius, 1);
+        NavMesh.SamplePosition(randomDirection, out hit, roamRadius, 1 << NavMesh.GetNavMeshLayerFromName("Walkable"));
         Vector3 finalPosition = hit.position;
         //agent.destination = finalPosition;
 
