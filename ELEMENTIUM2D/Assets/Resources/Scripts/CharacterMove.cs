@@ -282,6 +282,7 @@ public class CharacterMove : MonoBehaviour {
             {
                 previousRenderTime = Time.realtimeSinceStartup + maximumDeltaTime;
             }
+            calculatedMotion = new Vector3(0.0f, 0.0f, 0.0f);
             return;
         }
 
@@ -437,6 +438,11 @@ public class CharacterMove : MonoBehaviour {
     public bool isDoubleTapping()
     {
         return doubleTapping;
+    }
+
+    public Vector3 getCharacterDirection()
+    {
+        return calculatedMotion;
     }
 
     public void init()
