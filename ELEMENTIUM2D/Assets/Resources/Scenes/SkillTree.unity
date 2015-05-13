@@ -202,12 +202,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 10bf3b4a37672af4584a77bce91e6556, type: 2}
   m_IsPrefabParent: 0
---- !u!224 &75295022
+--- !u!224 &75295022 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 22459012, guid: 10bf3b4a37672af4584a77bce91e6556,
     type: 2}
   m_PrefabInternal: {fileID: 75295021}
---- !u!1 &75295023
+--- !u!1 &75295023 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 120686, guid: 10bf3b4a37672af4584a77bce91e6556, type: 2}
   m_PrefabInternal: {fileID: 75295021}
@@ -655,7 +655,7 @@ MonoBehaviour:
   sucessors:
   - {fileID: 1066777357}
   - {fileID: 560719113}
-  operation: 1
+  operation: 3
   father: {fileID: 1066777357}
   selected: 0
   lockedForever: 0
@@ -1479,7 +1479,7 @@ MonoBehaviour:
   - {fileID: 75295024}
   - {fileID: 1066777357}
   - {fileID: 1404779444}
-  operation: 1
+  operation: 3
   father: {fileID: 75295024}
   selected: 0
   lockedForever: 0
@@ -1726,13 +1726,13 @@ MonoBehaviour:
   changeWithValue: 1
   sucessors:
   - {fileID: 295646284}
-  operation: 2
+  operation: 3
   father: {fileID: 295646284}
   selected: 0
   lockedForever: 0
   information: Unlocks earth stun ability
   choiceIndex: 20
-  variableBeingChanged: terciary_earth_level
+  variableBeingChanged: primary_fire_level
 --- !u!114 &560719114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1864,7 +1864,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bc6e906d73fe8dd4e92348ff71afa4c3, type: 2}
   m_IsPrefabParent: 0
---- !u!224 &574807772
+--- !u!224 &574807772 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 22458644, guid: bc6e906d73fe8dd4e92348ff71afa4c3,
     type: 2}
@@ -3133,11 +3133,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22412324, guid: b12e8ae4fd141f04688ad5523290cc2f, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -280.399994
+      value: 19.6000061
       objectReference: {fileID: 0}
     - target: {fileID: 22412324, guid: b12e8ae4fd141f04688ad5523290cc2f, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 117.400002
+      value: -18.6000061
       objectReference: {fileID: 0}
     - target: {fileID: 22412324, guid: b12e8ae4fd141f04688ad5523290cc2f, type: 2}
       propertyPath: m_SizeDelta.x
@@ -3145,23 +3145,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22412324, guid: b12e8ae4fd141f04688ad5523290cc2f, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 101
       objectReference: {fileID: 0}
     - target: {fileID: 22412324, guid: b12e8ae4fd141f04688ad5523290cc2f, type: 2}
       propertyPath: m_AnchorMin.x
-      value: .5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22412324, guid: b12e8ae4fd141f04688ad5523290cc2f, type: 2}
       propertyPath: m_AnchorMin.y
-      value: .5
+      value: .899999976
       objectReference: {fileID: 0}
     - target: {fileID: 22412324, guid: b12e8ae4fd141f04688ad5523290cc2f, type: 2}
       propertyPath: m_AnchorMax.x
-      value: .5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22412324, guid: b12e8ae4fd141f04688ad5523290cc2f, type: 2}
       propertyPath: m_AnchorMax.y
-      value: .5
+      value: .899999976
       objectReference: {fileID: 0}
     - target: {fileID: 22412324, guid: b12e8ae4fd141f04688ad5523290cc2f, type: 2}
       propertyPath: m_Pivot.x
@@ -3194,7 +3194,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b12e8ae4fd141f04688ad5523290cc2f, type: 2}
   m_IsPrefabParent: 0
---- !u!224 &1014262536
+--- !u!224 &1014262536 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 22412324, guid: b12e8ae4fd141f04688ad5523290cc2f,
     type: 2}
@@ -3236,7 +3236,7 @@ MonoBehaviour:
   sucessors:
   - {fileID: 540851062}
   - {fileID: 295646284}
-  operation: 1
+  operation: 3
   father: {fileID: 540851062}
   selected: 0
   lockedForever: 0
@@ -3429,7 +3429,7 @@ MonoBehaviour:
   sucessors:
   - {fileID: 1404779444}
   - {fileID: 522703633}
-  operation: 1
+  operation: 3
   father: {fileID: 1404779444}
   selected: 0
   lockedForever: 0
@@ -4156,7 +4156,7 @@ MonoBehaviour:
   sucessors:
   - {fileID: 540851062}
   - {fileID: 1182075408}
-  operation: 1
+  operation: 3
   father: {fileID: 540851062}
   selected: 0
   lockedForever: 0
