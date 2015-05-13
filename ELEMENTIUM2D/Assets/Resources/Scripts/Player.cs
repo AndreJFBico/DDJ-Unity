@@ -315,4 +315,8 @@ public class Player : Agent {
         multiplierManager.increaseMultiplier(inc);
     }
 
+    public Vector3 getCharacterMoveDirection()
+    {
+        return characterMoveScrpt.getCharacterDirection();
+    }
 }
