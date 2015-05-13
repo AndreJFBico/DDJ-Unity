@@ -6,6 +6,7 @@ public class TreasureChest : Interactable{
 
     public SpriteRenderer spriteRenderer;
     private Sprite openChest;
+    private IEnumerator st;
 
     public bool locked = false;
     private bool used = false;
@@ -14,6 +15,7 @@ public class TreasureChest : Interactable{
     public override void Start()
     {
         base.Start();
+        st = showText(0.5f);
         openChest = Resources.Load<Sprite>("Sprites/Environment/Chests/treasureChestOpen");
     }
 
@@ -44,6 +46,7 @@ public class TreasureChest : Interactable{
     {
         if (other.tag.CompareTo("Player") == 0)
         {
+            StopCoroutine(st);
             hideText();
             playerInteractions.Interactable = null;
         }
@@ -56,6 +59,25 @@ public class TreasureChest : Interactable{
         spriteRenderer.sprite = sp;
     }
 
+    IEnumerator showText(float time)
+    {
+        yield return new WaitForSeconds(time);
+        displayText();
+        if (used)
+        {
+            textDisplay.GetComponent<TextMesh>().text = effectApplied;
+        }
+        else
+        {
+            if (!locked)
+            {
+                playerInteractions.Interactable = this;
+            }
+            else
+                textDisplay.GetComponent<TextMesh>().text = "Locked";
+        }
+    }
+
     public override void applyEffect()
     {
         //use reflection to select from a list of player attributes a random one to increase by 1%
@@ -64,6 +86,7 @@ public class TreasureChest : Interactable{
         used = true;
         hideText();
         playerInteractions.Interactable = null;
+        StartCoroutine(st);
     }
 
 }
