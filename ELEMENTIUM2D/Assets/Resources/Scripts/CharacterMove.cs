@@ -237,13 +237,13 @@ public class CharacterMove : MonoBehaviour {
     void doubleTap()
     {
         Player p = GameManager.Instance.Player.GetComponent<Player>();
-        if (Input.GetAxis("Dodge") > 0 && !doubleTapping && !p.isTired())
+        if (Input.GetButtonDown("Dodge") && !doubleTapping && !p.isTired())
         {
             doubleTapping = true;
             previousMoveSpeed = moveSpeed;
-            moveSpeed = moveSpeed * 2.0f;
+            moveSpeed = moveSpeed * 4.0f;
             Invoke("stopDoubleTap", 0.1f);
-            p.consumeStamina(0.7f);
+            p.consumeStamina(1.7f);
         }
     }
 

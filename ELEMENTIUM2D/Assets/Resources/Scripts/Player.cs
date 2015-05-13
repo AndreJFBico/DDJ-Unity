@@ -156,7 +156,7 @@ public class Player : Agent {
 
     public bool isTired()
     {
-        return (stamina() == 0);
+        return (stamina() <= 1.7f);
     }
 
     public void consumeStamina(float val)
@@ -174,11 +174,11 @@ public class Player : Agent {
         {
             if (!characterMoveScrpt.isDoubleTapping())
             {
-                if ((stamina() + 0.3f) > maxStamina())
+                if ((stamina() + 0.1f) > maxStamina())
                 {
                     addStamina(maxStamina() - stamina());
                 }
-                else addStamina(0.3f);
+                else addStamina(0.1f);
             }
             yield return new WaitForSeconds(0.1f);
         }
