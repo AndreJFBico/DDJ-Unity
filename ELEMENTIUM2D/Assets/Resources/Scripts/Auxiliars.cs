@@ -58,7 +58,7 @@ namespace Includes
                 public static float attackSpeed = 0.25f;
                 public static int projectile_number = 1;
                 public static float damage = 2.5f;
-                public static float movementForce = 10;
+                public static float movementForce = 25;
                 public static string projectile = "Prefabs/Projectiles/NeutralBlast";
 
                 public static float Damage { get { return damage + GameManager.Instance.Stats.damage * 1f; } }

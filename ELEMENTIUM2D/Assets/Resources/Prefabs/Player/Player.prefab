@@ -1051,6 +1051,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthbar_background: {fileID: 0}
   healthbar: {fileID: 0}
+  staminabar: {fileID: 0}
+  staminabar_background: {fileID: 0}
 --- !u!114 &11400016
 MonoBehaviour:
   m_ObjectHideFlags: 1

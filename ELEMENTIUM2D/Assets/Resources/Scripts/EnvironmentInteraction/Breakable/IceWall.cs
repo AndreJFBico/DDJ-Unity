@@ -12,6 +12,12 @@ public class IceWall : BreakableWall{
         maxDurability = 20;
         durability = maxDurability;
         waterPuddle = GameManager.Instance.WaterPuddle;
+        Invoke("destroy", 10);
+    }
+
+    void destroy()
+    {
+        Destroy(gameObject);
     }
 
     public override void dealWithProjectile(Elements type, float damage)
@@ -21,8 +27,7 @@ public class IceWall : BreakableWall{
             durability -= damage;
             if (durability <= 0)
             {
-                Destroy(gameObject);
-                Destroy(this);
+                destroy();
             }
         }
 
@@ -33,8 +38,7 @@ public class IceWall : BreakableWall{
             {
                 resetValues();
                 genWaterPuddle();
-                Destroy(gameObject);
-                Destroy(this);
+                destroy();
             }
             
         }

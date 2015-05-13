@@ -91,7 +91,11 @@ public class PathAgent : MonoBehaviour
         {
             agent.speed = alertedSpeed;
             target = GameManager.Instance.Player.GetComponent<Player>().transform;
-            agent.SetDestination(target.position);
+            NavMeshHit hit;
+            if(NavMesh.SamplePosition(target.position, out hit, 0.5f, 1 << NavMesh.GetNavMeshLayerFromName("Walkable")))
+            {
+                agent.SetDestination(hit.position);
+            }
         }
         else agent.speed = unalertedSpeed;
     }

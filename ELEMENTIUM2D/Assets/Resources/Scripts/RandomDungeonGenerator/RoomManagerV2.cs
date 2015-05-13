@@ -29,7 +29,7 @@ public class RoomManagerV2 : MonoBehaviour {
 	public int minRandom = 0;
 	public int maxRandom = 0;
 
-	public int timeLimit = 5000;
+	public int timeLimit = 15000;
 
 	private Vector3 cemiteryPosition = new Vector3(10000, 1000, 1000);
 	public int state = 0;
@@ -476,7 +476,7 @@ public class RoomManagerV2 : MonoBehaviour {
 		if (watch.ElapsedMilliseconds > timeLimit)
 		{
 			Debug.Log("demorou muito tempo" + watch.ElapsedMilliseconds + "ms");
-			throw new Exception("TEST");
+			//throw new Exception("TEST");
 		}
 		//Debug.Log("generating node " + node.id);
 		if (node.type == DungeonNode.DungeonNodeType.Random)
@@ -515,7 +515,7 @@ public class RoomManagerV2 : MonoBehaviour {
 		if (watch.ElapsedMilliseconds > timeLimit)
 		{
 			Debug.Log("demorou muito tempo" + watch.ElapsedMilliseconds + "ms");
-			throw new Exception("TEST");
+			//throw new Exception("TEST");
 		}
 		List<int> group = groups[node.group];
 		DungeonNode child = currentPart.getNextNode(node);
@@ -552,7 +552,7 @@ public class RoomManagerV2 : MonoBehaviour {
 		if (watch.ElapsedMilliseconds > timeLimit)
 		{
 			Debug.Log("demorou muito tempo" + watch.ElapsedMilliseconds + "ms");
-			throw new Exception("TEST");
+			//throw new Exception("TEST");
 		}
 		if (depth == 0)
 		{
