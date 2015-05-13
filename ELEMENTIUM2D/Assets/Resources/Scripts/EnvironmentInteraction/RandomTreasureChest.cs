@@ -58,7 +58,7 @@ public class RandomTreasureChest : TemporaryTreasureChest {
             default:
                 break;
         }
-        FloatingText.Instance.createFloatingText(transform, effectApplied, Color.yellow);
+        FloatingText.Instance.createFloatingText(transform, effectApplied, Color.yellow, 1);
         
         base.applyEffect();
     }

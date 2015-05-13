@@ -310,6 +310,11 @@ public class Player : Agent {
         FloatingText.Instance.createFloatingText(transform, message, Color.yellow);
     }
 
+    public override void createFloatingText(string message, float time)
+    {
+        FloatingText.Instance.createFloatingText(transform, message, Color.yellow, time);
+    }
+
     public void increaseMultiplier(int inc)
     {
         multiplierManager.increaseMultiplier(inc);

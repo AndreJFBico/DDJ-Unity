@@ -79,7 +79,7 @@ public class SpawnerManager : MonoBehaviour {
             treasure.transform.parent = gameObject.transform.parent;
             treasure.transform.position = spawner.transform.position;
             treasure.transform.rotation = spawner.transform.rotation;
-            GameManager.Instance.Player.GetComponent<Player>().createFloatingText("Treasure Appeared!");
+            GameManager.Instance.Player.GetComponent<Player>().createFloatingText("Treasure Appeared!", 1);
         }
         Destroy(spawner.gameObject);
     }
