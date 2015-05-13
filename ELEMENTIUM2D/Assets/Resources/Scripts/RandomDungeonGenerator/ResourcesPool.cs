@@ -19,4 +19,11 @@ public class ResourcesPool {
             return obj;
         }
     }
+
+	public void preloadObject(string path){
+		if (!objectsPool.ContainsKey(path)){
+			UnityEngine.Object obj = Resources.Load("Map/Rooms/" + path);
+			objectsPool.Add(path, obj);
+		}
+	}
 }

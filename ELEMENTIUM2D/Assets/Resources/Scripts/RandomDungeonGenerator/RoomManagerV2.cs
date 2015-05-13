@@ -29,7 +29,7 @@ public class RoomManagerV2 : MonoBehaviour {
 	public int minRandom = 0;
 	public int maxRandom = 0;
 
-	public int timeLimit = 15000;
+	public int timeForFail = 1000;
 
 	private Vector3 cemiteryPosition = new Vector3(10000, 1000, 1000);
 	public int state = 0;
@@ -83,6 +83,7 @@ public class RoomManagerV2 : MonoBehaviour {
 				break;
 			string[] content = line.Split(' ');
 			rooms.Add(int.Parse(content[0]), content[1]);
+			pool.preloadObject(content[1]);
 		}
 		//dumpDictionary(rooms);
 		
@@ -225,8 +226,18 @@ public class RoomManagerV2 : MonoBehaviour {
 		watch = System.Diagnostics.Stopwatch.StartNew();
 		bool result;
 
-		result = generatePart (firstPart, null);
+		try{
+			result = generatePart (firstPart, null);
 		
+		}catch(Exception){
+			Debug.Log("geraçao falhou");
+			watch.Stop();
+			cleanAllChildRoomsRecur(dungeonRoomsHead);
+			dungeonRoomsHead = null;
+			timeForFail += 1000;
+
+			return false;
+		}
 		parkAllRooms(dungeonRoomsHead);
 		watch.Stop();
 		long elapsedMs = watch.ElapsedMilliseconds;
@@ -344,6 +355,14 @@ public class RoomManagerV2 : MonoBehaviour {
 					}
 				}
 			}
+		}
+	}
+
+	public void checkForFail(){
+		if (watch.ElapsedMilliseconds > timeForFail)
+		{
+			Debug.Log("demorou muito tempo" + watch.ElapsedMilliseconds + "ms");
+			throw new Exception("TEST");
 		}
 	}
 
@@ -473,11 +492,7 @@ public class RoomManagerV2 : MonoBehaviour {
 
 	private bool generateNode(DungeonNode node, DungeonRoom lastRoom, DungeonPart currentPart) 
 	{
-		if (watch.ElapsedMilliseconds > timeLimit)
-		{
-			Debug.Log("demorou muito tempo" + watch.ElapsedMilliseconds + "ms");
-			//throw new Exception("TEST");
-		}
+		checkForFail();
 		//Debug.Log("generating node " + node.id);
 		if (node.type == DungeonNode.DungeonNodeType.Random)
 		{
@@ -512,11 +527,7 @@ public class RoomManagerV2 : MonoBehaviour {
 	
 	private bool generateRandomNode(DungeonNode node, DungeonRoom lastRoom, DungeonPart currentPart)
 	{
-		if (watch.ElapsedMilliseconds > timeLimit)
-		{
-			Debug.Log("demorou muito tempo" + watch.ElapsedMilliseconds + "ms");
-			//throw new Exception("TEST");
-		}
+		checkForFail();
 		List<int> group = groups[node.group];
 		DungeonNode child = currentPart.getNextNode(node);
 		//if(child != null){
@@ -549,11 +560,7 @@ public class RoomManagerV2 : MonoBehaviour {
 	
 	private int generateRandomRoom(DungeonRoom lastRoom, DungeonNode child, List<int> group, int depth, DungeonNode currentNode, DungeonPart currentPart)
 	{
-		if (watch.ElapsedMilliseconds > timeLimit)
-		{
-			Debug.Log("demorou muito tempo" + watch.ElapsedMilliseconds + "ms");
-			//throw new Exception("TEST");
-		}
+		checkForFail();
 		if (depth == 0)
 		{
 			if (child == null){
@@ -951,7 +958,7 @@ public class RoomManagerV2 : MonoBehaviour {
 			BoxCollider collider = child.GetComponent<BoxCollider>();
 			Bounds bounds = collider.bounds;
 			int layerMask = 0 | (1 << LayerMask.NameToLayer("RoomColliders"));
-			Collider[] otherColliders = Physics.OverlapSphere(child.position, SPHERE_RADIUS, layerMask);
+			Collider[] otherColliders = Physics.OverlapSphere(child.position, 100.0f, layerMask);
 
 			foreach (Collider c in otherColliders){
 				if(c.transform.name == "roomcheck")
