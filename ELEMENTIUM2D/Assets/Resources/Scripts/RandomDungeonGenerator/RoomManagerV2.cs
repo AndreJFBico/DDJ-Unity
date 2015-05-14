@@ -29,7 +29,7 @@ public class RoomManagerV2 : MonoBehaviour {
 	public int minRandom = 0;
 	public int maxRandom = 0;
 
-	public int timeForFail = 1000;
+	public int timeForFail = 3000;
 
 	private Vector3 cemiteryPosition = new Vector3(10000, 1000, 1000);
 	public int state = 0;

@@ -30,9 +30,9 @@ public class NeutralBlast : AbilityBehaviour
     {
         Vector3 characterMoveDirection = GameManager.Instance.Player.GetComponent<Player>().getCharacterMoveDirection();
         base.initiate(startingObject, dmg);
-        GetComponent<Rigidbody>().AddForce((transform.forward + characterMoveDirection )* startSpeed);
+        GetComponent<Rigidbody>().AddForce(transform.forward * startSpeed );
         damage = dmg;      
         ConstantForce constantForce = gameObject.AddComponent<ConstantForce>();
-        constantForce.relativeForce = new Vector3(0.0f, 0.0f, 1.0f) + characterMoveDirection;
+        constantForce.relativeForce = new Vector3(0.0f, 0.0f, AbilityStats.Neutral.ability1.movementForce);
     }
 }

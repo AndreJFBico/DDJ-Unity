@@ -324,4 +324,9 @@ public class Player : Agent {
     {
         return characterMoveScrpt.getCharacterDirection();
     }
+
+    public float getCurrentMoveSpeed()
+    {
+        return characterMoveScrpt.CurrentMoveSpeed;
+    }
 }

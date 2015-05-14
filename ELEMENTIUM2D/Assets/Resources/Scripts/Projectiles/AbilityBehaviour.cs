@@ -7,7 +7,7 @@ public class AbilityBehaviour : ElementiumMonoBehaviour
     protected Elements type;
     protected GameObject explosion;
     protected float damage;
-    protected float startSpeed = 150;
+    protected float startSpeed = 450;
 
     #region Start and Awake
     protected virtual void Start() { }

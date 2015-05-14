@@ -457,4 +457,12 @@ public class CharacterMove : MonoBehaviour {
 
         inContactWithEnemy = false;
     }
+
+    public float CurrentMoveSpeed
+    {
+        get
+        {
+            return currentMoveSpeed;
+        }
+    }
 }
