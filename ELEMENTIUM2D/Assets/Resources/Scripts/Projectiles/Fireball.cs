@@ -53,9 +53,9 @@ public class Fireball : AbilityBehaviour
     }
 
     //Receive also damage
-    public override void initiate(GameObject startingObject, float dmg)
+    public override void initiate(GameObject startingObject, float dmg, int projectileID, int totalProjectiles)
     {
-        base.initiate(startingObject, dmg);
+        base.initiate(startingObject, dmg, projectileID, totalProjectiles);
         GetComponent<Rigidbody>().AddForce(transform.forward * startSpeed);
         damage = dmg;
         float rndm = Random.Range(AbilityStats.Fire.ability1.minForce, AbilityStats.Fire.ability1.maxForce);

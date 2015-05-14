@@ -26,9 +26,8 @@ public class NeutralBlast : AbilityBehaviour
         base.OnCollisionEnter(collision);
     }
 
-    public override void initiate(GameObject startingObject, float dmg)
+    public override void initiate(GameObject startingObject, float dmg, int projectileID, int totalProjectiles)
     {
-        Vector3 characterMoveDirection = GameManager.Instance.Player.GetComponent<Player>().getCharacterMoveDirection();
         base.initiate(startingObject, dmg);
         GetComponent<Rigidbody>().AddForce(transform.forward * startSpeed );
         damage = dmg;      

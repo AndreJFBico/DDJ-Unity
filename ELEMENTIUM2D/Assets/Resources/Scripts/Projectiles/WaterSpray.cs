@@ -70,9 +70,9 @@ public class WaterSpray : AbilityBehaviour {
         }     
     }
 
-    public override void initiate(GameObject startingObject, float dmg)
+    public override void initiate(GameObject startingObject, float dmg, int projectileID, int totalProjectiles)
     {
-        base.initiate(startingObject, dmg);
+        base.initiate(startingObject, dmg, projectileID, totalProjectiles);
         damage = dmg;
         // Rotates the missile randomly
         float randomVal = Random.Range(-15, 15);

@@ -33,9 +33,9 @@ public class EarthStun : AbilityBehaviour {
     }
 
 
-    public override void initiate(GameObject startingObject, float dmg)
+    public override void initiate(GameObject startingObject, float dmg, int projectileID, int totalProjectiles)
     {
-        base.initiate(startingObject, dmg);
+        base.initiate(startingObject, dmg, projectileID, totalProjectiles);
         GetComponent<Rigidbody>().AddForce(transform.forward * startSpeed);
         damage = dmg;
         ConstantForce constantForce = gameObject.AddComponent<ConstantForce>();
