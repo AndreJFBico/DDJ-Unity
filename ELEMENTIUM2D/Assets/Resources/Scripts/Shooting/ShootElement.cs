@@ -60,7 +60,7 @@ public class ShootElement : MonoBehaviour
             GameObject bullet = (GameObject)Instantiate(bulletPrefab, barrelEnd.position, rotator.localRotation);
             bullet.transform.Rotate(new Vector3(-90, 0, 0));
             // Invokes ability specific movement behaviour
-            bullet.GetComponent<AbilityBehaviour>().initiate(gameObject, damage);
+            bullet.GetComponent<AbilityBehaviour>().initiate(gameObject, damage, i, projectileNumber);
             bullet.name = bulletPrefab.name;
 
         }

@@ -39,9 +39,9 @@ public class FireHeal : AbilityBehaviour
         }
     }
 
-    public override void initiate(GameObject startingObject, float dmg)
+    public override void initiate(GameObject startingObject, float dmg, int projectileID, int totalProjectiles)
     {
-        base.initiate(startingObject, dmg);
+        base.initiate(startingObject, dmg, projectileID, totalProjectiles);
         damage = dmg;
         transform.position = startingObject.transform.position;
         transform.parent = startingObject.transform;

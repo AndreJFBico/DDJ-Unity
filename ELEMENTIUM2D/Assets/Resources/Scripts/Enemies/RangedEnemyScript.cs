@@ -30,7 +30,7 @@ public class RangedEnemyScript : EnemyScript {
             if (firingTarget != null)
             {
                 GameObject p = Instantiate(projectile, currentFireTransform.position, Quaternion.LookRotation(firingTarget.position - transform.position)) as GameObject;
-                p.GetComponent<AbilityBehaviour>().initiate(this.gameObject, damage);
+                p.GetComponent<AbilityBehaviour>().initiate(this.gameObject, damage, 0 ,1);
             }
             yield return new WaitForSeconds(attackSpeed);
         }

@@ -44,14 +44,14 @@ public class WaterBurst : AbilityBehaviour
         Destroy(gameObject);
     }
 
-    public override void initiate(GameObject startingObject, float dmg)
+    public override void initiate(GameObject startingObject, float dmg, int projectileID, int totalProjectiles)
     {
-        base.initiate(startingObject, dmg);
+        base.initiate(startingObject, dmg, projectileID, totalProjectiles);
         damage = dmg;
         for (int i = 0; i < AbilityStats.Frost.ability2.child_projectile_number; i++ )
         {
             GameObject projectile = Instantiate(cs, transform.position, transform.rotation) as GameObject;
-            projectile.GetComponent<AbilityBehaviour>().initiate(this.gameObject, damage);
+            projectile.GetComponent<AbilityBehaviour>().initiate(this.gameObject, damage, projectileID, totalProjectiles);
             projectile.GetComponent<WaterSpray>().waterBurst = this;
             projectile.transform.parent = transform;
             waterProjectiles.Add(projectile);

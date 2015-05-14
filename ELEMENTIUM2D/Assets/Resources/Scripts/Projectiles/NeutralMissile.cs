@@ -55,13 +55,15 @@ public class NeutralMissile : AbilityBehaviour {
         Destroy(gameObject);
     }
 
-    public override void initiate(GameObject startingObject, float dmg)
+    public override void initiate(GameObject startingObject, float dmg, int projectileID, int totalProjectiles)
     {
-        base.initiate(startingObject, dmg);
+        base.initiate(startingObject, dmg, projectileID, totalProjectiles);
 
         damage = dmg;
         // Rotates the missile randomly
-        int result = Random.Range(0, 360);
-        transform.Rotate(new Vector3(0.0f, result, 0.0f));
+
+        float rotation = (360 / totalProjectiles) * projectileID;
+        //int result = Random.Range(0, 360);
+        transform.Rotate(new Vector3(0.0f, rotation, 0.0f));
     }
 }

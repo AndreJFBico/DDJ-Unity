@@ -80,7 +80,7 @@ public class AbilityBehaviour : ElementiumMonoBehaviour
     }
 
     // This function applys initial movement to the projectile
-    public virtual void initiate(GameObject startingObject, float damage)
+    public virtual void initiate(GameObject startingObject, float damage, int projectileID, int totalProjectiles)
     {
     }
 }
