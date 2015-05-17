@@ -361,6 +361,7 @@ MonoBehaviour:
   particleSystem: {fileID: 489958}
   initIndex: 0
   initScrpt: ParentWithEnemy
+  timeBetweenTelegraphs: 1.5
   damageValue: 10
   damageIndex: 0
   damScrpt: InstantDamageWithCooldown

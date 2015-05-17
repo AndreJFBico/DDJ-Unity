@@ -723,7 +723,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 116656}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.37595272, y: .100000001, z: -.80748564}
+  m_LocalPosition: {x: -1.52499998, y: .100000001, z: -.806999981}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 417956}
@@ -821,8 +821,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 138018}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .0340000018, z: 0}
-  m_LocalScale: {x: 1, y: .962529421, z: 1}
+  m_LocalPosition: {x: -0, y: .129999995, z: 0}
+  m_LocalScale: {x: .900065303, y: .914403141, z: 1}
   m_Children: []
   m_Father: {fileID: 478284}
   m_RootOrder: 0
@@ -1020,8 +1020,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181700}
   m_LocalRotation: {x: .707105994, y: 0, z: 0, w: .707107604}
-  m_LocalPosition: {x: -.00999999978, y: -2.95000005, z: 0}
-  m_LocalScale: {x: 1.40458441, y: .485975653, z: .410625398}
+  m_LocalPosition: {x: -.00999999978, y: -2.83999991, z: -0}
+  m_LocalScale: {x: 1.22892165, y: .485975653, z: .338732421}
   m_Children: []
   m_Father: {fileID: 473198}
   m_RootOrder: 1
@@ -1032,8 +1032,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 124370}
   m_LocalRotation: {x: .707105994, y: 0, z: 0, w: .707107604}
-  m_LocalPosition: {x: -.00999999978, y: -1.13, z: 0}
-  m_LocalScale: {x: 1.40458441, y: .485975653, z: .410625398}
+  m_LocalPosition: {x: -.00999999978, y: -.899999976, z: -0}
+  m_LocalScale: {x: 1.22879815, y: .485975653, z: .338766336}
   m_Children: []
   m_Father: {fileID: 478284}
   m_RootOrder: 1
@@ -1133,7 +1133,7 @@ Transform:
   m_GameObject: {fileID: 104698}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -.790000021, z: 0}
-  m_LocalScale: {x: 1, y: 2.27461147, z: 1}
+  m_LocalScale: {x: .875459731, y: 2.27461147, z: 1}
   m_Children: []
   m_Father: {fileID: 473198}
   m_RootOrder: 0
@@ -1263,7 +1263,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -1278,7 +1278,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0

@@ -15,7 +15,7 @@ public class AbilityBehaviour : ElementiumMonoBehaviour
 
     protected virtual void Awake()
     {
-        startSpeed = 450;
+        startSpeed = 250;
     } 
     #endregion
 

@@ -74,6 +74,7 @@ public class Telegraph : MonoBehaviour {
             moving = false;
             player = null;
             damage.deltDamage = false;
+            numberOfTriggeredEvents = 0;
         }
         else
         if (timer > duration)
@@ -118,7 +119,7 @@ public class Telegraph : MonoBehaviour {
 
     void OnTriggerEnter(Collider collider)
     {
-        if(collider.tag.CompareTo("Player") == 0 )
+        if(collider.tag.CompareTo("Player") == 0 && !collider.isTrigger)
         {
             numberOfTriggeredEvents++;
             player = collider.transform;
@@ -127,11 +128,16 @@ public class Telegraph : MonoBehaviour {
 
     void OnTriggerExit(Collider collider)
     {
-        if (collider.tag.CompareTo("Player") == 0)
+        if (collider.tag.CompareTo("Player") == 0 && !collider.isTrigger)
         {
             if (numberOfTriggeredEvents > 0)
+            {
                 numberOfTriggeredEvents--;
-            else player = null;
+            }
+            if (numberOfTriggeredEvents == 0)
+            {
+                player = null;
+            }
         }
     }
 }
