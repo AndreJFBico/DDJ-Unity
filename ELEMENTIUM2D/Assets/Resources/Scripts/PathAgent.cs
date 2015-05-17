@@ -94,7 +94,8 @@ public class PathAgent : MonoBehaviour
             NavMeshHit hit;
             if(NavMesh.SamplePosition(target.position, out hit, 0.5f, 1 << NavMesh.GetNavMeshLayerFromName("Walkable")))
             {
-                agent.SetDestination(hit.position);
+                if(agent.isOnNavMesh)
+                    agent.SetDestination(hit.position);
             }
         }
         else agent.speed = unalertedSpeed;
@@ -173,7 +174,8 @@ public class PathAgent : MonoBehaviour
                 {
                     if (hasTarget())
                     {
-                        agent.SetDestination(target.position);
+                        if (agent.isOnNavMesh)
+                            agent.SetDestination(target.position);
                     }
                     else if(agent.isOnNavMesh)
                     {
@@ -185,7 +187,8 @@ public class PathAgent : MonoBehaviour
                     //  To implement time limit to the follow of the agents make target be null
                     if (hasTarget())
                     {
-                        agent.SetDestination(target.position);
+                        if (agent.isOnNavMesh)
+                            agent.SetDestination(target.position);
                     }
                 }
             }
@@ -193,7 +196,8 @@ public class PathAgent : MonoBehaviour
             {
                 if (hasTarget())
                 {
-                    agent.SetDestination(target.position);
+                    if (agent.isOnNavMesh)
+                        agent.SetDestination(target.position);
                 }
                 else if (agent.isOnNavMesh)
                 {
