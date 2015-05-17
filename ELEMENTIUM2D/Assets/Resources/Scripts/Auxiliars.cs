@@ -49,47 +49,112 @@ namespace Includes
     #region Ability Stats
     public class AbilityStats
     {
+        public static void reset()
+        {
+            Neutral.reset();
+            Frost.reset();
+            Fire.reset();
+            Earth.reset();
+        }
+
         #region Neutral Abilities
         // NEUTRAL
         public class Neutral
         {
+            public static void reset()
+            {
+                ability1.reset();
+                ability2.reset();
+                ability3.reset();
+            }
+
             public class ability1
             {
-                public static float attackSpeed = 0.25f;
-                public static int projectile_number = 1;
-                public static float damage = 2.5f;
-                public static float movementForce = 25;
+                private const float def_attackSpeed = 0.25f;
+                private const int def_projectile_number = 1;
+                private const float def_damage = 2.5f;
+                private const float def_movementForce = 25;
+
+                public static float attackSpeed = def_attackSpeed;
+                public static int projectile_number = def_projectile_number;
+                public static float damage = def_damage;
+                public static float movementForce = def_movementForce;
                 public static string projectile = "Prefabs/Projectiles/NeutralBlast";
 
                 public static float Damage { get { return damage + GameManager.Instance.Stats.damage * 1f; } }
                 public static float AttackSpeed { get { return attackSpeed + GameManager.Instance.Stats.attackSpeed * attackSpeed/10; } } //Player AttackSpeed is to be incremented by int numbers
+            
+                public static void reset()
+                {
+                    attackSpeed = def_attackSpeed;
+                    projectile_number = def_projectile_number;
+                    damage = def_damage;
+                    movementForce = def_movementForce;
+                    projectile = "Prefabs/Projectiles/NeutralBlast";
+                }
             }
 
             public class ability2
             {
-                public static float attackSpeed = 1f;
-                public static int projectile_number = 10;
-                public static float damage = 0.5f;
-                public static float movementForce = 1.5f;
+                private const float def_attackSpeed = 1f;
+                private const int def_projectile_number = 10;
+                private const float def_damage = 0.5f;
+                private const float def_movementForce = 1.5f;
+
+                public static float attackSpeed = def_attackSpeed;
+                public static int projectile_number = def_projectile_number;
+                public static float damage = def_damage;
+                public static float movementForce = def_movementForce;
                 public static string projectile = "Prefabs/Projectiles/NeutralMissile";
 
                 public static float Damage { get { return damage + GameManager.Instance.Stats.damage * 0.75f; } }
                 public static float AttackSpeed { get { return attackSpeed + GameManager.Instance.Stats.attackSpeed * attackSpeed / 10; } } //Player AttackSpeed is to be incremented by int numbers
+
+                public static void reset()
+                {
+                    attackSpeed = def_attackSpeed;
+                    projectile_number = def_projectile_number;
+                    damage = def_damage;
+                    movementForce = def_movementForce;
+                    projectile = "Prefabs/Projectiles/NeutralMissile";
+                }
             }
             public class ability3
             {
-                public static float attackSpeed = 0.25f;
-                public static int projectile_number = 1;
-                public static float damage = 0.1f;
-                public static float movementForce = 2.5f;
+                public const float def_attackSpeed = 0.25f;
+                public const int def_projectile_number = 1;
+                public const float def_damage = 0.1f;
+                public const float def_movementForce = 2.5f;
+                public const int def_splitNumber = 6;
+                public const float def_negativeSplitAngle = -30;
+                public const float def_positiveSplitAngle = 30;
+                public const int def_numSplits = 1;
+
+                public static float attackSpeed = def_attackSpeed;
+                public static int projectile_number = def_projectile_number;
+                public static float damage = def_damage;
+                public static float movementForce = def_movementForce;
                 public static string projectile = "Prefabs/Projectiles/NeutralBouncer";
-                public static int splitNumber = 6;
-                public static float negativeSplitAngle = -30;
-                public static float positiveSplitAngle = 30;
-                public static int numSplits = 1;
+                public static int splitNumber = def_splitNumber;
+                public static float negativeSplitAngle = -def_negativeSplitAngle;
+                public static float positiveSplitAngle = def_positiveSplitAngle;
+                public static int numSplits = def_numSplits;
 
                 public static float Damage { get { return damage + GameManager.Instance.Stats.damage * 0.5f; } }
                 public static float AttackSpeed { get { return attackSpeed + GameManager.Instance.Stats.attackSpeed * attackSpeed / 10; } } //Player AttackSpeed is to be incremented by int numbers
+
+                public static void reset()
+                {
+                    attackSpeed = def_attackSpeed;
+                    projectile_number = def_projectile_number;
+                    damage = def_damage;
+                    movementForce = def_movementForce;
+                    projectile = "Prefabs/Projectiles/NeutralBouncer";
+                    splitNumber = def_splitNumber;
+                    negativeSplitAngle = -def_negativeSplitAngle;
+                    positiveSplitAngle = def_positiveSplitAngle;
+                    numSplits = def_numSplits;
+                }
             }
         }
         #endregion
@@ -98,42 +163,96 @@ namespace Includes
         // FROST
         public class Frost
         {
+            public static void reset()
+            {
+                ability1.reset();
+                ability2.reset();
+                ability3.reset();
+            }
+
             public class ability1
             {
-                public static float attackSpeed = 0.25f;
-                public static int projectile_number = 1;
-                public static float damage = 2.5f;
-                public static float movementForce = 5;
+                public const float def_attackSpeed = 0.25f;
+                public const int def_projectile_number = 1;
+                public const float def_damage = 2.5f;
+                public const float def_movementForce = 5;
+
+                public static float attackSpeed = def_attackSpeed;
+                public static int projectile_number = def_projectile_number;
+                public static float damage = def_damage;
+                public static float movementForce = def_movementForce;
                 public static string projectile = "Prefabs/Projectiles/FrostBolt";
 
                 public static float Damage { get { return damage + GameManager.Instance.Stats.damage * 0.85f; } }
                 public static float AttackSpeed { get { return attackSpeed + GameManager.Instance.Stats.attackSpeed * attackSpeed / 10; } } //Player AttackSpeed is to be incremented by int numbers
+            
+                public static void reset()
+                {
+                    attackSpeed = def_attackSpeed;
+                    projectile_number = def_projectile_number;
+                    damage = def_damage;
+                    movementForce = def_movementForce;
+                    projectile = "Prefabs/Projectiles/FrostBolt";
+                }
             }
 
             public class ability2
             {
-                public static float attackSpeed = 2f;
-                public static int projectile_number = 1;
-                public static int child_projectile_number = 20;
-                public static float damage = 1;
-                public static float movementForce = 20;
+                public const float def_attackSpeed = 2f;
+                public const int def_projectile_number = 1;
+                public const int def_child_projectile_number = 20;
+                public const float def_damage = 1;
+                public const float def_movementForce = 20;
+                public const float def_deathTimer = 5;
+
+                public static float attackSpeed = def_attackSpeed;
+                public static int projectile_number = def_projectile_number;
+                public static int child_projectile_number = def_child_projectile_number;
+                public static float damage = def_damage;
+                public static float movementForce = def_movementForce;
                 public static string projectile = "Prefabs/Projectiles/WaterBurst";
                 public static string childProjectile = "Prefabs/Projectiles/WaterProjectile";
-                public static float deathTimer = 5;
+                public static float deathTimer = def_deathTimer;
 
                 public static float Damage { get { return damage + GameManager.Instance.Stats.damage * 0.25f; } }
                 public static float AttackSpeed { get { return attackSpeed + GameManager.Instance.Stats.attackSpeed * attackSpeed / 10; } } //Player AttackSpeed is to be incremented by int numbers
+            
+                public static void reset()
+                {
+                    attackSpeed = def_attackSpeed;
+                    projectile_number = def_projectile_number;
+                    child_projectile_number = def_child_projectile_number;
+                    damage = def_damage;
+                    movementForce = def_movementForce;
+                    deathTimer = def_deathTimer;
+                    projectile = "Prefabs/Projectiles/WaterBurst";
+                    childProjectile = "Prefabs/Projectiles/WaterProjectile";
+                }
             }
             public class ability3
             {
-                public static float attackSpeed = 1.5f;
-                public static int projectile_number = 15;
-                public static float damage = 1;
-                public static float movementForce = 1.5f;
+                public const float def_attackSpeed = 1.5f;
+                public const int def_projectile_number = 15;
+                public const float def_damage = 1;
+                public const float def_movementForce = 1.5f;
+
+                public static float attackSpeed = def_attackSpeed;
+                public static int projectile_number = def_projectile_number;
+                public static float damage = def_damage;
+                public static float movementForce = def_movementForce;
                 public static string projectile = "Prefabs/Projectiles/IceNova";
 
                 public static float Damage { get { return damage + GameManager.Instance.Stats.damage * 0.5f; } }
                 public static float AttackSpeed { get { return attackSpeed + GameManager.Instance.Stats.attackSpeed * attackSpeed / 10; } } //Player AttackSpeed is to be incremented by int numbers
+                
+                public static void reset()
+                {
+                    attackSpeed = def_attackSpeed;
+                    projectile_number = def_projectile_number;
+                    damage = def_damage;
+                    movementForce = def_movementForce;
+                    projectile = "Prefabs/Projectiles/IceNova";
+                }
             }
         }
         #endregion
@@ -142,42 +261,99 @@ namespace Includes
         // FIRE
         public class Fire
         {
+            public static void reset()
+            {
+                ability1.reset();
+                ability2.reset();
+                ability3.reset();
+            }
+
             public class ability1
             {
-                public static float attackSpeed = 0.30f;
-                public static int projectile_number = 1;
-                public static int collisionNumber = 3;
-                public static float damage = 1;
-                public static float maxForce = 20;
-                public static float minForce = 5;
+                public const float def_attackSpeed = 0.30f;
+                public const int def_projectile_number = 1;
+                public const int def_collisionNumber = 3;
+                public const float def_damage = 1;
+                public const float def_maxForce = 20;
+                public const float def_minForce = 5;
+
+                public static float attackSpeed = def_attackSpeed;
+                public static int projectile_number = def_projectile_number;
+                public static int collisionNumber = def_collisionNumber;
+                public static float damage = def_damage;
+                public static float maxForce = def_maxForce;
+                public static float minForce = def_minForce;
                 public static string projectile = "Prefabs/Projectiles/Fireball";
 
                 public static float Damage { get { return damage + GameManager.Instance.Stats.damage * 1f; } }
                 public static float AttackSpeed { get { return attackSpeed + GameManager.Instance.Stats.attackSpeed * attackSpeed / 10; } } //Player AttackSpeed is to be incremented by int numbers
+            
+                public static void reset()
+                {
+                    attackSpeed = def_attackSpeed;
+                    projectile_number = def_projectile_number;
+                    collisionNumber = def_collisionNumber;
+                    damage = def_damage;
+                    maxForce = def_maxForce;
+                    minForce = def_minForce;
+                    projectile = "Prefabs/Projectiles/Fireball";
+                }
             }
 
             public class ability2
             {
-                public static float attackSpeed = 0.25f;
-                public static int projectile_number = 1;
-                public static float damage = 1;
-                public static float movementForce = 200;
+                public const float def_attackSpeed = 0.25f;
+                public const int def_projectile_number = 1;
+                public const float def_damage = 1;
+                public const float def_movementForce = 200;
+
+                public static float attackSpeed = def_attackSpeed;
+                public static int projectile_number = def_projectile_number;
+                public static float damage = def_damage;
+                public static float movementForce = def_movementForce;
                 public static string projectile = "Prefabs/Projectiles/";
 
                 public static float Damage { get { return damage + GameManager.Instance.Stats.damage * 0.5f; } }
                 public static float AttackSpeed { get { return attackSpeed + GameManager.Instance.Stats.attackSpeed * attackSpeed / 10; } } //Player AttackSpeed is to be incremented by int numbers
+            
+                public static void reset()
+                {
+                    attackSpeed = def_attackSpeed;
+                    projectile_number = def_projectile_number;
+                    damage = def_damage;
+                    movementForce = def_movementForce;
+                    projectile = "Prefabs/Projectiles/";
+                }
+            
             }
             public class ability3
             {
-                public static float attackSpeed = 4.25f;
-                public static int projectile_number = 1;
-                public static float damage = 1;
-                public static float movementForce = 200;
+                public const float def_attackSpeed = 4.25f;
+                public const int def_projectile_number = 1;
+                public const float def_damage = 1;
+                public const float def_movementForce = 200;
+                public const string def_projectile = "Prefabs/Projectiles/FireHeal";
+                public const float def_abilityTimer = 1.3f;
+
+                public static float attackSpeed = def_attackSpeed;
+                public static int projectile_number = def_projectile_number;
+                public static float damage = def_damage;
+                public static float movementForce = def_movementForce;
                 public static string projectile = "Prefabs/Projectiles/FireHeal";
-                public static float abilityTimer = 1.3f;
+                public static float abilityTimer = def_abilityTimer;
 
                 public static float Damage { get { return damage + GameManager.Instance.Stats.damage * 1f; } }
                 public static float AttackSpeed { get { return attackSpeed + GameManager.Instance.Stats.attackSpeed * attackSpeed / 10; } } //Player AttackSpeed is to be incremented by int numbers
+            
+                public static void reset()
+                {
+                    attackSpeed = def_attackSpeed;
+                    projectile_number = def_projectile_number;
+                    damage = def_damage;
+                    movementForce = def_movementForce;
+                    projectile = "Prefabs/Projectiles/FireHeal";
+                    abilityTimer = def_abilityTimer;
+                }
             }
         }
         #endregion
@@ -186,40 +362,91 @@ namespace Includes
         // EARTH
         public class Earth
         {
+            public static void reset()
+            {
+                ability1.reset();
+                ability2.reset();
+                ability3.reset();
+            }
+
             public class ability1
             {
-                public static float attackSpeed = 1f;
-                public static int projectile_number = 1;
-                public static float damage = 6;
-                public static float movementForce = 10;
+                public const float def_attackSpeed = 1f;
+                public const int def_projectile_number = 1;
+                public const float def_damage = 6;
+                public const float def_movementForce = 10;
+
+                public static float attackSpeed = def_attackSpeed;
+                public static int projectile_number = def_projectile_number;
+                public static float damage = def_damage;
+                public static float movementForce = def_movementForce;
                 public static string projectile = "Prefabs/Projectiles/EarthDisk";
 
                 public static float Damage { get { return damage + GameManager.Instance.Stats.damage * 1.5f; } }
                 public static float AttackSpeed { get { return attackSpeed + GameManager.Instance.Stats.attackSpeed * attackSpeed / 10; } } //Player AttackSpeed is to be incremented by int numbers
+            
+                public static void reset()
+                {
+                    attackSpeed = def_attackSpeed;
+                    projectile_number = def_projectile_number;
+                    damage = def_damage;
+                    movementForce = def_movementForce;
+                    projectile = "Prefabs/Projectiles/EarthDisk";
+                }
             }
 
             public class ability2
             {
-                public static float attackSpeed = 4f;
-                public static int projectile_number = 1;
-                public static float damage = 1;
-                public static float movementForce = 5;
-                public static float abilityTimer = 4.0f;
+                public const float def_attackSpeed = 4f;
+                public const int def_projectile_number = 1;
+                public const float def_damage = 1;
+                public const float def_movementForce = 5;
+                public const float def_abilityTimer = 4.0f;
+
+                public static float attackSpeed = def_attackSpeed;
+                public static int projectile_number = def_projectile_number;
+                public static float damage = def_damage;
+                public static float movementForce = def_movementForce;
+                public static float abilityTimer = def_abilityTimer;
                 public static string projectile = "Prefabs/Projectiles/EarthShield";
 
                 public static float Damage { get { return damage + GameManager.Instance.Stats.damage * 1.5f; } }
                 public static float AttackSpeed { get { return attackSpeed + GameManager.Instance.Stats.attackSpeed * attackSpeed / 10; } } //Player AttackSpeed is to be incremented by int numbers
+
+                public static void reset()
+                {
+                    attackSpeed = def_attackSpeed;
+                    projectile_number = def_projectile_number;
+                    damage = def_damage;
+                    movementForce = def_movementForce;
+                    abilityTimer = def_abilityTimer;
+                    projectile = "Prefabs/Projectiles/EarthShield";
+                }
             }
             public class ability3
             {
-                public static float attackSpeed = 0.5f;
-                public static int projectile_number = 1;
-                public static float damage = 3;
-                public static float movementForce = 200;
+                public const float def_attackSpeed = 0.5f;
+                public const int def_projectile_number = 1;
+                public const float def_damage = 3;
+                public const float def_movementForce = 200;
+
+                public static float attackSpeed = def_attackSpeed;
+                public static int projectile_number = def_projectile_number;
+                public static float damage = def_damage;
+                public static float movementForce = def_movementForce;
                 public static string projectile = "Prefabs/Projectiles/EarthStun";
 
                 public static float Damage { get { return damage + GameManager.Instance.Stats.damage * 1.5f; } }
                 public static float AttackSpeed { get { return attackSpeed + GameManager.Instance.Stats.attackSpeed * attackSpeed / 10; } } //Player AttackSpeed is to be incremented by int numbers
+
+                public static void reset()
+                {
+                    attackSpeed = def_attackSpeed;
+                    projectile_number = def_projectile_number;
+                    damage = def_damage;
+                    movementForce = def_movementForce;
+                    projectile = "Prefabs/Projectiles/EarthStun";
+                }
             }
         }
         #endregion
@@ -505,7 +732,7 @@ namespace Includes
         public float lim_secondary_earth_level = 0;
         public float lim_terciary_earth_level = 0;
 
-        public float lim_primary_fire_level = 0;
+        public float lim_primary_fire_level = 1;
         public float lim_secondary_fire_level = 0;
         public float lim_terciary_fire_level = 0;
 
@@ -703,6 +930,160 @@ namespace Includes
             return (float)f.GetValue(ob);
         }
 
+        void setValue(FieldInfo info, object obj, MathOperations operation, float value)
+        {
+            string name = info.FieldType.Name;
+            if(info.FieldType.Name.CompareTo("Int32") == 0)
+            {
+                Debug.Log("previous value: " + (int)info.GetValue(null));
+                int val = 0;
+                val = (int)info.GetValue(null);
+                switch (operation)
+                {
+                    case MathOperations.SUM:
+                        info.SetValue(null, (int)value + val);
+                        break;
+                    case MathOperations.MUL:
+                        info.SetValue(null, val + (int)value * val);
+                        break;
+                    case MathOperations.SET:
+                        info.SetValue(null, (int)value);
+                        break;
+                }
+                Debug.Log("after value: " + (int)info.GetValue(null));
+            }
+            else if (info.FieldType.Name.CompareTo("Single") == 0)
+            {
+                Debug.Log("previous value: " + (float)info.GetValue(null));
+                var val = 0.0f;
+                val = (float)info.GetValue(null);
+                switch (operation)
+                {
+                    case MathOperations.SUM:
+                        info.SetValue(null, value + val);
+                        break;
+                    case MathOperations.MUL:
+                        info.SetValue(null, val + value * val);
+                        break;
+                    case MathOperations.SET:
+                        info.SetValue(null, value);
+                        break;
+                }
+                Debug.Log("after value: " + (float)info.GetValue(null));
+            }
+            else return;
+          
+           // Debug.Log("after value: " + (float)info.GetValue(null));
+        }
+
+        public float changeAbilityVariable(string field, float value, MathOperations operation)
+        {
+            char[] delimiterChars = { '_' };
+
+            string[] splitedString = field.Split(delimiterChars);
+            string variableName = splitedString[2];
+            if(splitedString.Length > 3)
+            {
+                for (int i = 3; i < splitedString.Length; i++ )
+                {
+                    variableName += "_" + splitedString[i];
+                }
+            }
+            #region Neutral
+            if (field.Contains("Neutral"))
+            {
+                if(field.Contains("ability1"))
+                {
+                    var type = typeof(AbilityStats.Neutral.ability1);
+                    var f = type.GetField(variableName);
+                    setValue(f, null, operation, value);
+                }
+                else if(field.Contains("ability2"))
+                {
+                    var type = typeof(AbilityStats.Neutral.ability2);
+                    var f = type.GetField(variableName);
+                    setValue(f, null, operation, value);
+                }
+                else if(field.Contains("ability3"))
+                {
+                    var type = typeof(AbilityStats.Neutral.ability3);
+                    var f = type.GetField(variableName);
+                    setValue(f, null, operation, value);
+                }
+            }
+            #endregion
+            #region Frost
+            else if (field.Contains("Frost"))
+            {
+                if (field.Contains("ability1"))
+                {
+                    var type = typeof(AbilityStats.Frost.ability1);
+                    var f = type.GetField(variableName);
+                    setValue(f, null, operation, value);
+                }
+                else if (field.Contains("ability2"))
+                {
+                    var type = typeof(AbilityStats.Frost.ability2);
+                    var f = type.GetField(variableName);
+                    setValue(f, null, operation, value);
+                }
+                else if (field.Contains("ability3"))
+                {
+                    var type = typeof(AbilityStats.Frost.ability3);
+                    var f = type.GetField(variableName);
+                    setValue(f, null, operation, value);
+                }
+            }
+            #endregion
+            #region Fire
+            else if (field.Contains("Fire"))
+            {
+                if (field.Contains("ability1"))
+                {
+                    var type = typeof(AbilityStats.Fire.ability1);
+                    var f = type.GetField(variableName);
+                    setValue(f, null, operation, value);
+                }
+                else if (field.Contains("ability2"))
+                {
+                    var type = typeof(AbilityStats.Fire.ability2);
+                    var f = type.GetField(variableName);
+                    setValue(f, null, operation, value);
+                }
+                else if (field.Contains("ability3"))
+                {
+                    var type = typeof(AbilityStats.Fire.ability3);
+                    var f = type.GetField(variableName);
+                    setValue(f, null, operation, value);
+                }
+            }
+            #endregion
+            #region Earth
+            else if (field.Contains("Earth"))
+            {
+                if (field.Contains("ability1"))
+                {
+                    var type = typeof(AbilityStats.Earth.ability1);
+                    var f = type.GetField(variableName);
+                    setValue(f, null, operation, value);
+                }
+                else if (field.Contains("ability2"))
+                {
+                    var type = typeof(AbilityStats.Earth.ability2);
+                    var f = type.GetField(variableName);
+                    setValue(f, null, operation, value);
+                }
+                else if (field.Contains("ability3"))
+                {
+                    var type = typeof(AbilityStats.Earth.ability3);
+                    var f = type.GetField(variableName);
+                    setValue(f, null, operation, value);
+                }
+            }
+            #endregion
+            return 1;
+        }
+
         public float changeStatVariable(string field, float value, MathOperations operation)
         {
             var ob = playerStats;
@@ -740,6 +1121,11 @@ namespace Includes
                     break;
             }
             return 1;
+        }
+
+        public void resetAbilityStats()
+        {
+            AbilityStats.reset();
         }
 
         public void resetPlayerStats()

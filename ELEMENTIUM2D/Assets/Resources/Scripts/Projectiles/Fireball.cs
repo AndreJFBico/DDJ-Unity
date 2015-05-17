@@ -35,7 +35,6 @@ public class Fireball : AbilityBehaviour
                     createExplosion();
                     previousCollidedObject = collision.gameObject.transform;
                     collisionNumber++;
-                    Debug.Log(collision.gameObject.name);
                 }
             }
             //base.OnCollisionEnter(collision);
