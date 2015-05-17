@@ -12,6 +12,7 @@ public class WaterBurst : AbilityBehaviour
     
     protected override void Awake()
     {
+        base.Awake();
         waterProjectiles = new List<GameObject>();
         cs = Resources.Load(AbilityStats.Frost.ability2.childProjectile) as GameObject;
         explosion = Resources.Load("Prefabs/Explosions/frostExplosion") as GameObject;

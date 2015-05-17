@@ -6,7 +6,7 @@ public class BreakableWall : Breakable {
 
     public BreakableWalls type;
     public Transform particleSystem;
-    private bool affected;
+    protected bool affected;
 
 	// Use this for initialization
     void Start()

@@ -10,6 +10,7 @@ public class Fireball : AbilityBehaviour
 
     protected override void Awake()
     {
+        base.Awake();
         explosion = Resources.Load("Prefabs/Explosions/fireExplosion") as GameObject;
         damage = 1;
     }

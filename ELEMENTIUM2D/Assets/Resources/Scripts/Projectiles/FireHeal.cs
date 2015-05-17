@@ -11,6 +11,7 @@ public class FireHeal : AbilityBehaviour
     protected override void Awake()
     {
 
+        base.Awake();
     }
 
     protected override void Start()

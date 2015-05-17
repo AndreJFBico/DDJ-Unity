@@ -13,8 +13,8 @@ public class Player : Agent {
     private CharacterMove characterMoveScrpt;
     private bool alphaed = false;
 
-    protected Func<float> stamina;
     protected Func<float> maxStamina;
+    protected Func<float> stamina;
     protected Func<float, float> addStamina;
     protected Func<float> maxHealth;
     protected Func<float, float> setMaxHealth;
@@ -32,7 +32,7 @@ public class Player : Agent {
 
     private Transform lastCollidedWith = null;
 
-    void Awake()
+    protected override void Awake()
     {
         base.Awake();
         Application.targetFrameRate = 60;
@@ -55,11 +55,19 @@ public class Player : Agent {
         waterResist = () => { return GameManager.Instance.Stats.waterResist; };
         earthResist = () => { return GameManager.Instance.Stats.earthResist; };
         fireResist = () => { return GameManager.Instance.Stats.fireResist; };
-        multiplierManager = GetComponent<MultiplierManager>();
+        multiplierManager = gui.multiplierManager;
         characterMoveScrpt = transform.gameObject.GetComponent<CharacterMove>();
         GameManager.Instance.Stats.dumpStats();
         InvokeRepeating("blink", 0f, 0.10f);
         StartCoroutine("regenStamina");
+
+        healthbar_background = gui.transform.FindChild("HealthBarBackground");
+        healthbar = healthbar_background.FindChild("HealthBar");
+        staminabar_background = gui.transform.FindChild("StaminaBarBackground");
+        staminabar = staminabar_background.FindChild("StaminaBar");
+
+        GameObject.FindWithTag("MainCamera").GetComponent<CameraScrpt>().init();
+
     }
 
     void Start()
@@ -154,9 +162,9 @@ public class Player : Agent {
         return health() < maxHealth();
     }
 
-    public bool isTired()
+    public bool isTired(float consumption)
     {
-        return (stamina() <= 1.7f);
+        return (stamina() <= consumption);
     }
 
     public void consumeStamina(float val)
@@ -310,13 +318,50 @@ public class Player : Agent {
         FloatingText.Instance.createFloatingText(transform, message, Color.yellow);
     }
 
+    public override void createFloatingText(string message, float time)
+    {
+        FloatingText.Instance.createFloatingText(transform, message, Color.yellow, time);
+    }
+
     public void increaseMultiplier(int inc)
     {
         multiplierManager.increaseMultiplier(inc);
     }
 
+    public void resetKillTimer()
+    {
+        multiplierManager.resetKillTimer();
+    }
+    
+    public void resetHitTimer()
+    {
+        multiplierManager.resetHitTimer();
+    }
+
     public Vector3 getCharacterMoveDirection()
     {
         return characterMoveScrpt.getCharacterDirection();
+    }
+
+    public float getCurrentMoveSpeed()
+    {
+        return characterMoveScrpt.CurrentMoveSpeed;
+    }
+
+    IEnumerator setOutOfCombat()
+    {
+        while(GameManager.Instance.Stats.inCombatTimer > 0)
+        {
+            float decrement = 0.2f;
+            yield return new WaitForSeconds(decrement);
+            GameManager.Instance.Stats.inCombatTimer -= decrement;
+
+        }
+        GameManager.Instance.Stats.inCombat = false;
+    }
+
+    public void setPlayerInCombat()
+    {
+        StartCoroutine("setOutOfCombat");
     }
 }

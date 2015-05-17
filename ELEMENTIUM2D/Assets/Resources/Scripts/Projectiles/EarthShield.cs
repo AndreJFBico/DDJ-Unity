@@ -11,6 +11,7 @@ public class EarthShield : AbilityBehaviour {
 
     protected override void Awake()
     {
+        base.Awake();
 
     }
 

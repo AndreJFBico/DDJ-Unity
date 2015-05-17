@@ -15,7 +15,7 @@ public class RandomTreasureChest : TemporaryTreasureChest {
     public override void Start()
     {
         base.Start();
-        increase = 1.05f; // 10%
+        increase = 1.1f; // 10%
         /*stats.Add("maxHealth");
         stats.Add("damage");
         stats.Add("defence");
@@ -31,7 +31,7 @@ public class RandomTreasureChest : TemporaryTreasureChest {
 
     public override void applyEffect()
     {
-        Player player = GameManager.Instance.Player.GetComponent<Player>();
+        Player player = GameManager.Instance.Player;
         int random = Random.Range(0, stats.Count);
 
         float intensity = increase;
@@ -58,7 +58,7 @@ public class RandomTreasureChest : TemporaryTreasureChest {
             default:
                 break;
         }
-        FloatingText.Instance.createFloatingText(transform, effectApplied, Color.yellow);
+        FloatingText.Instance.createFloatingText(transform, effectApplied, Color.yellow, 1);
         
         base.applyEffect();
     }

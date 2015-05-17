@@ -97,12 +97,14 @@ public class EnemyScript : Agent
         setInCombat();
         if (health <= 0)
         {
-            GameManager.Instance.Player.GetComponent<Player>().increaseMultiplier(multiplier);
+            GameManager.Instance.Player.resetKillTimer();
+            GameManager.Instance.Player.increaseMultiplier(multiplier);
             Eliminate();
         }
         if (health >= maxHealth)
             health = maxHealth;
 
+        GameManager.Instance.Player.resetHitTimer();
 
         updateGUI();
     }
@@ -285,10 +287,12 @@ public class EnemyScript : Agent
         return (Vector3.Distance(GameManager.Instance.Player.transform.position, transform.position) <= rangedRadius);
     }
 
-    public virtual void playerSighted()
+    public override void playerSighted()
     {
         if (pathAgent != null)
         {
+            PlayerStats.setPlayerInCombat();
+            setAlerted(true);
             pathAgent.playerSighted(GameManager.Instance.Player.transform);
             pathAgent.stopChasing();
         }

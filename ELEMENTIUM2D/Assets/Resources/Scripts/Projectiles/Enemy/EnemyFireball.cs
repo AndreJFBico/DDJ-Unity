@@ -7,8 +7,10 @@ public class EnemyFireball : AbilityBehaviour
 
     protected override void Awake()
     {
+        base.Awake();
         explosion = Resources.Load("Prefabs/Explosions/fireExplosion") as GameObject;
         damage = 1;
+        startSpeed = 250;
     }
 
     protected override void Start()

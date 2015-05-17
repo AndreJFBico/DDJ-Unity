@@ -9,6 +9,7 @@ public class NeutralMissile : AbilityBehaviour {
 
     protected override void Awake()
     {
+        base.Awake();
         explosion = Resources.Load("Prefabs/Explosions/neutralExplosion") as GameObject;
         damage = 1;
     }

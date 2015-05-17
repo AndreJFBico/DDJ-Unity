@@ -13,7 +13,7 @@ public class CameraScrpt : MonoBehaviour {
     public float pixelToUnits = 40f;
 
 	// Use this for initialization
-	void Start () 
+	public void init () 
     {
         target = GameManager.Instance.Player.transform;
         GetComponent<UnityEngine.Camera>().transparencySortMode = TransparencySortMode.Orthographic;
@@ -21,9 +21,9 @@ public class CameraScrpt : MonoBehaviour {
 
     void Update()
     {
-        /*if (!target) 
+        if (!target) 
             return;
-        fixedUpdate = true;
+        /*fixedUpdate = true;
 
         float target_x = target.transform.position.x;
         float target_y = target.transform.position.z;

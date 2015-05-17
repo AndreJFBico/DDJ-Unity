@@ -55,7 +55,7 @@ public class PathAgent : MonoBehaviour
 
     public void playerSighted(Transform player)
     {
-        agentScrpt.setAlerted(true);
+        setAlerted(true);
         target = player;
         if (imobilized)
             agent.speed = 0;
@@ -65,7 +65,7 @@ public class PathAgent : MonoBehaviour
     {
         if (collision.gameObject.tag.CompareTo("Player") == 0 && target == null)
         {
-            playerSighted(collision.transform);
+            agentScrpt.playerSighted();
         }
     }
 
@@ -90,7 +90,7 @@ public class PathAgent : MonoBehaviour
         if (val)
         {
             agent.speed = alertedSpeed;
-            target = GameManager.Instance.Player.GetComponent<Player>().transform;
+            target = GameManager.Instance.Player.transform;
             NavMeshHit hit;
             if(NavMesh.SamplePosition(target.position, out hit, 0.5f, 1 << NavMesh.GetNavMeshLayerFromName("Walkable")))
             {

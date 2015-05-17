@@ -6,6 +6,7 @@ public class EarthDisk : AbilityBehaviour {
 
     protected override void Awake()
     {
+        base.Awake();
         explosion = Resources.Load("Prefabs/Explosions/earthExplosion") as GameObject;
         damage = 1;
     }

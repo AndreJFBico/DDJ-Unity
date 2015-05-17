@@ -20,6 +20,8 @@ public class DungeonRoom : MonoBehaviour {
 
 	public string randomGroup = "";
 
+    public bool cleared = false;
+
 	void Awake () {
 		Transform doors_object = transform.Find("Doors");
 		foreach(Transform child in doors_object){
@@ -27,9 +29,5 @@ public class DungeonRoom : MonoBehaviour {
 			doors.Add(door);
 			door.belongsTo = this;
 		}
-	}
-
-	void Update () {
-	
 	}
 }

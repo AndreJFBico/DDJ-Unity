@@ -13,6 +13,7 @@ public class WaterSpray : AbilityBehaviour {
 
     protected override void Awake()
     {
+        base.Awake();
         spriteR = GetComponentInChildren<SpriteRenderer>();
         explosion = Resources.Load("Prefabs/Explosions/frostExplosion") as GameObject;
         damage = 1;

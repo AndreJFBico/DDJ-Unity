@@ -43,7 +43,7 @@ public class FloatingText{
  
 	#endregion
 
-    public void createFloatingText(Transform transf, string message, Color color)
+    private TextFloat treatFloatText(ref Transform transf)
     {
         TextFloat text;
         if(_floatingTexts.Count > 0)
@@ -63,7 +63,20 @@ public class FloatingText{
         
         text.gameObject.GetComponent<MeshRenderer>().sortingOrder = 3000;
         text.gameObject.SetActive(true);
+
+        return text;
+    }
+
+    public void createFloatingText(Transform transf, string message, Color color)
+    {
+        TextFloat text = treatFloatText(ref transf);
         text.startFloating(message, color);
+    }
+
+    public void createFloatingText(Transform transf, string message, Color color, float time)
+    {
+        TextFloat text = treatFloatText(ref transf);
+        text.startFloating(message, color, time);
     }
 
     public void returnText(TextFloat obj)
