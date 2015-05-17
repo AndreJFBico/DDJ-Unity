@@ -38,9 +38,6 @@ public class RoomManagerV2 : MonoBehaviour {
 
     void Start()
     {
-        GameObject player = (GameObject)Resources.Load("Prefabs/Player/Player");
-        Instantiate(player);
-        player.SetActive(false);
 		pool = new ResourcesPool();
 		loadMapType();
 	}
@@ -59,7 +56,6 @@ public class RoomManagerV2 : MonoBehaviour {
             GameManager.Instance.PlayerRoom = dungeonRoomsHead;
             GameManager.Instance.Player.transform.position = dungeonRoomsHead.transform.position + new Vector3(0, 0.1f, 0);
             GameManager.Instance.Player.transform.rotation = dungeonRoomsHead.transform.rotation;
-            GameManager.Instance.Player.gameObject.SetActive(true);
             state = 3;
         }
 	}

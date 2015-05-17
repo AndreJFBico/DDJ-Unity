@@ -162,9 +162,9 @@ public class Player : Agent {
         return health() < maxHealth();
     }
 
-    public bool isTired()
+    public bool isTired(float consumption)
     {
-        return (stamina() <= 1.7f);
+        return (stamina() <= consumption);
     }
 
     public void consumeStamina(float val)

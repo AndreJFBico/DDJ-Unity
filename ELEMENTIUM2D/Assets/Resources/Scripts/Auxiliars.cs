@@ -136,7 +136,7 @@ namespace Includes
                 public static float movementForce = def_movementForce;
                 public static string projectile = "Prefabs/Projectiles/NeutralBouncer";
                 public static int splitNumber = def_splitNumber;
-                public static float negativeSplitAngle = -def_negativeSplitAngle;
+                public static float negativeSplitAngle = def_negativeSplitAngle;
                 public static float positiveSplitAngle = def_positiveSplitAngle;
                 public static int numSplits = def_numSplits;
 
@@ -151,7 +151,7 @@ namespace Includes
                     movementForce = def_movementForce;
                     projectile = "Prefabs/Projectiles/NeutralBouncer";
                     splitNumber = def_splitNumber;
-                    negativeSplitAngle = -def_negativeSplitAngle;
+                    negativeSplitAngle = def_negativeSplitAngle;
                     positiveSplitAngle = def_positiveSplitAngle;
                     numSplits = def_numSplits;
                 }

@@ -246,17 +246,18 @@ public class CharacterMove : MonoBehaviour {
 
         if (!GameManager.Instance.Stats.inCombat && GameManager.Instance.PlayerRoom && GameManager.Instance.PlayerRoom.cleared)
         {
-            if (Input.GetAxis("Dodge") > 0 && !doubleTapping && !p.isTired())
+            if (Input.GetButton("Dodge") && !doubleTapping && !p.isTired(0.3f))
             {
                 doubleTapping = true;
                 fade = true;
                 previousMoveSpeed = moveSpeed;
-                moveSpeed = moveSpeed * 4.0f;
+                moveSpeed = moveSpeed * 2.0f;
                 Invoke("stopMovement", 0.1f);
                 Invoke("stopDoubleTap", 0.1f);
+                p.consumeStamina(0.3f);
             }
         }
-        else if (Input.GetButtonDown("Dodge") && !doubleTapping && !p.isTired() )
+        else if (Input.GetButtonDown("Dodge") && !doubleTapping && !p.isTired(1.7f))
         {
             doubleTapping = true;
             fade = true;
