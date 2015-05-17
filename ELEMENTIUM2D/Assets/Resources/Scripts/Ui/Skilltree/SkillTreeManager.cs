@@ -63,6 +63,7 @@ public class SkillTreeManager : MonoBehaviour
         predictBox = GameObject.Find("PredictBox").transform;
         startNode = GameObject.Find("Parent").transform;
 
+        GameManager.Instance.resetAbilityStats();
         GameManager.Instance.resetPlayerStats();
         checkDepth();
     }
@@ -210,6 +211,14 @@ public class SkillTreeManager : MonoBehaviour
             iterateAndSet(nextNodeList);
     }
 
+    public void clearAllLineRenderers()
+    {
+        foreach(SkillTreeNode n in allNodeList)
+        {
+            n.clearLineRenderers();
+        }
+    }
+
     public void setupHiearchyBasedOfCode()
     {
         if (startNode == null)
@@ -218,6 +227,8 @@ public class SkillTreeManager : MonoBehaviour
         }
         SkillTreeNode node = startNode.GetComponent<SkillTreeNode>();
         iterateAndSet(node.sucessors);
+
+        clearAllLineRenderers();
         setAllUnsearched(false);
     }
 
@@ -268,7 +279,14 @@ public class SkillTreeManager : MonoBehaviour
         {
             if (n.isSearchable())
             {
-                GameManager.Instance.changeStatVariable(n.getVariableBeingChanged(), n.getValueBeingChanged(), n.operation);
+                if(n.changeAbilityNode)
+                {
+                    GameManager.Instance.changeAbilityVariable(n.getVariableBeingChanged(), n.getValueBeingChanged(), n.operation);
+                }
+                else
+                {
+                    GameManager.Instance.changeStatVariable(n.getVariableBeingChanged(), n.getValueBeingChanged(), n.operation);
+                }
                 n.setSearched();
             }
             foreach (SkillTreeNode sn in n.sucessors)
@@ -312,12 +330,21 @@ public class SkillTreeManager : MonoBehaviour
             iterateChildren(nextNodeList);
     }
 
+    void generateLineRenderers()
+    {
+        foreach(SkillTreeNode n in allNodeList)
+        {
+            n.generateLineRenderers();
+        }
+    }
+
     public void setupHiearchy()
     {
         allNodeList.Clear();
         startNode = GameObject.Find("Parent").transform;
         iterateChildren(startNode.GetComponent<SkillTreeNode>().sucessors);
         setAllUnsearched(true);
+        generateLineRenderers();
     }
 
     public void updatePointsText()

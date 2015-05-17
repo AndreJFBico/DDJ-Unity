@@ -19,30 +19,82 @@ public class SkillTreeNode : MonoBehaviour
 
     public MathOperations operation;
 
+    [HideInInspector]
     public SkillTreeNode father;
 
     // Checks if the node has been selected by the player
     public bool selected = false;
 
+    [HideInInspector]
     bool searched = false;
+
+    public bool changeAbilityNode = false;
 
     public bool lockedForever = false;
 
     private bool unknown = false;
 
+    [HideInInspector]
+    [SerializeField]
+    private List<GameObject> linerenderers;
+
     [SerializeField]
     public string information;
 
+    [HideInInspector]
     [SerializeField]
     int choiceIndex = 0;
 
+    [HideInInspector]
     [SerializeField]
     string variableBeingChanged;
 
     // Use this for initialization
     void Awake()
     {
+        if(linerenderers != null)
+        {
+            linerenderers.Clear();
+        }
+        linerenderers = new List<GameObject>();
         manager = (GameObject.Find("SkillTree") as GameObject).GetComponent<SkillTreeManager>();
+    }
+
+    public void clearLineRenderers()
+    {
+        foreach (GameObject obj in linerenderers)
+        {
+            DestroyImmediate(obj);
+        }
+        linerenderers.Clear();
+    }
+
+    public void generateLineRenderers()
+    {
+        foreach(GameObject obj in linerenderers)
+        {
+            DestroyImmediate(obj);
+        }
+        linerenderers.Clear();
+        foreach (SkillTreeNode n in sucessors)
+        {
+            GameObject obj = new GameObject();
+            obj.name = "UILineRenderer";
+
+            obj.transform.parent = manager.transform.FindChild("Parent");
+           
+            obj.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+            obj.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
+            UILineRenderer lineRenderer = obj.AddComponent<UILineRenderer>();
+            lineRenderer.Points = new Vector2[2];
+            if(startNode)
+                lineRenderer.Points[0] = new Vector2(0.3f, -0.3f);
+            else lineRenderer.Points[0] = new Vector2(GetComponent<RectTransform>().localPosition.x, GetComponent<RectTransform>().localPosition.y);//new Vector2(GetComponent<RectTransform>().position.x, GetComponent<RectTransform>().position.y);
+            if(n.startNode)
+                lineRenderer.Points[1] = new Vector2(0.3f, -0.3f);
+            else lineRenderer.Points[1] = new Vector2(n.GetComponent<RectTransform>().localPosition.x, n.GetComponent<RectTransform>().localPosition.y);
+            linerenderers.Add(lineRenderer.gameObject);
+        }
     }
 
     public void setupHiearchy()
@@ -64,31 +116,49 @@ public class SkillTreeNode : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isUknown())
+        if (isUknown())
             gameObject.GetComponent<Image>().color = new Color(1f, 1f, 1f, 0.40f);
+        else if (startNode)
+            return;
         else if (!selected)
             gameObject.GetComponent<Image>().color = new Color(1f, 1f, 1f, 0.20f);
-        else if(selected)
-            gameObject.GetComponent<Image>().color = new Color(1f, 1f, 1f, 1.00f);      
+        else if (selected)
+            gameObject.GetComponent<Image>().color = new Color(1f, 1f, 1f, 1.00f);     
     }
 
 
-    //Attentiont lines will be repeated
+    //Attention lines will be repeated
     void OnGUI()
     {
+        int linerenderer = 0;
         foreach(SkillTreeNode n in sucessors)
         {
             if(n.gameObject.activeSelf && !n.isUknown())
             {
-                GuiHelper.DrawLine(new Vector2(GetComponent<RectTransform>().position.x, Screen.height - GetComponent<RectTransform>().position.y), new Vector2(n.GetComponent<RectTransform>().position.x, Screen.height - n.GetComponent<RectTransform>().position.y), Color.white);
+                if (linerenderers != null)
+                {
+                    if (linerenderer < linerenderers.Count)
+                    {
+                        if (startNode)
+                            linerenderers[linerenderer].GetComponent<UILineRenderer>().Points[0] = new Vector2(0.3f, -0.3f);
+                        else linerenderers[linerenderer].GetComponent<UILineRenderer>().Points[0] = new Vector2(GetComponent<RectTransform>().localPosition.x, GetComponent<RectTransform>().localPosition.y);//new Vector2(GetComponent<RectTransform>().position.x, GetComponent<RectTransform>().position.y);
+                        if (n.startNode)
+                            linerenderers[linerenderer].GetComponent<UILineRenderer>().Points[1] = new Vector2(0.3f, -0.3f);
+                        else linerenderers[linerenderer].GetComponent<UILineRenderer>().Points[1] = new Vector2(n.GetComponent<RectTransform>().localPosition.x, n.GetComponent<RectTransform>().localPosition.y);
+                        linerenderer++;
+                    }
+                }
+
+                /*GuiHelper.DrawLine(new Vector2(GetComponent<RectTransform>().position.x, Screen.height - GetComponent<RectTransform>().position.y), new Vector2(n.GetComponent<RectTransform>().position.x, Screen.height - n.GetComponent<RectTransform>().position.y), Color.white);
                 Debug.DrawLine(
                     new Vector2(
                         GetComponent<RectTransform>().position.x,
                         GetComponent<RectTransform>().position.y),
                     new Vector2(
                         n.GetComponent<RectTransform>().position.x,
-                        n.GetComponent<RectTransform>().position.y), Color.white);
-            }
+                        n.GetComponent<RectTransform>().position.y), Color.white);*/
+
+            }     
         }
     }
 
@@ -103,6 +173,8 @@ public class SkillTreeNode : MonoBehaviour
         if(selected)
             return true;
         var type = typeof(SkillTreeManager); // Get type pointer
+        if (changeAbilityNode)
+            return true;
         FieldInfo[] fields = type.GetFields(); // Obtain all fields
         foreach (var field in fields) // Loop through fields
         {
@@ -121,16 +193,44 @@ public class SkillTreeNode : MonoBehaviour
         return false;
     }
 
+    void checkAbilityNodeLimits()
+    {
+        if (!selected)
+        {
+            if (manager.cur_lim_points > 0)
+            {
+                    selected = true;
+                    manager.cur_lim_points -= 1;
+                    manager.updatePointsText();
+                    manager.predictChanges();
+                    return;
+            }
+        }
+        else
+        {
+                selected = false;
+                manager.cur_lim_points += 1;
+                manager.updatePointsText();
+                manager.predictChanges();
+                return;
+            }
+    }
+
     void checkIfLimits()
     {
         var type = typeof(SkillTreeManager); // Get type pointer
         FieldInfo[] fields = type.GetFields(); // Obtain all fields
+        if(changeAbilityNode)
+        {
+            checkAbilityNodeLimits();
+            return;
+        }
         foreach (var field in fields) // Loop through fields
         {
             // is a float
             if (typeof(float).IsAssignableFrom(field.FieldType))
             {
-                if (field.Name.CompareTo("cur_lim_" + variableBeingChanged) == 0)
+                if (field.Name.CompareTo("cur_lim_" + variableBeingChanged) == 0 )
                 {
                     if(!selected)
                     {

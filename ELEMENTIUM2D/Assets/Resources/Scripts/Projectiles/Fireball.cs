@@ -36,7 +36,6 @@ public class Fireball : AbilityBehaviour
                     createExplosion();
                     previousCollidedObject = collision.gameObject.transform;
                     collisionNumber++;
-                    Debug.Log(collision.gameObject.name);
                 }
             }
             //base.OnCollisionEnter(collision);
@@ -57,9 +56,10 @@ public class Fireball : AbilityBehaviour
     public override void initiate(GameObject startingObject, float dmg, int projectileID, int totalProjectiles)
     {
         base.initiate(startingObject, dmg, projectileID, totalProjectiles);
-        GetComponent<Rigidbody>().AddForce(transform.forward * startSpeed);
-        damage = dmg;
         float rndm = Random.Range(AbilityStats.Fire.ability1.minForce, AbilityStats.Fire.ability1.maxForce);
+        GetComponent<Rigidbody>().AddForce(transform.forward * ((startSpeed / 2.0f) + rndm));
+        damage = dmg;
+        
         ConstantForce constantForce = gameObject.AddComponent<ConstantForce>();
         constantForce.relativeForce = new Vector3(0.0f, 0.0f, rndm);
     }
