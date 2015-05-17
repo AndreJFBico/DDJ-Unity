@@ -10,7 +10,7 @@ public class Agent : ElementiumMonoBehaviour
     protected SpriteRenderer figure;
     protected bool centerHealthBar = false;
 
-    protected void Awake()
+    protected virtual void Awake()
     {
         // Finds the sprite associated to the agent
         figure = transform.gameObject.GetComponentInChildren<SpriteRenderer>();
@@ -44,4 +44,6 @@ public class Agent : ElementiumMonoBehaviour
 
     public virtual void createFloatingText(string message) { }
     public virtual void createFloatingText(string message, float time) { }
+
+    public virtual void playerSighted() {}
 }

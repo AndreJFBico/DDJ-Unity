@@ -11,7 +11,7 @@ public class GUIManager : MonoBehaviour {
     public GameObject playerHealth;
     public GameObject playerHealthText;
     public GameObject restartButton;
-    public GameObject multiplierText;
+    public MultiplierManager multiplierManager;
     public GameObject statWindowText;
     public GameObject statWindow;
 

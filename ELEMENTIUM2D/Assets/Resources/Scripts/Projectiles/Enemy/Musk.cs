@@ -6,8 +6,10 @@ public class Musk : AbilityBehaviour{
 
     protected override void Awake()
     {
+        base.Awake();
         explosion = Resources.Load("Prefabs/Explosions/earthExplosion") as GameObject;
         damage = 1;
+        startSpeed = 250;
     }
 
     protected override void Start()

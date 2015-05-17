@@ -148,7 +148,7 @@ public class HealerEnemyScript : EnemyScript {
                 currentFireTransform = right_firepoint;
             }
             
-            if(targetedEnemy.gameObject != GameManager.Instance.Player)
+            if(targetedEnemy.gameObject != GameManager.Instance.Player.gameObject)
                 pathAgent.setStoppingDistance(rangedRadius);
             else
                 pathAgent.resetStoppingDistance();

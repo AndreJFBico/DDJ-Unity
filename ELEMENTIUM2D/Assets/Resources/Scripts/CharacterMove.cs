@@ -21,6 +21,7 @@ public class CharacterMove : MonoBehaviour {
     private float vDir;
 
     private bool doubleTapping = false;
+    private bool fade = false;
     private bool update = false;
 
     private bool inContactWithEnemy;
@@ -228,21 +229,41 @@ public class CharacterMove : MonoBehaviour {
     } 
     #endregion
 
-    void stopDoubleTap()
+    void stopMovement()
     {
         moveSpeed = previousMoveSpeed;
+        fade = false;
+    }
+
+    void stopDoubleTap()
+    {
         doubleTapping = false;
     }
 
     void doubleTap()
     {
-        Player p = GameManager.Instance.Player.GetComponent<Player>();
-        if (Input.GetButtonDown("Dodge") && !doubleTapping && !p.isTired())
+        Player p = GameManager.Instance.Player;
+
+        if (!GameManager.Instance.Stats.inCombat && GameManager.Instance.PlayerRoom && GameManager.Instance.PlayerRoom.cleared)
+        {
+            if (Input.GetAxis("Dodge") > 0 && !doubleTapping && !p.isTired())
+            {
+                doubleTapping = true;
+                fade = true;
+                previousMoveSpeed = moveSpeed;
+                moveSpeed = moveSpeed * 4.0f;
+                Invoke("stopMovement", 0.1f);
+                Invoke("stopDoubleTap", 0.1f);
+            }
+        }
+        else if (Input.GetButtonDown("Dodge") && !doubleTapping && !p.isTired() )
         {
             doubleTapping = true;
+            fade = true;
             previousMoveSpeed = moveSpeed;
             moveSpeed = moveSpeed * 4.0f;
-            Invoke("stopDoubleTap", 0.1f);
+            Invoke("stopMovement", 0.1f);
+            Invoke("stopDoubleTap", 0.4f);
             p.consumeStamina(1.7f);
         }
     }
@@ -408,11 +429,11 @@ public class CharacterMove : MonoBehaviour {
     void LateUpdate()
     {
         if (update)
-            if(doubleTapping)
+            if(fade)
             {
-                GameObject fade = GameObject.Instantiate( fadeSprite.gameObject, transform.position, Quaternion.identity) as GameObject;
-                fade.GetComponentInChildren<SpriteRenderer>().sprite = GetComponentInChildren<SpriteRenderer>().sprite;
-                fade.GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
+                GameObject faded = GameObject.Instantiate( fadeSprite.gameObject, transform.position, Quaternion.identity) as GameObject;
+                faded.GetComponentInChildren<SpriteRenderer>().sprite = GetComponentInChildren<SpriteRenderer>().sprite;
+                faded.GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
             }
             previousPosition = transform.position;
             transform.position = positionToMove;

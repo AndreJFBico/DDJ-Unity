@@ -36,11 +36,15 @@ public class RoomManagerV2 : MonoBehaviour {
 
 	public bool generationDone = false;
 
-	void Start () {
+    void Start()
+    {
+        GameObject player = (GameObject)Resources.Load("Prefabs/Player/Player");
+        Instantiate(player);
+        player.SetActive(false);
 		pool = new ResourcesPool();
 		loadMapType();
 	}
-		
+
 	void Update () {
 		if(state == 0){
 			if(generateMap ())
@@ -50,29 +54,24 @@ public class RoomManagerV2 : MonoBehaviour {
 			posGeneration();
 			state = 2;
 		}
+        else if(state == 2)
+        {
+            GameManager.Instance.PlayerRoom = dungeonRoomsHead;
+            GameManager.Instance.Player.transform.position = dungeonRoomsHead.transform.position + new Vector3(0, 0.1f, 0);
+            GameManager.Instance.Player.transform.rotation = dungeonRoomsHead.transform.rotation;
+            GameManager.Instance.Player.gameObject.SetActive(true);
+            state = 3;
+        }
 	}
 
 	private void loadMapType()
 	{
         TextAsset textAsset = Resources.Load("Map/Maps/type3") as TextAsset;
-        //File.Create("Map.txt");
-
-        //StreamWriter file2 = new StreamWriter("/Map.txt", true);
-        //file2.WriteLine(textAsset.text);
-        //file2.Close();
-
-        //string line;
-        //StreamReader theReader = new StreamReader("/Map.txt", Encoding.Default);
-
         byte[] byteArray = Encoding.UTF8.GetBytes(textAsset.text);
         MemoryStream stream = new MemoryStream(byteArray);
 
         StreamReader theReader = new StreamReader(stream);
         string line;
-
-        //string line;
-        //StreamReader theReader = new StreamReader(Application.dataPath + "/Resources/Map/Maps/" + mapType, Encoding.Default);
-		
 
 		//parse rooms
 		line = theReader.ReadLine();

@@ -8,6 +8,7 @@ public class IceShard : AbilityBehaviour
 
     protected override void Awake()
     {
+        base.Awake();
         explosion = Resources.Load("Prefabs/Explosions/frostExplosion") as GameObject;
         damage = 1;
     }

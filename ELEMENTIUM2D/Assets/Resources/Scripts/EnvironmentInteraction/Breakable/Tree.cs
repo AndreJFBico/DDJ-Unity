@@ -3,9 +3,7 @@ using System.Collections;
 using Includes;
 
 public class Tree : BreakableWall {
-
-    private bool affected;
-
+    
     // Use this for initialization
     void Start()
     {
