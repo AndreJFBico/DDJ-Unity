@@ -608,7 +608,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startNode: 0
-  changeWithValue: .200000003
+  changeWithValue: -.200000003
   sucessors:
   - {fileID: 503376060}
   operation: 1
@@ -869,7 +869,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startNode: 0
-  changeWithValue: .200000003
+  changeWithValue: -.200000003
   sucessors:
   - {fileID: 1450492789}
   operation: 1
