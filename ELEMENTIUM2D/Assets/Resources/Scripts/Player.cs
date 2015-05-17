@@ -357,11 +357,13 @@ public class Player : Agent {
             GameManager.Instance.Stats.inCombatTimer -= decrement;
 
         }
+
         GameManager.Instance.Stats.inCombat = false;
     }
 
     public void setPlayerInCombat()
     {
+
         StartCoroutine("setOutOfCombat");
     }
 }

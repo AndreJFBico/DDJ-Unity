@@ -21,6 +21,7 @@ public class CharacterMove : MonoBehaviour {
     private float vDir;
 
     private bool doubleTapping = false;
+    private bool doubleTapDown = false;
     private bool fade = false;
     private bool update = false;
 
@@ -246,26 +247,37 @@ public class CharacterMove : MonoBehaviour {
 
         if (!GameManager.Instance.Stats.inCombat && GameManager.Instance.PlayerRoom && GameManager.Instance.PlayerRoom.cleared)
         {
-            if (Input.GetButton("Dodge") && !doubleTapping && !p.isTired(0.3f))
+            if (Input.GetButton("Dodge") && !doubleTapping && !doubleTapDown)
             {
-                doubleTapping = true;
-                fade = true;
-                previousMoveSpeed = moveSpeed;
-                moveSpeed = moveSpeed * 2.0f;
-                Invoke("stopMovement", 0.1f);
-                Invoke("stopDoubleTap", 0.1f);
-                p.consumeStamina(0.3f);
+                if(!p.isTired(0.3f))
+                {
+                    doubleTapping = true;
+                    fade = true;
+                    previousMoveSpeed = moveSpeed;
+                    moveSpeed = moveSpeed * 2.0f;
+                    Invoke("stopMovement", 0.1f);
+                    Invoke("stopDoubleTap", 0.1f);
+                    p.consumeStamina(0.3f);
+                }
+                else doubleTapDown = true;
             }
         }
         else if (Input.GetButtonDown("Dodge") && !doubleTapping && !p.isTired(1.7f))
         {
-            doubleTapping = true;
-            fade = true;
-            previousMoveSpeed = moveSpeed;
-            moveSpeed = moveSpeed * 4.0f;
-            Invoke("stopMovement", 0.1f);
-            Invoke("stopDoubleTap", 0.4f);
-            p.consumeStamina(1.7f);
+            if(!p.isTired(1.7f))
+            {
+                doubleTapping = true;
+                fade = true;
+                previousMoveSpeed = moveSpeed;
+                moveSpeed = moveSpeed * 4.0f;
+                Invoke("stopMovement", 0.1f);
+                Invoke("stopDoubleTap", 0.4f);
+                p.consumeStamina(1.7f);
+            }
+        }
+        if (Input.GetButtonUp("Dodge"))
+        {
+            doubleTapDown = false;
         }
     }
 

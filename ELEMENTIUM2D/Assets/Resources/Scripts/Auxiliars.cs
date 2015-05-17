@@ -73,7 +73,7 @@ namespace Includes
                 private const float def_attackSpeed = 0.25f;
                 private const int def_projectile_number = 1;
                 private const float def_damage = 2.5f;
-                private const float def_movementForce = 25;
+                private const float def_movementForce = 15;
 
                 public static float attackSpeed = def_attackSpeed;
                 public static int projectile_number = def_projectile_number;

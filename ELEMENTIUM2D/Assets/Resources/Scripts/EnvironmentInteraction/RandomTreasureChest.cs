@@ -25,7 +25,6 @@ public class RandomTreasureChest : TemporaryTreasureChest {
     }
 
 	public void addStats(string stat){
-		Debug.Log("stat: " + stat);
 		stats.Add(stat);
 	}
 
