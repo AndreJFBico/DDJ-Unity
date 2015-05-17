@@ -1602,48 +1602,6 @@ ParticleSystemRenderer:
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
---- !u!1001 &507084512
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 407410, guid: e96f6d303cd9c764a9a04f7e46724d0f, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -1.52499998
-      objectReference: {fileID: 0}
-    - target: {fileID: 407410, guid: e96f6d303cd9c764a9a04f7e46724d0f, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: .100000001
-      objectReference: {fileID: 0}
-    - target: {fileID: 407410, guid: e96f6d303cd9c764a9a04f7e46724d0f, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -.806999981
-      objectReference: {fileID: 0}
-    - target: {fileID: 407410, guid: e96f6d303cd9c764a9a04f7e46724d0f, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 407410, guid: e96f6d303cd9c764a9a04f7e46724d0f, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 407410, guid: e96f6d303cd9c764a9a04f7e46724d0f, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 407410, guid: e96f6d303cd9c764a9a04f7e46724d0f, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 407410, guid: e96f6d303cd9c764a9a04f7e46724d0f, type: 2}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: e96f6d303cd9c764a9a04f7e46724d0f, type: 2}
-  m_IsPrefabParent: 0
 --- !u!4 &547688599 stripped
 Transform:
   m_PrefabParentObject: {fileID: 466326, guid: d1d1591e9b46fc447bbd5eca6faeb4ff, type: 2}
