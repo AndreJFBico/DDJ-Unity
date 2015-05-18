@@ -5,7 +5,7 @@ using Includes;
 [RequireComponent(typeof(NavMeshAgent))]
 public class EnemyScript : Agent
 {  
-    protected Elements type;
+    protected Elements _type;
     protected bool isAlerted = false;
     protected float rangedRadius;
 
@@ -97,6 +97,7 @@ public class EnemyScript : Agent
         setInCombat();
         if (health <= 0)
         {
+            ((NumTypeEnemieAndAbility)LoggingManager.Instance.getEntry("NumTypeEnemiesAndSkillsUsed.txt")).writeEntry(gameObject.name, _type, "projectile", type);
             GameManager.Instance.Player.resetKillTimer();
             GameManager.Instance.Player.increaseMultiplier(multiplier);
             Eliminate();
@@ -105,6 +106,7 @@ public class EnemyScript : Agent
             health = maxHealth;
 
         GameManager.Instance.Player.resetHitTimer();
+        
 
         updateGUI();
     }
@@ -251,7 +253,7 @@ public class EnemyScript : Agent
 
     public Elements getElementType()
     {
-        return type;
+        return _type;
     }
 
     public override void setAlerted(bool val)

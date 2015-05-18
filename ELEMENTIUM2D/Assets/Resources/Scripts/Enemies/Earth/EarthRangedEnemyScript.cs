@@ -10,7 +10,7 @@ public class EarthRangedEnemyScript : RangedEnemyScript
     protected override void Awake()
     {
         base.Awake();
-        type = Elements.NEUTRAL;
+        _type = Elements.NEUTRAL;
         projectile = Resources.Load(EnemyStats.RangedNeutral.neutralEnemyProjectile) as GameObject;
         rangedRadius = EnemyStats.RangedNeutral.rangedRadius;
         maxHealth = EnemyStats.RangedNeutral.maxHealth;

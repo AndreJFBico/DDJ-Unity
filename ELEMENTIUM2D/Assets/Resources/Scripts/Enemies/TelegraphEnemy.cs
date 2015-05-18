@@ -22,7 +22,7 @@ public class TelegraphEnemy : EnemyScript {
     protected override void Awake()
     {
         base.Awake();
-        type = Elements.NEUTRAL;
+        _type = Elements.NEUTRAL;
         maxHealth = EnemyStats.BasicTelegraph.maxHealth;
         health = maxHealth;
         damage = EnemyStats.BasicTelegraph.damage;
@@ -129,6 +129,6 @@ public class TelegraphEnemy : EnemyScript {
 
     public override void dealDamage(Player player)
     {
-        player.takeDamage(damage, type, false);
+        player.takeDamage(damage, _type, false);
     }
 }

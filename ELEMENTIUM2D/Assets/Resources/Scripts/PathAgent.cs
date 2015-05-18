@@ -20,6 +20,8 @@ public class PathAgent : MonoBehaviour
     private float unalertedSpeed;
     private float alertedSpeed;
 
+    private bool chasingPlayer = false;
+
     public void Awake() 
     {
         target = null;
@@ -29,34 +31,14 @@ public class PathAgent : MonoBehaviour
         previousSpeed = agent.speed;   
     } 
 
-    public float UnalertedSpeed
-    {
-        get
-        {
-            return unalertedSpeed;
-        }
-        set
-        {
-            unalertedSpeed = value;
-        }
-    }
-
-    public float AlertedSpeed
-    {
-        get
-        {
-            return alertedSpeed;
-        }
-        set
-        {
-            alertedSpeed = value;
-        }
-    }
+    public float UnalertedSpeed { get { return unalertedSpeed; } set { unalertedSpeed = value; }}
+    public float AlertedSpeed { get { return alertedSpeed; } set { alertedSpeed = value; }}
 
     public void playerSighted(Transform player)
     {
         setAlerted(true);
         target = player;
+        chasingPlayer = true;
         if (imobilized)
             agent.speed = 0;
     }
@@ -82,6 +64,7 @@ public class PathAgent : MonoBehaviour
         agent.speed = 0.0f;
         previousTarget = target;
         target = null;
+        chasingPlayer = false;
         imobilized = true;
     }
 
@@ -129,12 +112,13 @@ public class PathAgent : MonoBehaviour
         if(target != null)
         {
             float distance = (target.position - transform.parent.position).magnitude;
-            if (distance < GetComponent<CapsuleCollider>().bounds.max.x - GetComponent<CapsuleCollider>().bounds.center.x)
+            if (distance < GetComponent<CapsuleCollider>().radius)
             {
                 Invoke("stopChase", 1);
                 return;
             }
             target = null;
+            chasingPlayer = false;
         }
     }
 
@@ -203,6 +187,10 @@ public class PathAgent : MonoBehaviour
                 {
                     FreeRoam();
                 }
+            }
+            if(chasingPlayer)
+            {
+                PlayerStats.setPlayerInCombat();
             }
             yield return new WaitForSeconds(.2f);
         }

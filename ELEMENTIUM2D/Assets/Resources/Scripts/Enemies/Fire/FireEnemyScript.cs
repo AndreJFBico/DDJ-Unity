@@ -11,7 +11,7 @@ public class FireEnemyScript : EnemyScript
     protected override void Awake()
     {
         base.Awake();
-        type = EnemyStats.FireBasic.type;
+        _type = EnemyStats.FireBasic.type;
         maxHealth = EnemyStats.FireBasic.maxHealth;
         health = maxHealth;
         damage = EnemyStats.FireBasic.damage;
@@ -37,7 +37,7 @@ public class FireEnemyScript : EnemyScript
 
     public override void dealDamage(Player player)
     {
-        player.takeDamage(damage, type, false);
+        player.takeDamage(damage, _type, false);
         int i = RandomGenerator.Next(4);
         if(i == 0)
         {

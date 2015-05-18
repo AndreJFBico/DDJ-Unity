@@ -9,7 +9,7 @@ public class FireRangedEnemyScript : RangedEnemyScript
     protected override void Awake()
     {
         base.Awake();
-        type = Elements.NEUTRAL;
+        _type = Elements.NEUTRAL;
         projectile = Resources.Load(EnemyStats.FireRanged.neutralEnemyProjectile) as GameObject;
         rangedRadius = EnemyStats.FireRanged.rangedRadius;
         maxHealth = EnemyStats.FireRanged.maxHealth;

@@ -11,7 +11,7 @@ public class EarthEnemyScript : EnemyScript
     protected override void Awake()
     {
         base.Awake();
-        type = EnemyStats.EarthBasic.type;
+        _type = EnemyStats.EarthBasic.type;
         maxHealth = EnemyStats.EarthBasic.maxHealth;
         health = maxHealth;
         damage = EnemyStats.EarthBasic.damage;
@@ -38,7 +38,7 @@ public class EarthEnemyScript : EnemyScript
 
     public override void dealDamage(Player player)
     {
-        player.takeDamage(damage, type, false);
+        player.takeDamage(damage, _type, false);
 
         StatusEffectManager.Instance.applySlow(player.gameObject, statusIntensity, statusDurability);
     }

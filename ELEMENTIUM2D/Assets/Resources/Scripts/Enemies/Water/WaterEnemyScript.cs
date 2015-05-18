@@ -10,7 +10,7 @@ public class WaterEnemyScript : EnemyScript
     protected override void Awake()
     {
         base.Awake();
-        type = EnemyStats.WaterBasic.type;
+        _type = EnemyStats.WaterBasic.type;
         maxHealth = EnemyStats.WaterBasic.maxHealth;
         health = maxHealth;
         damage = EnemyStats.WaterBasic.damage;
@@ -34,6 +34,6 @@ public class WaterEnemyScript : EnemyScript
 
     public override void dealDamage(Player player)
     {
-        player.takeDamage(damage, type, false);
+        player.takeDamage(damage, _type, false);
     }
 }

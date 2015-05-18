@@ -1,0 +1,7 @@
+#########################################################
+Logging/NumTypeEnemiesAndSkillsUsed.txt
+Enemy(Clone)|NEUTRAL||projectile|NEUTRAL
+Enemy(Clone)|NEUTRAL||projectile|NEUTRAL
+Spawner|NEUTRAL||projectile|NEUTRAL
+#########################################################
+Logging/NumTypeAbilitesPerZone.txt
