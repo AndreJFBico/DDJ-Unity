@@ -56,9 +56,12 @@ public class IceShard : AbilityBehaviour
                     base.OnCollisionEnter(collision);
                 }
                 Vector3 impactNormal = cp.normal;
-
-                transform.Rotate(new Vector3(0.0f, 1.0f, 0.0f), Mathf.Rad2Deg * (signedAngleRadian(transform.forward, impactNormal)));
-                GetComponent<Rigidbody>().velocity = Vector3.Reflect(GetComponent<Rigidbody>().velocity, cp.normal);
+                Vector3 towardsDirection = Vector3.Reflect(transform.forward, impactNormal);
+                //float angle = signedAngleRadian(towardsDirection, impactNormal);
+                Quaternion rot = Quaternion.FromToRotation(transform.forward, towardsDirection);
+                transform.rotation = rot * transform.rotation;
+                ///transform.Rotate(new Vector3(0.0f, 1.0f, 0.0f), Mathf.Rad2Deg * angle);
+                //GetComponent<Rigidbody>().velocity = Vector3.Reflect(GetComponent<Rigidbody>().velocity, cp.normal);
 
             }
         }

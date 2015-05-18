@@ -67,7 +67,7 @@ public class LoggingManager
     {
         string finalFilePath = folder + "FinalLog";
         int i = 0;
-        while (File.Exists(finalFilePath + i))
+        while (File.Exists(finalFilePath + i + ".txt"))
         {
             i++;
         }
@@ -76,7 +76,7 @@ public class LoggingManager
         foreach (LoggingEntry entry in allEntries)
         {
             string path = entry.Filepath;
-            File.AppendAllText(filePath, "#########################################################\n" + path + "\n");
+            File.AppendAllText(filePath, "#########################################################\r\n" + path + "\r\n");
             File.AppendAllText(filePath, File.ReadAllText(path));
         }
     } 

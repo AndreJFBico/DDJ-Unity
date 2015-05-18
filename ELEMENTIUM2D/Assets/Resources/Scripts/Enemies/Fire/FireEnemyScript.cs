@@ -37,7 +37,7 @@ public class FireEnemyScript : EnemyScript
 
     public override void dealDamage(Player player)
     {
-        player.takeDamage(damage, _type, false);
+        player.takeDamage(damage, _type, false, gameObject.name);
         int i = RandomGenerator.Next(4);
         if(i == 0)
         {

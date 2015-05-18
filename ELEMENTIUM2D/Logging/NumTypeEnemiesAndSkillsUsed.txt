@@ -1,3 +1,0 @@
-Enemy(Clone)|NEUTRAL||projectile|NEUTRAL
-Enemy(Clone)|NEUTRAL||projectile|NEUTRAL
-Spawner|NEUTRAL||projectile|NEUTRAL

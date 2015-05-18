@@ -34,6 +34,7 @@ public class EnemyScript : Agent
     protected virtual void Awake()
     {
         base.Awake();
+        gameObject.name = this.GetType().Name;
         Vector2 targetPos = Camera.main.WorldToScreenPoint(transform.position);
         pathAgent = GetComponentInChildren<PathAgent>();
         centerHealthBar = true;
@@ -63,7 +64,7 @@ public class EnemyScript : Agent
     }
 
     //Currently enemies do not blink some of them will in the future!
-    public override void takeDamage(float amount, Elements type, bool goTroughBlink)
+    public override void takeDamage(float amount, Elements type, bool goTroughBlink, string source)
     {
         float totalDamage = 0;
         Color color = Color.white;
@@ -97,7 +98,7 @@ public class EnemyScript : Agent
         setInCombat();
         if (health <= 0)
         {
-            LoggingManager.Instance.getEntry(typeof(NumTypeEnemieAndAbility)).writeEntry(gameObject.name, _type, "projectile", type);
+            LoggingManager.Instance.getEntry(typeof(NumTypeEnemieAndAbility)).writeEntry(gameObject.name, _type, source, type);
             GameManager.Instance.Player.resetKillTimer();
             GameManager.Instance.Player.increaseMultiplier(multiplier);
             Eliminate();

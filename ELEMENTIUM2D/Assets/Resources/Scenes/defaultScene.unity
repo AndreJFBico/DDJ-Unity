@@ -445,6 +445,18 @@ Prefab:
       propertyPath: m_Name
       value: StaminaBarBackground
       objectReference: {fileID: 0}
+    - target: {fileID: 11499454, guid: 2a8dc48e77b54cc4a9e6d6c9045e4acd, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11424334, guid: 2a8dc48e77b54cc4a9e6d6c9045e4acd, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11404852, guid: 2a8dc48e77b54cc4a9e6d6c9045e4acd, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2a8dc48e77b54cc4a9e6d6c9045e4acd, type: 2}
   m_IsPrefabParent: 0

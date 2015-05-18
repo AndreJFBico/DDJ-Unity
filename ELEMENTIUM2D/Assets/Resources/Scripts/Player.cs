@@ -192,7 +192,7 @@ public class Player : Agent {
         }
     }
    
-    public override void takeDamage(float amount, Elements type, bool goTroughBlink)
+    public override void takeDamage(float amount, Elements type, bool goTroughBlink, string source)
     {
         if (health() <= 0) return;
         if (health() - amount > maxHealth()) return;

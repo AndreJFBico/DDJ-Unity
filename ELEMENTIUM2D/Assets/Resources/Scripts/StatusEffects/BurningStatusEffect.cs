@@ -71,7 +71,7 @@ public class BurningStatusEffect : StatusEffect
         float interval = 1f;
         while (burningTimer > 0)
         {
-            script.takeDamage(intensity / (duration / interval), Elements.FIRE, true);
+            script.takeDamage(intensity / (duration / interval), Elements.FIRE, true, this.GetType().Name);
             burningTimer -= interval;
             yield return new WaitForSeconds(interval);
         }
