@@ -197,7 +197,9 @@ public class GUIManager : MonoBehaviour {
 
     public void playerDeath()
     {
-        restartButton.SetActive(true);
+        restartButton.GetComponent<Image>().enabled = true;
+        restartButton.GetComponent<Button>().enabled = true;
+        restartButton.GetComponentInChildren<Text>().enabled = true;
     }
 
     public void restartLevel()
