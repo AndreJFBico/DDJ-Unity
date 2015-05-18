@@ -10,6 +10,8 @@ public class LoggingManager
 
     //List of all filePaths -> add them in init
     private static List<LoggingEntry> allEntries;
+    private static string folder = "Logging/";
+
 
     #region Initialization
 
@@ -22,8 +24,8 @@ public class LoggingManager
         allEntries = new List<LoggingEntry>();
 
         //add here the filePaths you want to use
-        allEntries.Add(new NumTypeEnemieAndAbility("NumTypeEnemiesAndSkillsUsed.txt"));
-        allEntries.Add(new NumTypeAbilityPerZone("NumTypeAbilitesPerZone.txt"));
+        allEntries.Add(new NumTypeEnemieAndAbility(folder + "NumTypeEnemiesAndSkillsUsed.txt"));
+        allEntries.Add(new NumTypeAbilityPerZone(folder + "NumTypeAbilitesPerZone.txt"));
     }
 
     public void sceneInit() { }
@@ -32,7 +34,7 @@ public class LoggingManager
     {
         foreach (LoggingEntry entry in allEntries)
         {
-            if(entry.Filepath == filename)
+            if(entry.Filepath == folder + filename)
             {
                 return entry;
             }
@@ -51,7 +53,7 @@ public class LoggingManager
 
     private void concatenateFiles()
     {
-        string finalFilePath = "FinalLog";
+        string finalFilePath = folder + "FinalLog";
         int i = 0;
         while (File.Exists(finalFilePath + i))
         {
