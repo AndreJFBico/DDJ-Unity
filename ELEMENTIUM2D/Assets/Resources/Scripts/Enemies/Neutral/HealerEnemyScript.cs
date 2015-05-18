@@ -26,7 +26,7 @@ public class HealerEnemyScript : EnemyScript {
     {
         base.Awake();
         targetedEnemies = new List<Transform>();
-        type = Elements.NEUTRAL;
+        _type = Elements.NEUTRAL;
         projectile = Resources.Load(EnemyStats.HealerNeutral.neutralEnemyProjectile) as GameObject;
         rangedRadius = EnemyStats.HealerNeutral.rangedRadius;
         maxHealth = EnemyStats.HealerNeutral.maxHealth;
@@ -88,7 +88,7 @@ public class HealerEnemyScript : EnemyScript {
             {
                 GameObject p = Instantiate(projectile, targetedEnemy.position, Quaternion.identity) as GameObject;
                 p.transform.parent = targetedEnemy.transform;
-                targetedEnemy.GetComponent<EnemyScript>().healSelf(EnemyStats.HealerNeutral.healAmount, type);
+                targetedEnemy.GetComponent<EnemyScript>().healSelf(EnemyStats.HealerNeutral.healAmount, _type);
                 if(targetedEnemy.GetComponent<EnemyScript>().isFullHealth())
                 {
                     targetedEnemy = null;
@@ -196,7 +196,7 @@ public class HealerEnemyScript : EnemyScript {
 
     public override void dealDamage(Player player)
     {
-        player.takeDamage(damage, type, false);
+        player.takeDamage(damage, _type, false);
     }
 
     public override void Eliminate()

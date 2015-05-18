@@ -23,7 +23,7 @@ public class EnemySpawner : EnemyScript
 	// Use this for initialization
 	protected override void Awake()
     {
-        type = Elements.NEUTRAL;
+        _type = Elements.NEUTRAL;
         maxHealth = EnemyStats.Spawner.maxHealth;
         health = maxHealth;
         damage = EnemyStats.Spawner.damage;

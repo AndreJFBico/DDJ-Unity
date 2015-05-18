@@ -113,7 +113,7 @@ public class RangedEnemyScript : EnemyScript {
 
     public override void dealDamage(Player player)
     {
-        player.takeDamage(damage, type, false);
+        player.takeDamage(damage, _type, false);
     }
 
     public override void Eliminate()

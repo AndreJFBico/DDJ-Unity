@@ -10,7 +10,7 @@ public class NeutralEnemyScript : EnemyScript
     protected override void Awake()
     {
         base.Awake();
-        type = Elements.NEUTRAL;
+        _type = Elements.NEUTRAL;
         maxHealth = EnemyStats.BasicNeutral.maxHealth;
         health = maxHealth;
         damage = EnemyStats.BasicNeutral.damage;
@@ -34,6 +34,6 @@ public class NeutralEnemyScript : EnemyScript
 
     public override void dealDamage(Player player)
     {
-        player.takeDamage(damage, type, false);
+        player.takeDamage(damage, _type, false);
     }
 }

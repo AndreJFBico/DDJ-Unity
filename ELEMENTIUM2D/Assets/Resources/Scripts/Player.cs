@@ -363,7 +363,11 @@ public class Player : Agent {
 
     public void setPlayerInCombat()
     {
-
         StartCoroutine("setOutOfCombat");
+    }
+
+    void OnApplicationQuit()
+    {
+        LoggingManager.Instance.wrapUp();
     }
 }
