@@ -1,3 +1,8 @@
 Enemy(Clone)|NEUTRAL||projectile|NEUTRAL
 Enemy(Clone)|NEUTRAL||projectile|NEUTRAL
 Spawner|NEUTRAL||projectile|NEUTRAL
+EarthSpawner 3|NEUTRAL||projectile|NEUTRAL
+EarthSpawner 2|NEUTRAL||projectile|NEUTRAL
+EarthSpawner|NEUTRAL||projectile|NEUTRAL
+EarthBasicEnemy(Clone)|EARTH||projectile|NEUTRAL
+EarthBasicEnemy(Clone)|EARTH||projectile|NEUTRAL

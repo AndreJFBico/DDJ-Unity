@@ -5411,11 +5411,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22412324, guid: b12e8ae4fd141f04688ad5523290cc2f, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 19.6000061
+      value: -52.3999939
       objectReference: {fileID: 0}
     - target: {fileID: 22412324, guid: b12e8ae4fd141f04688ad5523290cc2f, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -52.6000061
+      value: -10.6000061
       objectReference: {fileID: 0}
     - target: {fileID: 22412324, guid: b12e8ae4fd141f04688ad5523290cc2f, type: 2}
       propertyPath: m_SizeDelta.x
@@ -5427,19 +5427,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22412324, guid: b12e8ae4fd141f04688ad5523290cc2f, type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: .120000005
       objectReference: {fileID: 0}
     - target: {fileID: 22412324, guid: b12e8ae4fd141f04688ad5523290cc2f, type: 2}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: .875575125
       objectReference: {fileID: 0}
     - target: {fileID: 22412324, guid: b12e8ae4fd141f04688ad5523290cc2f, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: .120000005
       objectReference: {fileID: 0}
     - target: {fileID: 22412324, guid: b12e8ae4fd141f04688ad5523290cc2f, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: .875575125
       objectReference: {fileID: 0}
     - target: {fileID: 22412324, guid: b12e8ae4fd141f04688ad5523290cc2f, type: 2}
       propertyPath: m_Pivot.x
@@ -8559,10 +8559,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 207107494}
   m_RootOrder: 2
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 275.100006, y: -291.5}
-  m_SizeDelta: {x: 200, y: 20}
+  m_AnchorMin: {x: .466666698, y: .13000001}
+  m_AnchorMax: {x: .466666698, y: .13000001}
+  m_AnchoredPosition: {x: -4.8999939, y: 2}
+  m_SizeDelta: {x: 200, y: 19}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1589728803
 MonoBehaviour:
@@ -8586,10 +8586,10 @@ MonoBehaviour:
     m_MaxSize: 40
     m_Alignment: 1
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: <<Press Enter to Start>>
+  m_Text: <<Press Enter or (A) to Start Game>>
 --- !u!222 &1589728804
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -88,6 +88,7 @@ public class PathAgent : MonoBehaviour
     {
         imobilized = false;
         agent.speed = previousSpeed;
+        chasingPlayer = false;
         if(chase)
         {
             if(previousTarget != null)

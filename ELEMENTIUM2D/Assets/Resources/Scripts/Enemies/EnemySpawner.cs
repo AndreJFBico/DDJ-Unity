@@ -66,10 +66,13 @@ public class EnemySpawner : EnemyScript
 
     IEnumerator SpawnEnemy()
     {
+        float maxSpawn = toSpawn.Count + spawned.Count;
+        float numToSpawn = maxSpawn;
         while (true)
         {
-            if (toSpawn.Count > 0)
+            if (toSpawn.Count > 0 && numToSpawn > 0)
             {
+                numToSpawn--;
                 Transform obj = toSpawn[0];
                 obj.transform.position = transform.FindChild("SpawnPosition").position;
                 obj.gameObject.SetActive(true);
@@ -79,7 +82,11 @@ public class EnemySpawner : EnemyScript
                 toSpawn.Remove(obj);
                 spawned.Add(obj);
             }
-            else yield return new WaitForSeconds(total_spawn_time);
+            else
+            {
+                numToSpawn = maxSpawn;
+                yield return new WaitForSeconds(total_spawn_time);
+            }
             yield return new WaitForSeconds(spawn_timer);
         }
     }
