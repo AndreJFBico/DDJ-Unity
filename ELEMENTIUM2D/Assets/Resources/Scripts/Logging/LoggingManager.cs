@@ -12,6 +12,15 @@ public class LoggingManager
     private static List<LoggingEntry> allEntries;
     private static string folder = "Logging/";
 
+    private static float startTime;
+    private static float endTime;
+    private static float numRoomsSearched;
+    private static float numTreasuresObtained;
+    private static float timeToFire;
+    private static float timeToEarth;
+    private static float numSkillTreePoints;
+    private static float numMaxMultiplier;
+
 
     #region Initialization
 
@@ -30,11 +39,13 @@ public class LoggingManager
 
     public void sceneInit() { }
 
-    public LoggingEntry getEntry(string filename)
+    #endregion
+
+    public LoggingEntry getEntry(System.Type type)
     {
         foreach (LoggingEntry entry in allEntries)
         {
-            if(entry.Filepath == folder + filename)
+            if(entry.GetType() == type)
             {
                 return entry;
             }
@@ -42,6 +53,7 @@ public class LoggingManager
         return null;
     }
 
+    #region WrapUp
     public void wrapUp()
     {
         foreach (LoggingEntry entry in allEntries)
@@ -67,7 +79,7 @@ public class LoggingManager
             File.AppendAllText(filePath, "#########################################################\n" + path + "\n");
             File.AppendAllText(filePath, File.ReadAllText(path));
         }
-    }
-
+    } 
     #endregion
+
 }
