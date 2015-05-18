@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using Includes;
 
@@ -14,7 +15,9 @@ public class EndGamePortal : Interactable
     {
         endgameMessage = GameObject.Find("EndgameMessage").transform;
         restartButton = GameObject.Find("RestartButton").transform;
-        restartButton.gameObject.SetActive(false);
+        restartButton.GetComponent<Image>().enabled = false;
+        restartButton.GetComponent<Button>().enabled = false;
+        restartButton.GetComponentInChildren<Text>().enabled = false;
         endgameMessage.GetComponent<MeshRenderer>().enabled = false;
         base.Start();
     }
@@ -44,7 +47,6 @@ public class EndGamePortal : Interactable
         hideText();
         playerInteractions.Interactable = null;
         //ENDGAME
-
         endgameMessage.GetComponent<MeshRenderer>().enabled = true;
         restartButton.gameObject.SetActive(true);
         Destroy(this);

@@ -176,12 +176,14 @@ namespace Includes
                 public const int def_projectile_number = 1;
                 public const float def_damage = 2.5f;
                 public const float def_movementForce = 5;
+                public const int def_bounce = 2;
 
                 public static float attackSpeed = def_attackSpeed;
                 public static int projectile_number = def_projectile_number;
                 public static float damage = def_damage;
                 public static float movementForce = def_movementForce;
                 public static string projectile = "Prefabs/Projectiles/FrostBolt";
+                public static int bounce = def_bounce;
 
                 public static float Damage { get { return (float)Math.Round(damage + GameManager.Instance.Stats.damage * 0.85f, MidpointRounding.AwayFromZero); } }
                 public static float AttackSpeed { get { return attackSpeed + GameManager.Instance.Stats.attackSpeed * attackSpeed / 10; } } //Player AttackSpeed is to be incremented by int numbers
@@ -193,6 +195,7 @@ namespace Includes
                     damage = def_damage;
                     movementForce = def_movementForce;
                     projectile = "Prefabs/Projectiles/FrostBolt";
+                    bounce = def_bounce;
                 }
             }
 
@@ -270,10 +273,10 @@ namespace Includes
 
             public class ability1
             {
-                public const float def_attackSpeed = 0.30f;
+                public const float def_attackSpeed = 0.15f;
                 public const int def_projectile_number = 1;
                 public const int def_collisionNumber = 3;
-                public const float def_damage = 1;
+                public const float def_damage = 0.5f;
                 public const float def_maxForce = 20;
                 public const float def_minForce = 5;
 
@@ -686,7 +689,7 @@ namespace Includes
         public float waterResist = 0;
         public float earthResist = 0;
         public float fireResist = 0;
-        public float damageTimer = 1.5f;
+        public float damageTimer = 0.5f;
         public float multiplierTimer = def_multiplierTimer;
         public int currentMultiplier = 0;
         public int[] multiplierLevels = { 15, 35, 70 };
