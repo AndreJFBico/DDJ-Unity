@@ -51,10 +51,14 @@ public class IceShard : AbilityBehaviour
             {
                 ContactPoint cp = collision.contacts[0];
                 bounce--;
+                if (Vector3.Dot(cp.point - transform.position, cp.normal) > 0)
+                {
+                    base.OnCollisionEnter(collision);
+                }
                 Vector3 impactNormal = cp.normal;
 
                 transform.Rotate(new Vector3(0.0f, 1.0f, 0.0f), Mathf.Rad2Deg * (signedAngleRadian(transform.forward, impactNormal)));
-                //GetComponent<Rigidbody>().velocity = Vector3.Reflect(GetComponent<Rigidbody>().velocity, cp.normal);
+                GetComponent<Rigidbody>().velocity = Vector3.Reflect(GetComponent<Rigidbody>().velocity, cp.normal);
 
             }
         }
