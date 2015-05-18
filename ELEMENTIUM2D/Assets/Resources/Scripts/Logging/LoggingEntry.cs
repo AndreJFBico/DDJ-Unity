@@ -3,15 +3,22 @@ using System.Collections;
 using System.IO;
 using Includes;
 
-public class LoggingEntry
+public abstract class LoggingEntry
 {
     protected string filePath;
+    protected FileStream stream;
 
     public string Filepath { get { return filePath; } }
 
     public LoggingEntry(string path)
     {
         filePath = path;
+        if (File.Exists(filePath))
+        {
+            File.Delete(filePath);
+        }
+        stream = File.Create(filePath);
+        stream.Close();
     }
 
     public virtual void writeEntry(string enemyName, Elements enemyType, string projectileName, Elements projectileType) { }

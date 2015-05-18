@@ -11,7 +11,7 @@ public class NumTypeAbilityPerZone : LoggingEntry
     public override void writeEntry(string abilityName, Elements abilityType, string zone, string zoneType)
     {
         base.writeEntry(abilityName, abilityType, zone, zoneType);
-        addTextToFile(abilityName + "|" + System.Enum.GetName(typeof(Elements), abilityType) + "||" + zone + "|" + zoneType);
+        addTextToFile(abilityName + "|" + System.Enum.GetName(typeof(Elements), abilityType) + "||" + zone + "|" + zoneType + "\n");
     }
 
     public void wrapUp()

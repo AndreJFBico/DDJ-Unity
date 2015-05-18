@@ -11,7 +11,7 @@ public class NumTypeEnemieAndAbility : LoggingEntry
     public override void writeEntry(string enemyName, Elements enemyType, string projectileName, Elements projectileType)
     {
         base.writeEntry(enemyName, enemyType, projectileName, projectileType);
-        addTextToFile(enemyName + "|" + System.Enum.GetName(typeof(Elements), enemyType) + "||" + projectileName + "|" + System.Enum.GetName(typeof(Elements), projectileType));
+        addTextToFile(enemyName + "|" + System.Enum.GetName(typeof(Elements), enemyType) + "||" + projectileName + "|" + System.Enum.GetName(typeof(Elements), projectileType) + "\n");
     }
 
     public void wrapUp()

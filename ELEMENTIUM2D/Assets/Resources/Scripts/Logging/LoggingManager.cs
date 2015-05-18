@@ -22,17 +22,8 @@ public class LoggingManager
         allEntries = new List<LoggingEntry>();
 
         //add here the filePaths you want to use
-        allEntries.Add(new LoggingEntry("NumTypeEnemiesAndSkillsUsed.txt"));
-        allEntries.Add(new LoggingEntry("NumTypeAbilitesPerZone.txt"));
-
-        foreach (LoggingEntry entry in allEntries)
-        {
-            if (File.Exists(entry.Filepath))
-            {
-                File.Delete(entry.Filepath);
-            }
-            File.Create(entry.Filepath);
-        }
+        allEntries.Add(new NumTypeEnemieAndAbility("NumTypeEnemiesAndSkillsUsed.txt"));
+        allEntries.Add(new NumTypeAbilityPerZone("NumTypeAbilitesPerZone.txt"));
     }
 
     public void sceneInit() { }
@@ -67,11 +58,11 @@ public class LoggingManager
             i++;
         }
         string filePath = finalFilePath + i + ".txt";
-        File.Create(filePath);
+        (File.Create(filePath)).Close();
         foreach (LoggingEntry entry in allEntries)
         {
             string path = entry.Filepath;
-            File.AppendAllText(filePath, "#########################################################\n" + path);
+            File.AppendAllText(filePath, "#########################################################\n" + path + "\n");
             File.AppendAllText(filePath, File.ReadAllText(path));
         }
     }
