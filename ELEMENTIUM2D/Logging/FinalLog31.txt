@@ -1,0 +1,4 @@
+#########################################################
+Logging/NumTypeEnemiesAndSkillsUsed.txt
+#########################################################
+Logging/NumTypeAbilitesPerZone.txt

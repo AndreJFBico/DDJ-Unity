@@ -1,0 +1,9 @@
+#########################################################
+Logging/NumTypeEnemiesAndSkillsUsed.txt
+Amount: 4|NeutralEnemyScript|NEUTRAL||NeutralBlast|NEUTRAL
+Amount: 5|EarthEnemyScript|EARTH||NeutralBlast|NEUTRAL
+Amount: 2|EnemySpawner|NEUTRAL||NeutralBlast|NEUTRAL
+#########################################################
+Logging/NumTypeAbilitesPerZone.txt
+Amount: 27|NeutralBlast|NEUTRAL||NEUTRAL
+Amount: 219|NeutralBlast|NEUTRAL||EARTH

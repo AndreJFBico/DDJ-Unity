@@ -900,7 +900,7 @@ namespace Includes
 
         public Player Player { get { return player.GetComponent<Player>(); } }
 
-        public DungeonRoom PlayerRoom { get { return playerRoom; } set { playerRoom = value; } }
+        public DungeonRoom PlayerRoom { get { return playerRoom; } set { playerRoom = value; PostProcessingManager.Instance.updatePostProcessing(); } }
 
         public GameObject GUI { get { return gui; } }
 
@@ -953,6 +953,30 @@ namespace Includes
                     }
                 }
             }
+        }
+
+        //Note for Starting and Ending rooms we assume that their type is Neutral since there are no enemies in it
+        public Elements DungeonRoomType() 
+        { 
+            string name = playerRoom.name;
+
+            if(name.Contains("Fire"))
+            {
+                return Elements.FIRE;
+            }
+            else if (name.Contains("Neutral"))
+            {
+                return Elements.NEUTRAL;
+            }
+            else if (name.Contains("Earth"))
+            {
+                return Elements.EARTH;
+            }
+            else if (name.Contains("Ice"))
+            {
+                return Elements.WATER;
+            }
+            return Elements.NEUTRAL;
         }
 
         public float getStatVariable(string field)

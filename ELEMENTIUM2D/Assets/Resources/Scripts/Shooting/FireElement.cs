@@ -70,6 +70,7 @@ public class FireElement: ShootElement {
             canMain = false;
             Invoke("resetMain", attackSpeed);
             fire(attackSpeed, projectileNumber, damage, projectile1);
+            LoggingManager.Instance.getEntry(typeof(NumTypeAbilityPerZone)).writeEntry(projectile1.name, Elements.FIRE, GameManager.Instance.PlayerRoom.name, GameManager.Instance.DungeonRoomType());
             GameManager.Instance.GUI.GetComponent<GUIManager>().addCoolDown(_elementType, 0, attackSpeed);
         }
     }
@@ -87,7 +88,7 @@ public class FireElement: ShootElement {
             gunBlast2.SetActive(true);
             Invoke("deactivateBlast", 0.1f);
             Instantiate(OilPuddleManager.Instance.OilPuddle, barrelEnd.position, OilPuddleManager.Instance.OilPuddle.transform.rotation);
-
+            LoggingManager.Instance.getEntry(typeof(NumTypeAbilityPerZone)).writeEntry(OilPuddleManager.Instance.OilPuddle.name, Elements.FIRE, GameManager.Instance.PlayerRoom.name, GameManager.Instance.DungeonRoomType());
             GameManager.Instance.GUI.GetComponent<GUIManager>().addCoolDown(_elementType, 1, OilPuddleManager.Instance.internalCooldown());
         }
     }
@@ -106,6 +107,7 @@ public class FireElement: ShootElement {
             canTerciary = false;
             Invoke("resetTerciary", attackSpeed);
             fire(attackSpeed, projectileNumber, damage, projectile3);
+            LoggingManager.Instance.getEntry(typeof(NumTypeAbilityPerZone)).writeEntry(projectile3.name, Elements.FIRE, GameManager.Instance.PlayerRoom.name, GameManager.Instance.DungeonRoomType());
             GameManager.Instance.GUI.GetComponent<GUIManager>().addCoolDown(_elementType, 2, attackSpeed);
         }
     }

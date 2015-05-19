@@ -68,6 +68,7 @@ public class NeutralElement : ShootElement
             canMain = false;
             Invoke("resetMain", attackSpeed);
             fire(attackSpeed, projectileNumber, damage, projectile1);
+            LoggingManager.Instance.getEntry(typeof(NumTypeAbilityPerZone)).writeEntry(projectile1.name, Elements.NEUTRAL, GameManager.Instance.PlayerRoom.name, GameManager.Instance.DungeonRoomType());
             GameManager.Instance.GUI.GetComponent<GUIManager>().addCoolDown(_elementType, 0, attackSpeed);
         }
     }
@@ -86,6 +87,7 @@ public class NeutralElement : ShootElement
             canSecondary = false;
             Invoke("resetSecondary", attackSpeed);
             fire(attackSpeed, projectileNumber, damage, projectile2);
+            LoggingManager.Instance.getEntry(typeof(NumTypeAbilityPerZone)).writeEntry(projectile2.name, Elements.NEUTRAL, GameManager.Instance.PlayerRoom.name, GameManager.Instance.DungeonRoomType());
             GameManager.Instance.GUI.GetComponent<GUIManager>().addCoolDown(_elementType, 1, attackSpeed);
         }
     }
@@ -104,6 +106,7 @@ public class NeutralElement : ShootElement
             canTerciary = false;
             Invoke("resetTerciary", attackSpeed);
             fire(attackSpeed, projectileNumber, damage, projectile3);
+            LoggingManager.Instance.getEntry(typeof(NumTypeAbilityPerZone)).writeEntry(projectile3.name, Elements.NEUTRAL, GameManager.Instance.PlayerRoom.name, GameManager.Instance.DungeonRoomType());
             GameManager.Instance.GUI.GetComponent<GUIManager>().addCoolDown(_elementType, 2, attackSpeed);
         }
     }

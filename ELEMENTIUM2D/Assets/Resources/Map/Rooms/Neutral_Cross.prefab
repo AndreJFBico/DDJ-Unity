@@ -4741,6 +4741,7 @@ MonoBehaviour:
   lastSearch: 0
   parked: 0
   randomGroup: 
+  cleared: 0
 --- !u!208 &20809400
 NavMeshObstacle:
   m_ObjectHideFlags: 1
@@ -6002,7 +6003,7 @@ SpriteRenderer:
   m_SortingLayerID: 1277553139
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 8be86a30624b15242a16da8902bc53d8, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .705882311, g: .705882311, b: .705882311, a: 1}
 --- !u!212 &21281642
 SpriteRenderer:
   m_ObjectHideFlags: 1
