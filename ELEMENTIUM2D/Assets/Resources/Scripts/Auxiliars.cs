@@ -900,7 +900,7 @@ namespace Includes
 
         public Player Player { get { return player.GetComponent<Player>(); } }
 
-        public DungeonRoom PlayerRoom { get { return playerRoom; } set { playerRoom = value; } }
+        public DungeonRoom PlayerRoom { get { return playerRoom; } set { playerRoom = value; PostProcessingManager.Instance.updatePostProcessing(); } }
 
         public GameObject GUI { get { return gui; } }
 

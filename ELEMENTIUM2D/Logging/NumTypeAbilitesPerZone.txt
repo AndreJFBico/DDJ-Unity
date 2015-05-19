@@ -1,5 +1,2 @@
-Amount: 30|NeutralBlast|NEUTRAL||NEUTRAL
-Amount: 269|NeutralBlast|NEUTRAL||EARTH
-Amount: 2|NeutralMissile|NEUTRAL||NEUTRAL
-Amount: 15|NeutralMissile|NEUTRAL||EARTH
-Amount: 18|EarthDisk|EARTH||EARTH
+Amount: 136|NeutralBlast|NEUTRAL||FIRE
+Amount: 21|OilPuddle|FIRE||FIRE

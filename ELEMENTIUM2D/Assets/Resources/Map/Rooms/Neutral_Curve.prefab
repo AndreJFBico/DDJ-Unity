@@ -2569,6 +2569,7 @@ MonoBehaviour:
   lastSearch: 0
   parked: 0
   randomGroup: 
+  cleared: 0
 --- !u!114 &11496824
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2886,7 +2887,7 @@ SpriteRenderer:
   m_SortingLayerID: 1277553139
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 2a7594916f55b8a4580bd771a2314705, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .705882311, g: .705882311, b: .705882311, a: 1}
 --- !u!212 &21223250
 SpriteRenderer:
   m_ObjectHideFlags: 1
