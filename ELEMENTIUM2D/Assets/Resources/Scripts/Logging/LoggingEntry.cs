@@ -23,6 +23,9 @@ public abstract class LoggingEntry
 
     public virtual void writeEntry(string enemyName, Elements enemyType, string projectileName, Elements projectileType) { }
     public virtual void writeEntry(string abilityName, Elements abilityType, string zone, string zoneType) { }
+    public virtual void writeEntry() { }
+
+    public virtual int numEnemiesKilled() { return -1; }
 
     protected void addTextToFile(string text)
     {

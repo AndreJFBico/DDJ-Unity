@@ -35,10 +35,12 @@ public class Player : Agent {
     protected override void Awake()
     {
         base.Awake();
+        LoggingManager.Instance.RespawnTime = Time.time;
         Application.targetFrameRate = 60;
         GameManager.Instance.sceneInit();
         OilPuddleManager.Instance.sceneInit();
         ChestManager.Instance.sceneInit();
+        PostProcessingManager.Instance.sceneInit();
         gui = GameObject.Find("GUI").GetComponent<GUIManager>();
         stamina = () => { return GameManager.Instance.Stats.stamina; };
         maxStamina = () => { return GameManager.Instance.Stats.maxStamina; };
@@ -285,6 +287,7 @@ public class Player : Agent {
     {
         if (health() <= 0)
         {
+            LoggingManager.Instance.getEntry(typeof(AvgAliveSKPointsEnemiesKilled)).writeEntry();
             transform.FindChild("Sprite").gameObject.SetActive(false);
             transform.FindChild("Rotator").gameObject.SetActive(false);
             transform.FindChild("RIP").gameObject.SetActive(true);

@@ -402,4 +402,9 @@ public class SkillTreeManager : MonoBehaviour
         iterate(node.sucessors);
         Debug.Log("Finished updating game variables");
     }
+
+    void OnApplicationQuit()
+    {
+        LoggingManager.Instance.wrapUp();
+    }
 }

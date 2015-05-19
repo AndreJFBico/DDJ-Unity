@@ -28,6 +28,16 @@ public class NumTypeEnemieAndAbility : LoggingEntry
         //addTextToFile(enemyName + "|" + System.Enum.GetName(typeof(Elements), enemyType) + "||" + projectileName + "|" + System.Enum.GetName(typeof(Elements), projectileType) + "\n");
     }
 
+    public override int numEnemiesKilled()
+    {
+        int sum = 0;
+        foreach (KeyValuePair<string, StringTypeStringType> pair in stats)
+        {
+            sum += pair.Value.amount;
+        }
+        return sum;
+    }
+
     public override void wrapUp()
     {
         foreach (KeyValuePair<string, StringTypeStringType> pair in stats)

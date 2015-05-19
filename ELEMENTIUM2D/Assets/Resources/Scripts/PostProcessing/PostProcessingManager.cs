@@ -28,6 +28,20 @@ public class PostProcessingManager {
         currentEffect.Play();
     }
 
+    public void sceneInit()
+    {
+        rain = GameObject.Find("Rain").transform.GetComponent<ParticleSystem>();
+        snow = GameObject.Find("Snow").transform.GetComponent<ParticleSystem>();
+        fire = GameObject.Find("Fire").transform.GetComponent<ParticleSystem>();
+        wind = GameObject.Find("Wind").transform.GetComponent<ParticleSystem>();
+        currentEffect = rain;
+        rain.enableEmission = true;
+        snow.enableEmission = false;
+        fire.enableEmission = false;
+        wind.enableEmission = false;
+        currentEffect.Play();
+    }
+
 
     public void updatePostProcessing()
     {

@@ -13,6 +13,7 @@ public class LoggingManager
     private static string folder = "Logging/";
 
     private static float startTime;
+    private static float respawnTime;
     private static float endTime;
     private static float numRoomsSearched;
     private static float numTreasuresObtained;
@@ -21,6 +22,12 @@ public class LoggingManager
     private static float numSkillTreePoints;
     private static float numMaxMultiplier;
 
+    #region Getters
+    public float StartTime { get { return startTime; } set { startTime = value; } }
+    public float EndTime { get { return endTime; } set { endTime = value; } }
+    public float RespawnTime { get { return respawnTime; } set { respawnTime = value; } }
+
+    #endregion
 
     #region Initialization
 
@@ -30,11 +37,13 @@ public class LoggingManager
 
     private static void init()
     {
+        startTime = 0;
         allEntries = new List<LoggingEntry>();
 
         //add here the filePaths you want to use
         allEntries.Add(new NumTypeEnemieAndAbility(folder + "NumTypeEnemiesAndSkillsUsed.txt"));
         allEntries.Add(new NumTypeAbilityPerZone(folder + "NumTypeAbilitesPerZone.txt"));
+        allEntries.Add(new AvgAliveSKPointsEnemiesKilled(folder + "AvgAliveSKPointsEnemiesKilled.txt"));
     }
 
     public void sceneInit() { }
@@ -53,9 +62,15 @@ public class LoggingManager
         return null;
     }
 
+    public int numEnemiesKilled()
+    {
+        return getEntry(typeof(NumTypeEnemieAndAbility)).numEnemiesKilled();
+    }
+
     #region WrapUp
     public void wrapUp()
     {
+        endTime = Time.time;
         foreach (LoggingEntry entry in allEntries)
         {
             entry.wrapUp();
