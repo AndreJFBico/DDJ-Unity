@@ -196,7 +196,7 @@ public class HealerEnemyScript : EnemyScript {
 
     public override void dealDamage(Player player)
     {
-        player.takeDamage(damage, _type, false);
+        player.takeDamage(damage, _type, false, gameObject.name);
     }
 
     public override void Eliminate()

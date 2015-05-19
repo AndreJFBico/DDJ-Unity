@@ -28,7 +28,7 @@ public class Agent : ElementiumMonoBehaviour
 
     public virtual void OnCollisionExit(Collision collision) { }
 
-    public virtual void takeDamage(float amount, Elements type, bool goTroughBlink) { }
+    public virtual void takeDamage(float amount, Elements type, bool goTroughBlink, string source) { }
 
     public virtual void healSelf(float amount, Elements type) { }
 

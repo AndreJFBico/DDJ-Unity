@@ -11,7 +11,7 @@ namespace TelegraphEffect
         {
             if(!deltDamage)
             {
-                entity.GetComponent<Agent>().takeDamage(damage, Includes.Elements.FIRE, true);
+                entity.GetComponent<Agent>().takeDamage(damage, Includes.Elements.FIRE, true, "InstantTelegraphedDamage");
                 deltDamage = true;
             }         
         }

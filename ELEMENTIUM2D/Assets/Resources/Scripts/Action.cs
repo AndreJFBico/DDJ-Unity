@@ -8,7 +8,6 @@ public class Action : MonoBehaviour {
     public float fire1 = 0.0f;
     public float fire2 = 0.0f;
     public float fire3 = 0.0f;
-    int priority = 0;
 
     public bool changeElementForward = false;
     public bool changeElementBackward = false;
@@ -46,13 +45,7 @@ public class Action : MonoBehaviour {
 
         if (fire1 + fire2 + fire3 > 0)
         {
-		    bool fire2Aux = Input.GetButtonDown("Fire2") || Input.GetButtonDown("JoystickFire2");
-		    bool fire3Aux = Input.GetButtonDown("Fire3") || Input.GetButtonDown("JoystickFire3");
-            if(fire2Aux)
-                priority = 2;
-            if(fire3Aux)
-                priority = 3;
-            shot = shooting.shoot(fire1, fire2, fire3, priority);
+            shot = shooting.shoot(fire1, fire2, fire3);
         } 
 
         #endregion

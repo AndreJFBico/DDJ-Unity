@@ -34,14 +34,14 @@ public class EnemyFireball : AbilityBehaviour
         {
             Agent enemy = collidedObj.GetComponent<Agent>();
             collidedObj.GetComponent<EnemyScript>().playerSighted();
-            enemy.takeDamage(damage, type, false);
+            enemy.takeDamage(damage, type, false, gameObject.name);
             StatusEffectManager.Instance.applyBurning(enemy.gameObject, damage / 2, 5);
             return true;
         }
         else if (LayerMask.NameToLayer("Player") == collidedObj.layer)
         {
             Agent player = collidedObj.GetComponent<Agent>();
-            player.takeDamage(damage, type, false);
+            player.takeDamage(damage, type, false, gameObject.name);
             StatusEffectManager.Instance.applyBurning(player.gameObject, damage / 2, 5);
             return true;
         }

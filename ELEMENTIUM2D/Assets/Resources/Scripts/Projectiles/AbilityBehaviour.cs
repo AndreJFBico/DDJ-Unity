@@ -15,6 +15,7 @@ public class AbilityBehaviour : ElementiumMonoBehaviour
 
     protected virtual void Awake()
     {
+        gameObject.name = this.GetType().Name;
         startSpeed = 250;
     } 
     #endregion
@@ -45,13 +46,13 @@ public class AbilityBehaviour : ElementiumMonoBehaviour
         {
             Agent enemy = collidedObj.GetComponent<Agent>();
             collidedObj.GetComponent<EnemyScript>().playerSighted();
-            enemy.takeDamage(damage, type, false);
+            enemy.takeDamage(damage, type, false, gameObject.name);
             return true;
         }
         else if (LayerMask.NameToLayer("Player") == collidedObj.layer)
         {
             Agent player = collidedObj.GetComponent<Agent>();
-            player.takeDamage(damage, type, false);
+            player.takeDamage(damage, type, false, gameObject.name);
             return true;
         }
         return false;

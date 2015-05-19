@@ -11,6 +11,7 @@ public class Spike : BreakableProp
     // Use this for initialization
     void Start()
     {
+        transform.name = this.GetType().Name;
         maxDurability = 10;
         durability = maxDurability;
         animator = GetComponentInChildren<Animator>();
@@ -35,7 +36,7 @@ public class Spike : BreakableProp
             Agent ag = col.gameObject.GetComponent<Agent>();
             if (ag)
             {
-                ag.takeDamage(damage, element, true);
+                ag.takeDamage(damage, element, true, gameObject.name);
             }
             Invoke("resetTrigger", 1.4f);      
         }

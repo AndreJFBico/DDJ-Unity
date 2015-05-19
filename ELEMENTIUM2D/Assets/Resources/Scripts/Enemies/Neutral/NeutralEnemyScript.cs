@@ -34,6 +34,6 @@ public class NeutralEnemyScript : EnemyScript
 
     public override void dealDamage(Player player)
     {
-        player.takeDamage(damage, _type, false);
+        player.takeDamage(damage, _type, false, gameObject.name);
     }
 }

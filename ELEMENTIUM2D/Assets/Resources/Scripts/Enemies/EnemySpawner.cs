@@ -119,9 +119,9 @@ public class EnemySpawner : EnemyScript
         }
     }
 
-    public override void takeDamage(float amount, Elements type, bool goTroughBlink)
+    public override void takeDamage(float amount, Elements type, bool goTroughBlink, string source)
     {
-        base.takeDamage(amount, type, goTroughBlink);
+        base.takeDamage(amount, type, goTroughBlink, source);
         warnAllMyEnemies();
     }
 

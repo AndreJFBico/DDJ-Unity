@@ -49,7 +49,7 @@ public class NeutralBouncer : AbilityBehaviour {
             if(collision.gameObject.tag.CompareTo("Enemy") == 0)
             {
                 EnemyScript enemy = collision.gameObject.GetComponent<EnemyScript>();
-                enemy.takeDamage(damage, Elements.NEUTRAL, false);
+                enemy.takeDamage(damage, Elements.NEUTRAL, false, gameObject.name);
                 enemy.playerSighted();
                 if ( numSplit < AbilityStats.Neutral.ability3.numSplits )
                 {
