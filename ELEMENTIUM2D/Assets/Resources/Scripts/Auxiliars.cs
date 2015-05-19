@@ -769,7 +769,7 @@ namespace Includes
             waterResist = 0;
             earthResist = 0;
             fireResist = 0;
-            damageTimer = 1.5f;
+            damageTimer = 0.5f;
             multiplierTimer = def_multiplierTimer;
             multiplierLevels = new int[]{ 11, 24, 45};
             currentMultiplier = 0;
@@ -953,6 +953,30 @@ namespace Includes
                     }
                 }
             }
+        }
+
+        //Note for Starting and Ending rooms we assume that their type is Neutral since there are no enemies in it
+        public Elements DungeonRoomType() 
+        { 
+            string name = playerRoom.name;
+
+            if(name.Contains("Fire"))
+            {
+                return Elements.FIRE;
+            }
+            else if (name.Contains("Neutral"))
+            {
+                return Elements.NEUTRAL;
+            }
+            else if (name.Contains("Earth"))
+            {
+                return Elements.EARTH;
+            }
+            else if (name.Contains("Ice"))
+            {
+                return Elements.WATER;
+            }
+            return Elements.NEUTRAL;
         }
 
         public float getStatVariable(string field)

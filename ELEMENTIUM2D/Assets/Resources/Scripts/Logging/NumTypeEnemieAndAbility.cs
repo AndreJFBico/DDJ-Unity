@@ -6,7 +6,7 @@ using Logging;
 
 public class NumTypeEnemieAndAbility : LoggingEntry
 {
-    private Dictionary<string, EnemyKilledByProjectile> stats = new Dictionary<string, EnemyKilledByProjectile>();
+    private Dictionary<string, StringTypeStringType> stats = new Dictionary<string, StringTypeStringType>();
 
     public string Filepath { get { return filePath; } }
 
@@ -18,7 +18,7 @@ public class NumTypeEnemieAndAbility : LoggingEntry
         string key = enemyName + enemyType + projectileName + projectileType;
         if (!stats.ContainsKey(key))
         {
-            stats.Add(enemyName + enemyType + projectileName + projectileType, new EnemyKilledByProjectile(enemyName, enemyType, projectileName, projectileType));
+            stats.Add(enemyName + enemyType + projectileName + projectileType, new StringTypeStringType(enemyName, enemyType, projectileName, projectileType));
         }
         else
         {
@@ -30,9 +30,9 @@ public class NumTypeEnemieAndAbility : LoggingEntry
 
     public override void wrapUp()
     {
-        foreach(KeyValuePair<string, EnemyKilledByProjectile> pair in stats)
+        foreach (KeyValuePair<string, StringTypeStringType> pair in stats)
         {
-            addTextToFile("Amount: " + pair.Value.amount  + "|" + pair.Value.enemyName + "|" + System.Enum.GetName(typeof(Elements), pair.Value.enemyType) + "||" + pair.Value.projectileName + "|" + System.Enum.GetName(typeof(Elements), pair.Value.projectileType) + "\r\n");
+            addTextToFile("Amount: " + pair.Value.amount  + "|" + pair.Value._s1 + "|" + System.Enum.GetName(typeof(Elements), pair.Value._s2) + "||" + pair.Value._s3 + "|" + System.Enum.GetName(typeof(Elements), pair.Value._s4) + "\r\n");
         }
         //addTextToFile(enemyName + "|" + System.Enum.GetName(typeof(Elements), enemyType) + "||" + projectileName + "|" + System.Enum.GetName(typeof(Elements), projectileType) + "\n");
     }
