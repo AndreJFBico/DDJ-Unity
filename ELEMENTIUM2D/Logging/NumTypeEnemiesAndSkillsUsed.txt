@@ -1,4 +1,0 @@
-Amount: 2|NeutralEnemyScript|NEUTRAL||NeutralBouncer|NEUTRAL
-Amount: 1|NeutralEnemyScript|NEUTRAL||NeutralBlast|NEUTRAL
-Amount: 1|EnemySpawner|NEUTRAL||NeutralBlast|NEUTRAL
-Amount: 1|NeutralEnemyScript|NEUTRAL||NeutralMissile|NEUTRAL
