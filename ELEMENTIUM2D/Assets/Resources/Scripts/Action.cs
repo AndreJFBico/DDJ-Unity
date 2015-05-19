@@ -8,6 +8,10 @@ public class Action : MonoBehaviour {
     public float fire1 = 0.0f;
     public float fire2 = 0.0f;
     public float fire3 = 0.0f;
+    public bool fired2 = false;
+    public bool fired3 = false;
+    public int priority = 0;
+
 
     public bool changeElementForward = false;
     public bool changeElementBackward = false;
@@ -24,6 +28,19 @@ public class Action : MonoBehaviour {
         interaction = GetComponent<Interactions>();
 	}
 	
+    private int checkIfWeaponFiredLastFrame(float fire1, float fire2, float fire3)
+    {
+        if (fire2 > 0)
+            fired2 = fired2 ? false : true;
+        if(fire3 > 0)
+            fired3 = fired3 ? false : true;
+        if (fired2)
+            priority = 2;
+        if (fired3)
+            priority = 3;
+        return priority;
+    }
+
 	// Update is called once per frame
 	void Update () {
         bool shot = false;
@@ -45,7 +62,9 @@ public class Action : MonoBehaviour {
 
         if (fire1 + fire2 + fire3 > 0)
         {
-            shot = shooting.shoot(fire1, fire2, fire3);
+            shot = shooting.shoot(fire1, fire2, fire3, checkIfWeaponFiredLastFrame(fire1, fire2, fire3));
+            fired2 = fire2 > 0;
+            fired3 = fire3 > 0;
         } 
 
         #endregion

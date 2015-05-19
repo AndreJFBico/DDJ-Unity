@@ -1,8 +1,4 @@
-Enemy(Clone)|NEUTRAL||projectile|NEUTRAL
-Enemy(Clone)|NEUTRAL||projectile|NEUTRAL
-Spawner|NEUTRAL||projectile|NEUTRAL
-EarthSpawner 3|NEUTRAL||projectile|NEUTRAL
-EarthSpawner 2|NEUTRAL||projectile|NEUTRAL
-EarthSpawner|NEUTRAL||projectile|NEUTRAL
-EarthBasicEnemy(Clone)|EARTH||projectile|NEUTRAL
-EarthBasicEnemy(Clone)|EARTH||projectile|NEUTRAL
+Amount: 2|NeutralEnemyScript|NEUTRAL||NeutralBouncer|NEUTRAL
+Amount: 1|NeutralEnemyScript|NEUTRAL||NeutralBlast|NEUTRAL
+Amount: 1|EnemySpawner|NEUTRAL||NeutralBlast|NEUTRAL
+Amount: 1|NeutralEnemyScript|NEUTRAL||NeutralMissile|NEUTRAL

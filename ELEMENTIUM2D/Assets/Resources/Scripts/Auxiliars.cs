@@ -725,8 +725,8 @@ namespace Includes
         public float lim_maxStamina = float.MaxValue;
 
         public float lim_primary_neutral_level = 1;
-        public float lim_secondary_neutral_level = 0;
-        public float lim_terciary_neutral_level = 0;
+        public float lim_secondary_neutral_level = 1;
+        public float lim_terciary_neutral_level = 1;
 
         public float lim_primary_earth_level = 0;
         public float lim_secondary_earth_level = 0;

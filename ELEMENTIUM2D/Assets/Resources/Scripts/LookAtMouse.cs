@@ -24,6 +24,7 @@ public class LookAtMouse : MonoBehaviour {
     float spriteDot = 0;
     float animDot = 0;
 
+    public string[] js;
 
 	// Use this for initialization
     void Start()
@@ -51,7 +52,7 @@ public class LookAtMouse : MonoBehaviour {
     void detectTargetPosition()
     {
 		Transform targetMarker = transform.FindChild("BarrelEnd").FindChild("JoystickTarget");
-
+        js = Input.GetJoystickNames();
 		if(Input.GetJoystickNames().Length > 0){
 			targetMarker.gameObject.SetActive(true);
 			float hor = Input.GetAxisRaw ("JoystickRightHor");

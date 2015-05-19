@@ -9,7 +9,9 @@ using Includes;
 [RequireComponent(typeof(Player))]
 public class Shoot : MonoBehaviour {
 
-    private bool canShoot = true;
+    private bool canMain = true;
+    private bool canSecondary = true;
+    private bool canTerciary = true;
     private float globalCD = 0.3f;
 
     private void resetGlobalCD()
@@ -19,11 +21,11 @@ public class Shoot : MonoBehaviour {
 
     public bool shoot(float ability1, float ability2, float ability3, int priority)
     {
-        if (ability3 > 0 && canShoot)
+        if (ability3 > 0 && !(priority == 2))
             GameManager.Instance.CurrentElement.fireTerciary();
-        if (ability2 > 0)
+        if (ability2 > 0 && !(priority == 3))
             GameManager.Instance.CurrentElement.fireSecondary();
-        if (ability1 > 0)
+        if (ability1 > 0 && ability3 <= 0 && ability2 <= 0)
             GameManager.Instance.CurrentElement.fireMain();
 
         return false;
