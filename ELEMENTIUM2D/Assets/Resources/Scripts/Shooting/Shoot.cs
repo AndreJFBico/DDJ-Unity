@@ -21,9 +21,9 @@ public class Shoot : MonoBehaviour {
 
     public bool shoot(float ability1, float ability2, float ability3, int priority)
     {
-        if (ability3 > 0 && !(priority == 2))
+        if (ability3 > 0 && (!(priority == 2) || ability2 <= 0))
             GameManager.Instance.CurrentElement.fireTerciary();
-        if (ability2 > 0 && !(priority == 3))
+        if (ability2 > 0 && (!(priority == 3) || ability3 <= 0))
             GameManager.Instance.CurrentElement.fireSecondary();
         if (ability1 > 0 && ability3 <= 0 && ability2 <= 0)
             GameManager.Instance.CurrentElement.fireMain();

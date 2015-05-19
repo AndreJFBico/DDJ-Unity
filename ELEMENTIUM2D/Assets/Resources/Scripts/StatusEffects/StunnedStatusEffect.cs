@@ -80,4 +80,9 @@ public class StunnedStatusEffect : StatusEffect
     {
         StartCoroutine("stun", script);
     }
+
+    public override bool stuns()
+    {
+        return true;
+    }
 }

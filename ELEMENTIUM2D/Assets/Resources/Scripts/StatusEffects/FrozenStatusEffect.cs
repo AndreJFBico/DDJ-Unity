@@ -79,4 +79,9 @@ public class FrozenStatusEffect : StatusEffect {
     {
         StartCoroutine("freeze", script);
     }
+
+    public override bool stuns()
+    {
+        return true;
+    }
 }

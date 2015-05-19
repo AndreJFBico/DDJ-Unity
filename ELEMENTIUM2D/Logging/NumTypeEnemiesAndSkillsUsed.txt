@@ -1,3 +1,0 @@
-Amount: 2|HealerEnemyScript|NEUTRAL||NeutralBlast|NEUTRAL
-Amount: 4|TelegraphEnemy|NEUTRAL||NeutralBlast|NEUTRAL
-Amount: 6|FireEnemyScript|FIRE||NeutralBlast|NEUTRAL

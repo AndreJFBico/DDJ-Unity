@@ -1,2 +1,0 @@
-Amount: 136|NeutralBlast|NEUTRAL||FIRE
-Amount: 21|OilPuddle|FIRE||FIRE

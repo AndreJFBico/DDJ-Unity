@@ -27,13 +27,22 @@ public class RangedEnemyScript : EnemyScript {
     {
         while (true)
         {
-            if (firingTarget != null)
+            if (firingTarget != null && !isStunned())
             {
                 GameObject p = Instantiate(projectile, currentFireTransform.position, Quaternion.LookRotation(firingTarget.position - transform.position)) as GameObject;
                 p.GetComponent<AbilityBehaviour>().initiate(this.gameObject, damage, 0 ,1);
             }
             yield return new WaitForSeconds(attackSpeed);
         }
+    }
+
+    private bool isStunned()
+    {
+        if(GetComponent<StatusEffect>())
+        {
+            return GetComponent<StatusEffect>().stuns();
+        }
+        return false;
     }
 
     private bool hasFiringTarget()

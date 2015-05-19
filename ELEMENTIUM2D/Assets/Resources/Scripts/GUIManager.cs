@@ -141,6 +141,7 @@ public class GUIManager : MonoBehaviour {
                         continue;
                     }
                     cds[j][i] -= Time.deltaTime;
+                    if (cds[j][i] < 0) cds[j][i] = 0;
                     if (j == _currentElementIndex)
                         abilitiesSlider[j][i].transform.localScale = new Vector3(1.0f, cds[j][i] / maxCDs[j][i], 1.0f);
                 }

@@ -84,7 +84,7 @@ public class HealerEnemyScript : EnemyScript {
     {
         while(true)
         {
-            if (hasEnemyTarget())
+            if (hasEnemyTarget() && !isStunned())
             {
                 GameObject p = Instantiate(projectile, targetedEnemy.position, Quaternion.identity) as GameObject;
                 p.transform.parent = targetedEnemy.transform;
@@ -99,6 +99,15 @@ public class HealerEnemyScript : EnemyScript {
             yield return new WaitForSeconds(EnemyStats.HealerNeutral.rangedAttackSpeed);
         }
 
+    }
+
+    private bool isStunned()
+    {
+        if (GetComponent<StatusEffect>())
+        {
+            return GetComponent<StatusEffect>().stuns();
+        }
+        return false;
     }
 
     protected void updateTargetedEnemy()

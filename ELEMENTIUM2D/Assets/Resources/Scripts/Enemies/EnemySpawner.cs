@@ -70,25 +70,37 @@ public class EnemySpawner : EnemyScript
         float numToSpawn = maxSpawn;
         while (true)
         {
-            if (toSpawn.Count > 0 && numToSpawn > 0)
+            if (!isStunned())
             {
-                numToSpawn--;
-                Transform obj = toSpawn[0];
-                obj.transform.position = transform.FindChild("SpawnPosition").position;
-                obj.gameObject.SetActive(true);
-                PathAgent pa = obj.GetComponentInChildren<PathAgent>();
-                pa.startPosition = transform.position;
-                //obj.GetComponentInChildren<PathAgent>().startCheckingMovement();
-                toSpawn.Remove(obj);
-                spawned.Add(obj);
-            }
-            else
-            {
-                numToSpawn = maxSpawn;
-                yield return new WaitForSeconds(total_spawn_time);
+                if (toSpawn.Count > 0 && numToSpawn > 0)
+                {
+                    numToSpawn--;
+                    Transform obj = toSpawn[0];
+                    obj.transform.position = transform.FindChild("SpawnPosition").position;
+                    obj.gameObject.SetActive(true);
+                    PathAgent pa = obj.GetComponentInChildren<PathAgent>();
+                    pa.startPosition = transform.position;
+                    //obj.GetComponentInChildren<PathAgent>().startCheckingMovement();
+                    toSpawn.Remove(obj);
+                    spawned.Add(obj);
+                }
+                else
+                {
+                    numToSpawn = maxSpawn;
+                    yield return new WaitForSeconds(total_spawn_time);
+                }
             }
             yield return new WaitForSeconds(spawn_timer);
         }
+    }
+
+    private bool isStunned()
+    {
+        if (GetComponent<StatusEffect>())
+        {
+            return GetComponent<StatusEffect>().stuns();
+        }
+        return false;
     }
 
     public void despawn(Transform obj)

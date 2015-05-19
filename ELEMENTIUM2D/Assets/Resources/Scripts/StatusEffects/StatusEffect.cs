@@ -7,37 +7,14 @@ public class StatusEffect : MonoBehaviour {
     protected float duration;
 
 	// Use this for initialization
-	protected virtual void Start () {
-	
-	}
+	protected virtual void Start () {}
 
-    public float Intensity{
-        get
-        {
-            return intensity;
-        }
-        set
-        {
-            intensity = value;
-        }
-    }
+    public float Intensity{ get { return intensity; } set { intensity = value; } }
+    public float Duration { get { return duration; } set { duration = value; } }
 
-    public float Duration
-    {
-        get
-        {
-            return duration;
-        }
-        set
-        {
-            duration = value;
-        }
-    }
-
-    public virtual void initiate(float inten, float dur) { }
-
+    public virtual void initiate(float inten, float dur) {}
+    public virtual bool stuns() { return false; }
     public virtual void resetDuration(float dur){}
-
     public virtual void applyStatusEffect(Agent script){}
 	
 }
