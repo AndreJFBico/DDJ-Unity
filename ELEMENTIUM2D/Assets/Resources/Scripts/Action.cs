@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Includes;
 
 [RequireComponent(typeof(Shoot))]
 [RequireComponent(typeof(Interactions))]
@@ -107,5 +108,9 @@ public class Action : MonoBehaviour {
         
         #endregion 
 
+        if(Input.GetKeyDown(KeyCode.Comma))
+        {
+            GameManager.Instance.Player.endGame();
+        }
 	}
 }

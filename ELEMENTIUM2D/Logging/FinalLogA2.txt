@@ -1,0 +1,8 @@
+#########################################################
+Logging/NumTypeEnemiesAndSkillsUsed.txt
+#########################################################
+Logging/NumTypeAbilitesPerZone.txt
+#########################################################
+Logging/AvgAliveSKPointsEnemiesKilled.txt
+Death Number: 0 | Time Alive: 10.57963 | Num Points on SK: 0 | Number Enemies Killed: 0 
+ 

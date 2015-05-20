@@ -373,4 +373,9 @@ public class Player : Agent {
     {
         LoggingManager.Instance.wrapUp();
     }
+
+    public void endGame()
+    {
+        LoggingManager.Instance.wrapUp();
+    }
 }
