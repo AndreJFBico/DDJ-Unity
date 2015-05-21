@@ -1,4 +1,0 @@
-Amount: 106|NeutralBlast|NEUTRAL||NEUTRAL
-Amount: 144|NeutralBlast|NEUTRAL||EARTH
-Amount: 40|NeutralMissile|NEUTRAL||EARTH
-Amount: 11|EarthShield|EARTH||EARTH
