@@ -1,3 +1,2 @@
-Death Number: 0 | Time Alive: 10.14118 | Num Points on SK: 0 | Number Enemies Killed: 3 
- Death Number: 0 | Time Alive: 10.14118 | Num Points on SK: 0 | Number Enemies Killed: 3 
+Death Number: 0 | Time Alive: 22.90327 | Num Points on SK: 0 | Number Enemies Killed: 3 
  
