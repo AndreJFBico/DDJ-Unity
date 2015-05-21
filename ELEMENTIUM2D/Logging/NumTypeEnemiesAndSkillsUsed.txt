@@ -1,0 +1,4 @@
+Amount: 11|FireEnemyScript|FIRE||NeutralBlast|NEUTRAL
+Amount: 1|FireRangedEnemyScript|NEUTRAL||NeutralBlast|NEUTRAL
+Amount: 2|NeutralEnemyScript|NEUTRAL||NeutralBlast|NEUTRAL
+Amount: 2|FireEnemyScript|FIRE||NeutralBouncer|NEUTRAL

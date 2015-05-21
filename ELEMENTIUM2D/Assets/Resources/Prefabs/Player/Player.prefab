@@ -929,7 +929,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: .560000002, y: .649999976, z: 1.25}
+  m_Size: {x: .649999976, y: .649999976, z: 1.25}
   m_Center: {x: .00999999978, y: 0, z: -.449999988}
 --- !u!95 &9500000
 Animator:
@@ -998,6 +998,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAnim: {fileID: 11400002}
   eighthPi: 0
+  js: []
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1035,6 +1036,9 @@ MonoBehaviour:
   fire1: 0
   fire2: 0
   fire3: 0
+  fired2: 0
+  fired3: 0
+  priority: 0
   changeElementForward: 0
   changeElementBackward: 0
   interact: 0
@@ -1353,7 +1357,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 0
-  m_Extents: {x: .439999998, y: .5, z: .439999998}
+  m_Extents: {x: .280000001, y: .5, z: .280000001}
   m_MoveThreshold: .100000001
   m_Carve: 0
   m_CarveOnlyStationary: 0

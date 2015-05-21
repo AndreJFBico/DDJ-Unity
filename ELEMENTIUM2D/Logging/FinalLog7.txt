@@ -1,0 +1,35 @@
+#########################################################
+Logging/NumTypeEnemiesAndSkillsUsed.txt
+Amount: 5|NeutralEnemyScript|NEUTRAL||FrostBolt|WATER
+Amount: 3|EnemySpawner|NEUTRAL||FrostBolt|WATER
+Amount: 5|HealerEnemyScript|NEUTRAL||Fireball|FIRE
+Amount: 15|EnemySpawner|NEUTRAL||Fireball|FIRE
+Amount: 36|EarthEnemyScript|EARTH||Fireball|FIRE
+Amount: 2|HealerEnemyScript|NEUTRAL||FrostBolt|WATER
+Amount: 1|NeutralRangedEnemyScript|NEUTRAL||FrostBolt|WATER
+Amount: 1|NeutralRangedEnemyScript|NEUTRAL||NeutralBlast|NEUTRAL
+Amount: 1|EarthEnemyScript|EARTH||FrostBolt|WATER
+Amount: 4|NeutralRangedEnemyScript|NEUTRAL||Fireball|FIRE
+Amount: 2|TelegraphEnemy|NEUTRAL||Fireball|FIRE
+Amount: 6|NeutralRangedEnemyScript|NEUTRAL||EarthDisk|EARTH
+Amount: 2|EnemySpawner|NEUTRAL||EarthDisk|EARTH
+Amount: 1|TelegraphEnemy|NEUTRAL||NeutralBlast|NEUTRAL
+#########################################################
+Logging/NumTypeAbilitesPerZone.txt
+Amount: 104|NeutralBlast|NEUTRAL||EARTH
+Amount: 367|FrostBolt|WATER||NEUTRAL
+Amount: 74|FrostBolt|WATER||EARTH
+Amount: 640|Fireball|FIRE||EARTH
+Amount: 24|Fireball|FIRE||NEUTRAL
+Amount: 1|NeutralBlast|NEUTRAL||NEUTRAL
+Amount: 3|NeutralMissile|NEUTRAL||NEUTRAL
+Amount: 6|NeutralMissile|NEUTRAL||EARTH
+Amount: 69|EarthDisk|EARTH||EARTH
+Amount: 1|EarthShield|EARTH||EARTH
+Amount: 2|EarthDisk|EARTH||NEUTRAL
+Amount: 5|EarthShield|EARTH||NEUTRAL
+#########################################################
+Logging/AvgAliveSKPointsEnemiesKilled.txt
+Death Number: 0 | Time Alive: 12.52 | Num Points on SK: 0 | Number Enemies Killed: 0 
+ Death Number: 1 | Time Alive: 557.0949 | Num Points on SK: 4 | Number Enemies Killed: 84 
+ 

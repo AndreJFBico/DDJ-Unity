@@ -61,8 +61,7 @@ public class IceShard : AbilityBehaviour
                 Quaternion rot = Quaternion.FromToRotation(transform.forward, towardsDirection);
                 transform.rotation = rot * transform.rotation;
                 ///transform.Rotate(new Vector3(0.0f, 1.0f, 0.0f), Mathf.Rad2Deg * angle);
-                //GetComponent<Rigidbody>().velocity = Vector3.Reflect(GetComponent<Rigidbody>().velocity, cp.normal);
-
+                GetComponent<Rigidbody>().velocity = Vector3.Reflect(GetComponent<Rigidbody>().velocity, cp.normal);
             }
         }
         else base.OnCollisionEnter(collision);
