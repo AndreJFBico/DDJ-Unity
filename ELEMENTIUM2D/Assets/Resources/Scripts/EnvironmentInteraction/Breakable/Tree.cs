@@ -7,7 +7,7 @@ public class Tree : BreakableWall {
     // Use this for initialization
     void Start()
     {
-        maxDurability = 20;
+        maxDurability = 40;
         durability = maxDurability;
     }
 
