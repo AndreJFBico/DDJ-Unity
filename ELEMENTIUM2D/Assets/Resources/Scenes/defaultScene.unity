@@ -4500,6 +4500,7 @@ GameObject:
   - 124: {fileID: 1128535450}
   - 81: {fileID: 1128535449}
   - 114: {fileID: 1128535453}
+  - 114: {fileID: 1128535454}
   m_Layer: 15
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4556,7 +4557,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_BackGroundColor: {r: .305882365, g: .305882365, b: .305882365, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -4592,6 +4593,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smoothTime: .100000001
   pixelToUnits: 200
+--- !u!114 &1128535454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1128535447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7f423df83e63f94f8caea108a4272ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  previousdesiredBackgroundColor: {r: 0, g: 0, b: 0, a: 0}
+  desiredBackgroundColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &1214224101 stripped
 Transform:
   m_PrefabParentObject: {fileID: 455102, guid: d7180570d4d912c41a93455e644b97e1, type: 2}
