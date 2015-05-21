@@ -65,6 +65,7 @@ public class CharacterMove : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        previousRenderTime = 0f;
         collisions = new List<Collision>();
         playerAnim = GetComponentInChildren<PlayerAnimController>();
         //collidedWith = new List<Collision>();

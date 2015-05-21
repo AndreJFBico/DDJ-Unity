@@ -229,7 +229,7 @@ GameObject:
   - 222: {fileID: 22252136}
   - 114: {fileID: 11433508}
   m_Layer: 18
-  m_Name: HealthBar
+  m_Name: HealthBarBackground
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -245,6 +245,7 @@ GameObject:
   - 224: {fileID: 22487782}
   - 222: {fileID: 22258726}
   - 114: {fileID: 11459294}
+  - 114: {fileID: 11420920}
   m_Layer: 0
   m_Name: MultiplierBackground
   m_TagString: Untagged
@@ -485,7 +486,7 @@ GameObject:
   - 222: {fileID: 22247054}
   - 114: {fileID: 11476814}
   m_Layer: 18
-  m_Name: StaminaBar
+  m_Name: StaminaBarBackground
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -947,6 +948,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &11420920
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 135454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d18f9e9b02f221f4bbfc5bfd06b83b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11424334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1419,7 +1431,7 @@ MonoBehaviour:
   playerHealth: {fileID: 133480}
   playerHealthText: {fileID: 154984}
   restartButton: {fileID: 104890}
-  multiplierText: {fileID: 150650}
+  multiplierManager: {fileID: 11420920}
   statWindowText: {fileID: 196488}
   statWindow: {fileID: 153268}
 --- !u!114 &11461880

@@ -97,8 +97,10 @@ public class LoggingManager
         foreach (LoggingEntry entry in allEntries)
         {
             string path = entry.Filepath;
-            File.AppendAllText(filePath, "#########################################################\r\n" + path + "\r\n");
-            File.AppendAllText(filePath, File.ReadAllText(path));
+            #if (!UNITY_WEBPLAYER)
+                File.AppendAllText(filePath, "#########################################################\r\n" + path + "\r\n");
+                File.AppendAllText(filePath, File.ReadAllText(path));
+            #endif
         }
     } 
     #endregion
