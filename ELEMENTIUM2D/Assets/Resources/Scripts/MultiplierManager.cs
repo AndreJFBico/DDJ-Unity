@@ -42,6 +42,7 @@ public class MultiplierManager: MonoBehaviour{
             setKillTimer(killTimer() - increment);
             yield return new WaitForSeconds(increment);
         }
+        LoggingManager.Instance.MaxMultiplier = getCurrentMultiplier();
         setCurrentMultiplier(0);
         multiplierTimerRunning = false;
     }

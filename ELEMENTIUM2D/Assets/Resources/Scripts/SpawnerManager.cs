@@ -78,14 +78,18 @@ public class SpawnerManager : MonoBehaviour {
 
     public void destroySpawner(EnemySpawner spawner)
     {
+        if (!_spawners.Contains(spawner))
+            return;
         _spawners.Remove(spawner);
-        if(_spawners.Count < 1)
+        if (_spawners.Count < 1)
         {
             spawnChest(spawner);
             dropHealthOrb(spawner);
             room.cleared = true;
+            LoggingManager.Instance.RoomSearched += 1;
         }
         Destroy(spawner.gameObject);
+
     }
 
     private void spawnChest(EnemySpawner spawner)

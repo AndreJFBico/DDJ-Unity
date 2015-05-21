@@ -24,8 +24,6 @@ public class NumTypeEnemieAndAbility : LoggingEntry
         {
             stats[key].amount = stats[key].amount + 1;
         }
-        
-        //addTextToFile(enemyName + "|" + System.Enum.GetName(typeof(Elements), enemyType) + "||" + projectileName + "|" + System.Enum.GetName(typeof(Elements), projectileType) + "\n");
     }
 
     public override int numEnemiesKilled()
@@ -44,6 +42,5 @@ public class NumTypeEnemieAndAbility : LoggingEntry
         {
             addTextToFile("Amount: " + pair.Value.amount  + "|" + pair.Value._s1 + "|" + System.Enum.GetName(typeof(Elements), pair.Value._s2) + "||" + pair.Value._s3 + "|" + System.Enum.GetName(typeof(Elements), pair.Value._s4) + "\r\n");
         }
-        //addTextToFile(enemyName + "|" + System.Enum.GetName(typeof(Elements), enemyType) + "||" + projectileName + "|" + System.Enum.GetName(typeof(Elements), projectileType) + "\n");
     }
 }

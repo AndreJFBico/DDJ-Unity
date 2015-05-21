@@ -30,6 +30,8 @@ public class RandomTreasureChest : TemporaryTreasureChest {
 
     public override void applyEffect()
     {
+        LoggingManager.Instance.TreasuresGained += 1;
+
         Player player = GameManager.Instance.Player;
         int random = Random.Range(0, stats.Count);
 
