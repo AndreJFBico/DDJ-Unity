@@ -1,3 +1,0 @@
-Amount: 8|NeutralBlast|NEUTRAL||NEUTRAL
-Amount: 18|NeutralBlast|NEUTRAL||EARTH
-Amount: 7|NeutralBlast|NEUTRAL||FIRE
