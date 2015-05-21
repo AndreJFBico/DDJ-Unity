@@ -1,0 +1,14 @@
+#########################################################
+Logging/NumTypeEnemiesAndSkillsUsed.txt
+Amount: 4|NeutralEnemyScript|NEUTRAL||NeutralBlast|NEUTRAL
+Amount: 4|EnemySpawner|NEUTRAL||NeutralBlast|NEUTRAL
+Amount: 1|NeutralRangedEnemyScript|NEUTRAL||NeutralBlast|NEUTRAL
+Amount: 1|EarthEnemyScript|EARTH||NeutralBlast|NEUTRAL
+#########################################################
+Logging/NumTypeAbilitesPerZone.txt
+Amount: 34|NeutralBlast|NEUTRAL||NEUTRAL
+Amount: 74|NeutralBlast|NEUTRAL||EARTH
+#########################################################
+Logging/AvgAliveSKPointsEnemiesKilled.txt
+Death Number: 0 | Time Alive: 64.66562 | Num Points on SK: 0 | Number Enemies Killed: 10 
+ 

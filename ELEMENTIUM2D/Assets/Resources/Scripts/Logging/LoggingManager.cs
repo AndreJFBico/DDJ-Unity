@@ -21,11 +21,15 @@ public class LoggingManager
     private static float timeToEarth;
     private static float numSkillTreePoints;
     private static float numMaxMultiplier;
+    private static string id;
+
+    private static string PCprefix = "A";
 
     #region Getters
     public float StartTime { get { return startTime; } set { startTime = value; } }
     public float EndTime { get { return endTime; } set { endTime = value; } }
     public float RespawnTime { get { return respawnTime; } set { respawnTime = value; } }
+    public string ID { get { return id; } set { id = value; } }
 
     #endregion
 
@@ -76,17 +80,19 @@ public class LoggingManager
             entry.wrapUp();
         }
         concatenateFiles();
+        Application.LoadLevel("EndScreen");
     }
 
     private void concatenateFiles()
     {
-        string finalFilePath = folder + "FinalLog";
+        string finalFilePath = folder + "FinalLog" + PCprefix;
         int i = 0;
         while (File.Exists(finalFilePath + i + ".txt"))
         {
             i++;
         }
         string filePath = finalFilePath + i + ".txt";
+        ID = PCprefix + i;
         (File.Create(filePath)).Close();
         foreach (LoggingEntry entry in allEntries)
         {

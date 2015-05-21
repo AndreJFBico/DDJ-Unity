@@ -1,0 +1,2 @@
+Amount: 25|NeutralBlast|NEUTRAL||NEUTRAL
+Amount: 25|NeutralBlast|NEUTRAL||NEUTRAL
