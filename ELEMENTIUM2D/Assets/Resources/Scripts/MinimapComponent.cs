@@ -4,13 +4,18 @@ using System.Collections;
 [RequireComponent(typeof(Sprite))]
 public class MinimapComponent : MonoBehaviour {
 
-    public enum Type { OBSTACLE, PLAYER, ENEMY, SPAWNER, PROP}
+    public enum Type { OBSTACLE, PLAYER, ENEMY, SPAWNER, PROP, STARTING, NOTCLEARED, ENDING, CLEARED }
     public Type type;
 
     private Sprite sprite;
 
-	// Use this for initialization
-	void Start () {
+    public void resetSpriteRenderer()
+    {
+        analiseType();
+    }
+
+    void analiseType()
+    {
         SpriteRenderer spRenderer = gameObject.GetComponent<SpriteRenderer>();
         switch (type)
         {
@@ -30,9 +35,25 @@ public class MinimapComponent : MonoBehaviour {
             case Type.PROP:
                 spRenderer.color = Color.yellow;
                 break;
+            case Type.STARTING:
+                spRenderer.color = Color.blue / 1.2f;
+                break;
+            case Type.ENDING:
+                spRenderer.color = Color.yellow / 1.2f;
+                break;
+            case Type.CLEARED:
+                spRenderer.color = Color.green;
+                break;
+            case Type.NOTCLEARED:
+                spRenderer.color = Color.red / 1.2f;
+                break;
             default:
                 break;
         }
+    }
 
+	// Use this for initialization
+	void Start () {
+        analiseType();
 	}
 }

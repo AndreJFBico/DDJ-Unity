@@ -1685,8 +1685,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 439024}
   - 212: {fileID: 21208698}
-  m_Layer: 11
-  m_Name: ground
+  - 114: {fileID: 11493378}
+  m_Layer: 20
+  m_Name: minimap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3266,6 +3267,22 @@ GameObject:
   - 212: {fileID: 21234402}
   m_Layer: 20
   m_Name: MinimapSprite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &170742
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 430950}
+  - 212: {fileID: 21242872}
+  m_Layer: 11
+  m_Name: ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5954,6 +5971,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 403698}
   m_RootOrder: 0
+--- !u!4 &430950
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 170742}
+  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
+  m_LocalPosition: {x: 0, y: -.100000001, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 493870}
+  m_RootOrder: 1
 --- !u!4 &431384
 Transform:
   m_ObjectHideFlags: 1
@@ -6233,7 +6262,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 493870}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!4 &439166
 Transform:
   m_ObjectHideFlags: 1
@@ -8201,6 +8230,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 408338}
+  - {fileID: 430950}
   - {fileID: 439024}
   m_Father: {fileID: 480452}
   m_RootOrder: 5
@@ -10656,6 +10686,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11402388
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10670,6 +10701,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11402580
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10684,6 +10716,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11402794
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10748,6 +10781,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11404844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10777,6 +10811,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11405508
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10791,6 +10826,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11405922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10865,6 +10901,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11408830
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10894,6 +10931,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11410258
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10938,6 +10976,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11411332
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11026,6 +11065,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11414008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11040,6 +11080,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11414426
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11054,6 +11095,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11415332
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11068,6 +11110,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11415344
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11082,6 +11125,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11415638
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11096,6 +11140,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11416038
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11125,6 +11170,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11417330
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11139,6 +11185,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11417370
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11153,6 +11200,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11418396
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11167,6 +11215,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11418864
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11235,6 +11284,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11422080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11249,6 +11299,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11422296
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11278,6 +11329,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11423940
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11304,6 +11356,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11424272
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11318,6 +11371,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11424378
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11332,6 +11386,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11425332
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11346,6 +11401,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11427396
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11375,6 +11431,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11428608
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11389,6 +11446,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11428870
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11418,6 +11476,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11429782
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11500,6 +11559,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11434008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11514,6 +11574,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11434494
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11528,6 +11589,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11434662
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11542,6 +11604,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11436006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11556,6 +11619,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11436890
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11585,6 +11649,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11437578
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11599,6 +11664,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11437974
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11703,6 +11769,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11442804
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11717,6 +11784,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11444036
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11814,6 +11882,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11448232
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11882,6 +11951,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11450030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11896,6 +11966,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11451396
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11940,6 +12011,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11452954
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11969,6 +12041,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11456396
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11998,6 +12071,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11456910
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12039,6 +12113,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11458464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12053,6 +12128,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11460416
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12112,6 +12188,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11463742
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12157,7 +12234,6 @@ MonoBehaviour:
   lastSearch: 0
   parked: 0
   randomGroup: 
-  cleared: 0
 --- !u!114 &11465516
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12217,6 +12293,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11467200
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12243,6 +12320,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11467934
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12299,6 +12377,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11471966
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12313,6 +12392,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11472620
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12357,6 +12437,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11474884
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12440,6 +12521,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11476700
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12454,6 +12536,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11477834
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12468,6 +12551,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11478056
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12494,6 +12578,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11479734
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12534,6 +12619,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11480448
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12575,6 +12661,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11481710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12589,6 +12676,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11481946
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12603,6 +12691,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11481950
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12632,6 +12721,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11482906
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12646,6 +12736,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11483134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12683,6 +12774,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11484950
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12736,6 +12828,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11487014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12825,6 +12918,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11489596
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12918,6 +13012,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11493204
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12947,6 +13042,19 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
+--- !u!114 &11493378
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 134532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea3ed39306ef44e448edc36b6925b3ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 6
 --- !u!114 &11493450
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12985,6 +13093,7 @@ MonoBehaviour:
   damage: 15
   element: 1
   damageEnemies: 0
+  passTroughBlink: 1
 --- !u!114 &11494674
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14527,7 +14636,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1277553139
+  m_SortingLayerID: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 33981c5ab8ba4684abdb21ffa433551b, type: 3}
   m_Color: {r: .838235259, g: .26141721, b: .129433408, a: 1}
@@ -16065,6 +16174,32 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3bfdf0332d63f77499375d047a147b98, type: 3}
   m_Color: {r: .933823526, g: .164792374, b: .164792374, a: 1}
+--- !u!212 &21242872
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 170742}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 2100000, guid: ec1c93278e097994a96216be003468c7, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 1277553139
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 21300000, guid: 33981c5ab8ba4684abdb21ffa433551b, type: 3}
+  m_Color: {r: .838235259, g: .26141721, b: .129433408, a: 1}
 --- !u!212 &21243592
 SpriteRenderer:
   m_ObjectHideFlags: 1

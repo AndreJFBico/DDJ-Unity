@@ -85,7 +85,8 @@ public class SpawnerManager : MonoBehaviour {
         {
             spawnChest(spawner);
             dropHealthOrb(spawner);
-            room.cleared = true;
+
+            room.setCleared();
             LoggingManager.Instance.RoomSearched += 1;
         }
         Destroy(spawner.gameObject);

@@ -1187,8 +1187,8 @@ MonoBehaviour:
   lockedForever: 0
   linerenderers: []
   information: Unlocks earth trowing boulder ability
-  choiceIndex: 18
-  variableBeingChanged: secondary_earth_level
+  choiceIndex: 17
+  variableBeingChanged: primary_earth_level
 --- !u!1 &204386181
 GameObject:
   m_ObjectHideFlags: 0

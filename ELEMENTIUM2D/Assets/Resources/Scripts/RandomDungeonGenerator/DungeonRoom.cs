@@ -20,7 +20,9 @@ public class DungeonRoom : MonoBehaviour {
 
 	public string randomGroup = "";
 
-    public bool cleared = false;
+    private bool cleared = false;
+
+    private MinimapComponent minimapClearedSprite;
 
 	void Awake () {
 		Transform doors_object = transform.Find("Doors");
@@ -29,5 +31,18 @@ public class DungeonRoom : MonoBehaviour {
 			doors.Add(door);
 			door.belongsTo = this;
 		}
+        minimapClearedSprite = transform.FindChild("Sprites").transform.FindChild("minimap").transform.GetComponent<MinimapComponent>();
 	}
+
+    public bool isCleared()
+    {
+        return cleared;
+    }
+
+    public void setCleared()
+    {
+        cleared = true;
+        minimapClearedSprite.type = MinimapComponent.Type.CLEARED;
+        minimapClearedSprite.resetSpriteRenderer();
+    }
 }

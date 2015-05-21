@@ -273,10 +273,10 @@ namespace Includes
 
             public class ability1
             {
-                public const float def_attackSpeed = 0.15f;
+                public const float def_attackSpeed = 0.2f;
                 public const int def_projectile_number = 1;
                 public const int def_collisionNumber = 3;
-                public const float def_damage = 0.5f;
+                public const float def_damage = 0.3f;
                 public const float def_maxForce = 20;
                 public const float def_minForce = 5;
 
@@ -400,11 +400,11 @@ namespace Includes
 
             public class ability2
             {
-                public const float def_attackSpeed = 4f;
+                public const float def_attackSpeed = 8f;
                 public const int def_projectile_number = 1;
                 public const float def_damage = 1;
                 public const float def_movementForce = 5;
-                public const float def_abilityTimer = 4.0f;
+                public const float def_abilityTimer = 5.0f;
 
                 public static float attackSpeed = def_attackSpeed;
                 public static int projectile_number = def_projectile_number;
@@ -600,8 +600,8 @@ namespace Includes
             public static float waterResist = -50;
             public static float earthResist = 0;
             public static float fireResist = 90;
-            public static float visionRadius = 2.2f;
-            public static float rangedRadius = 1.8f;
+            public static float visionRadius = 2.8f;
+            public static float rangedRadius = 2.2f;
             public static float rangedAttackSpeed = 0.5f;
             public static float movementForce = 5f;
             public static string neutralEnemyProjectile = "Prefabs/Projectiles/Enemy/EnemyFireball";

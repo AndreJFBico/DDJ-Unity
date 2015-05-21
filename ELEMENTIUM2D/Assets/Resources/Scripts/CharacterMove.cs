@@ -246,7 +246,7 @@ public class CharacterMove : MonoBehaviour {
     {
         Player p = GameManager.Instance.Player;
 
-        if (!GameManager.Instance.Stats.inCombat && GameManager.Instance.PlayerRoom && GameManager.Instance.PlayerRoom.cleared)
+        if (!GameManager.Instance.Stats.inCombat && GameManager.Instance.PlayerRoom && GameManager.Instance.PlayerRoom.isCleared())
         {
             if (Input.GetButton("Dodge") && !doubleTapping && !doubleTapDown)
             {
