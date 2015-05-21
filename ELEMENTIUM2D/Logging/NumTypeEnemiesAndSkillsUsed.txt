@@ -1,0 +1,4 @@
+Amount: 6|NeutralEnemyScript|NEUTRAL||NeutralBlast|NEUTRAL
+Amount: 3|EnemySpawner|NEUTRAL||NeutralBlast|NEUTRAL
+Amount: 1|NeutralEnemyScript|NEUTRAL||Spike|NEUTRAL
+Amount: 1|NeutralRangedEnemyScript|NEUTRAL||NeutralBlast|NEUTRAL

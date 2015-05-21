@@ -2,7 +2,6 @@
 using System.Collections;
 using Includes;
 
-[RequireComponent(typeof(PathAgent))]
 public class EarthRangedEnemyScript : RangedEnemyScript
 {
 

@@ -83,7 +83,7 @@ public class SpawnerManager : MonoBehaviour {
         {
             spawnChest(spawner);
             dropHealthOrb(spawner);
-            room.cleared = true;
+            room.setCleared();
         }
         Destroy(spawner.gameObject);
     }

@@ -1,0 +1,9 @@
+#########################################################
+Logging/NumTypeEnemiesAndSkillsUsed.txt
+Amount: 1|NeutralRangedEnemyScript|NEUTRAL||Spike|NEUTRAL
+#########################################################
+Logging/NumTypeAbilitesPerZone.txt
+#########################################################
+Logging/AvgAliveSKPointsEnemiesKilled.txt
+Death Number: 0 | Time Alive: 17.7655 | Num Points on SK: 0 | Number Enemies Killed: 1 
+ 

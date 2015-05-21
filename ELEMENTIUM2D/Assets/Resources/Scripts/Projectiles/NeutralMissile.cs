@@ -32,7 +32,7 @@ public class NeutralMissile : AbilityBehaviour {
 
     void Update()
     {
-        if (target != null && timer >= 1)
+        if (target != null && timer >= 0.5f)
         {
             Vector3 targetDir = target.position - transform.position;
 
