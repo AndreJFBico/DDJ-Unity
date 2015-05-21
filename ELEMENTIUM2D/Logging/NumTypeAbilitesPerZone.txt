@@ -1,3 +1,0 @@
-Amount: 82|NeutralBlast|NEUTRAL||FIRE
-Amount: 18|NeutralBlast|NEUTRAL||NEUTRAL
-Amount: 17|NeutralBouncer|NEUTRAL||NEUTRAL
