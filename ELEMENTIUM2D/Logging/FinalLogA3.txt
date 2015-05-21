@@ -1,0 +1,33 @@
+#########################################################
+Logging/NumTypeEnemiesAndSkillsUsed.txt
+Amount: 6|NeutralEnemyScript|NEUTRAL||NeutralBlast|NEUTRAL
+Amount: 3|NeutralEnemyScript|NEUTRAL||Spike|NEUTRAL
+Amount: 22|EnemySpawner|NEUTRAL||NeutralBlast|NEUTRAL
+Amount: 1|NeutralRangedEnemyScript|NEUTRAL||NeutralBlast|NEUTRAL
+Amount: 52|FireEnemyScript|FIRE||NeutralBlast|NEUTRAL
+Amount: 15|FireEnemyScript|FIRE||NeutralBouncer|NEUTRAL
+Amount: 2|EnemySpawner|NEUTRAL||NeutralBouncer|NEUTRAL
+Amount: 12|FireRangedEnemyScript|NEUTRAL||NeutralBlast|NEUTRAL
+Amount: 7|TelegraphEnemy|NEUTRAL||NeutralBlast|NEUTRAL
+Amount: 5|FireRangedEnemyScript|NEUTRAL||NeutralBouncer|NEUTRAL
+Amount: 10|HealerEnemyScript|NEUTRAL||NeutralBlast|NEUTRAL
+Amount: 2|EnemySpawner|NEUTRAL||BurningStatusEffect|FIRE
+Amount: 2|HealerEnemyScript|NEUTRAL||NeutralBouncer|NEUTRAL
+Amount: 3|EnemySpawner|NEUTRAL||Fireball|FIRE
+Amount: 1|HealerEnemyScript|NEUTRAL||Fireball|FIRE
+Amount: 2|FireEnemyScript|FIRE||Fireball|FIRE
+Amount: 1|EarthEnemyScript|EARTH||NeutralBlast|NEUTRAL
+#########################################################
+Logging/NumTypeAbilitesPerZone.txt
+Amount: 94|NeutralBlast|NEUTRAL||NEUTRAL
+Amount: 27|NeutralBouncer|NEUTRAL||NEUTRAL
+Amount: 271|NeutralBouncer|NEUTRAL||FIRE
+Amount: 575|NeutralBlast|NEUTRAL||FIRE
+Amount: 102|Fireball|FIRE||FIRE
+Amount: 2|FireHeal|FIRE||FIRE
+Amount: 44|Fireball|FIRE||NEUTRAL
+Amount: 21|NeutralBlast|NEUTRAL||EARTH
+#########################################################
+Logging/AvgAliveSKPointsEnemiesKilled.txt
+Death Number: 0 | Time Alive: 400.52 | Num Points on SK: 0 | Number Enemies Killed: 146 
+ 

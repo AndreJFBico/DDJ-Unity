@@ -400,11 +400,11 @@ namespace Includes
 
             public class ability2
             {
-                public const float def_attackSpeed = 4f;
+                public const float def_attackSpeed = 8f;
                 public const int def_projectile_number = 1;
                 public const float def_damage = 1;
                 public const float def_movementForce = 5;
-                public const float def_abilityTimer = 4.0f;
+                public const float def_abilityTimer = 5.0f;
 
                 public static float attackSpeed = def_attackSpeed;
                 public static int projectile_number = def_projectile_number;
