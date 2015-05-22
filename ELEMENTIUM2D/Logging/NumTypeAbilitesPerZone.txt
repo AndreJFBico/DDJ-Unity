@@ -1,0 +1,2 @@
+Amount: 86|NeutralBlast|NEUTRAL||NEUTRAL
+Amount: 76|NeutralBlast|NEUTRAL||EARTH

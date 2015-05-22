@@ -16,6 +16,8 @@ public class Agent : ElementiumMonoBehaviour
         figure = transform.gameObject.GetComponentInChildren<SpriteRenderer>();
     }
 
+    public virtual void push(Vector3 forwardVector, float strength) { }
+
     public virtual bool isHurt() { return false; }
 
     public virtual void OnTriggerExit(Collider collision) { }

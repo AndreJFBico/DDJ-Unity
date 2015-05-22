@@ -1,0 +1,13 @@
+#########################################################
+Logging/NumTypeEnemiesAndSkillsUsed.txt
+Amount: 3|NeutralEnemyScript|NEUTRAL||WaterSpray|WATER
+#########################################################
+Logging/NumTypeAbilitesPerZone.txt
+Amount: 1|NeutralBlast|NEUTRAL||NEUTRAL
+Amount: 1|IceNova|WATER||NEUTRAL
+Amount: 4|WaterBurst|WATER||NEUTRAL
+Amount: 7|FrostBolt|WATER||NEUTRAL
+#########################################################
+Logging/AvgAliveSKPointsEnemiesKilled.txt
+Death Number: 0 | Time Alive: 18.55018 | Num Points on SK: 0 | Number Enemies Killed: 3 
+ 

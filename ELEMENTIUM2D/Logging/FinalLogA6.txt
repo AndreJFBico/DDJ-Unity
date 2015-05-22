@@ -1,0 +1,24 @@
+#########################################################
+Logging/NumTypeEnemiesAndSkillsUsed.txt
+Amount: 7|NeutralEnemyScript|NEUTRAL||Spike|NEUTRAL
+Amount: 1|NeutralEnemyScript|NEUTRAL||WaterSpray|WATER
+Amount: 10|NeutralEnemyScript|NEUTRAL||FrostBolt|WATER
+Amount: 4|NeutralRangedEnemyScript|NEUTRAL||Spike|NEUTRAL
+Amount: 3|EnemySpawner|NEUTRAL||FrostBolt|WATER
+Amount: 3|NeutralRangedEnemyScript|NEUTRAL||FrostBolt|WATER
+Amount: 23|EnemySpawner|NEUTRAL||NeutralMissile|NEUTRAL
+Amount: 9|EarthEnemyScript|EARTH||NeutralMissile|NEUTRAL
+Amount: 2|EarthRangedEnemyScript|NEUTRAL||NeutralBlast|NEUTRAL
+Amount: 2|EarthRangedEnemyScript|NEUTRAL||NeutralMissile|NEUTRAL
+Amount: 3|HealerEnemyScript|NEUTRAL||NeutralMissile|NEUTRAL
+#########################################################
+Logging/NumTypeAbilitesPerZone.txt
+Amount: 125|FrostBolt|WATER||NEUTRAL
+Amount: 4|WaterBurst|WATER||NEUTRAL
+Amount: 2|IceNova|WATER||NEUTRAL
+Amount: 31|NeutralMissile|NEUTRAL||EARTH
+Amount: 22|NeutralBlast|NEUTRAL||EARTH
+#########################################################
+Logging/AvgAliveSKPointsEnemiesKilled.txt
+Death Number: 0 | Time Alive: 181.7369 | Num Points on SK: 0 | Number Enemies Killed: 67 
+ 

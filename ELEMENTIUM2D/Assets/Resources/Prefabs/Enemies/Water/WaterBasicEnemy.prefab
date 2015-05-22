@@ -107,6 +107,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 432196}
   - 212: {fileID: 21246736}
+  - 114: {fileID: 11435926}
   m_Layer: 9
   m_Name: Background
   m_TagString: Ui
@@ -434,6 +435,22 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11435926
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 134798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b28fac91207db45bdf33432bee0b9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  position: 0
+  list:
+  - {fileID: 21294944}
+  parentSprite: {fileID: 471166}
 --- !u!114 &11441644
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -449,6 +466,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21247244}
+  parentSprite: {fileID: 0}
 --- !u!114 &11450644
 MonoBehaviour:
   m_ObjectHideFlags: 1

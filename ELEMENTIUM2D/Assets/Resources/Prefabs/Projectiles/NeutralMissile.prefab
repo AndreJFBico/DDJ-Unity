@@ -31,6 +31,7 @@ GameObject:
   - 54: {fileID: 5403238}
   - 135: {fileID: 13566160}
   - 136: {fileID: 13600332}
+  - 114: {fileID: 11430990}
   m_Layer: 16
   m_Name: NeutralMissile
   m_TagString: Projectile
@@ -148,6 +149,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 784a957b81b988740a0ba57be7940ace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11430990
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 188798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bac7c8f1a7a91343aea0780bb9511f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroytimer: 2.5
 --- !u!114 &11432116
 MonoBehaviour:
   m_ObjectHideFlags: 1

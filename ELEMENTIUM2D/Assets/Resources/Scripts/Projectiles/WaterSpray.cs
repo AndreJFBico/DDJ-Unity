@@ -8,6 +8,7 @@ public class WaterSpray : AbilityBehaviour {
     private ConstantForce constantForce;
     private SpriteRenderer spriteR;
     private float time = 0.1f;
+    private float pushStrength = 0.3f;
     private bool waterPuddle = false;
     private bool deltDamage = false;
 
@@ -28,20 +29,33 @@ public class WaterSpray : AbilityBehaviour {
 
     public override void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.gameObject.layer == LayerMask.NameToLayer("PlayerProjectile") || collision.transform.gameObject.layer == LayerMask.NameToLayer("EnemyProjectile"))
+        if(!collision.collider.isTrigger)
         {
-            if (collision.transform.name.CompareTo("FrostBolt") == 0)
+            if (collision.transform.gameObject.layer == LayerMask.NameToLayer("PlayerProjectile") || collision.transform.gameObject.layer == LayerMask.NameToLayer("EnemyProjectile"))
             {
-                waterBurst.handleCollision(collision);
+                if (collision.transform.name.CompareTo("FrostBolt") == 0)
+                {
+                    waterBurst.handleCollision(collision);
+                }
             }
-        }
-        if(!waterPuddle)
-        {
-            if (!deltDamage && collidedWith(collision.gameObject, damage)) 
-                deltDamage = true;
-            else if (collidedWithBreakable(collision.gameObject)) ;
-            else if (collision.gameObject.layer == LayerMask.NameToLayer("Unhitable"))
-                return;
+            if(!waterPuddle)
+            {
+                if (!deltDamage)
+                {    
+                    if (collidedWith(collision.gameObject, damage))
+                    {
+                        if(collision.gameObject)
+                        {
+                            waterBurst.push(collision.gameObject, transform.forward, pushStrength);
+                        }
+                        deltDamage = true;
+                        // Push  
+                    }
+                }
+                else if (collidedWithBreakable(collision.gameObject)) ;
+                else if (collision.gameObject.layer == LayerMask.NameToLayer("Unhitable"))
+                    return;
+            }
         }
     }
 
@@ -70,6 +84,7 @@ public class WaterSpray : AbilityBehaviour {
             spriteR.material.SetColor("_TintColor", color);
         }     
     }
+
 
     public override void initiate(GameObject startingObject, float dmg, int projectileID, int totalProjectiles)
     {
