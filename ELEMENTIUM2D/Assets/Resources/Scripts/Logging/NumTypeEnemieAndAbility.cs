@@ -6,7 +6,7 @@ using Logging;
 
 public class NumTypeEnemieAndAbility : LoggingEntry
 {
-    private Dictionary<string, StringTypeStringType> stats = new Dictionary<string, StringTypeStringType>();
+    private Dictionary<string, Dictionary<string, StringTypeStringType>> stats = new Dictionary<string, Dictionary<string, StringTypeStringType>>();
 
     public string Filepath { get { return filePath; } }
 
@@ -15,32 +15,53 @@ public class NumTypeEnemieAndAbility : LoggingEntry
     public override void writeEntry(string enemyName, Elements enemyType, string projectileName, Elements projectileType)
     {
         base.writeEntry(enemyName, enemyType, projectileName, projectileType);
-        string key = enemyName + enemyType + projectileName + projectileType;
-        if (!stats.ContainsKey(key))
+        string mainKey = projectileName + projectileType;
+        string key = enemyName + enemyType;
+        Dictionary<string, StringTypeStringType> enemies = new Dictionary<string,StringTypeStringType>();
+        if (!stats.ContainsKey(mainKey))
         {
-            stats.Add(enemyName + enemyType + projectileName + projectileType, new StringTypeStringType(enemyName, enemyType, projectileName, projectileType));
+            stats.Add(mainKey, enemies);
+            stats[mainKey].Add(key, new StringTypeStringType(enemyName, enemyType, projectileName, projectileType));
+            //stats.Add(enemyName + enemyType + projectileName + projectileType, new StringTypeStringType(enemyName, enemyType, projectileName, projectileType));
+        }
+        else if (!stats[mainKey].ContainsKey(key))
+        {
+            stats[mainKey].Add(key, new StringTypeStringType(enemyName, enemyType, projectileName, projectileType));
         }
         else
         {
-            stats[key].amount = stats[key].amount + 1;
+            stats[mainKey][key].amount += 1;
         }
     }
 
     public override int numEnemiesKilled()
     {
         int sum = 0;
-        foreach (KeyValuePair<string, StringTypeStringType> pair in stats)
+        foreach (string main in stats.Keys)
         {
-            sum += pair.Value.amount;
+            foreach (string enemies in stats[main].Keys)
+            {
+                sum += stats[main][enemies].amount;
+            }
         }
         return sum;
     }
 
     public override void wrapUp()
     {
-        foreach (KeyValuePair<string, StringTypeStringType> pair in stats)
+        bool newAbility = true;
+        foreach (string main in stats.Keys)
         {
-            addTextToFile("Amount: " + pair.Value.amount  + "|" + pair.Value._s1 + "|" + System.Enum.GetName(typeof(Elements), pair.Value._s2) + "||" + pair.Value._s3 + "|" + System.Enum.GetName(typeof(Elements), pair.Value._s4) + "\r\n");
+            newAbility = true;
+            foreach (string enemies in stats[main].Keys)
+            {
+                if(newAbility)
+                {
+                    addTextToFile(stats[main][enemies]._s3 + "|" + stats[main][enemies]._s4 + "\r\n");
+                    newAbility = false;
+                }
+                addTextToFile("\t" + "Amount: " + stats[main][enemies].amount + "|" + stats[main][enemies]._s1 + "|" + System.Enum.GetName(typeof(Elements), stats[main][enemies]._s2) + "\r\n");
+            }
         }
     }
 }

@@ -155,6 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
+  particleSystem: {fileID: 0}
 --- !u!136 &13666882
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -177,7 +178,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: .524909496, y: .5, z: .109999999}
+  m_Extents: {x: .524909496, y: .5, z: .215000004}
   m_MoveThreshold: .100000001
   m_Carve: 1
   m_CarveOnlyStationary: 1
