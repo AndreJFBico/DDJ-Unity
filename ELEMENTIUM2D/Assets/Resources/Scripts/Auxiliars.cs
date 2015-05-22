@@ -237,7 +237,7 @@ namespace Includes
                 public const float def_attackSpeed = 1.5f;
                 public const int def_projectile_number = 15;
                 public const float def_damage = 1;
-                public const float def_movementForce = 1.5f;
+                public const float def_movementForce = 4.5f;
 
                 public static float attackSpeed = def_attackSpeed;
                 public static int projectile_number = def_projectile_number;
@@ -464,7 +464,7 @@ namespace Includes
 
         public class Spawner
         {
-            public static float maxHealth = 20;
+            public static float maxHealth = 35;
             public static float damage = 0;
             public static float defence = 50;
             public static float waterResist = 50;
@@ -477,7 +477,7 @@ namespace Includes
 
         public class BasicTelegraph
         {
-            public static float maxHealth = 40;
+            public static float maxHealth = 55;
             public static float damage = 5;
             public static float defence = 0;
             public static float waterResist = 0;
@@ -490,7 +490,7 @@ namespace Includes
 
         public class BasicNeutral
         {
-            public static float maxHealth = 20;
+            public static float maxHealth = 35;
             public static float damage = 5;
             public static float defence = 0;
             public static float waterResist = 0;
@@ -503,7 +503,7 @@ namespace Includes
 
         public class RangedNeutral
         {
-            public static float maxHealth = 20;
+            public static float maxHealth = 35;
             public static float damage = 5;
             public static float defence = 0;
             public static float waterResist = 0;
@@ -520,7 +520,7 @@ namespace Includes
 
         public class HealerNeutral
         {
-            public static float maxHealth = 20;
+            public static float maxHealth = 35;
             public static float healAmount = 1;
             public static float damage = 2;
             public static float defence = 0;
@@ -537,7 +537,7 @@ namespace Includes
 
         public class NeutralShield
         {
-            public static float maxHealth = 20;
+            public static float maxHealth = 35;
             public static float damage = 5;
             public static float defence = 2;
             public static float waterResist = 5;
@@ -559,7 +559,7 @@ namespace Includes
         #region Frost/Water Enemies
         public class WaterBasic
         {
-            public static float maxHealth = 20;
+            public static float maxHealth = 35;
             public static float damage = 5;
             public static float defence = 0;
             public static float waterResist = 80;
@@ -578,12 +578,12 @@ namespace Includes
         #region Fire Enemies
         public class FireBasic
         {
-            public static float maxHealth = 20;
+            public static float maxHealth = 35;
             public static float damage = 5;
             public static float defence = 0;
             public static float waterResist = -50;
             public static float earthResist = 0;
-            public static float fireResist = 80;
+            public static float fireResist = 90;
             public static float visionRadius = 1.65f;
             public static Elements type = Elements.FIRE;
             public static float statusDurability = 5;
@@ -594,12 +594,12 @@ namespace Includes
 
         public class FireRanged
         {
-            public static float maxHealth = 20;
+            public static float maxHealth = 35;
             public static float damage = 5;
             public static float defence = 0;
             public static float waterResist = -50;
             public static float earthResist = 0;
-            public static float fireResist = 80;
+            public static float fireResist = 90;
             public static float visionRadius = 2.8f;
             public static float rangedRadius = 2.2f;
             public static float rangedAttackSpeed = 0.5f;
@@ -614,7 +614,7 @@ namespace Includes
         #region Earth Enemies
         public class EarthBasic
         {
-            public static float maxHealth = 70;
+            public static float maxHealth = 100;
             public static float damage = 15;
             public static float defence = 0;
             public static float waterResist = 0;
@@ -630,7 +630,7 @@ namespace Includes
 
         public class EarthRanged
         {
-            public static float maxHealth = 20;
+            public static float maxHealth = 35;
             public static float damage = 10;
             public static float defence = 2;
             public static float waterResist = 5;

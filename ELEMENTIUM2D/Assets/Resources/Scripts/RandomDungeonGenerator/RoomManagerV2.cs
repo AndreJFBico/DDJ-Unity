@@ -56,7 +56,12 @@ public class RoomManagerV2 : MonoBehaviour {
             GameManager.Instance.PlayerRoom = dungeonRoomsHead;
             GameManager.Instance.Player.transform.position = dungeonRoomsHead.transform.position + new Vector3(0, 0.1f, 0);
             GameManager.Instance.Player.transform.rotation = dungeonRoomsHead.transform.rotation;
-            if (LoggingManager.Instance.StartTime == 0) LoggingManager.Instance.StartTime = Time.time;
+            if (!LoggingManager.Instance.Started)
+            {
+                LoggingManager.Instance.Started = true;
+                LoggingManager.Instance.StartTime = Time.time;
+                LoggingManager.Instance.RespawnTime = Time.time;
+            }
             state = 3;
         }
 	}

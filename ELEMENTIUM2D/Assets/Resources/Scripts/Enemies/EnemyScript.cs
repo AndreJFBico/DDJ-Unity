@@ -66,6 +66,9 @@ public class EnemyScript : Agent
     //Currently enemies do not blink some of them will in the future!
     public override void takeDamage(float amount, Elements type, bool goTroughBlink, string source)
     {
+        if(health < 0)
+            return;
+        
         float totalDamage = 0;
         Color color = Color.white;
         switch (type)

@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+﻿using System.IO;
+using UnityEngine;
 using System.Collections;
-using System.IO;
 using Includes;
 
 public abstract class LoggingEntry
@@ -12,13 +12,15 @@ public abstract class LoggingEntry
 
     public LoggingEntry(string path)
     {
-        filePath = path;
-        if (File.Exists(filePath))
-        {
-            File.Delete(filePath);
-        }
-        stream = File.Create(filePath);
-        stream.Close();
+        #if (!UNITY_WEBPLAYER)
+            filePath = path;
+            if (File.Exists(filePath))
+            {
+                File.Delete(filePath);
+            }
+            stream = File.Create(filePath);
+            stream.Close();
+        #endif
     }
 
     public virtual void writeEntry(string enemyName, Elements enemyType, string projectileName, Elements projectileType) { }
@@ -29,7 +31,9 @@ public abstract class LoggingEntry
 
     protected void addTextToFile(string text)
     {
-        File.AppendAllText(filePath, text);
+        #if (!UNITY_WEBPLAYER)
+            File.AppendAllText(filePath, text);
+        #endif
     }
 
     public virtual void wrapUp() {}

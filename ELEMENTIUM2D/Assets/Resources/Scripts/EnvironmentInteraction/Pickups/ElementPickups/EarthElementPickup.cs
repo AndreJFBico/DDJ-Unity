@@ -12,6 +12,7 @@ public class EarthElementPickup : Pickup
     }
     public override void applyEffect()
     {
+        LoggingManager.Instance.TimeToEarth = Time.realtimeSinceStartup;
         //update PlayerStats to set primary_element_level and lim_element;
         //update Interactions to set element active;
         //update ElementElement to unlock its main weapon;
