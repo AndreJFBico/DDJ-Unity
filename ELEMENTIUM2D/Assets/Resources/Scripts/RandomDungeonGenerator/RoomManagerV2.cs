@@ -357,6 +357,45 @@ public class RoomManagerV2 : MonoBehaviour {
 				}
 			}
 		}
+		if(!generation)
+			toggleDoors(room);
+	}
+
+	public void toggleDoors(DungeonRoom room){
+		if(room == null)
+			return;
+		
+		searchId++;
+		
+		KeyValuePair<DungeonRoom, KeyValuePair<MapDoor, int>> currentPair;
+		DungeonRoom currentRoom = room;
+		
+		Queue<KeyValuePair<DungeonRoom, KeyValuePair<MapDoor, int>>> queue = new Queue<KeyValuePair<DungeonRoom, KeyValuePair<MapDoor, int>>>();
+		queue.Enqueue( new KeyValuePair<DungeonRoom, KeyValuePair<MapDoor, int>>(currentRoom, new KeyValuePair<MapDoor, int>(null, 0)));
+		currentRoom.lastSearch = searchId;
+		
+		while(queue.Count != 0){
+			currentPair = queue.Dequeue();
+			currentRoom = currentPair.Key;
+			int currentDepth = currentPair.Value.Value;
+			MapDoor currentDoor = currentPair.Value.Key;
+			
+			currentRoom.lastSearch = searchId;
+
+			foreach(MapDoor door in currentRoom.doors){
+				if(door.used){
+					if(door.leadsTo.parked == false){
+						door.activateNavmesh();
+					}else{
+						door.deactivateNavmesh();
+					}
+
+					if(door.leadsTo.lastSearch < searchId){	
+						queue.Enqueue( new KeyValuePair<DungeonRoom, KeyValuePair<MapDoor, int>>(door.leadsTo, new KeyValuePair<MapDoor, int>(door, currentDepth + 1)));
+					}
+				}
+			}
+		}
 	}
 
 	public void checkForFail(){
