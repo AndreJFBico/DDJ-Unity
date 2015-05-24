@@ -157,7 +157,7 @@ public class LoggingManager
         {
             string path = entry.Filepath;
             #if (!UNITY_WEBPLAYER)
-                File.AppendAllText(filePath, "#########################################################\r\n" + path + "\r\n");
+            File.AppendAllText(filePath, "#########################################################\r\n" + path + "\r\n" + "#########################################################\r\n");
                 File.AppendAllText(filePath, File.ReadAllText(path));
             #endif
         }
