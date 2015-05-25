@@ -18,7 +18,7 @@ public class SortLayer : MonoBehaviour {
 	void Start () {
         if (parentSprite)
         {
-            GetComponent<Renderer>().sortingOrder = parentSprite.GetComponent<SortLayer>().getCalculatedSortLayer() + 1;
+            GetComponent<Renderer>().sortingOrder = parentSprite.GetComponent<SortLayer>().getCalculatedSortLayer() + 3;
         }
         else
         {
@@ -81,7 +81,7 @@ public class SortLayer : MonoBehaviour {
             {
                 if (parentSprite)
                 {
-                    GetComponent<Renderer>().sortingOrder = parentSprite.GetComponent<SortLayer>().getCalculatedSortLayer() + 1;
+                    GetComponent<Renderer>().sortingOrder = parentSprite.GetComponent<SortLayer>().getCalculatedSortLayer() + 3;
                 }
                 else
                 {
