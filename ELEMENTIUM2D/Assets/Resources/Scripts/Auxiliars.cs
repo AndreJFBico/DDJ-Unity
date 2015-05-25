@@ -718,6 +718,7 @@ namespace Includes
         public float lim_moveInContactWithEnemy = float.MaxValue;
         public float lim_maxHealth = float.MaxValue;
         public float lim_damage = float.MaxValue;
+        public float lim_attackSpeed = float.MaxValue;
         public float lim_defence = float.MaxValue;
         public float lim_waterResist = float.MaxValue;
         public float lim_earthResist = float.MaxValue;

@@ -8,6 +8,7 @@ using Includes;
 [ExecuteInEditMode]
 public class SkillTreeNode : MonoBehaviour
 {
+    public int pointCost = 1;
 
     private SkillTreeManager manager;
 
@@ -195,7 +196,7 @@ public class SkillTreeNode : MonoBehaviour
             if (manager.cur_lim_points > 0)
             {
                     selected = true;
-                    manager.cur_lim_points -= 1;
+                    manager.cur_lim_points -= pointCost;
                     manager.updatePointsText();
                     manager.predictChanges();
                     return;
@@ -204,7 +205,7 @@ public class SkillTreeNode : MonoBehaviour
         else
         {
                 selected = false;
-                manager.cur_lim_points += 1;
+                manager.cur_lim_points += pointCost;
                 manager.updatePointsText();
                 manager.predictChanges();
                 return;
@@ -235,7 +236,7 @@ public class SkillTreeNode : MonoBehaviour
                             {
                                 selected = true;
                                 field.SetValue(manager, ((float)field.GetValue(manager)) + 1);
-                                manager.cur_lim_points -= 1;
+                                manager.cur_lim_points -= pointCost;
                                 manager.updatePointsText();
                                 manager.predictChanges();
                                 return;
@@ -248,7 +249,7 @@ public class SkillTreeNode : MonoBehaviour
                         {
                             selected = false;
                             field.SetValue(manager, ((float)field.GetValue(manager)) - 1);
-                            manager.cur_lim_points += 1;
+                            manager.cur_lim_points += pointCost;
                             manager.updatePointsText();
                             manager.predictChanges();
                             return;

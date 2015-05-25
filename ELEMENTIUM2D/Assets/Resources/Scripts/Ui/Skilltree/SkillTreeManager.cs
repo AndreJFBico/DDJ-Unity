@@ -30,6 +30,7 @@ public class SkillTreeManager : MonoBehaviour
     public float cur_lim_moveInContactWithEnemy = 0;
     public float cur_lim_maxHealth = 0;
     public float cur_lim_damage = 0;
+    public float cur_lim_attackSpeed = 0;
     public float cur_lim_defence = 0;
     public float cur_lim_waterResist = 0;
     public float cur_lim_earthResist = 0;
