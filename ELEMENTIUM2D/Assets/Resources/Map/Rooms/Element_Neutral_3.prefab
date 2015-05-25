@@ -59,7 +59,6 @@ GameObject:
   - 4: {fileID: 455956}
   - 114: {fileID: 11499166}
   - 136: {fileID: 13666636}
-  - 208: {fileID: 20820244}
   m_Layer: 13
   m_Name: Spike 22
   m_TagString: Untagged
@@ -129,7 +128,6 @@ GameObject:
   - 4: {fileID: 431774}
   - 114: {fileID: 11426194}
   - 136: {fileID: 13634976}
-  - 208: {fileID: 20832314}
   m_Layer: 13
   m_Name: Spike 34
   m_TagString: Untagged
@@ -248,7 +246,6 @@ GameObject:
   - 4: {fileID: 442466}
   - 114: {fileID: 11481534}
   - 136: {fileID: 13695810}
-  - 208: {fileID: 20820138}
   m_Layer: 13
   m_Name: Spike 43
   m_TagString: Untagged
@@ -366,7 +363,6 @@ GameObject:
   - 4: {fileID: 402642}
   - 114: {fileID: 11430088}
   - 136: {fileID: 13657082}
-  - 208: {fileID: 20830726}
   m_Layer: 13
   m_Name: Spike 45
   m_TagString: Untagged
@@ -418,7 +414,6 @@ GameObject:
   - 4: {fileID: 411072}
   - 114: {fileID: 11429488}
   - 136: {fileID: 13698668}
-  - 208: {fileID: 20831404}
   m_Layer: 13
   m_Name: Spike 41
   m_TagString: Untagged
@@ -436,7 +431,6 @@ GameObject:
   - 4: {fileID: 423052}
   - 114: {fileID: 11424672}
   - 136: {fileID: 13658432}
-  - 208: {fileID: 20800378}
   m_Layer: 13
   m_Name: Spike 24
   m_TagString: Untagged
@@ -489,7 +483,6 @@ GameObject:
   - 4: {fileID: 445688}
   - 114: {fileID: 11470564}
   - 136: {fileID: 13665500}
-  - 208: {fileID: 20817026}
   m_Layer: 13
   m_Name: Spike 26
   m_TagString: Untagged
@@ -770,7 +763,6 @@ GameObject:
   - 4: {fileID: 490484}
   - 114: {fileID: 11412936}
   - 136: {fileID: 13638300}
-  - 208: {fileID: 20873018}
   m_Layer: 13
   m_Name: Spike 47
   m_TagString: Untagged
@@ -839,7 +831,6 @@ GameObject:
   - 4: {fileID: 466368}
   - 114: {fileID: 11483234}
   - 136: {fileID: 13638272}
-  - 208: {fileID: 20844274}
   m_Layer: 13
   m_Name: Spike 11
   m_TagString: Untagged
@@ -873,7 +864,6 @@ GameObject:
   - 4: {fileID: 484312}
   - 114: {fileID: 11421876}
   - 136: {fileID: 13604032}
-  - 208: {fileID: 20806728}
   m_Layer: 13
   m_Name: Spike 48
   m_TagString: Untagged
@@ -1073,7 +1063,6 @@ GameObject:
   - 4: {fileID: 489750}
   - 114: {fileID: 11431704}
   - 136: {fileID: 13641958}
-  - 208: {fileID: 20884470}
   m_Layer: 13
   m_Name: Spike 40
   m_TagString: Untagged
@@ -1193,7 +1182,6 @@ GameObject:
   - 4: {fileID: 418652}
   - 114: {fileID: 11490226}
   - 136: {fileID: 13699080}
-  - 208: {fileID: 20833710}
   m_Layer: 13
   m_Name: Spike 3
   m_TagString: Untagged
@@ -1228,7 +1216,6 @@ GameObject:
   - 4: {fileID: 421322}
   - 114: {fileID: 11475000}
   - 136: {fileID: 13620834}
-  - 208: {fileID: 20872750}
   m_Layer: 13
   m_Name: Spike 21
   m_TagString: Untagged
@@ -1281,7 +1268,6 @@ GameObject:
   - 4: {fileID: 465886}
   - 114: {fileID: 11476094}
   - 136: {fileID: 13602246}
-  - 208: {fileID: 20864138}
   m_Layer: 13
   m_Name: Spike 31
   m_TagString: Untagged
@@ -1299,7 +1285,6 @@ GameObject:
   - 4: {fileID: 497036}
   - 114: {fileID: 11402426}
   - 136: {fileID: 13652648}
-  - 208: {fileID: 20857762}
   m_Layer: 13
   m_Name: Spike 30
   m_TagString: Untagged
@@ -1367,7 +1352,6 @@ GameObject:
   - 4: {fileID: 455292}
   - 114: {fileID: 11402622}
   - 136: {fileID: 13635876}
-  - 208: {fileID: 20820644}
   m_Layer: 13
   m_Name: Spike 61
   m_TagString: Untagged
@@ -1417,7 +1401,6 @@ GameObject:
   - 4: {fileID: 420060}
   - 114: {fileID: 11418938}
   - 136: {fileID: 13622616}
-  - 208: {fileID: 20898230}
   m_Layer: 13
   m_Name: Spike 1
   m_TagString: Untagged
@@ -1542,7 +1525,6 @@ GameObject:
   - 4: {fileID: 405972}
   - 114: {fileID: 11486404}
   - 136: {fileID: 13600964}
-  - 208: {fileID: 20800466}
   m_Layer: 13
   m_Name: Spike 5
   m_TagString: Untagged
@@ -1576,7 +1558,6 @@ GameObject:
   - 4: {fileID: 441814}
   - 114: {fileID: 11453096}
   - 136: {fileID: 13690686}
-  - 208: {fileID: 20843400}
   m_Layer: 13
   m_Name: Spike 29
   m_TagString: Untagged
@@ -1630,7 +1611,6 @@ GameObject:
   - 4: {fileID: 463908}
   - 114: {fileID: 11493908}
   - 136: {fileID: 13656772}
-  - 208: {fileID: 20871600}
   m_Layer: 13
   m_Name: Spike 23
   m_TagString: Untagged
@@ -1683,7 +1663,6 @@ GameObject:
   - 4: {fileID: 465330}
   - 114: {fileID: 11450726}
   - 136: {fileID: 13681228}
-  - 208: {fileID: 20882420}
   m_Layer: 13
   m_Name: Spike 65
   m_TagString: Untagged
@@ -1735,7 +1714,6 @@ GameObject:
   - 4: {fileID: 401506}
   - 114: {fileID: 11475878}
   - 136: {fileID: 13617416}
-  - 208: {fileID: 20813320}
   m_Layer: 13
   m_Name: Spike 46
   m_TagString: Untagged
@@ -1892,7 +1870,6 @@ GameObject:
   - 4: {fileID: 401510}
   - 114: {fileID: 11404548}
   - 136: {fileID: 13611226}
-  - 208: {fileID: 20844406}
   m_Layer: 13
   m_Name: Spike 15
   m_TagString: Untagged
@@ -2039,7 +2016,6 @@ GameObject:
   - 4: {fileID: 445082}
   - 114: {fileID: 11425828}
   - 136: {fileID: 13693818}
-  - 208: {fileID: 20883476}
   m_Layer: 13
   m_Name: Spike 63
   m_TagString: Untagged
@@ -2160,7 +2136,6 @@ GameObject:
   - 4: {fileID: 477928}
   - 114: {fileID: 11404470}
   - 136: {fileID: 13671916}
-  - 208: {fileID: 20833160}
   m_Layer: 13
   m_Name: Spike 32
   m_TagString: Untagged
@@ -2228,7 +2203,6 @@ GameObject:
   - 4: {fileID: 442092}
   - 114: {fileID: 11413884}
   - 136: {fileID: 13689552}
-  - 208: {fileID: 20882116}
   m_Layer: 13
   m_Name: Spike 42
   m_TagString: Untagged
@@ -2346,7 +2320,6 @@ GameObject:
   - 4: {fileID: 460422}
   - 114: {fileID: 11447350}
   - 136: {fileID: 13635290}
-  - 208: {fileID: 20836240}
   m_Layer: 13
   m_Name: Spike 4
   m_TagString: Untagged
@@ -2364,7 +2337,6 @@ GameObject:
   - 4: {fileID: 460362}
   - 114: {fileID: 11417156}
   - 136: {fileID: 13660866}
-  - 208: {fileID: 20801600}
   m_Layer: 13
   m_Name: Spike 52
   m_TagString: Untagged
@@ -2418,7 +2390,6 @@ GameObject:
   - 4: {fileID: 475618}
   - 114: {fileID: 11446648}
   - 136: {fileID: 13678630}
-  - 208: {fileID: 20898746}
   m_Layer: 13
   m_Name: Spike 54
   m_TagString: Untagged
@@ -2537,7 +2508,6 @@ GameObject:
   - 4: {fileID: 495030}
   - 114: {fileID: 11427756}
   - 136: {fileID: 13663266}
-  - 208: {fileID: 20840830}
   m_Layer: 13
   m_Name: Spike 62
   m_TagString: Untagged
@@ -2555,7 +2525,6 @@ GameObject:
   - 4: {fileID: 453198}
   - 114: {fileID: 11418520}
   - 136: {fileID: 13601122}
-  - 208: {fileID: 20872220}
   m_Layer: 13
   m_Name: Spike 6
   m_TagString: Untagged
@@ -2607,7 +2576,6 @@ GameObject:
   - 4: {fileID: 466784}
   - 114: {fileID: 11423968}
   - 136: {fileID: 13690500}
-  - 208: {fileID: 20836554}
   m_Layer: 13
   m_Name: Spike 16
   m_TagString: Untagged
@@ -2728,7 +2696,6 @@ GameObject:
   - 4: {fileID: 474936}
   - 114: {fileID: 11421242}
   - 136: {fileID: 13623066}
-  - 208: {fileID: 20897678}
   m_Layer: 13
   m_Name: Spike 67
   m_TagString: Untagged
@@ -2746,7 +2713,6 @@ GameObject:
   - 4: {fileID: 433790}
   - 114: {fileID: 11499968}
   - 136: {fileID: 13696618}
-  - 208: {fileID: 20829716}
   m_Layer: 13
   m_Name: Spike 2
   m_TagString: Untagged
@@ -2799,7 +2765,6 @@ GameObject:
   - 4: {fileID: 496588}
   - 114: {fileID: 11419652}
   - 136: {fileID: 13639890}
-  - 208: {fileID: 20808724}
   m_Layer: 13
   m_Name: Spike 18
   m_TagString: Untagged
@@ -2881,7 +2846,6 @@ GameObject:
   - 4: {fileID: 449344}
   - 114: {fileID: 11445394}
   - 136: {fileID: 13643564}
-  - 208: {fileID: 20816928}
   m_Layer: 13
   m_Name: Spike 35
   m_TagString: Untagged
@@ -2948,7 +2912,6 @@ GameObject:
   - 4: {fileID: 407078}
   - 114: {fileID: 11417628}
   - 136: {fileID: 13687242}
-  - 208: {fileID: 20845496}
   m_Layer: 13
   m_Name: Spike 12
   m_TagString: Untagged
@@ -3081,7 +3044,6 @@ GameObject:
   - 4: {fileID: 460384}
   - 114: {fileID: 11466744}
   - 136: {fileID: 13668812}
-  - 208: {fileID: 20823612}
   m_Layer: 13
   m_Name: Spike 55
   m_TagString: Untagged
@@ -3219,7 +3181,6 @@ GameObject:
   - 4: {fileID: 439334}
   - 114: {fileID: 11446830}
   - 136: {fileID: 13675092}
-  - 208: {fileID: 20847662}
   m_Layer: 13
   m_Name: Spike 58
   m_TagString: Untagged
@@ -3253,7 +3214,6 @@ GameObject:
   - 4: {fileID: 406130}
   - 114: {fileID: 11485536}
   - 136: {fileID: 13640398}
-  - 208: {fileID: 20826100}
   m_Layer: 13
   m_Name: Spike 9
   m_TagString: Untagged
@@ -3271,7 +3231,6 @@ GameObject:
   - 4: {fileID: 414044}
   - 114: {fileID: 11462808}
   - 136: {fileID: 13626880}
-  - 208: {fileID: 20840356}
   m_Layer: 13
   m_Name: Spike 7
   m_TagString: Untagged
@@ -3306,7 +3265,6 @@ GameObject:
   - 4: {fileID: 491060}
   - 114: {fileID: 11455248}
   - 136: {fileID: 13692688}
-  - 208: {fileID: 20848330}
   m_Layer: 13
   m_Name: Spike 59
   m_TagString: Untagged
@@ -3375,7 +3333,6 @@ GameObject:
   - 4: {fileID: 401686}
   - 114: {fileID: 11413638}
   - 136: {fileID: 13621502}
-  - 208: {fileID: 20869546}
   m_Layer: 13
   m_Name: Spike 13
   m_TagString: Untagged
@@ -3393,7 +3350,6 @@ GameObject:
   - 4: {fileID: 466972}
   - 114: {fileID: 11484046}
   - 136: {fileID: 13689984}
-  - 208: {fileID: 20811790}
   m_Layer: 13
   m_Name: Spike 14
   m_TagString: Untagged
@@ -3463,7 +3419,6 @@ GameObject:
   - 4: {fileID: 400776}
   - 114: {fileID: 11467794}
   - 136: {fileID: 13615292}
-  - 208: {fileID: 20878994}
   m_Layer: 13
   m_Name: Spike 44
   m_TagString: Untagged
@@ -3481,7 +3436,6 @@ GameObject:
   - 4: {fileID: 486930}
   - 114: {fileID: 11482920}
   - 136: {fileID: 13686690}
-  - 208: {fileID: 20833962}
   m_Layer: 13
   m_Name: Spike 50
   m_TagString: Untagged
@@ -3568,7 +3522,6 @@ GameObject:
   - 4: {fileID: 450764}
   - 114: {fileID: 11469692}
   - 136: {fileID: 13623730}
-  - 208: {fileID: 20897292}
   m_Layer: 13
   m_Name: Spike 10
   m_TagString: Untagged
@@ -3639,7 +3592,6 @@ GameObject:
   - 4: {fileID: 485146}
   - 114: {fileID: 11404950}
   - 136: {fileID: 13652026}
-  - 208: {fileID: 20806410}
   m_Layer: 13
   m_Name: Spike 49
   m_TagString: Untagged
@@ -3708,7 +3660,6 @@ GameObject:
   - 4: {fileID: 409546}
   - 114: {fileID: 11421120}
   - 136: {fileID: 13606066}
-  - 208: {fileID: 20885436}
   m_Layer: 13
   m_Name: Spike 25
   m_TagString: Untagged
@@ -3810,7 +3761,6 @@ GameObject:
   - 4: {fileID: 424368}
   - 114: {fileID: 11491870}
   - 136: {fileID: 13613548}
-  - 208: {fileID: 20828294}
   m_Layer: 13
   m_Name: Spike 38
   m_TagString: Untagged
@@ -3828,7 +3778,6 @@ GameObject:
   - 4: {fileID: 462182}
   - 114: {fileID: 11421754}
   - 136: {fileID: 13692858}
-  - 208: {fileID: 20811094}
   m_Layer: 13
   m_Name: Spike 66
   m_TagString: Untagged
@@ -3903,7 +3852,6 @@ GameObject:
   - 4: {fileID: 408142}
   - 114: {fileID: 11442380}
   - 136: {fileID: 13619266}
-  - 208: {fileID: 20858372}
   m_Layer: 13
   m_Name: Spike 27
   m_TagString: Untagged
@@ -3921,7 +3869,6 @@ GameObject:
   - 4: {fileID: 475994}
   - 114: {fileID: 11470176}
   - 136: {fileID: 13679954}
-  - 208: {fileID: 20836182}
   m_Layer: 13
   m_Name: Spike 17
   m_TagString: Untagged
@@ -4024,7 +3971,6 @@ GameObject:
   - 4: {fileID: 416668}
   - 114: {fileID: 11474970}
   - 136: {fileID: 13691670}
-  - 208: {fileID: 20814784}
   m_Layer: 13
   m_Name: Spike 8
   m_TagString: Untagged
@@ -4162,7 +4108,6 @@ GameObject:
   - 4: {fileID: 403154}
   - 114: {fileID: 11432796}
   - 136: {fileID: 13625770}
-  - 208: {fileID: 20854150}
   m_Layer: 13
   m_Name: Spike 36
   m_TagString: Untagged
@@ -4195,7 +4140,6 @@ GameObject:
   - 4: {fileID: 465076}
   - 114: {fileID: 11422508}
   - 136: {fileID: 13687586}
-  - 208: {fileID: 20809654}
   m_Layer: 13
   m_Name: Spike 51
   m_TagString: Untagged
@@ -4309,7 +4253,6 @@ GameObject:
   - 4: {fileID: 470304}
   - 114: {fileID: 11484240}
   - 136: {fileID: 13682436}
-  - 208: {fileID: 20861888}
   m_Layer: 13
   m_Name: Spike 64
   m_TagString: Untagged
@@ -4343,7 +4286,6 @@ GameObject:
   - 4: {fileID: 405660}
   - 114: {fileID: 11413408}
   - 136: {fileID: 13619662}
-  - 208: {fileID: 20844492}
   m_Layer: 13
   m_Name: Spike 19
   m_TagString: Untagged
@@ -4426,7 +4368,6 @@ GameObject:
   - 4: {fileID: 471402}
   - 114: {fileID: 11470506}
   - 136: {fileID: 13662014}
-  - 208: {fileID: 20899918}
   m_Layer: 13
   m_Name: Spike 37
   m_TagString: Untagged
@@ -4460,7 +4401,6 @@ GameObject:
   - 4: {fileID: 441916}
   - 114: {fileID: 11444556}
   - 136: {fileID: 13626520}
-  - 208: {fileID: 20898210}
   m_Layer: 13
   m_Name: Spike 60
   m_TagString: Untagged
@@ -4563,7 +4503,6 @@ GameObject:
   - 4: {fileID: 481342}
   - 114: {fileID: 11462286}
   - 136: {fileID: 13632330}
-  - 208: {fileID: 20836536}
   m_Layer: 13
   m_Name: Spike 53
   m_TagString: Untagged
@@ -4663,7 +4602,6 @@ GameObject:
   - 4: {fileID: 446628}
   - 114: {fileID: 11461718}
   - 136: {fileID: 13644672}
-  - 208: {fileID: 20866598}
   m_Layer: 13
   m_Name: Spike 33
   m_TagString: Untagged
@@ -4681,7 +4619,6 @@ GameObject:
   - 4: {fileID: 471076}
   - 114: {fileID: 11406814}
   - 136: {fileID: 13676132}
-  - 208: {fileID: 20831850}
   m_Layer: 13
   m_Name: Spike 39
   m_TagString: Untagged
@@ -4717,7 +4654,6 @@ GameObject:
   - 4: {fileID: 497564}
   - 114: {fileID: 11495712}
   - 136: {fileID: 13686838}
-  - 208: {fileID: 20873664}
   m_Layer: 13
   m_Name: Spike 20
   m_TagString: Untagged
@@ -4735,7 +4671,6 @@ GameObject:
   - 4: {fileID: 455952}
   - 114: {fileID: 11407910}
   - 136: {fileID: 13651460}
-  - 208: {fileID: 20836516}
   m_Layer: 13
   m_Name: Spike 28
   m_TagString: Untagged
@@ -4770,7 +4705,6 @@ GameObject:
   - 4: {fileID: 433682}
   - 114: {fileID: 11487750}
   - 136: {fileID: 13681116}
-  - 208: {fileID: 20888232}
   m_Layer: 13
   m_Name: Spike 57
   m_TagString: Untagged
@@ -10590,6 +10524,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21206374}
+  parentSprite: {fileID: 0}
 --- !u!114 &11401164
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10605,6 +10540,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21221934}
+  parentSprite: {fileID: 0}
 --- !u!114 &11402204
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10620,6 +10556,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21204040}
+  parentSprite: {fileID: 0}
 --- !u!114 &11402426
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10737,6 +10674,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21263096}
+  parentSprite: {fileID: 0}
 --- !u!114 &11404950
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10767,6 +10705,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21292562}
+  parentSprite: {fileID: 0}
 --- !u!114 &11406220
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10782,6 +10721,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21283702}
+  parentSprite: {fileID: 0}
 --- !u!114 &11406578
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10797,6 +10737,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21246376}
+  parentSprite: {fileID: 0}
 --- !u!114 &11406814
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10842,6 +10783,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21255814}
+  parentSprite: {fileID: 0}
 --- !u!114 &11410556
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10857,6 +10799,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21240040}
+  parentSprite: {fileID: 0}
 --- !u!114 &11410560
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10872,6 +10815,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21295098}
+  parentSprite: {fileID: 0}
 --- !u!114 &11412794
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10914,6 +10858,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21298348}
+  parentSprite: {fileID: 0}
 --- !u!114 &11413408
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10986,6 +10931,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21253398}
+  parentSprite: {fileID: 0}
 --- !u!114 &11416010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11012,6 +10958,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21241232}
+  parentSprite: {fileID: 0}
 --- !u!114 &11417156
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11110,6 +11057,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21294016}
+  parentSprite: {fileID: 0}
 --- !u!114 &11419652
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11152,6 +11100,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21214658}
+  parentSprite: {fileID: 0}
 --- !u!114 &11421120
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11197,6 +11146,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21226648}
+  parentSprite: {fileID: 0}
 --- !u!114 &11421708
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11254,6 +11204,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21273654}
+  parentSprite: {fileID: 0}
 --- !u!114 &11422508
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11344,6 +11295,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21269318}
+  parentSprite: {fileID: 0}
 --- !u!114 &11427756
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11374,6 +11326,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21270556}
+  parentSprite: {fileID: 0}
 --- !u!114 &11429488
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11437,6 +11390,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21251378}
+  parentSprite: {fileID: 0}
 --- !u!114 &11431704
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11467,6 +11421,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21233436}
+  parentSprite: {fileID: 0}
 --- !u!114 &11432796
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11497,6 +11452,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21234004}
+  parentSprite: {fileID: 0}
 --- !u!114 &11434076
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11512,6 +11468,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21290086}
+  parentSprite: {fileID: 0}
 --- !u!114 &11434296
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11527,6 +11484,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21262534}
+  parentSprite: {fileID: 0}
 --- !u!114 &11435048
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11542,6 +11500,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21261152}
+  parentSprite: {fileID: 0}
 --- !u!114 &11435162
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11557,6 +11516,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21266734}
+  parentSprite: {fileID: 0}
 --- !u!114 &11436780
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11572,6 +11532,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21222194}
+  parentSprite: {fileID: 0}
 --- !u!114 &11437000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11587,6 +11548,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21214744}
+  parentSprite: {fileID: 0}
 --- !u!114 &11438244
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11614,6 +11576,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21273196}
+  parentSprite: {fileID: 0}
 --- !u!114 &11439428
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11629,6 +11592,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21212034}
+  parentSprite: {fileID: 0}
 --- !u!114 &11442288
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11644,6 +11608,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21283944}
+  parentSprite: {fileID: 0}
 --- !u!114 &11442380
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11674,6 +11639,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21246384}
+  parentSprite: {fileID: 0}
 --- !u!114 &11444556
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11704,6 +11670,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21237216}
+  parentSprite: {fileID: 0}
 --- !u!114 &11445394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11734,6 +11701,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21271018}
+  parentSprite: {fileID: 0}
 --- !u!114 &11446648
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11794,6 +11762,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21271230}
+  parentSprite: {fileID: 0}
 --- !u!114 &11447816
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11809,6 +11778,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21278494}
+  parentSprite: {fileID: 0}
 --- !u!114 &11450162
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11824,6 +11794,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21240550}
+  parentSprite: {fileID: 0}
 --- !u!114 &11450726
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11854,6 +11825,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21230614}
+  parentSprite: {fileID: 0}
 --- !u!114 &11452038
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11869,6 +11841,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21283942}
+  parentSprite: {fileID: 0}
 --- !u!114 &11452362
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11884,6 +11857,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21261484}
+  parentSprite: {fileID: 0}
 --- !u!114 &11453096
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11914,6 +11888,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21288036}
+  parentSprite: {fileID: 0}
 --- !u!114 &11454492
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11929,6 +11904,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21278426}
+  parentSprite: {fileID: 0}
 --- !u!114 &11454676
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11962,6 +11938,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21270182}
+  parentSprite: {fileID: 0}
 --- !u!114 &11455248
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11992,6 +11969,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21212220}
+  parentSprite: {fileID: 0}
 --- !u!114 &11458046
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12007,6 +11985,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21218452}
+  parentSprite: {fileID: 0}
 --- !u!114 &11458252
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12071,6 +12050,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21248642}
+  parentSprite: {fileID: 0}
 --- !u!114 &11461280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12086,6 +12066,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21210568}
+  parentSprite: {fileID: 0}
 --- !u!114 &11461420
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12101,6 +12082,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21216402}
+  parentSprite: {fileID: 0}
 --- !u!114 &11461718
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12146,6 +12128,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21243534}
+  parentSprite: {fileID: 0}
 --- !u!114 &11462808
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12223,6 +12206,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21252678}
+  parentSprite: {fileID: 0}
 --- !u!114 &11465368
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12238,6 +12222,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21297322}
+  parentSprite: {fileID: 0}
 --- !u!114 &11466744
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12283,6 +12268,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21204296}
+  parentSprite: {fileID: 0}
 --- !u!114 &11468868
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12298,6 +12284,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21246974}
+  parentSprite: {fileID: 0}
 --- !u!114 &11469692
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12373,6 +12360,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21238514}
+  parentSprite: {fileID: 0}
 --- !u!114 &11470918
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12388,6 +12376,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21238578}
+  parentSprite: {fileID: 0}
 --- !u!114 &11471142
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12403,6 +12392,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21266104}
+  parentSprite: {fileID: 0}
 --- !u!114 &11471280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12430,6 +12420,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21211930}
+  parentSprite: {fileID: 0}
 --- !u!114 &11472600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12445,6 +12436,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21260608}
+  parentSprite: {fileID: 0}
 --- !u!114 &11472942
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12460,6 +12452,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21269308}
+  parentSprite: {fileID: 0}
 --- !u!114 &11474946
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12517,6 +12510,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21277444}
+  parentSprite: {fileID: 0}
 --- !u!114 &11475432
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12555,6 +12549,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21211028}
+  parentSprite: {fileID: 0}
 --- !u!114 &11475878
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12612,6 +12607,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21234182}
+  parentSprite: {fileID: 0}
 --- !u!114 &11481534
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12642,6 +12638,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21259898}
+  parentSprite: {fileID: 0}
 --- !u!114 &11482186
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12669,6 +12666,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21282738}
+  parentSprite: {fileID: 0}
 --- !u!114 &11482680
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12684,6 +12682,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21227842}
+  parentSprite: {fileID: 0}
 --- !u!114 &11482920
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12774,6 +12773,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21280646}
+  parentSprite: {fileID: 0}
 --- !u!114 &11485386
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12842,6 +12842,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21214590}
+  parentSprite: {fileID: 0}
 --- !u!114 &11487750
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12923,6 +12924,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21238986}
+  parentSprite: {fileID: 0}
 --- !u!114 &11491870
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12953,6 +12955,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21243462}
+  parentSprite: {fileID: 0}
 --- !u!114 &11493908
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12983,6 +12986,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21267560}
+  parentSprite: {fileID: 0}
 --- !u!114 &11495712
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13013,6 +13017,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21248076}
+  parentSprite: {fileID: 0}
 --- !u!114 &11498286
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13028,6 +13033,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21206530}
+  parentSprite: {fileID: 0}
 --- !u!114 &11498574
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13043,6 +13049,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21216604}
+  parentSprite: {fileID: 0}
 --- !u!114 &11499166
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13073,6 +13080,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21285100}
+  parentSprite: {fileID: 0}
 --- !u!114 &11499876
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14035,96 +14043,6 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: .0900000036, y: 0, z: -.569999993}
---- !u!208 &20800378
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 110214}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20800466
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 130798}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20801600
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 151078}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20806410
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 176868}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20806728
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 119638}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20808724
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 160890}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
 --- !u!208 &20809128
 NavMeshObstacle:
   m_ObjectHideFlags: 1
@@ -14135,21 +14053,6 @@ NavMeshObstacle:
   serializedVersion: 3
   m_Shape: 1
   m_Extents: {x: .649999976, y: .5, z: .845000029}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20809654
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 185542}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
   m_MoveThreshold: .100000001
   m_Carve: 1
   m_CarveOnlyStationary: 1
@@ -14168,36 +14071,6 @@ NavMeshObstacle:
   m_MoveThreshold: .100000001
   m_Carve: 1
   m_CarveOnlyStationary: 0
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20811094
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 181354}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20811790
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 172666}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: .5
 --- !u!208 &20812816
@@ -14230,66 +14103,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: .5
---- !u!208 &20813320
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 136400}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20814784
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 184342}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20816928
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 163534}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20817026
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 110550}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
 --- !u!208 &20818340
 NavMeshObstacle:
   m_ObjectHideFlags: 1
@@ -14303,66 +14116,6 @@ NavMeshObstacle:
   m_MoveThreshold: .100000001
   m_Carve: 1
   m_CarveOnlyStationary: 0
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20820138
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 105608}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20820244
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 102474}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20820644
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 127968}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20823612
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 167548}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: .5
 --- !u!208 &20824172
@@ -14395,126 +14148,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: .5
---- !u!208 &20826100
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 169364}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20828294
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 180766}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20829716
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 159018}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20830726
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 108112}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20831404
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 109970}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20831850
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 195258}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20832314
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 104104}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20833160
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 149362}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
 --- !u!208 &20833210
 NavMeshObstacle:
   m_ObjectHideFlags: 1
@@ -14528,21 +14161,6 @@ NavMeshObstacle:
   m_MoveThreshold: .100000001
   m_Carve: 1
   m_CarveOnlyStationary: 0
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20833710
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 126048}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: .5
 --- !u!208 &20833814
@@ -14560,141 +14178,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: .5
---- !u!208 &20833962
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 173612}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20836182
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 183070}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20836240
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 150730}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20836516
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 196274}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20836536
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 193488}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20836554
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 157490}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20840356
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 169856}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20840830
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 155240}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20843400
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 131368}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
 --- !u!208 &20843976
 NavMeshObstacle:
   m_ObjectHideFlags: 1
@@ -14708,96 +14191,6 @@ NavMeshObstacle:
   m_MoveThreshold: .100000001
   m_Carve: 1
   m_CarveOnlyStationary: 0
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20844274
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 118318}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20844406
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 142378}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20844492
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 187698}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20845496
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 165184}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20847662
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 169230}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20848330
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 170138}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: .5
 --- !u!208 &20852000
@@ -14815,21 +14208,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: .5
---- !u!208 &20854150
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 185494}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
 --- !u!208 &20855568
 NavMeshObstacle:
   m_ObjectHideFlags: 1
@@ -14845,36 +14223,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: .5
---- !u!208 &20857762
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 127384}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20858372
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 182730}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
 --- !u!208 &20860578
 NavMeshObstacle:
   m_ObjectHideFlags: 1
@@ -14888,156 +14236,6 @@ NavMeshObstacle:
   m_MoveThreshold: .100000001
   m_Carve: 1
   m_CarveOnlyStationary: 0
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20861888
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 187426}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20864138
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 127380}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20866598
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 194806}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20869546
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 172512}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20871600
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 132472}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20872220
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 156068}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20872750
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 126330}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20873018
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 115964}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20873664
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 196102}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20878994
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 173492}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: .5
 --- !u!208 &20880344
@@ -15070,66 +14268,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: .5
---- !u!208 &20882116
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 149898}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20882420
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 134272}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20883476
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 145026}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20884470
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 123878}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
 --- !u!208 &20884670
 NavMeshObstacle:
   m_ObjectHideFlags: 1
@@ -15143,36 +14281,6 @@ NavMeshObstacle:
   m_MoveThreshold: .100000001
   m_Carve: 1
   m_CarveOnlyStationary: 0
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20885436
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 177798}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20888232
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 196928}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: .5
 --- !u!208 &20895332
@@ -15190,102 +14298,12 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: .5
---- !u!208 &20897292
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 175730}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20897678
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 158992}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
 --- !u!208 &20897844
 NavMeshObstacle:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 117802}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20898210
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 192294}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20898230
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 128612}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20898746
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 151832}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: .5, y: .5, z: .5}
-  m_MoveThreshold: .100000001
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: .5
---- !u!208 &20899918
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 192138}
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1

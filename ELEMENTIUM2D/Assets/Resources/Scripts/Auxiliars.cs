@@ -73,7 +73,7 @@ namespace Includes
                 private const float def_attackSpeed = 0.25f;
                 private const int def_projectile_number = 1;
                 private const float def_damage = 2.5f;
-                private const float def_movementForce = 15;
+                private const float def_movementForce = 10;
 
                 public static float attackSpeed = def_attackSpeed;
                 public static int projectile_number = def_projectile_number;
@@ -201,11 +201,11 @@ namespace Includes
 
             public class ability2
             {
-                public const float def_attackSpeed = 2f;
+                public const float def_attackSpeed = 1f;
                 public const int def_projectile_number = 1;
                 public const int def_child_projectile_number = 20;
                 public const float def_damage = 1;
-                public const float def_movementForce = 20;
+                public const float def_movementForce = 30;
                 public const float def_deathTimer = 5;
 
                 public static float attackSpeed = def_attackSpeed;
@@ -732,7 +732,7 @@ namespace Includes
         public float lim_secondary_earth_level = 0;
         public float lim_terciary_earth_level = 0;
 
-        public float lim_primary_fire_level = 1;
+        public float lim_primary_fire_level = 0;
         public float lim_secondary_fire_level = 0;
         public float lim_terciary_fire_level = 0;
 

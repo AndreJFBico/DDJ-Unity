@@ -224,6 +224,12 @@ public class EnemyScript : Agent
         gameObject.SetActive(false);
     }
 
+    public override void push(Vector3 forwardVector, float strength)
+    {
+        base.push(forwardVector, strength);
+        pathAgent.push(forwardVector, strength);
+    }
+
     public virtual void Eliminate()
     {
         if (spawnScript != null)

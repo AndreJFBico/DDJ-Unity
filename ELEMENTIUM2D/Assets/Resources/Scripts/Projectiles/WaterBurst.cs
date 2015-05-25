@@ -8,6 +8,7 @@ public class WaterBurst : AbilityBehaviour
     private GameObject cs;
     private GameObject iceBlock;
     private List<GameObject> waterProjectiles;
+    private bool pushed = false;
     protected bool iced = false;
     
     protected override void Awake()
@@ -24,6 +25,15 @@ public class WaterBurst : AbilityBehaviour
     {
         base.Start();
         type = Elements.WATER;
+    }
+
+    public void push(GameObject collided, Vector3 forward, float pushStrength)
+    {
+        if (!pushed)
+        {
+            collided.GetComponent<Agent>().push(transform.forward, pushStrength);
+            pushed = true;
+        }
     }
 
     public void handleCollision(Collision collider)

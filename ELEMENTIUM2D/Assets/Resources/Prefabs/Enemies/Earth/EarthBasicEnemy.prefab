@@ -59,6 +59,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 450080}
   - 212: {fileID: 21210890}
+  - 114: {fileID: 11485106}
   m_Layer: 9
   m_Name: Background
   m_TagString: Ui
@@ -464,6 +465,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21266954}
+  parentSprite: {fileID: 0}
 --- !u!114 &11471208
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -490,6 +492,22 @@ MonoBehaviour:
   healthbar_background: {fileID: 450080}
   healthbar: {fileID: 460554}
   alertedSign: {fileID: 412964}
+--- !u!114 &11485106
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b28fac91207db45bdf33432bee0b9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  position: 0
+  list:
+  - {fileID: 21228544}
+  parentSprite: {fileID: 420248}
 --- !u!114 &11499692
 MonoBehaviour:
   m_ObjectHideFlags: 1

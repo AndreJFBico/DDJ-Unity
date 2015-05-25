@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class SortLayer : MonoBehaviour {
-
     public enum Objects { STATIC, DYNAMIC };
     public enum Position { FRONT, BACK };
     private GameObject player;
@@ -11,21 +10,31 @@ public class SortLayer : MonoBehaviour {
     public Objects type;
     public Position position;
     public List<SpriteRenderer> list;
+    public Transform parentSprite;
 
     private bool inited;
 
 	// Use this for initialization
 	void Start () {
-        GetComponent<Renderer>().sortingOrder = Mathf.RoundToInt(-(transform.position.z + 250)*100);
+        if (parentSprite)
+        {
+            GetComponent<Renderer>().sortingOrder = parentSprite.GetComponent<SortLayer>().getCalculatedSortLayer() + 3;
+        }
+        else
+        {
+            GetComponent<Renderer>().sortingOrder = Mathf.RoundToInt(-(transform.position.z + 250) * 100);
+        }
+        int index = 1;
         if (list != null && list.Capacity > 0)
         {
             foreach (SpriteRenderer sr in list)
             {
                 if (position == Position.FRONT)
-                    sr.sortingOrder = GetComponent<Renderer>().sortingOrder + 1;
+                    sr.sortingOrder = GetComponent<Renderer>().sortingOrder + index;
 
                 if (position == Position.BACK)
-                    sr.sortingOrder = GetComponent<Renderer>().sortingOrder - 1;
+                    sr.sortingOrder = GetComponent<Renderer>().sortingOrder - index;
+                index++;
             }
         }
         inited = true;
@@ -67,22 +76,36 @@ public class SortLayer : MonoBehaviour {
     {
         while (true)
         {
+            int index = 1;
             if (type != Objects.STATIC)
             {
-                GetComponent<Renderer>().sortingOrder = Mathf.RoundToInt(-(transform.position.z + 250) * 100);
+                if (parentSprite)
+                {
+                    GetComponent<Renderer>().sortingOrder = parentSprite.GetComponent<SortLayer>().getCalculatedSortLayer() + 3;
+                }
+                else
+                {
+                    GetComponent<Renderer>().sortingOrder = Mathf.RoundToInt(-(transform.position.z + 250) * 100);
+                }
                 if (list != null && list.Capacity > 0)
                 {
                     foreach (SpriteRenderer sr in list)
                     {
                         if (position == Position.FRONT)
-                            sr.sortingOrder = GetComponent<Renderer>().sortingOrder + 1;
+                            sr.sortingOrder = GetComponent<Renderer>().sortingOrder + index;
 
                         if (position == Position.BACK)
-                            sr.sortingOrder = GetComponent<Renderer>().sortingOrder - 1;
+                            sr.sortingOrder = GetComponent<Renderer>().sortingOrder - index;
+                        index++;
                     }
                 }
             }
-            yield return new WaitForSeconds(0.017f);
+            yield return new WaitForSeconds(0.05f);
         }
+    }
+
+    public int getCalculatedSortLayer()
+    {
+        return GetComponent<Renderer>().sortingOrder = Mathf.RoundToInt(-(transform.position.z + 250) * 100);
     }
 }

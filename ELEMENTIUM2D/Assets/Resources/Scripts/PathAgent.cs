@@ -28,7 +28,8 @@ public class PathAgent : MonoBehaviour
         agent = transform.parent.GetComponent<NavMeshAgent>();
         roamRadius = Constants.enemyRoamRadius;
         agentScrpt = transform.parent.gameObject.GetComponent<Agent>();
-        previousSpeed = agent.speed;   
+        previousSpeed = agent.speed;
+        agent.Warp(transform.position);
     } 
 
     public float UnalertedSpeed { get { return unalertedSpeed; } set { unalertedSpeed = value; }}
@@ -211,8 +212,12 @@ public class PathAgent : MonoBehaviour
         Vector3 randomDirection = Random.insideUnitSphere * roamRadius;
         randomDirection += startPosition;
         NavMeshHit hit;
-        NavMesh.SamplePosition(randomDirection, out hit, roamRadius, 1 << NavMesh.GetNavMeshLayerFromName("Walkable"));
-        Vector3 finalPosition = hit.position;
+        Vector3 finalPosition = transform.position;
+        if(NavMesh.SamplePosition(randomDirection, out hit, roamRadius, 1 << NavMesh.GetNavMeshLayerFromName("Walkable")))
+        {
+            finalPosition = hit.position;
+        }
+       
         //agent.destination = finalPosition;
 
         NavMeshPath path = new NavMeshPath();
@@ -231,6 +236,16 @@ public class PathAgent : MonoBehaviour
         numFreeRoam = 0;
         agent.SetPath(path);
         agentScrpt.setAlerted(false);
+    }
+
+    public void push(Vector3 forwardVector, float strength)
+    {
+        NavMeshHit hit;
+        if(NavMesh.SamplePosition(transform.position + forwardVector * strength, out hit, roamRadius, 1 << NavMesh.GetNavMeshLayerFromName("Walkable")))
+        {
+            transform.position = transform.position + forwardVector * strength;
+            agent.Warp(transform.position + forwardVector * strength);
+        }    
     }
 
     public void slowSelf(float intensity)
