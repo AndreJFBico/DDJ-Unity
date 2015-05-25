@@ -256,6 +256,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &105770
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 437178}
+  - 212: {fileID: 21219374}
+  m_Layer: 0
+  m_Name: InteractionImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &105798
 GameObject:
   m_ObjectHideFlags: 1
@@ -3643,7 +3659,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 189792}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .100000001, z: 0}
+  m_LocalPosition: {x: -.474888325, y: .100000001, z: -.168170616}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 442438}
@@ -4643,6 +4659,18 @@ Transform:
   - {fileID: 499296}
   m_Father: {fileID: 454032}
   m_RootOrder: 0
+--- !u!4 &437178
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 105770}
+  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
+  m_LocalPosition: {x: 0, y: -0, z: .479999989}
+  m_LocalScale: {x: .245969072, y: .245968983, z: .245968983}
+  m_Children: []
+  m_Father: {fileID: 469288}
+  m_RootOrder: 1
 --- !u!4 &437828
 Transform:
   m_ObjectHideFlags: 1
@@ -5446,6 +5474,7 @@ Transform:
   m_LocalScale: {x: .643907547, y: .643907547, z: .643907547}
   m_Children:
   - {fileID: 450434}
+  - {fileID: 437178}
   m_Father: {fileID: 477552}
   m_RootOrder: 1
 --- !u!4 &469446
@@ -8064,6 +8093,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21267116}
+  parentSprite: {fileID: 0}
 --- !u!114 &11402376
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8212,6 +8242,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21241798}
+  parentSprite: {fileID: 0}
 --- !u!114 &11409280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8227,6 +8258,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21204054}
+  parentSprite: {fileID: 0}
 --- !u!114 &11409812
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8272,6 +8304,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21206244}
+  parentSprite: {fileID: 0}
 --- !u!114 &11410656
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8287,6 +8320,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21273352}
+  parentSprite: {fileID: 0}
 --- !u!114 &11411298
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8302,6 +8336,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21280554}
+  parentSprite: {fileID: 0}
 --- !u!114 &11411690
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8341,6 +8376,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21205664}
+  parentSprite: {fileID: 0}
 --- !u!114 &11415870
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8368,6 +8404,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21241476}
+  parentSprite: {fileID: 0}
 --- !u!114 &11417908
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8398,6 +8435,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21203424}
+  parentSprite: {fileID: 0}
 --- !u!114 &11418392
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8522,6 +8560,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21275014}
+  parentSprite: {fileID: 0}
 --- !u!114 &11430306
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8588,6 +8627,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21298602}
+  parentSprite: {fileID: 0}
 --- !u!114 &11436576
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8633,6 +8673,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21271798}
+  parentSprite: {fileID: 0}
 --- !u!114 &11437842
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8648,6 +8689,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21202284}
+  parentSprite: {fileID: 0}
 --- !u!114 &11438112
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8730,6 +8772,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21291468}
+  parentSprite: {fileID: 0}
 --- !u!114 &11441364
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8760,6 +8803,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21281998}
+  parentSprite: {fileID: 0}
 --- !u!114 &11442406
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8787,6 +8831,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21292566}
+  parentSprite: {fileID: 0}
 --- !u!114 &11444132
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8802,6 +8847,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21253400}
+  parentSprite: {fileID: 0}
 --- !u!114 &11445080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8817,6 +8863,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21295246}
+  parentSprite: {fileID: 0}
 --- !u!114 &11446064
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8847,6 +8894,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21271564}
+  parentSprite: {fileID: 0}
 --- !u!114 &11446490
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8862,6 +8910,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21286494}
+  parentSprite: {fileID: 0}
 --- !u!114 &11448646
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8877,6 +8926,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21212952}
+  parentSprite: {fileID: 0}
 --- !u!114 &11449844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8937,6 +8987,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21291222}
+  parentSprite: {fileID: 0}
 --- !u!114 &11452944
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8979,6 +9030,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21228244}
+  parentSprite: {fileID: 0}
 --- !u!114 &11456424
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9065,6 +9117,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21255592}
+  parentSprite: {fileID: 0}
 --- !u!114 &11462570
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9080,6 +9133,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21288922}
+  parentSprite: {fileID: 0}
 --- !u!114 &11462828
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9179,6 +9233,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21202134}
+  parentSprite: {fileID: 0}
 --- !u!114 &11465440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9194,6 +9249,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21200928}
+  parentSprite: {fileID: 0}
 --- !u!114 &11467930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9209,6 +9265,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21277798}
+  parentSprite: {fileID: 0}
 --- !u!114 &11471078
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9316,6 +9373,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21208304}
+  parentSprite: {fileID: 0}
 --- !u!114 &11477166
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9331,6 +9389,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21206542}
+  parentSprite: {fileID: 0}
 --- !u!114 &11479540
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9346,6 +9405,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21293396}
+  parentSprite: {fileID: 0}
 --- !u!114 &11479834
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9388,6 +9448,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21297256}
+  parentSprite: {fileID: 0}
 --- !u!114 &11481360
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9403,6 +9464,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21208828}
+  parentSprite: {fileID: 0}
 --- !u!114 &11483686
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9418,6 +9480,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21216532}
+  parentSprite: {fileID: 0}
 --- !u!114 &11484832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9448,6 +9511,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21200244}
+  parentSprite: {fileID: 0}
 --- !u!114 &11485170
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9502,6 +9566,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21297992}
+  parentSprite: {fileID: 0}
 --- !u!114 &11487114
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9517,6 +9582,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21274960}
+  parentSprite: {fileID: 0}
 --- !u!114 &11487266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9544,6 +9610,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21256886}
+  parentSprite: {fileID: 0}
 --- !u!114 &11488354
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9559,6 +9626,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21299416}
+  parentSprite: {fileID: 0}
 --- !u!114 &11488392
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9586,6 +9654,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21250310}
+  parentSprite: {fileID: 0}
 --- !u!114 &11489420
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9640,6 +9709,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21293224}
+  parentSprite: {fileID: 0}
 --- !u!114 &11494484
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9655,6 +9725,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21280248}
+  parentSprite: {fileID: 0}
 --- !u!114 &11494944
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9670,6 +9741,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21260690}
+  parentSprite: {fileID: 0}
 --- !u!114 &11495112
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9727,6 +9799,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21220476}
+  parentSprite: {fileID: 0}
 --- !u!114 &11498142
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9799,6 +9872,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21247364}
+  parentSprite: {fileID: 0}
 --- !u!135 &13565732
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -11483,6 +11557,32 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: dd2047c1b443a24499f078f7c4b82e34, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!212 &21219374
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 105770}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 0f6a7588c7766c04db5084081d9cb49b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21219808
 SpriteRenderer:
