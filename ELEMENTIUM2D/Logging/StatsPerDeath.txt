@@ -1,0 +1,6 @@
+Death Number: 0
+	Time Alive: 0:0:3
+	Num Points on SK: 0
+	Number Enemies Killed: 0 
+	Rooms Cleared: 0 
+	Treasures Gained: 0 

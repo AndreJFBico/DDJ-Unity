@@ -1,0 +1,84 @@
+Total Time: 0:16:30
+Time Fighting: 0:13:4
+Total Deaths: 2
+Total Rooms Cleared: 22
+Total Treasures Gained: 20 
+Total SkillTree Points Gained: 21 
+Maximum Multiplier Obtained: 95 
+Time to Fire: 0:0:0 
+Time to Earth: 0:13:21 
+#########################################################
+Logging/NumTypeEnemiesAndSkillsUsed.txt
+Spike|NEUTRAL
+	Amount: 5|NeutralRangedEnemyScript|NEUTRAL
+	Amount: 3|NeutralEnemyScript|NEUTRAL
+NeutralBlast|NEUTRAL
+	Amount: 21|NeutralEnemyScript|NEUTRAL
+	Amount: 20|EnemySpawner|NEUTRAL
+	Amount: 4|NeutralRangedEnemyScript|NEUTRAL
+	Amount: 44|FireEnemyScript|FIRE
+	Amount: 10|FireRangedEnemyScript|NEUTRAL
+	Amount: 3|TelegraphEnemy|NEUTRAL
+	Amount: 2|HealerEnemyScript|NEUTRAL
+	Amount: 2|EarthRangedEnemyScript|NEUTRAL
+NeutralBouncer|NEUTRAL
+	Amount: 19|FireEnemyScript|FIRE
+	Amount: 2|FireRangedEnemyScript|NEUTRAL
+NeutralMissile|NEUTRAL
+	Amount: 15|EnemySpawner|NEUTRAL
+	Amount: 60|FireEnemyScript|FIRE
+	Amount: 20|FireRangedEnemyScript|NEUTRAL
+	Amount: 14|HealerEnemyScript|NEUTRAL
+FrostBolt|WATER
+	Amount: 11|FireRangedEnemyScript|NEUTRAL
+	Amount: 40|FireEnemyScript|FIRE
+	Amount: 7|EnemySpawner|NEUTRAL
+	Amount: 2|TelegraphEnemy|NEUTRAL
+EnemyFireball|NEUTRAL
+	Amount: 1|EnemySpawner|NEUTRAL
+Fireball|FIRE
+	Amount: 18|EnemySpawner|NEUTRAL
+	Amount: 2|WaterEnemyScript|WATER
+	Amount: 8|HealerEnemyScript|NEUTRAL
+	Amount: 28|EarthEnemyScript|EARTH
+	Amount: 2|TelegraphEnemy|NEUTRAL
+	Amount: 2|NeutralEnemyScript|NEUTRAL
+	Amount: 1|NeutralRangedEnemyScript|NEUTRAL
+	Amount: 8|EarthRangedEnemyScript|NEUTRAL
+Musk|NEUTRAL
+	Amount: 1|EnemySpawner|NEUTRAL
+#########################################################
+Logging/NumTypeAbilitesPerZone.txt
+Amount: 190|NeutralBlast|NEUTRAL||NEUTRAL
+Amount: 6|NeutralBouncer|NEUTRAL||NEUTRAL
+Amount: 603|NeutralBlast|NEUTRAL||FIRE
+Amount: 191|NeutralBouncer|NEUTRAL||FIRE
+Amount: 3|NeutralMissile|NEUTRAL||NEUTRAL
+Amount: 122|NeutralMissile|NEUTRAL||FIRE
+Amount: 372|FrostBolt|WATER||FIRE
+Amount: 19|FireHeal|FIRE||FIRE
+Amount: 53|Fireball|FIRE||FIRE
+Amount: 37|OilPuddle|FIRE||FIRE
+Amount: 116|Fireball|FIRE||NEUTRAL
+Amount: 516|Fireball|FIRE||EARTH
+Amount: 12|EarthDisk|EARTH||EARTH
+Amount: 8|FrostBolt|WATER||NEUTRAL
+Amount: 1|EarthDisk|EARTH||NEUTRAL
+Amount: 47|NeutralBlast|NEUTRAL||EARTH
+Amount: 33|FrostBolt|WATER||EARTH
+Amount: 7|FireHeal|FIRE||EARTH
+Amount: 1|EarthShield|EARTH||EARTH
+#########################################################
+Logging/StatsPerDeath.txt
+Death Number: 0
+	Time Alive: 0:3:45
+	Num Points on SK: 0
+	Number Enemies Killed: 61 
+	Rooms Cleared: 7 
+	Treasures Gained: 6 
+Death Number: 1
+	Time Alive: 0:9:18
+	Num Points on SK: 7
+	Number Enemies Killed: 254 
+	Rooms Cleared: 15 
+	Treasures Gained: 14 

@@ -89,13 +89,20 @@ public class SkillTreeManager : MonoBehaviour
         {
             if(checkForUnknown)
             {
-                if (n.gameObject.activeSelf && !n.isUknown())
-                    return true;
+                if(n.gameObject.activeSelf)
+                {
+                    if(!n.isUknown())
+                    {
+                        return true;
+                    }
+                }
             }
             else
             {
                 if (n.gameObject.activeSelf)
+                {
                     return true;
+                }    
             }
 
         }
@@ -230,6 +237,42 @@ public class SkillTreeManager : MonoBehaviour
 
         clearAllLineRenderers();
         setAllUnsearched(false);
+    }
+
+    bool checkStraightPath(SkillTreeNode sNode, SkillTreeNode endNode)
+    {
+        setAllUnsearched(false);
+        if (sNode.transform.GetInstanceID() == endNode.transform.GetInstanceID())
+            return true;
+        bool retVal = findNode(sNode.sucessors, endNode.transform.GetInstanceID());
+        setAllUnsearched(false);
+        return retVal;
+    }
+
+    bool findNode(List<SkillTreeNode> nodeList, int instanceToFind)
+    {
+        bool found = false;
+        List<SkillTreeNode> nextNodeList = new List<SkillTreeNode>();
+        foreach (SkillTreeNode n in nodeList)
+        {
+            if (!n.isSearched())
+            {
+                if (n.transform.GetInstanceID() == instanceToFind)
+                    return true;
+                if (n.selected)
+                {
+                    foreach (SkillTreeNode sn in n.sucessors)
+                    {
+                        if (!sn.startNode && !sn.isSearched() && sn.isSearchable())
+                            nextNodeList.Add(sn);
+                    }
+                }
+            }
+            n.setSearched();
+        }
+        if (nextNodeList.Count > 0)
+            return findNode(nextNodeList, instanceToFind);
+        return false;
     }
 
     bool findNode(List<SkillTreeNode> nodeList, int instanceToIgnore, int instanceToFind)

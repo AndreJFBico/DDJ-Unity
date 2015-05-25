@@ -1,0 +1,29 @@
+Total Time: 0:1:5
+Time Fighting: 0:0:24
+Total Deaths: 1
+Total Rooms Cleared: 0
+Total Treasures Gained: 0 
+Total SkillTree Points Gained: 5 
+Maximum Multiplier Obtained: 10 
+Time to Fire: 0:0:0 
+Time to Earth: 0:0:0 
+#########################################################
+Logging/NumTypeEnemiesAndSkillsUsed.txt
+NeutralBlast|NEUTRAL
+	Amount: 18|NeutralEnemyScript|NEUTRAL
+	Amount: 1|EnemySpawner|NEUTRAL
+	Amount: 1|NeutralRangedEnemyScript|NEUTRAL
+Spike|NEUTRAL
+	Amount: 2|NeutralRangedEnemyScript|NEUTRAL
+#########################################################
+Logging/NumTypeAbilitesPerZone.txt
+Amount: 179|NeutralBlast|NEUTRAL||NEUTRAL
+Amount: 15|NeutralBlast|NEUTRAL||EARTH
+#########################################################
+Logging/StatsPerDeath.txt
+Death Number: 0
+	Time Alive: 0:0:24
+	Num Points on SK: 0
+	Number Enemies Killed: 6 
+	Rooms Cleared: 0 
+	Treasures Gained: 0 

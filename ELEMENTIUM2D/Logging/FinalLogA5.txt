@@ -1,0 +1,42 @@
+Total Time: 0:2:33
+Time Fighting: 0:0:23
+Total Deaths: 1
+Total Rooms Cleared: 0
+Total Treasures Gained: 0 
+Total SkillTree Points Gained: 7 
+Maximum Multiplier Obtained: 19 
+Time to Fire: 0:0:0 
+Time to Earth: 0:0:0 
+#########################################################
+Logging/NumTypeEnemiesAndSkillsUsed.txt
+NeutralBlast|NEUTRAL
+	Amount: 16|NeutralEnemyScript|NEUTRAL
+	Amount: 4|EnemySpawner|NEUTRAL
+	Amount: 2|NeutralRangedEnemyScript|NEUTRAL
+	Amount: 1|EarthRangedEnemyScript|NEUTRAL
+	Amount: 1|EarthEnemyScript|EARTH
+Spike|NEUTRAL
+	Amount: 2|NeutralEnemyScript|NEUTRAL
+	Amount: 5|NeutralRangedEnemyScript|NEUTRAL
+FrostBolt|WATER
+	Amount: 7|NeutralEnemyScript|NEUTRAL
+	Amount: 1|EnemySpawner|NEUTRAL
+NeutralBouncer|NEUTRAL
+	Amount: 2|NeutralEnemyScript|NEUTRAL
+#########################################################
+Logging/NumTypeAbilitesPerZone.txt
+Amount: 167|NeutralBlast|NEUTRAL||NEUTRAL
+Amount: 1|NeutralBlast|NEUTRAL||FIRE
+Amount: 63|FrostBolt|WATER||NEUTRAL
+Amount: 4|Fireball|FIRE||NEUTRAL
+Amount: 55|NeutralBouncer|NEUTRAL||NEUTRAL
+Amount: 7|NeutralBouncer|NEUTRAL||EARTH
+Amount: 39|NeutralBlast|NEUTRAL||EARTH
+#########################################################
+Logging/StatsPerDeath.txt
+Death Number: 0
+	Time Alive: 0:0:23
+	Num Points on SK: 0
+	Number Enemies Killed: 4 
+	Rooms Cleared: 0 
+	Treasures Gained: 0 

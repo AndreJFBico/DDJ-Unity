@@ -114,7 +114,7 @@ public class EnemySpawner : EnemyScript
         }
         obj.gameObject.SetActive(false);
         obj.parent = transform.root;
-        //obj.transform.position = transform.position;
+        obj.transform.position = transform.position;
         //obj.transform.parent = transform.parent.parent.FindChild("Other");
         //obj.transform.rotation = transform.rotation;
         spawned.Remove(obj);
