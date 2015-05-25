@@ -11,6 +11,10 @@ public class SkillTreeManager : MonoBehaviour
     private Transform infobox;
 
     private Transform predictBox;
+    private Transform neutralBox;
+    private Transform earthBox;
+    private Transform fireBox;
+    private Transform frostBox;
 
     [SerializeField]
     private List<SkillTreeNode> allNodeList = new List<SkillTreeNode>();
@@ -61,11 +65,16 @@ public class SkillTreeManager : MonoBehaviour
         infobox.gameObject.SetActive(false);
 
         predictBox = GameObject.Find("PredictBox").transform;
+        neutralBox = GameObject.Find("NeutralBox").transform;
+        earthBox = GameObject.Find("EarthBox").transform;
+        fireBox = GameObject.Find("FireBox").transform;
+        frostBox = GameObject.Find("FrostBox").transform;
         startNode = GameObject.Find("Parent").transform;
 
         GameManager.Instance.resetAbilityStats();
         GameManager.Instance.resetPlayerStats();
         checkDepth();
+        predictChanges();
     }
 
     // Update is called once per frame
@@ -411,18 +420,120 @@ public class SkillTreeManager : MonoBehaviour
     // AND USE REFLECTION NEXT TIME TO ITERATE ALL VARIABLES
     public void predictChanges()
     {
-        predictBox.GetComponent<Text>().text = "Changes: " + "\n\n"
-            + "MoveSpeed: " + cur_lim_moveSpeed + "\n\n"
-            + "MoveInContactWithEnemy: " + cur_lim_moveInContactWithEnemy + "\n\n"
-            + "MaxHealth: " + cur_lim_maxHealth + "\n\n"
-            + "Damage: " + cur_lim_damage + "\n\n"
-            + "Defence: " + cur_lim_defence + "\n\n"
-            + "WaterResist: " + cur_lim_waterResist +  "\n\n"
-            + "EarthResist: " + cur_lim_earthResist +  "\n\n"
-            + "FireResist: " + cur_lim_fireResist +  "\n\n"
-            + "DamageTimer: " + cur_lim_damageTimer + "\n\n"
+        UpdatePlayerStats();
+        setAllUnsearched(false);
+        Text text= predictBox.GetComponent<Text>(); 
+        text.text = "Main player stats: " + "\n"
+            + "MoveSpeed: " + GameManager.Instance.Stats.moveSpeed + "\n\n"
+            + "MaxHealth: " + GameManager.Instance.Stats.maxHealth + "\n\n"
+            + "Damage: " + GameManager.Instance.Stats.damage + "\n\n"
+            + "Defence: " + GameManager.Instance.Stats.defence + "\n\n"
+            + "WaterResist: " + GameManager.Instance.Stats.waterResist + "%" + "\n\n"
+            + "EarthResist: " + GameManager.Instance.Stats.earthResist + "%" + "\n\n"
+            + "FireResist: " + GameManager.Instance.Stats.fireResist + "%" + "\n\n";
 
-            + "Neutral level: " + cur_lim_primary_neutral_level + "/" + GameManager.Instance.Stats.lim_primary_neutral_level + "\n\n"
+        #region NEUTRAL
+        neutralBox.GetComponent<Text>().text = "Neutral Stats\n";
+            if (GameManager.Instance.Stats.lim_primary_neutral_level == 1)
+            {
+                neutralBox.GetComponent<Text>().text += 
+                    "Neutral ability 1" + "\n"
+                    + "\t" + "Damage:" + AbilityStats.Neutral.ability1.Damage + "\n"
+                    + "\t" + "AttackSpeed" + AbilityStats.Neutral.ability1.AttackSpeed + "\n";
+            }
+            if (GameManager.Instance.Stats.lim_secondary_neutral_level == 1)
+            {
+                neutralBox.GetComponent<Text>().text +=
+                    "Neutral homing missiles" + "\n"
+                    + "\t" + "Damage:" + AbilityStats.Neutral.ability2.Damage + "\n"
+                    + "\t" + "Cooldown" + AbilityStats.Neutral.ability2.AttackSpeed + "\n";
+            }
+            if (GameManager.Instance.Stats.lim_terciary_neutral_level == 1)
+            {
+                neutralBox.GetComponent<Text>().text +=
+                    "Neutral splitting projectile" + "\n"
+                    + "\t" + "Damage:" + AbilityStats.Neutral.ability3.Damage + "\n"
+                    + "\t" + "AttackSpeed" + AbilityStats.Neutral.ability3.AttackSpeed + "\n";
+            }
+        #endregion
+
+        #region FIRE
+            fireBox.GetComponent<Text>().text = "Fire Stats\n";
+            if (GameManager.Instance.Stats.lim_primary_fire_level == 1)
+            {
+                fireBox.GetComponent<Text>().text +=
+                    "Fireball" + "\n"
+                    + "\t" + "Damage:" + AbilityStats.Fire.ability1.Damage + "\n"
+                    + "\t" + "AttackSpeed" + AbilityStats.Fire.ability1.AttackSpeed + "\n";
+            }
+            if (GameManager.Instance.Stats.lim_secondary_fire_level == 1)
+            {
+                fireBox.GetComponent<Text>().text +=
+                    "OillPuddle" + "\n"
+                    + "\t" + "Cooldown" + AbilityStats.Fire.ability2.AttackSpeed + "\n";
+            }
+            if (GameManager.Instance.Stats.lim_terciary_fire_level == 1)
+            {
+                fireBox.GetComponent<Text>().text +=
+                    "Heal spell" + "\n"
+                    + "\t" + "Healing:" + AbilityStats.Fire.ability3.Damage + "\n"
+                    + "\t" + "Cooldown" + AbilityStats.Fire.ability3.AttackSpeed + "\n";
+            }
+        #endregion
+
+        #region EARTH
+            earthBox.GetComponent<Text>().text = "Earth Stats\n";
+            if (GameManager.Instance.Stats.lim_primary_earth_level == 1)
+            {
+                earthBox.GetComponent<Text>().text +=
+                    "Boulder" + "\n"
+                    + "\t" + "Damage:" + AbilityStats.Earth.ability1.Damage + "\n"
+                    + "\t" + "AttackSpeed" + AbilityStats.Earth.ability1.AttackSpeed + "\n";
+            }
+            if (GameManager.Instance.Stats.lim_secondary_earth_level == 1)
+            {
+                earthBox.GetComponent<Text>().text +=
+                    "Rock Shield" + "\n"
+                    + "\t" + "Duration:" + AbilityStats.Earth.ability2.abilityTimer + "\n"
+                    + "\t" + "Cooldown" + AbilityStats.Earth.ability2.AttackSpeed + "\n";
+            }
+            if (GameManager.Instance.Stats.lim_terciary_earth_level == 1)
+            {
+                earthBox.GetComponent<Text>().text +=
+                    "Stun projectile" + "\n"
+                    + "\t" + "Damage:" + AbilityStats.Earth.ability3.Damage + "\n"
+                    + "\t" + "AttackSpeed" + AbilityStats.Earth.ability3.AttackSpeed + "\n";
+            }
+        #endregion
+
+        #region WATER
+        frostBox.GetComponent<Text>().text = "Water Stats\n";
+            if (GameManager.Instance.Stats.lim_primary_water_level == 1)
+            {
+                frostBox.GetComponent<Text>().text +=
+                    "Frost bouncing projectile" + "\n"
+                    + "\t" + "Damage:" + AbilityStats.Frost.ability1.damage + "\n"
+                    + "\t" + "AttackSpeed" + AbilityStats.Frost.ability1.attackSpeed + "\n";
+            }
+            if (GameManager.Instance.Stats.lim_secondary_water_level == 1)
+            {
+                frostBox.GetComponent<Text>().text +=
+                    "Water burst" + "\n"
+                    + "\t" + "Damage:" + AbilityStats.Frost.ability2.damage + "\n"
+                    + "\t" + "AttackSpeed" + AbilityStats.Frost.ability2.attackSpeed + "\n";
+            }
+            if (GameManager.Instance.Stats.lim_terciary_water_level == 1)
+            {
+                frostBox.GetComponent<Text>().text +=
+                    "Ice Nova" + "\n"
+                    //+ "\t" + "Damage:" + AbilityStats.Frost.ability3.damage + "\n"
+                    + "\t" + "Cooldown" + AbilityStats.Frost.ability3.attackSpeed + "\n";
+            }
+        #endregion
+
+
+
+        /*+ "Neutral level: " + cur_lim_primary_neutral_level + "/" + GameManager.Instance.Stats.lim_primary_neutral_level + "\n\n"
             + "Secondary Neutral level: " + cur_lim_secondary_neutral_level + "/" + GameManager.Instance.Stats.lim_secondary_neutral_level + "\n\n"
             + "Terciary Neutral level: " + cur_lim_terciary_neutral_level + "/" + GameManager.Instance.Stats.lim_terciary_neutral_level + "\n\n"
 
@@ -436,7 +547,9 @@ public class SkillTreeManager : MonoBehaviour
 
             + "Primary Water level: " + cur_lim_primary_water_level + "/" + GameManager.Instance.Stats.lim_primary_water_level + "\n\n"
             + "Secondary Water level: " + cur_lim_secondary_water_level + "/" + GameManager.Instance.Stats.lim_secondary_water_level + "\n\n"
-            + "Terciary Water level: " + cur_lim_terciary_water_level + "/" + GameManager.Instance.Stats.lim_terciary_water_level + "\n\n";
+            + "Terciary Water level: " + cur_lim_terciary_water_level + "/" + GameManager.Instance.Stats.lim_terciary_water_level + "\n\n";*/
+        GameManager.Instance.resetPlayerStats();
+        GameManager.Instance.resetAbilityStats();
     }
 
     public void UpdatePlayerStats()
