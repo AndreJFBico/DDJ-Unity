@@ -33,6 +33,7 @@ public class NeutralBouncer : AbilityBehaviour {
         {
             GameObject forkedObj = (GameObject)Instantiate(this.gameObject, collision.transform.position + transform.forward * ((collision.collider.bounds.size.z + collision.collider.bounds.size.x) / 2.0f), transform.rotation);
             NeutralBouncer scrpt = forkedObj.GetComponent<NeutralBouncer>();
+            scrpt.initiate(this.gameObject, damage, i, AbilityStats.Neutral.ability3.splitNumber);
             scrpt.previousEnemy = collision.transform;
             scrpt.disabledTimer = 0;
             scrpt.numSplit++;

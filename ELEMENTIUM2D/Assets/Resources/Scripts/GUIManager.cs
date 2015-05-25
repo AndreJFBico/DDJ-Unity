@@ -73,8 +73,8 @@ public class GUIManager : MonoBehaviour {
             maxCDs.Add(new float[3]);
             abilitiesSlider.Add(new List<GameObject>());
             abilitiesSlider[i].Add(coolDownsAll[i].transform.FindChild("LMBCDStrip").gameObject);
-            abilitiesSlider[i].Add(coolDownsAll[i].transform.FindChild("RMBCDStrip").gameObject);
             abilitiesSlider[i].Add(coolDownsAll[i].transform.FindChild("MMBCDStrip").gameObject);
+            abilitiesSlider[i].Add(coolDownsAll[i].transform.FindChild("RMBCDStrip").gameObject);
         }
         for (int j = 0; j < maxCDs.Count; j++)
         {
@@ -114,8 +114,8 @@ public class GUIManager : MonoBehaviour {
         {
             abilitiesSlider.Add(new List<GameObject>());
             abilitiesSlider[i].Add(coolDownsAll[i].transform.FindChild("LMBCDStrip").gameObject);
-            abilitiesSlider[i].Add(coolDownsAll[i].transform.FindChild("RMBCDStrip").gameObject);
             abilitiesSlider[i].Add(coolDownsAll[i].transform.FindChild("MMBCDStrip").gameObject);
+            abilitiesSlider[i].Add(coolDownsAll[i].transform.FindChild("RMBCDStrip").gameObject);
         }
         foreach (ShootElement e in elements)
         {

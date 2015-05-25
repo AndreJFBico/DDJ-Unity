@@ -12,6 +12,8 @@ public class TreasureChest : Interactable{
     private bool used = false;
     protected string effectApplied;
 
+	public int state = 0;
+
     public override void Start()
     {
         base.Start();
@@ -54,6 +56,13 @@ public class TreasureChest : Interactable{
     
     #endregion
 
+	public void Update(){
+		if(state == 1){
+			state = 2;
+			applyEffect();
+		}
+	}
+
     public virtual void updateClosedSprite(Sprite sp)
     {
         spriteRenderer.sprite = sp;
@@ -62,7 +71,11 @@ public class TreasureChest : Interactable{
     IEnumerator showText(float time)
     {
         yield return new WaitForSeconds(time);
-        displayText();
+        if(state != 2){
+			displayText();
+		}else{
+			state = 3;
+		}
         if (used)
         {
             textDisplay.GetComponent<TextMesh>().text = effectApplied;
@@ -89,4 +102,8 @@ public class TreasureChest : Interactable{
         StartCoroutine(st);
     }
 
+
+	public void forceOpen(){
+		state = 1;
+	}
 }

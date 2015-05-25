@@ -99,7 +99,8 @@ public class SpawnerManager : MonoBehaviour {
         treasure.transform.parent = gameObject.transform.parent;
         treasure.transform.position = spawner.transform.position;
         treasure.transform.rotation = spawner.transform.rotation;
-        GameManager.Instance.Player.createFloatingText("Treasure Appeared!", 1);
+		if(treasure.GetComponentInChildren<TreasureChest>().state == 0) //only show the text for treasures with content
+        	GameManager.Instance.Player.createFloatingText("Treasure Appeared!", 1);
     }
 
     private void dropHealthOrb(EnemySpawner spawner)

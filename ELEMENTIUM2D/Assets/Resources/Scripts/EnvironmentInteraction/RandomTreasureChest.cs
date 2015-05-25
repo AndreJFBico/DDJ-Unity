@@ -56,7 +56,10 @@ public class RandomTreasureChest : TemporaryTreasureChest {
                 GameManager.Instance.changeStatVariable("lim_points", 1, MathOperations.SUM);
                 effectApplied = stats[random] + " increased by " + 1;
                 break;
-            default:
+			case "":
+				effectApplied = "No more treasures available in this area";
+				break;    
+			default:
                 break;
         }
         FloatingText.Instance.createFloatingText(transform, effectApplied, Color.yellow, 1);
