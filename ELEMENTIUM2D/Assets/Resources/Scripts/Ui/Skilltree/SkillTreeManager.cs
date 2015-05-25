@@ -437,101 +437,125 @@ public class SkillTreeManager : MonoBehaviour
 
         #region NEUTRAL
         neutralBox.GetComponent<Text>().text = "Neutral Stats\n";
+        bool unlockedN = false;
             if (GameManager.Instance.Stats.lim_primary_neutral_level == 1)
             {
                 neutralBox.GetComponent<Text>().text += 
                     "Neutral ability 1" + "\n"
-                    + "\t" + "Damage:" + AbilityStats.Neutral.ability1.Damage + "\n"
-                    + "\t" + "AttackSpeed" + AbilityStats.Neutral.ability1.AttackSpeed + "\n";
+                    + "\t" + "Damage:\t" + AbilityStats.Neutral.ability1.Damage + "\n"
+                    + "\t" + "AttackSpeed:\t" + AbilityStats.Neutral.ability1.AttackSpeed + "\n";
+                unlockedN = true;
             }
             if (GameManager.Instance.Stats.lim_secondary_neutral_level == 1)
             {
                 neutralBox.GetComponent<Text>().text +=
                     "Neutral homing missiles" + "\n"
-                    + "\t" + "Damage:" + AbilityStats.Neutral.ability2.Damage + "\n"
-                    + "\t" + "Cooldown" + AbilityStats.Neutral.ability2.AttackSpeed + "\n";
+                    + "\t" + "Damage:\t" + AbilityStats.Neutral.ability2.Damage + "\n"
+                    + "\t" + "Cooldown:\t" + AbilityStats.Neutral.ability2.AttackSpeed + "\n";
+                unlockedN = true;
             }
             if (GameManager.Instance.Stats.lim_terciary_neutral_level == 1)
             {
                 neutralBox.GetComponent<Text>().text +=
                     "Neutral splitting projectile" + "\n"
-                    + "\t" + "Damage:" + AbilityStats.Neutral.ability3.Damage + "\n"
-                    + "\t" + "AttackSpeed" + AbilityStats.Neutral.ability3.AttackSpeed + "\n";
+                    + "\t" + "Damage:\t" + AbilityStats.Neutral.ability3.Damage + "\n"
+                    + "\t" + "AttackSpeed:\t" + AbilityStats.Neutral.ability3.AttackSpeed + "\n";
+                unlockedN = true;
             }
+        if(!unlockedN)
+            neutralBox.GetComponent<Text>().text +="No abilities have been unlocked";
         #endregion
 
         #region FIRE
             fireBox.GetComponent<Text>().text = "Fire Stats\n";
+            bool unlockedF = false;
             if (GameManager.Instance.Stats.lim_primary_fire_level == 1)
             {
                 fireBox.GetComponent<Text>().text +=
                     "Fireball" + "\n"
-                    + "\t" + "Damage:" + AbilityStats.Fire.ability1.Damage + "\n"
-                    + "\t" + "AttackSpeed" + AbilityStats.Fire.ability1.AttackSpeed + "\n";
+                    + "\t" + "Damage:\t" + AbilityStats.Fire.ability1.Damage + "\n"
+                    + "\t" + "AttackSpeed:\t" + AbilityStats.Fire.ability1.AttackSpeed + "\n";
+                unlockedF = true;
             }
             if (GameManager.Instance.Stats.lim_secondary_fire_level == 1)
             {
                 fireBox.GetComponent<Text>().text +=
                     "OillPuddle" + "\n"
-                    + "\t" + "Cooldown" + AbilityStats.Fire.ability2.AttackSpeed + "\n";
+                    + "\t" + "Cooldown:\t" + AbilityStats.Fire.ability2.AttackSpeed + "\n";
+                unlockedF = true;
             }
             if (GameManager.Instance.Stats.lim_terciary_fire_level == 1)
             {
                 fireBox.GetComponent<Text>().text +=
                     "Heal spell" + "\n"
-                    + "\t" + "Healing:" + AbilityStats.Fire.ability3.Damage + "\n"
-                    + "\t" + "Cooldown" + AbilityStats.Fire.ability3.AttackSpeed + "\n";
+                    + "\t" + "Healing:\t" + AbilityStats.Fire.ability3.Damage + "\n"
+                    + "\t" + "Cooldown:\t" + AbilityStats.Fire.ability3.AttackSpeed + "\n";
+                unlockedF = true;
             }
+            if (!unlockedF)
+                fireBox.GetComponent<Text>().text += "No abilities have been unlocked";
         #endregion
 
         #region EARTH
             earthBox.GetComponent<Text>().text = "Earth Stats\n";
+            bool unlockedE = false;
             if (GameManager.Instance.Stats.lim_primary_earth_level == 1)
             {
                 earthBox.GetComponent<Text>().text +=
                     "Boulder" + "\n"
-                    + "\t" + "Damage:" + AbilityStats.Earth.ability1.Damage + "\n"
-                    + "\t" + "AttackSpeed" + AbilityStats.Earth.ability1.AttackSpeed + "\n";
+                    + "\t" + "Damage:\t" + AbilityStats.Earth.ability1.Damage + "\n"
+                    + "\t" + "AttackSpeed:\t" + AbilityStats.Earth.ability1.AttackSpeed + "\n";
+                unlockedE = true;
             }
             if (GameManager.Instance.Stats.lim_secondary_earth_level == 1)
             {
                 earthBox.GetComponent<Text>().text +=
                     "Rock Shield" + "\n"
-                    + "\t" + "Duration:" + AbilityStats.Earth.ability2.abilityTimer + "\n"
-                    + "\t" + "Cooldown" + AbilityStats.Earth.ability2.AttackSpeed + "\n";
+                    + "\t" + "Duration:\t" + AbilityStats.Earth.ability2.abilityTimer + "\n"
+                    + "\t" + "Cooldown:\t" + AbilityStats.Earth.ability2.AttackSpeed + "\n";
+                unlockedE = true;
             }
             if (GameManager.Instance.Stats.lim_terciary_earth_level == 1)
             {
                 earthBox.GetComponent<Text>().text +=
                     "Stun projectile" + "\n"
-                    + "\t" + "Damage:" + AbilityStats.Earth.ability3.Damage + "\n"
-                    + "\t" + "AttackSpeed" + AbilityStats.Earth.ability3.AttackSpeed + "\n";
+                    + "\t" + "Damage:\t" + AbilityStats.Earth.ability3.Damage + "\n"
+                    + "\t" + "AttackSpeed:\t" + AbilityStats.Earth.ability3.AttackSpeed + "\n";
+                unlockedE = true;
             }
+        if(!unlockedE)
+            earthBox.GetComponent<Text>().text += "No abilities have been unlocked";
         #endregion
 
         #region WATER
         frostBox.GetComponent<Text>().text = "Water Stats\n";
+        bool unlockedW = false;
             if (GameManager.Instance.Stats.lim_primary_water_level == 1)
             {
                 frostBox.GetComponent<Text>().text +=
                     "Frost bouncing projectile" + "\n"
-                    + "\t" + "Damage:" + AbilityStats.Frost.ability1.damage + "\n"
-                    + "\t" + "AttackSpeed" + AbilityStats.Frost.ability1.attackSpeed + "\n";
+                    + "\t" + "Damage:\t" + AbilityStats.Frost.ability1.Damage + "\n"
+                    + "\t" + "AttackSpeed:\t" + AbilityStats.Frost.ability1.AttackSpeed + "\n";
+                unlockedW = true;
             }
             if (GameManager.Instance.Stats.lim_secondary_water_level == 1)
             {
                 frostBox.GetComponent<Text>().text +=
                     "Water burst" + "\n"
-                    + "\t" + "Damage:" + AbilityStats.Frost.ability2.damage + "\n"
-                    + "\t" + "AttackSpeed" + AbilityStats.Frost.ability2.attackSpeed + "\n";
+                    + "\t" + "Damage:\t" + AbilityStats.Frost.ability2.Damage + "\n"
+                    + "\t" + "AttackSpeed:\t" + AbilityStats.Frost.ability2.AttackSpeed + "\n";
+                unlockedW = true;
             }
             if (GameManager.Instance.Stats.lim_terciary_water_level == 1)
             {
                 frostBox.GetComponent<Text>().text +=
                     "Ice Nova" + "\n"
                     //+ "\t" + "Damage:" + AbilityStats.Frost.ability3.damage + "\n"
-                    + "\t" + "Cooldown" + AbilityStats.Frost.ability3.attackSpeed + "\n";
+                    + "\t" + "Cooldown:\t" + AbilityStats.Frost.ability3.AttackSpeed + "\n";
+                unlockedW = true;
             }
+            if (!unlockedW)
+                frostBox.GetComponent<Text>().text += "No abilities have been unlocked";
         #endregion
 
 
