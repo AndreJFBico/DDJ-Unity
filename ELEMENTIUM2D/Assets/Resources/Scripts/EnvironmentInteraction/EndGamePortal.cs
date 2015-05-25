@@ -27,7 +27,7 @@ public class EndGamePortal : Interactable
     {
         if (other.tag.CompareTo("Player") == 0)
         {
-            displayText();
+            displayText(false);
             playerInteractions.Interactable = this;
         }
     }

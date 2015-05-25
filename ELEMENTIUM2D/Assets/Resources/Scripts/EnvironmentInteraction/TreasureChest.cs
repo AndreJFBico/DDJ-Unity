@@ -25,7 +25,7 @@ public class TreasureChest : Interactable{
     {
         if (other.tag.CompareTo("Player") == 0)
         {
-            displayText();
+            displayText(used);
             if(used)
             {
                 textDisplay.GetComponent<TextMesh>().text = effectApplied;
@@ -62,7 +62,7 @@ public class TreasureChest : Interactable{
     IEnumerator showText(float time)
     {
         yield return new WaitForSeconds(time);
-        displayText();
+        displayText(used);
         if (used)
         {
             textDisplay.GetComponent<TextMesh>().text = effectApplied;
