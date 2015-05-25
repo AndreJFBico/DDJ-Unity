@@ -107,7 +107,6 @@ GameObject:
   - 4: {fileID: 497314}
   - 33: {fileID: 3309278}
   - 65: {fileID: 6544446}
-  - 23: {fileID: 2383400}
   - 208: {fileID: 20845718}
   m_Layer: 12
   m_Name: Cube 8
@@ -533,7 +532,6 @@ GameObject:
   - 4: {fileID: 406110}
   - 33: {fileID: 3305702}
   - 65: {fileID: 6563094}
-  - 23: {fileID: 2315266}
   - 208: {fileID: 20891338}
   m_Layer: 12
   m_Name: Cube 8
@@ -704,7 +702,6 @@ GameObject:
   - 4: {fileID: 402346}
   - 33: {fileID: 3389202}
   - 65: {fileID: 6578170}
-  - 23: {fileID: 2340724}
   - 208: {fileID: 20885840}
   m_Layer: 12
   m_Name: Cube 8
@@ -838,7 +835,6 @@ GameObject:
   - 4: {fileID: 462226}
   - 33: {fileID: 3391114}
   - 65: {fileID: 6560022}
-  - 23: {fileID: 2397888}
   - 208: {fileID: 20812002}
   m_Layer: 12
   m_Name: Cube 8
@@ -1299,7 +1295,6 @@ GameObject:
   - 4: {fileID: 441054}
   - 33: {fileID: 3327034}
   - 65: {fileID: 6593336}
-  - 23: {fileID: 2360944}
   - 208: {fileID: 20833372}
   m_Layer: 12
   m_Name: Cube 8
@@ -2550,30 +2545,6 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!23 &2315266
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 143210}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_Materials:
-  - {fileID: 2100000, guid: a9a5c18970c811141b7ece8b49a514f3, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
 --- !u!23 &2325768
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -2581,30 +2552,6 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 166148}
   m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_Materials:
-  - {fileID: 2100000, guid: a9a5c18970c811141b7ece8b49a514f3, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!23 &2340724
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 153448}
-  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -2646,30 +2593,6 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!23 &2360944
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 186832}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_Materials:
-  - {fileID: 2100000, guid: a9a5c18970c811141b7ece8b49a514f3, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
 --- !u!23 &2374694
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -2677,30 +2600,6 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 117970}
   m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_Materials:
-  - {fileID: 2100000, guid: a9a5c18970c811141b7ece8b49a514f3, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!23 &2383400
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 107470}
-  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -2797,30 +2696,6 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 152628}
   m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_Materials:
-  - {fileID: 2100000, guid: a9a5c18970c811141b7ece8b49a514f3, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!23 &2397888
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 165872}
-  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -3316,6 +3191,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21263786}
+  parentSprite: {fileID: 0}
 --- !u!114 &11417608
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3402,6 +3278,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21277902}
+  parentSprite: {fileID: 0}
 --- !u!114 &11440654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3505,7 +3382,7 @@ MonoBehaviour:
   enemy: {fileID: 430928, guid: f348339b6a635a948bff61bbce58d393, type: 2}
   amount_to_spawn: 4
   spawn_timer: 1
-  total_spawn_time: 4
+  total_spawn_time: 8
 --- !u!114 &11467746
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3521,6 +3398,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21253386}
+  parentSprite: {fileID: 0}
 --- !u!114 &11471394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3536,6 +3414,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21262240}
+  parentSprite: {fileID: 0}
 --- !u!114 &11473810
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3656,6 +3535,7 @@ MonoBehaviour:
   position: 1
   list:
   - {fileID: 21287534}
+  parentSprite: {fileID: 0}
 --- !u!114 &11490462
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -632,11 +632,13 @@ namespace Includes
         {
             public static float maxHealth = 35;
             public static float damage = 10;
-            public static float defence = 2;
-            public static float waterResist = 5;
-            public static float earthResist = 5;
-            public static float fireResist = 5;
+            public static float defence = 20;
+            public static float waterResist = 0;
+            public static float earthResist = 90;
+            public static float rangedRadius = 1.5f;
+            public static float fireResist = -50;
             public static float visionRadius = 2f;
+            public static float rangedAttackSpeed = 0.5f;
             public static Elements type = Elements.EARTH;
             public static float unalertedSpeed = 0.5f;
             public static float alertedSpeed = 1.5f;

@@ -11374,7 +11374,7 @@ MonoBehaviour:
   enemy: {fileID: 470832, guid: b7e813a02438bf249978b95288e12422, type: 2}
   amount_to_spawn: 3
   spawn_timer: 1
-  total_spawn_time: 8
+  total_spawn_time: 20
 --- !u!114 &11430804
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11922,7 +11922,7 @@ MonoBehaviour:
   enemy: {fileID: 405980, guid: 2c2da5613eb9393439ee67fbbcdfbc7f, type: 2}
   amount_to_spawn: 1
   spawn_timer: 1
-  total_spawn_time: 12
+  total_spawn_time: 15
 --- !u!114 &11454760
 MonoBehaviour:
   m_ObjectHideFlags: 1
