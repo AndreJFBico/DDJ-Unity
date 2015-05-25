@@ -7396,7 +7396,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointCost: 4
   startNode: 0
-  changeWithValue: 2
+  changeWithValue: -2
   sucessors:
   - {fileID: 2134919173}
   operation: 0
@@ -17971,7 +17971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointCost: 3
   startNode: 0
-  changeWithValue: 1
+  changeWithValue: -1
   sucessors:
   - {fileID: 858211518}
   - {fileID: 782261999}
