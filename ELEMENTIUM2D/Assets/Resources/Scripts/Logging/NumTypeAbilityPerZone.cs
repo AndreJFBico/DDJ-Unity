@@ -72,17 +72,17 @@ public class NumTypeAbilityPerZone : LoggingEntry
     {
         string result = "";
         bool newZone = true;
-        foreach (string main in stats.Keys)
+        foreach (string main in perDeathStats.Keys)
         {
             newZone = true;
-            foreach (string abilities in stats[main].Keys)
+            foreach (string abilities in perDeathStats[main].Keys)
             {
                 if (newZone)
                 {
                     result += main + "\r\n";
                     newZone = false;
                 }
-                result += "\t" + "Amount: " + stats[main][abilities].amount + "|" + stats[main][abilities]._s1 + "|" + System.Enum.GetName(typeof(Elements), stats[main][abilities]._s2) + "\r\n";
+                result += "\t" + "Amount: " + perDeathStats[main][abilities].amount + "|" + perDeathStats[main][abilities]._s1 + "|" + System.Enum.GetName(typeof(Elements), perDeathStats[main][abilities]._s2) + "\r\n";
             }
         }
         return result;

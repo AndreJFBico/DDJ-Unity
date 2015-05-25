@@ -88,17 +88,17 @@ public class NumTypeEnemieAndAbility : LoggingEntry
     {
         string result = "";
         bool newAbility = true;
-        foreach (string main in stats.Keys)
+        foreach (string main in perDeathStats.Keys)
         {
             newAbility = true;
-            foreach (string enemies in stats[main].Keys)
+            foreach (string enemies in perDeathStats[main].Keys)
             {
                 if (newAbility)
                 {
-                    result += stats[main][enemies]._s3 + "|" + stats[main][enemies]._s4 + "\r\n";
+                    result += perDeathStats[main][enemies]._s3 + "|" + perDeathStats[main][enemies]._s4 + "\r\n";
                     newAbility = false;
                 }
-                result += "\t" + "Amount: " + stats[main][enemies].amount + "|" + stats[main][enemies]._s1 + "|" + System.Enum.GetName(typeof(Elements), stats[main][enemies]._s2) + "\r\n";
+                result += "\t" + "Amount: " + perDeathStats[main][enemies].amount + "|" + perDeathStats[main][enemies]._s1 + "|" + System.Enum.GetName(typeof(Elements), perDeathStats[main][enemies]._s2) + "\r\n";
             }
         }
         return result;
