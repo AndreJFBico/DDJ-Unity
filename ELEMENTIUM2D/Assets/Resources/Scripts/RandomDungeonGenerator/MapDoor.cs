@@ -63,4 +63,14 @@ public class MapDoor : MonoBehaviour {
 		gameObject.SetActive(true);
         //Destroy(this);
     }
+
+	public void deactivateNavmesh(){
+		Transform[] children = transform.GetComponentsInChildren<Transform>(true);
+		foreach(Transform t in children)
+		{
+			if(t.gameObject.GetComponent<NavMeshObstacle>() != null)
+				t.gameObject.SetActive(true);
+		}
+		gameObject.SetActive(true);
+	}
 }
