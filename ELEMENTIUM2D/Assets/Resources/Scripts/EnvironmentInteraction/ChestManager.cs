@@ -98,7 +98,9 @@ public class ChestManager{
 			treasure.addStats(stat);
 			treasure.updateClosedSprite(_chestQualitySprites[index]);
 		}else{
-			//TODO - no chest?
+			treasure.addStats("");
+			treasure.updateClosedSprite(_chestQualitySprites[0]);
+			treasure.forceOpen();
 		}
         return chest;
     }

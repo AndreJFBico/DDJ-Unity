@@ -1,7 +1,9 @@
 $ELEMENTIUM2D/Temp/
 $ELEMENTIUM2D/Library/
 $ELEMENTIUM2D/Obj/
+$ELEMENTIUM2D/Logging/
 [Ll]ibrary/
+Logging/
 [Tt]emp/
 [Oo]bj/
 [Bb]uild/
