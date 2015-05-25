@@ -266,9 +266,9 @@ public class SkillTreeNode : MonoBehaviour
                     + "With " + operation.ToString() + " " + changeWithValue;*/
         if(isUknown())
         {
-            manager.displayInfo("Uknown node", transform);
+            manager.displayInfo("Unknown node", 0, transform);
         }
-        else manager.displayInfo(information, transform);
+        else manager.displayInfo(information, pointCost, transform);
     }
 
     public void PointerExit()

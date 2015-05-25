@@ -413,11 +413,14 @@ public class SkillTreeManager : MonoBehaviour
         infobox.gameObject.SetActive(false);
     }
 
-    public void displayInfo(string info, Transform node)
+    public void displayInfo(string info, int pointCost, Transform node)
     {
         infobox.gameObject.SetActive(true);
         infobox.transform.position = node.transform.position;
-        infobox.GetComponentInChildren<Text>().text = "Info:" + "\n" + info;
+        if(pointCost == 0) //Unknown cost
+            infobox.GetComponentInChildren<Text>().text = "Info:" + "\n" + info;
+        else
+            infobox.GetComponentInChildren<Text>().text = "Info:" + "\n" + info + "\n" + "Node cost: " + pointCost;
     }
 
     //ATTENTION CURRENTLY ITS ONLY A DUMP OF THE NUMBER OF POINTS USED

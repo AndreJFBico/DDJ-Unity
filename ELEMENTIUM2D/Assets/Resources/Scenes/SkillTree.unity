@@ -452,9 +452,7 @@ MonoBehaviour:
   lockedForever: 0
   linerenderers:
   - {fileID: 1282659431}
-  information: 'Increases the number of homing missiles by 5Node cost: 1
-
-'
+  information: Increases the number of homing missiles by 5
   choiceIndex: 21
   variableBeingChanged: Neutral_ability2_projectile_number
 --- !u!114 &15021336
@@ -650,9 +648,7 @@ MonoBehaviour:
   lockedForever: 0
   linerenderers:
   - {fileID: 632976587}
-  information: 'Improves earth boulder damage by 10%Node cost: 1
-
-'
+  information: Improves earth boulder damage by 10%
   choiceIndex: 21
   variableBeingChanged: Earth_ability1_damage
 --- !u!114 &19230392
@@ -1094,9 +1090,7 @@ MonoBehaviour:
   linerenderers:
   - {fileID: 90160857}
   - {fileID: 1206226399}
-  information: 'Doubles neutral basic projectile movement forceNode cost: 1
-
-'
+  information: Doubles neutral basic projectile movement force
   choiceIndex: 21
   variableBeingChanged: Neutral_ability1_movementForce
 --- !u!224 &83903810
@@ -1426,9 +1420,7 @@ MonoBehaviour:
   lockedForever: 0
   linerenderers:
   - {fileID: 417521335}
-  information: 'Increases fireball attackspeed by 20%Node cost: 1
-
-'
+  information: Increases fireball attackspeed by 20%
   choiceIndex: 21
   variableBeingChanged: Fire_ability1_attackSpeed
 --- !u!224 &114640499
@@ -1887,7 +1879,7 @@ MonoBehaviour:
   lockedForever: 0
   linerenderers:
   - {fileID: 1088064678}
-  information: 'Increases water resist by 10%Node cost: 1'
+  information: Increases water resist by 10%
   choiceIndex: 7
   variableBeingChanged: waterResist
 --- !u!224 &186619582
@@ -2134,9 +2126,7 @@ MonoBehaviour:
   - {fileID: 1400523024}
   - {fileID: 926042997}
   - {fileID: 1066278417}
-  information: 'Unlocks a trowable earth boulderNode cost: 1
-
-'
+  information: Unlocks a throwable earth boulder
   choiceIndex: 17
   variableBeingChanged: primary_earth_level
 --- !u!1 &207107490
@@ -2918,9 +2908,7 @@ MonoBehaviour:
   linerenderers:
   - {fileID: 778607767}
   - {fileID: 1255561402}
-  information: 'Increases defence by 10%Node cost: 1
-
-'
+  information: Increases defence by 10%
   choiceIndex: 6
   variableBeingChanged: defence
 --- !u!114 &295646285
@@ -3259,9 +3247,7 @@ MonoBehaviour:
   - {fileID: 949899927}
   - {fileID: 1816864609}
   - {fileID: 1279130208}
-  information: 'Unlocks a frost projectile that can bounce on wallsNode cost: 1
-
-'
+  information: Unlocks a frost projectile that can bounce on walls
   choiceIndex: 23
   variableBeingChanged: primary_water_level
 --- !u!1 &340321805
@@ -3308,9 +3294,7 @@ MonoBehaviour:
   lockedForever: 0
   linerenderers:
   - {fileID: 400574265}
-  information: 'Increases fire resist by 10%Node cost: 1
-
-'
+  information: Increases fire resist by 10%
   choiceIndex: 9
   variableBeingChanged: fireResist
 --- !u!224 &340321807
@@ -3827,10 +3811,7 @@ MonoBehaviour:
   lockedForever: 0
   linerenderers:
   - {fileID: 845282883}
-  information: 'Every time you cast a fireball you cast 1 more projectileNode cost:
-    1
-
-'
+  information: Every time you cast a fireball you cast 1 more projectile
   choiceIndex: 21
   variableBeingChanged: Fire_ability1_projectile_number
 --- !u!114 &460165680
@@ -4093,9 +4074,7 @@ MonoBehaviour:
   - {fileID: 567256287}
   - {fileID: 1456227219}
   - {fileID: 2044234635}
-  information: 'Node cost: 1
-
-'
+  information: Main ability unlocked by default
   choiceIndex: 14
   variableBeingChanged: primary_neutral_level
 --- !u!1 &510607653
@@ -4296,9 +4275,7 @@ MonoBehaviour:
   linerenderers:
   - {fileID: 1030514851}
   - {fileID: 895775002}
-  information: 'Increases maximum health by 10%Node cost: 1
-
-'
+  information: Increases maximum health by 10%
   choiceIndex: 2
   variableBeingChanged: maxHealth
 --- !u!114 &510607659
@@ -4444,7 +4421,7 @@ MonoBehaviour:
   linerenderers:
   - {fileID: 14095326}
   - {fileID: 820723990}
-  information: 'Increases maximum health by 10%Node cost: 1'
+  information: Increases maximum health by 10%
   choiceIndex: 2
   variableBeingChanged: maxHealth
 --- !u!224 &520578289
@@ -4791,9 +4768,7 @@ MonoBehaviour:
   lockedForever: 0
   linerenderers:
   - {fileID: 263101707}
-  information: 'Unlocks earth shield abilityNode cost: 1
-
-'
+  information: Unlocks earth shield ability
   choiceIndex: 18
   variableBeingChanged: secondary_earth_level
 --- !u!114 &522703634
@@ -4918,9 +4893,7 @@ MonoBehaviour:
   linerenderers:
   - {fileID: 663327645}
   - {fileID: 1121488846}
-  information: 'Increases defence by 10%Node cost: 1
-
-'
+  information: Increases defence by 10%
   choiceIndex: 6
   variableBeingChanged: defence
 --- !u!1 &551505478
@@ -5154,9 +5127,7 @@ MonoBehaviour:
   lockedForever: 0
   linerenderers:
   - {fileID: 1547671628}
-  information: 'Unlocks earth stun abilityNode cost: 1
-
-'
+  information: Unlocks earth stun ability
   choiceIndex: 19
   variableBeingChanged: terciary_earth_level
 --- !u!114 &560719114
@@ -5473,9 +5444,7 @@ MonoBehaviour:
   lockedForever: 0
   linerenderers:
   - {fileID: 2004460881}
-  information: 'Increases fire resist by 10%Node cost: 1
-
-'
+  information: Increases fire resist by 10%
   choiceIndex: 9
   variableBeingChanged: fireResist
 --- !u!224 &608657901
@@ -5793,10 +5762,7 @@ MonoBehaviour:
   linerenderers:
   - {fileID: 457478659}
   - {fileID: 6051823}
-  information: 'Unlocks a neutral projectile that splits on contact with enemiesNode
-    cost: 1
-
-'
+  information: Unlocks a neutral projectile that splits on contact with enemies
   choiceIndex: 16
   variableBeingChanged: terciary_neutral_level
 --- !u!114 &609157649
@@ -6268,9 +6234,7 @@ MonoBehaviour:
   linerenderers:
   - {fileID: 1015871647}
   - {fileID: 2097987361}
-  information: 'Increases neutral basic projectile attackspeed by 20%Node cost: 1
-
-'
+  information: Increases neutral basic projectile attackspeed by 20%
   choiceIndex: 21
   variableBeingChanged: Neutral_ability1_attackSpeed
 --- !u!114 &647873925
@@ -6533,7 +6497,7 @@ MonoBehaviour:
   lockedForever: 0
   linerenderers:
   - {fileID: 1280579471}
-  information: Unlocks healing ability Node cost 1
+  information: Unlocks healing ability
   choiceIndex: 22
   variableBeingChanged: terciary_fire_level
 --- !u!114 &668492319
@@ -6947,7 +6911,7 @@ MonoBehaviour:
   linerenderers:
   - {fileID: 1584067188}
   - {fileID: 518352298}
-  information: 'Increases earth resist by 10%Node cost: 1'
+  information: Increases earth resist by 10%
   choiceIndex: 8
   variableBeingChanged: earthResist
 --- !u!224 &760012090
@@ -7143,7 +7107,7 @@ MonoBehaviour:
   lockedForever: 0
   linerenderers:
   - {fileID: 2095026073}
-  information: 'Increases earth resist by 10%Node cost: 1'
+  information: Increases earth resist by 10%
   choiceIndex: 8
   variableBeingChanged: earthResist
 --- !u!224 &767149014
@@ -7406,9 +7370,7 @@ MonoBehaviour:
   lockedForever: 0
   linerenderers:
   - {fileID: 496941713}
-  information: 'Increases attackspeed by 2Node cost: 4
-
-'
+  information: Increases attackspeed by 2
   choiceIndex: 5
   variableBeingChanged: attackSpeed
 --- !u!224 &782262000
@@ -7724,9 +7686,7 @@ MonoBehaviour:
   lockedForever: 0
   linerenderers:
   - {fileID: 2140376679}
-  information: 'Increases neutral basic projectile damage by 10%Node cost: 1
-
-'
+  information: Increases neutral basic projectile damage by 10%
   choiceIndex: 21
   variableBeingChanged: Neutral_ability1_damage
 --- !u!114 &800622891
@@ -7922,9 +7882,7 @@ MonoBehaviour:
   lockedForever: 0
   linerenderers:
   - {fileID: 1915495716}
-  information: 'Increases neutral splitting ability damage by 30%Node cost: 1
-
-'
+  information: Increases neutral splitting ability damage by 30%
   choiceIndex: 21
   variableBeingChanged: Neutral_ability3_damage
 --- !u!114 &812417864
@@ -8252,9 +8210,7 @@ MonoBehaviour:
   - {fileID: 2072484110}
   - {fileID: 2074929585}
   - {fileID: 181305321}
-  information: 'Increases attack by 10%
-
-    Node cost: 1'
+  information: Increases attack by 10%
   choiceIndex: 4
   variableBeingChanged: damage
 --- !u!1 &884461795
@@ -8301,9 +8257,7 @@ MonoBehaviour:
   lockedForever: 0
   linerenderers:
   - {fileID: 1331928374}
-  information: 'Increases earth resist by 10%Node cost: 1
-
-'
+  information: Increases earth resist by 10%
   choiceIndex: 8
   variableBeingChanged: earthResist
 --- !u!224 &884461797
@@ -8635,9 +8589,7 @@ MonoBehaviour:
   linerenderers:
   - {fileID: 1606359050}
   - {fileID: 998053796}
-  information: 'Increases fire resist by 10%Node cost: 1
-
-'
+  information: Increases fire resist by 10%
   choiceIndex: 9
   variableBeingChanged: fireResist
 --- !u!224 &905025345
@@ -9163,7 +9115,7 @@ MonoBehaviour:
   lockedForever: 0
   linerenderers:
   - {fileID: 1312701782}
-  information: 'Increases maximum health by 10%Node cost: 1'
+  information: Increases maximum health by 10%
   choiceIndex: 2
   variableBeingChanged: maxHealth
 --- !u!224 &951030263
@@ -9807,9 +9759,7 @@ MonoBehaviour:
   - {fileID: 98607820}
   - {fileID: 144104141}
   - {fileID: 307969211}
-  information: 'Increases maximum health by 10%Node cost: 1
-
-'
+  information: Increases maximum health by 10%
   choiceIndex: 2
   variableBeingChanged: maxHealth
 --- !u!114 &1011148599
@@ -10194,9 +10144,7 @@ MonoBehaviour:
   linerenderers:
   - {fileID: 496127317}
   - {fileID: 147474478}
-  information: 'Increases defence by 10%Node cost: 1
-
-'
+  information: Increases defence by 10%
   choiceIndex: 6
   variableBeingChanged: defence
 --- !u!224 &1066777358
@@ -10512,9 +10460,7 @@ MonoBehaviour:
   lockedForever: 0
   linerenderers:
   - {fileID: 1350792018}
-  information: 'Improves earth boulder movement force by 50%Node cost: 1
-
-'
+  information: Improves earth boulder movement force by 50%
   choiceIndex: 21
   variableBeingChanged: Earth_ability1_movementForce
 --- !u!114 &1075449694
@@ -10860,9 +10806,7 @@ MonoBehaviour:
   linerenderers:
   - {fileID: 1154944307}
   - {fileID: 1770139883}
-  information: 'Increases defence by 10%Node cost: 1
-
-'
+  information: Increases defence by 10%
   choiceIndex: 6
   variableBeingChanged: defence
 --- !u!224 &1182075409
@@ -11269,9 +11213,7 @@ MonoBehaviour:
   - {fileID: 2146891157}
   - {fileID: 673762150}
   - {fileID: 637245237}
-  information: 'Increases maximum health by 10%Node cost: 1
-
-'
+  information: Increases maximum health by 10%
   choiceIndex: 2
   variableBeingChanged: maxHealth
 --- !u!114 &1206261930
@@ -11787,7 +11729,7 @@ MonoBehaviour:
   linerenderers:
   - {fileID: 535057660}
   - {fileID: 1948580}
-  information: 'Increases maximum health by 10%Node cost: 1'
+  information: Increases maximum health by 10%
   choiceIndex: 2
   variableBeingChanged: maxHealth
 --- !u!224 &1288139815
@@ -12479,9 +12421,7 @@ MonoBehaviour:
   linerenderers:
   - {fileID: 674994950}
   - {fileID: 2118024328}
-  information: 'Increases defence by 10%Node cost: 1
-
-'
+  information: Increases defence by 10%
   choiceIndex: 6
   variableBeingChanged: defence
 --- !u!224 &1404779445
@@ -12679,9 +12619,7 @@ MonoBehaviour:
   linerenderers:
   - {fileID: 1770189195}
   - {fileID: 759395693}
-  information: 'Increases attack by 10% Node cost: 1
-
-'
+  information: Increases attack by 10%
   choiceIndex: 4
   variableBeingChanged: damage
 --- !u!224 &1412076568
@@ -12928,9 +12866,7 @@ MonoBehaviour:
   - {fileID: 949661141}
   - {fileID: 1757844800}
   - {fileID: 1552764721}
-  information: 'Unlocks a castable fireballNode cost: 1
-
-'
+  information: Unlocks a castable fireball
   choiceIndex: 20
   variableBeingChanged: primary_fire_level
 --- !u!1 &1456227219
@@ -13053,7 +12989,7 @@ MonoBehaviour:
   - {fileID: 848813057}
   - {fileID: 1950026519}
   - {fileID: 2023821610}
-  information: 'Increases maximum health by 10%Node cost: 1'
+  information: Increases maximum health by 10%
   choiceIndex: 2
   variableBeingChanged: maxHealth
 --- !u!224 &1460976888
@@ -14174,9 +14110,7 @@ MonoBehaviour:
   lockedForever: 0
   linerenderers:
   - {fileID: 188046817}
-  information: 'Unlocks a castable ice nova that can freeze enemiesNode cost: 1
-
-'
+  information: Unlocks a castable ice nova that can freeze enemies
   choiceIndex: 25
   variableBeingChanged: terciary_water_level
 --- !u!114 &1639319464
@@ -14860,7 +14794,7 @@ MonoBehaviour:
   linerenderers:
   - {fileID: 551505478}
   - {fileID: 466834807}
-  information: 'Increases maximum health by 10%Node cost: 1'
+  information: Increases maximum health by 10%
   choiceIndex: 2
   variableBeingChanged: maxHealth
 --- !u!114 &1734890392
@@ -15058,9 +14992,7 @@ MonoBehaviour:
   linerenderers:
   - {fileID: 1768294200}
   - {fileID: 1510866872}
-  information: 'Increases maximum health by 10%Node cost: 1
-
-'
+  information: Increases maximum health by 10%
   choiceIndex: 2
   variableBeingChanged: maxHealth
 --- !u!114 &1752853468
@@ -15374,7 +15306,7 @@ MonoBehaviour:
   linerenderers:
   - {fileID: 2007716417}
   - {fileID: 294273484}
-  information: 'Increases water resist by 10%Node cost: 1'
+  information: Increases water resist by 10%
   choiceIndex: 7
   variableBeingChanged: waterResist
 --- !u!224 &1766792459
@@ -16201,9 +16133,7 @@ MonoBehaviour:
   linerenderers:
   - {fileID: 1904764700}
   - {fileID: 746247088}
-  information: 'Unlocks a homing missile abilityNode cost: 1
-
-'
+  information: Unlocks a homing missile ability
   choiceIndex: 15
   variableBeingChanged: secondary_neutral_level
 --- !u!114 &1852362433
@@ -16584,7 +16514,7 @@ MonoBehaviour:
   linerenderers:
   - {fileID: 71697739}
   - {fileID: 1614552397}
-  information: 'Increases attack by 10% Node cost: 1'
+  information: Increases attack by 10%
   choiceIndex: 4
   variableBeingChanged: damage
 --- !u!224 &1926146837
@@ -17151,9 +17081,7 @@ MonoBehaviour:
   lockedForever: 0
   linerenderers:
   - {fileID: 293572920}
-  information: 'Unlocks a placeable oil puddle Node cost: 1
-
-'
+  information: Unlocks a placeable oil puddle
   choiceIndex: 21
   variableBeingChanged: secondary_fire_level
 --- !u!114 &2023410152
@@ -17434,9 +17362,7 @@ MonoBehaviour:
   lockedForever: 0
   linerenderers:
   - {fileID: 1825985563}
-  information: 'Unlocks a water burst projectile Node cost: 1
-
-'
+  information: Unlocks a water burst projectile
   choiceIndex: 24
   variableBeingChanged: secondary_water_level
 --- !u!114 &2043932854
@@ -17983,9 +17909,7 @@ MonoBehaviour:
   linerenderers:
   - {fileID: 832734883}
   - {fileID: 623718578}
-  information: 'Increases attackspeed by 1Node cost: 3
-
-'
+  information: Increases attackspeed by 1
   choiceIndex: 5
   variableBeingChanged: attackSpeed
 --- !u!224 &2134919174
@@ -18181,7 +18105,7 @@ MonoBehaviour:
   lockedForever: 0
   linerenderers:
   - {fileID: 321254345}
-  information: 'Increases water resist by 10%Node cost: 1'
+  information: Increases water resist by 10%
   choiceIndex: 7
   variableBeingChanged: waterResist
 --- !u!224 &2136569647
