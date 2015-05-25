@@ -6,9 +6,11 @@ using Logging;
 
 public class NumTypeAbilityPerZone : LoggingEntry
 {
-    private Dictionary<string, StringTypeStringType> stats = new Dictionary<string, StringTypeStringType>();
+    private Dictionary<string, Dictionary<string, StringTypeStringType>> stats = new Dictionary<string, Dictionary<string, StringTypeStringType>>();
+    private Dictionary<string, Dictionary<string, StringTypeStringType>> perDeathStats = new Dictionary<string, Dictionary<string, StringTypeStringType>>();
 
     public string Filepath { get { return filePath; } }
+    public Dictionary<string, Dictionary<string, StringTypeStringType>> PerDeath { get { return perDeathStats; } }
 
     public NumTypeAbilityPerZone(string path) : base(path) { }
 
@@ -16,22 +18,92 @@ public class NumTypeAbilityPerZone : LoggingEntry
     {
         base.writeEntry(abilityName, abilityType, zone, zoneType);
         // Ignoring zone name by default theres no reason to use the zone name for logging
-        string key = abilityName + abilityType + zoneType;
-        if (!stats.ContainsKey(key))
+        addEntryToGlobal(abilityName, abilityType, zone, zoneType);
+        addEntryToPerDeath(abilityName, abilityType, zone, zoneType);
+    }
+
+    private void addEntryToGlobal(string abilityName, Elements abilityType, string zone, Elements zoneType)
+    {
+        string mainKey = System.Enum.GetName(typeof(Elements), zoneType);
+        string key = abilityName + abilityType;
+        Dictionary<string, StringTypeStringType> abilities = new Dictionary<string, StringTypeStringType>();
+
+        if (!stats.ContainsKey(mainKey))
         {
-            stats.Add(key, new StringTypeStringType(abilityName, abilityType, zone, zoneType));
+            stats.Add(mainKey, abilities);
+            stats[mainKey].Add(key, new StringTypeStringType(abilityName, abilityType, zone, zoneType));
+            //stats.Add(enemyName + enemyType + projectileName + projectileType, new StringTypeStringType(enemyName, enemyType, projectileName, projectileType));
+        }
+        else if (!stats[mainKey].ContainsKey(key))
+        {
+            stats[mainKey].Add(key, new StringTypeStringType(abilityName, abilityType, zone, zoneType));
         }
         else
         {
-            stats[key].amount = stats[key].amount + 1;
+            stats[mainKey][key].amount += 1;
+        }
+    }
+    private void addEntryToPerDeath(string abilityName, Elements abilityType, string zone, Elements zoneType)
+    {
+        string mainKey = System.Enum.GetName(typeof(Elements), zoneType);
+        string key = abilityName + abilityType;
+        Dictionary<string, StringTypeStringType> abilities = new Dictionary<string, StringTypeStringType>();
+
+        if (!perDeathStats.ContainsKey(mainKey))
+        {
+            perDeathStats.Add(mainKey, abilities);
+            perDeathStats[mainKey].Add(key, new StringTypeStringType(abilityName, abilityType, zone, zoneType));
+            //stats.Add(enemyName + enemyType + projectileName + projectileType, new StringTypeStringType(enemyName, enemyType, projectileName, projectileType));
+        }
+        else if (!perDeathStats[mainKey].ContainsKey(key))
+        {
+            perDeathStats[mainKey].Add(key, new StringTypeStringType(abilityName, abilityType, zone, zoneType));
+        }
+        else
+        {
+            perDeathStats[mainKey][key].amount += 1;
         }
     }
 
+    #region Functions used By Others
+    public void clearPerDeath() { perDeathStats = new Dictionary<string, Dictionary<string, StringTypeStringType>>(); }
+
+    public string printPerDeathStats()
+    {
+        string result = "";
+        bool newZone = true;
+        foreach (string main in perDeathStats.Keys)
+        {
+            newZone = true;
+            foreach (string abilities in perDeathStats[main].Keys)
+            {
+                if (newZone)
+                {
+                    result += main + "\r\n";
+                    newZone = false;
+                }
+                result += "\t" + "Amount: " + perDeathStats[main][abilities].amount + "|" + perDeathStats[main][abilities]._s1 + "|" + System.Enum.GetName(typeof(Elements), perDeathStats[main][abilities]._s2) + "\r\n";
+            }
+        }
+        return result;
+    }
+    #endregion
+
     public override void wrapUp()
     {
-        foreach (KeyValuePair<string, StringTypeStringType> pair in stats)
+        bool newZone = true;
+        foreach (string main in stats.Keys)
         {
-            addTextToFile("Amount: " + pair.Value.amount + "|" + pair.Value._s1 + "|" + System.Enum.GetName(typeof(Elements), pair.Value._s2) + "||" + System.Enum.GetName(typeof(Elements), pair.Value._s4) + "\r\n");
+            newZone = true;
+            foreach (string abilities in stats[main].Keys)
+            {
+                if (newZone)
+                {
+                    addTextToFile(main + "\r\n");
+                    newZone = false;
+                }
+                addTextToFile("\t" + "Amount: " + stats[main][abilities].amount + "|" + stats[main][abilities]._s1 + "|" + System.Enum.GetName(typeof(Elements), stats[main][abilities]._s2) + "\r\n");
+            }
         }
     }
 }
