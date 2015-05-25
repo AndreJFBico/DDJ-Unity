@@ -9789,6 +9789,10 @@ Prefab:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 11420790, guid: b12e8ae4fd141f04688ad5523290cc2f, type: 2}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b12e8ae4fd141f04688ad5523290cc2f, type: 2}
   m_IsPrefabParent: 0
@@ -15657,7 +15661,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22412324, guid: b12e8ae4fd141f04688ad5523290cc2f, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 300
+      value: 360
       objectReference: {fileID: 0}
     - target: {fileID: 22412324, guid: b12e8ae4fd141f04688ad5523290cc2f, type: 2}
       propertyPath: m_SizeDelta.y
