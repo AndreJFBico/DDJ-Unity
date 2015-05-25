@@ -193,7 +193,7 @@ public class SkillTreeNode : MonoBehaviour
     {
         if (!selected)
         {
-            if (manager.cur_lim_points > 0)
+            if (manager.cur_lim_points >= pointCost)
             {
                     selected = true;
                     manager.cur_lim_points -= pointCost;
@@ -230,7 +230,7 @@ public class SkillTreeNode : MonoBehaviour
                 {
                     if(!selected)
                     {
-                        if (manager.cur_lim_points > 0)
+                        if (manager.cur_lim_points >= pointCost)
                         {
                             if (((float)field.GetValue(manager)) < GameManager.Instance.getStatVariable("lim_" + variableBeingChanged))
                             {
