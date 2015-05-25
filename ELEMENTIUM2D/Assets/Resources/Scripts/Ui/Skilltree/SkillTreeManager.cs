@@ -139,6 +139,7 @@ public class SkillTreeManager : MonoBehaviour
                 {
                     if (!checkIfHasOneEnabled(n, true))
                     {
+                        n.deactivateLineRenderer();
                         n.transform.gameObject.SetActive(false);
                     }
                     else
@@ -146,6 +147,7 @@ public class SkillTreeManager : MonoBehaviour
                         if(!n.transform.gameObject.activeSelf)
                         {
                             n.transform.gameObject.SetActive(true);
+                            n.deactivateLineRenderer();
                             n.setUnknown();
                         }
                     }
@@ -384,6 +386,7 @@ public class SkillTreeManager : MonoBehaviour
 
     void generateLineRenderers()
     {
+        startNode.GetComponent<SkillTreeNode>().generateLineRenderers();
         foreach(SkillTreeNode n in allNodeList)
         {
             n.generateLineRenderers();
@@ -423,7 +426,7 @@ public class SkillTreeManager : MonoBehaviour
         UpdatePlayerStats();
         setAllUnsearched(false);
         Text text= predictBox.GetComponent<Text>(); 
-        text.text = "Main player stats: " + "\n"
+        text.text = "Main player stats: " + "\n\n"
             + "MoveSpeed: " + GameManager.Instance.Stats.moveSpeed + "\n\n"
             + "MaxHealth: " + GameManager.Instance.Stats.maxHealth + "\n\n"
             + "Damage: " + GameManager.Instance.Stats.damage + "\n\n"

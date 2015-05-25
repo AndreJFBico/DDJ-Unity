@@ -52,11 +52,6 @@ public class SkillTreeNode : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
-        if(linerenderers != null)
-        {
-            linerenderers.Clear();
-        }
-        linerenderers = new List<GameObject>();
         manager = (GameObject.Find("SkillTree") as GameObject).GetComponent<SkillTreeManager>();
     }
 
@@ -311,6 +306,14 @@ public class SkillTreeNode : MonoBehaviour
                 }
                 checkIfLimits();
             }
+        }
+    }
+
+    public void deactivateLineRenderer()
+    {
+        foreach (GameObject o in linerenderers)
+        {
+            o.SetActive(false);
         }
     }
 
