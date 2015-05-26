@@ -55,19 +55,23 @@ public class MapDoor : MonoBehaviour {
     public void activateNavmesh()
     {
         //doorNavmesh.gameObject.SetActive(true);
-        Transform[] children = transform.GetComponentsInChildren<Transform>(true);
-        foreach(Transform t in children)
+        //Transform[] children = transform.GetComponentsInChildren<Transform>(true);
+		foreach(Transform t in transform)
         {
-            t.gameObject.SetActive(false);
+			if(t.gameObject.GetComponent<BreakableWall>() != null)
+				continue;
+			t.gameObject.SetActive(false);
         }
 		gameObject.SetActive(true);
         //Destroy(this);
     }
 
 	public void deactivateNavmesh(){
-		Transform[] children = transform.GetComponentsInChildren<Transform>(true);
-		foreach(Transform t in children)
+		//Transform[] children = transform.GetComponentsInChildren<Transform>(true);
+		foreach(Transform t in transform)
 		{
+			if(t.gameObject.GetComponent<BreakableWall>() != null)
+				continue;
 			if(t.gameObject.GetComponent<NavMeshObstacle>() != null)
 				t.gameObject.SetActive(true);
 		}
