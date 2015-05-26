@@ -11,22 +11,22 @@ public class EarthRangedEnemyScript : RangedEnemyScript
         base.Awake();
         _type = Elements.NEUTRAL;
         projectile = Resources.Load(EnemyStats.RangedNeutral.neutralEnemyProjectile) as GameObject;
-        rangedRadius = EnemyStats.RangedNeutral.rangedRadius;
-        maxHealth = EnemyStats.RangedNeutral.maxHealth;
+        rangedRadius = EnemyStats.EarthRanged.rangedRadius;
+        maxHealth = EnemyStats.EarthRanged.maxHealth;
         health = maxHealth;
-        damage = EnemyStats.RangedNeutral.damage;
-        attackSpeed = EnemyStats.RangedNeutral.rangedAttackSpeed;
-        defence = EnemyStats.RangedNeutral.defence;
-        waterResist = EnemyStats.RangedNeutral.waterResist;
-        earthResist = EnemyStats.RangedNeutral.earthResist;
-        fireResist = EnemyStats.RangedNeutral.fireResist;
+        damage = EnemyStats.EarthRanged.damage;
+        attackSpeed = EnemyStats.EarthRanged.rangedAttackSpeed;
+        defence = EnemyStats.EarthRanged.defence;
+        waterResist = EnemyStats.EarthRanged.waterResist;
+        earthResist = EnemyStats.EarthRanged.earthResist;
+        fireResist = EnemyStats.EarthRanged.fireResist;
 
-        visionRadius = EnemyStats.RangedNeutral.visionRadius;
+        visionRadius = EnemyStats.EarthRanged.visionRadius;
         pathAgent.GetComponent<CapsuleCollider>().radius = visionRadius;
 
         gameObject.GetComponent<SphereCollider>().radius = rangedRadius;
-        pathAgent.UnalertedSpeed = EnemyStats.FireBasic.unalertedSpeed;
-        pathAgent.AlertedSpeed = EnemyStats.FireBasic.alertedSpeed;
+        pathAgent.UnalertedSpeed = EnemyStats.EarthRanged.unalertedSpeed;
+        pathAgent.AlertedSpeed = EnemyStats.EarthRanged.alertedSpeed;
 
         activeWeapon = left;
         currentFireTransform = left_firepoint;

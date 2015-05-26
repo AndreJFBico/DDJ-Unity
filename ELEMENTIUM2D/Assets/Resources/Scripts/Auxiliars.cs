@@ -635,13 +635,13 @@ namespace Includes
             public static float defence = 20;
             public static float waterResist = 0;
             public static float earthResist = 90;
-            public static float rangedRadius = 1.5f;
+            public static float rangedRadius = 1.8f;
             public static float fireResist = -50;
-            public static float visionRadius = 2f;
+            public static float visionRadius = 2.2f;
             public static float rangedAttackSpeed = 0.5f;
             public static Elements type = Elements.EARTH;
             public static float unalertedSpeed = 0.5f;
-            public static float alertedSpeed = 1.5f;
+            public static float alertedSpeed = 1.0f;
         }
         #endregion
     }

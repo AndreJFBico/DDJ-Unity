@@ -99,7 +99,6 @@ GameObject:
   - 114: {fileID: 207107492}
   - 114: {fileID: 207107491}
   - 222: {fileID: 207107496}
-  - 114: {fileID: 207107495}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -185,17 +184,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &207107495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 207107490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 722dc81abbd53ff48922d7790d88e8f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!222 &207107496
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -289,7 +277,7 @@ Light:
   serializedVersion: 6
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.91999996
+  m_Intensity: 1.5
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -541,6 +529,7 @@ MonoBehaviour:
   initTime: .100000001
   duration: 4
   final: 0
+  statik: 0
   text: Explore the universe...
 --- !u!114 &763115769
 MonoBehaviour:
@@ -623,6 +612,7 @@ MonoBehaviour:
   initTime: 9
   duration: 5
   final: 1
+  statik: 0
   text: Become the strongest!
 --- !u!114 &781321686
 MonoBehaviour:
@@ -703,8 +693,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initTime: 16
-  duration: 10
-  final: 1
+  duration: 50
+  final: 0
+  statik: 1
   text: Loading...
 --- !u!114 &1014832085
 MonoBehaviour:
@@ -787,6 +778,7 @@ MonoBehaviour:
   initTime: 4.5
   duration: 4
   final: 0
+  statik: 0
   text: Gather the power of the elements...
 --- !u!114 &1395838285
 MonoBehaviour:

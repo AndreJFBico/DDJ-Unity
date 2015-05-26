@@ -36,7 +36,7 @@ public class SpawnerManager : MonoBehaviour {
     {
         if (!generated)
         {
-            int random = Random.Range(_minSpawners, _maxSpawners);
+            int random = Random.Range(_minSpawners, _maxSpawners+1);
             _spawningPositions.Shuffle();
             for (int i = 0; i < random; i++)
             {
