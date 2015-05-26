@@ -6,10 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Resources/Scenes/defaultScene.unity
+    path: Assets/Resources/Scenes/StartScreen.unity
+  - enabled: 1
+    path: Assets/Resources/Scenes/Intro.unity
   - enabled: 1
     path: Assets/Resources/Scenes/SkillTree.unity
-  - enabled: 0
-    path: Assets/Resources/Scenes/JLTest.unity
+  - enabled: 1
+    path: Assets/Resources/Scenes/defaultScene.unity
   - enabled: 1
     path: Assets/Resources/Scenes/EndScreen.unity

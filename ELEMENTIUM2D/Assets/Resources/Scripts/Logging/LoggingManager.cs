@@ -111,6 +111,7 @@ public class LoggingManager
 
     private void globalStatsWrapUp(string filePath)
     {
+        #if (!UNITY_WEBPLAYER)
         File.AppendAllText(filePath,
             "Total Time: " + timeFormat(endTime - startTime) + "\r\n"
                + "Time Fighting: " + timeFormat(((StatsPerDeath)getEntry(typeof(StatsPerDeath))).getTotalTimeFighting()) + "\r\n"
@@ -122,6 +123,7 @@ public class LoggingManager
                + "Time to Fire: " + timeFormat(timeToFire) + " \r\n"
                + "Time to Earth: " + timeFormat(timeToEarth) + " \r\n"
                );
+        #endif
     }
 
     public string statDump()

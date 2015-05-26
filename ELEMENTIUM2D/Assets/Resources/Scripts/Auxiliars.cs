@@ -1198,7 +1198,6 @@ namespace Includes
             player = GameObject.FindWithTag("Player");
             gui = GameObject.Find("GUI");
         }
-
     }
     #endregion
 
