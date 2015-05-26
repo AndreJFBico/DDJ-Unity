@@ -48,7 +48,7 @@ public class EndGamePortal : Interactable
         playerInteractions.Interactable = null;
         //ENDGAME
         endgameMessage.GetComponent<MeshRenderer>().enabled = true;
-        restartButton.gameObject.SetActive(true);
+        Application.LoadLevel("EndScreen");
         Destroy(this);
     }
 }
